@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Fu(X) 2.0:  Fichier source de C:/FuX/src/ComInterProcess.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://www.mathjax.org/mathjax/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fu(X) 2.0
+   &#160;<span id="projectnumber">a5</span>
+   </div>
+   <div id="projectbrief">Fu(X) est un lecteur audio dont le but est de redéfinir l&#39;utilisation en apportant une nouvelle approche aussi intuitive que puissante !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ComInterProcess.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Name:      ComInterProcess.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Purpose:   Code for Fu(X) 2.0</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    David Lecoconnier (etrange02@aol.com)</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2010-06-01</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Copyright: David Lecoconnier (http://www.fuxplay.com)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * License:</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **************************************************************/</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;ComInterProcess.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">const</span> wxEventType wxEVT_SERVEUR = wxNewEventType();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="class_t_c_p_connexion_echange_instance_local_host.html#a3d69ac2a6fae5e5d6a382df9d789b71d">   32</a></span>&#160;<a class="code" href="class_t_c_p_connexion_echange_instance_local_host.html#a3d69ac2a6fae5e5d6a382df9d789b71d" title="Constructeur.">TCPConnexionEchangeInstanceLocalHost::TCPConnexionEchangeInstanceLocalHost</a>(wxWindow *parent, <span class="keywordtype">int</span> <span class="keywordtype">id</span>) : wxConnection()</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    m_parent = parent;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    m_id = id;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="class_t_c_p_connexion_echange_instance_local_host.html#af55c2c2cb1196120b03722c307d59299">   43</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_t_c_p_connexion_echange_instance_local_host.html#af55c2c2cb1196120b03722c307d59299" title="Côté client - Demande l&#39;exécution de data donnée en paramètre.">TCPConnexionEchangeInstanceLocalHost::Execute</a>(<span class="keyword">const</span> wxString data)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{    <span class="keywordflow">return</span> wxConnection::Execute(data);}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="class_t_c_p_connexion_echange_instance_local_host.html#acb9b8e8194d80956328b245e34526278">   54</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_t_c_p_connexion_echange_instance_local_host.html#acb9b8e8194d80956328b245e34526278" title="Côté serveur - Demande l&#39;exécution de données.">TCPConnexionEchangeInstanceLocalHost::OnExecute</a>(<span class="keyword">const</span> wxString&amp; topic, wxChar *data, <span class="keywordtype">int</span> WXUNUSED(size), wxIPCFormat WXUNUSED(format))<span class="comment">//que contient topic ?</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (topic == IPC_TOPIC)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        m_tableau.Add(wxString(data));</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="class_t_c_p_connexion_echange_instance_local_host.html#a544ede37a48cb70bd5aa49d2c912b420">   65</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_t_c_p_connexion_echange_instance_local_host.html#a544ede37a48cb70bd5aa49d2c912b420" title="Côté serveur - Demande d&#39;interruption de la connexion.">TCPConnexionEchangeInstanceLocalHost::OnDisconnect</a>()</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span>(m_parent!=NULL)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        wxCommandEvent evt(wxEVT_SERVEUR, m_parent-&gt;GetId());</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        evt.SetInt(m_id);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        m_parent-&gt;GetEventHandler()-&gt;AddPendingEvent(evt);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="class_t_c_p_connexion_echange_instance_local_host.html#aca178ed79fc72975ab060b94e433df59">   80</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_t_c_p_connexion_echange_instance_local_host.html#aca178ed79fc72975ab060b94e433df59" title="Retourne l&#39;identifiant de la connexion.">TCPConnexionEchangeInstanceLocalHost::GetId</a>()</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> m_id;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="class_t_c_p_connexion_echange_instance_local_host.html#ace81dc574abfaf229bcdbe414019955f">   89</a></span>&#160;wxArrayString* <a class="code" href="class_t_c_p_connexion_echange_instance_local_host.html#ace81dc574abfaf229bcdbe414019955f" title="Retourne le tableau construit à partir de l&#39;échange d&#39;information entre le client et le serveur...">TCPConnexionEchangeInstanceLocalHost::GetTableau</a>()</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> &amp;m_tableau;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="class_t_c_p_client.html#ad37bba4f2ebcc899b9871656802dcbe9">   98</a></span>&#160;<a class="code" href="class_t_c_p_client.html#ad37bba4f2ebcc899b9871656802dcbe9" title="Constructeur.">TCPClient::TCPClient</a>() : wxClient()</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{}</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="code" href="class_t_c_p_client.html#ad21076cf1ce7047b5dc0ee2c99b7191e">  105</a></span>&#160;wxConnectionBase* <a class="code" href="class_t_c_p_client.html#ad21076cf1ce7047b5dc0ee2c99b7191e" title="Demande la création d&#39;une connexion.">TCPClient::OnMakeConnection</a>()</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_t_c_p_connexion_echange_instance_local_host.html" title="Représente la connexion client/serveur.">TCPConnexionEchangeInstanceLocalHost</a>;}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="code" href="class_t_c_p_serveur.html#a72138b6ea208d26bfdbcd1821c23aeb2">  114</a></span>&#160;<a class="code" href="class_t_c_p_serveur.html#a72138b6ea208d26bfdbcd1821c23aeb2" title="Constructeur.">TCPServeur::TCPServeur</a>(wxWindow *parent) : wxServer()</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{    m_parent = parent; m_connexions = <span class="keyword">new</span> ArrayOfConnexion(); m_compte = 0;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="code" href="class_t_c_p_serveur.html#a8518e14e430e1324e41533a55d26a572">  120</a></span>&#160;<a class="code" href="class_t_c_p_serveur.html#a8518e14e430e1324e41533a55d26a572" title="Destructeur.">TCPServeur::~TCPServeur</a>()</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">if</span> (!m_connexions-&gt;IsEmpty())</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        m_connexions-&gt;Clear();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="code" href="class_t_c_p_serveur.html#a8d0878ba9345bf230980a91f6d037675">  131</a></span>&#160;wxConnectionBase* <a class="code" href="class_t_c_p_serveur.html#a8d0878ba9345bf230980a91f6d037675" title="Serveur - Crée et retourne une connexion si celle-ci est valide.">TCPServeur::OnAcceptConnection</a>(<span class="keyword">const</span> wxString &amp;topic)</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;{</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">if</span> (topic == IPC_TOPIC)</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <a class="code" href="class_t_c_p_connexion_echange_instance_local_host.html" title="Représente la connexion client/serveur.">TCPConnexionEchangeInstanceLocalHost</a>* c = <span class="keyword">new</span> <a class="code" href="class_t_c_p_connexion_echange_instance_local_host.html" title="Représente la connexion client/serveur.">TCPConnexionEchangeInstanceLocalHost</a>(m_parent, m_compte++);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        m_connexions-&gt;Add(c);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">return</span> c;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        wxLogMessage(_(<span class="stringliteral">&quot;Connexion non autorisée&quot;</span>));</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="code" href="class_t_c_p_serveur.html#af3b5835084c452f64105f7612cba4657">  150</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_t_c_p_serveur.html#af3b5835084c452f64105f7612cba4657" title="Serveur - Supprime la connexion dont l&#39;identifiant est id.">TCPServeur::Deconnecter</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">size_t</span> i = 0;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">while</span> (i &lt; m_connexions-&gt;GetCount())</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">if</span> (m_connexions-&gt;Item(i)-&gt;GetId() == id)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            m_connexions-&gt;Remove(m_connexions-&gt;Item(i));</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            i = m_connexions-&gt;GetCount();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        i++;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="code" href="class_t_c_p_serveur.html#a7e94d48b028cf1e3c23871bc196ec639">  169</a></span>&#160;wxArrayString* <a class="code" href="class_t_c_p_serveur.html#a7e94d48b028cf1e3c23871bc196ec639" title="Serveur - Retourne le tableau construit par la connexion n°id.">TCPServeur::GetConnexionTableau</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">size_t</span> i = 0;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">while</span> (i &lt; m_connexions-&gt;GetCount())</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">if</span> (m_connexions-&gt;Item(i)-&gt;GetId() == id)</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;             <span class="keywordflow">return</span> m_connexions-&gt;Item(i)-&gt;GetTableau();</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        i++;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi Mai 23 2013 22:50:39 pour Fu(X) 2.0 par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

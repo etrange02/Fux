@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Fu(X) 2.0:  Fichier source de C:/FuX/src/PreferenceSon.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://www.mathjax.org/mathjax/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fu(X) 2.0
+   &#160;<span id="projectnumber">a5</span>
+   </div>
+   <div id="projectbrief">Fu(X) est un lecteur audio dont le but est de redéfinir l&#39;utilisation en apportant une nouvelle approche aussi intuitive que puissante !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PreferenceSon.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Name:      PreferenceSon.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Purpose:   Code for Fu(X) 2.0</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    David Lecoconnier (etrange02@aol.com)</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2009-12-14</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Copyright: David Lecoconnier (http://www.fuxplay.com)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * License:</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **************************************************************/</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;PreferenceSon.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;BEGIN_EVENT_TABLE(<a class="code" href="class_pref_son.html" title="Interface représentant différents volumes sonores - Passer les fichiers au format XML...">PrefSon</a>, wxScrolledWindow)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    EVT_RADIOBOX(ID_APP_PREF_SON_CHOIX, <a class="code" href="class_pref_son.html" title="Interface représentant différents volumes sonores - Passer les fichiers au format XML...">PrefSon</a>::Son_RadioModif_Nouveau)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    EVT_CHOICE(ID_APP_PREF_SON_LISTE_MODIF, <a class="code" href="class_pref_son.html" title="Interface représentant différents volumes sonores - Passer les fichiers au format XML...">PrefSon</a>::Son_ModifOuvrirFichier)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    EVT_BUTTON(ID_APP_PREF_SON_ENREGISTRER, <a class="code" href="class_pref_son.html" title="Interface représentant différents volumes sonores - Passer les fichiers au format XML...">PrefSon</a>::Son_Bouton_Enregistrer)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    EVT_BUTTON(ID_APP_PREF_SON_ANNULER, <a class="code" href="class_pref_son.html" title="Interface représentant différents volumes sonores - Passer les fichiers au format XML...">PrefSon</a>::Son_Bouton_Annuler)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    EVT_BUTTON(ID_APP_PREF_SON_APPLIQUER, <a class="code" href="class_pref_son.html" title="Interface représentant différents volumes sonores - Passer les fichiers au format XML...">PrefSon</a>::Son_Bouton_Appliquer)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    EVT_BUTTON(ID_APP_PREF_SON_SUPPRIMER, <a class="code" href="class_pref_son.html" title="Interface représentant différents volumes sonores - Passer les fichiers au format XML...">PrefSon</a>::Son_Bouton_Supprimer)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    EVT_BUTTON(ID_APP_PREF_SON_ACTUEL, <a class="code" href="class_pref_son.html" title="Interface représentant différents volumes sonores - Passer les fichiers au format XML...">PrefSon</a>::Son_Bouton_Actuel)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    EVT_TEXT(ID_APP_PREF_SON_BOITE, <a class="code" href="class_pref_son.html" title="Interface représentant différents volumes sonores - Passer les fichiers au format XML...">PrefSon</a>::BoiteNouveauModifiee)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;END_EVENT_TABLE()</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="class_pref_son.html#a04cac5d810c33bc464520b3d22cab172">   31</a></span>&#160;<a class="code" href="class_pref_son.html" title="Interface représentant différents volumes sonores - Passer les fichiers au format XML...">PrefSon</a>::<a class="code" href="class_pref_son.html" title="Interface représentant différents volumes sonores - Passer les fichiers au format XML...">PrefSon</a>()</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="class_pref_son.html#ae7fac7d6359f69a50b22c1e4fb308ee1">   38</a></span>&#160;<a class="code" href="class_pref_son.html#a04cac5d810c33bc464520b3d22cab172" title="Constructeur.">PrefSon::PrefSon</a>(wxWindow *Parent) : wxScrolledWindow(Parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL | wxVSCROLL | wxHSCROLL)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="class_pref_son.html#a273198afcec349e33347fd1d576366ad">   44</a></span>&#160;<a class="code" href="class_pref_son.html#a273198afcec349e33347fd1d576366ad" title="Destructeur.">PrefSon::~PrefSon</a>()</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="class_pref_son.html#a77cb25b4d8c25f419f342dd11b2c37e1">   50</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_pref_son.html#a77cb25b4d8c25f419f342dd11b2c37e1" title="Crée les différents éléments graphique du panel et les place dessus.">PrefSon::Creer</a>()</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    m_musique = <a class="code" href="class_musique.html#a5155ee2dd5aa0f538f439e519bcd3e73" title="Récupère l&#39;instance de la classe.">Musique::Get</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    SetScrollbars(20, 20, 50, 50);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    m_sizer1V = <span class="keyword">new</span> wxBoxSizer(wxVERTICAL);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    SetSizer(m_sizer1V);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">//Choix sous forme de bouton radio</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    wxString proposition[2]; proposition[0] = _(<span class="stringliteral">&quot;Nouveau&quot;</span>); proposition[1] = _(<span class="stringliteral">&quot;Modifier&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    m_choix = <span class="keyword">new</span> wxRadioBox(<span class="keyword">this</span>, ID_APP_PREF_SON_CHOIX, _(<span class="stringliteral">&quot;Mon choix&quot;</span>), wxDefaultPosition, wxDefaultSize, 2, proposition, 1, wxRA_SPECIFY_ROWS);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    m_sizer1V-&gt;Add(m_choix, 0, wxALL | wxSHAPED, 5);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    m_listeModif = <span class="keyword">new</span> wxChoice(<span class="keyword">this</span>, ID_APP_PREF_SON_LISTE_MODIF);<span class="comment">//Liste déroulante</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    m_sizer1V-&gt;Add(m_listeModif, 0, wxALL | wxSHAPED, 5);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="class_pref_son.html#a792e1bc6c86daaca57accb3d07942242" title="Liste tous les éléments présent dans le dossier Son.">CreerListe</a>(m_listeModif);<span class="comment">//Listage</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    m_sizer2H = <span class="keyword">new</span> wxBoxSizer(wxHORIZONTAL);<span class="comment">//Tableau des données</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    m_sizer1V-&gt;Add(m_sizer2H, 0, wxALL | wxEXPAND, 5);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    m_sizerNewModif = <span class="keyword">new</span> wxStaticBoxSizer(wxVERTICAL, <span class="keyword">this</span>, _(<span class="stringliteral">&quot;Nouveau&quot;</span>));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    m_sizerActuel = <span class="keyword">new</span> wxStaticBoxSizer(wxVERTICAL, <span class="keyword">this</span>, _(<span class="stringliteral">&quot;Valeurs actuelles&quot;</span>));</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    m_sizer2H-&gt;Add(m_sizerNewModif, 0, wxALL | wxEXPAND, 5);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    m_sizer2H-&gt;Add(m_sizerActuel, 0, wxALL | wxEXPAND | wxALIGN_RIGHT, 5);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    wxStaticText* TextNom = <span class="keyword">new</span> wxStaticText[2];</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    TextNom[0].Create(<span class="keyword">this</span>, wxID_ANY, _(<span class="stringliteral">&quot;Nom&quot;</span>)); TextNom[1].Create(<span class="keyword">this</span>, wxID_ANY, _(<span class="stringliteral">&quot;Nom&quot;</span>));</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    wxStaticText* TextVolume = <span class="keyword">new</span> wxStaticText[2];</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    TextVolume[0].Create(<span class="keyword">this</span>, wxID_ANY, _(<span class="stringliteral">&quot;Volume&quot;</span>)); TextVolume[1].Create(<span class="keyword">this</span>, wxID_ANY, _(<span class="stringliteral">&quot;Volume&quot;</span>));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    wxStaticText* TextVolumePC = <span class="keyword">new</span> wxStaticText[2];</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    TextVolumePC[0].Create(<span class="keyword">this</span>, wxID_ANY, _(<span class="stringliteral">&quot;Volume PC&quot;</span>)); TextVolumePC[1].Create(<span class="keyword">this</span>, wxID_ANY, _(<span class="stringliteral">&quot;Volume PC&quot;</span>));</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    m_sizerNewModifTAB = <span class="keyword">new</span> wxFlexGridSizer(3, 2, 5, 5);<span class="comment">//Suite des cases contenant des valeurs modifiables</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    m_sizerNewModif-&gt;Add(m_sizerNewModifTAB, 0, wxALL | wxEXPAND, 5);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    m_boiteNomMod = <span class="keyword">new</span> wxTextCtrl(<span class="keyword">this</span>, ID_APP_PREF_SON_BOITE, _T(<span class="stringliteral">&quot;&quot;</span>));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    m_boiteVolMod = <span class="keyword">new</span> wxSpinCtrl(<span class="keyword">this</span>, wxID_ANY, _T(<span class="stringliteral">&quot;&quot;</span>));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    m_boiteVolPCMod = <span class="keyword">new</span> wxSpinCtrl(<span class="keyword">this</span>, wxID_ANY, _T(<span class="stringliteral">&quot;&quot;</span>));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    m_boiteVolPCMod-&gt;SetRange(-1, 100);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    m_sizerNewModifTAB-&gt;Add(&amp;TextNom[0], 0, wxALL, 0);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    m_sizerNewModifTAB-&gt;Add(m_boiteNomMod, 0, wxALL | wxEXPAND, 0);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    m_sizerNewModifTAB-&gt;Add(&amp;TextVolume[0], 0, wxALL, 0);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    m_sizerNewModifTAB-&gt;Add(m_boiteVolMod, 0, wxALL | wxEXPAND, 0);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    m_sizerNewModifTAB-&gt;Add(&amp;TextVolumePC[0], 0, wxALL, 0);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    m_sizerNewModifTAB-&gt;Add(m_boiteVolPCMod, 0, wxALL | wxEXPAND, 0);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    wxSizer *sizer4Actuel_NON_Modifiable = <span class="keyword">new</span> wxFlexGridSizer(3, 2, 5, 5);<span class="comment">//Contient nom et cases non modifiables (droite); dispo en colonne</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    m_sizerActuel-&gt;Add(sizer4Actuel_NON_Modifiable, 0, wxALL | wxEXPAND, 5);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    m_boiteNomActuel = <span class="keyword">new</span> wxTextCtrl(<span class="keyword">this</span>, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    m_boiteVolActuel = <span class="keyword">new</span> wxTextCtrl(<span class="keyword">this</span>, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    m_boiteVolPCActuel = <span class="keyword">new</span> wxTextCtrl(<span class="keyword">this</span>, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    m_boiteNomActuel-&gt;ChangeValue(_(<span class="stringliteral">&quot;Jeu par défaut&quot;</span>));</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    m_boiteVolActuel-&gt;ChangeValue(_T(<span class="stringliteral">&quot;100&quot;</span>));</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    m_boiteVolPCActuel-&gt;ChangeValue(_T(<span class="stringliteral">&quot;-1&quot;</span>));</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    sizer4Actuel_NON_Modifiable-&gt;Add(&amp;TextNom[1], 0, wxALL, 0);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    sizer4Actuel_NON_Modifiable-&gt;Add(m_boiteNomActuel, 0, wxALL | wxEXPAND, 0);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    sizer4Actuel_NON_Modifiable-&gt;Add(&amp;TextVolume[1], 0, wxALL, 0);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    sizer4Actuel_NON_Modifiable-&gt;Add(m_boiteVolActuel, 0, wxALL | wxEXPAND, 0);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    sizer4Actuel_NON_Modifiable-&gt;Add(&amp;TextVolumePC[1], 0, wxALL, 0);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    sizer4Actuel_NON_Modifiable-&gt;Add(m_boiteVolPCActuel, 0, wxALL | wxEXPAND, 0);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    m_sizerBouton = <span class="keyword">new</span> wxFlexGridSizer(1, 5, 5, 5);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    m_sizer1V-&gt;Add(m_sizerBouton, 0, wxUP | wxALIGN_BOTTOM, 5);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    wxButton *m_Bouton_Enregistrer = <span class="keyword">new</span> wxButton(<span class="keyword">this</span>, ID_APP_PREF_SON_ENREGISTRER, _(<span class="stringliteral">&quot;Enregistrer&quot;</span>));</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    wxButton *m_Bouton_Annuler = <span class="keyword">new</span> wxButton(<span class="keyword">this</span>, ID_APP_PREF_SON_ANNULER, _(<span class="stringliteral">&quot;Annuler&quot;</span>));</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    m_Bouton_Appliquer = <span class="keyword">new</span> wxButton(<span class="keyword">this</span>, ID_APP_PREF_SON_APPLIQUER, _(<span class="stringliteral">&quot;Appliquer&quot;</span>));</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    m_Bouton_Supprimer = <span class="keyword">new</span> wxButton(<span class="keyword">this</span>, ID_APP_PREF_SON_SUPPRIMER, _(<span class="stringliteral">&quot;Supprimer&quot;</span>));</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    wxButton *m_Bouton_Actuel = <span class="keyword">new</span> wxButton(<span class="keyword">this</span>, ID_APP_PREF_SON_ACTUEL, _(<span class="stringliteral">&quot;Actuel&quot;</span>));</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    m_sizerBouton-&gt;Add(m_Bouton_Enregistrer, 0, wxALL | wxEXPAND, 5);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    m_sizerBouton-&gt;Add(m_Bouton_Annuler, 0, wxALL | wxEXPAND, 5);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    m_sizerBouton-&gt;Add(m_Bouton_Appliquer, 0, wxALL | wxEXPAND, 5);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    m_sizerBouton-&gt;Add(m_Bouton_Supprimer, 0, wxALL | wxEXPAND, 5);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    m_sizerBouton-&gt;Add(m_Bouton_Actuel, 0, wxALL | wxEXPAND, 5);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    m_listeModif-&gt;Enable(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    m_Bouton_Appliquer-&gt;Enable(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    m_Bouton_Supprimer-&gt;Enable(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    m_listeModif_Nouveau = NOUVEAU;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    m_sizer1V-&gt;Layout();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="code" href="class_pref_son.html#a792e1bc6c86daaca57accb3d07942242">  145</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_pref_son.html#a792e1bc6c86daaca57accb3d07942242" title="Liste tous les éléments présent dans le dossier Son.">PrefSon::CreerListe</a>(wxChoice *liste)</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    wxString chemin = <a class="code" href="class_parametre.html#afc0de0da7d04486d5ba6932562d96ed8" title="Retourne l&#39;instance de la classe Parametre.">Parametre::Get</a>()-&gt;<a class="code" href="class_parametre.html#a18a6e103534a955fcf2bef73b8b1094c" title="Retourne l&#39;adresse qui contient tous les fichiers et paramètres nécessaires à Fu(X)">getRepertoireParametre</a>(_T(<span class="stringliteral">&quot;Liste_Son.txt&quot;</span>));</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    wxString copie;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    wxDir Repertoire(<a class="code" href="class_parametre.html#afc0de0da7d04486d5ba6932562d96ed8" title="Retourne l&#39;instance de la classe Parametre.">Parametre::Get</a>()-&gt;getRepertoireParametre(_T(<span class="stringliteral">&quot;Preference&quot;</span>), _T(<span class="stringliteral">&quot;Son&quot;</span>)));</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    wxFile fichier;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    fichier.Create(chemin, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">int</span> nombre = 0;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">bool</span> continuer = Repertoire.GetFirst(&amp;copie, _T(<span class="stringliteral">&quot;*.sauve&quot;</span>), wxDIR_FILES);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">while</span> (continuer)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        fichier.Write(copie);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        fichier.Write(_T(<span class="stringliteral">&quot;\r\n&quot;</span>));</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        nombre++;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        liste-&gt;Append(copie);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        continuer = Repertoire.GetNext(&amp;copie);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    fichier.Close();</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">return</span> nombre;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="code" href="class_pref_son.html#ad7ad63ec88cf9b5171d8ea1ec5063f83">  171</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_pref_son.html#ad7ad63ec88cf9b5171d8ea1ec5063f83" title="Évènement - Modifie l&#39;accessibilité des élément graphique en fonction du mode création/modification.">PrefSon::Son_RadioModif_Nouveau</a>(wxCommandEvent &amp;event)</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;{</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    m_listeModif_Nouveau = <span class="keyword">event</span>.GetInt();</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">if</span> (m_listeModif_Nouveau == MODIFIER)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        m_listeModif-&gt;Enable(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        m_Bouton_Appliquer-&gt;Enable(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        m_Bouton_Supprimer-&gt;Enable(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        m_listeModif-&gt;SetSelection(wxNOT_FOUND);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="comment">//m_sizerNewModif-&gt;GetStaticBox().SetLabel(_(&quot;Modifier&quot;));</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (m_listeModif_Nouveau == NOUVEAU)</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        m_listeModif-&gt;Enable(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        m_Bouton_Appliquer-&gt;Enable(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        m_Bouton_Supprimer-&gt;Enable(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        m_listeModif-&gt;SetSelection(wxNOT_FOUND);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="comment">//m_sizerNewModif-&gt;GetStaticBox().SetLabel(_(&quot;Nouveau&quot;));</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    m_boiteNomMod-&gt;Clear();</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    m_boiteVolMod-&gt;SetValue(0);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    m_boiteVolPCMod-&gt;SetValue(0);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    m_sizer1V-&gt;Layout();</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="code" href="class_pref_son.html#afcfef7512bcc562463946a1dbfb82439">  202</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_pref_son.html#afcfef7512bcc562463946a1dbfb82439" title="Méthode pour un changement manuel.">PrefSon::Son_Modif_Nouveau</a>(<span class="keywordtype">int</span> changement)</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;{</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    m_listeModif_Nouveau = changement;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">if</span> (m_listeModif_Nouveau == MODIFIER)</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        m_listeModif-&gt;Enable(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        m_Bouton_Appliquer-&gt;Enable(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        m_Bouton_Supprimer-&gt;Enable(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        m_listeModif-&gt;SetSelection(wxNOT_FOUND);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="comment">//m_sizerNewModif-&gt;GetStaticBox().SetLabel(_(&quot;Modifier&quot;));</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (m_listeModif_Nouveau == NOUVEAU)</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        m_listeModif-&gt;Enable(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        m_Bouton_Appliquer-&gt;Enable(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        m_Bouton_Supprimer-&gt;Enable(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        m_listeModif-&gt;SetSelection(wxNOT_FOUND);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="comment">//m_sizerNewModif-&gt;GetStaticBox().SetLabel(_(&quot;Nouveau&quot;));</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    m_boiteNomMod-&gt;Clear();</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    m_boiteVolMod-&gt;SetValue(0);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    m_boiteVolPCMod-&gt;SetValue(0);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    m_sizer1V-&gt;Layout();</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
+<div class="line"><a name="l00231"></a><span class="lineno"><a class="code" href="class_pref_son.html#a4866ca04841a56adb9d4816184928c87">  231</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_pref_son.html#a4866ca04841a56adb9d4816184928c87" title="Evènement - Appelé lors de la demande de lecture d&#39;un fichier contenant des préférences.">PrefSon::Son_ModifOuvrirFichier</a>(wxCommandEvent &amp;WXUNUSED(event))</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;{</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    wxString nomFichier = m_listeModif-&gt;GetString(m_listeModif-&gt;GetCurrentSelection());</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    wxTextFile fichier(<a class="code" href="class_parametre.html#afc0de0da7d04486d5ba6932562d96ed8" title="Retourne l&#39;instance de la classe Parametre.">Parametre::Get</a>()-&gt;getRepertoireParametre(_T(<span class="stringliteral">&quot;Preference&quot;</span>), _T(<span class="stringliteral">&quot;Son&quot;</span>), nomFichier));</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    fichier.Open();</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">if</span> (fichier.GetLine(0).IsSameAs(_T(<span class="stringliteral">&quot;#EXTSAUVE_S1&quot;</span>)))</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        m_boiteNomMod-&gt;ChangeValue(fichier.GetLine(1));</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        m_boiteVolMod-&gt;SetValue(fichier.GetLine(2));</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        m_boiteVolPCMod-&gt;SetValue(fichier.GetLine(3));</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
+<div class="line"><a name="l00248"></a><span class="lineno"><a class="code" href="class_pref_son.html#aa368f219c691e084868ab7acdf8fa251">  248</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_pref_son.html#aa368f219c691e084868ab7acdf8fa251" title="Évènement - Enregistre dans un fichier les paramètres sélectionnés.">PrefSon::Son_Bouton_Enregistrer</a>(wxCommandEvent &amp;WXUNUSED(event))</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;{</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">if</span> (!m_boiteNomMod-&gt;IsEmpty() &amp;&amp; (m_listeModif_Nouveau == NOUVEAU || m_listeModif-&gt;GetCurrentSelection() != wxNOT_FOUND))</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        wxFile FichierListe;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        wxString chemin = <a class="code" href="class_parametre.html#afc0de0da7d04486d5ba6932562d96ed8" title="Retourne l&#39;instance de la classe Parametre.">Parametre::Get</a>()-&gt;<a class="code" href="class_parametre.html#a18a6e103534a955fcf2bef73b8b1094c" title="Retourne l&#39;adresse qui contient tous les fichiers et paramètres nécessaires à Fu(X)">getRepertoireParametre</a>(_T(<span class="stringliteral">&quot;Preference&quot;</span>), _T(<span class="stringliteral">&quot;Son&quot;</span>), wxFileName::GetPathSeparator()), cheminFichier, nom = m_boiteNomMod-&gt;GetValue(), volume, volumePC;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        cheminFichier = chemin;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        chemin &lt;&lt; nom &lt;&lt; _T(<span class="stringliteral">&quot;.sauve&quot;</span>);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        volume &lt;&lt; m_boiteVolMod-&gt;GetValue();</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        volumePC &lt;&lt; m_boiteVolPCMod-&gt;GetValue();</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordflow">if</span> (wxFileName::FileExists(chemin) &amp;&amp; m_listeModif_Nouveau == NOUVEAU &amp;&amp; !m_Bouton_Appliquer-&gt;IsEnabled())</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            wxMessageBox(_(<span class="stringliteral">&quot;Un fichier portant ce nom existe déjà !&quot;</span>), _(<span class="stringliteral">&quot;Erreur !&quot;</span>));</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        {</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keywordflow">if</span> (m_listeModif_Nouveau == MODIFIER)<span class="comment">// &amp;&amp; m_boiteNomMod-&gt;IsModified())// || (m_listeModif_Nouveau == NOUVEAU &amp;&amp; m_Bouton_Appliquer-&gt;IsEnabled())</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                cheminFichier &lt;&lt; m_listeModif-&gt;GetString(m_listeModif-&gt;GetCurrentSelection());</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                wxRemoveFile(cheminFichier);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keywordflow">if</span> (!FichierListe.Create(chemin, <span class="keyword">true</span>))</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            {</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                wxMessageBox(_(<span class="stringliteral">&quot;Erreur dans le nom.\nVérifiez que vous utilisez des caractères autorisés.&quot;</span>), _(<span class="stringliteral">&quot;Erreur&quot;</span>));</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            FichierListe.Write(_T(<span class="stringliteral">&quot;#EXTSAUVE_S1\r\n&quot;</span>));</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            FichierListe.Write(nom + _T(<span class="stringliteral">&quot;\r\n&quot;</span>));</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="comment">//FichierListe.Write();</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            FichierListe.Write(volume + _T(<span class="stringliteral">&quot;\r\n&quot;</span>));</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="comment">//FichierListe.Write(&quot;\r\n&quot;);</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            FichierListe.Write(volumePC);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            FichierListe.Write(_T(<span class="stringliteral">&quot;\r\n0.5\r\n0.5&quot;</span>));</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            FichierListe.Close();</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            m_listeModif-&gt;Clear();</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <a class="code" href="class_pref_son.html#a792e1bc6c86daaca57accb3d07942242" title="Liste tous les éléments présent dans le dossier Son.">CreerListe</a>(m_listeModif);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <span class="keywordflow">if</span> (m_listeModif_Nouveau == MODIFIER)</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                m_listeModif-&gt;SetStringSelection(nom + _T(<span class="stringliteral">&quot;.sauve&quot;</span>));</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                m_Bouton_Appliquer-&gt;Enable(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    }</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        wxMessageBox(_(<span class="stringliteral">&quot;Vous devez renseigner tous les champs&quot;</span>), _(<span class="stringliteral">&quot;Erreur !&quot;</span>));</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
+<div class="line"><a name="l00300"></a><span class="lineno"><a class="code" href="class_pref_son.html#a39ce7dfc07698c673770f4f94f920109">  300</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_pref_son.html#a39ce7dfc07698c673770f4f94f920109" title="Évènement - Remet toutes les valeurs avec leur valeur par défaut.">PrefSon::Son_Bouton_Annuler</a>(wxCommandEvent &amp;WXUNUSED(event))</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;{</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    m_listeModif-&gt;SetSelection(wxNOT_FOUND);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    m_boiteNomMod-&gt;Clear();</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    m_boiteVolMod-&gt;SetValue(0);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    m_boiteVolPCMod-&gt;SetValue(0);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;}</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
+<div class="line"><a name="l00311"></a><span class="lineno"><a class="code" href="class_pref_son.html#a9cae06c87e768ee35899b049067c664b">  311</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_pref_son.html#a9cae06c87e768ee35899b049067c664b" title="Évènement - Applique les paramètres à la classe Musique et enregistre les données dans le fichier cor...">PrefSon::Son_Bouton_Appliquer</a>(wxCommandEvent &amp;event)</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;{</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <a class="code" href="class_pref_son.html#aa368f219c691e084868ab7acdf8fa251" title="Évènement - Enregistre dans un fichier les paramètres sélectionnés.">Son_Bouton_Enregistrer</a>(event);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">if</span> (!m_boiteNomMod-&gt;IsEmpty())</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    {</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        wxString nom = m_boiteNomMod-&gt;GetValue(), volume, volumePC;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        volume &lt;&lt; m_boiteVolMod-&gt;GetValue();</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        volumePC &lt;&lt; m_boiteVolPCMod-&gt;GetValue();</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        m_boiteNomActuel-&gt;ChangeValue(nom);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        m_boiteVolActuel-&gt;ChangeValue(volume);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        m_boiteVolPCActuel-&gt;ChangeValue(volumePC);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        m_listeModif-&gt;Clear();</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <a class="code" href="class_pref_son.html#a792e1bc6c86daaca57accb3d07942242" title="Liste tous les éléments présent dans le dossier Son.">CreerListe</a>(m_listeModif);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="keywordflow">if</span> (m_listeModif_Nouveau == MODIFIER)</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            m_listeModif-&gt;SetStringSelection(nom + _T(<span class="stringliteral">&quot;.sauve&quot;</span>));</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        m_musique-&gt;<a class="code" href="class_musique.html#adbeafa2730338d30498f77f049f69d93" title="Modifie le volume.">SetVolume</a>(m_boiteVolMod-&gt;GetValue());</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <a class="code" href="class_slider_son.html#a12734402e8a2adaac811284f7e10639f" title="Retourne l&#39;instance de la classe.">SliderSon::Get</a>()-&gt;SetValue(m_boiteVolMod-&gt;GetValue());</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    }</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;}</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;</div>
+<div class="line"><a name="l00338"></a><span class="lineno"><a class="code" href="class_pref_son.html#a0ef56aebd8718481a6e97bbc9a68d02c">  338</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_pref_son.html#a0ef56aebd8718481a6e97bbc9a68d02c" title="Évènement - Supprime le fichier sélectionné">PrefSon::Son_Bouton_Supprimer</a>(wxCommandEvent &amp;WXUNUSED(event))</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;{</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordflow">if</span> (!wxRemoveFile(<a class="code" href="class_parametre.html#afc0de0da7d04486d5ba6932562d96ed8" title="Retourne l&#39;instance de la classe Parametre.">Parametre::Get</a>()-&gt;getRepertoireParametre(_T(<span class="stringliteral">&quot;Preference&quot;</span>), _T(<span class="stringliteral">&quot;Son&quot;</span>), m_listeModif-&gt;GetString(m_listeModif-&gt;GetCurrentSelection()))))</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    m_listeModif-&gt;Clear();</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <a class="code" href="class_pref_son.html#a792e1bc6c86daaca57accb3d07942242" title="Liste tous les éléments présent dans le dossier Son.">CreerListe</a>(m_listeModif);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    m_boiteNomMod-&gt;Clear();</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    m_boiteVolMod-&gt;SetValue(0);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    m_boiteVolPCMod-&gt;SetValue(0);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;}</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;</div>
+<div class="line"><a name="l00354"></a><span class="lineno"><a class="code" href="class_pref_son.html#a3c5dca3351b221ad72f8ee9849749362">  354</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_pref_son.html#a3c5dca3351b221ad72f8ee9849749362" title="Évènement - Recopie les valeurs courantes dans le filtre sans l&#39;enregistrer.">PrefSon::Son_Bouton_Actuel</a>(wxCommandEvent &amp;WXUNUSED(event))</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;{</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    m_boiteVolMod-&gt;SetValue(m_boiteVolActuel-&gt;GetValue());</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="comment">//Pas encore utilisable !</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="comment">//m_boiteVolPCMod-&gt;SetValue(m_boiteVolPCActuel-&gt;GetValue());</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;}</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;</div>
+<div class="line"><a name="l00365"></a><span class="lineno"><a class="code" href="class_pref_son.html#a2a3a92eaf2265e56d3a2093acb763c4b">  365</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_pref_son.html#a2a3a92eaf2265e56d3a2093acb763c4b" title="Met le volume sonore actuel à jour.">PrefSon::SetValeurMusique</a>(<span class="keywordtype">long</span> valeur)</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;{</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    wxString volume;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    volume &lt;&lt; valeur;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    m_boiteVolActuel-&gt;ChangeValue(volume);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;}</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;</div>
+<div class="line"><a name="l00375"></a><span class="lineno"><a class="code" href="class_pref_son.html#a7b2bfe76ee68953788bc9a2a65639f29">  375</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_pref_son.html#a7b2bfe76ee68953788bc9a2a65639f29" title="Évènement - La modification du nom du filtre désactive le bouton &quot;Appliquer&quot;.">PrefSon::BoiteNouveauModifiee</a>(wxCommandEvent &amp;WXUNUSED(event))</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;{</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="comment">//Désactive le bouton appliquer si le texte est modifié dans les condition suivantes</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">if</span> (m_listeModif_Nouveau == NOUVEAU &amp;&amp; m_Bouton_Appliquer-&gt;IsEnabled())</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        m_Bouton_Appliquer-&gt;Enable(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;}</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;</div>
+<div class="line"><a name="l00386"></a><span class="lineno"><a class="code" href="class_pref_son.html#a256861f6f1833f770e2963a437ee796f">  386</a></span>&#160;wxRadioBox* <a class="code" href="class_pref_son.html#a256861f6f1833f770e2963a437ee796f" title="Renvoie l&#39;instance des radioBox &quot;Mon choix&quot;.">PrefSon::GetRadioBox</a>()</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;{    <span class="keywordflow">return</span> m_choix;}</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi Mai 23 2013 22:50:39 pour Fu(X) 2.0 par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

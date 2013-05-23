@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Fu(X) 2.0:  Fichier source de C:/FuX/src/GestionPeriphElementLecteurRacineFichier.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://www.mathjax.org/mathjax/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fu(X) 2.0
+   &#160;<span id="projectnumber">a5</span>
+   </div>
+   <div id="projectbrief">Fu(X) est un lecteur audio dont le but est de redéfinir l&#39;utilisation en apportant une nouvelle approche aussi intuitive que puissante !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">GestionPeriphElementLecteurRacineFichier.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Name:      GestionPeriphElementLecteurRacineFichier.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Purpose:   Code for Fu(X) 2.0</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    David Lecoconnier (etrange02@aol.com)</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2012-01-20</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Copyright: David Lecoconnier (http://www.fuxplay.com)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * License:</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **************************************************************/</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;GestionPeriphElementLecteurRacineFichier.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="class_element_lecteur_racine_fichier.html#a3d0e294d66a1aafa85d0814bbd9442a5">   20</a></span>&#160;<a class="code" href="class_element_lecteur_racine_fichier.html#a3d0e294d66a1aafa85d0814bbd9442a5" title="Constructeur.">ElementLecteurRacineFichier::ElementLecteurRacineFichier</a>()</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    m_idGauche = 0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    m_idDroite = 0;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    m_menu = NULL;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    m_menuItem = NULL;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    m_utilise = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="class_element_lecteur_racine_fichier.html#af41d546080979c4e689786f65e3d790b">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_element_lecteur_racine_fichier.html#af41d546080979c4e689786f65e3d790b" title="Modifie le nom à afficher.">ElementLecteurRacineFichier::SetNomAffiche</a>(wxString nom)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    m_nomAffiche = nom;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="class_element_lecteur_racine_fichier.html#ad5879c43274812eae757a79dc438c2b3">   42</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_element_lecteur_racine_fichier.html#ad5879c43274812eae757a79dc438c2b3" title="Modifie le nom complet de l&#39;élément.">ElementLecteurRacineFichier::SetChemin</a>(wxString chemin)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    m_chemin = chemin;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="class_element_lecteur_racine_fichier.html#a54874db349424061bd25ce5d2afe7391">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_element_lecteur_racine_fichier.html#a54874db349424061bd25ce5d2afe7391" title="Modifie l&#39;identifiant associé au sous-menu &quot;Gauche&quot;.">ElementLecteurRacineFichier::SetIdGauche</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    m_idGauche = id;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="class_element_lecteur_racine_fichier.html#a9bf656acdc58a3f0d8ded3a3411476a1">   60</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_element_lecteur_racine_fichier.html#a9bf656acdc58a3f0d8ded3a3411476a1" title="Modifie l&#39;identifiant associé au sous-menu &quot;Droite&quot;.">ElementLecteurRacineFichier::SetIdDroite</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    m_idDroite = id;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="class_element_lecteur_racine_fichier.html#ab5dc397dfe96c142894b2c6667f06d4e">   69</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_element_lecteur_racine_fichier.html#ab5dc397dfe96c142894b2c6667f06d4e" title="Modifie l&#39;utilisation de l&#39;instance.">ElementLecteurRacineFichier::SetUtilise</a>(<span class="keywordtype">bool</span> utilise)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    m_utilise = utilise;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="class_element_lecteur_racine_fichier.html#aff062cf05091d1c6fcdd40b69ce04dd2">   78</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_element_lecteur_racine_fichier.html#aff062cf05091d1c6fcdd40b69ce04dd2" title="Associe un l&#39;élément résultant de l&#39;ajout du menu dans un autre.">ElementLecteurRacineFichier::SetMenuItem</a>(wxMenuItem* menuItem)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    m_menuItem = menuItem;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">/***Getters ***/</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="class_element_lecteur_racine_fichier.html#a88074faf81362c679d5e233606975172">   88</a></span>&#160;wxString <a class="code" href="class_element_lecteur_racine_fichier.html#a88074faf81362c679d5e233606975172" title="Retourne le nom affiché">ElementLecteurRacineFichier::GetNomAffiche</a>()</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> m_nomAffiche;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="class_element_lecteur_racine_fichier.html#ac826fab8a73f93ed7ab745a0ba66b15b">   97</a></span>&#160;wxString <a class="code" href="class_element_lecteur_racine_fichier.html#ac826fab8a73f93ed7ab745a0ba66b15b" title="Retourne le chemin associé">ElementLecteurRacineFichier::GetChemin</a>()</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> m_chemin;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="code" href="class_element_lecteur_racine_fichier.html#a8c953b4fa79d524606a375cc5a564c5b">  106</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_element_lecteur_racine_fichier.html#a8c953b4fa79d524606a375cc5a564c5b" title="Retourne l&#39;identifiant associé au sous-menu &quot;Gauche&quot;.">ElementLecteurRacineFichier::GetIdGauche</a>()</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">return</span> m_idGauche;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="code" href="class_element_lecteur_racine_fichier.html#a6ce5538080c66de4fd10d622a7889884">  115</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_element_lecteur_racine_fichier.html#a6ce5538080c66de4fd10d622a7889884" title="Retourne l&#39;identifiant associé au sous-menu &quot;Droite&quot;.">ElementLecteurRacineFichier::GetIdDroite</a>()</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> m_idDroite;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="code" href="class_element_lecteur_racine_fichier.html#a4aced15129c3d693a82a6f13c076f5a5">  124</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_element_lecteur_racine_fichier.html#a4aced15129c3d693a82a6f13c076f5a5" title="Indique si l&#39;instance est utilisée.">ElementLecteurRacineFichier::GetUtilise</a>()</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">return</span> m_utilise;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="code" href="class_element_lecteur_racine_fichier.html#ac04dcc611e9408631ee24bf5c87105fa">  133</a></span>&#160;wxMenuItem* <a class="code" href="class_element_lecteur_racine_fichier.html#ac04dcc611e9408631ee24bf5c87105fa" title="Retourne l&#39;élément résultant de l&#39;ajout du menu dans un autre.">ElementLecteurRacineFichier::GetMenuItem</a>()</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> m_menuItem;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="code" href="class_element_lecteur_racine_fichier.html#acd7dbfa1a4b2d573a37543309a39114f">  142</a></span>&#160;wxMenu* <a class="code" href="class_element_lecteur_racine_fichier.html#acd7dbfa1a4b2d573a37543309a39114f" title="Retourne le menu construit à partir de l&#39;instance.">ElementLecteurRacineFichier::GetMenu</a>()</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;{</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">return</span> m_menu;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="code" href="class_element_lecteur_racine_fichier.html#a2d9c8f76e10d5069736d13fd88426880">  150</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_element_lecteur_racine_fichier.html#a2d9c8f76e10d5069736d13fd88426880" title="Efface l&#39;élément résultant de l&#39;ajout du menu dans un autre et met l&#39;instance en non-utilisé">ElementLecteurRacineFichier::PasUtilise</a>()</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="class_element_lecteur_racine_fichier.html#ab5dc397dfe96c142894b2c6667f06d4e" title="Modifie l&#39;utilisation de l&#39;instance.">SetUtilise</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    m_menuItem = NULL;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="code" href="class_element_lecteur_racine_fichier.html#a1f0918572e39ccff1342c355af7f5fd5">  159</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_element_lecteur_racine_fichier.html#a1f0918572e39ccff1342c355af7f5fd5" title="Crée un menu à partir des paramètres déjà donnés.">ElementLecteurRacineFichier::CreerMenu</a>()</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;{</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    m_menu = <span class="keyword">new</span> wxMenu;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    m_menu-&gt;Append(m_idGauche, _(<span class="stringliteral">&quot;Gauche&quot;</span>));</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    m_menu-&gt;Append(m_idDroite, _(<span class="stringliteral">&quot;Droite&quot;</span>));</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi Mai 23 2013 22:50:39 pour Fu(X) 2.0 par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

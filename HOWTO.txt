@@ -1,0 +1,52 @@
+Compiler Fu(X)
+
+=============================================
+1. Récupérer la dernière version de wxWidgets
+Modifier setup.h
+-> UNICODE 1
+-> OPENGL 1
+
+Configurer configure.gcc
+-> UNCODE 1
+-> SHARE 0
+-> STATIC 1
+-> RELEASE
+
+Compiler avec makefile.gcc
+Note: suivant la version de windows, il est possible de faire directement make au lieu de "mingw32-make -f makefile.gcc".
+
+=============================================
+2. Récupérer wxSQLite3
+Créer un projet sqlite3
+Ajouter sqlite3secure.c au projet
+Ajouter les options (dans les #defines) :
+#define SQLITE_HAS_CODEC
+#define CODEC_TYPE CODEC_TYPE_AES128
+#define SQLITE_CORE
+#define THREADSAFE 1
+
+Compiler normalement, mettre le .a résultant à la place du .a fourni dans le dossier wxSQLite3/sqlite3/lib
+
+Configurer makefile.gcc
+-> emplacement de wxWidgets
+-> UNICODE
+-> STATIC
+-> RELEASE
+Compiler avec makefile.gcc
+
+=============================================
+3. Récupérer TagLib
+Utiliser CMake pour configurer le projet, unicode, static (et dyn car ne marche pas toujours)
+--> utilise la dll, test à faire sans !
+
+=============================================
+4. Récupérer FMODex
+--> utilise la dll
+
+=============================================
+5. Modifier le fichier FuX.cbp
+
+=============================================
+6. Compiler le tout
+
+David Lecoconnier

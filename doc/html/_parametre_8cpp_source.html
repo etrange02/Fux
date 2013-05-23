@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Fu(X) 2.0:  Fichier source de C:/FuX/src/Parametre.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://www.mathjax.org/mathjax/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fu(X) 2.0
+   &#160;<span id="projectnumber">a5</span>
+   </div>
+   <div id="projectbrief">Fu(X) est un lecteur audio dont le but est de redéfinir l&#39;utilisation en apportant une nouvelle approche aussi intuitive que puissante !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Parametre.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Name:      Parametre.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Purpose:   Code for Fu(X) 2.0</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    David Lecoconnier (etrange02@aol.com)</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2011-06-01</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Copyright: David Lecoconnier (http://www.fuxplay.com)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * License:</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **************************************************************/</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;Parametre.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">static</span> <a class="code" href="class_parametre.html" title="La classe Paramètre contient toutes les informations sur l&#39;emplacement des différents fichiers et dos...">Parametre</a>* instanceParametre = NULL;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="class_parametre.html#a7f33063b2094bbfbc6be12e5c7abb3e0">   21</a></span>&#160;<a class="code" href="class_parametre.html#a7f33063b2094bbfbc6be12e5c7abb3e0" title="Constructeur.">Parametre::Parametre</a>()</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    m_fond.R = 0; m_fond.V = 0; m_fond.B = 0;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    m_barre.R = 0; m_barre.V = 0; m_barre.B = 255;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    m_police.R = 255; m_police.V = 0; m_police.B = 255;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    m_haut.R = 255; m_haut.V = 0; m_haut.B = 0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    m_miSup.R = 0; m_miSup.V = 255; m_miSup.B = 0;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    m_miInf.R = 0; m_miInf.V = 0; m_miInf.B = 0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    m_bas.R = 0; m_bas.V = 0; m_bas.B = 0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    m_doubleBarre = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    m_cheminCouleur = _T(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    m_cheminSon = _T(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">//&quot;Fichiers audio (*.mp3;*.wav;*.aac;*.m4a;*.mp4;*.ogg)|*.mp3;*.wav;*.aac;*.m4a;*.mp4;*.ogg&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;     <span class="comment">/*|| temp.EndsWith(&quot;.m4a&quot;))*/</span> <span class="comment">//||temp.EndsWith(&quot;.wav&quot;) || temp.EndsWith(&quot;.aac&quot;) ||/ || temp.EndsWith(&quot;.ogg&quot;)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    m_extension.Add(_T(<span class="stringliteral">&quot;mp3&quot;</span>));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    m_extension.Add(_T(<span class="stringliteral">&quot;wma&quot;</span>));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    m_extension.Add(_T(<span class="stringliteral">&quot;wav&quot;</span>));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    m_extension.Add(_T(<span class="stringliteral">&quot;ogg&quot;</span>));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    m_id3v2.Add(_T(<span class="stringliteral">&quot;mp3&quot;</span>));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    m_id3v2.Add(_T(<span class="stringliteral">&quot;wma&quot;</span>));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    m_id3v2.Add(_T(<span class="stringliteral">&quot;ogg&quot;</span>));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    m_extensionValide = _T(<span class="stringliteral">&quot;Fichiers audio (*.mp3;*.wma;*.wav;*.ogg)|*.mp3;*.wma;*.wav;*.ogg&quot;</span>);<span class="comment">/*;*.m4a;*.wav;*.aac;;*.ogg|*.wav;*.aac;*.m4a;*.ogg*/</span> <span class="comment">/*|Fichiers wav (*.wav)|*.wav&quot;*/</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">//m_extensionValide = _T(&quot;Fichiers audio (*.mp3)|*.mp3;(*.wma)|*.wma;(*.wav)|*.wav;(*.ogg)|*.ogg&quot;);/*;*.m4a;*.wav;*.aac;;*.ogg|*.wav;*.aac;*.m4a;*.ogg*/ /*|Fichiers wav (*.wav)|*.wav&quot;*/</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    m_repertoireDefaut = wxStandardPaths::Get().GetDocumentsDir();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    m_sousDossier = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    m_cheminRepertParam = wxStandardPaths::Get().GetUserConfigDir() + wxFileName::GetPathSeparator() + REPERTOIRE;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (wxDir::Exists(m_cheminRepertParam))</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        m_paramInstallation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (wxFile::Exists(wxStandardPaths::Get().GetDataDir() + wxFileName::GetPathSeparator() + _T(<span class="stringliteral">&quot;Fu(X).conf&quot;</span>)))</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        m_cheminRepertParam = wxStandardPaths::Get().GetDataDir();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        m_paramInstallation = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">else</span><span class="comment">//Les dossiers devront être créés ici</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        m_paramInstallation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="class_parametre.html#ada64bfc9bc451877ba8611f3faff27a9" title="Créé la structure des fichiers de Fu(X) si celle-ce est inexistante.">creerRepertoireParametre</a>();<span class="comment">// L&#39;appel se fait dans FuXFenetre</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">//wxLogMessage(m_cheminRepertParam);</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;Parametre::~Parametre()</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">    #if DEBUG</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor"></span>    <a class="code" href="class_fichier_log.html#a9f111f4cad417ccd12d783f89983535c" title="Retourne un pointeur sur l&#39;instance FichierLog.">FichierLog::Get</a>()-&gt;<a class="code" href="class_fichier_log.html#a3872e68ad4ef647b4ed0d7c4dee13626" title="Ajoute une ligne au fichier.">Ajouter</a>(_T(<span class="stringliteral">&quot;Parametre::~Parametre()&quot;</span>));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="class_parametre.html#afc0de0da7d04486d5ba6932562d96ed8">   77</a></span>&#160;<a class="code" href="class_parametre.html" title="La classe Paramètre contient toutes les informations sur l&#39;emplacement des différents fichiers et dos...">Parametre</a>* <a class="code" href="class_parametre.html#afc0de0da7d04486d5ba6932562d96ed8" title="Retourne l&#39;instance de la classe Parametre.">Parametre::Get</a>()</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> (!instanceParametre)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        instanceParametre = <span class="keyword">new</span> <a class="code" href="class_parametre.html#a7f33063b2094bbfbc6be12e5c7abb3e0" title="Constructeur.">Parametre</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> instanceParametre;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="class_parametre.html#a5eebc3b29d5a43954b0b30f509110146">   88</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_parametre.html#a5eebc3b29d5a43954b0b30f509110146" title="Modifie l&#39;adresse du fichier à utiliser pour les couleurs du graph.">Parametre::setCheminCouleur</a>(wxString chemin)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    m_cheminCouleur = m_cheminRepertParam;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    m_cheminCouleur &lt;&lt; wxFileName::GetPathSeparator() &lt;&lt; _T(<span class="stringliteral">&quot;Preference&quot;</span>) &lt;&lt; wxFileName::GetPathSeparator() &lt;&lt; _T(<span class="stringliteral">&quot;Couleur&quot;</span>) &lt;&lt; wxFileName::GetPathSeparator() &lt;&lt; chemin;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="class_parametre.html#aa3861add4f19dd9da00196195df3c0d1">   98</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_parametre.html#aa3861add4f19dd9da00196195df3c0d1" title="Modifie l&#39;adresse du fichier à utiliser pour les volumes de l&#39;application.">Parametre::setCheminSon</a>(wxString chemin)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    m_cheminSon = m_cheminRepertParam;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    m_cheminSon &lt;&lt; wxFileName::GetPathSeparator() &lt;&lt; _T(<span class="stringliteral">&quot;Preference&quot;</span>) &lt;&lt; wxFileName::GetPathSeparator() &lt;&lt; _T(<span class="stringliteral">&quot;Son&quot;</span>) &lt;&lt; wxFileName::GetPathSeparator() &lt;&lt; chemin;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="code" href="class_parametre.html#ae163f9a7dcff57df93ea835921003bf8">  108</a></span>&#160;wxString <a class="code" href="class_parametre.html#ae163f9a7dcff57df93ea835921003bf8" title="Retourne le chemin complet du fichier contenant les paramètres du graphe.">Parametre::getCheminCouleur</a>()</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{    <span class="keywordflow">return</span> m_cheminCouleur;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="code" href="class_parametre.html#a0c6ac03ac47a22c2ea434e0ee48c8f6e">  115</a></span>&#160;wxString <a class="code" href="class_parametre.html#a0c6ac03ac47a22c2ea434e0ee48c8f6e" title="Retourne le chemin complet du fichier contenant les paramètres du son.">Parametre::getCheminSon</a>()</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{    <span class="keywordflow">return</span> m_cheminSon;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="code" href="class_parametre.html#a7e567bd7a74025f5ba9dcc6413e498ec">  129</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_parametre.html#a7e567bd7a74025f5ba9dcc6413e498ec" title="Modifie les couleurs du graphe.">Parametre::setCouleurs</a>(<a class="code" href="struct_couleur.html" title="Champs RVB.">Couleur</a> fond, <a class="code" href="struct_couleur.html" title="Champs RVB.">Couleur</a> barre, <a class="code" href="struct_couleur.html" title="Champs RVB.">Couleur</a> police, <a class="code" href="struct_couleur.html" title="Champs RVB.">Couleur</a> haut, <a class="code" href="struct_couleur.html" title="Champs RVB.">Couleur</a> miSup, <a class="code" href="struct_couleur.html" title="Champs RVB.">Couleur</a> miInf, <a class="code" href="struct_couleur.html" title="Champs RVB.">Couleur</a> bas, <span class="keywordtype">bool</span> doubleBarre)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">/*m_fond = fond; m_barre = barre; m_police = police;</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">    m_haut = haut; m_miSup = miSup;</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">    m_miInf = miInf; m_bas = bas;</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">    m_doubleBarre = doubleBarre;*/</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="class_musique_graph.html#a14946ee2f1b1eb437c36a1678d88c2ca" title="Retourne l&#39;instance de la classe MusiqueGraph.">MusiqueGraph::Get</a>()-&gt;<a class="code" href="class_musique_graph.html#a039128d3dab0b1d54bae3b149eed2b09" title="Modifie les couleurs de la fenêtre.">AffecteCouleurs</a>(fond, barre, police, haut, miSup, doubleBarre, miInf, bas);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="code" href="class_parametre.html#aa06b482406215b03426f26693e0d9788">  143</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_parametre.html#aa06b482406215b03426f26693e0d9788" title="Indique si l&#39;on doit lister les sous dossiers d&#39;un répertoire lors d&#39;une recherche.">Parametre::getSousDossier</a>()</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{    <span class="keywordflow">return</span> m_sousDossier;}</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="code" href="class_parametre.html#a407df5eef395bcb30d18010cf93ab660">  150</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_parametre.html#a407df5eef395bcb30d18010cf93ab660" title="Affecte ou non les opérations de recherche dans les sous-répertoires.">Parametre::setSousDossier</a>(<span class="keywordtype">bool</span> sousDossier)</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{    m_sousDossier = sousDossier;}</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="code" href="class_parametre.html#a92af71aeefcdc34893611906e118123f">  157</a></span>&#160;wxString <a class="code" href="class_parametre.html#a92af71aeefcdc34893611906e118123f" title="Retourne une chaine contenant les extensions lisible par les classes.">Parametre::getExtensionValideMusique</a>()</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;{    <span class="keywordflow">return</span> m_extensionValide;}</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="code" href="class_parametre.html#ad7d4f96fd4eec2240d24d09f8d4bc600">  164</a></span>&#160;wxString <a class="code" href="class_parametre.html#ad7d4f96fd4eec2240d24d09f8d4bc600" title="Retourne le chemin complet du répertoire qui doit être ouvert lors d&#39;une recherche.">Parametre::getRepertoireDefaut</a>()</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{    <span class="keywordflow">return</span> m_repertoireDefaut;}</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="code" href="class_parametre.html#a6941cf06c034b914942bba72ca0624a4">  171</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_parametre.html#a6941cf06c034b914942bba72ca0624a4" title="Modifie le chemin du répertoire qui doit être ouvert lors d&#39;une recherche.">Parametre::setRepertoireDefaut</a>(wxString chemin)</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;{    m_repertoireDefaut = chemin;}</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="code" href="class_parametre.html#af57c65de995367b7e652a3c4e08aa460">  179</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_parametre.html#af57c65de995367b7e652a3c4e08aa460" title="Indique si l&#39;extension envoyée est au format id3v2.">Parametre::isID3V2</a>(<span class="keyword">const</span> wxString &amp;ext)</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;{</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">while</span> (i&lt;m_id3v2.Count())</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">if</span> (m_id3v2.Item(i).IsSameAs(ext))</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            i++;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="code" href="class_parametre.html#a8a9ff3a057d1387d08453bcd779503b3">  197</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_parametre.html#a8a9ff3a057d1387d08453bcd779503b3" title="Indique si Fu(X) peut lire et gérer l&#39;extension.">Parametre::islisable</a>(<span class="keyword">const</span> wxString &amp;ext)</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;{</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">while</span> (i&lt;m_extension.Count())</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">if</span> (m_extension.Item(i).IsSameAs(ext))</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            i++;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
+<div class="line"><a name="l00214"></a><span class="lineno"><a class="code" href="class_parametre.html#a175ad0ea2e02f2e5ae79a79481d9435a">  214</a></span>&#160;wxString <a class="code" href="class_parametre.html#a175ad0ea2e02f2e5ae79a79481d9435a" title="Retourne une chaine utilisable pour filtrer les fichiers par extension.">Parametre::getFiltre</a>()</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;{</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    wxString filtre = _T(<span class="stringliteral">&quot;*.&quot;</span>) + m_extension.Item(0);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 1; i&lt;m_extension.Count(); i++)</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        filtre.Append(_T(<span class="stringliteral">&quot;;*.&quot;</span>) + m_extension.Item(i));</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">return</span> filtre;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;}</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno"><a class="code" href="class_parametre.html#a18a6e103534a955fcf2bef73b8b1094c">  226</a></span>&#160;wxString <a class="code" href="class_parametre.html#a18a6e103534a955fcf2bef73b8b1094c" title="Retourne l&#39;adresse qui contient tous les fichiers et paramètres nécessaires à Fu(X)">Parametre::getRepertoireParametre</a>()</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;{    <span class="keywordflow">return</span> m_cheminRepertParam;}</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
+<div class="line"><a name="l00234"></a><span class="lineno"><a class="code" href="class_parametre.html#a8dcbf0c761bf28fa9d8c38b462c194a9">  234</a></span>&#160;wxString <a class="code" href="class_parametre.html#a18a6e103534a955fcf2bef73b8b1094c" title="Retourne l&#39;adresse qui contient tous les fichiers et paramètres nécessaires à Fu(X)">Parametre::getRepertoireParametre</a>(wxString element)</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;{    <span class="keywordflow">return</span> m_cheminRepertParam + wxFileName::GetPathSeparator() + element;}</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="code" href="class_parametre.html#a830c3e398ba3e4251b8f8fb954141de9">  243</a></span>&#160;wxString <a class="code" href="class_parametre.html#a18a6e103534a955fcf2bef73b8b1094c" title="Retourne l&#39;adresse qui contient tous les fichiers et paramètres nécessaires à Fu(X)">Parametre::getRepertoireParametre</a>(wxString dir, wxString element)</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;{    <span class="keywordflow">return</span> m_cheminRepertParam + wxFileName::GetPathSeparator() + dir + wxFileName::GetPathSeparator() + element;}</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
+<div class="line"><a name="l00253"></a><span class="lineno"><a class="code" href="class_parametre.html#aaae8a6d958d66a5a769a042b2bf65ab6">  253</a></span>&#160;wxString <a class="code" href="class_parametre.html#a18a6e103534a955fcf2bef73b8b1094c" title="Retourne l&#39;adresse qui contient tous les fichiers et paramètres nécessaires à Fu(X)">Parametre::getRepertoireParametre</a>(wxString dir1, wxString dir2, wxString element)</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;{    <span class="keywordflow">return</span> m_cheminRepertParam + wxFileName::GetPathSeparator() + dir1 + wxFileName::GetPathSeparator() + dir2 + wxFileName::GetPathSeparator() + element;}</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00260"></a><span class="lineno"><a class="code" href="class_parametre.html#a04fcf91df13d7233ed99a0d157532ea4">  260</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_parametre.html#a04fcf91df13d7233ed99a0d157532ea4" title="Indique si le répertoire contenant les fichiers nécessaires à Fu(X) est celui créé au moment de l&#39;ins...">Parametre::isRepertoireInstallationDefaut</a>()</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;{    <span class="keywordflow">return</span> m_paramInstallation;}</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
+<div class="line"><a name="l00266"></a><span class="lineno"><a class="code" href="class_parametre.html#ada64bfc9bc451877ba8611f3faff27a9">  266</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_parametre.html#ada64bfc9bc451877ba8611f3faff27a9" title="Créé la structure des fichiers de Fu(X) si celle-ce est inexistante.">Parametre::creerRepertoireParametre</a>()</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;{</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <a class="code" href="class_parametre.html#ada64bfc9bc451877ba8611f3faff27a9" title="Créé la structure des fichiers de Fu(X) si celle-ce est inexistante.">creerRepertoireParametre</a>(m_cheminRepertParam);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;}</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
+<div class="line"><a name="l00275"></a><span class="lineno"><a class="code" href="class_parametre.html#a4ba62181e16c9b8b1fa4c01fe9b8ff5b">  275</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_parametre.html#ada64bfc9bc451877ba8611f3faff27a9" title="Créé la structure des fichiers de Fu(X) si celle-ce est inexistante.">Parametre::creerRepertoireParametre</a>(wxString chemin)</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;{</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    wxString repertoire;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="comment">//Test répertoire générale</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    repertoire = chemin;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordflow">if</span>(!wxFileName::DirExists(repertoire))</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        wxFileName::Mkdir(repertoire);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="comment">//Test sous-Rep Pref</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    repertoire = chemin + wxFileName::GetPathSeparator() + _T(<span class="stringliteral">&quot;Preference&quot;</span>);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordflow">if</span>(!wxFileName::DirExists(repertoire))</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        wxFileName::Mkdir(repertoire);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="comment">//Test sous-Rep Pref/couleur</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    repertoire = chemin + wxFileName::GetPathSeparator() + _T(<span class="stringliteral">&quot;Preference&quot;</span>) + wxFileName::GetPathSeparator() + _T(<span class="stringliteral">&quot;Couleur&quot;</span>);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">if</span>(!wxFileName::DirExists(repertoire))</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        wxFileName::Mkdir(repertoire);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="comment">//Test sous-Rep Pref/son</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    repertoire = chemin + wxFileName::GetPathSeparator() + _T(<span class="stringliteral">&quot;Preference&quot;</span>) + wxFileName::GetPathSeparator() + _T(<span class="stringliteral">&quot;Son&quot;</span>);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">if</span>(!wxFileName::DirExists(repertoire))</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        wxFileName::Mkdir(repertoire);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="comment">//Test sous-Rep Playlist</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    repertoire = chemin + wxFileName::GetPathSeparator() + _T(<span class="stringliteral">&quot;Play_list_M3U&quot;</span>);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">if</span>(!wxFileName::DirExists(repertoire))</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        wxFileName::Mkdir(repertoire);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="comment">//Test fichier conf</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    repertoire = chemin + wxFileName::GetPathSeparator() + _T(<span class="stringliteral">&quot;Fu(X).conf&quot;</span>);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keywordflow">if</span>(!wxFileName::FileExists(repertoire))</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    {</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        wxTextFile fichier(repertoire);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">if</span> (fichier.Create())</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            fichier.AddLine(_T(<span class="stringliteral">&quot;#EXTCONF_1&quot;</span>));</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            fichier.AddLine(_T(<span class="stringliteral">&quot;Couleur= NON&quot;</span>));</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            fichier.AddLine(_T(<span class="stringliteral">&quot;Son= NON&quot;</span>));</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            fichier.AddLine(_T(<span class="stringliteral">&quot;Reprise= NON&quot;</span>));</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            fichier.AddLine(_T(<span class="stringliteral">&quot;Chemin= NON&quot;</span>));</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            fichier.AddLine(_T(<span class="stringliteral">&quot;SousDossier= NON&quot;</span>));</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            fichier.Write();</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            fichier.Close();</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        }</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    }</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;}</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
+<div class="line"><a name="l00328"></a><span class="lineno"><a class="code" href="class_parametre.html#a7d1c77b7b3c50df1a962ab010b36b5d2">  328</a></span>&#160;wxString <a class="code" href="class_parametre.html#a7d1c77b7b3c50df1a962ab010b36b5d2" title="Retourne l&#39;adresse du répertoire dans lequel se trouve l&#39;exécutable.">Parametre::getRepertoireExecutable</a>()</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;{</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keywordflow">return</span> wxStandardPaths::Get().GetDataDir();</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;}</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;</div>
+<div class="line"><a name="l00338"></a><span class="lineno"><a class="code" href="class_parametre.html#a17807d4f67561fc2bdaecaf59014fca1">  338</a></span>&#160;wxString <a class="code" href="class_parametre.html#a17807d4f67561fc2bdaecaf59014fca1" title="Je sais pas ce qu&#39;est brief Retourne l&#39;adresse du fichier donné en paramètre.">Parametre::getRepertoireExecutableLib</a>(wxString element)</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;{</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordflow">return</span> wxStandardPaths::Get().GetDataDir() + wxFileName::GetPathSeparator() + _T(<span class="stringliteral">&quot;lib&quot;</span>) + wxFileName::GetPathSeparator() + element;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;}</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi Mai 23 2013 22:50:39 pour Fu(X) 2.0 par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

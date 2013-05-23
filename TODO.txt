@@ -1,0 +1,2 @@
+- Mettre une classe par fichier
+- séparer les widgets des autres classes

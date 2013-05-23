@@ -1,0 +1,1156 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Fu(X) 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-21 00:39+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: David Lecoconnier <david.lecoconnier@free.fr>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: Application.cpp:41
+msgid "Fu(X) est déjà ouvert, procédure d'ouverture annulée"
+msgstr ""
+
+#: ComInterProcess.cpp:141
+msgid "Connexion non autorisée"
+msgstr ""
+
+#: DialogueFenetreExt.cpp:25
+msgid "Création de playlist (fichier .m3u)"
+msgstr ""
+
+#: DialogueFenetreExt.cpp:41
+#, fuzzy
+msgid "Choisissez une sauvegarde existante"
+msgstr "Choose an existing save"
+
+#: DialogueFenetreExt.cpp:46
+msgid "Ou bien créez une nouvelle sauvegarde"
+msgstr ""
+
+#: DialogueFenetreExt.cpp:53
+#, fuzzy
+msgid "Créer un raccourci ? Où le place-t-on ?"
+msgstr "Create shortcut"
+
+#: DialogueFenetreExt.cpp:102 DialogueFenetreExt.cpp:104
+#: GestionPeriphMoitiePage.cpp:954
+#, fuzzy
+msgid " (raccourci).lnk"
+msgstr " (shortcut).lnk"
+
+#: DialogueFenetreExt.cpp:116
+msgid "Choisissez le répertoire dans lequel vous voulez créer un raccourci"
+msgstr ""
+
+#: DialogueFenetreExt.cpp:135 PlayList.cpp:75 PlayListTableau.cpp:71
+#, fuzzy
+msgid "Détails"
+msgstr "Details"
+
+#: DialogueFenetreExt.cpp:149
+#, fuzzy
+msgid "Informations"
+msgstr "CD's retrieval"
+
+#: DialogueFenetreExt.cpp:150
+#, fuzzy
+msgid "Commentaires"
+msgstr "Controls"
+
+#: DialogueFenetreExt.cpp:314
+msgid "Année de parution"
+msgstr ""
+
+#: DialogueFenetreExt.cpp:316 GestionPeriphTableau.cpp:56 PlayList.cpp:92
+#: PlayListTableau.cpp:52 PreferenceSon.cpp:75
+#, fuzzy
+msgid "Nom"
+msgstr "Name"
+
+#: DialogueFenetreExt.cpp:317 PlayList.cpp:102 PlayListTableau.cpp:53
+#, fuzzy
+msgid "Artiste"
+msgstr "Artist"
+
+#: DialogueFenetreExt.cpp:318 PlayList.cpp:110 PlayListTableau.cpp:54
+#, fuzzy
+msgid "Album"
+msgstr "Album"
+
+#: DialogueFenetreExt.cpp:319 PlayList.cpp:97 PlayListTableau.cpp:55
+#, fuzzy
+msgid "Titre"
+msgstr "Title"
+
+#: DialogueFenetreExt.cpp:320 PlayList.cpp:106 PlayListTableau.cpp:59
+#, fuzzy
+msgid "Genre"
+msgstr "Genre"
+
+#: DialogueFenetreExt.cpp:321 PlayList.cpp:114 PlayListTableau.cpp:57
+#, fuzzy
+msgid "Année"
+msgstr "Year"
+
+#: DialogueFenetreExt.cpp:336
+msgid "Débit - inconnu"
+msgstr ""
+
+#: DialogueFenetreExt.cpp:337
+msgid "Durée - inconnu"
+msgstr ""
+
+#: DialogueFenetreExt.cpp:338
+msgid "Taille - inconnu"
+msgstr ""
+
+#: DialogueFenetreExt.cpp:438
+#, fuzzy
+msgid "Durée - "
+msgstr "Length"
+
+#: DialogueFenetreExt.cpp:446
+#, fuzzy
+msgid "Débit - "
+msgstr "Length"
+
+#: DialogueFenetreExt.cpp:447
+msgid " kbits/s"
+msgstr ""
+
+#: DialogueFenetreExt.cpp:457
+msgid "Taille - "
+msgstr ""
+
+#: DialogueFenetreExt.cpp:460
+msgid " Mo"
+msgstr ""
+
+#: Fenetre.cpp:107 Fenetre.cpp:686 Fenetre.cpp:905
+msgid "Impossible d'ouvrir le fichier, celui-ci est vierge !"
+msgstr ""
+
+#: Fenetre.cpp:204 Fenetre.cpp:301 PreferenceDefaut.cpp:68
+#, fuzzy
+msgid "Couleur"
+msgstr "Color"
+
+#: Fenetre.cpp:205 Fenetre.cpp:302 PreferenceDefaut.cpp:69
+#, fuzzy
+msgid "Son"
+msgstr "Sound"
+
+#: Fenetre.cpp:206 Fenetre.cpp:303
+#, fuzzy
+msgid "Défaut"
+msgstr "Default"
+
+#: Fenetre.cpp:216
+#, fuzzy
+msgid "Extraction indisponible pour le moment"
+msgstr "Data retrieval currently unavailable"
+
+#: Fenetre.cpp:283
+#, fuzzy
+msgid "Ouvrir"
+msgstr "Open"
+
+#: Fenetre.cpp:284
+#, fuzzy
+msgid "Charger une playlist"
+msgstr "Open playlist"
+
+#: Fenetre.cpp:285
+#, fuzzy
+msgid "Charger un .matin"
+msgstr "Open .matin"
+
+#: Fenetre.cpp:288
+msgid "Enregistrer la liste de lecture\tCtrl-S"
+msgstr ""
+
+#: Fenetre.cpp:289
+#, fuzzy
+msgid "Créer un fichier matin"
+msgstr "Create matin file"
+
+#: Fenetre.cpp:292
+msgid "Quitter Fu(X)\tCtrl-Q"
+msgstr ""
+
+#: Fenetre.cpp:296
+#, fuzzy
+msgid "Nouveau jeu de couleur"
+msgstr "New colour set"
+
+#: Fenetre.cpp:297
+#, fuzzy
+msgid "Modifier/Appliquer un jeu de couleur existant"
+msgstr "Change/Apply a colour set"
+
+#: Fenetre.cpp:299
+#, fuzzy
+msgid "Nouvel ensemble audio"
+msgstr "New audio set"
+
+#: Fenetre.cpp:300
+#, fuzzy
+msgid "Modifier/Appliquer une présélection audio"
+msgstr "Change/Apply a sound set"
+
+#: Fenetre.cpp:306
+#, fuzzy
+msgid "Extration de CD"
+msgstr "CD's retrieval"
+
+#: Fenetre.cpp:308
+#, fuzzy
+msgid "MAJ Liste de lecture"
+msgstr "Update play list"
+
+#: Fenetre.cpp:313
+msgid "Aide\tF1"
+msgstr ""
+
+#: Fenetre.cpp:314
+#, fuzzy
+msgid "Site internet"
+msgstr "Website"
+
+#: Fenetre.cpp:315 Fenetre.cpp:833
+#, fuzzy
+msgid "A propos"
+msgstr "About"
+
+#: Fenetre.cpp:319 Fenetre.cpp:493 Fenetre.cpp:517 Fenetre.cpp:530
+#: Fenetre.cpp:547 Fenetre.cpp:566 Fenetre.cpp:807
+#, fuzzy
+msgid "Lecture\tCtrl-P"
+msgstr "Play list"
+
+#: Fenetre.cpp:320
+#, fuzzy
+msgid "Stop"
+msgstr "Stop"
+
+#: Fenetre.cpp:322
+msgid "Suivant\tCtrl-RIGHT"
+msgstr ""
+
+#: Fenetre.cpp:323
+msgid "Précédent\tCtrl-LEFT"
+msgstr ""
+
+#: Fenetre.cpp:324
+#, fuzzy
+msgid "Répétition"
+msgstr "Repeat"
+
+#: Fenetre.cpp:325
+#, fuzzy
+msgid "Aléatoire"
+msgstr "Random"
+
+#: Fenetre.cpp:327
+msgid "Retirer de la liste de lecture\tCtrl-DELETE"
+msgstr ""
+
+#: Fenetre.cpp:330
+#, fuzzy
+msgid "Fichier"
+msgstr "File"
+
+#: Fenetre.cpp:331 Fenetre.cpp:398
+#, fuzzy
+msgid "Préférences"
+msgstr "Preferences"
+
+#: Fenetre.cpp:332
+#, fuzzy
+msgid "Outils"
+msgstr "Tools"
+
+#: Fenetre.cpp:333
+#, fuzzy
+msgid "?"
+msgstr "?"
+
+#: Fenetre.cpp:334
+#, fuzzy
+msgid "Contrôles"
+msgstr "Controls"
+
+#: Fenetre.cpp:387
+#, fuzzy
+msgid "Ecran principal"
+msgstr "Default screen"
+
+#: Fenetre.cpp:391 GestionPeriph.cpp:129
+#, fuzzy
+msgid "Liste de lecture"
+msgstr "Play list"
+
+#: Fenetre.cpp:395
+#, fuzzy
+msgid "Exploration"
+msgstr "CD's retrieval"
+
+#: Fenetre.cpp:401
+#, fuzzy
+msgid "Encodage"
+msgstr "Encoding"
+
+#: Fenetre.cpp:488 Fenetre.cpp:509 Fenetre.cpp:525 Fenetre.cpp:552
+#: Fenetre.cpp:802
+msgid "Pause\tCtrl-P"
+msgstr ""
+
+#: Fenetre.cpp:615 PreferenceDefaut.cpp:291
+#, fuzzy
+msgid "Choisissez une chanson"
+msgstr "Choose music"
+
+#: Fenetre.cpp:656
+msgid "Choisissez une playlist (fichier .m3u)"
+msgstr ""
+
+#: Fenetre.cpp:918
+msgid ""
+"Vous devez mettre les paramètres par défaut de Fu(X) à jour.\n"
+"Merci de votre compréhension"
+msgstr ""
+
+#: Fenetre.cpp:1047
+msgid "Graphe - Fu(X) 2.0"
+msgstr ""
+
+#: Fenetre.cpp:1055
+#, fuzzy
+msgid "Liste de lecture - Fu(X) 2.0"
+msgstr "Play list"
+
+#: Fenetre.cpp:1063
+#, fuzzy
+msgid "Exploration - Fu(X) 2.0"
+msgstr "CD's retrieval"
+
+#: FichierListe.cpp:164
+#, fuzzy
+msgid "Ajouter le contenu du fichier à la liste de lecture"
+msgstr "Add to play list"
+
+#: FichierListe.cpp:165
+msgid "Remplacer la liste de lecture par le contenu du fichier"
+msgstr ""
+
+#: FichierListe.cpp:166
+#, fuzzy
+msgid "Ne rien faire"
+msgstr "Do nothing"
+
+#: FichierListe.cpp:167
+msgid ""
+"La liste de lecture n'est pas vierge !\n"
+"Que souhaitez-vous faire ?"
+msgstr ""
+
+#: FichierListe.cpp:167
+msgid "Action requise, problème liste de lecture"
+msgstr ""
+
+#: GestionPeriph.cpp:72
+msgid "Mes Documents"
+msgstr ""
+
+#: GestionPeriph.cpp:73
+msgid "Ordinateur"
+msgstr ""
+
+#: GestionPeriph.cpp:74
+#, fuzzy
+msgid "Autre"
+msgstr "Other"
+
+#: GestionPeriph.cpp:79
+msgid "Accédez au dossier Mes Documents"
+msgstr ""
+
+#: GestionPeriph.cpp:80
+msgid "Accédez aux différents lecteurs de votre ordinateur"
+msgstr ""
+
+#: GestionPeriph.cpp:81
+#, fuzzy
+msgid "Accédez aux enregistrements et à la liste de lecture de Fu(X)"
+msgstr "Save the play list"
+
+#: GestionPeriph.cpp:109
+msgid ""
+"Déplacer l'élément sélectionné de la fenêtre droite vers la fenêtre gauche"
+msgstr ""
+
+#: GestionPeriph.cpp:110
+msgid "Copier l'élément sélectionné dans l'autre fenêtre de navigation"
+msgstr ""
+
+#: GestionPeriph.cpp:111
+msgid ""
+"Déplacer l'élément sélectionné de la fenêtre gauche vers la fenêtre droite"
+msgstr ""
+
+#: GestionPeriph.cpp:112
+msgid "Supprimer l'élément sélectionné"
+msgstr ""
+
+#: GestionPeriph.cpp:115 GestionPeriph.cpp:127
+#: GestionPeriphElementLecteurRacineFichier.cpp:162
+#, fuzzy
+msgid "Gauche"
+msgstr "Left"
+
+#: GestionPeriph.cpp:116 GestionPeriph.cpp:128
+#: GestionPeriphElementLecteurRacineFichier.cpp:163
+#, fuzzy
+msgid "Droite"
+msgstr "Right"
+
+#: GestionPeriph.cpp:123
+#, fuzzy
+msgid "Fichiers m3u"
+msgstr "m3u File"
+
+#: GestionPeriphCouperCopier.cpp:152 GestionPeriphMoitiePage.cpp:521
+#, fuzzy
+msgid "Fichier introuvable : "
+msgstr "unfound !"
+
+#: GestionPeriphMoitiePage.cpp:39
+msgid "Navig gauche"
+msgstr ""
+
+#: GestionPeriphMoitiePage.cpp:40
+msgid "Navigation gauche : Fu(X) toujours en développement"
+msgstr ""
+
+#: GestionPeriphMoitiePage.cpp:49
+msgid "Navig droite"
+msgstr ""
+
+#: GestionPeriphMoitiePage.cpp:50
+msgid "Navigation droite : donc toujours plus loin !"
+msgstr ""
+
+#: GestionPeriphMoitiePage.cpp:56
+#, fuzzy
+msgid "Fichiers cachés"
+msgstr "Hidden files"
+
+#: GestionPeriphMoitiePage.cpp:57
+#, fuzzy
+msgid "Filtrer"
+msgstr "Title"
+
+#: GestionPeriphMoitiePage.cpp:61
+msgid "Aller au dossier précédent"
+msgstr ""
+
+#: GestionPeriphMoitiePage.cpp:62
+#, fuzzy
+msgid "Actualiser"
+msgstr "Current"
+
+#: GestionPeriphMoitiePage.cpp:63
+#, fuzzy
+msgid "Afficher les fichiers cachés"
+msgstr "Hidden files"
+
+#: GestionPeriphMoitiePage.cpp:64
+msgid "Afficher uniquement les fichiers que Fu(X) peut lire"
+msgstr ""
+
+#: GestionPeriphMoitiePage.cpp:119
+#, fuzzy
+msgid "Navig gauche : Dossier"
+msgstr "Create a file"
+
+#: GestionPeriphMoitiePage.cpp:121
+#, fuzzy
+msgid "Navig droite : Dossier"
+msgstr "Create a file"
+
+#: GestionPeriphMoitiePage.cpp:133
+#, fuzzy
+msgid "Navig gauche : Liste de lecture"
+msgstr "Save the play list"
+
+#: GestionPeriphMoitiePage.cpp:135
+#, fuzzy
+msgid "Navig droite : Liste de lecture"
+msgstr "Save the play list"
+
+#: GestionPeriphMoitiePage.cpp:147
+#, fuzzy
+msgid "Navig gauche : M3U"
+msgstr "Create a m3u"
+
+#: GestionPeriphMoitiePage.cpp:149
+#, fuzzy
+msgid "Navig droite : M3U"
+msgstr "Create a m3u"
+
+#: GestionPeriphMoitiePage.cpp:662
+msgid "Nom du nouveau dossier"
+msgstr ""
+
+#: GestionPeriphMoitiePage.cpp:662
+#, fuzzy
+msgid "Création de dossier"
+msgstr "Creation of file"
+
+#: GestionPeriphMoitiePage.cpp:671
+msgid "Dossier déjà existant, opération annulée"
+msgstr ""
+
+#: GestionPeriphMoitiePage.cpp:675
+#, fuzzy
+msgid "Création impossible"
+msgstr "Creation of m3u"
+
+#: GestionPeriphMoitiePage.cpp:701 GestionPeriphMoitiePage.cpp:822
+#: PlayList.cpp:153
+msgid "Fichier déjà existant. Souhaitez-vous le remplacer ?"
+msgstr ""
+
+#: GestionPeriphMoitiePage.cpp:701 GestionPeriphMoitiePage.cpp:822
+#: PlayList.cpp:153
+#, fuzzy
+msgid "Fichier déjà existant"
+msgstr "Creation of file"
+
+#: GestionPeriphMoitiePage.cpp:714 PlayList.cpp:166 PlayList.cpp:270
+#: PlayList.cpp:467 PreferenceCouleur.cpp:777 PreferenceSon.cpp:274
+msgid ""
+"Erreur dans le nom.\n"
+"Vérifiez que vous utilisez des caractères autorisés."
+msgstr ""
+
+#: GestionPeriphMoitiePage.cpp:714 PlayList.cpp:166 PlayList.cpp:270
+#: PlayList.cpp:467 PreferenceCouleur.cpp:777 PreferenceSon.cpp:274
+#, fuzzy
+msgid "Erreur"
+msgstr "Error"
+
+#: GestionPeriphMoitiePage.cpp:745 GestionPeriphMoitiePage.cpp:955
+#: PlayList.cpp:179
+msgid "Echec de la création du raccourci."
+msgstr ""
+
+#: GestionPeriphMoitiePage.cpp:748
+msgid "Non"
+msgstr ""
+
+#: GestionPeriphMoitiePage.cpp:749
+#, fuzzy
+msgid "A gauche"
+msgstr "Left"
+
+#: GestionPeriphMoitiePage.cpp:750
+#, fuzzy
+msgid "A droite"
+msgstr "Right"
+
+#: GestionPeriphMoitiePage.cpp:751
+msgid "Souhaitez-vous afficher le contenu du fichier ?"
+msgstr ""
+
+#: GestionPeriphMoitiePage.cpp:751
+#, fuzzy
+msgid "Création M3U"
+msgstr "Creation of m3u"
+
+#: GestionPeriphMoitiePage.cpp:792
+msgid "Nouveau nom du dossier"
+msgstr ""
+
+#: GestionPeriphMoitiePage.cpp:792
+msgid "Nouveau nom du fichier"
+msgstr ""
+
+#: GestionPeriphMoitiePage.cpp:793
+#, fuzzy
+msgid "Renommer un dossier"
+msgstr "Create a file"
+
+#: GestionPeriphMoitiePage.cpp:793
+#, fuzzy
+msgid "Renommer un fichier"
+msgstr "Select a file"
+
+#: GestionPeriphMoitiePage.cpp:805
+#, fuzzy
+msgid "Ce nom est déjà pris !"
+msgstr "A file having this name already exists !"
+
+#: GestionPeriphMoitiePage.cpp:809
+#, fuzzy
+msgid "Impossible de renommer le fichier"
+msgstr "Select a file"
+
+#: GestionPeriphMoitiePage.cpp:828
+msgid "Impossible de modifier le nom"
+msgstr ""
+
+#: GestionPeriphMoitiePage.cpp:950
+msgid ""
+"Dans quel répertoire voulez-vous créer un raccourci de l'élément "
+"sélectionné ?"
+msgstr ""
+
+#: GestionPeriphTableau.cpp:57
+#, fuzzy
+msgid "Type"
+msgstr "Type"
+
+#: GestionPeriphTableau.cpp:64
+#, fuzzy
+msgid "Créer un dossier"
+msgstr "Create a file"
+
+#: GestionPeriphTableau.cpp:65
+#, fuzzy
+msgid "Créer un m3u"
+msgstr "Create a m3u"
+
+#: GestionPeriphTableau.cpp:67
+msgid "Couper\tCtrl-X"
+msgstr ""
+
+#: GestionPeriphTableau.cpp:68
+#, fuzzy
+msgid "Copier\tCtrl-C"
+msgstr "Copy\tF2"
+
+#: GestionPeriphTableau.cpp:69
+msgid "Coller\tCtrl-V"
+msgstr ""
+
+#: GestionPeriphTableau.cpp:71
+#, fuzzy
+msgid "Supprimer\tSuppr"
+msgstr "Erase\tSuppr"
+
+#: GestionPeriphTableau.cpp:72
+#, fuzzy
+msgid "Renommer"
+msgstr "Rename"
+
+#: GestionPeriphTableau.cpp:73
+#, fuzzy
+msgid "Raccourci"
+msgstr "Shortcut"
+
+#: GestionPeriphTableau.cpp:75
+#, fuzzy
+msgid "Tout sélectionner\tCtrl-A"
+msgstr "Select all\tF9"
+
+#: GestionPeriphTableau.cpp:76 PlayListTableau.cpp:66
+#, fuzzy
+msgid "Lire"
+msgstr "Play"
+
+#: GestionPeriphTableau.cpp:107
+#, fuzzy
+msgid "Fichier inexistant"
+msgstr "Creation of file"
+
+#: ImageFichierMusique.cpp:85
+#, fuzzy
+msgid "Choisissez une image"
+msgstr "Choose music"
+
+#: Musique.cpp:351
+msgid "Musique::CopieFichier - arrêt"
+msgstr ""
+
+#: PlayList.cpp:70
+#, fuzzy
+msgid "Enregistrer la liste de lecture"
+msgstr "Save the play list"
+
+#: PlayList.cpp:71
+#, fuzzy
+msgid "Enregistre la liste de lecture au format m3u"
+msgstr "Save the play list"
+
+#: PlayList.cpp:119 PreferenceCouleur.cpp:250 PreferenceDefaut.cpp:132
+#: PreferenceSon.cpp:120
+#, fuzzy
+msgid "Enregistrer"
+msgstr "Save"
+
+#: PlayList.cpp:120 PreferenceCouleur.cpp:251 PreferenceDefaut.cpp:133
+#: PreferenceSon.cpp:121
+#, fuzzy
+msgid "Annuler"
+msgstr "Cancel"
+
+#: PlayList.cpp:276 PlayList.cpp:510
+msgid ""
+"Vous ne pouvez pas modifier un fichier lorsque celui-ci est en cours de "
+"lecture."
+msgstr ""
+
+#: PlayList.cpp:276 PlayList.cpp:278 PlayList.cpp:290 PlayList.cpp:510
+#: PlayList.cpp:512 PlayList.cpp:519 PreferenceCouleur.cpp:723
+#: PreferenceCouleur.cpp:810 PreferenceSon.cpp:263 PreferenceSon.cpp:294
+#, fuzzy
+msgid "Erreur !"
+msgstr "Error !"
+
+#: PlayList.cpp:278 PlayList.cpp:290 PlayList.cpp:512 PlayList.cpp:519
+#, fuzzy
+msgid "Sélectionnez un fichier"
+msgstr "Select a file"
+
+#: PlayList.cpp:381
+msgid ""
+"Il est impossible de modifer les pochettes d'album lorsque\n"
+"le fichier est en cours de lecture."
+msgstr ""
+
+#: PlayListTableau.cpp:56
+#, fuzzy
+msgid "Durée"
+msgstr "Length"
+
+#: PlayListTableau.cpp:58
+#, fuzzy
+msgid "Emplacement"
+msgstr "Path"
+
+#: PlayListTableau.cpp:60
+#, fuzzy
+msgid "Ext."
+msgstr "Ext."
+
+#: PlayListTableau.cpp:67 PlayListTableau.cpp:424 PlayListTableau.cpp:433
+#, fuzzy
+msgid "Pause"
+msgstr "Pause"
+
+#: PlayListTableau.cpp:68
+#, fuzzy
+msgid "Effacer"
+msgstr "Delete"
+
+#: PlayListTableau.cpp:69
+#, fuzzy
+msgid "Déplacer"
+msgstr "Move"
+
+#: PlayListTableau.cpp:70
+#, fuzzy
+msgid "Déposer"
+msgstr "Drop"
+
+#: PlayListTableau.cpp:195
+#, fuzzy
+msgid "Erreur,"
+msgstr "Error,"
+
+#: PlayListTableau.cpp:196
+#, fuzzy
+msgid "fichier"
+msgstr "file"
+
+#: PlayListTableau.cpp:197
+#, fuzzy
+msgid "introuvable !"
+msgstr "unfound !"
+
+#: PlayListTableau.cpp:426 PlayListTableau.cpp:435
+msgid "Reprendre"
+msgstr ""
+
+#: PlayListTableau.cpp:574
+#, fuzzy
+msgid "Mise à jour"
+msgstr "Update"
+
+#: PlayListTableau.cpp:574
+#, fuzzy
+msgid "Suppression en cours"
+msgstr "Deleting"
+
+#: PreferenceCouleur.cpp:61 PreferenceSon.cpp:59 PreferenceSon.cpp:69
+#, fuzzy
+msgid "Nouveau"
+msgstr "New"
+
+#: PreferenceCouleur.cpp:61 PreferenceSon.cpp:59
+#, fuzzy
+msgid "Modifier"
+msgstr "Modify"
+
+#: PreferenceCouleur.cpp:62 PreferenceSon.cpp:60
+#, fuzzy
+msgid "Mon choix"
+msgstr "My choice"
+
+#: PreferenceCouleur.cpp:79
+#, fuzzy
+msgid "Arrière plan"
+msgstr "Background"
+
+#: PreferenceCouleur.cpp:93 PreferenceCouleur.cpp:117
+#, fuzzy
+msgid "R : 0"
+msgstr "R : 0"
+
+#: PreferenceCouleur.cpp:94 PreferenceCouleur.cpp:118
+#: PreferenceCouleur.cpp:150
+#, fuzzy
+msgid "V : 0"
+msgstr "G : 0"
+
+#: PreferenceCouleur.cpp:95
+#, fuzzy
+msgid "B : 0"
+msgstr "B : 0"
+
+#: PreferenceCouleur.cpp:105
+#, fuzzy
+msgid "Barre de progression et texte"
+msgstr "Progress bar and text"
+
+#: PreferenceCouleur.cpp:119 PreferenceCouleur.cpp:151
+#, fuzzy
+msgid "B : 255"
+msgstr "B : 255"
+
+#: PreferenceCouleur.cpp:135 PreferenceCouleur.cpp:136
+#: PreferenceCouleur.cpp:399 PreferenceCouleur.cpp:400
+#, fuzzy
+msgid "Texte"
+msgstr "Text"
+
+#: PreferenceCouleur.cpp:149
+#, fuzzy
+msgid "R : 255"
+msgstr "R : 255"
+
+#: PreferenceCouleur.cpp:161
+msgid "Partie supérieure du graph"
+msgstr ""
+
+#: PreferenceCouleur.cpp:167
+#, fuzzy
+msgid "Haut de l'écran"
+msgstr "Screen's top"
+
+#: PreferenceCouleur.cpp:170 PreferenceCouleur.cpp:192
+#: PreferenceCouleur.cpp:215 PreferenceCouleur.cpp:237
+#, fuzzy
+msgid "Rouge"
+msgstr "Red"
+
+#: PreferenceCouleur.cpp:172 PreferenceCouleur.cpp:193
+#: PreferenceCouleur.cpp:216 PreferenceCouleur.cpp:238
+#, fuzzy
+msgid "Vert"
+msgstr "Green"
+
+#: PreferenceCouleur.cpp:173 PreferenceCouleur.cpp:195
+#: PreferenceCouleur.cpp:217 PreferenceCouleur.cpp:239
+#, fuzzy
+msgid "Bleu"
+msgstr "Blue"
+
+#: PreferenceCouleur.cpp:190
+msgid "Moitié supérieure"
+msgstr ""
+
+#: PreferenceCouleur.cpp:202
+#, fuzzy
+msgid "Symétrie horizontal"
+msgstr "Horizontal symmetry"
+
+#: PreferenceCouleur.cpp:206
+msgid "Partie inférieure du graph"
+msgstr ""
+
+#: PreferenceCouleur.cpp:212
+msgid "Moitié inférieure"
+msgstr ""
+
+#: PreferenceCouleur.cpp:235
+#, fuzzy
+msgid "Bas de l'écran"
+msgstr "Screen's bottom"
+
+#: PreferenceCouleur.cpp:252 PreferenceSon.cpp:122
+#, fuzzy
+msgid "Appliquer"
+msgstr "Apply"
+
+#: PreferenceCouleur.cpp:253 PreferenceSon.cpp:123
+#, fuzzy
+msgid "Supprimer"
+msgstr "Erase"
+
+#: PreferenceCouleur.cpp:373 PreferenceCouleur.cpp:405
+#: PreferenceCouleur.cpp:408
+#, fuzzy
+msgid "R : "
+msgstr "R : "
+
+#: PreferenceCouleur.cpp:374 PreferenceCouleur.cpp:406
+#: PreferenceCouleur.cpp:409
+#, fuzzy
+msgid "V : "
+msgstr "G :"
+
+#: PreferenceCouleur.cpp:375 PreferenceCouleur.cpp:407
+#: PreferenceCouleur.cpp:410
+#, fuzzy
+msgid "B : "
+msgstr "B : "
+
+#: PreferenceCouleur.cpp:723 PreferenceSon.cpp:263
+#, fuzzy
+msgid "Un fichier portant ce nom existe déjà !"
+msgstr "A file having this name already exists !"
+
+#: PreferenceCouleur.cpp:810 PreferenceSon.cpp:294
+#, fuzzy
+msgid "Vous devez renseigner tous les champs"
+msgstr "You have to fill in fields"
+
+#: PreferenceDefaut.cpp:62
+#, fuzzy
+msgid "Filtres"
+msgstr "Title"
+
+#: PreferenceDefaut.cpp:70
+msgid "Reprise"
+msgstr ""
+
+#: PreferenceDefaut.cpp:71
+msgid "Inclure les fichiers des sous-dossiers lors d'une opération"
+msgstr ""
+
+#: PreferenceDefaut.cpp:72
+msgid "Afficher les noms en fonction des TAGs"
+msgstr ""
+
+#: PreferenceDefaut.cpp:73
+#, fuzzy
+msgid "Application par défaut"
+msgstr "Default set"
+
+#: PreferenceDefaut.cpp:75
+msgid "Appliquer un filtre couleur sur le graphe."
+msgstr ""
+
+#: PreferenceDefaut.cpp:76
+msgid "Appliquer un filtre son à l'écoute."
+msgstr ""
+
+#: PreferenceDefaut.cpp:77
+msgid "Lancer automatiquement un fichier lors du lancement de Fu(X)."
+msgstr ""
+
+#: PreferenceDefaut.cpp:78
+msgid ""
+"Fu(X) recherchera dans toute l'arborescence du dossier les fichiers lors "
+"d'une opération de lecture par exemple."
+msgstr ""
+
+#: PreferenceDefaut.cpp:79
+msgid ""
+"Le titre de la chanson se fait à partir des données enregistrées dans le "
+"fichier musical et non à partir du nom de celui-ci."
+msgstr ""
+
+#: PreferenceDefaut.cpp:80
+msgid ""
+"Faire de Fu(X) le programme par défaut pour les mp3, m3u.\n"
+"Ne pas utiliser si vous avez fait une installation classique."
+msgstr ""
+
+#: PreferenceDefaut.cpp:91
+msgid "Avancée"
+msgstr ""
+
+#: PreferenceDefaut.cpp:94
+#, fuzzy
+msgid "Portable"
+msgstr "Portable"
+
+#: PreferenceDefaut.cpp:95
+msgid ""
+"Configure Fu(X) pour une utilisation sur clef USB.\n"
+"Ne pas utiliser si vous avez fait une installation classique."
+msgstr ""
+
+#: PreferenceDefaut.cpp:102
+#, fuzzy
+msgid "MP3"
+msgstr "MP3"
+
+#: PreferenceDefaut.cpp:102
+#, fuzzy
+msgid "M3U"
+msgstr "M3U"
+
+#: PreferenceDefaut.cpp:112
+#, fuzzy
+msgid "Dossier par défaut"
+msgstr "Default set"
+
+#: PreferenceDefaut.cpp:134
+msgid "Rechargement des listes"
+msgstr ""
+
+#: PreferenceDefaut.cpp:304
+msgid "Choisissez le répertoire par défaut"
+msgstr ""
+
+#: PreferenceDefaut.cpp:401
+msgid "Non implémenté - Tag"
+msgstr ""
+
+#: PreferenceDefaut.cpp:417
+#, fuzzy
+msgid "Non implémenté - Application par défaut"
+msgstr "Default set"
+
+#: PreferenceDefaut.cpp:425
+msgid "Non implémenté - Répertoire par défaut"
+msgstr ""
+
+#: PreferenceSon.cpp:70
+#, fuzzy
+msgid "Valeurs actuelles"
+msgstr "Current values"
+
+#: PreferenceSon.cpp:77
+#, fuzzy
+msgid "Volume"
+msgstr "Sound"
+
+#: PreferenceSon.cpp:79
+#, fuzzy
+msgid "Volume PC"
+msgstr "Computer sound"
+
+#: PreferenceSon.cpp:105
+#, fuzzy
+msgid "Jeu par défaut"
+msgstr "Default set"
+
+#: PreferenceSon.cpp:124
+#, fuzzy
+msgid "Actuel"
+msgstr "Current"
+
+#, fuzzy
+#~ msgid "Fu(X) 2.0 - Graph"
+#~ msgstr "Shut down Fu(X)"
+
+#, fuzzy
+#~ msgid "Quitter\tESCAPE"
+#~ msgstr "Shut down Fu(X)"
+
+#, fuzzy
+#~ msgid "Périphériques"
+#~ msgstr "Peripheral devices"
+
+#, fuzzy
+#~ msgid "Copie"
+#~ msgstr "Copy"
+
+#, fuzzy
+#~ msgid "Copie en cours"
+#~ msgstr "Copying"
+
+#, fuzzy
+#~ msgid "Suppression"
+#~ msgstr "Erase"
+
+#, fuzzy
+#~ msgid "Transfert"
+#~ msgstr "Transfer"
+
+#, fuzzy
+#~ msgid "Déplacement en cours"
+#~ msgstr "Moving"
+
+#, fuzzy
+#~ msgid "Couper"
+#~ msgstr "Cut"
+
+#, fuzzy
+#~ msgid "Copier\tF2"
+#~ msgstr "Copy\tF2"
+
+#, fuzzy
+#~ msgid "Coller"
+#~ msgstr "Past"
+
+#, fuzzy
+#~ msgid "Tout sélectionner\tF9"
+#~ msgstr "Select all\tF9"
+
+#, fuzzy
+#~ msgid "Création de fichier"
+#~ msgstr "Creation of file"
+
+#, fuzzy
+#~ msgid "Copie annulée."
+#~ msgstr "Erase aborted"
+
+#, fuzzy
+#~ msgid "Copie terminée."
+#~ msgstr "Erase finished"
+
+#, fuzzy
+#~ msgid "Déplacement annulé."
+#~ msgstr "Moving"
+
+#, fuzzy
+#~ msgid "Déplacement terminé."
+#~ msgstr "Moving"
+
+#, fuzzy
+#~ msgid "Suppression annulée."
+#~ msgstr "Erase aborted"
+
+#, fuzzy
+#~ msgid "Suppression terminée."
+#~ msgstr "Erase finished"
+
+#, fuzzy
+#~ msgid "Créer un raccourci"
+#~ msgstr "Create shortcut"
+
+#, fuzzy
+#~ msgid "Edition"
+#~ msgstr "Edition"
+
+#, fuzzy
+#~ msgid "Raccourci (Actuellement indisponible)"
+#~ msgstr "Create shortcut"
+
+#, fuzzy
+#~ msgid "''''Raccourci"
+#~ msgstr "Shortcut"

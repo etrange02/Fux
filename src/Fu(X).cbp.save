@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Fu(X) 2.0" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option show_notes="1">
+			<notes>
+				<![CDATA[Lecoconnier David
+Projet <Fu(X) 2.0>
+etrange02@aol.com
+Créé le 24/07/2009
+
+IMPORTANT, A FAIRE !!!
+
+0- Terminer Musique en ajoutant FichierLog
+
+1- Page PlayList :
+	a. Revoir les fonctions MAJ et ChangementChanson (SetTextColour...) 
+	b. Une file pour les événements de MAJ (ou vecteur ??)
+	c. Fenêtre détails des titres (association fichier .lrc)
+
+2- Problèmes sous XP : bogue lorsqu'il y a utilisation d'un fichier au commencement de la lecture et avec la partie gestion des périphs !
+
+3- Mettre en place un fichier log pour la maintenance et la correction d'erreur
+
+4-Ajouter *.wma
+
+5- Remplacer la structure des fichiers sauve par du XML
+
+6- DnD mise dans un dossier
+
+7-]]>
+			</notes>
+		</Option>
+		<Build>
+			<Target title="Release">
+				<Option output="Fu(X)" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+			</Target>
+			<Environment>
+				<Variable name="AU" value="u" />
+				<Variable name="AURD" value="$(AU)$(RD)" />
+				<Variable name="FMODEX" value='&quot;C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Windows\api\lib&quot;' />
+				<Variable name="RD" value="" />
+				<Variable name="SQLITE3" value="$(WXSQLITE3)\sqlite3" />
+				<Variable name="TAGLIB" value="C:\CMake\cmake_taglib\taglib" />
+				<Variable name="WXSQLITE3" value="C:\wxsqlite3-3.0.2" />
+				<Variable name="WX_CFG" value="msw$(AURD)" />
+				<Variable name="WX_DIR" value="$(DIR_LIB)\wx" />
+				<Variable name="WX_GL_VER" value="GL" />
+				<Variable name="WX_VER1" value="2" />
+				<Variable name="WX_VER2" value="8" />
+				<Variable name="WX_VER3" value="10" />
+			</Environment>
+		</Build>
+		<Compiler>
+			<Add option="-Wextra" />
+			<Add option="-Wall" />
+			<Add option="-g" />
+			<Add option="-pipe" />
+			<Add option="-mthreads" />
+			<Add option='[[if (PLATFORM == PLATFORM_MSW &amp;&amp; (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.0.0&quot;))) print(_T(&quot;-Wno-attributes&quot;));]]' />
+			<Add option="-D__GNUWIN32__" />
+			<Add option="-D__WXMSW__" />
+			<Add option="-DwxUSE_UNICODE" />
+			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/include" />
+			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/include/contrib/include" />
+			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/lib/gcc_lib/mswu" />
+			<Add directory="$(SQLITE3)/include" />
+			<Add directory="$(WXSQLITE3)/include" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/include" />
+		</ResourceCompiler>
+		<Linker>
+			<Add library="libwxcode_msw$(WX_VER1)$(WX_VER2)$(AURD)_wxsqlite3.a" />
+			<Add library="$(SQLITE3)\lib\sqlite3.a" />
+			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_core.a" />
+			<Add library="libwxbase$(WX_VER1)$(WX_VER2)$(AURD).a" />
+			<Add library="libkernel32.a" />
+			<Add library="libuser32.a" />
+			<Add library="libgdi32.a" />
+			<Add library="libwinspool.a" />
+			<Add library="libcomdlg32.a" />
+			<Add library="libadvapi32.a" />
+			<Add library="libshell32.a" />
+			<Add library="libole32.a" />
+			<Add library="liboleaut32.a" />
+			<Add library="libuuid.a" />
+			<Add library="libwxpng$(RD).a" />
+			<Add library="libodbc32.a" />
+			<Add library="libcomctl32.a" />
+			<Add library="libwsock32.a" />
+			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_xrc.a" />
+			<Add library="libwxzlib$(RD).a" />
+			<Add library="libwxjpeg$(RD).a" />
+			<Add library="libwxregex$(AURD).a" />
+			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_gl.a" />
+			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_adv.a" />
+			<Add library="${FMODEX}\libfmodex.a" />
+			<Add library="libopengl32.a" />
+			<Add library="libglu32.a" />
+			<Add library="${TAGLIB}\libtag.dll.a" />
+			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/lib/gcc_lib" />
+			<Add directory="$(SQLITE3)/lib" />
+			<Add directory="$(WXSQLITE3)/lib/gcc_lib" />
+		</Linker>
+		<Unit filename="include/Application.h" />
+		<Unit filename="include/ArrayFenetreDetachable.h" />
+		<Unit filename="include/BDD.h" />
+		<Unit filename="include/BDDRequete.h" />
+		<Unit filename="include/BDDThread.h" />
+		<Unit filename="include/BDDThreadEvent.h" />
+		<Unit filename="include/BoutonFenetreDetachable.h" />
+		<Unit filename="include/ComInterProcess.h" />
+		<Unit filename="include/Define.h" />
+		<Unit filename="include/DialogueFenetreExt.h" />
+		<Unit filename="include/DnDBufferData.h" />
+		<Unit filename="include/DnDCible.h" />
+		<Unit filename="include/DnDListeFichier.h" />
+		<Unit filename="include/ElementThreadFichier.h" />
+		<Unit filename="include/Fenetre.h" />
+		<Unit filename="include/FenetreDetachable.h" />
+		<Unit filename="include/FichierListe.h" />
+		<Unit filename="include/FichierLog.h" />
+		<Unit filename="include/GestionPeriph.h" />
+		<Unit filename="include/GestionPeriphCouperCopier.h" />
+		<Unit filename="include/GestionPeriphElementLecteurRacineFichier.h" />
+		<Unit filename="include/GestionPeriphMoitiePage.h" />
+		<Unit filename="include/GestionPeriphTableau.h" />
+		<Unit filename="include/ImageFichierMusique.h" />
+		<Unit filename="include/ImageText.h" />
+		<Unit filename="include/Musique.h" />
+		<Unit filename="include/MusiqueGraph.h" />
+		<Unit filename="include/OS_Win.h" />
+		<Unit filename="include/Parametre.h" />
+		<Unit filename="include/PlayList.h" />
+		<Unit filename="include/PlayListTableau.h" />
+		<Unit filename="include/PreferenceCouleur.h" />
+		<Unit filename="include/PreferenceDefaut.h" />
+		<Unit filename="include/PreferenceSon.h" />
+		<Unit filename="include/RechercheTraverser.h" />
+		<Unit filename="include/SliderSon.h" />
+		<Unit filename="include/ThreadGestion.h" />
+		<Unit filename="include/Timer.h" />
+		<Unit filename="include/fuxHTMLindex.h" />
+		<Unit filename="include/version.h" />
+		<Unit filename="res/Idées.txt">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="res/Ressource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="src/Application.cpp" />
+		<Unit filename="src/ArrayFenetreDetachable.cpp" />
+		<Unit filename="src/BDD.cpp" />
+		<Unit filename="src/BDDRequete.cpp" />
+		<Unit filename="src/BDDThread.cpp" />
+		<Unit filename="src/BDDThreadEvent.cpp" />
+		<Unit filename="src/BoutonFenetreDetachable.cpp" />
+		<Unit filename="src/ComInterProcess.cpp" />
+		<Unit filename="src/DialogueFenetreExt.cpp" />
+		<Unit filename="src/DnDBufferData.cpp" />
+		<Unit filename="src/DnDCible.cpp" />
+		<Unit filename="src/DnDListeFichier.cpp" />
+		<Unit filename="src/ElementThreadFichier.cpp" />
+		<Unit filename="src/Fenetre.cpp" />
+		<Unit filename="src/FenetreDetachable.cpp" />
+		<Unit filename="src/FichierListe.cpp" />
+		<Unit filename="src/FichierLog.cpp" />
+		<Unit filename="src/GestionPeriph.cpp" />
+		<Unit filename="src/GestionPeriphCouperCopier.cpp" />
+		<Unit filename="src/GestionPeriphElementLecteurRacineFichier.cpp" />
+		<Unit filename="src/GestionPeriphMoitiePage.cpp" />
+		<Unit filename="src/GestionPeriphTableau.cpp" />
+		<Unit filename="src/ImageFichierMusique.cpp" />
+		<Unit filename="src/ImageText.cpp" />
+		<Unit filename="src/Musique.cpp">
+			<Option weight="40" />
+		</Unit>
+		<Unit filename="src/MusiqueGraph.cpp" />
+		<Unit filename="src/OS_Win.cpp" />
+		<Unit filename="src/Parametre.cpp" />
+		<Unit filename="src/PlayList.cpp" />
+		<Unit filename="src/PlayListTableau.cpp" />
+		<Unit filename="src/PreferenceCouleur.cpp" />
+		<Unit filename="src/PreferenceDefaut.cpp" />
+		<Unit filename="src/PreferenceSon.cpp" />
+		<Unit filename="src/RechercheTraverser.cpp" />
+		<Unit filename="src/SliderSon.cpp" />
+		<Unit filename="src/ThreadGestion.cpp" />
+		<Unit filename="src/Timer.cpp" />
+		<Extensions>
+			<AutoVersioning>
+				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
+				<Settings autoincrement="1" date_declarations="1" update_manifest="1" do_auto_increment="1" ask_to_increment="0" language="C++" svn="0" svn_directory="" header_path="include/version.h" />
+				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
+				<Code header_guard="VERSION_H" namespace="AutoVersion" prefix="" />
+			</AutoVersioning>
+			<code_completion />
+			<envvars set="default" />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

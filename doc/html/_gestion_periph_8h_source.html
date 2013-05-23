@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Fu(X) 2.0:  Fichier source de C:/FuX/include/GestionPeriph.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://www.mathjax.org/mathjax/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fu(X) 2.0
+   &#160;<span id="projectnumber">a5</span>
+   </div>
+   <div id="projectbrief">Fu(X) est un lecteur audio dont le but est de redéfinir l&#39;utilisation en apportant une nouvelle approche aussi intuitive que puissante !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">GestionPeriph.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GESTIONPERIPH_H_INCLUDED</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GESTIONPERIPH_H_INCLUDED</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Define.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;wx/wx.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;wx/stdpaths.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;wx/dir.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;wx/listctrl.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;wx/filename.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;wx/imaglist.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;wx/gauge.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;wx/event.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;wx/dynarray.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;DialogueFenetreExt.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;wx/mimetype.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;wx/textfile.h&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;wx/progdlg.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;ThreadGestion.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;OS_Win.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;GestionPeriphMoitiePage.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;GestionPeriphElementLecteurRacineFichier.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">class </span><a class="code" href="class_page_gestion_periph.html" title="Interface graphique permettant un déplacement dans l&#39;arborescence des fichiers.">PageGestionPeriph</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;WX_DEFINE_ARRAY(<a class="code" href="class_element_lecteur_racine_fichier.html" title="Élément d&#39;un sous menu représentant soit un lecteur (sous Windows) ou la racine (sous UNIX) soit un f...">ElementLecteurRacineFichier</a>*, ArrayOfElementLecteurRacineFichier);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="class_gest_periph.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_gest_periph.html" title="Page contenant le double explorateur de fichier.">GestPeriph</a> : <span class="keyword">public</span> wxPanel</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">public</span> :</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_gest_periph.html#a7bd04960bd8a3a03d0c5b6bf1b233dd1" title="Constructeur.">GestPeriph</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_gest_periph.html#af93bc9ef6583ae1c72571ff10745539f" title="Destructeur.">~GestPeriph</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_gest_periph.html" title="Page contenant le double explorateur de fichier.">GestPeriph</a>* <a class="code" href="class_gest_periph.html#a359276a8f531ce160001226486175fa4" title="Retourne l&#39;unique instance de la classe.">Get</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#a2f501c2e47ca199fbb21092c618de15a" title="Crée les composants graphiques de la fenêtre.">Creer</a>(wxWindow *Parent);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#ad1041cb0a48857e5026ffefc1e20c813" title="Affiche un menu lors du clic sur le bouton &quot;Mes Documents&quot;.">AfficheMenu_MesDoc</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#a5f4526a256b85188eac3ae5bf77fa47d" title="Affiche un menu lors du clic sur le bouton &quot;Ordinateur&quot;.">AfficheMenu_Periph</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#a2413312d16a8b1e53ee5f067c5d34a46" title="Affiche un menu lors du clic sur le bouton &quot;Autre&quot;.">AfficheMenu_Autre</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="class_element_lecteur_racine_fichier.html" title="Élément d&#39;un sous menu représentant soit un lecteur (sous Windows) ou la racine (sous UNIX) soit un f...">ElementLecteurRacineFichier</a>* <a class="code" href="class_gest_periph.html#aa28b9bb3dbc9b0cfb0eea76c91898ed9" title="Insère dans liste un élément.">Insertion</a>(ArrayOfElementLecteurRacineFichier*, wxString, wxString);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="class_element_lecteur_racine_fichier.html" title="Élément d&#39;un sous menu représentant soit un lecteur (sous Windows) ou la racine (sous UNIX) soit un f...">ElementLecteurRacineFichier</a>* <a class="code" href="class_gest_periph.html#aa28b9bb3dbc9b0cfb0eea76c91898ed9" title="Insère dans liste un élément.">Insertion</a>(ArrayOfElementLecteurRacineFichier*, wxString, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#ad96aadfed6a98013c577d241600d8b01" title="Crée et prépare le menu présentant les lecteurs de l&#39;ordinateur.">ListePeripherique</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#a83b82bf14ec525d79cb71a7890759bc3" title="Crée et prépare le menu présentant les .m3u enregistrés dans les dossiers de Fu(X)">ListeM3U</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#addab4a29c14482683f29aa4404b275ca" title="Efface les deux listes servant à construire les menus contenant les lecteurs et les ...">DetruireListes</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#ad6d44bb39ebeba55d2bef2e21abe1feb" title="Évènement - Affiche le dossier Mes Documents dans la liste appropriée.">AffListeMesDoc</a>(wxCommandEvent&amp;);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#a7c46e8f0f3471cc6b05eaa345a8230f5" title="Évènement - Affiche le contenu du lecteur sélectionné dans la liste appropriée.">AffListeRepertoireLect</a>(wxCommandEvent&amp;);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#a107f33e4e9af60ae163a5c3c38d3f39d" title="Évènement - Affiche la liste de lecture dans la liste appropriée.">AffListePlaylist</a>(wxCommandEvent&amp;);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#af8e2df70f462dad3053538477eb27f3d" title="Évènement - Affiche le contenu du fichier .m3u sélectionné dans la liste appropriée.">AffListeM3U</a>(wxCommandEvent&amp;);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#ac7be646b28a40de872c18cbc47ead8c8" title="Évènement - Bouton central &#39;=&#39; lance une copie.">Copier</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#a88b558da17f55fdc29133db8d80b9b8f" title="Évènement - Bouton central &#39;X&#39; lance une suppression.">Supprimer</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#a7aa0efe2a4f4a01c7d23218adf94406e" title="Évènement - Bouton central &#39;&lt;&#39; lance un déplacement de la droite vers la gauche.">DeplaceG</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#a30e45334cdc2ad1b04e6eed73a084f86" title="Évènement - Bouton central &#39;&gt;&#39; lance un déplacement de la gauche vers la droite.">DeplaceD</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#ab0c517ee4b513c142790428f2f7a280a" title="Évènement - Appelé lorsque le tableau de droite a le focus.">FocusD</a>(wxChildFocusEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#aad4ccdc4f39b9e188bbd88baee9fef90" title="Évènement - Appelé lorsque le tableau de gauche a le focus.">FocusG</a>(wxChildFocusEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#afb35588d4068417cd691f57934f6cb84" title="Évènement - Active/Désactive les boutons centraux en fonction du type de données affichées dans chaqu...">ComparaisonStatutEvt</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#a6def8a545a6e26ab9711eb150bcd7357" title="Active/Désactive les boutons centraux en fonction du type de données affichées dans chaque liste...">ComparaisonStatut</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_gest_periph.html#aae0fbb84376085738681530fbb6d756e" title="Met à jour les listes si elles affichent la liste de lecture.">MAJPlaylist</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">private</span> :</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        wxSizer *m_sizer1V, *m_sizerBoutonRacc, *m_sizer2G, *m_sizer2GridG, *m_sizer2GridD, *m_sizerBoutonModif;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        wxButton *m_boutonMesDoc, *m_boutonPeriph, *m_boutonAutre, *m_boutonModif;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="class_page_gestion_periph.html" title="Interface graphique permettant un déplacement dans l&#39;arborescence des fichiers.">PageGestionPeriph</a> *m_listeG, *m_listeD;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        wxMenu *m_menuMesDoc, *m_menuPeriph, *m_menuAutre, *m_menuM3U;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        ArrayOfElementLecteurRacineFichier *m_listeLecteur, *m_listePlaylist;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">int</span> m_tableauFocus;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    DECLARE_EVENT_TABLE()</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif // GESTIONPERIPH_H_INCLUDED</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi Mai 23 2013 22:50:39 pour Fu(X) 2.0 par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

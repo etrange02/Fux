@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Fu(X) 2.0:  Fichier source de C:/FuX/src/ThreadGestion.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://www.mathjax.org/mathjax/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fu(X) 2.0
+   &#160;<span id="projectnumber">a5</span>
+   </div>
+   <div id="projectbrief">Fu(X) est un lecteur audio dont le but est de redéfinir l&#39;utilisation en apportant une nouvelle approche aussi intuitive que puissante !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ThreadGestion.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Name:      ThreadGestion.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Purpose:   Code for Fu(X) 2.0</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    David Lecoconnier (etrange02@aol.com)</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2010-05-07</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Copyright: David Lecoconnier (http://www.fuxplay.com)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * License:</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **************************************************************/</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;ThreadGestion.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">static</span> <a class="code" href="class_thread_fichier_fichier.html" title="Thread faisant de la gestion de dossiers et fichiers.">ThreadFichierFichier</a>* instanceThreadFichier = NULL;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="class_thread_fichier_fichier.html#a7ae0ed804107b04bfcea7fd764f4d59d">   21</a></span>&#160;<a class="code" href="class_thread_fichier_fichier.html#a7ae0ed804107b04bfcea7fd764f4d59d" title="Constructeur.">ThreadFichierFichier::ThreadFichierFichier</a>() : wxThread(wxTHREAD_JOINABLE)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    m_estActif = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    m_continue = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    m_liste = <span class="keyword">new</span> ArrayOfElementThreadFichier;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Create();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="class_thread_fichier_fichier.html#aeaa480e8ad3c9bed8bf54ce5c83759a4">   32</a></span>&#160;<a class="code" href="class_thread_fichier_fichier.html#aeaa480e8ad3c9bed8bf54ce5c83759a4" title="Destructeur.">ThreadFichierFichier::~ThreadFichierFichier</a>()</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_thread_fichier_fichier.html#a8509e30b36cceff11fae5b989dae6611" title="Efface la liste des modifications non effectu�es">ViderListe</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">delete</span> m_liste;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="class_fichier_log.html#a9f111f4cad417ccd12d783f89983535c" title="Retourne un pointeur sur l&#39;instance FichierLog.">FichierLog::Get</a>()-&gt;<a class="code" href="class_fichier_log.html#a3872e68ad4ef647b4ed0d7c4dee13626" title="Ajoute une ligne au fichier.">Ajouter</a>(_T(<span class="stringliteral">&quot;ThreadFichierFichier::~ThreadFichierFichier&quot;</span>));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="class_thread_fichier_fichier.html#a7a39a0f6eba6a50505f0c11acef61c57">   45</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_thread_fichier_fichier.html#a7a39a0f6eba6a50505f0c11acef61c57" title="Ajoute � la liste de traitement les combinaisons d&#39;�l�ments donn�es en param�tre.">ThreadFichierFichier::AjoutDonnee</a>(wxArrayString *tableau, <span class="keywordtype">int</span> action, wxString dest)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">size_t</span> max = tableau-&gt;GetCount();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i=0; i&lt;max; i++)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        m_liste-&gt;Add(<span class="keyword">new</span> <a class="code" href="class_element_thread_fichier.html" title="Représente un élément physique (fichier ou dossier) et l&#39;action qu&#39;il doit subir.">ElementThreadFichier</a>(tableau-&gt;Item(i), action, dest));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">delete</span> tableau;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">/*if (IsPaused())</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">        Resume();*/</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="class_thread_fichier_fichier.html#a6260062a1726f6988a5b863969ae5903">   60</a></span>&#160;<a class="code" href="class_thread_fichier_fichier.html" title="Thread faisant de la gestion de dossiers et fichiers.">ThreadFichierFichier</a>* <a class="code" href="class_thread_fichier_fichier.html#a6260062a1726f6988a5b863969ae5903" title="Retourne l&#39;instance de la classe.">ThreadFichierFichier::Get</a>()</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (!instanceThreadFichier)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        instanceThreadFichier = <span class="keyword">new</span> <a class="code" href="class_thread_fichier_fichier.html#a7ae0ed804107b04bfcea7fd764f4d59d" title="Constructeur.">ThreadFichierFichier</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> instanceThreadFichier;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="class_thread_fichier_fichier.html#a977c6ae889059bc4497a1745a46d979e">   71</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_thread_fichier_fichier.html#a977c6ae889059bc4497a1745a46d979e" title="Retourne l&#39;�tat du thread.">ThreadFichierFichier::GetEtat</a>()</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{    <span class="keywordflow">return</span> m_estActif;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="class_thread_fichier_fichier.html#a1a0e5867d42ac7b95831dc2de261da06">   77</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_thread_fichier_fichier.html#a1a0e5867d42ac7b95831dc2de261da06" title="Stop le thread.">ThreadFichierFichier::SetStop</a>()</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{    m_continue = <span class="keyword">false</span>;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="class_thread_fichier_fichier.html#a8509e30b36cceff11fae5b989dae6611">   83</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_thread_fichier_fichier.html#a8509e30b36cceff11fae5b989dae6611" title="Efface la liste des modifications non effectu�es">ThreadFichierFichier::ViderListe</a>()</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    m_liste-&gt;Clear();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">void</span>* ThreadFichierFichier::Entry()</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    m_estActif = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    m_continue = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="class_element_thread_fichier.html" title="Représente un élément physique (fichier ou dossier) et l&#39;action qu&#39;il doit subir.">ElementThreadFichier</a> *element = NULL;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    wxString chemin;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">while</span> (m_continue &amp;&amp; !TestDestroy())</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span> (m_liste-&gt;IsEmpty())</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            Sleep(500);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            element = m_liste-&gt;Item(0);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">if</span> (element-&gt;<a class="code" href="class_element_thread_fichier.html#a1764a11f1f3f094b3ff420f9f8896f0e" title="Compare si l&#39;action à effectuer est celle donné en paramètre.">IsAction</a>(COPIE))</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                chemin = element-&gt;<a class="code" href="class_element_thread_fichier.html#a8a5f9e46088f3873faeb04979af68cc0" title="Renvoi le répertoire de destination de l&#39;élément.">GetDestination</a>() + wxFileName::GetPathSeparator() + element-&gt;<a class="code" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc" title="Retourne le nom de complet l&#39;élément.">GetNom</a>().AfterLast(wxFileName::GetPathSeparator());</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keywordflow">if</span> (wxFileExists(element-&gt;<a class="code" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc" title="Retourne le nom de complet l&#39;élément.">GetNom</a>()))</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    wxCopyFile(element-&gt;<a class="code" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc" title="Retourne le nom de complet l&#39;élément.">GetNom</a>(), chemin, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (wxDirExists(element-&gt;<a class="code" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc" title="Retourne le nom de complet l&#39;élément.">GetNom</a>()))</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    DossierCopie(element-&gt;<a class="code" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc" title="Retourne le nom de complet l&#39;élément.">GetNom</a>(), chemin);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    FichierCopie(element-&gt;<a class="code" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc" title="Retourne le nom de complet l&#39;élément.">GetNom</a>(), chemin);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (element-&gt;<a class="code" href="class_element_thread_fichier.html#a1764a11f1f3f094b3ff420f9f8896f0e" title="Compare si l&#39;action à effectuer est celle donné en paramètre.">IsAction</a>(DEPLACE))</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                chemin = element-&gt;<a class="code" href="class_element_thread_fichier.html#a8a5f9e46088f3873faeb04979af68cc0" title="Renvoi le répertoire de destination de l&#39;élément.">GetDestination</a>() + wxFileName::GetPathSeparator() + element-&gt;<a class="code" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc" title="Retourne le nom de complet l&#39;élément.">GetNom</a>().AfterLast(wxFileName::GetPathSeparator());</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <span class="keywordflow">if</span> (wxFileExists(element-&gt;<a class="code" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc" title="Retourne le nom de complet l&#39;élément.">GetNom</a>()))</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    wxRenameFile(element-&gt;<a class="code" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc" title="Retourne le nom de complet l&#39;élément.">GetNom</a>(), chemin, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (wxDirExists(element-&gt;<a class="code" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc" title="Retourne le nom de complet l&#39;élément.">GetNom</a>()))</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    DossierCopie(element-&gt;<a class="code" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc" title="Retourne le nom de complet l&#39;élément.">GetNom</a>(), chemin);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                    FichierDeplace(element-&gt;<a class="code" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc" title="Retourne le nom de complet l&#39;élément.">GetNom</a>(), chemin);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (element-&gt;<a class="code" href="class_element_thread_fichier.html#a1764a11f1f3f094b3ff420f9f8896f0e" title="Compare si l&#39;action à effectuer est celle donné en paramètre.">IsAction</a>(SUPPRIME))</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <span class="keywordflow">if</span> (wxFileExists(element-&gt;<a class="code" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc" title="Retourne le nom de complet l&#39;élément.">GetNom</a>()))</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                    wxRemoveFile(element-&gt;<a class="code" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc" title="Retourne le nom de complet l&#39;élément.">GetNom</a>());</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (wxDirExists(element-&gt;<a class="code" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc" title="Retourne le nom de complet l&#39;élément.">GetNom</a>()))</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                    FichierSuppression(element-&gt;<a class="code" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc" title="Retourne le nom de complet l&#39;élément.">GetNom</a>());</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            element-&gt;<a class="code" href="class_element_thread_fichier.html#a11297fd361eb8d0f8e685bae412fc28f" title="Destructeur.">~ElementThreadFichier</a>();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            m_liste-&gt;Remove(element);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    m_estActif = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    m_continue = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keywordtype">void</span> ThreadFichierFichier::DossierSuppression(wxArrayString &amp;dossier)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;{</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">size_t</span> i = dossier.GetCount();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">while</span>(i&gt;0)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        wxRmdir(dossier[i-1]);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        i--;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    dossier.Empty();</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keywordtype">void</span> ThreadFichierFichier::DossierCopie(wxString dep, wxString dest)</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    wxDir dir(dep);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="class_traverser_copie_dossier.html" title="Copie le contenu d&#39;un dossier origine dans un répertoire destination.">TraverserCopieDossier</a> traverser(dest, dep);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    dir.Traverse(traverser);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;}</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="keywordtype">void</span> ThreadFichierFichier::FichierSuppression(wxString chemin)</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    wxArrayString tableau;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    wxDir dir(chemin);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="class_traverser_supprime_fichier.html" title="Supprime les fichiers se trouvant dans une arborescence.">TraverserSupprimeFichier</a> traverser(chemin, tableau);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    dir.Traverse(traverser);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    DossierSuppression(tableau);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="keywordtype">void</span> ThreadFichierFichier::FichierCopie(wxString dep, wxString dest)</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;{</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    wxDir dir(dep);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="class_traverser_copie_fichier.html" title="Copie les fichiers se trouvant dans l&#39;arborescence dep dans le répertoire dest.">TraverserCopieFichier</a> traverser(dest, dep);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    dir.Traverse(traverser);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="keywordtype">void</span> ThreadFichierFichier::FichierDeplace(wxString dep, wxString dest)</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;{</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    wxArrayString tableau;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    wxDir dir(dep);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <a class="code" href="class_traverser_deplace_fichier.html" title="Déplace le contenu d&#39;un dossier origine dans un répertoire destination.">TraverserDeplaceFichier</a> traverser(dest, dep, tableau);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    dir.Traverse(traverser);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    DossierSuppression(tableau);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi Mai 23 2013 22:50:39 pour Fu(X) 2.0 par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

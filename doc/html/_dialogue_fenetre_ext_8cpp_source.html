@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Fu(X) 2.0:  Fichier source de C:/FuX/src/DialogueFenetreExt.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://www.mathjax.org/mathjax/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fu(X) 2.0
+   &#160;<span id="projectnumber">a5</span>
+   </div>
+   <div id="projectbrief">Fu(X) est un lecteur audio dont le but est de redéfinir l&#39;utilisation en apportant une nouvelle approche aussi intuitive que puissante !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">DialogueFenetreExt.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Name:      DialogueFenetreExt.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Purpose:   Code for Fu(X) 2.0</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    David Lecoconnier (etrange02@aol.com)</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2010-05-29</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Copyright: David Lecoconnier (http://www.fuxplay.com)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * License:</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **************************************************************/</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;DialogueFenetreExt.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;BEGIN_EVENT_TABLE(<a class="code" href="class_dialog_enregistre_m3_u.html" title="Ouvre une boîte de dialogue permettant de choisir le nom du fichiers .m3u à créer et éventuellement l...">DialogEnregistreM3U</a>, wxDialog)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    EVT_BUTTON(ID_DIALOGUE_SAUVEGARDE_M3U, <a class="code" href="class_dialog_enregistre_m3_u.html" title="Ouvre une boîte de dialogue permettant de choisir le nom du fichiers .m3u à créer et éventuellement l...">DialogEnregistreM3U</a>::OuvrirDossier)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;END_EVENT_TABLE()</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="class_dialog_enregistre_m3_u.html#aff1389735a8003d116d5d6988d14a6c0">   25</a></span>&#160; <a class="code" href="class_dialog_enregistre_m3_u.html" title="Ouvre une boîte de dialogue permettant de choisir le nom du fichiers .m3u à créer et éventuellement l...">DialogEnregistreM3U</a>::<a class="code" href="class_dialog_enregistre_m3_u.html" title="Ouvre une boîte de dialogue permettant de choisir le nom du fichiers .m3u à créer et éventuellement l...">DialogEnregistreM3U</a>(wxWindow *parent, wxWindowID <span class="keywordtype">id</span>, wxString racc) : wxDialog(parent, <span class="keywordtype">id</span>, _(&quot;Création de playlist (fichier .m3u)&quot;), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    m_chemin = wxEmptyString; m_raccourci = racc;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    m_rep = <a class="code" href="class_parametre.html#afc0de0da7d04486d5ba6932562d96ed8" title="Retourne l&#39;instance de la classe Parametre.">Parametre::Get</a>()-&gt;<a class="code" href="class_parametre.html#a18a6e103534a955fcf2bef73b8b1094c" title="Retourne l&#39;adresse qui contient tous les fichiers et paramètres nécessaires à Fu(X)">getRepertoireParametre</a>(_T(<span class="stringliteral">&quot;Play_list_M3U&quot;</span>));</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    Centre();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="class_dialog_enregistre_m3_u.html#ae2ce4564cdc664fedc3348247aab5638">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_enregistre_m3_u.html#ae2ce4564cdc664fedc3348247aab5638" title="Crée les éléments graphiques de la fenêtre.">DialogEnregistreM3U::Creer</a>()</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    wxBoxSizer *sizerV = <span class="keyword">new</span> wxBoxSizer(wxVERTICAL);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    SetSizer(sizerV);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    wxStaticText* Text = <span class="keyword">new</span> wxStaticText[3];</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    Text[0].Create(<span class="keyword">this</span>, wxID_ANY, _(<span class="stringliteral">&quot;Choisissez une sauvegarde existante&quot;</span>));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    sizerV-&gt;Add(&amp;Text[0], 0, wxALL, 5);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    m_liste = <span class="keyword">new</span> wxChoice(<span class="keyword">this</span>, wxID_ANY);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    sizerV-&gt;Add(m_liste, 0, wxLEFT|wxRIGHT|wxDOWN|wxEXPAND, 5);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    Text[1].Create(<span class="keyword">this</span>, wxID_ANY, _(<span class="stringliteral">&quot;Ou bien créez une nouvelle sauvegarde&quot;</span>));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    sizerV-&gt;Add(&amp;Text[1], 0, wxALL, 5);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    m_boiteNouveau = <span class="keyword">new</span> wxTextCtrl(<span class="keyword">this</span>, wxID_ANY, _T(<span class="stringliteral">&quot;&quot;</span>));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    sizerV-&gt;Add(m_boiteNouveau, 0, wxLEFT|wxRIGHT|wxDOWN|wxEXPAND, 5);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    sizerV-&gt;Add(<span class="keyword">new</span> wxStaticLine(<span class="keyword">this</span>), 0, wxUP|wxLEFT|wxRIGHT|wxEXPAND, 15);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    Text[2].Create(<span class="keyword">this</span>, wxID_ANY, _(<span class="stringliteral">&quot;Créer un raccourci ? Où le place-t-on ?&quot;</span>));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    sizerV-&gt;Add(&amp;Text[2], 0, wxALL, 5);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    wxBoxSizer *sizerH1 = <span class="keyword">new</span> wxBoxSizer(wxHORIZONTAL);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    sizerV-&gt;Add(sizerH1, 0, wxDOWN|wxEXPAND, 5);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    m_boiteRaccourci = <span class="keyword">new</span> wxTextCtrl(<span class="keyword">this</span>, wxID_ANY, m_raccourci);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    sizerH1-&gt;Add(m_boiteRaccourci, 1, wxALL|wxEXPAND, 5);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    m_bouton = <span class="keyword">new</span> wxButton(<span class="keyword">this</span>, ID_DIALOGUE_SAUVEGARDE_M3U, _T(<span class="stringliteral">&quot;...&quot;</span>), wxDefaultPosition, wxDefaultSize, wxBU_EXACTFIT);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    sizerH1-&gt;Add(m_bouton, 0, wxUP|wxDOWN|wxRIGHT, 5);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    sizerV-&gt;Add(CreateButtonSizer(wxOK|wxCANCEL), 0, wxALL|wxALIGN_RIGHT, 5);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="class_dialog_enregistre_m3_u.html#ab44e915984d06327708a85eb85318d0a" title="Crée une liste de tous les fichiers .m3u présents dans le dossier des paramètres.">CreerListeM3U</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">//Fit();</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="class_dialog_enregistre_m3_u.html#ab44e915984d06327708a85eb85318d0a">   71</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_enregistre_m3_u.html#ab44e915984d06327708a85eb85318d0a" title="Crée une liste de tous les fichiers .m3u présents dans le dossier des paramètres.">DialogEnregistreM3U::CreerListeM3U</a>()</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    wxString dossierM3U = m_rep;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    wxDir::GetAllFiles(dossierM3U, &amp;m_chaineM3U, _T(<span class="stringliteral">&quot;*.m3u&quot;</span>));</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i=0; i&lt;m_chaineM3U.GetCount(); i++)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        m_liste-&gt;Append(m_chaineM3U.Item(i).AfterLast(wxFileName::GetPathSeparator()));</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="class_dialog_enregistre_m3_u.html#a589117c773ce820aed7f1f67204fb3cb">   85</a></span>&#160;wxString <a class="code" href="class_dialog_enregistre_m3_u.html#a589117c773ce820aed7f1f67204fb3cb" title="Retourne le nom complet du fichier .m3u à créer.">DialogEnregistreM3U::GetChemin</a>()</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (m_liste-&gt;GetCurrentSelection() != wxNOT_FOUND)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> m_chaineM3U.Item(m_liste-&gt;GetCurrentSelection());</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> m_rep + wxFileName::GetPathSeparator() + m_boiteNouveau-&gt;GetValue() + _T(<span class="stringliteral">&quot;.m3u&quot;</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="class_dialog_enregistre_m3_u.html#a124046c6b497050e80da8f9d7066a10c">   97</a></span>&#160;wxString <a class="code" href="class_dialog_enregistre_m3_u.html#a124046c6b497050e80da8f9d7066a10c" title="Retourne le nom du dossier dans lequel un raccourci doit être placé">DialogEnregistreM3U::GetCheminRaccourci</a>()</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span> (m_boiteRaccourci-&gt;IsEmpty() || m_boiteRaccourci-&gt;GetValue().StartsWith(m_rep))</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">return</span> wxEmptyString;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!m_boiteNouveau-&gt;IsEmpty())</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span> m_boiteRaccourci-&gt;GetValue() + wxFileName::GetPathSeparator() + m_boiteNouveau-&gt;GetValue() + _(<span class="stringliteral">&quot; (raccourci).lnk&quot;</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (m_liste-&gt;GetCurrentSelection() != wxNOT_FOUND)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">return</span> m_boiteRaccourci-&gt;GetValue() + wxFileName::GetPathSeparator() + m_chaineM3U.Item(m_liste-&gt;GetCurrentSelection()).AfterLast(wxFileName::GetPathSeparator()).BeforeLast(<span class="charliteral">&#39;.&#39;</span>) + _(<span class="stringliteral">&quot; (raccourci).lnk&quot;</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">return</span> wxEmptyString;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="code" href="class_dialog_enregistre_m3_u.html#a3fd1ccd038cd11e549272b43557a42ad">  112</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_enregistre_m3_u.html#a3fd1ccd038cd11e549272b43557a42ad" title="Ouvre une fenêtre pour sélectionner un répertoire.">DialogEnregistreM3U::OuvrirDossier</a>(wxCommandEvent &amp;WXUNUSED(event))</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">int</span> ouvert;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    wxDirDialog navig(<span class="keyword">this</span>, _(<span class="stringliteral">&quot;Choisissez le répertoire dans lequel vous voulez créer un raccourci&quot;</span>), m_boiteRaccourci-&gt;GetValue());<span class="comment">//, wxEmptyString);</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    ouvert = navig.ShowModal();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span> (ouvert == wxID_OK)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        m_boiteRaccourci-&gt;SetValue(navig.GetPath());</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#a8448439f88f296186e0041f797a6685e">  135</a></span>&#160;<a class="code" href="class_dialog_tag_m_p3.html#a8448439f88f296186e0041f797a6685e" title="Constructeur.">DialogTagMP3::DialogTagMP3</a>(wxWindow *parent, wxWindowID <span class="keywordtype">id</span>, wxString chanson) : wxDialog(parent, id, _(<span class="stringliteral">&quot;Détails&quot;</span>), wxDefaultPosition, wxDefaultSize, wxCAPTION|wxCLOSE_BOX|wxSYSTEM_MENU|wxRESIZE_BORDER)</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;{</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    wxBoxSizer *sizerV = NULL, *sizerH = NULL;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    sizerV = <span class="keyword">new</span> wxBoxSizer(wxVERTICAL);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    SetSizer(sizerV);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    sizerH = <span class="keyword">new</span> wxBoxSizer(wxHORIZONTAL);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    sizerV-&gt;Add(sizerH, 1, wxALL|wxEXPAND, 5);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    m_image = <span class="keyword">new</span> <a class="code" href="class_image_pochette_musique.html" title="Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour chang...">ImagePochetteMusique</a>(<span class="keyword">this</span>, ID_PAGE_PLAYLIST_DETAILS_POCHETTE, wxBitmap(250, 250), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    sizerH-&gt;Add(m_image, 0, wxALL, 0);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    m_notebook = <span class="keyword">new</span> wxNotebook(<span class="keyword">this</span>, -1);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    m_pageInfo = <span class="keyword">new</span> <a class="code" href="class_dialog_tag_m_p3_info.html" title="Page affichant les propriétés du titre donné en paramètre.">DialogTagMP3Info</a>(m_notebook, -1, chanson);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    m_commentaires = <span class="keyword">new</span> wxTextCtrl(m_notebook, -1, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    m_notebook-&gt;AddPage(m_pageInfo, _(<span class="stringliteral">&quot;Informations&quot;</span>));</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    m_notebook-&gt;AddPage(m_commentaires, _(<span class="stringliteral">&quot;Commentaires&quot;</span>));</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    sizerH-&gt;Add(m_notebook, 1, wxEXPAND|wxLEFT, 5);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    sizerV-&gt;Add(CreateSeparatedButtonSizer(wxOK|wxCANCEL), 0, wxALL|wxALIGN_RIGHT|wxEXPAND, 5);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    sizerV-&gt;SetSizeHints(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#acfa083c47bd3aab00b90269fd4e2974c">  161</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3.html#acfa083c47bd3aab00b90269fd4e2974c" title="Associe le titre pour afficher les détails.">DialogTagMP3::SetChanson</a>(wxString chanson)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;{    m_pageInfo-&gt;<a class="code" href="class_dialog_tag_m_p3_info.html#a48b887ca31331143632214564f225f9e" title="Associe le titre pour afficher les détails.">SetChanson</a>(chanson);}</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#a8d4801b97018d9ca2b7fe249f3a0f294">  168</a></span>&#160;wxString <a class="code" href="class_dialog_tag_m_p3.html#a8d4801b97018d9ca2b7fe249f3a0f294" title="Retourne le nom de la chanson.">DialogTagMP3::GetNom</a>()</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;{    <span class="keywordflow">return</span> m_pageInfo-&gt;<a class="code" href="class_dialog_tag_m_p3_info.html#ad8177accfdf791c633b86a8457e10bc9" title="Retourne le nom de la chanson.">GetNom</a>();}</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#ac3d12107f339defc0955ea3f5e212fee">  175</a></span>&#160;wxString <a class="code" href="class_dialog_tag_m_p3.html#ac3d12107f339defc0955ea3f5e212fee" title="Retourne le titre de la chanson - TAG.">DialogTagMP3::GetTitre</a>()</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;{    <span class="keywordflow">return</span> m_pageInfo-&gt;<a class="code" href="class_dialog_tag_m_p3_info.html#ac56c3b47cc0c8d78ed18f678c8fdf120" title="Retourne le titre de la chanson - TAG.">GetTitre</a>();}</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#a43c185daa0bb2a0c16e9af5640207f2a">  182</a></span>&#160;wxString <a class="code" href="class_dialog_tag_m_p3.html#a43c185daa0bb2a0c16e9af5640207f2a" title="Retourne l&#39;album de la chanson - TAG.">DialogTagMP3::GetAlbum</a>()</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;{    <span class="keywordflow">return</span> m_pageInfo-&gt;<a class="code" href="class_dialog_tag_m_p3_info.html#a4f94999fe18ca07a02229892fe2216e4" title="Retourne l&#39;album de la chanson - TAG.">GetAlbum</a>();}</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#a9c4aaf0ab8ec1571cc65693d7a9c05be">  189</a></span>&#160;wxString <a class="code" href="class_dialog_tag_m_p3.html#a9c4aaf0ab8ec1571cc65693d7a9c05be" title="Retourne l&#39;artiste de la chanson - TAG.">DialogTagMP3::GetArtiste</a>()</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{    <span class="keywordflow">return</span> m_pageInfo-&gt;<a class="code" href="class_dialog_tag_m_p3_info.html#a6213c3f32d708473d07253f9e3cbdf04" title="Retourne l&#39;artiste de la chanson - TAG.">GetArtiste</a>();}</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#a6bd1bd06e46a7610e9ea967293e8edc1">  196</a></span>&#160;wxString <a class="code" href="class_dialog_tag_m_p3.html#a6bd1bd06e46a7610e9ea967293e8edc1" title="Retourne le genre de la chanson - TAG.">DialogTagMP3::GetGenre</a>()</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;{    <span class="keywordflow">return</span> m_pageInfo-&gt;<a class="code" href="class_dialog_tag_m_p3_info.html#ae203494d22e0110c3e454174bde95131" title="Retourne le genre de la chanson - TAG.">GetGenre</a>();}</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#a86779ac0fc0690b3ab7f368e649707ba">  203</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_dialog_tag_m_p3.html#a86779ac0fc0690b3ab7f368e649707ba" title="Retourne l&#39;année de parution de la chanson - TAG.">DialogTagMP3::GetAnnee</a>()</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;{    <span class="keywordflow">return</span> m_pageInfo-&gt;<a class="code" href="class_dialog_tag_m_p3_info.html#a0c9c508e3bcef2fb77b998b6b0a748c7" title="Retourne l&#39;année de parution de la chanson - TAG.">GetAnnee</a>();}</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#a783111b0c05865035122d1a0b9e05da6">  210</a></span>&#160;wxString <a class="code" href="class_dialog_tag_m_p3.html#a783111b0c05865035122d1a0b9e05da6" title="Retourne les commentaires enregistrés dans la chanson - TAG.">DialogTagMP3::GetCommentaire</a>()</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;{    <span class="keywordflow">return</span> m_commentaires-&gt;GetValue();}</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#a5a81c65d44ff013ff86d196d96b5166b">  217</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3.html#a5a81c65d44ff013ff86d196d96b5166b" title="Modifie le titre affiché dans la boîte Titre.">DialogTagMP3::SetTitre</a>(wxString titre)</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;{   m_pageInfo-&gt;<a class="code" href="class_dialog_tag_m_p3_info.html#a6f9c4ed42ce5ec9cfb197771e46c7a2c" title="Modifie le titre affiché dans la boîte Titre.">SetTitre</a>(titre);}</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#a6535b32d1ea702a3e0472ac13394a258">  224</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3.html#a6535b32d1ea702a3e0472ac13394a258" title="Modifie le nom de l&#39;album affiché dans la boîte Album.">DialogTagMP3::SetAlbum</a>(wxString album)</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;{   m_pageInfo-&gt;<a class="code" href="class_dialog_tag_m_p3_info.html#aa2610608f666fe818638ef126f2b1656" title="Modifie le nom de l&#39;album affiché dans la boîte Album.">SetAlbum</a>(album);}</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
+<div class="line"><a name="l00231"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#aba6148b84de9e8ffac92368c5e35665b">  231</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3.html#aba6148b84de9e8ffac92368c5e35665b" title="Modifie le nom de l&#39;artiste affiché dans la boîte Artiste.">DialogTagMP3::SetArtiste</a>(wxString artiste)</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;{   m_pageInfo-&gt;<a class="code" href="class_dialog_tag_m_p3_info.html#ae52d26c3ed64a113830d426cfa8b4a6f" title="Modifie le nom de l&#39;artiste affiché dans la boîte Artiste.">SetArtiste</a>(artiste);}</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
+<div class="line"><a name="l00238"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#a8e303ce82c5ea43cb2c399123818ce61">  238</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3.html#a8e303ce82c5ea43cb2c399123818ce61" title="Modifie le genre affiché dans la boîte Genre.">DialogTagMP3::SetGenre</a>(wxString genre)</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;{   m_pageInfo-&gt;<a class="code" href="class_dialog_tag_m_p3_info.html#a4cdbf542e4227d2e1a49ba0b7e8b00bd" title="Modifie le genre affiché dans la boîte Genre.">SetGenre</a>(genre);}</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
+<div class="line"><a name="l00245"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#a6aaeef73adf1df830628c4c422f40d40">  245</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3.html#a6aaeef73adf1df830628c4c422f40d40" title="Modifie le texte affiché dans l&#39;onglet Commentaires.">DialogTagMP3::SetCommentaire</a>(wxString commentaire)</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;{   m_commentaires-&gt;SetValue(commentaire);}</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00252"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#a6eaa072e3ab159c1e7e1c0177dfaa0ed">  252</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3.html#a6eaa072e3ab159c1e7e1c0177dfaa0ed" title="Modifie l&#39;année affiché dans la boîte Année.">DialogTagMP3::SetAnnee</a>(<span class="keywordtype">int</span> annee)</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;{   m_pageInfo-&gt;<a class="code" href="class_dialog_tag_m_p3_info.html#a5b0daedd3d6f868280447055732eaea0" title="Modifie l&#39;année affiché dans la boîte Année.">SetAnnee</a>(annee);}</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
+<div class="line"><a name="l00259"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#a879fc857725b4ce5685f875c77934f79">  259</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3.html#a879fc857725b4ce5685f875c77934f79" title="Modifie la durée affiché dans le champs durée.">DialogTagMP3::SetDuree</a>(wxString duree)</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;{   m_pageInfo-&gt;<a class="code" href="class_dialog_tag_m_p3_info.html#a3570dfe950577efef7894d265c654df4" title="Modifie la durée affiché dans le champs durée.">SetDuree</a>(duree);}</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
+<div class="line"><a name="l00266"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#a2be87378c9abc309fe598cef281842d4">  266</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3.html#a2be87378c9abc309fe598cef281842d4" title="Modifie le débit affiché dans le champs Débit.">DialogTagMP3::SetDebit</a>(<span class="keywordtype">int</span> debit)</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;{   m_pageInfo-&gt;<a class="code" href="class_dialog_tag_m_p3_info.html#abeed02860993f8b91f0e2626bac64177" title="Modifie le débit affiché dans le champs Débit.">SetDebit</a>(debit);}</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
+<div class="line"><a name="l00273"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#a2f8641b1db0ce372065f58bc47a2c5eb">  273</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3.html#a2f8641b1db0ce372065f58bc47a2c5eb" title="Modifie la taille affiché dans le champs Taille.">DialogTagMP3::SetTaille</a>(<span class="keywordtype">int</span> taille)</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;{   m_pageInfo-&gt;<a class="code" href="class_dialog_tag_m_p3_info.html#addeb1894c47755497df46f2c483640e3" title="Modifie la taille affiché dans le champs Taille.">SetTaille</a>(taille);}</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div>
+<div class="line"><a name="l00280"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#aa4de1d989706f452d905ca6a2269372a">  280</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_dialog_tag_m_p3.html#aa4de1d989706f452d905ca6a2269372a" title="Indique si un champs textuel a été modifié">DialogTagMP3::IsModified</a>()</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;{    <span class="keywordflow">return</span> m_pageInfo-&gt;<a class="code" href="class_dialog_tag_m_p3_info.html#acd7aeb5cc5b8daea280d81913c6554e9" title="Indique si un champs textuel de la page a été modifié">IsModified</a>()|m_commentaires-&gt;IsModified()|m_image-&gt;<a class="code" href="class_image_pochette_musique.html#ae285551d90a3e72a1ecd8c9db6f96f83" title="Test si l&#39;image a été modifiée après sa création.">IsModified</a>();}</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;</div>
+<div class="line"><a name="l00287"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3.html#ac5f601bcb5f43730c3386cd71d8eeb40">  287</a></span>&#160;<a class="code" href="class_image_pochette_musique.html" title="Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour chang...">ImagePochetteMusique</a>* <a class="code" href="class_dialog_tag_m_p3.html#ac5f601bcb5f43730c3386cd71d8eeb40" title="Retourne l&#39;image contenu dans la chanson.">DialogTagMP3::GetImage</a>()</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;{    <span class="keywordflow">return</span> m_image;}</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div>
+<div class="line"><a name="l00301"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#afbd7ac17a4c87c3db8b0be8d8fd5b25d">  301</a></span>&#160;<a class="code" href="class_dialog_tag_m_p3_info.html#afbd7ac17a4c87c3db8b0be8d8fd5b25d" title="Constructeur.">DialogTagMP3Info::DialogTagMP3Info</a>(wxWindow *parent, wxWindowID <span class="keywordtype">id</span>, wxString chanson) : wxPanel(parent, id)</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;{</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    m_annee = 0;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    wxBoxSizer *sizerV = <span class="keyword">new</span> wxBoxSizer(wxVERTICAL);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    SetSizer(sizerV);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    wxFlexGridSizer *sizerGrid = <span class="keyword">new</span> wxFlexGridSizer(6, 2, 5, 5);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    sizerV-&gt;Add(sizerGrid, 0, wxALL|wxEXPAND, 5);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    sizerGrid-&gt;AddGrowableCol(1, 1);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    m_boiteNom = <span class="keyword">new</span> wxTextCtrl(<span class="keyword">this</span>, -1, wxEmptyString, wxDefaultPosition, wxSize(200, -1));</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    m_boiteArtiste = <span class="keyword">new</span> wxTextCtrl(<span class="keyword">this</span>, -1);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    m_boiteAlbum = <span class="keyword">new</span> wxTextCtrl(<span class="keyword">this</span>, -1);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    m_boiteTitre = <span class="keyword">new</span> wxTextCtrl(<span class="keyword">this</span>, -1);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    m_boiteGenre = <span class="keyword">new</span> wxTextCtrl(<span class="keyword">this</span>, -1);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    m_boiteAnnee = <span class="keyword">new</span> wxSpinCtrl(<span class="keyword">this</span>, -1, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 0, 3000, 0, _(<span class="stringliteral">&quot;Année de parution&quot;</span>));</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    wxStaticText *texte = <span class="keyword">new</span> wxStaticText[6];</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    texte[0].Create(<span class="keyword">this</span>, -1, _(<span class="stringliteral">&quot;Nom&quot;</span>));</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    texte[1].Create(<span class="keyword">this</span>, -1, _(<span class="stringliteral">&quot;Artiste&quot;</span>));</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    texte[2].Create(<span class="keyword">this</span>, -1, _(<span class="stringliteral">&quot;Album&quot;</span>));</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    texte[3].Create(<span class="keyword">this</span>, -1, _(<span class="stringliteral">&quot;Titre&quot;</span>));</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    texte[4].Create(<span class="keyword">this</span>, -1, _(<span class="stringliteral">&quot;Genre&quot;</span>));</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    texte[5].Create(<span class="keyword">this</span>, -1, _(<span class="stringliteral">&quot;Année&quot;</span>));</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    sizerGrid-&gt;Add(&amp;texte[0], 0, wxGROW|wxALL, 0);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    sizerGrid-&gt;Add(m_boiteNom, 1, wxGROW|wxALL|wxEXPAND, 0);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    sizerGrid-&gt;Add(&amp;texte[1], 0, wxGROW|wxALL, 0);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    sizerGrid-&gt;Add(m_boiteArtiste, 1, wxGROW|wxALL|wxEXPAND, 0);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    sizerGrid-&gt;Add(&amp;texte[2], 0, wxGROW|wxALL, 0);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    sizerGrid-&gt;Add(m_boiteAlbum, 1, wxGROW|wxALL|wxEXPAND, 0);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    sizerGrid-&gt;Add(&amp;texte[3], 0, wxGROW|wxALL, 0);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    sizerGrid-&gt;Add(m_boiteTitre, 1, wxGROW|wxALL|wxEXPAND, 0);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    sizerGrid-&gt;Add(&amp;texte[4], 0, wxGROW|wxALL, 0);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    sizerGrid-&gt;Add(m_boiteGenre, 1, wxGROW|wxALL|wxEXPAND, 0);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    sizerGrid-&gt;Add(&amp;texte[5], 0, wxGROW|wxALL, 0);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    sizerGrid-&gt;Add(m_boiteAnnee, 1, wxGROW|wxALL|wxEXPAND, 0);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    m_echantillonage = <span class="keyword">new</span> wxStaticText(<span class="keyword">this</span>, -1, _(<span class="stringliteral">&quot;Débit - inconnu&quot;</span>));</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    m_duree = <span class="keyword">new</span> wxStaticText(<span class="keyword">this</span>, -1, _(<span class="stringliteral">&quot;Durée - inconnu&quot;</span>));</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    m_taille = <span class="keyword">new</span> wxStaticText(<span class="keyword">this</span>, -1, _(<span class="stringliteral">&quot;Taille - inconnu&quot;</span>));</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    sizerV-&gt;Add(m_echantillonage, 0, wxALL, 5);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    sizerV-&gt;Add(m_duree, 0, wxALL, 5);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    sizerV-&gt;Add(m_taille, 0, wxALL, 5);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <a class="code" href="class_dialog_tag_m_p3_info.html#a48b887ca31331143632214564f225f9e" title="Associe le titre pour afficher les détails.">SetChanson</a>(chanson);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;}</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
+<div class="line"><a name="l00350"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#a48b887ca31331143632214564f225f9e">  350</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3_info.html#a48b887ca31331143632214564f225f9e" title="Associe le titre pour afficher les détails.">DialogTagMP3Info::SetChanson</a>(wxString chanson)</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;{    m_boiteNom-&gt;SetValue(chanson.AfterLast(wxFileName::GetPathSeparator()));}</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;</div>
+<div class="line"><a name="l00357"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#ad8177accfdf791c633b86a8457e10bc9">  357</a></span>&#160;wxString <a class="code" href="class_dialog_tag_m_p3_info.html#ad8177accfdf791c633b86a8457e10bc9" title="Retourne le nom de la chanson.">DialogTagMP3Info::GetNom</a>()</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;{    <span class="keywordflow">return</span> m_boiteNom-&gt;GetValue();}</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;</div>
+<div class="line"><a name="l00364"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#ac56c3b47cc0c8d78ed18f678c8fdf120">  364</a></span>&#160;wxString <a class="code" href="class_dialog_tag_m_p3_info.html#ac56c3b47cc0c8d78ed18f678c8fdf120" title="Retourne le titre de la chanson - TAG.">DialogTagMP3Info::GetTitre</a>()</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;{    <span class="keywordflow">return</span> m_boiteTitre-&gt;GetValue();}</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;</div>
+<div class="line"><a name="l00371"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#a4f94999fe18ca07a02229892fe2216e4">  371</a></span>&#160;wxString <a class="code" href="class_dialog_tag_m_p3_info.html#a4f94999fe18ca07a02229892fe2216e4" title="Retourne l&#39;album de la chanson - TAG.">DialogTagMP3Info::GetAlbum</a>()</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;{    <span class="keywordflow">return</span> m_boiteAlbum-&gt;GetValue();}</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;</div>
+<div class="line"><a name="l00378"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#a6213c3f32d708473d07253f9e3cbdf04">  378</a></span>&#160;wxString <a class="code" href="class_dialog_tag_m_p3_info.html#a6213c3f32d708473d07253f9e3cbdf04" title="Retourne l&#39;artiste de la chanson - TAG.">DialogTagMP3Info::GetArtiste</a>()</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;{    <span class="keywordflow">return</span> m_boiteArtiste-&gt;GetValue();}</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;</div>
+<div class="line"><a name="l00385"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#ae203494d22e0110c3e454174bde95131">  385</a></span>&#160;wxString <a class="code" href="class_dialog_tag_m_p3_info.html#ae203494d22e0110c3e454174bde95131" title="Retourne le genre de la chanson - TAG.">DialogTagMP3Info::GetGenre</a>()</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;{    <span class="keywordflow">return</span> m_boiteGenre-&gt;GetValue();}</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;</div>
+<div class="line"><a name="l00392"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#a0c9c508e3bcef2fb77b998b6b0a748c7">  392</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_dialog_tag_m_p3_info.html#a0c9c508e3bcef2fb77b998b6b0a748c7" title="Retourne l&#39;année de parution de la chanson - TAG.">DialogTagMP3Info::GetAnnee</a>()</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;{    <span class="keywordflow">return</span> m_boiteAnnee-&gt;GetValue();}</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;</div>
+<div class="line"><a name="l00399"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#a6f9c4ed42ce5ec9cfb197771e46c7a2c">  399</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3_info.html#a6f9c4ed42ce5ec9cfb197771e46c7a2c" title="Modifie le titre affiché dans la boîte Titre.">DialogTagMP3Info::SetTitre</a>(wxString titre)</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;{   m_boiteTitre-&gt;SetValue(titre);}</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;</div>
+<div class="line"><a name="l00406"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#aa2610608f666fe818638ef126f2b1656">  406</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3_info.html#aa2610608f666fe818638ef126f2b1656" title="Modifie le nom de l&#39;album affiché dans la boîte Album.">DialogTagMP3Info::SetAlbum</a>(wxString album)</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;{   m_boiteAlbum-&gt;SetValue(album);}</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;</div>
+<div class="line"><a name="l00413"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#ae52d26c3ed64a113830d426cfa8b4a6f">  413</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3_info.html#ae52d26c3ed64a113830d426cfa8b4a6f" title="Modifie le nom de l&#39;artiste affiché dans la boîte Artiste.">DialogTagMP3Info::SetArtiste</a>(wxString artiste)</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;{   m_boiteArtiste-&gt;SetValue(artiste);}</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;</div>
+<div class="line"><a name="l00420"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#a4cdbf542e4227d2e1a49ba0b7e8b00bd">  420</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3_info.html#a4cdbf542e4227d2e1a49ba0b7e8b00bd" title="Modifie le genre affiché dans la boîte Genre.">DialogTagMP3Info::SetGenre</a>(wxString genre)</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;{   m_boiteGenre-&gt;SetValue(genre);}</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;</div>
+<div class="line"><a name="l00427"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#a5b0daedd3d6f868280447055732eaea0">  427</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3_info.html#a5b0daedd3d6f868280447055732eaea0" title="Modifie l&#39;année affiché dans la boîte Année.">DialogTagMP3Info::SetAnnee</a>(<span class="keywordtype">int</span> annee)</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;{</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    m_boiteAnnee-&gt;SetValue(annee);</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    m_annee = annee;</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;}</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;</div>
+<div class="line"><a name="l00437"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#a3570dfe950577efef7894d265c654df4">  437</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3_info.html#a3570dfe950577efef7894d265c654df4" title="Modifie la durée affiché dans le champs durée.">DialogTagMP3Info::SetDuree</a>(wxString duree)</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;{    m_duree-&gt;SetLabel(_(<span class="stringliteral">&quot;Durée - &quot;</span>) + duree);}</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;</div>
+<div class="line"><a name="l00444"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#abeed02860993f8b91f0e2626bac64177">  444</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3_info.html#abeed02860993f8b91f0e2626bac64177" title="Modifie le débit affiché dans le champs Débit.">DialogTagMP3Info::SetDebit</a>(<span class="keywordtype">int</span> debit)</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;{</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    wxString chaine = _(<span class="stringliteral">&quot;Débit - &quot;</span>);</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    chaine &lt;&lt; debit &lt;&lt; _(<span class="stringliteral">&quot; kbits/s&quot;</span>);</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    m_echantillonage-&gt;SetLabel(chaine);</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;}</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;</div>
+<div class="line"><a name="l00455"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#addeb1894c47755497df46f2c483640e3">  455</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dialog_tag_m_p3_info.html#addeb1894c47755497df46f2c483640e3" title="Modifie la taille affiché dans le champs Taille.">DialogTagMP3Info::SetTaille</a>(<span class="keywordtype">int</span> taille)</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;{</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    wxString chaine = _(<span class="stringliteral">&quot;Taille - &quot;</span>);</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    wxString t;</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    t &lt;&lt; (float)(taille/1024) /1024 ;</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    chaine &lt;&lt; t.Truncate(t.First(<span class="charliteral">&#39;.&#39;</span>) + 3) &lt;&lt; _(<span class="stringliteral">&quot; Mo&quot;</span>) &lt;&lt; _T(<span class="stringliteral">&quot; (&quot;</span>) &lt;&lt; taille &lt;&lt; _T(<span class="stringliteral">&quot; octets)&quot;</span>);</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    m_taille-&gt;SetLabel(chaine);</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;}</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;</div>
+<div class="line"><a name="l00468"></a><span class="lineno"><a class="code" href="class_dialog_tag_m_p3_info.html#acd7aeb5cc5b8daea280d81913c6554e9">  468</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_dialog_tag_m_p3_info.html#acd7aeb5cc5b8daea280d81913c6554e9" title="Indique si un champs textuel de la page a été modifié">DialogTagMP3Info::IsModified</a>()</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;{</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    <span class="keywordtype">bool</span> annee = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <span class="keywordflow">if</span> (m_annee != m_boiteAnnee-&gt;GetValue())</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;        annee = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <span class="keywordflow">return</span>  m_boiteNom-&gt;IsModified()|m_boiteTitre-&gt;IsModified()|m_boiteAlbum-&gt;IsModified()|m_boiteArtiste-&gt;IsModified()|m_boiteGenre-&gt;IsModified()|annee;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi Mai 23 2013 22:50:39 pour Fu(X) 2.0 par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

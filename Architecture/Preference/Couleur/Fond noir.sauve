@@ -1,0 +1,10 @@
+#EXTSAUVE_C1
+Fond noir
+Fond= 0 0 0
+Barre= 0 67 0
+Police= 50 100 50
+Haut= f f t
+MiSup= f t t
+Double= t
+MiInf= t f t
+Bas= t t f

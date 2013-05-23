@@ -1,0 +1,77 @@
+#ifndef PLAY_LISTE_H_INCLUDED
+#define PLAY_LISTE_H_INCLUDED
+
+#include "Define.h"
+#include <wx/wx.h>
+#include <wx/stdpaths.h>
+#include <wx/dir.h>
+#include <wx/collpane.h>
+#include <wx/gbsizer.h>
+#include <wx/spinctrl.h>
+#include <wx/textdlg.h>
+#include <wx/tarstrm.h>
+#include <wx/progdlg.h>
+#include <wx/mstream.h>
+#include <TAGLIB/tag.h>
+#include <TAGLIB/fileref.h>
+#include <TAGLIB/taglib.h>
+#include <TAGLIB/mpegfile.h>
+#include <TAGLIB/id3v2tag.h>
+#include <TAGLIB/attachedpictureframe.h>
+/*#include <TAGLIBDLL/tag.h>
+#include <TAGLIBDLL/fileref.h>
+#include <TAGLIBDLL/taglib.h>
+#include <TAGLIBDLL/mpegfile.h>
+#include <TAGLIBDLL/id3v2tag.h>
+#include <TAGLIBDLL/attachedpictureframe.h>*/
+//#include <TAGLIBDLL/tlist.tcc>
+#include "Musique.h"
+#include "PlayListTableau.h"
+#include "DialogueFenetreExt.h"
+#include "ImageFichierMusique.h"
+#include "OS_Win.h"
+#include "SliderSon.h"
+
+
+class PlayList : public wxPanel
+{
+    public:
+        PlayList();
+        //PlayList(wxWindow *Parent);
+        ~PlayList();
+
+        ListeLecture* GetListeLecture();
+
+        void Creer(wxWindow *Parent, bool MAJListe = false);
+        void EnregistrerM3U(wxCommandEvent &WXUNUSED(event));
+        void OnPanneau(wxCollapsiblePaneEvent &WXUNUSED(event));
+        void OnAfficheDetails(wxListEvent&);
+        void OnAppliquerTAG(wxCommandEvent &WXUNUSED(event));
+        void OnAnnulerTAG(wxCommandEvent &WXUNUSED(event));
+        void FenetreDetails(wxCommandEvent &WXUNUSED(event));
+
+        void ViderPanneauTAG();
+        void RemplirPanneauTAG(wxString chaine);
+        void EvtViderPanneauTAG(wxCommandEvent &WXUNUSED(event));
+        void EvtImage(wxCommandEvent&);
+        void MouseEvents(wxMouseEvent&);
+
+    protected:
+        wxString fichierTAG;
+        wxSizer *sizer, *m_sizerBouton, *m_sizerRep;
+        wxFlexGridSizer *m_sizerPann;
+        wxButton *m_BoutonSauver, *m_BoutonAnnuler, *m_BoutonEnregistrerM3U;
+        wxCollapsiblePane *m_panneauRepliable;
+        wxTextCtrl *m_BoiteNom, *m_BoiteArtiste, *m_BoiteAlbum, *m_BoiteTitre, *m_BoiteGenre;
+        wxSpinCtrl *m_BoiteAnnee;
+
+        int ligneSel;
+        ImagePochetteMusique *m_pochette;
+        ListeLecture *m_liste;
+        Musique *m_musique;
+        TagLib::FileRef m_ObjetTAG;
+
+    DECLARE_EVENT_TABLE()
+};
+
+#endif // PLAY_LISTE_H_INCLUDED

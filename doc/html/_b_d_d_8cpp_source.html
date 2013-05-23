@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Fu(X) 2.0:  Fichier source de C:/FuX/src/BDD.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://www.mathjax.org/mathjax/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fu(X) 2.0
+   &#160;<span id="projectnumber">a5</span>
+   </div>
+   <div id="projectbrief">Fu(X) est un lecteur audio dont le but est de redéfinir l&#39;utilisation en apportant une nouvelle approche aussi intuitive que puissante !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">BDD.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Name:      BDD.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Purpose:   Code for Fu(X) 2.0</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    David Lecoconnier (etrange02@aol.com)</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2011-11-29</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Copyright: David Lecoconnier (http://www.fuxplay.com)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * License:</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **************************************************************/</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;wx/wxprec.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifdef __BORLANDC__</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #pragma hdrstop</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;BDD.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/********* Base de données ***********/</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">chanson     (id INTEGER PRIMARY KEY AUTOINCREMENT, nom VARCHAR(255), adresse VARCHAR(255), annee CHAR(4), genre INTEGER)//dansabilité</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">artiste     (id INTEGER PRIMARY KEY AUTOINCREMENT, nom VARCHAR(75))</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">album       (id INTEGER PRIMARY KEY AUTOINCREMENT, nom VARCHAR(100), annee_parution CHAR(4))</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">utilisateur (id INTEGER PRIMARY KEY AUTOINCREMENT, nom VARCHAR(60))</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">produit     (id_chanson INTEGER REFERENCES chanson(id), id_artiste INTEGER REFERENCES artiste(id),          PRIMARY KEY(id_chanson, id_artiste))</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">publie      (id_artiste INTEGER REFERENCES artiste(id), id_album INTEGER REFERENCES album(id),              PRIMARY KEY(id_artiste, id_album))</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">contient    (id_chanson INTEGER REFERENCES chanson(id), id_album INTEGER REFERENCES album(id),              PRIMARY KEY(id_chanson, id_album))</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">listeperso  (id_utilisateur INTEGER REFERENCES utilisateur(id), id_chanson INTEGER REFERENCES chanson(id),  PRIMARY KEY(id_utilisateur, id_chanson))</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">remix       (id INTEGER REFERENCES chanson(id),                 id_original INTEGER REFERENCES chanson(id), PRIMARY KEY(id, id_original))</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="class_b_d_d.html#abc551344b2e136090b8d2d82ab6ff0f2">   42</a></span>&#160;<a class="code" href="class_b_d_d.html#abc551344b2e136090b8d2d82ab6ff0f2" title="Constructeur, ne pas appeler.">BDD::BDD</a>()</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    wxSQLite3Database::InitializeSQLite();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    m_database = <span class="keyword">new</span> wxSQLite3Database();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    m_database-&gt;Open(<a class="code" href="class_parametre.html#afc0de0da7d04486d5ba6932562d96ed8" title="Retourne l&#39;instance de la classe Parametre.">Parametre::Get</a>()-&gt;getRepertoireParametre(_T(<span class="stringliteral">&quot;fux.db&quot;</span>)));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_b_d_d.html#a99763e8bbbd155499f31888cff1962e4" title="Crée les différentes tables si celles-ci n&#39;existent pas dans la base de données.">CreerTables</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;BDD::~BDD()</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="class_fichier_log.html#a9f111f4cad417ccd12d783f89983535c" title="Retourne un pointeur sur l&#39;instance FichierLog.">FichierLog::Get</a>()-&gt;<a class="code" href="class_fichier_log.html#a3872e68ad4ef647b4ed0d7c4dee13626" title="Ajoute une ligne au fichier.">Ajouter</a>(_T(<span class="stringliteral">&quot;BDD::~BDD&quot;</span>));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="class_b_d_d.html#ae4fe2aa311bce61f06dd0d746daa18bb">   58</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_b_d_d.html#ae4fe2aa311bce61f06dd0d746daa18bb" title="Ferme la base de données.">BDD::Close</a>()</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    m_database-&gt;Close();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">delete</span> m_database;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    wxSQLite3Database::ShutdownSQLite();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a99763e8bbbd155499f31888cff1962e4">   68</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_b_d_d.html#a99763e8bbbd155499f31888cff1962e4" title="Crée les différentes tables si celles-ci n&#39;existent pas dans la base de données.">BDD::CreerTables</a>()</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (!m_database-&gt;TableExists(_T(<span class="stringliteral">&quot;chanson&quot;</span>)))</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;CREATE TABLE chanson(id INTEGER PRIMARY KEY AUTOINCREMENT, nom VARCHAR(255), adresse VARCHAR(255), annee CHAR(4), genre CHAR(30));&quot;</span>));<span class="comment">//dansabilité</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (!m_database-&gt;TableExists(_T(<span class="stringliteral">&quot;artiste&quot;</span>)))</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;CREATE TABLE artiste(id INTEGER PRIMARY KEY AUTOINCREMENT, nom VARCHAR(75));&quot;</span>));</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (!m_database-&gt;TableExists(_T(<span class="stringliteral">&quot;album&quot;</span>)))</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;CREATE TABLE album(id INTEGER, id_artiste INTEGER REFERENCES artiste(id), nom VARCHAR(100), annee_parution CHAR(4), PRIMARY KEY(id, id_artiste));&quot;</span>));<span class="comment">//AAAA-MM-JJ</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (!m_database-&gt;TableExists(_T(<span class="stringliteral">&quot;produit&quot;</span>)))</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;CREATE TABLE produit(id_chanson INTEGER REFERENCES chanson(id), id_artiste INTEGER REFERENCES artiste(id), PRIMARY KEY(id_chanson, id_artiste));&quot;</span>));</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">//if (!m_database-&gt;TableExists(&quot;publie&quot;))</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">//    m_database-&gt;ExecuteUpdate(&quot;CREATE TABLE publie(id_artiste INTEGER REFERENCES artiste(id), id_album INTEGER REFERENCES album(id), PRIMARY KEY(id_artiste, id_album))&quot;);</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (!m_database-&gt;TableExists(_T(<span class="stringliteral">&quot;contient&quot;</span>)))</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;CREATE TABLE contient(id_chanson INTEGER REFERENCES chanson(id), id_album INTEGER REFERENCES album(id), PRIMARY KEY(id_chanson, id_album));&quot;</span>));<span class="comment">//AAAA-MM-JJ</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (!m_database-&gt;TableExists(_T(<span class="stringliteral">&quot;utilisateur&quot;</span>)))</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;CREATE TABLE utilisateur(id INTEGER PRIMARY KEY AUTOINCREMENT, nom VARCHAR(60))&quot;</span>));</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (!m_database-&gt;TableExists(_T(<span class="stringliteral">&quot;listeperso&quot;</span>)))</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;CREATE TABLE listeperso(id_utilisateur INTEGER REFERENCES utilisateur(id), id_chanson INTEGER REFERENCES chanson(id), PRIMARY KEY(id_utilisateur, id_chanson));&quot;</span>));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (!m_database-&gt;TableExists(_T(<span class="stringliteral">&quot;remix&quot;</span>)))</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;CREATE TABLE remix(id INTEGER REFERENCES chanson(id), id_original INTEGER REFERENCES chanson(id), PRIMARY KEY(id, id_original));&quot;</span>));</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a36be635367744694a0e124c42aa94939">  100</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#a36be635367744694a0e124c42aa94939" title="Ajoute une chanson avec ses différents paramètres dans la base de données.">BDD::AjouterChanson</a>(wxString nom, wxString adresse, wxString annee, wxString genre)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">bool</span> res = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        wxSQLite3Transaction t(m_database);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        res = m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;INSERT INTO chanson VALUES(NULL, \&quot;&quot;</span>) + nom + _T(<span class="stringliteral">&quot;\&quot;, \&quot;&quot;</span>) + adresse + _T(<span class="stringliteral">&quot;\&quot;, \&quot;&quot;</span>) + annee + _T(<span class="stringliteral">&quot;\&quot;, \&quot;&quot;</span>) + genre + _T(<span class="stringliteral">&quot;\&quot;);&quot;</span>));</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        t.Commit();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">catch</span> (...) {}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a2039c666c0c4f0f1267fe9ece7517c04">  120</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#a36be635367744694a0e124c42aa94939" title="Ajoute une chanson avec ses différents paramètres dans la base de données.">BDD::AjouterChanson</a>(wxString nomComplet, wxString annee, wxString genre)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a36be635367744694a0e124c42aa94939" title="Ajoute une chanson avec ses différents paramètres dans la base de données.">AjouterChanson</a>(nomComplet.AfterLast(wxFileName::GetPathSeparator()), nomComplet.BeforeLast(wxFileName::GetPathSeparator()), annee, genre);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a30e27d8e757bbb58a4e62837824e4468">  130</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#a30e27d8e757bbb58a4e62837824e4468" title="Ajoute un artiste à la base de données.">BDD::AjouterArtiste</a>(wxString nom)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;INSERT INTO artiste VALUES(NULL, \&quot;&quot;</span>) + nom + _T(<span class="stringliteral">&quot;\&quot;);&quot;</span>));</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a6cb2ff3b902135bf6bfa51ac98168427">  142</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#a6cb2ff3b902135bf6bfa51ac98168427" title="Ajoute un album à la base de données.">BDD::AjouterAlbum</a>(wxString nom, <span class="keywordtype">int</span> idArtiste, <span class="keywordtype">int</span> idAlbum) <span class="comment">// idAlbum=-1</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;{</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> (idAlbum == -1)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;INSERT INTO album VALUES(NULL, &quot;</span>) + wxString::Format(_T(<span class="stringliteral">&quot;%d&quot;</span>), idArtiste) + _T(<span class="stringliteral">&quot;, \&quot;&quot;</span>) + nom + _T(<span class="stringliteral">&quot;\&quot;)&quot;</span>));</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;INSERT INTO album VALUES(&quot;</span>) + wxString::Format(_T(<span class="stringliteral">&quot;%d&quot;</span>), idAlbum) + _T(<span class="stringliteral">&quot;, &quot;</span>) + wxString::Format(_T(<span class="stringliteral">&quot;%d&quot;</span>), idArtiste) + _T(<span class="stringliteral">&quot;, \&quot;&quot;</span>) + nom + _T(<span class="stringliteral">&quot;\&quot;)&quot;</span>));</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="code" href="class_b_d_d.html#aa85dec40e48aedabc14200552b428c31">  156</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#aa85dec40e48aedabc14200552b428c31" title="Associe une chanson à un artiste.">BDD::AjouterArtisteProduitChanson</a>(<span class="keywordtype">int</span> idChanson, <span class="keywordtype">int</span> idArtiste)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;INSERT INTO produit VALUES(%d, %d)&quot;</span>), idChanson, idArtiste));</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a7a2ab5dff08afcc13ecf12ecb25ca1f4">  167</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#a7a2ab5dff08afcc13ecf12ecb25ca1f4" title="Associe une chanson à un album.">BDD::AjouterAlbumContientChanson</a>(<span class="keywordtype">int</span> idChanson, <span class="keywordtype">int</span> idAlbum)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;{</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;INSERT INTO contient VALUES(%d, %d)&quot;</span>), idChanson, idAlbum));</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="code" href="class_b_d_d.html#aa8f3077dce91d4727ba244c70c456e83">  177</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#aa8f3077dce91d4727ba244c70c456e83" title="Ajoute un utilisateur à la base de données.">BDD::AjouterUtilisateur</a>(wxString nom)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;{</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;INSERT INTO utilisateur VALUES (NULL, \&quot;&quot;</span>) + nom + _T(<span class="stringliteral">&quot;\&quot;)&quot;</span>));</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="code" href="class_b_d_d.html#ae154f92d498282f43cd8ec247e8d8dd1">  188</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#ae154f92d498282f43cd8ec247e8d8dd1" title="Associe un titre à un utilisateur.">BDD::AjouterListePerso</a>(<span class="keywordtype">int</span> idUtilisateur, <span class="keywordtype">int</span> idChanson)</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;{</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;INSERT INTO listeperso VALUES (%d, %d)&quot;</span>), idUtilisateur, idChanson));</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a85f9a1bcdcd8ab94e2ef450f0421df7d">  199</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#a85f9a1bcdcd8ab94e2ef450f0421df7d" title="Associe deux chansons entre elles : la première est une reprise de la seconde.">BDD::AjouterRemixDe</a>(<span class="keywordtype">int</span> idRemix, <span class="keywordtype">int</span> idOriginal)</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;{</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;INSERT INTO remix VALUES (%d, %d)&quot;</span>), idRemix, idOriginal));</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="code" href="class_b_d_d.html#af3f6439ba6f200224d71643978a62a08">  210</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#af3f6439ba6f200224d71643978a62a08" title="Modifie le nom d&#39;une chanson.">BDD::ModifierChansonNom</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, wxString nom)</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;{</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;UPDATE chanson SET nom=\&quot;&quot;</span>) + nom + _T(<span class="stringliteral">&quot;\&quot; WHERE id=&quot;</span>) + wxString::Format(_T(<span class="stringliteral">&quot;%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
+<div class="line"><a name="l00221"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a2a7023cf01be0b419eaa31c01885478e">  221</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#a2a7023cf01be0b419eaa31c01885478e" title="Modifie l&#39;année de parution d&#39;une chanson.">BDD::ModifierChansonAnnee</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, wxString annee)</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;{</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;UPDATE chanson SET annee=\&quot;&quot;</span>) + annee + _T(<span class="stringliteral">&quot;\&quot; WHERE id=&quot;</span>) + wxString::Format(_T(<span class="stringliteral">&quot;%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00232"></a><span class="lineno"><a class="code" href="class_b_d_d.html#ab1266ad52304597daabc7fd626423d08">  232</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#ab1266ad52304597daabc7fd626423d08" title="Modifie le genre d&#39;une chanson.">BDD::ModifierChansonGenre</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, wxString genre)</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;{</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;UPDATE chanson SET genre=\&quot;&quot;</span>) + genre + _T(<span class="stringliteral">&quot;\&quot; WHERE id=&quot;</span>) + wxString::Format(_T(<span class="stringliteral">&quot;%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;}</div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="code" href="class_b_d_d.html#ac24181915870574da1b88adcbf4765f5">  243</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#ac24181915870574da1b88adcbf4765f5" title="Modifie le nom d&#39;un artiste.">BDD::ModifierArtisteNom</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, wxString nom)</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;{</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;UPDATE artiste SET nom=\&quot;&quot;</span>) + nom + _T(<span class="stringliteral">&quot;\&quot; WHERE id=&quot;</span>) + wxString::Format(_T(<span class="stringliteral">&quot;%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;}</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00254"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a96e1a057a03156b8fe12883468cd9dc3">  254</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#a96e1a057a03156b8fe12883468cd9dc3" title="Modifie le nom d&#39;un album.">BDD::ModifierAlbumNom</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, wxString nom)</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;{</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;UPDATE album SET nom=\&quot;&quot;</span>) + nom + _T(<span class="stringliteral">&quot;\&quot; WHERE id=&quot;</span>) + wxString::Format(_T(<span class="stringliteral">&quot;%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;}</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
+<div class="line"><a name="l00265"></a><span class="lineno"><a class="code" href="class_b_d_d.html#aed711ace98dcb3f2ee15eefa69e277ce">  265</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#aed711ace98dcb3f2ee15eefa69e277ce" title="Modifie l&#39;année de parution d&#39;un album.">BDD::ModifierAlbumAnnee</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, wxString annee)</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;UPDATE album SET annee=\&quot;&quot;</span>) + annee + _T(<span class="stringliteral">&quot;\&quot; WHERE id=&quot;</span>) + wxString::Format(_T(<span class="stringliteral">&quot;%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;}</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
+<div class="line"><a name="l00276"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a7a7666ee9c71009059af005e0092c1d8">  276</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#a7a7666ee9c71009059af005e0092c1d8" title="Modifie le nom d&#39;un utilisateur.">BDD::ModifierUtilisateurNom</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, wxString nom)</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;{</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(_T(<span class="stringliteral">&quot;UPDATE utilisateur SET nom=\&quot;&quot;</span>) + nom + _T(<span class="stringliteral">&quot;\&quot; WHERE id=&quot;</span>) + wxString::Format(_T(<span class="stringliteral">&quot;%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
+<div class="line"><a name="l00286"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a2dd9fea81ce7943e571a13005e9e91b3">  286</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#a2dd9fea81ce7943e571a13005e9e91b3" title="Supprime une chanson.">BDD::SupprimerChanson</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;{</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM produit WHERE id_chanson=%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM contient WHERE id_chanson=%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM listeperso WHERE id_chanson=%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM remix WHERE id=%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM remix WHERE id_original=%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM chanson WHERE id=%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div>
+<div class="line"><a name="l00301"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a2be65ffbfebcd49f0e2df3561842e34f">  301</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#a2dd9fea81ce7943e571a13005e9e91b3" title="Supprime une chanson.">BDD::SupprimerChanson</a>(wxString nomComplet)</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;{</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a2dd9fea81ce7943e571a13005e9e91b3" title="Supprime une chanson.">SupprimerChanson</a>(<a class="code" href="class_b_d_d.html#aa8c0cb239ab703c0306eb2ca305132c3" title="Renvoie les identifiants des chansons à partir de leurs noms.">GetChansonIDs</a>(nomComplet, <span class="keyword">true</span>)-&gt;Item(0));</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;}</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
+<div class="line"><a name="l00311"></a><span class="lineno"><a class="code" href="class_b_d_d.html#abb8e4f782f5c212f55518a0829f32be4">  311</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#abb8e4f782f5c212f55518a0829f32be4" title="Supprime un album.">BDD::SupprimerAlbum</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;{</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM contient WHERE id_album=%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM album WHERE id=%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;}</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div>
+<div class="line"><a name="l00322"></a><span class="lineno"><a class="code" href="class_b_d_d.html#affb72c9164c55d59e80504bb11e74113">  322</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#affb72c9164c55d59e80504bb11e74113" title="Supprime un artiste.">BDD::SupprimerArtiste</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;{</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM contient WHERE id_artiste=%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM artiste WHERE id=%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;}</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;</div>
+<div class="line"><a name="l00333"></a><span class="lineno"><a class="code" href="class_b_d_d.html#aca29fd33e4d6c4e10f99f01f6d972b2d">  333</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#affb72c9164c55d59e80504bb11e74113" title="Supprime un artiste.">BDD::SupprimerArtiste</a>(wxString nom)</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;{</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#affb72c9164c55d59e80504bb11e74113" title="Supprime un artiste.">SupprimerArtiste</a>(<a class="code" href="class_b_d_d.html#a318ebaa2c67d5f1c31fcf32e90c5dc88" title="Renvoie les identifiants des artistes en fonction de leur nom.">GetArtisteIDs</a>(nom)-&gt;Item(0));</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;}</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
+<div class="line"><a name="l00343"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a94cf83087b8405b5505f678b6de3fb2c">  343</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#a94cf83087b8405b5505f678b6de3fb2c" title="Supprime un utilisateur.">BDD::SupprimerUtilisateur</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;{</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM listeperso WHERE id_utilisateur=%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM utilisateur WHERE id=%d&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;</div>
+<div class="line"><a name="l00354"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a5c0ad3eb4de4f4711fb0992cf7e39a04">  354</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#a94cf83087b8405b5505f678b6de3fb2c" title="Supprime un utilisateur.">BDD::SupprimerUtilisateur</a>(wxString nom)</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;{</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a94cf83087b8405b5505f678b6de3fb2c" title="Supprime un utilisateur.">SupprimerUtilisateur</a>(<a class="code" href="class_b_d_d.html#ae0e57484caba4674ab6302c9b128d2ec" title="Renvoie l&#39;identifiant d&#39;un utilisateur en fonction de son nom.">GetUtilisateurID</a>(nom));</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;}</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;</div>
+<div class="line"><a name="l00365"></a><span class="lineno"><a class="code" href="class_b_d_d.html#ae70a1eca6b7911ee91b43c3d2a7f0c5d">  365</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#ae70a1eca6b7911ee91b43c3d2a7f0c5d" title="Supprime une association chanson-artiste.">BDD::SupprimerProduit</a>(<span class="keywordtype">int</span> idChanson, <span class="keywordtype">int</span> idArtiste)</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;{</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM produit WHERE id_chanson=%d AND id_artiste=%d&quot;</span>), idChanson, idArtiste));</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;}</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;</div>
+<div class="line"><a name="l00376"></a><span class="lineno"><a class="code" href="class_b_d_d.html#af0b52824501bdfdbbde6da411018f7c8">  376</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#af0b52824501bdfdbbde6da411018f7c8" title="Supprime une association chanson-album.">BDD::SupprimerContient</a>(<span class="keywordtype">int</span> idChanson, <span class="keywordtype">int</span> idAlbum)</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;{</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM contient WHERE id_chanson=%d AND id_album=%d&quot;</span>), idChanson, idAlbum));</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;}</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;</div>
+<div class="line"><a name="l00386"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a1e89e17896bbfaf848205a32781d8044">  386</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#a1e89e17896bbfaf848205a32781d8044" title="Supprime toutes les associations entre des chansons et un utilisateur.">BDD::SupprimerListePerso</a>(<span class="keywordtype">int</span> idUtilisateur)</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;{</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM listeperso WHERE id_utilisateur=%d&quot;</span>), idUtilisateur));</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;}</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;</div>
+<div class="line"><a name="l00397"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a43cbe5e9e1dcf03bb7ab21e0f3b23d99">  397</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#a1e89e17896bbfaf848205a32781d8044" title="Supprime toutes les associations entre des chansons et un utilisateur.">BDD::SupprimerListePerso</a>(<span class="keywordtype">int</span> idUtilisateur, <span class="keywordtype">int</span> idChanson)</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;{</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM listeperso WHERE id_utilisateur=%d AND id_chanson=%d&quot;</span>), idUtilisateur, idChanson));</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;}</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;</div>
+<div class="line"><a name="l00408"></a><span class="lineno"><a class="code" href="class_b_d_d.html#abfcd15cb557e371b94f0de1ce1320eb8">  408</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#abfcd15cb557e371b94f0de1ce1320eb8" title="Supprime une association de reprise entre deux chansons.">BDD::SupprimerRemix</a>(<span class="keywordtype">int</span> idRemix, <span class="keywordtype">int</span> idOriginal)</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;{</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteUpdate(wxString::Format(_T(<span class="stringliteral">&quot;DELETE FROM remix WHERE id=%d AND id_original=%d&quot;</span>), idRemix, idOriginal));</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;}</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;</div>
+<div class="line"><a name="l00418"></a><span class="lineno"><a class="code" href="class_b_d_d.html#ac350a11a77467873272b0d20c9d2fc9e">  418</a></span>&#160;wxString <a class="code" href="class_b_d_d.html#ac350a11a77467873272b0d20c9d2fc9e" title="Renvoie le nom d&#39;une chanson.">BDD::GetChansonNom</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;{</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT nom FROM chanson WHETE id=%d&quot;</span>), <span class="keywordtype">id</span>)).GetString(0);</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;}</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;</div>
+<div class="line"><a name="l00428"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a3c9447f0c0a6aa0997365d008512f84f">  428</a></span>&#160;wxString <a class="code" href="class_b_d_d.html#a3c9447f0c0a6aa0997365d008512f84f" title="Renvoie le nom complet du dossier dans lequel se trouve la chanson.">BDD::GetChansonAdresse</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;{</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT adresse FROM chanson WHETE id=%d&quot;</span>), <span class="keywordtype">id</span>)).GetString(0);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;}</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;</div>
+<div class="line"><a name="l00438"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a889212f647f94fbaf6e408b07a04b54f">  438</a></span>&#160;wxString <a class="code" href="class_b_d_d.html#a889212f647f94fbaf6e408b07a04b54f" title="Renvoie l&#39;année de parution d&#39;une chanson.">BDD::GetChansonAnnee</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;{</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT annee FROM chanson WHETE id=%d&quot;</span>), <span class="keywordtype">id</span>)).GetString(0);</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;}</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;</div>
+<div class="line"><a name="l00448"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a010859557592053a1ac96b18c53b823a">  448</a></span>&#160;wxString <a class="code" href="class_b_d_d.html#a010859557592053a1ac96b18c53b823a" title="Renvoie le genre d&#39;une chanson.">BDD::GetChansonGenre</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;{</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT genre FROM chanson WHETE id=%d&quot;</span>), <span class="keywordtype">id</span>)).GetString(0);</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;}</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;</div>
+<div class="line"><a name="l00460"></a><span class="lineno"><a class="code" href="class_b_d_d.html#aa8c0cb239ab703c0306eb2ca305132c3">  460</a></span>&#160;wxArrayInt* <a class="code" href="class_b_d_d.html#aa8c0cb239ab703c0306eb2ca305132c3" title="Renvoie les identifiants des chansons à partir de leurs noms.">BDD::GetChansonIDs</a>(wxString nom, <span class="keywordtype">bool</span> complet) <span class="comment">// complet = false</span></div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;{</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <span class="comment">/*wxArrayInt* arrayInt = new wxArrayInt();</span></div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="comment">    //while (res.NextRow())</span></div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;<span class="comment">        //arrayInt-&gt;Add(res.GetInt(0));</span></div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;<span class="comment">    wxSQLite3ResultSet res = m_database-&gt;ExecuteQuery(wxT(&quot;SELECT * FROM chanson WHERE nom=\&quot;&quot; + nom + &quot;\&quot;&quot;));</span></div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;<span class="comment">    while (res.NextRow())</span></div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;<span class="comment">        arrayInt-&gt;Add(res.GetInt(0));</span></div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;<span class="comment">    res.Finalize();</span></div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;<span class="comment">    //arrayInt-&gt;Clear();</span></div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;<span class="comment">    //delete arrayInt;</span></div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;<span class="comment">    return arrayInt;*/</span></div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="keywordflow">if</span> (complet)</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(_T(<span class="stringliteral">&quot;SELECT id FROM chanson WHERE nom=\&quot;&quot;</span>) + nom.AfterLast(wxFileName::GetPathSeparator()) + _T(<span class="stringliteral">&quot;\&quot; AND adresse=\&quot;&quot;</span>) + nom.BeforeLast(wxFileName::GetPathSeparator()) + _T(<span class="stringliteral">&quot;\&quot;&quot;</span>)));</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(_T(<span class="stringliteral">&quot;SELECT id FROM chanson WHERE nom=\&quot;&quot;</span>) + nom + _T(<span class="stringliteral">&quot;\&quot;&quot;</span>)));</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;}</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;</div>
+<div class="line"><a name="l00483"></a><span class="lineno"><a class="code" href="class_b_d_d.html#ad2d1163ceec0e59c2e408304ebcd4bec">  483</a></span>&#160;wxString <a class="code" href="class_b_d_d.html#ad2d1163ceec0e59c2e408304ebcd4bec" title="Renvoie le nom d&#39;un artiste.">BDD::GetArtisteNom</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;{</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT nom FROM artiste WHETE id=%d&quot;</span>), <span class="keywordtype">id</span>)).GetString(0);</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;}</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;</div>
+<div class="line"><a name="l00493"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a318ebaa2c67d5f1c31fcf32e90c5dc88">  493</a></span>&#160;wxArrayInt* <a class="code" href="class_b_d_d.html#a318ebaa2c67d5f1c31fcf32e90c5dc88" title="Renvoie les identifiants des artistes en fonction de leur nom.">BDD::GetArtisteIDs</a>(wxString nom)</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;{</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(_T(<span class="stringliteral">&quot;SELECT id FROM artiste WHERE nom=\&quot;&quot;</span>) + nom + _T(<span class="stringliteral">&quot;\&quot;&quot;</span>)));</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;}</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;</div>
+<div class="line"><a name="l00503"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a746162d4081425ca35b897ab684731a5">  503</a></span>&#160;wxString <a class="code" href="class_b_d_d.html#a746162d4081425ca35b897ab684731a5" title="Renvoie le nom d&#39;un album.">BDD::GetAlbumNom</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;{</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT nom FROM album WHETE id=%d&quot;</span>), <span class="keywordtype">id</span>)).GetString(0);</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;}</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;</div>
+<div class="line"><a name="l00513"></a><span class="lineno"><a class="code" href="class_b_d_d.html#aa7812609cd5e75aec3fe38ea8760d5b9">  513</a></span>&#160;wxString <a class="code" href="class_b_d_d.html#aa7812609cd5e75aec3fe38ea8760d5b9" title="Renvoie l&#39;année de parution d&#39;un album.">BDD::GetAlbumAnnee</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;{</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT annee FROM album WHETE id=%d&quot;</span>), <span class="keywordtype">id</span>)).GetString(0);</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;}</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;</div>
+<div class="line"><a name="l00523"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a8062dabde190377163fa21ca48afb8b1">  523</a></span>&#160;wxArrayString* <a class="code" href="class_b_d_d.html#a8062dabde190377163fa21ca48afb8b1" title="Renvoie la liste des artistes ayant participé à l&#39;élaboration d&#39;un album.">BDD::GetAlbumArtiste</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;{</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    wxSQLite3ResultSet res = m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT nom FROM artiste WHERE id=(SELECT id_artiste FROM album WHERE id=%d)&quot;</span>), <span class="keywordtype">id</span>));</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    wxArrayString* arrayString = <span class="keyword">new</span> wxArrayString();</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="keywordflow">while</span> (res.NextRow())</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        arrayString-&gt;Add(res.GetString(0));</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keywordflow">return</span> arrayString;</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;}</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;</div>
+<div class="line"><a name="l00540"></a><span class="lineno"><a class="code" href="class_b_d_d.html#aa55f1077f1a792e3fbe3e62de6ae0565">  540</a></span>&#160;wxArrayInt* <a class="code" href="class_b_d_d.html#aa55f1077f1a792e3fbe3e62de6ae0565" title="Renvoie les albums selon deux critères possibles : le nom ou l&#39;année de parution.">BDD::GetAlbumIDs</a>(wxString nom, wxString annee, <span class="keywordtype">bool</span> nomParam)</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;{</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    <span class="keywordflow">if</span> (nomParam)</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(_T(<span class="stringliteral">&quot;SELECT id FROM album WHERE nom=\&quot;&quot;</span>) + nom + _T(<span class="stringliteral">&quot;\&quot;&quot;</span>)));</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(_T(<span class="stringliteral">&quot;SELECT id FROM album WHERE annee=\&quot;&quot;</span>) + annee + _T(<span class="stringliteral">&quot;\&quot;&quot;</span>)));</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;}</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;</div>
+<div class="line"><a name="l00553"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a1022f0178c4d95cf1a387bc49e1867f3">  553</a></span>&#160;wxArrayInt* <a class="code" href="class_b_d_d.html#aa55f1077f1a792e3fbe3e62de6ae0565" title="Renvoie les albums selon deux critères possibles : le nom ou l&#39;année de parution.">BDD::GetAlbumIDs</a>(<span class="keywordtype">int</span> idArtiste)</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;{</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT id FROM album WHERE id_artiste=%d&quot;</span>), idArtiste)));</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;}</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;<span class="keywordtype">int</span> BDD::GetAlbumID(wxString nom, <span class="keywordtype">int</span> idArtiste)</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;{</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    wxArrayInt *arr = <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT id FROM album WHERE id_artiste=%d AND nom=\&quot;&quot;</span>), idArtiste) + nom + _T(<span class="stringliteral">&quot;\&quot;&quot;</span>)));</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <span class="keywordtype">int</span> ret = (arr-&gt;IsEmpty()) ? -1 : arr-&gt;Item(0);</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    arr-&gt;Clear();</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="keyword">delete</span> arr;</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;}</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;</div>
+<div class="line"><a name="l00572"></a><span class="lineno"><a class="code" href="class_b_d_d.html#aaab37851d9128607c383abda9aa5c72d">  572</a></span>&#160;wxString <a class="code" href="class_b_d_d.html#aaab37851d9128607c383abda9aa5c72d" title="Renvoie le nom d&#39;un utilisateur en fonction de son identifiant.">BDD::GetUtilisateurNom</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;{</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT nom FROM utilisateur WHETE id=%d&quot;</span>), <span class="keywordtype">id</span>)).GetString(0);</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;}</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;</div>
+<div class="line"><a name="l00582"></a><span class="lineno"><a class="code" href="class_b_d_d.html#ae0e57484caba4674ab6302c9b128d2ec">  582</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_b_d_d.html#ae0e57484caba4674ab6302c9b128d2ec" title="Renvoie l&#39;identifiant d&#39;un utilisateur en fonction de son nom.">BDD::GetUtilisateurID</a>(wxString nom)</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;{</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteScalar(_T(<span class="stringliteral">&quot;SELECT id FROM utilisateur WHETE nom=\&quot;&quot;</span>) + nom + _T(<span class="stringliteral">&quot;\&quot;&quot;</span>));</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;}</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;</div>
+<div class="line"><a name="l00593"></a><span class="lineno"><a class="code" href="class_b_d_d.html#afeac92fb216c587af8b925d5bef005f2">  593</a></span>&#160;wxArrayInt* <a class="code" href="class_b_d_d.html#afeac92fb216c587af8b925d5bef005f2" title="Renvoie la liste des chansons produites par un artiste.">BDD::GetProduitChanson</a>(<span class="keywordtype">int</span> idArtiste)</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;{</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT id_chanson FROM produit WHERE id_artiste=%d&quot;</span>), idArtiste)));</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;}</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;</div>
+<div class="line"><a name="l00603"></a><span class="lineno"><a class="code" href="class_b_d_d.html#ad12a9f36d86693ed9344e6ecedec8e25">  603</a></span>&#160;wxArrayInt* <a class="code" href="class_b_d_d.html#ad12a9f36d86693ed9344e6ecedec8e25" title="Renvoie la liste des artistes ayant participé à une chanson.">BDD::GetProduitArtiste</a>(<span class="keywordtype">int</span> idChanson)</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;{</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT id_artiste FROM produit WHERE id_chanson=%d&quot;</span>), idChanson)));</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;}</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;</div>
+<div class="line"><a name="l00613"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a0ead93e63b99da527117b2eb1768c728">  613</a></span>&#160;wxArrayInt* <a class="code" href="class_b_d_d.html#a0ead93e63b99da527117b2eb1768c728" title="Renvoie la liste des chansons associées à un album.">BDD::GetContientChanson</a>(<span class="keywordtype">int</span> idAlbum)</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;{</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT id_chanson FROM contient WHERE id_album=%d&quot;</span>), idAlbum)));</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;}</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;</div>
+<div class="line"><a name="l00624"></a><span class="lineno"><a class="code" href="class_b_d_d.html#ac0bc8d3aab022e0f83d2d53cee23ae00">  624</a></span>&#160;wxArrayInt* <a class="code" href="class_b_d_d.html#ac0bc8d3aab022e0f83d2d53cee23ae00" title="Renvoie la liste des albums contenant une chanson.">BDD::GetContientAlbum</a>(<span class="keywordtype">int</span> idChanson)</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;{</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT id_album FROM contient WHERE id_chanson=%d&quot;</span>), idChanson)));</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;}</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;</div>
+<div class="line"><a name="l00634"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a2e6b251b871606ca21af5a6ef0d077bb">  634</a></span>&#160;wxArrayInt* <a class="code" href="class_b_d_d.html#a2e6b251b871606ca21af5a6ef0d077bb" title="Renvoie la liste des chansons appartenant à la liste de lecture d&#39;un utilisateur.">BDD::GetListePersoChanson</a>(<span class="keywordtype">int</span> idUtilisateur)</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;{</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT id_chanson FROM listeperso WHERE id_utilisateur=%d&quot;</span>), idUtilisateur)));</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;}</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;</div>
+<div class="line"><a name="l00644"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a7a0979f6660e30e95211c91105dbe35b">  644</a></span>&#160;wxArrayInt* <a class="code" href="class_b_d_d.html#a7a0979f6660e30e95211c91105dbe35b" title="Renvoie la liste des utilisateurs ayant associés une chanson à leurs listes de lecture.">BDD::GetListePersoUtilisateur</a>(<span class="keywordtype">int</span> idChanson)</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;{</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT id_utilisateur FROM listeperso WHERE id_chanson=%d&quot;</span>), idChanson)));</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;}</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;</div>
+<div class="line"><a name="l00654"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a93afa87113222c28d2f0834814f8a6dc">  654</a></span>&#160;wxArrayInt* <a class="code" href="class_b_d_d.html#a93afa87113222c28d2f0834814f8a6dc" title="Renvoie la liste des chansons ayant servi à ce remix.">BDD::GetRemixOriginal</a>(<span class="keywordtype">int</span> idReprise)</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;{</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT id_original FROM remix WHERE id=%d&quot;</span>), idReprise)));</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;}</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;</div>
+<div class="line"><a name="l00664"></a><span class="lineno"><a class="code" href="class_b_d_d.html#ac90f8da4d0e0350f7f871f11ef0f7c3c">  664</a></span>&#160;wxArrayInt* <a class="code" href="class_b_d_d.html#ac90f8da4d0e0350f7f871f11ef0f7c3c" title="Renvoie la liste des chansons basé sur cette chanson.">BDD::GetRemixReprise</a>(<span class="keywordtype">int</span> idOriginal)</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;{</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(wxString::Format(_T(<span class="stringliteral">&quot;SELECT id FROM remix WHERE id_original=%d&quot;</span>), idOriginal)));</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;}</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;</div>
+<div class="line"><a name="l00675"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a01b0c91cf477d3f6c03ff63601602a48">  675</a></span>&#160;wxArrayInt* <a class="code" href="class_b_d_d.html#a01b0c91cf477d3f6c03ff63601602a48" title="Renvoie les identifiants des chansons à partir de leurs noms.">BDD::RechercherChansonByNom</a>(wxString nomChanson)</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;{</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(_T(<span class="stringliteral">&quot;SELECT id FROM chanson WHERE nom LIKE %&quot;</span>) + nomChanson + _T(<span class="stringliteral">&quot;%&quot;</span>)));</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;}</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;</div>
+<div class="line"><a name="l00686"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a27fa48746460c71bef0f1c72f89bdd1c">  686</a></span>&#160;wxArrayInt* <a class="code" href="class_b_d_d.html#a27fa48746460c71bef0f1c72f89bdd1c" title="Renvoie la liste des chansons se trouvant dans l&#39;album nom.">BDD::RechercherChansonByAlbum</a>(wxString nomAlbum)</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;{</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(_T(<span class="stringliteral">&quot;SELECT id_chanson FROM contient WHERE id_album=(SELECT id FROM album WHERE nom LIKE %&quot;</span>) + nomAlbum + _T(<span class="stringliteral">&quot;%)&quot;</span>)));</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;}</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;</div>
+<div class="line"><a name="l00697"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a2d590aa98753cf4fe642d2820d44d83f">  697</a></span>&#160;wxArrayInt* <a class="code" href="class_b_d_d.html#a2d590aa98753cf4fe642d2820d44d83f" title="Renvoie la liste des chansons produites par un artiste.">BDD::RechercherChansonByArtiste</a>(wxString nomArtiste)</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;{</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">ResultSetToArrayInt</a>(m_database-&gt;ExecuteQuery(_T(<span class="stringliteral">&quot;SELECT id_chanson FROM produit WHERE id_artiste=(SELECT id FROM artiste WHERE nom LIKE %&quot;</span>) + nomArtiste + _T(<span class="stringliteral">&quot;%)&quot;</span>)));</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;}</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;</div>
+<div class="line"><a name="l00707"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22">  707</a></span>&#160;wxArrayInt* <a class="code" href="class_b_d_d.html#a5af634488e520a575de849161f929b22" title="Transforme le résultat d&#39;une requête dans une base de données SQLite3 en vecteur d&#39;entiers.">BDD::ResultSetToArrayInt</a>(wxSQLite3ResultSet res)</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;{</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    wxArrayInt* arrayInt = <span class="keyword">new</span> wxArrayInt();</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <span class="keywordflow">while</span> (res.NextRow())</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        arrayInt-&gt;Add(res.GetInt(0));</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    res.Finalize();</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="comment">//arrayInt-&gt;Clear();</span></div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="comment">//delete arrayInt;</span></div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <span class="keywordflow">return</span> arrayInt;</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;}</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;</div>
+<div class="line"><a name="l00724"></a><span class="lineno"><a class="code" href="class_b_d_d.html#a8afd3ea33ec12bd6a6f8e54267a4b192">  724</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_b_d_d.html#a8afd3ea33ec12bd6a6f8e54267a4b192" title="Indique si un tuple existe dans la table PRODUIT.">BDD::ExisteProduit</a>(<span class="keywordtype">int</span> idChanson, <span class="keywordtype">int</span> idArtiste)</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;{</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteScalar(wxString::Format(_T(<span class="stringliteral">&quot;SELECT COUNT(*) FROM produit WHERE id_artiste=%d AND id_chanson=%d&quot;</span>), idArtiste, idChanson));</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;}</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;<span class="keywordtype">bool</span> BDD::ExisteAlbum(wxString nomAlbum, <span class="keywordtype">int</span> idArtiste)</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;{</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteScalar(wxString::Format(_T(<span class="stringliteral">&quot;SELECT COUNT(*) FROM album WHERE id_artiste=%d AND nom=\&quot;&quot;</span>), idArtiste) + nomAlbum + _T(<span class="stringliteral">&quot;\&quot;&quot;</span>));</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;}</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;<span class="keywordtype">bool</span> BDD::ExisteContient(<span class="keywordtype">int</span> idChanson, <span class="keywordtype">int</span> idAlbum)</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;{</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <span class="keywordflow">return</span> m_database-&gt;ExecuteScalar(wxString::Format(_T(<span class="stringliteral">&quot;SELECT COUNT(*) FROM contient WHERE id_chanson=%d AND id_album=%d&quot;</span>), idChanson, idAlbum));</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;}</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;<span class="comment">/********* Base de données ***********/</span></div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;<span class="comment">chanson     (id INTEGER PRIMARY KEY AUTOINCREMENT, nom VARCHAR(255), adresse VARCHAR(255), annee CHAR(4), genre INTEGER)//dansabilité</span></div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;<span class="comment">artiste     (id INTEGER PRIMARY KEY AUTOINCREMENT, nom VARCHAR(75))</span></div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;<span class="comment">album       (id INTEGER PRIMARY KEY AUTOINCREMENT, id_artiste INTEGER REFERENCES artiste(id), nom VARCHAR(100), annee_parution CHAR(4))</span></div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;<span class="comment">utilisateur (id INTEGER PRIMARY KEY AUTOINCREMENT, nom VARCHAR(60))</span></div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;<span class="comment">produit     (id_chanson INTEGER REFERENCES chanson(id), id_artiste INTEGER REFERENCES artiste(id),          PRIMARY KEY(id_chanson, id_artiste))</span></div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;<span class="comment">contient    (id_chanson INTEGER REFERENCES chanson(id), id_album INTEGER REFERENCES album(id),              PRIMARY KEY(id_chanson, id_album))</span></div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;<span class="comment">listeperso  (id_utilisateur INTEGER REFERENCES utilisateur(id), id_chanson INTEGER REFERENCES chanson(id),  PRIMARY KEY(id_utilisateur, id_chanson))</span></div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;<span class="comment">remix       (id INTEGER REFERENCES chanson(id),                 id_original INTEGER REFERENCES chanson(id), PRIMARY KEY(id, id_original))</span></div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;<span class="comment">*/</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi Mai 23 2013 22:50:39 pour Fu(X) 2.0 par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>
