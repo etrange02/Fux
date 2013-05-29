@@ -157,22 +157,24 @@ void PrefDefaut::Creer()
  */
 int PrefDefaut::CreerListe(wxChoice *liste)
 {
-    wxString chemin = Parametre::Get()->getRepertoireParametre(_T("Liste_M3U.txt"));
-
-    wxString copie;
-    wxDir Repertoire(Parametre::Get()->getRepertoireParametre(_T("Play_list_M3U")));
-    wxFile fichier;
-    fichier.Create(chemin, true);
     int nombre = 0;
-    bool continuer = Repertoire.GetFirst(&copie, _T("*.m3u"));//, wxDIR_FILES);
+    wxFile fichier;
+    fichier.Create(Parametre::Get()->getRepertoireParametre(_T("Liste_M3U.txt")), true);
 
-    while (continuer)
+    if (wxDir::Exists(Parametre::Get()->getRepertoireParametre(_T("Play_list_M3U"))))
     {
-        fichier.Write(copie);
-        fichier.Write(_T("\r\n"));
-        nombre++;
-        liste->Append(copie);
-        continuer = Repertoire.GetNext(&copie);
+        wxString copie;
+        wxDir Repertoire(Parametre::Get()->getRepertoireParametre(_T("Play_list_M3U")));
+        bool continuer = Repertoire.GetFirst(&copie, _T("*.m3u"));//, wxDIR_FILES);
+
+        while (continuer)
+        {
+            fichier.Write(copie);
+            fichier.Write(_T("\r\n"));
+            nombre++;
+            liste->Append(copie);
+            continuer = Repertoire.GetNext(&copie);
+        }
     }
     fichier.Close();
     return nombre;
