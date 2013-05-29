@@ -4,7 +4,7 @@
 #include <wx/wx.h>
 #include <wx/stdpaths.h>
 #include <ctime>
-#include <FMODex/fmod.hpp>
+#include <fmod.hpp>
 #include "Define.h"
 #include "FichierListe.h"
 #include "FichierLog.h"
