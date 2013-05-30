@@ -279,23 +279,24 @@ void PrefCouleur::Creer()
  */
 int PrefCouleur::CreerListe(wxChoice *liste)
 {
-    wxString chemin = Parametre::Get()->getRepertoireParametre(_T("Liste_Couleur.txt"));
-    wxString repertoire = Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Couleur"));
-
-    wxString copie;
-    wxDir Repertoire(repertoire);
-    wxFile fichier;
-    fichier.Create(chemin, true);
     int nombre = 0;
-    bool continuer = Repertoire.GetFirst(&copie, _T("*.sauve"), wxDIR_FILES);
+    wxFile fichier;
+    fichier.Create(Parametre::Get()->getRepertoireParametre(_T("Liste_Couleur.txt")), true);
 
-    while (continuer)
+    if (wxDir::Exists(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Couleur"))))
     {
-        fichier.Write(copie);
-        fichier.Write(_T("\r\n"));
-        nombre++;
-        liste->Append(copie);
-        continuer = Repertoire.GetNext(&copie);
+        wxString copie;
+        wxDir Repertoire(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Couleur")));
+        bool continuer = Repertoire.GetFirst(&copie, _T("*.sauve"), wxDIR_FILES);
+
+        while (continuer)
+        {
+            fichier.Write(copie);
+            fichier.Write(_T("\r\n"));
+            nombre++;
+            liste->Append(copie);
+            continuer = Repertoire.GetNext(&copie);
+        }
     }
     fichier.Close();
     return nombre;

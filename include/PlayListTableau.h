@@ -21,8 +21,8 @@
 #include <TAGLIBDLL/taglib.h>
 #include <TAGLIBDLL/mpegfile.h>
 #include <TAGLIBDLL/id3v2tag.h>*/
-#include <TAGLIB/tag.h>
-#include <TAGLIB/fileref.h>
+#include <tag.h>
+#include <fileref.h>
 #include "Musique.h"
 #include "DnDCible.h"
 //#include "DialogueFenetreExt.h"

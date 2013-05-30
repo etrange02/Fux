@@ -48,11 +48,11 @@ IMPORTANT, A FAIRE !!!
 			<Environment>
 				<Variable name="AU" value="u" />
 				<Variable name="AURD" value="$(AU)$(RD)" />
-				<Variable name="FMODEX" value='&quot;C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Windows\api\lib&quot;' />
+				<Variable name="FMODEX" value='&quot;C:\Program Files\FMOD SoundSystem\FMOD Programmers API Windows\api&quot;' />
 				<Variable name="RD" value="" />
 				<Variable name="SQLITE3" value="${WXSQLITE3}\sqlite3" />
 				<Variable name="TAGLIB" value="C:\CMake\cmake_taglib\taglib" />
-				<Variable name="WXSQLITE3" value="C:\wxsqlite3-3.0.2" />
+				<Variable name="WXSQLITE3" value="C:\wxsqlite3-3.0.3" />
 				<Variable name="WX_CFG" value="msw$(AURD)" />
 				<Variable name="WX_DIR" value="$(DIR_LIB)\wx" />
 				<Variable name="WX_GL_VER" value="GL" />
@@ -76,6 +76,8 @@ IMPORTANT, A FAIRE !!!
 			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/lib/gcc_lib/mswu" />
 			<Add directory="${SQLITE3}/include" />
 			<Add directory="${WXSQLITE3}/include" />
+			<Add directory="${FMODEX}/inc" />
+			<Add directory="${TAGLIB}/Headers" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/include" />
@@ -105,7 +107,7 @@ IMPORTANT, A FAIRE !!!
 			<Add library="libwxregex$(AURD).a" />
 			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_gl.a" />
 			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_adv.a" />
-			<Add library="${FMODEX}\libfmodex.a" />
+			<Add library="${FMODEX}\lib\libfmodex.a" />
 			<Add library="libopengl32.a" />
 			<Add library="libglu32.a" />
 			<Add library="${TAGLIB}\libtag.dll.a" />
