@@ -2,1203 +2,987 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fu(X) 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-19 00:16+0100\n"
+"POT-Creation-Date: 2013-05-30 17:15+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: LECOCONNIER David <etrange02@aol.com>\n"
+"Last-Translator: David Lecoconnier <david.lecoconnier@free.fr>\n"
 "Language-Team: \n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-SourceCharset: iso-8859-1\n"
-"X-Poedit-Basepath: ..\n"
-"Language: fr_FR\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu"
-"(X) 2.0\n"
+"X-Poedit-SearchPath-0: ../../../src\n"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Application.cpp:69
+#: ../../../src/Application.cpp:41
 msgid "Fu(X) est déjà ouvert, procédure d'ouverture annulée"
-msgstr ""
+msgstr "Fu(X) est déjà ouvert, procédure d'ouverture annulée"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:26
+#: ../../../src/ComInterProcess.cpp:141
+msgid "Connexion non autorisée"
+msgstr "Connexion non autorisée"
+
+#: ../../../src/DialogueFenetreExt.cpp:25
 msgid "Création de playlist (fichier .m3u)"
-msgstr ""
+msgstr "Création de playlist (fichier .m3u)"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:39
+#: ../../../src/DialogueFenetreExt.cpp:41
 msgid "Choisissez une sauvegarde existante"
-msgstr ""
+msgstr "Choisissez une sauvegarde existante"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:44
+#: ../../../src/DialogueFenetreExt.cpp:46
 msgid "Ou bien créez une nouvelle sauvegarde"
-msgstr ""
+msgstr "Ou bien créez une nouvelle sauvegarde"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:51
+#: ../../../src/DialogueFenetreExt.cpp:53
 msgid "Créer un raccourci ? Où le place-t-on ?"
-msgstr ""
+msgstr "Créer un raccourci ? Où le place-t-on ?"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:89 2.0/DialogueFenetreExt.cpp:91
-#: 2.0/GestionPeriphMoitiePage.cpp:816
+#: ../../../src/DialogueFenetreExt.cpp:102
+#: ../../../src/DialogueFenetreExt.cpp:104
+#: ../../../src/GestionPeriphMoitiePage.cpp:965
 msgid " (raccourci).lnk"
-msgstr ""
+msgstr " (raccourci).lnk"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:100
+#: ../../../src/DialogueFenetreExt.cpp:116
 msgid "Choisissez le répertoire dans lequel vous voulez créer un raccourci"
-msgstr ""
+msgstr "Choisissez le répertoire dans lequel vous voulez créer un raccourci"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:108
+#: ../../../src/DialogueFenetreExt.cpp:135 ../../../src/PlayList.cpp:78
+#: ../../../src/PlayListTableau.cpp:71
 msgid "Détails"
-msgstr ""
+msgstr "Détails"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:122
+#: ../../../src/DialogueFenetreExt.cpp:149
 msgid "Informations"
-msgstr ""
+msgstr "Informations"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:123
+#: ../../../src/DialogueFenetreExt.cpp:150
 msgid "Commentaires"
-msgstr ""
+msgstr "Commentaires"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:201
+#: ../../../src/DialogueFenetreExt.cpp:314
 msgid "Année de parution"
-msgstr ""
+msgstr "Année de parution"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:203 2.0/GestionPeriphTableau.cpp:26
-#: 2.0/GestionPeriphTableau.cpp:55
+#: ../../../src/DialogueFenetreExt.cpp:316
+#: ../../../src/GestionPeriphTableau.cpp:56 ../../../src/PlayList.cpp:95
+#: ../../../src/PlayListTableau.cpp:52 ../../../src/PreferenceSon.cpp:75
 msgid "Nom"
-msgstr ""
+msgstr "Nom"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:204
+#: ../../../src/DialogueFenetreExt.cpp:317 ../../../src/PlayList.cpp:105
+#: ../../../src/PlayListTableau.cpp:53
 msgid "Artiste"
-msgstr ""
+msgstr "Artiste"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:205
+#: ../../../src/DialogueFenetreExt.cpp:318 ../../../src/PlayList.cpp:113
+#: ../../../src/PlayListTableau.cpp:54
 msgid "Album"
-msgstr ""
+msgstr "Album"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:206
+#: ../../../src/DialogueFenetreExt.cpp:319 ../../../src/PlayList.cpp:100
+#: ../../../src/PlayListTableau.cpp:55
 msgid "Titre"
-msgstr ""
+msgstr "Titre"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:207
+#: ../../../src/DialogueFenetreExt.cpp:320 ../../../src/PlayList.cpp:109
+#: ../../../src/PlayListTableau.cpp:59
 msgid "Genre"
-msgstr ""
+msgstr "Genre"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:208
+#: ../../../src/DialogueFenetreExt.cpp:321 ../../../src/PlayList.cpp:117
+#: ../../../src/PlayListTableau.cpp:57
 msgid "Année"
-msgstr ""
+msgstr "Année"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:223
+#: ../../../src/DialogueFenetreExt.cpp:336
 msgid "Débit - inconnu"
-msgstr ""
+msgstr "Débit - inconnu"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:224
+#: ../../../src/DialogueFenetreExt.cpp:337
 msgid "Durée - inconnu"
-msgstr ""
+msgstr "Durée - inconnu"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:225
+#: ../../../src/DialogueFenetreExt.cpp:338
 msgid "Taille - inconnu"
-msgstr ""
+msgstr "Taille - inconnu"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:273
+#: ../../../src/DialogueFenetreExt.cpp:438
 msgid "Durée - "
-msgstr ""
+msgstr "Durée - "
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:277
+#: ../../../src/DialogueFenetreExt.cpp:446
 msgid "Débit - "
-msgstr ""
+msgstr "Débit - "
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:278
+#: ../../../src/DialogueFenetreExt.cpp:447
 msgid " kbits/s"
-msgstr ""
+msgstr " kbits/s"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:284
+#: ../../../src/DialogueFenetreExt.cpp:457
 msgid "Taille - "
-msgstr ""
+msgstr "Taille - "
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:285
+#: ../../../src/DialogueFenetreExt.cpp:460
 msgid " Mo"
-msgstr ""
+msgstr " Mo"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:300
-msgid "Fu(X) 2.0 - Graph"
-msgstr ""
+#: ../../../src/Fenetre.cpp:107
+msgid "Impossible de charger le fichier, celui-ci est vierge !"
+msgstr "Impossible de charger le fichier, celui-ci est vierge !"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:486
-msgid "Masquer la barre\tCtrl-B"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/DialogueFenetreExt.cpp:487
-msgid "Quitter\tESCAPE"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:122 2.0/Fenetre.cpp:554 2.0/Fenetre.cpp:726
-msgid "Impossible d'ouvrir le fichier, celui-ci est vierge !"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:195 2.0/Fenetre.cpp:267
+#: ../../../src/Fenetre.cpp:217 ../../../src/Fenetre.cpp:314
+#: ../../../src/PreferenceDefaut.cpp:68
 msgid "Couleur"
-msgstr ""
+msgstr "Couleur"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:196 2.0/Fenetre.cpp:268
+#: ../../../src/Fenetre.cpp:218 ../../../src/Fenetre.cpp:315
+#: ../../../src/PreferenceDefaut.cpp:69
 msgid "Son"
-msgstr ""
+msgstr "Son"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:197 2.0/Fenetre.cpp:269
+#: ../../../src/Fenetre.cpp:219 ../../../src/Fenetre.cpp:316
 msgid "Défaut"
-msgstr ""
+msgstr "Défaut"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:204
+#: ../../../src/Fenetre.cpp:229
 msgid "Extraction indisponible pour le moment"
-msgstr ""
+msgstr "Extraction indisponible pour le moment"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:249
+#: ../../../src/Fenetre.cpp:296
 msgid "Ouvrir"
-msgstr ""
+msgstr "Ouvrir"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:250
+#: ../../../src/Fenetre.cpp:297
 msgid "Charger une playlist"
-msgstr ""
+msgstr "Charger une playlist"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:251
+#: ../../../src/Fenetre.cpp:298
 msgid "Charger un .matin"
-msgstr ""
+msgstr "Charger un .matin"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:254
+#: ../../../src/Fenetre.cpp:301
 msgid "Enregistrer la liste de lecture\tCtrl-S"
-msgstr ""
+msgstr "Enregistrer la liste de lecture\tCtrl-S"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:255
+#: ../../../src/Fenetre.cpp:302
 msgid "Créer un fichier matin"
-msgstr ""
+msgstr "Créer un fichier matin"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:258
+#: ../../../src/Fenetre.cpp:305
 msgid "Quitter Fu(X)\tCtrl-Q"
-msgstr ""
+msgstr "Quitter Fu(X)\tCtrl-Q"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:262
+#: ../../../src/Fenetre.cpp:309
 msgid "Nouveau jeu de couleur"
-msgstr ""
+msgstr "Nouveau jeu de couleur"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:263
+#: ../../../src/Fenetre.cpp:310
 msgid "Modifier/Appliquer un jeu de couleur existant"
-msgstr ""
+msgstr "Modifier/Appliquer un jeu de couleur existant"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:265
+#: ../../../src/Fenetre.cpp:312
 msgid "Nouvel ensemble audio"
-msgstr ""
+msgstr "Nouvel ensemble audio"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:266
+#: ../../../src/Fenetre.cpp:313
 msgid "Modifier/Appliquer une présélection audio"
-msgstr ""
+msgstr "Modifier/Appliquer une présélection audio"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:272
+#: ../../../src/Fenetre.cpp:319
 msgid "Extration de CD"
-msgstr ""
+msgstr "Extration de CD"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:274
+#: ../../../src/Fenetre.cpp:321
 msgid "MAJ Liste de lecture"
-msgstr ""
+msgstr "MAJ Liste de lecture"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:279
+#: ../../../src/Fenetre.cpp:326
 msgid "Aide\tF1"
-msgstr ""
+msgstr "Aide\tF1"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:280
+#: ../../../src/Fenetre.cpp:327
 msgid "Site internet"
-msgstr ""
+msgstr "Site internet"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:281 2.0/Fenetre.cpp:668
+#: ../../../src/Fenetre.cpp:328 ../../../src/Fenetre.cpp:850
 msgid "A propos"
-msgstr ""
+msgstr "A propos"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:285 2.0/Fenetre.cpp:413 2.0/Fenetre.cpp:431
-#: 2.0/Fenetre.cpp:444 2.0/Fenetre.cpp:455 2.0/Fenetre.cpp:468
-#: 2.0/Fenetre.cpp:655
+#: ../../../src/Fenetre.cpp:332 ../../../src/Fenetre.cpp:506
+#: ../../../src/Fenetre.cpp:530 ../../../src/Fenetre.cpp:543
+#: ../../../src/Fenetre.cpp:560 ../../../src/Fenetre.cpp:579
+#: ../../../src/Fenetre.cpp:824
 msgid "Lecture\tCtrl-P"
-msgstr ""
+msgstr "Lecture\tCtrl-P"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:286
+#: ../../../src/Fenetre.cpp:333
 msgid "Stop"
-msgstr ""
+msgstr "Stop"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:288
+#: ../../../src/Fenetre.cpp:335
 msgid "Suivant\tCtrl-RIGHT"
-msgstr ""
+msgstr "Suivant\tCtrl-RIGHT"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:289
+#: ../../../src/Fenetre.cpp:336
 msgid "Précédent\tCtrl-LEFT"
-msgstr ""
+msgstr "Précédent\tCtrl-LEFT"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:290
+#: ../../../src/Fenetre.cpp:337
 msgid "Répétition"
-msgstr ""
+msgstr "Répétition"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:291
+#: ../../../src/Fenetre.cpp:338
 msgid "Aléatoire"
-msgstr ""
+msgstr "Aléatoire"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:293
+#: ../../../src/Fenetre.cpp:340
 msgid "Retirer de la liste de lecture\tCtrl-DELETE"
-msgstr ""
+msgstr "Retirer de la liste de lecture\tCtrl-DELETE"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:296
+#: ../../../src/Fenetre.cpp:343
 msgid "Fichier"
-msgstr ""
+msgstr "Fichier"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:297 2.0/Fenetre.cpp:345
+#: ../../../src/Fenetre.cpp:344 ../../../src/Fenetre.cpp:411
 msgid "Préférences"
-msgstr ""
+msgstr "Préférences"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:298
+#: ../../../src/Fenetre.cpp:345
 msgid "Outils"
-msgstr ""
+msgstr "Outils"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:299
+#: ../../../src/Fenetre.cpp:346
 msgid "?"
-msgstr ""
+msgstr "?"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:300
+#: ../../../src/Fenetre.cpp:347
 msgid "Contrôles"
-msgstr ""
+msgstr "Contrôles"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:336
+#: ../../../src/Fenetre.cpp:400
 msgid "Ecran principal"
-msgstr ""
+msgstr "Ecran principal"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:339 2.0/GestionPeriph.cpp:111
+#: ../../../src/Fenetre.cpp:404 ../../../src/GestionPeriph.cpp:130
 msgid "Liste de lecture"
-msgstr ""
+msgstr "Liste de lecture"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:342
+#: ../../../src/Fenetre.cpp:408
 msgid "Exploration"
-msgstr ""
+msgstr "Exploration"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:348
+#: ../../../src/Fenetre.cpp:414
 msgid "Encodage"
-msgstr ""
+msgstr "Encodage"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:408 2.0/Fenetre.cpp:423 2.0/Fenetre.cpp:439
-#: 2.0/Fenetre.cpp:460 2.0/Fenetre.cpp:650
+#: ../../../src/Fenetre.cpp:501 ../../../src/Fenetre.cpp:522
+#: ../../../src/Fenetre.cpp:538 ../../../src/Fenetre.cpp:565
+#: ../../../src/Fenetre.cpp:819
 msgid "Pause\tCtrl-P"
-msgstr ""
+msgstr "Pause\tCtrl-P"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:493
+#: ../../../src/Fenetre.cpp:628 ../../../src/PreferenceDefaut.cpp:291
 msgid "Choisissez une chanson"
-msgstr ""
+msgstr "Choisissez une chanson"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:530
+#: ../../../src/Fenetre.cpp:672
 msgid "Choisissez une playlist (fichier .m3u)"
-msgstr ""
+msgstr "Choisissez une playlist (fichier .m3u)"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Fenetre.cpp:739
+#: ../../../src/Fenetre.cpp:703 ../../../src/Fenetre.cpp:922
+msgid "Impossible d'ouvrir le fichier, celui-ci est vierge !"
+msgstr "Impossible d'ouvrir le fichier, celui-ci est vierge !"
+
+#: ../../../src/Fenetre.cpp:935
 msgid ""
 "Vous devez mettre les paramètres par défaut de Fu(X) à jour.\n"
 "Merci de votre compréhension"
 msgstr ""
+"Vous devez mettre les paramètres par défaut de Fu(X) à jour.\n"
+"Merci de votre compréhension"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/FichierListe.cpp:134
+#: ../../../src/Fenetre.cpp:1064
+msgid "Graphe - Fu(X) 2.0"
+msgstr "Graphe - Fu(X) 2.0"
+
+#: ../../../src/Fenetre.cpp:1072
+msgid "Liste de lecture - Fu(X) 2.0"
+msgstr "Liste de lecture - Fu(X) 2.0"
+
+#: ../../../src/Fenetre.cpp:1080
+msgid "Exploration - Fu(X) 2.0"
+msgstr "Exploration - Fu(X) 2.0"
+
+#: ../../../src/FichierListe.cpp:164
 msgid "Ajouter le contenu du fichier à la liste de lecture"
-msgstr ""
+msgstr "Ajouter le contenu du fichier à la liste de lecture"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/FichierListe.cpp:135
+#: ../../../src/FichierListe.cpp:165
 msgid "Remplacer la liste de lecture par le contenu du fichier"
-msgstr ""
+msgstr "Remplacer la liste de lecture par le contenu du fichier"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/FichierListe.cpp:136
+#: ../../../src/FichierListe.cpp:166
 msgid "Ne rien faire"
-msgstr ""
+msgstr "Ne rien faire"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/FichierListe.cpp:137
+#: ../../../src/FichierListe.cpp:167
 msgid ""
 "La liste de lecture n'est pas vierge !\n"
 "Que souhaitez-vous faire ?"
 msgstr ""
+"La liste de lecture n'est pas vierge !\n"
+"Que souhaitez-vous faire ?"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/FichierListe.cpp:137
+#: ../../../src/FichierListe.cpp:167
 msgid "Action requise, problème liste de lecture"
-msgstr ""
+msgstr "Action requise, problème liste de lecture"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriph.cpp:56
+#: ../../../src/GestionPeriph.cpp:73
 msgid "Mes Documents"
-msgstr ""
+msgstr "Mes Documents"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriph.cpp:57
+#: ../../../src/GestionPeriph.cpp:74
 msgid "Ordinateur"
-msgstr ""
+msgstr "Ordinateur"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriph.cpp:58
+#: ../../../src/GestionPeriph.cpp:75
 msgid "Autre"
-msgstr ""
+msgstr "Autre"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriph.cpp:63
+#: ../../../src/GestionPeriph.cpp:80
 msgid "Accédez au dossier Mes Documents"
-msgstr ""
+msgstr "Accédez au dossier Mes Documents"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriph.cpp:64
+#: ../../../src/GestionPeriph.cpp:81
 msgid "Accédez aux différents lecteurs de votre ordinateur"
-msgstr ""
+msgstr "Accédez aux différents lecteurs de votre ordinateur"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriph.cpp:65
+#: ../../../src/GestionPeriph.cpp:82
 msgid "Accédez aux enregistrements et à la liste de lecture de Fu(X)"
-msgstr ""
+msgstr "Accédez aux enregistrements et à la liste de lecture de Fu(X)"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriph.cpp:93
+#: ../../../src/GestionPeriph.cpp:110
 msgid ""
 "Déplacer l'élément sélectionné de la fenêtre droite vers la fenêtre gauche"
 msgstr ""
+"Déplacer l'élément sélectionné de la fenêtre droite vers la fenêtre gauche"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriph.cpp:94
+#: ../../../src/GestionPeriph.cpp:111
 msgid "Copier l'élément sélectionné dans l'autre fenêtre de navigation"
-msgstr ""
+msgstr "Copier l'élément sélectionné dans l'autre fenêtre de navigation"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriph.cpp:95
+#: ../../../src/GestionPeriph.cpp:112
 msgid ""
 "Déplacer l'élément sélectionné de la fenêtre gauche vers la fenêtre droite"
 msgstr ""
+"Déplacer l'élément sélectionné de la fenêtre gauche vers la fenêtre droite"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriph.cpp:96
+#: ../../../src/GestionPeriph.cpp:113
 msgid "Supprimer l'élément sélectionné"
-msgstr ""
+msgstr "Supprimer l'élément sélectionné"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriph.cpp:99 2.0/GestionPeriph.cpp:109
-#: 2.0/GestionPeriph.cpp:279 2.0/GestionPeriph.cpp:305
+#: ../../../src/GestionPeriph.cpp:116 ../../../src/GestionPeriph.cpp:128
+#: ../../../src/GestionPeriphElementLecteurRacineFichier.cpp:162
 msgid "Gauche"
-msgstr ""
+msgstr "Gauche"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriph.cpp:100 2.0/GestionPeriph.cpp:110
-#: 2.0/GestionPeriph.cpp:280 2.0/GestionPeriph.cpp:306
+#: ../../../src/GestionPeriph.cpp:117 ../../../src/GestionPeriph.cpp:129
+#: ../../../src/GestionPeriphElementLecteurRacineFichier.cpp:163
 msgid "Droite"
-msgstr ""
+msgstr "Droite"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriph.cpp:106
+#: ../../../src/GestionPeriph.cpp:124
 msgid "Fichiers m3u"
-msgstr ""
+msgstr "Fichiers m3u"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:29
+#: ../../../src/GestionPeriphCouperCopier.cpp:152
+#: ../../../src/GestionPeriphMoitiePage.cpp:521
+msgid "Fichier introuvable : "
+msgstr "Fichier introuvable : "
+
+#: ../../../src/GestionPeriphMoitiePage.cpp:39
 msgid "Navig gauche"
-msgstr ""
+msgstr "Navig gauche"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:30
+#: ../../../src/GestionPeriphMoitiePage.cpp:40
 msgid "Navigation gauche : Fu(X) toujours en développement"
-msgstr ""
+msgstr "Navigation gauche : Fu(X) toujours en développement"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:39
+#: ../../../src/GestionPeriphMoitiePage.cpp:49
 msgid "Navig droite"
-msgstr ""
+msgstr "Navig droite"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:40
+#: ../../../src/GestionPeriphMoitiePage.cpp:50
 msgid "Navigation droite : donc toujours plus loin !"
-msgstr ""
+msgstr "Navigation droite : donc toujours plus loin !"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:46
+#: ../../../src/GestionPeriphMoitiePage.cpp:56
 msgid "Fichiers cachés"
-msgstr ""
+msgstr "Fichiers cachés"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:47
+#: ../../../src/GestionPeriphMoitiePage.cpp:57
 msgid "Filtrer"
-msgstr ""
+msgstr "Filtrer"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:51
+#: ../../../src/GestionPeriphMoitiePage.cpp:61
 msgid "Aller au dossier précédent"
-msgstr ""
+msgstr "Aller au dossier précédent"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:52
+#: ../../../src/GestionPeriphMoitiePage.cpp:62
 msgid "Actualiser"
-msgstr ""
+msgstr "Actualiser"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:53
+#: ../../../src/GestionPeriphMoitiePage.cpp:63
 msgid "Afficher les fichiers cachés"
-msgstr ""
+msgstr "Afficher les fichiers cachés"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:54
+#: ../../../src/GestionPeriphMoitiePage.cpp:64
 msgid "Afficher uniquement les fichiers que Fu(X) peut lire"
-msgstr ""
+msgstr "Afficher uniquement les fichiers que Fu(X) peut lire"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:96
+#: ../../../src/GestionPeriphMoitiePage.cpp:119
 msgid "Navig gauche : Dossier"
-msgstr ""
+msgstr "Navig gauche : Dossier"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:98
+#: ../../../src/GestionPeriphMoitiePage.cpp:121
 msgid "Navig droite : Dossier"
-msgstr ""
+msgstr "Navig droite : Dossier"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:110
+#: ../../../src/GestionPeriphMoitiePage.cpp:133
 msgid "Navig gauche : Liste de lecture"
-msgstr ""
+msgstr "Navig gauche : Liste de lecture"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:112
+#: ../../../src/GestionPeriphMoitiePage.cpp:135
 msgid "Navig droite : Liste de lecture"
-msgstr ""
+msgstr "Navig droite : Liste de lecture"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:124
+#: ../../../src/GestionPeriphMoitiePage.cpp:147
 msgid "Navig gauche : M3U"
-msgstr ""
+msgstr "Navig gauche : M3U"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:126
+#: ../../../src/GestionPeriphMoitiePage.cpp:149
 msgid "Navig droite : M3U"
-msgstr ""
+msgstr "Navig droite : M3U"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:548
+#: ../../../src/GestionPeriphMoitiePage.cpp:662
 msgid "Nom du nouveau dossier"
-msgstr ""
+msgstr "Nom du nouveau dossier"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:548
+#: ../../../src/GestionPeriphMoitiePage.cpp:662
 msgid "Création de dossier"
-msgstr ""
+msgstr "Création de dossier"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:557
+#: ../../../src/GestionPeriphMoitiePage.cpp:671
 msgid "Dossier déjà existant, opération annulée"
-msgstr ""
+msgstr "Dossier déjà existant, opération annulée"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:561
+#: ../../../src/GestionPeriphMoitiePage.cpp:675
 msgid "Création impossible"
-msgstr ""
+msgstr "Création impossible"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:584 2.0/GestionPeriphMoitiePage.cpp:699
+#: ../../../src/GestionPeriphMoitiePage.cpp:701
+#: ../../../src/GestionPeriphMoitiePage.cpp:826 ../../../src/PlayList.cpp:158
 msgid "Fichier déjà existant. Souhaitez-vous le remplacer ?"
-msgstr ""
+msgstr "Fichier déjà existant. Souhaitez-vous le remplacer ?"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:584 2.0/GestionPeriphMoitiePage.cpp:699
+#: ../../../src/GestionPeriphMoitiePage.cpp:701
+#: ../../../src/GestionPeriphMoitiePage.cpp:826 ../../../src/PlayList.cpp:158
 msgid "Fichier déjà existant"
-msgstr ""
+msgstr "Fichier déjà existant"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:597
+#: ../../../src/GestionPeriphMoitiePage.cpp:714 ../../../src/PlayList.cpp:171
+#: ../../../src/PlayList.cpp:280 ../../../src/PlayList.cpp:477
+#: ../../../src/PreferenceCouleur.cpp:777 ../../../src/PreferenceSon.cpp:274
 msgid ""
 "Erreur dans le nom.\n"
 "Vérifiez que vous utilisez des caractères autorisés."
 msgstr ""
+"Erreur dans le nom.\n"
+"Vérifiez que vous utilisez des caractères autorisés."
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:597
+#: ../../../src/GestionPeriphMoitiePage.cpp:714 ../../../src/PlayList.cpp:171
+#: ../../../src/PlayList.cpp:280 ../../../src/PlayList.cpp:477
+#: ../../../src/PreferenceCouleur.cpp:777 ../../../src/PreferenceSon.cpp:274
 msgid "Erreur"
-msgstr ""
+msgstr "Erreur"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:631
+#: ../../../src/GestionPeriphMoitiePage.cpp:747
+#: ../../../src/GestionPeriphMoitiePage.cpp:967 ../../../src/PlayList.cpp:186
+msgid "Echec de la création du raccourci."
+msgstr "Echec de la création du raccourci."
+
+#: ../../../src/GestionPeriphMoitiePage.cpp:752
 msgid "Non"
-msgstr ""
+msgstr "Non"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:632
+#: ../../../src/GestionPeriphMoitiePage.cpp:753
 msgid "A gauche"
-msgstr ""
+msgstr "A gauche"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:633
+#: ../../../src/GestionPeriphMoitiePage.cpp:754
 msgid "A droite"
-msgstr ""
+msgstr "A droite"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:634
+#: ../../../src/GestionPeriphMoitiePage.cpp:755
 msgid "Souhaitez-vous afficher le contenu du fichier ?"
-msgstr ""
+msgstr "Souhaitez-vous afficher le contenu du fichier ?"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:634
+#: ../../../src/GestionPeriphMoitiePage.cpp:755
 msgid "Création M3U"
-msgstr ""
+msgstr "Création M3U"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:669
+#: ../../../src/GestionPeriphMoitiePage.cpp:796
 msgid "Nouveau nom du dossier"
-msgstr ""
+msgstr "Nouveau nom du dossier"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:669
+#: ../../../src/GestionPeriphMoitiePage.cpp:796
 msgid "Nouveau nom du fichier"
-msgstr ""
+msgstr "Nouveau nom du fichier"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:670
+#: ../../../src/GestionPeriphMoitiePage.cpp:797
 msgid "Renommer un dossier"
-msgstr ""
+msgstr "Renommer un dossier"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:670
+#: ../../../src/GestionPeriphMoitiePage.cpp:797
 msgid "Renommer un fichier"
-msgstr ""
+msgstr "Renommer un fichier"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:682
+#: ../../../src/GestionPeriphMoitiePage.cpp:809
 msgid "Ce nom est déjà pris !"
-msgstr ""
+msgstr "Ce nom est déjà pris !"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:705
+#: ../../../src/GestionPeriphMoitiePage.cpp:813
+msgid "Impossible de renommer le fichier"
+msgstr "Impossible de renommer le fichier"
+
+#: ../../../src/GestionPeriphMoitiePage.cpp:836
 msgid "Impossible de modifier le nom"
-msgstr ""
+msgstr "Impossible de modifier le nom"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphMoitiePage.cpp:812
+#: ../../../src/GestionPeriphMoitiePage.cpp:960
 msgid ""
 "Dans quel répertoire voulez-vous créer un raccourci de l'élément "
 "sélectionné ?"
 msgstr ""
+"Dans quel répertoire voulez-vous créer un raccourci de l'élément "
+"sélectionné ?"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphTableau.cpp:27 2.0/GestionPeriphTableau.cpp:56
+#: ../../../src/GestionPeriphTableau.cpp:57
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphTableau.cpp:34
+#: ../../../src/GestionPeriphTableau.cpp:64
 msgid "Créer un dossier"
-msgstr ""
+msgstr "Créer un dossier"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphTableau.cpp:35
+#: ../../../src/GestionPeriphTableau.cpp:65
 msgid "Créer un m3u"
-msgstr ""
+msgstr "Créer un m3u"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphTableau.cpp:37
+#: ../../../src/GestionPeriphTableau.cpp:67
 msgid "Couper\tCtrl-X"
-msgstr ""
+msgstr "Couper\tCtrl-X"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphTableau.cpp:38
+#: ../../../src/GestionPeriphTableau.cpp:68
 msgid "Copier\tCtrl-C"
-msgstr ""
+msgstr "Copier\tCtrl-C"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphTableau.cpp:39
+#: ../../../src/GestionPeriphTableau.cpp:69
 msgid "Coller\tCtrl-V"
-msgstr ""
+msgstr "Coller\tCtrl-V"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphTableau.cpp:41
+#: ../../../src/GestionPeriphTableau.cpp:71
 msgid "Supprimer\tSuppr"
-msgstr ""
+msgstr "Supprimer\tSuppr"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphTableau.cpp:42
+#: ../../../src/GestionPeriphTableau.cpp:72
 msgid "Renommer"
-msgstr ""
+msgstr "Renommer"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphTableau.cpp:43
+#: ../../../src/GestionPeriphTableau.cpp:73
 msgid "Raccourci"
-msgstr ""
+msgstr "Raccourci"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphTableau.cpp:45
+#: ../../../src/GestionPeriphTableau.cpp:75
 msgid "Tout sélectionner\tCtrl-A"
-msgstr ""
+msgstr "Tout sélectionner\tCtrl-A"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphTableau.cpp:46
+#: ../../../src/GestionPeriphTableau.cpp:76
+#: ../../../src/PlayListTableau.cpp:66
 msgid "Lire"
-msgstr ""
+msgstr "Lire"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/GestionPeriphTableau.cpp:80
+#: ../../../src/GestionPeriphTableau.cpp:107
 msgid "Fichier inexistant"
-msgstr ""
+msgstr "Fichier inexistant"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/ImageFichierMusique.cpp:63 2.0/ImageFichierMusique.cpp:152
+#: ../../../src/ImageFichierMusique.cpp:85
 msgid "Choisissez une image"
-msgstr ""
+msgstr "Choisissez une image"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayList.cpp:50
+#: ../../../src/Musique.cpp:355
+msgid "Musique::CopieFichier - arrêt"
+msgstr "Musique::CopieFichier - arrêt"
+
+#: ../../../src/PlayList.cpp:71
 msgid "Enregistrer la liste de lecture"
-msgstr ""
+msgstr "Enregistrer la liste de lecture"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayList.cpp:51
+#: ../../../src/PlayList.cpp:72
 msgid "Enregistre la liste de lecture au format m3u"
-msgstr ""
+msgstr "Enregistre la liste de lecture au format m3u"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayList.cpp:99 2.0/PreferenceCouleur.cpp:233
-#: 2.0/PreferenceDefaut.cpp:109 2.0/PreferenceSon.cpp:102
+#: ../../../src/PlayList.cpp:122 ../../../src/PreferenceCouleur.cpp:250
+#: ../../../src/PreferenceDefaut.cpp:132 ../../../src/PreferenceSon.cpp:120
 msgid "Enregistrer"
-msgstr ""
+msgstr "Enregistrer"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayList.cpp:100 2.0/PreferenceCouleur.cpp:234
-#: 2.0/PreferenceDefaut.cpp:110 2.0/PreferenceSon.cpp:103
+#: ../../../src/PlayList.cpp:123 ../../../src/PreferenceCouleur.cpp:251
+#: ../../../src/PreferenceDefaut.cpp:133 ../../../src/PreferenceSon.cpp:121
 msgid "Annuler"
-msgstr ""
+msgstr "Annuler"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayList.cpp:244 2.0/PlayList.cpp:461
+#: ../../../src/PlayList.cpp:286 ../../../src/PlayList.cpp:520
 msgid ""
 "Vous ne pouvez pas modifier un fichier lorsque celui-ci est en cours de "
 "lecture."
 msgstr ""
+"Vous ne pouvez pas modifier un fichier lorsque celui-ci est en cours de "
+"lecture."
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayList.cpp:244 2.0/PlayList.cpp:246 2.0/PlayList.cpp:255
-#: 2.0/PlayList.cpp:461 2.0/PlayList.cpp:463 2.0/PlayList.cpp:470
-#: 2.0/PreferenceCouleur.cpp:629 2.0/PreferenceCouleur.cpp:716
-#: 2.0/PreferenceSon.cpp:229 2.0/PreferenceSon.cpp:260
+#: ../../../src/PlayList.cpp:286 ../../../src/PlayList.cpp:288
+#: ../../../src/PlayList.cpp:300 ../../../src/PlayList.cpp:520
+#: ../../../src/PlayList.cpp:522 ../../../src/PlayList.cpp:529
+#: ../../../src/PreferenceCouleur.cpp:723
+#: ../../../src/PreferenceCouleur.cpp:810 ../../../src/PreferenceSon.cpp:263
+#: ../../../src/PreferenceSon.cpp:294
 msgid "Erreur !"
-msgstr ""
+msgstr "Erreur !"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayList.cpp:246 2.0/PlayList.cpp:255 2.0/PlayList.cpp:463
-#: 2.0/PlayList.cpp:470
+#: ../../../src/PlayList.cpp:288 ../../../src/PlayList.cpp:300
+#: ../../../src/PlayList.cpp:522 ../../../src/PlayList.cpp:529
 msgid "Sélectionnez un fichier"
-msgstr ""
+msgstr "Sélectionnez un fichier"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayList.cpp:333
+#: ../../../src/PlayList.cpp:391
 msgid ""
 "Il est impossible de modifer les pochettes d'album lorsque\n"
 "le fichier est en cours de lecture."
 msgstr ""
+"Il est impossible de modifer les pochettes d'album lorsque\n"
+"le fichier est en cours de lecture."
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayListTableau.cpp:44
+#: ../../../src/PlayListTableau.cpp:56
 msgid "Durée"
-msgstr ""
+msgstr "Durée"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayListTableau.cpp:46
+#: ../../../src/PlayListTableau.cpp:58
 msgid "Emplacement"
-msgstr ""
+msgstr "Emplacement"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayListTableau.cpp:48
+#: ../../../src/PlayListTableau.cpp:60
 msgid "Ext."
-msgstr ""
+msgstr "Ext."
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayListTableau.cpp:55 2.0/PlayListTableau.cpp:367
-#: 2.0/PlayListTableau.cpp:376
+#: ../../../src/PlayListTableau.cpp:67 ../../../src/PlayListTableau.cpp:444
+#: ../../../src/PlayListTableau.cpp:453
 msgid "Pause"
-msgstr ""
+msgstr "Pause"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayListTableau.cpp:56
+#: ../../../src/PlayListTableau.cpp:68
 msgid "Effacer"
-msgstr ""
+msgstr "Effacer"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayListTableau.cpp:57
+#: ../../../src/PlayListTableau.cpp:69
 msgid "Déplacer"
-msgstr ""
+msgstr "Déplacer"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayListTableau.cpp:58
+#: ../../../src/PlayListTableau.cpp:70
 msgid "Déposer"
-msgstr ""
+msgstr "Déposer"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayListTableau.cpp:144
+#: ../../../src/PlayListTableau.cpp:216
 msgid "Erreur,"
-msgstr ""
+msgstr "Erreur,"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayListTableau.cpp:145
+#: ../../../src/PlayListTableau.cpp:217
 msgid "fichier"
-msgstr ""
+msgstr "fichier"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayListTableau.cpp:146
+#: ../../../src/PlayListTableau.cpp:218
 msgid "introuvable !"
-msgstr ""
+msgstr "introuvable !"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayListTableau.cpp:369 2.0/PlayListTableau.cpp:378
+#: ../../../src/PlayListTableau.cpp:446 ../../../src/PlayListTableau.cpp:455
 msgid "Reprendre"
-msgstr ""
+msgstr "Reprendre"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayListTableau.cpp:481
+#: ../../../src/PlayListTableau.cpp:594
 msgid "Mise à jour"
-msgstr ""
+msgstr "Mise à jour"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PlayListTableau.cpp:481
+#: ../../../src/PlayListTableau.cpp:594
 msgid "Suppression en cours"
-msgstr ""
+msgstr "Suppression en cours"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:44 2.0/PreferenceSon.cpp:41
-#: 2.0/PreferenceSon.cpp:51
+#: ../../../src/PreferenceCouleur.cpp:61 ../../../src/PreferenceSon.cpp:59
+#: ../../../src/PreferenceSon.cpp:69
 msgid "Nouveau"
-msgstr ""
+msgstr "Nouveau"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:44 2.0/PreferenceSon.cpp:41
+#: ../../../src/PreferenceCouleur.cpp:61 ../../../src/PreferenceSon.cpp:59
 msgid "Modifier"
-msgstr ""
+msgstr "Modifier"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:45 2.0/PreferenceSon.cpp:42
+#: ../../../src/PreferenceCouleur.cpp:62 ../../../src/PreferenceSon.cpp:60
 msgid "Mon choix"
-msgstr ""
+msgstr "Mon choix"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:62
+#: ../../../src/PreferenceCouleur.cpp:79
 msgid "Arrière plan"
-msgstr ""
+msgstr "Arrière plan"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:76 2.0/PreferenceCouleur.cpp:100
+#: ../../../src/PreferenceCouleur.cpp:93
+#: ../../../src/PreferenceCouleur.cpp:117
 msgid "R : 0"
-msgstr ""
+msgstr "R : 0"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:77 2.0/PreferenceCouleur.cpp:101
-#: 2.0/PreferenceCouleur.cpp:133
+#: ../../../src/PreferenceCouleur.cpp:94
+#: ../../../src/PreferenceCouleur.cpp:118
+#: ../../../src/PreferenceCouleur.cpp:150
 msgid "V : 0"
-msgstr ""
+msgstr "V : 0"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:78
+#: ../../../src/PreferenceCouleur.cpp:95
 msgid "B : 0"
-msgstr ""
+msgstr "B : 0"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:88
+#: ../../../src/PreferenceCouleur.cpp:105
 msgid "Barre de progression et texte"
-msgstr ""
+msgstr "Barre de progression et texte"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:102 2.0/PreferenceCouleur.cpp:134
+#: ../../../src/PreferenceCouleur.cpp:119
+#: ../../../src/PreferenceCouleur.cpp:151
 msgid "B : 255"
-msgstr ""
+msgstr "B : 255"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:118 2.0/PreferenceCouleur.cpp:119
-#: 2.0/PreferenceCouleur.cpp:359 2.0/PreferenceCouleur.cpp:360
+#: ../../../src/PreferenceCouleur.cpp:135
+#: ../../../src/PreferenceCouleur.cpp:136
+#: ../../../src/PreferenceCouleur.cpp:399
+#: ../../../src/PreferenceCouleur.cpp:400
 msgid "Texte"
-msgstr ""
+msgstr "Texte"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:132
+#: ../../../src/PreferenceCouleur.cpp:149
 msgid "R : 255"
-msgstr ""
+msgstr "R : 255"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:144
+#: ../../../src/PreferenceCouleur.cpp:161
 msgid "Partie supérieure du graph"
-msgstr ""
+msgstr "Partie supérieure du graph"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:150
+#: ../../../src/PreferenceCouleur.cpp:167
 msgid "Haut de l'écran"
-msgstr ""
+msgstr "Haut de l'écran"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:153 2.0/PreferenceCouleur.cpp:175
-#: 2.0/PreferenceCouleur.cpp:198 2.0/PreferenceCouleur.cpp:220
+#: ../../../src/PreferenceCouleur.cpp:170
+#: ../../../src/PreferenceCouleur.cpp:192
+#: ../../../src/PreferenceCouleur.cpp:215
+#: ../../../src/PreferenceCouleur.cpp:237
 msgid "Rouge"
-msgstr ""
+msgstr "Rouge"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:155 2.0/PreferenceCouleur.cpp:176
-#: 2.0/PreferenceCouleur.cpp:199 2.0/PreferenceCouleur.cpp:221
+#: ../../../src/PreferenceCouleur.cpp:172
+#: ../../../src/PreferenceCouleur.cpp:193
+#: ../../../src/PreferenceCouleur.cpp:216
+#: ../../../src/PreferenceCouleur.cpp:238
 msgid "Vert"
-msgstr ""
+msgstr "Vert"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:156 2.0/PreferenceCouleur.cpp:178
-#: 2.0/PreferenceCouleur.cpp:200 2.0/PreferenceCouleur.cpp:222
+#: ../../../src/PreferenceCouleur.cpp:173
+#: ../../../src/PreferenceCouleur.cpp:195
+#: ../../../src/PreferenceCouleur.cpp:217
+#: ../../../src/PreferenceCouleur.cpp:239
 msgid "Bleu"
-msgstr ""
+msgstr "Bleu"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:173
+#: ../../../src/PreferenceCouleur.cpp:190
 msgid "Moitié supérieure"
-msgstr ""
+msgstr "Moitié supérieure"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:185
+#: ../../../src/PreferenceCouleur.cpp:202
 msgid "Symétrie horizontal"
-msgstr ""
+msgstr "Symétrie horizontal"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:189
+#: ../../../src/PreferenceCouleur.cpp:206
 msgid "Partie inférieure du graph"
-msgstr ""
+msgstr "Partie inférieure du graph"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:195
+#: ../../../src/PreferenceCouleur.cpp:212
 msgid "Moitié inférieure"
-msgstr ""
+msgstr "Moitié inférieure"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:218
+#: ../../../src/PreferenceCouleur.cpp:235
 msgid "Bas de l'écran"
-msgstr ""
+msgstr "Bas de l'écran"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:235 2.0/PreferenceSon.cpp:104
+#: ../../../src/PreferenceCouleur.cpp:252 ../../../src/PreferenceSon.cpp:122
 msgid "Appliquer"
-msgstr ""
+msgstr "Appliquer"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:236 2.0/PreferenceSon.cpp:105
+#: ../../../src/PreferenceCouleur.cpp:253 ../../../src/PreferenceSon.cpp:123
 msgid "Supprimer"
-msgstr ""
+msgstr "Supprimer"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:340 2.0/PreferenceCouleur.cpp:365
-#: 2.0/PreferenceCouleur.cpp:368
+#: ../../../src/PreferenceCouleur.cpp:373
+#: ../../../src/PreferenceCouleur.cpp:405
+#: ../../../src/PreferenceCouleur.cpp:408
 msgid "R : "
-msgstr ""
+msgstr "R : "
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:341 2.0/PreferenceCouleur.cpp:366
-#: 2.0/PreferenceCouleur.cpp:369
+#: ../../../src/PreferenceCouleur.cpp:374
+#: ../../../src/PreferenceCouleur.cpp:406
+#: ../../../src/PreferenceCouleur.cpp:409
 msgid "V : "
-msgstr ""
+msgstr "V : "
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:342 2.0/PreferenceCouleur.cpp:367
-#: 2.0/PreferenceCouleur.cpp:370
+#: ../../../src/PreferenceCouleur.cpp:375
+#: ../../../src/PreferenceCouleur.cpp:407
+#: ../../../src/PreferenceCouleur.cpp:410
 msgid "B : "
-msgstr ""
+msgstr "B : "
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:629 2.0/PreferenceSon.cpp:229
+#: ../../../src/PreferenceCouleur.cpp:723 ../../../src/PreferenceSon.cpp:263
 msgid "Un fichier portant ce nom existe déjà !"
-msgstr ""
+msgstr "Un fichier portant ce nom existe déjà !"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceCouleur.cpp:716 2.0/PreferenceSon.cpp:260
+#: ../../../src/PreferenceCouleur.cpp:810 ../../../src/PreferenceSon.cpp:294
 msgid "Vous devez renseigner tous les champs"
-msgstr ""
+msgstr "Vous devez renseigner tous les champs"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceDefaut.cpp:44
+#: ../../../src/PreferenceDefaut.cpp:62
 msgid "Filtres"
-msgstr ""
+msgstr "Filtres"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceDefaut.cpp:52
+#: ../../../src/PreferenceDefaut.cpp:70
 msgid "Reprise"
-msgstr ""
+msgstr "Reprise"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceDefaut.cpp:53
+#: ../../../src/PreferenceDefaut.cpp:71
 msgid "Inclure les fichiers des sous-dossiers lors d'une opération"
-msgstr ""
+msgstr "Inclure les fichiers des sous-dossiers lors d'une opération"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceDefaut.cpp:54
+#: ../../../src/PreferenceDefaut.cpp:72
 msgid "Afficher les noms en fonction des TAGs"
-msgstr ""
+msgstr "Afficher les noms en fonction des TAGs"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceDefaut.cpp:55
+#: ../../../src/PreferenceDefaut.cpp:73
 msgid "Application par défaut"
-msgstr ""
+msgstr "Application par défaut"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceDefaut.cpp:57
+#: ../../../src/PreferenceDefaut.cpp:75
+msgid "Appliquer un filtre couleur sur le graphe."
+msgstr "Appliquer un filtre couleur sur le graphe."
+
+#: ../../../src/PreferenceDefaut.cpp:76
+msgid "Appliquer un filtre son à l'écoute."
+msgstr "Appliquer un filtre son à l'écoute."
+
+#: ../../../src/PreferenceDefaut.cpp:77
+msgid "Lancer automatiquement un fichier lors du lancement de Fu(X)."
+msgstr "Lancer automatiquement un fichier lors du lancement de Fu(X)."
+
+#: ../../../src/PreferenceDefaut.cpp:78
+msgid ""
+"Fu(X) recherchera dans toute l'arborescence du dossier les fichiers lors "
+"d'une opération de lecture par exemple."
+msgstr ""
+"Fu(X) recherchera dans toute l'arborescence du dossier les fichiers lors "
+"d'une opération de lecture par exemple."
+
+#: ../../../src/PreferenceDefaut.cpp:79
+msgid ""
+"Le titre de la chanson se fait à partir des données enregistrées dans le "
+"fichier musical et non à partir du nom de celui-ci."
+msgstr ""
+"Le titre de la chanson se fait à partir des données enregistrées dans le "
+"fichier musical et non à partir du nom de celui-ci."
+
+#: ../../../src/PreferenceDefaut.cpp:80
 msgid ""
 "Faire de Fu(X) le programme par défaut pour les mp3, m3u.\n"
 "Ne pas utiliser si vous avez fait une installation classique."
 msgstr ""
+"Faire de Fu(X) le programme par défaut pour les mp3, m3u.\n"
+"Ne pas utiliser si vous avez fait une installation classique."
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceDefaut.cpp:68
+#: ../../../src/PreferenceDefaut.cpp:91
 msgid "Avancée"
-msgstr ""
+msgstr "Avancée"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceDefaut.cpp:72
+#: ../../../src/PreferenceDefaut.cpp:94
+msgid "Portable"
+msgstr "Portable"
+
+#: ../../../src/PreferenceDefaut.cpp:95
 msgid ""
 "Configure Fu(X) pour une utilisation sur clef USB.\n"
 "Ne pas utiliser si vous avez fait une installation classique."
 msgstr ""
+"Configure Fu(X) pour une utilisation sur clef USB.\n"
+"Ne pas utiliser si vous avez fait une installation classique."
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceDefaut.cpp:79
+#: ../../../src/PreferenceDefaut.cpp:102
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceDefaut.cpp:79
+#: ../../../src/PreferenceDefaut.cpp:102
 msgid "M3U"
-msgstr ""
+msgstr "M3U"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceDefaut.cpp:89
+#: ../../../src/PreferenceDefaut.cpp:112
 msgid "Dossier par défaut"
-msgstr ""
+msgstr "Dossier par défaut"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceDefaut.cpp:111
+#: ../../../src/PreferenceDefaut.cpp:134
 msgid "Rechargement des listes"
-msgstr ""
+msgstr "Rechargement des listes"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceDefaut.cpp:264
+#: ../../../src/PreferenceDefaut.cpp:304
 msgid "Choisissez le répertoire par défaut"
-msgstr ""
+msgstr "Choisissez le répertoire par défaut"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceSon.cpp:52
+#: ../../../src/PreferenceDefaut.cpp:401
+msgid "Non implémenté - Tag"
+msgstr "Non implémenté - Tag"
+
+#: ../../../src/PreferenceDefaut.cpp:417
+msgid "Non implémenté - Application par défaut"
+msgstr "Non implémenté - Application par défaut"
+
+#: ../../../src/PreferenceDefaut.cpp:425
+msgid "Non implémenté - Répertoire par défaut"
+msgstr "Non implémenté - Répertoire par défaut"
+
+#: ../../../src/PreferenceSon.cpp:70
 msgid "Valeurs actuelles"
-msgstr ""
+msgstr "Valeurs actuelles"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceSon.cpp:59
+#: ../../../src/PreferenceSon.cpp:77
 msgid "Volume"
-msgstr ""
+msgstr "Volume"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceSon.cpp:61
+#: ../../../src/PreferenceSon.cpp:79
 msgid "Volume PC"
-msgstr ""
+msgstr "Volume PC"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceSon.cpp:87
+#: ../../../src/PreferenceSon.cpp:105
 msgid "Jeu par défaut"
-msgstr ""
+msgstr "Jeu par défaut"
 
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/PreferenceSon.cpp:106
+#: ../../../src/PreferenceSon.cpp:124
 msgid "Actuel"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph (grosse modifs dossier).cpp:70 fichier).cpp:74
-#: 2.0/Save/GestionPeriph-copie.cpp:96
-msgid "Périphériques"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph (grosse modifs dossier).cpp:88 fichier).cpp:92
-#: 2.0/Save/GestionPeriph-copie.cpp:114
-msgid ""
-"Navigation gauche : Déplacez-vous dans les dossiers et + si affinités... en "
-"toute simplicité !"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph (grosse modifs dossier).cpp:90 fichier).cpp:94
-#: 2.0/Save/GestionPeriph-copie.cpp:116
-msgid "Navigation droite : Là où les autres s'arrêtent, Fu(X) continue..."
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph (grosse modifs dossier).cpp:564 fichier).cpp:568
-msgid "Copie"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph (grosse modifs dossier).cpp:564 fichier).cpp:568
-msgid "Copie en cours"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph (grosse modifs dossier).cpp:616 fichier).cpp:620
-#: 2.0/Save/GestionPeriph-copie.cpp:630
-msgid "Etes-vous réellement sûr de supprimer de façon définitive ces fichiers?"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph (grosse modifs dossier).cpp:616 fichier).cpp:620
-#: 2.0/Save/GestionPeriph-copie.cpp:630
-msgid "Suppression"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph (grosse modifs dossier).cpp:986 fichier).cpp:699
-#: fichier).cpp:848
-msgid "Transfert"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph (grosse modifs dossier).cpp:986 fichier).cpp:699
-#: fichier).cpp:848
-msgid "Déplacement en cours"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph-copie.cpp:179
-msgid "Couper"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph-copie.cpp:180
-msgid "Copier\tF2"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph-copie.cpp:181
-msgid "Coller"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph-copie.cpp:185
-msgid "Tout sélectionner\tF9"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph-copie.cpp:627
-msgid ""
-"Une opération de suppression est déjà en cours.\n"
-"Veuillez attendre qu'elle se termine avant d'en exécuter une autre."
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph-copie.cpp:919
-msgid ""
-"Une opération de copie est déjà en cours.\n"
-"Veuillez attendre qu'elle se termine avant d'en exécuter une autre."
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph-copie.cpp:924
-msgid ""
-"Une opération de déplacement est déjà en cours.\n"
-"Veuillez attendre qu'elle se termine avant d'en exécuter une autre."
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph-copie.cpp:1073
-msgid "Nom du nouveau fichier"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/GestionPeriph-copie.cpp:1073
-msgid "Création de fichier"
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/ThreadGestion-copie.cpp:57
-msgid "Copie annulée."
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/ThreadGestion-copie.cpp:59
-msgid "Copie terminée."
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/ThreadGestion-copie.cpp:111
-msgid "Déplacement annulé."
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/ThreadGestion-copie.cpp:113
-msgid "Déplacement terminé."
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/ThreadGestion-copie.cpp:157
-msgid "Suppression annulée."
-msgstr ""
-
-#: C:/Users/etrange02/Documents/Etrange02/Code blocks/Fu(X)
-#: 2.0/Save/ThreadGestion-copie.cpp:159
-msgid "Suppression terminée."
-msgstr ""
+msgstr "Actuel"
