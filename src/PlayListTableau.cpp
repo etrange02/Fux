@@ -47,6 +47,8 @@ ListeLecture::ListeLecture(wxWindow *Parent) : wxListCtrl(Parent, ID_PAGE_PLAYLI
     #endif
     m_majEnCours = false;
     m_supprEnCours = false;
+    m_rechercheEnCours = false;
+    m_modeRecherche = false;
     m_musique = Musique::Get();
 
     InsertColumn(0,_("Nom"),wxLIST_FORMAT_CENTER, 280);
@@ -254,8 +256,26 @@ wxString ListeLecture::GetDuree(int temps)
  */
 void ListeLecture::ChansonActive(wxListEvent &event)
 {
-    if (!m_musique->ChangementChanson(event.GetIndex(), _T("")))
-        MAJ();
+    if (m_modeRecherche)
+    {
+        //GetItemText(event.GetIndex());
+        wxListItem item;
+        item.SetId(event.GetIndex());
+        item.SetColumn(6);
+        item.SetMask(wxLIST_MASK_TEXT);
+        GetItem(item);
+
+        wxString chemin = item.GetText();
+        item.SetColumn(0);
+        GetItem(item);
+        chemin << wxFileName::GetPathSeparator() << item.GetText();
+        m_musique->ChangementChanson(-1, chemin);
+    }
+    else
+    {
+        if (!m_musique->ChangementChanson(event.GetIndex(), _T("")))
+            MAJ();
+    }
 }
 
 /**
@@ -644,4 +664,71 @@ void ListeLecture::SuppressionLigne()
     m_supprEnCours = false;
 }
 
+void ListeLecture::RechercheElargie(wxString chaine)
+{
+    m_rechercheEnCours = true;
+    wxListItem item;
+    //int i = 0, k = 0;
+    //bool cont = true;
+
+    /*while (m_rechercheEnCours && i < GetItemCount())
+    {
+        k = 0;
+        item.SetId(i);
+        cont = true;
+        while (k < GetColumnCount() && cont)
+        {
+            item.SetColumn(k++);
+            item.SetMask(wxLIST_MASK_TEXT);
+            GetItem(item);
+            if (item.GetText().Contains(chaine))
+                cont = false;
+        }
+        if (cont)// l'élément doit être supprimé, il ne correspond pas à la recherche
+            DeleteItem(i);
+        else
+            i++;
+    }*/
+    m_rechercheEnCours = false;
+    m_modeRecherche = !chaine.IsEmpty();
+}
+
+void ListeLecture::RecherchePrecise(wxString chaine)
+{
+    m_rechercheEnCours = true;
+    m_modeRecherche = true;
+    wxListItem item;
+    int i = 0, k = 0;
+    bool cont = true;
+
+    while (m_rechercheEnCours && i < GetItemCount())
+    {
+        k = 0;
+        item.SetId(i);
+        cont = true;
+        while (k < GetColumnCount() && cont)
+        {
+            item.SetColumn(k++);
+            item.SetMask(wxLIST_MASK_TEXT);
+            GetItem(item);
+            if (item.GetText().Contains(chaine))
+                cont = false;
+        }
+        if (cont)// l'élément doit être supprimé, il ne correspond pas à la recherche
+            DeleteItem(i);
+        else
+            i++;
+    }
+    m_rechercheEnCours = false;
+}
+
+void ListeLecture::StopRecherche()
+{
+    m_rechercheEnCours = false;
+}
+
+bool ListeLecture::RechercheRunning()
+{
+    return m_rechercheEnCours;
+}
 

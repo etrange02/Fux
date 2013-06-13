@@ -56,6 +56,8 @@ class PlayList : public wxPanel
         void EvtImage(wxCommandEvent&);
         void MouseEvents(wxMouseEvent&);
 
+        void RechercheListeLecture(wxCommandEvent&);
+
     protected:
         wxString fichierTAG;
         wxSizer *sizer, *m_sizerBouton, *m_sizerRep;
@@ -71,6 +73,8 @@ class PlayList : public wxPanel
         ListeLecture *m_liste;
         Musique *m_musique;
         TagLib::FileRef m_ObjetTAG;
+
+        int m_rechercheTailleMot;
 
     DECLARE_EVENT_TABLE()
 };

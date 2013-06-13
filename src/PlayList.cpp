@@ -26,6 +26,10 @@ BEGIN_EVENT_TABLE(PlayList, wxPanel)
     EVT_IMAGE_SELECTION(ID_PAGE_PLAYLIST_POCHETTE, PlayList::EvtImage)
     EVT_LISTE_DETAILS(ID_PAGE_PLAYLIST_LISTE, PlayList::FenetreDetails)
     EVT_MOUSE_EVENTS(PlayList::MouseEvents)
+    //EVT_SEARCHCTRL_SEARCH_BTN(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::RechercheListeLecture)
+    //EVT_SEARCHCTRL_CANCEL_BTN(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::)
+    EVT_TEXT(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::RechercheListeLecture)
+    //EVT_TEXT_ENTER(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, )
 END_EVENT_TABLE()
 
 /**
@@ -33,7 +37,9 @@ END_EVENT_TABLE()
  * @see Creer
  */
 PlayList::PlayList()
-{}
+{
+    m_rechercheTailleMot = 0;
+}
 
 /**
  * Destructeur
@@ -66,7 +72,7 @@ void PlayList::Creer(wxWindow *Parent, bool MAJListe)
     SetSizer(sizer);
 
     wxSizer *sizerHorizRecherche = new wxBoxSizer(wxHORIZONTAL);
-    m_champsRecherche = new wxSearchCtrl(this, ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCAL);
+    m_champsRecherche = new wxSearchCtrl(this, ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE);
     m_champsRecherche->SetDescriptiveText(_T("Faire une recherche dans la liste courante..."));
     m_BoutonEnregistrerM3U = new wxButton(this, ID_PAGE_PLAYLIST_BOUTON_ENREGISTRE_M3U, _("Enregistrer la liste de lecture"));
     m_BoutonEnregistrerM3U->SetToolTip(_("Enregistre la liste de lecture au format m3u"));
@@ -553,5 +559,22 @@ void PlayList::MouseEvents(wxMouseEvent &event)
     }
     else
         event.Skip();
+}
+
+void PlayList::RechercheListeLecture(wxCommandEvent &event)
+{
+    if (m_liste->RechercheRunning())
+        m_liste->StopRecherche();
+
+    if (m_champsRecherche->GetValue().Length() > m_rechercheTailleMot)
+    {
+        m_rechercheTailleMot = m_champsRecherche->GetValue().Length();
+        m_liste->RecherchePrecise(m_champsRecherche->GetValue());
+    }
+    else
+    {
+        m_rechercheTailleMot = m_champsRecherche->GetValue().Length();
+        m_liste->RechercheElargie(m_champsRecherche->GetValue());
+    }
 }
 

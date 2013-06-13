@@ -62,6 +62,11 @@ class ListeLecture : public wxListCtrl
 
         void SuppressionLigne();
 
+        void RechercheElargie(wxString chaine);
+        void RecherchePrecise(wxString chaine);
+        void StopRecherche();
+        bool RechercheRunning();
+
     protected:
         bool m_couper, m_majEnCours, m_supprEnCours;
         wxMenu *m_menu;
@@ -71,6 +76,7 @@ class ListeLecture : public wxListCtrl
 
         int m_positionChanson;
         Musique *m_musique;
+        bool m_rechercheEnCours, m_modeRecherche;
 
     DECLARE_EVENT_TABLE()
 };
