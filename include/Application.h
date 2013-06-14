@@ -4,7 +4,7 @@
 #include <wx/wx.h>
 #include <wx/snglinst.h>
 #include <wx/intl.h>
-#include "Fenetre.h"
+#include "GUI/Fenetre.h"
 #include "FichierLog.h"
 #include "Reseau/TCPClient.h"
 #include "Reseau/TCPConnexionEchangeInstanceLocalHost.h"

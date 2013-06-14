@@ -6,7 +6,7 @@
 #include <wx/listctrl.h>
 #include <wx/dataobj.h>
 #include "../Musique.h"
-#include "../GestionPeriphMoitiePage.h"
+#include "../GUI/GestionPeriphMoitiePage.h"
 #include "DnDBufferData.h"
 
 class PageGestionPeriph;

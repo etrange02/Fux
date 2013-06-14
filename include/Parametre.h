@@ -2,7 +2,7 @@
 #define PARAMETRE_H
 
 #include "Define.h"
-#include "MusiqueGraph.h"
+#include "GUI/MusiqueGraph.h"
 #include "Musique.h"
 #include <wx/wx.h>
 #include <wx/stdpaths.h>

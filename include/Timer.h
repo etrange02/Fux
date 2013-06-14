@@ -4,7 +4,7 @@
 #include <wx/wx.h>
 #include <wx/timer.h>
 #include "Musique.h"
-#include "MusiqueGraph.h"
+#include "GUI/MusiqueGraph.h"
 
 
 class TimerGraph : public wxTimer
