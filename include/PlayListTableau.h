@@ -6,31 +6,20 @@
 #include <wx/stdpaths.h>
 #include <wx/dir.h>
 #include <wx/listctrl.h>
-//#include <wx/collpane.h>
-//#include <wx/gbsizer.h>
-//#include <wx/spinctrl.h>
-//#include <wx/textdlg.h>
 #include <wx/tarstrm.h>
 #include <wx/progdlg.h>
 #include <wx/dnd.h>
 #include <wx/mstream.h>
-/////////////
 #include <wx/renderer.h>
-/*#include <TAGLIBDLL/tag.h>
-#include <TAGLIBDLL/fileref.h>
-#include <TAGLIBDLL/taglib.h>
-#include <TAGLIBDLL/mpegfile.h>
-#include <TAGLIBDLL/id3v2tag.h>*/
 #include <tag.h>
 #include <fileref.h>
 #include "Musique.h"
-#include "DnDCible.h"
-//#include "DialogueFenetreExt.h"
+#include "DnD/DnDCible.h"
 #include "GestionPeriph.h"
 #include "SliderSon.h"
 #include "FichierLog.h"
-#include "BDDRequete.h"
-#include "BDDThread.h"
+#include "BDD/BDDRequete.h"
+#include "BDD/BDDThread.h"
 
 extern const wxEventType wxEVT_VIDER_PANNEAU;
 extern const wxEventType wxEVT_LISTE_DETAILS;
@@ -75,7 +64,6 @@ class ListeLecture : public wxListCtrl
         long m_yMenu;
 
         int m_positionChanson;
-        Musique *m_musique;
         bool m_rechercheEnCours, m_modeRecherche;
 
     DECLARE_EVENT_TABLE()

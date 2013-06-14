@@ -29,7 +29,7 @@ BEGIN_EVENT_TABLE(PlayList, wxPanel)
     //EVT_SEARCHCTRL_SEARCH_BTN(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::RechercheListeLecture)
     //EVT_SEARCHCTRL_CANCEL_BTN(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::)
     EVT_TEXT(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::RechercheListeLecture)
-    //EVT_TEXT_ENTER(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, )
+    EVT_TEXT_ENTER(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::RechercheListeLecture)
 END_EVENT_TABLE()
 
 /**
@@ -67,7 +67,6 @@ ListeLecture* PlayList::GetListeLecture()
 void PlayList::Creer(wxWindow *Parent, bool MAJListe)
 {
     Create(Parent);
-    m_musique = Musique::Get();
     sizer = new wxBoxSizer(wxVERTICAL);
     SetSizer(sizer);
 
@@ -211,7 +210,7 @@ void PlayList::OnPanneau(wxCollapsiblePaneEvent &WXUNUSED(event))
 void PlayList::OnAfficheDetails(wxListEvent &event)
 {
     ligneSel = event.GetIndex();
-    fichierTAG = m_musique->GetFichier()->GetNomPosition(ligneSel);
+    fichierTAG = FichierListe::Get()->GetNomPosition(ligneSel);
 
     m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
     if (!m_ObjetTAG.isNull() && m_ObjetTAG.file()->isValid())
@@ -281,7 +280,7 @@ void PlayList::OnAppliquerTAG(wxCommandEvent &WXUNUSED(event))
         if (fichierTAG != tempo)
         {
             if (wxRenameFile(fichierTAG, tempo, true))
-                m_musique->GetFichier()->EchangeNom(fichierTAG, tempo);
+                FichierListe::Get()->EchangeNom(fichierTAG, tempo);
             else
                 wxMessageBox(_("Erreur dans le nom.\nVérifiez que vous utilisez des caractères autorisés."), _("Erreur"));
         }
@@ -478,7 +477,7 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
                     if (fichierTAG != tempo)
                     {
                         if (wxRenameFile(fichierTAG, tempo, true))
-                            m_musique->GetFichier()->EchangeNom(fichierTAG, tempo);
+                            FichierListe::Get()->EchangeNom(fichierTAG, tempo);
                         else
                             wxMessageBox(_("Erreur dans le nom.\nVérifiez que vous utilisez des caractères autorisés."), _("Erreur"));
                     }

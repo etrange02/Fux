@@ -24,17 +24,16 @@ BEGIN_EVENT_TABLE(MusiqueGraph, wxGLCanvas)
     EVT_MOUSE_EVENTS(MusiqueGraph::MouseEvents)
 END_EVENT_TABLE()
 
-static MusiqueGraph* instanceMusiqueGraph = NULL;
+static MusiqueGraph* s_instanceMusiqueGraph = NULL;
 
 /**
- * Constructeur
+ * Constructeur.
  * @param Parent la classe parente de cette instance
  * @param args les arguments à appliquer à la fenêtre
  */
 MusiqueGraph::MusiqueGraph(wxWindow *Parent, int *args) : wxGLCanvas(Parent, wxID_ANY, args, wxDefaultPosition, wxDefaultSize, wxFULL_REPAINT_ON_RESIZE)//wxPanel(Parent)
 {
-    instanceMusiqueGraph = this;
-    m_musique = Musique::Get();
+    s_instanceMusiqueGraph = this;
     m_context = new wxGLContext(this);
        // m_context->SetCurrent(this);
     //wxGLCanvas::SetCurrent(*m_context);
@@ -82,11 +81,11 @@ MusiqueGraph::~MusiqueGraph()
 }
 
 /**
- * Retourne l'instance de la classe MusiqueGraph
+ * Retourne l'instance de la classe MusiqueGraph. Attention, l'instance n'est pas créée ici !
  * @return l'instance
  */
 MusiqueGraph* MusiqueGraph::Get()
-{    return instanceMusiqueGraph;}
+{    return s_instanceMusiqueGraph;}
 
 /**
  * Redéfinition de OnIdle
@@ -112,15 +111,15 @@ void MusiqueGraph::OnPaint(wxPaintEvent&)
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glClearColor(m_fond.R/255.0, m_fond.V/255.0, m_fond.B/255.0, 1);
 
-    if (m_musique->IsContainingMus())
+    if (Musique::Get()->IsContainingMus())
     {
         register unsigned int i = 0;
-        if (m_musique->GetLecture())
+        if (Musique::Get()->GetLecture())
         {
             register unsigned int spec = 0, retard = 0;
             Couleur couleur = {0, 0, 0};
 
-            m_musique->RemplirSpectre(spectrum, m_largeur_tab);
+            Musique::Get()->RemplirSpectre(spectrum, m_largeur_tab);
             glBegin(GL_LINES);
             for (i = 0; i < m_largeur_tab-1; i++)
             {
@@ -197,7 +196,7 @@ void MusiqueGraph::OnPaint(wxPaintEvent&)
         }
 
         // Un test à faire sur l'état de Musique
-        int largeur = m_musique->GetTpsActuel()*m_sizer_w/m_musique->GetDureeMS();
+        int largeur = Musique::Get()->GetTpsActuel()*m_sizer_w/Musique::Get()->GetDureeMS();
         glBegin(GL_QUADS);
             glColor4ub(m_barre.R, m_barre.V, m_barre.B, 255);
             glVertex2i(0, 0);
@@ -211,8 +210,8 @@ void MusiqueGraph::OnPaint(wxPaintEvent&)
 
         if (ScreenToClient(wxGetMousePosition()).y >= m_sizer_h-19 && ScreenToClient(wxGetMousePosition()).x >= 0 && ScreenToClient(wxGetMousePosition()).x <= m_sizer_w+30)
         {
-            int point = ScreenToClient(wxGetMousePosition()).x, tot = (point*m_musique->GetDureeMS())/(1024*m_sizer_w);
-            wxString duree = wxString::Format(_T("%d:%2d/%d:%2d"), m_musique->GetDUREETpsActuel().minute, m_musique->GetDUREETpsActuel().seconde, m_musique->GetDUREEDuree().minute, m_musique->GetDUREEDuree().seconde);
+            int point = ScreenToClient(wxGetMousePosition()).x, tot = (point*Musique::Get()->GetDureeMS())/(1024*m_sizer_w);
+            wxString duree = wxString::Format(_T("%d:%2d/%d:%2d"), Musique::Get()->GetDUREETpsActuel().minute, Musique::Get()->GetDUREETpsActuel().seconde, Musique::Get()->GetDUREEDuree().minute, Musique::Get()->GetDUREEDuree().seconde);
             wxString tps = wxString::Format(_T("%d:%2d"), tot/60, tot%60);
             for (i = 0; i<duree.length(); i++)
                 if (duree[i] == ' ')
@@ -365,7 +364,7 @@ void MusiqueGraph::PlacerChanson(wxMouseEvent &event)
     if (position.y > m_sizer_h -20)
     {
         int msposition = (position.x)*(Musique::Get()->GetDureeMS())/(m_sizer_w);
-        m_musique->SetPositionMS(msposition);
+        Musique::Get()->SetPositionMS(msposition);
     }
 }
 

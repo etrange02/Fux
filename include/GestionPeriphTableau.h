@@ -7,9 +7,8 @@
 #include <wx/listctrl.h>
 #include <wx/filename.h>
 #include <wx/imaglist.h>
-#include "RechercheTraverser.h"
 #include "GestionPeriphCouperCopier.h"
-#include "DnDCible.h"
+#include "DnD/DnDCible.h"
 
 extern const wxEventType wxEVT_LISTE_PERIPH_CLAVIER;
 extern const wxEventType wxEVT_LISTE_PERIPH_SOURIS;

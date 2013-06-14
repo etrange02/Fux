@@ -9,14 +9,14 @@
 class SliderSon : public wxSlider
 {
     public:
-        /** Default constructor */
-        SliderSon(wxWindow *Parent);
-        /** Default destructor */
-        virtual ~SliderSon();
         static SliderSon* Get();
-
         void SonUp();
         void SonDown();
+
+    protected:
+        SliderSon();
+        /** Default destructor */
+        virtual ~SliderSon();
 };
 
 #endif // SLIDERSON_H

@@ -6,9 +6,9 @@
  * Copyright: David Lecoconnier (http://www.fuxplay.com)
  * License:
  **************************************************************/
-#include "PlayList.h"
-//#include "Define.h"
-//#include "DialogueFenetreExt.h"
+#include "../include/PlayList.h"
+//#include "../include/Define.h"
+//#include "../include/DialogueFenetreExt.h"
 //#include <TAGLIBDLL/tlist.tcc>
 
 using namespace TagLib;
@@ -47,6 +47,8 @@ ListeLecture::ListeLecture(wxWindow *Parent) : wxListCtrl(Parent, ID_PAGE_PLAYLI
     #endif
     m_majEnCours = false;
     m_supprEnCours = false;
+    m_rechercheEnCours = false;
+    m_modeRecherche = false;
     m_musique = Musique::Get();
 
     InsertColumn(0,_("Nom"),wxLIST_FORMAT_CENTER, 280);
@@ -122,7 +124,7 @@ void ListeLecture::MAJ()
     FichierLog::Get()->Ajouter(_T("ListeLecture::MAJ - Début du for"));
     #endif
 
-    unsigned int j=0;
+    size_t j=0;
     for (j=0; j<fichier.GetLineCount(); j++)
     {
         chaine = fichier.GetLine(j);
@@ -134,13 +136,10 @@ void ListeLecture::MAJ()
         SetItem(pos, 6, chaine.Left(i));//Emplacement
         SetItem(pos, 8, chaine.AfterLast('.'));//Extension
         if (pos%10 == 5)
-            wxApp::wxYield();
-            app
+            wxYield();
     }
     fichier.Close();
-    wxApp::wxYield();
-    wxApp::wxYield();
-    wxApp::wxYield();
+    //wxYield();
 
     if (!GetSelectedItemCount() && GetTopItem() == 0)
     {
@@ -157,11 +156,11 @@ void ListeLecture::MAJ()
 
     TagLib::FileRef chansonTAG;
     wxListItem item;
-    for (j=0; j<GetItemCount(); j++)
+    for (int k=0; k<GetItemCount(); k++)
     {
         //chaine = fichier.GetLine(j);
 
-        item.SetId(j);
+        item.SetId(k);
         item.SetColumn(6);
         item.SetMask(wxLIST_MASK_TEXT);
         GetItem(item);
@@ -172,7 +171,7 @@ void ListeLecture::MAJ()
         chaine << wxFileName::GetPathSeparator() << item.GetText();
 
         chansonTAG = TagLib::FileRef(TagLib::FileName(chaine.fn_str()));//
-        pos = j;//GetItemCount();
+        pos = k;//GetItemCount();
 
         if (wxFileExists(chaine))
         {
@@ -226,7 +225,7 @@ void ListeLecture::MAJ()
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("ListeLecture::MAJ - Fin du for : ") + wxString::Format(_T("%u / %u"), j, GetItemCount()));
     #endif
-    wxApp::wxYield();
+    wxYield();
     this->ChangementChanson(m_musique->GetNomPos());
     //m_musique->GetNomPos();
 
@@ -257,8 +256,15 @@ wxString ListeLecture::GetDuree(int temps)
  */
 void ListeLecture::ChansonActive(wxListEvent &event)
 {
-    if (!m_musique->ChangementChanson(event.GetIndex(), _T("")))
-        MAJ();
+    if (m_modeRecherche)
+    {
+        wxListItem item;
+    }
+    else
+    {
+        if (!m_musique->ChangementChanson(event.GetIndex(), _T("")))
+            MAJ();
+    }
 }
 
 /**
@@ -647,4 +653,71 @@ void ListeLecture::SuppressionLigne()
     m_supprEnCours = false;
 }
 
+void ListeLecture::RechercheElargie(wxString chaine)
+{
+    m_rechercheEnCours = true;
+    wxListItem item;
+    int i = 0, k = 0;
+    bool cont = true;
+
+    /*while (m_rechercheEnCours && i < GetItemCount())
+    {
+        k = 0;
+        item.SetId(i);
+        cont = true;
+        while (k < GetColumnCount() && cont)
+        {
+            item.SetColumn(k++);
+            item.SetMask(wxLIST_MASK_TEXT);
+            GetItem(item);
+            if (item.GetText().Contains(chaine))
+                cont = false;
+        }
+        if (cont)// l'élément doit être supprimé, il ne correspond pas à la recherche
+            DeleteItem(i);
+        else
+            i++;
+    }*/
+    m_rechercheEnCours = false;
+    m_modeRecherche = !chaine.Empty();
+}
+
+void ListeLecture::RecherchePrecise(wxString chaine)
+{
+    m_rechercheEnCours = true;
+    m_modeRecherche = true;
+    wxListItem item;
+    int i = 0, k = 0;
+    bool cont = true;
+
+    while (m_rechercheEnCours && i < GetItemCount())
+    {
+        k = 0;
+        item.SetId(i);
+        cont = true;
+        while (k < GetColumnCount() && cont)
+        {
+            item.SetColumn(k++);
+            item.SetMask(wxLIST_MASK_TEXT);
+            GetItem(item);
+            if (item.GetText().Contains(chaine))
+                cont = false;
+        }
+        if (cont)// l'élément doit être supprimé, il ne correspond pas à la recherche
+            DeleteItem(i);
+        else
+            i++;
+    }
+    m_rechercheEnCours = false;
+}
+
+void ListeLecture::StopRecherche()
+{
+    m_rechercheEnCours = false;
+}
+
+bool ListeLecture::RechercheRunning()
+{
+    return m_rechercheEnCours;
+}
 

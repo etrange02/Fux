@@ -13,11 +13,8 @@ class TimerGraph : public wxTimer
         TimerGraph();
         virtual ~TimerGraph();
         virtual void Notify();
-        void setMusique();
 
     protected:
-        Musique *m_musique;
-        MusiqueGraph *m_musiqueGraph;
 };
 
 #endif // TIMER_H_INCLUDED

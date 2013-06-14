@@ -48,11 +48,11 @@ IMPORTANT, A FAIRE !!!
 			<Environment>
 				<Variable name="AU" value="u" />
 				<Variable name="AURD" value="$(AU)$(RD)" />
-				<Variable name="FMODEX" value='&quot;C:\Program Files\FMOD SoundSystem\FMOD Programmers API Windows\api&quot;' />
+				<Variable name="FMODEX" value='&quot;C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Windows\api&quot;' />
 				<Variable name="RD" value="" />
 				<Variable name="SQLITE3" value="${WXSQLITE3}\sqlite3" />
 				<Variable name="TAGLIB" value="C:\CMake\cmake_taglib\taglib" />
-				<Variable name="WXSQLITE3" value="C:\wxsqlite3-3.0.3" />
+				<Variable name="WXSQLITE3" value="C:\wxsqlite3-3.0.2" />
 				<Variable name="WX_CFG" value="msw$(AURD)" />
 				<Variable name="WX_DIR" value="$(DIR_LIB)\wx" />
 				<Variable name="WX_GL_VER" value="GL" />
@@ -117,20 +117,28 @@ IMPORTANT, A FAIRE !!!
 		</Linker>
 		<Unit filename="include/Application.h" />
 		<Unit filename="include/ArrayFenetreDetachable.h" />
-		<Unit filename="include/BDD.h" />
-		<Unit filename="include/BDDRequete.h" />
-		<Unit filename="include/BDDThread.h" />
-		<Unit filename="include/BDDThreadEvent.h" />
+		<Unit filename="include/BDD/BDD.h" />
+		<Unit filename="include/BDD/BDDRequete.h" />
+		<Unit filename="include/BDD/BDDThread.h" />
+		<Unit filename="include/BDD/BDDThreadEvent.h" />
 		<Unit filename="include/BoutonFenetreDetachable.h" />
-		<Unit filename="include/ComInterProcess.h" />
+		<Unit filename="include/Classes.h" />
 		<Unit filename="include/Define.h" />
-		<Unit filename="include/DialogueFenetreExt.h" />
-		<Unit filename="include/DnDBufferData.h" />
-		<Unit filename="include/DnDCible.h" />
-		<Unit filename="include/DnDListeFichier.h" />
+		<Unit filename="include/DirTraverser/Recherche.h" />
+		<Unit filename="include/DirTraverser/TraverserCopieDossier.h" />
+		<Unit filename="include/DirTraverser/TraverserCopieFichier.h" />
+		<Unit filename="include/DirTraverser/TraverserDeplaceFichier.h" />
+		<Unit filename="include/DirTraverser/TraverserSupprimeDossier.h" />
+		<Unit filename="include/DirTraverser/TraverserSupprimeFichier.h" />
+		<Unit filename="include/DnD/DnDBufferData.h" />
+		<Unit filename="include/DnD/DnDCible.h" />
+		<Unit filename="include/DnD/DnDListeFichier.h" />
 		<Unit filename="include/ElementThreadFichier.h" />
 		<Unit filename="include/Fenetre.h" />
 		<Unit filename="include/FenetreDetachable.h" />
+		<Unit filename="include/Fenetre/DialogEnregistreM3U.h" />
+		<Unit filename="include/Fenetre/DialogTagMP3.h" />
+		<Unit filename="include/Fenetre/DialogTagMP3Info.h" />
 		<Unit filename="include/FichierListe.h" />
 		<Unit filename="include/FichierLog.h" />
 		<Unit filename="include/GestionPeriph.h" />
@@ -138,8 +146,10 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/GestionPeriphElementLecteurRacineFichier.h" />
 		<Unit filename="include/GestionPeriphMoitiePage.h" />
 		<Unit filename="include/GestionPeriphTableau.h" />
-		<Unit filename="include/ImageFichierMusique.h" />
 		<Unit filename="include/ImageText.h" />
+		<Unit filename="include/Jaquette/DropFichierImagePochetteMusique.h" />
+		<Unit filename="include/Jaquette/ImagePochetteMusique.h" />
+		<Unit filename="include/Jaquette/jaquetteClasses.h" />
 		<Unit filename="include/Musique.h" />
 		<Unit filename="include/MusiqueGraph.h" />
 		<Unit filename="include/OS_Win.h" />
@@ -149,33 +159,43 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/PreferenceCouleur.h" />
 		<Unit filename="include/PreferenceDefaut.h" />
 		<Unit filename="include/PreferenceSon.h" />
-		<Unit filename="include/RechercheTraverser.h" />
+		<Unit filename="include/Reseau/TCPClient.h" />
+		<Unit filename="include/Reseau/TCPConnexionEchangeInstanceLocalHost.h" />
+		<Unit filename="include/Reseau/TCPServeur.h" />
 		<Unit filename="include/SliderSon.h" />
 		<Unit filename="include/ThreadGestion.h" />
 		<Unit filename="include/Timer.h" />
 		<Unit filename="include/fuxHTMLindex.h" />
 		<Unit filename="include/version.h" />
-		<Unit filename="res/Idées.txt">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="res/Fu(X) - recherche de fichiers et dossiers.txt" />
+		<Unit filename="res/Genres possibles.txt" />
+		<Unit filename="res/Idées.txt" />
 		<Unit filename="res/Ressource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
+		<Unit filename="res/recherche.txt" />
 		<Unit filename="src/Application.cpp" />
 		<Unit filename="src/ArrayFenetreDetachable.cpp" />
-		<Unit filename="src/BDD.cpp" />
-		<Unit filename="src/BDDRequete.cpp" />
-		<Unit filename="src/BDDThread.cpp" />
-		<Unit filename="src/BDDThreadEvent.cpp" />
+		<Unit filename="src/BDD/BDD.cpp" />
+		<Unit filename="src/BDD/BDDRequete.cpp" />
+		<Unit filename="src/BDD/BDDThread.cpp" />
+		<Unit filename="src/BDD/BDDThreadEvent.cpp" />
 		<Unit filename="src/BoutonFenetreDetachable.cpp" />
-		<Unit filename="src/ComInterProcess.cpp" />
-		<Unit filename="src/DialogueFenetreExt.cpp" />
-		<Unit filename="src/DnDBufferData.cpp" />
-		<Unit filename="src/DnDCible.cpp" />
-		<Unit filename="src/DnDListeFichier.cpp" />
+		<Unit filename="src/DirTraverser/Recherche.cpp" />
+		<Unit filename="src/DirTraverser/TraverserCopieDossier.cpp" />
+		<Unit filename="src/DirTraverser/TraverserCopieFichier.cpp" />
+		<Unit filename="src/DirTraverser/TraverserDeplaceFichier.cpp" />
+		<Unit filename="src/DirTraverser/TraverserSupprimeDossier.cpp" />
+		<Unit filename="src/DirTraverser/TraverserSupprimeFichier.cpp" />
+		<Unit filename="src/DnD/DnDBufferData.cpp" />
+		<Unit filename="src/DnD/DnDCible.cpp" />
+		<Unit filename="src/DnD/DnDListeFichier.cpp" />
 		<Unit filename="src/ElementThreadFichier.cpp" />
 		<Unit filename="src/Fenetre.cpp" />
 		<Unit filename="src/FenetreDetachable.cpp" />
+		<Unit filename="src/Fenetre/DialogEnregistreM3U.cpp" />
+		<Unit filename="src/Fenetre/DialogTagMP3.cpp" />
+		<Unit filename="src/Fenetre/DialogTagMP3Info.cpp" />
 		<Unit filename="src/FichierListe.cpp" />
 		<Unit filename="src/FichierLog.cpp" />
 		<Unit filename="src/GestionPeriph.cpp" />
@@ -183,11 +203,10 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/GestionPeriphElementLecteurRacineFichier.cpp" />
 		<Unit filename="src/GestionPeriphMoitiePage.cpp" />
 		<Unit filename="src/GestionPeriphTableau.cpp" />
-		<Unit filename="src/ImageFichierMusique.cpp" />
 		<Unit filename="src/ImageText.cpp" />
-		<Unit filename="src/Musique.cpp">
-			<Option weight="40" />
-		</Unit>
+		<Unit filename="src/Jaquette/DropFichierImagePochetteMusique.cpp" />
+		<Unit filename="src/Jaquette/ImagePochetteMusique.cpp" />
+		<Unit filename="src/Musique.cpp" />
 		<Unit filename="src/MusiqueGraph.cpp" />
 		<Unit filename="src/OS_Win.cpp" />
 		<Unit filename="src/Parametre.cpp" />
@@ -196,7 +215,9 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/PreferenceCouleur.cpp" />
 		<Unit filename="src/PreferenceDefaut.cpp" />
 		<Unit filename="src/PreferenceSon.cpp" />
-		<Unit filename="src/RechercheTraverser.cpp" />
+		<Unit filename="src/Reseau/TCPClient.cpp" />
+		<Unit filename="src/Reseau/TCPConnexionEchangeInstanceLocalHost.cpp" />
+		<Unit filename="src/Reseau/TCPServeur.cpp" />
 		<Unit filename="src/SliderSon.cpp" />
 		<Unit filename="src/ThreadGestion.cpp" />
 		<Unit filename="src/Timer.cpp" />

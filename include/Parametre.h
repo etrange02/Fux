@@ -12,8 +12,6 @@
 class Parametre
 {
     public:
-        Parametre();
-        ~Parametre();
         static Parametre* Get();
 
         wxString getCheminCouleur();
@@ -41,6 +39,9 @@ class Parametre
         void creerRepertoireParametre(wxString);
 
     protected:
+        Parametre();
+        ~Parametre();
+
         wxString m_cheminCouleur, m_cheminSon, m_extensionValide, m_repertoireDefaut, m_cheminRepertParam;
         bool m_doubleBarre, m_sousDossier, m_paramInstallation;
         Couleur m_fond, m_barre, m_police, m_haut, m_miSup, m_miInf, m_bas;

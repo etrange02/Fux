@@ -9,21 +9,35 @@
 #include "../include/FichierListe.h"
 
 /**
- * @class wxFichierListe
+ * @class FichierListe
  * @brief Gére le support physique de la liste de lecture. La liste de lecture est enregistré dans un fichier sur le disque dur.
  *C'est ce fichier que le classe gère.
  */
 
-/**
- * Constructeur
- */
-wxFichierListe::wxFichierListe()
-{    Init();}
+static FichierListe *s_instanceFichierListe = NULL;
+
+FichierListe* FichierListe::Get()
+{
+    if (s_instanceFichierListe == NULL)
+        s_instanceFichierListe = new FichierListe;
+    return s_instanceFichierListe;
+}
 
 /**
- * Initialise les paramètres de wxFichierListe
+ * Constructeur privé
  */
-void wxFichierListe::Init()
+FichierListe::FichierListe()
+{    Init();}
+
+FichierListe::~FichierListe()
+{
+    OnExit();
+}
+
+/**
+ * Initialise les paramètres de FichierListe
+ */
+void FichierListe::Init()
 {
     m_Liste = Parametre::Get()->getRepertoireParametre(_T("musique.liste"));
     wxRemoveFile(m_Liste);
@@ -33,17 +47,23 @@ void wxFichierListe::Init()
     m_nombreFichier = 0;
 }
 
+void FichierListe::Delete()
+{
+    delete s_instanceFichierListe;
+    s_instanceFichierListe = NULL;
+}
+
 /**
  * Supprime le fichier dans lequel est enregistré la liste de lecture
  */
-void wxFichierListe::Fermeture()
+void FichierListe::OnExit()
 {    wxRemoveFile(m_Liste);}
 
 /**
  * Rempli le fichier avec le contenu du dossier donné précédemment en paramètre
  * @see Parametre
  */
-void wxFichierListe::ListageFichier()
+void FichierListe::ListageFichier()
 {
     wxTextFile fichierListe(m_Liste);
     if (!fichierListe.Exists())
@@ -85,7 +105,7 @@ void wxFichierListe::ListageFichier()
  * Ajoute au fichier chaine
  * @param chaine la chaine à ajouter
  */
-void wxFichierListe::ListageFichier(wxString chaine)
+void FichierListe::ListageFichier(wxString chaine)
 {
     wxTextFile fichierListe(m_Liste);
 
@@ -103,7 +123,7 @@ void wxFichierListe::ListageFichier(wxString chaine)
  * Ajoute au fichier le contenu du tableau donné en paramètre
  * @param chaine un pointeur sur le tableau à ajouter
  */
-void wxFichierListe::ListageFichier(wxArrayString *chaine)
+void FichierListe::ListageFichier(wxArrayString *chaine)
 {
     if (chaine->IsEmpty())
         return;
@@ -148,7 +168,7 @@ void wxFichierListe::ListageFichier(wxArrayString *chaine)
  * @param Parent Un pointeur sur la fenêtre parente
  * @return vrai si réussi
  */
-bool wxFichierListe::CopieFichierTOListe(wxString NomFichierOrigine, wxWindow *Parent)
+bool FichierListe::CopieFichierTOListe(wxString NomFichierOrigine, wxWindow *Parent)
 {
     bool copie = true, reprise = false;
 
@@ -209,7 +229,7 @@ bool wxFichierListe::CopieFichierTOListe(wxString NomFichierOrigine, wxWindow *P
  * Retourne l'adresse du fichier utilisé pour faire la liste de lecture
  * @return l'adresse
  */
-wxString wxFichierListe::GetCheminListe()
+wxString FichierListe::GetCheminListe()
 {    return m_Liste;}
 
 /**
@@ -217,7 +237,7 @@ wxString wxFichierListe::GetCheminListe()
  * @param position le numéro de la ligne
  * @return la chaine correspondante
  */
-wxString wxFichierListe::GetNomPosition(int position)
+wxString FichierListe::GetNomPosition(int position)
 {
     wxTextFile fichierListe(m_Liste);
     if (!fichierListe.Open())
@@ -237,7 +257,7 @@ wxString wxFichierListe::GetNomPosition(int position)
  * @param position l'endroit à partir duquel doit être fait la recherche
  * @return -1 si erreur ou inexistant. Sinon le numéro de ligne
  */
-int wxFichierListe::GetPositionListe(wxString chaineT, int position)
+int FichierListe::GetPositionListe(wxString chaineT, int position)
 {
     wxTextFile fichierListe(m_Liste);
     if (!fichierListe.Open())
@@ -290,7 +310,7 @@ int wxFichierListe::GetPositionListe(wxString chaineT, int position)
  * Retourne le nombre de lignes du fichier. ie le nombre de titre mis en mémoire
  * @return le nombre de fichier
  */
-int wxFichierListe::GetNombreFichier()////////////////
+int FichierListe::GetNombreFichier()////////////////
 {
     wxTextFile fichierListe(m_Liste);
     fichierListe.Open();
@@ -303,14 +323,14 @@ int wxFichierListe::GetNombreFichier()////////////////
  * Affecte le chemin de la chanson. C'est à partir de cette adresse que ce fait la plupart des opérations
  * @param chanson une adresse complète
  */
-void wxFichierListe::SetDossierRecherche(wxString chanson)
+void FichierListe::SetDossierRecherche(wxString chanson)
 {    m_Chanson = chanson;}
 
 /**
  * Retire de la liste le contenu de titre(Nom, Position). Le nom est important, la position est vivement conseillée
  * @param titre "l'élément" à retirer
  */
-void wxFichierListe::EffacerNom(ChansonNomPos titre)
+void FichierListe::EffacerNom(ChansonNomPos titre)
 {
     int ligneASuppr;
     if (titre.Pos != -1)
@@ -332,7 +352,7 @@ void wxFichierListe::EffacerNom(ChansonNomPos titre)
  * Retire du fichier les titres présents dans le tableau
  * @param tableau le pointeur sur le tableau
  */
-void wxFichierListe::EffacerNom(wxArrayString *tableau)
+void FichierListe::EffacerNom(wxArrayString *tableau)
 {
     wxTextFile fichierListe(m_Liste);
     if (!fichierListe.Open())
@@ -373,7 +393,7 @@ void wxFichierListe::EffacerNom(wxArrayString *tableau)
  * @param nom1 la première chaine
  * @param nom2 la deuxième chaîne
  */
-void wxFichierListe::EchangeNom(wxString nom1, wxString nom2)////////////////Revu
+void FichierListe::EchangeNom(wxString nom1, wxString nom2)////////////////Revu
 {
     wxTextFile fichierListe(m_Liste);
     if (!fichierListe.Open())
@@ -394,9 +414,9 @@ void wxFichierListe::EchangeNom(wxString nom1, wxString nom2)////////////////Rev
  * @param position
  * @param supprime si vrai, l'ancienne position
  * @return vrai si le déplacement a été fait sans erreurs
- * @see wxFichierListe::PlacerLigneString
+ * @see FichierListe::PlacerLigneString
  */
-bool wxFichierListe::PlacerLigneInt(wxArrayString *ligne, long position, bool supprime)
+bool FichierListe::PlacerLigneInt(wxArrayString *ligne, long position, bool supprime)
 {
     wxTextFile fichierListe(m_Liste);
     if (!fichierListe.Open())
@@ -451,9 +471,9 @@ bool wxFichierListe::PlacerLigneInt(wxArrayString *ligne, long position, bool su
  * Place les chaines contenues dans le tableau ligne à la position pos
  * @param ligne un pointeur de tableau contenant du texte
  * @param pos
- * @see wxFichierListe::PlacerLigneInt
+ * @see FichierListe::PlacerLigneInt
  */
-void wxFichierListe::PlacerLigneString(wxArrayString *ligne, long pos)
+void FichierListe::PlacerLigneString(wxArrayString *ligne, long pos)
 {
     wxTextFile fichierListe(m_Liste);
     if (!fichierListe.Open())

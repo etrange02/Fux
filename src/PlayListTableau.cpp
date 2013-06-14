@@ -7,9 +7,6 @@
  * License:
  **************************************************************/
 #include "../include/PlayList.h"
-//#include "../include/Define.h"
-//#include "../include/DialogueFenetreExt.h"
-//#include <TAGLIBDLL/tlist.tcc>
 
 using namespace TagLib;
 
@@ -49,7 +46,6 @@ ListeLecture::ListeLecture(wxWindow *Parent) : wxListCtrl(Parent, ID_PAGE_PLAYLI
     m_supprEnCours = false;
     m_rechercheEnCours = false;
     m_modeRecherche = false;
-    m_musique = Musique::Get();
 
     InsertColumn(0,_("Nom"),wxLIST_FORMAT_CENTER, 280);
     InsertColumn(1,_("Artiste"),wxLIST_FORMAT_LEFT, 150);
@@ -226,8 +222,8 @@ void ListeLecture::MAJ()
     FichierLog::Get()->Ajouter(_T("ListeLecture::MAJ - Fin du for : ") + wxString::Format(_T("%u / %u"), j, GetItemCount()));
     #endif
     wxYield();
-    this->ChangementChanson(m_musique->GetNomPos());
-    //m_musique->GetNomPos();
+    this->ChangementChanson(Musique::Get()->GetNomPos());
+    //Musique::Get()->GetNomPos();
 
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("ListeLecture::MAJ - Fin"));
@@ -269,11 +265,11 @@ void ListeLecture::ChansonActive(wxListEvent &event)
         item.SetColumn(0);
         GetItem(item);
         chemin << wxFileName::GetPathSeparator() << item.GetText();
-        m_musique->ChangementChanson(-1, chemin);
+        Musique::Get()->ChangementChanson(-1, chemin);
     }
     else
     {
-        if (!m_musique->ChangementChanson(event.GetIndex(), _T("")))
+        if (!Musique::Get()->ChangementChanson(event.GetIndex(), _T("")))
             MAJ();
     }
 }
@@ -460,7 +456,7 @@ void ListeLecture::AfficheMenu(wxMouseEvent &WXUNUSED(event))
     {
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_LECTURE, false);
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_PAUSE, true);
-        if (m_musique->GetLecture())//En lecture
+        if (Musique::Get()->GetLecture())//En lecture
             m_menu->SetLabel(ID_PAGE_PLAYLIST_MENU_PAUSE, _("Pause"));
         else
             m_menu->SetLabel(ID_PAGE_PLAYLIST_MENU_PAUSE, _("Reprendre"));
@@ -469,7 +465,7 @@ void ListeLecture::AfficheMenu(wxMouseEvent &WXUNUSED(event))
     {
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_LECTURE, true);
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_PAUSE, true);
-        if (m_musique->GetLecture())//En lecture
+        if (Musique::Get()->GetLecture())//En lecture
             m_menu->SetLabel(ID_PAGE_PLAYLIST_MENU_PAUSE, _("Pause"));
         else
             m_menu->SetLabel(ID_PAGE_PLAYLIST_MENU_PAUSE, _("Reprendre"));
@@ -510,7 +506,7 @@ void ListeLecture::AfficheMenu(wxMouseEvent &WXUNUSED(event))
 void ListeLecture::menuLecture(wxCommandEvent &WXUNUSED(event))
 {
     long pos = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_FOCUSED);
-    if (!m_musique->ChangementChanson(pos, _T("")))
+    if (!Musique::Get()->ChangementChanson(pos, _T("")))
         MAJ();
 }
 
@@ -519,12 +515,12 @@ void ListeLecture::menuLecture(wxCommandEvent &WXUNUSED(event))
  */
 void ListeLecture::menuPause(wxCommandEvent &WXUNUSED(event))
 {
-    if (m_musique->GetLecture())
-        m_musique->SetPause(true);
-    else if (m_musique->GetPause())
-        m_musique->SetPause(false);
+    if (Musique::Get()->GetLecture())
+        Musique::Get()->SetPause(true);
+    else if (Musique::Get()->GetPause())
+        Musique::Get()->SetPause(false);
     else//Musique stoppée
-        m_musique->ChangementChanson(IDENTIQUE);
+        Musique::Get()->ChangementChanson(IDENTIQUE);
 }
 
 /**
@@ -553,7 +549,7 @@ void ListeLecture::menuCouper(wxCommandEvent &WXUNUSED(event))
  */
 void ListeLecture::menuColler(wxCommandEvent &WXUNUSED(event))
 {
-    m_musique->PlacerLigneInt(&m_tableauCouper, m_yMenu, true);
+    Musique::Get()->PlacerLigneInt(&m_tableauCouper, m_yMenu, true);
     m_tableauCouper.Clear();
     GestPeriph::Get()->MAJPlaylist();
     m_couper = false;
@@ -601,7 +597,7 @@ void ListeLecture::SuppressionLigne()
                 if (m_ocurrenceLigne.Item(k) >= position)
                     m_ocurrenceLigne.Item(k)--;
             }
-            m_musique->SupprimerNom(position);
+            Musique::Get()->SupprimerNom(position);
         }
         else
         {
@@ -641,7 +637,7 @@ void ListeLecture::SuppressionLigne()
                         m_ocurrenceLigne.Item(k)--;
                 }
             }
-            m_musique->SupprimerNom(&tableau);
+            Musique::Get()->SupprimerNom(&tableau);
             tableau.Clear();
         }
 
@@ -698,7 +694,7 @@ void ListeLecture::RecherchePrecise(wxString chaine)
     m_rechercheEnCours = true;
     m_modeRecherche = true;
     wxListItem item;
-    int i = 0, k = 0;
+    int i = 0, k = 0, j = 0;
     bool cont = true;
 
     while (m_rechercheEnCours && i < GetItemCount())
@@ -718,6 +714,8 @@ void ListeLecture::RecherchePrecise(wxString chaine)
             DeleteItem(i);
         else
             i++;
+        if ((++j)%20 == 0)
+            wxYield();
     }
     m_rechercheEnCours = false;
 }

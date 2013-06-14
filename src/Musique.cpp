@@ -13,7 +13,7 @@
  * @brief Classe centrale de Fu(X). Elle gère la lecture ainsi que toutes les opérations liées.
  */
 
-static Musique* instanceMusique = NULL;
+static Musique* s_instanceMusique = NULL;
 
 const wxEventType wxEVT_MUSIQUE_CHANGE = wxNewEventType();
 const wxEventType wxEVT_MUSIQUE_MAJ = wxNewEventType();
@@ -22,13 +22,10 @@ const wxEventType wxEVT_MUSIQUE_GRAPH = wxNewEventType();
 
 
 /**
- * Constructeur
- * @param parent la classe (= fenêtre) parente pour l'envoi d'évènement
+ * Constructeur privé
  */
-Musique::Musique(wxWindow *parent)
+Musique::Musique()
 {
-    instanceMusique = this;
-    m_parent = parent;
     FMOD_System_Create(&m_system);
     //wxString cheminPluginAAC = wxStandardPaths::Get()->GetDataDir(); cheminPluginAAC << wxFileName::GetPathSeparator() << "codec_aac.dll";
     //FMOD_System_LoadPlugin(m_system, cheminPluginAAC.c_str(), &codec, /*FMOD_PLUGINTYPE_CODEC, */2600);
@@ -38,8 +35,6 @@ Musique::Musique(wxWindow *parent)
     m_sound = NULL;
     m_channel = NULL;
 
-    m_liste = new wxFichierListe();
-    m_liste->Init();
     m_stop = true;
     m_action = SUIVANT;
     m_musCharge = false;
@@ -57,6 +52,17 @@ Musique::Musique(wxWindow *parent)
 }
 
 /**
+ * Récupère l'instance de la classe
+ * @return l'instance
+ */
+Musique* Musique::Get()
+{
+    if (s_instanceMusique == NULL)
+        s_instanceMusique = new Musique();
+    return s_instanceMusique;
+}
+
+/**
  * Destructeur
  */
 Musique::~Musique()
@@ -64,19 +70,26 @@ Musique::~Musique()
     FMOD_Sound_Release(m_sound);
     //FMOD_System_UnloadPlugin(m_system, codec);
     FMOD_System_Release(m_system);
-    m_liste->Fermeture();
 
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("Musique::~Musique - fin"));
     #endif
 }
 
+void Musique::Delete()
+{
+    delete s_instanceMusique;
+    s_instanceMusique = NULL;
+}
+
 /**
- * Récupère l'instance de la classe
- * @return l'instance
+ * Setter
+ * @param parent la classe (= fenêtre) parente pour l'envoi d'évènement
  */
-Musique* Musique::Get()
-{    return instanceMusique;}
+void Musique::SetParent(wxWindow *parent)
+{
+    m_parent = parent;
+}
 
 /**
  * Gère le chargement du titre à écouter. Informe le reste de l'application du changement grâce aux évènements
@@ -171,7 +184,7 @@ void Musique::SetAction(e_ChangeChanson action)
  */
 bool Musique::ChangementChanson(e_ChangeChanson action)
 {
-    if (m_liste->GetNombreFichier() == 0)
+    if (FichierListe::Get()->GetNombreFichier() == 0)
     {
         /*m_nomChanson = wxEmptyString;
         m_cheminComplet = wxEmptyString;
@@ -182,7 +195,7 @@ bool Musique::ChangementChanson(e_ChangeChanson action)
         return false;
     }
 
-    m_positionListe = m_liste->GetPositionListe(m_cheminComplet, m_positionListe);
+    m_positionListe = FichierListe::Get()->GetPositionListe(m_cheminComplet, m_positionListe);
 
     if (action == PRECEDENT)
     {
@@ -190,10 +203,10 @@ bool Musique::ChangementChanson(e_ChangeChanson action)
         {
             m_positionListe--;
             if (m_positionListe <0)
-                m_positionListe = m_liste->GetNombreFichier() -1;
+                m_positionListe = FichierListe::Get()->GetNombreFichier() -1;
         }
         else
-            m_positionListe = rand() % m_liste->GetNombreFichier();
+            m_positionListe = rand() % FichierListe::Get()->GetNombreFichier();
     }
     else if (action == SUIVANT)
     {
@@ -204,18 +217,18 @@ bool Musique::ChangementChanson(e_ChangeChanson action)
             else
                 m_positionListe++;
 
-            if (m_positionListe >= m_liste->GetNombreFichier())
+            if (m_positionListe >= FichierListe::Get()->GetNombreFichier())
                 m_positionListe = 0;
         }
         else
-            m_positionListe = rand() % m_liste->GetNombreFichier();
+            m_positionListe = rand() % FichierListe::Get()->GetNombreFichier();
     }
     else if (action == IDENTIQUE)
     {}
     else
         return false;
 
-    m_cheminComplet = m_liste->GetNomPosition(m_positionListe);
+    m_cheminComplet = FichierListe::Get()->GetNomPosition(m_positionListe);
 
     if (!wxFileExists(m_cheminComplet))
         return false;
@@ -250,16 +263,16 @@ bool Musique::ChangementChanson()
  */
 bool Musique::ChangementChanson(long position, wxString chaine)
 {
-    if (m_liste->GetNombreFichier() == 0)
+    if (FichierListe::Get()->GetNombreFichier() == 0)
     {
         ModifListeVide();
         return false;
     }
 
     if (position != -1)
-        chaine = m_liste->GetNomPosition(position);
+        chaine = FichierListe::Get()->GetNomPosition(position);
     else
-        position = m_liste->GetPositionListe(chaine, -1);
+        position = FichierListe::Get()->GetPositionListe(chaine, -1);
     if (chaine.IsEmpty())// || !wxFileExists(chaine))
         return false;
 
@@ -279,19 +292,19 @@ bool Musique::ChangementChanson(long position, wxString chaine)
  */
 void Musique::Listage()
 {
-    m_liste->SetDossierRecherche(m_cheminComplet);
-    m_liste->ListageFichier();
-    m_positionListe = m_liste->GetPositionListe(m_cheminComplet);
+    FichierListe::Get()->SetDossierRecherche(m_cheminComplet);
+    FichierListe::Get()->ListageFichier();
+    m_positionListe = FichierListe::Get()->GetPositionListe(m_cheminComplet);
 }
 
 /**
  * Provoque l'ajout de chaine à la liste de lecture
  * chaine un tableau de wxString contenant des adresses
- * maj si vrai, informa l'application du changement (pas toujours nécessaire)
+ * maj si vrai, informe l'application du changement (pas toujours nécessaire)
  */
 void Musique::Listage(wxArrayString *chaine, bool maj)
 {
-    m_liste->ListageFichier(chaine);
+    FichierListe::Get()->ListageFichier(chaine);
     Recharger(maj);
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("Musique::Listage - tableau"));
@@ -307,7 +320,7 @@ void Musique::Listage(wxArrayString *chaine, bool maj)
  */
 void Musique::PlacerLigneInt(wxArrayString* chaine, long pos, bool maj, bool supprime)
 {
-    m_liste->PlacerLigneInt(chaine, pos, supprime);
+    FichierListe::Get()->PlacerLigneInt(chaine, pos, supprime);
     Recharger(maj, true);
 }
 
@@ -319,7 +332,7 @@ void Musique::PlacerLigneInt(wxArrayString* chaine, long pos, bool maj, bool sup
  */
 void Musique::PlacerLigneString(wxArrayString* chaine, long pos, bool maj)
 {
-    m_liste->PlacerLigneString(chaine, pos);
+    FichierListe::Get()->PlacerLigneString(chaine, pos);
     Recharger(maj, true);
 }
 
@@ -332,7 +345,7 @@ void Musique::PlacerLigneString(wxArrayString* chaine, long pos, bool maj)
 {
     if (Parametre::Get()->islisable(chaine.AfterLast('.').Lower()))
     {
-        m_liste->ListageFichier(chaine);
+        FichierListe::Get()->ListageFichier(chaine);
         if (!m_musCharge)
             Lecture(chaine);//ChangementChanson(0, "");
     }
@@ -344,12 +357,12 @@ void Musique::PlacerLigneString(wxArrayString* chaine, long pos, bool maj)
  */
 void Musique::CopieFichier(wxString chemin)
 {
-    if (m_liste->CopieFichierTOListe(chemin, m_parent))// il faut relancer la musique si la liste est totalement nouvelle
+    if (FichierListe::Get()->CopieFichierTOListe(chemin, m_parent))// il faut relancer la musique si la liste est totalement nouvelle
     {
         int i = 0;
-        while (i < m_liste->GetNombreFichier() && !ChangementChanson(i, _T("")))
+        while (i < FichierListe::Get()->GetNombreFichier() && !ChangementChanson(i, _T("")))
             i++;
-        if (i == m_liste->GetNombreFichier() && m_musCharge && (!m_stop || m_isPlaying))
+        if (i == FichierListe::Get()->GetNombreFichier() && m_musCharge && (!m_stop || m_isPlaying))
         {
             #ifdef DEBUG
             FichierLog::Get()->Ajouter(_("Musique::CopieFichier - arrêt"));
@@ -523,7 +536,7 @@ wxString Musique::GetArtiste()
  */
 ChansonNomPos Musique::GetNomPos()
 {
-    m_positionListe = m_liste->GetPositionListe(m_cheminComplet, m_positionListe);//m_liste.GetPositionListe(m_cheminComplet, m_positionListe));
+    m_positionListe = FichierListe::Get()->GetPositionListe(m_cheminComplet, m_positionListe);//FichierListe::Get().GetPositionListe(m_cheminComplet, m_positionListe));
     ChansonNomPos titre = {m_nomChanson, m_positionListe};
     return titre;
 }
@@ -534,16 +547,16 @@ ChansonNomPos Musique::GetNomPos()
  */
 ChansonNomPos Musique::SupprimerNom()
 {
-    if(m_liste->GetNombreFichier() == 0)
+    if(FichierListe::Get()->GetNombreFichier() == 0)
         return {wxEmptyString, -1};
     ChansonNomPos Asuppr = {m_cheminComplet, m_positionListe};
 
-    if(m_liste->GetNombreFichier() > 1)
+    if(FichierListe::Get()->GetNombreFichier() > 1)
         ChangementChanson(SUIVANT);
     else
         ModifListeVide();
 
-    m_liste->EffacerNom(Asuppr);
+    FichierListe::Get()->EffacerNom(Asuppr);
     m_positionListe--;
     return Asuppr;
 }
@@ -554,15 +567,15 @@ ChansonNomPos Musique::SupprimerNom()
  */
 void Musique::SupprimerNom(int position)//wxString chaine)
 {
-    ChansonNomPos titre = {m_liste->GetNomPosition(position), position};
+    ChansonNomPos titre = {FichierListe::Get()->GetNomPosition(position), position};
 
     if (m_cheminComplet.IsSameAs(titre.Nom) && titre.Nom.Length() != 0 && titre.Pos == m_positionListe)//titre actuellement en cours de lecture
     {
-        if(m_liste->GetNombreFichier() > 1)
+        if(FichierListe::Get()->GetNombreFichier() > 1)
             ChangementChanson(SUIVANT);
         else
             ModifListeVide();
-        m_liste->EffacerNom(titre);
+        FichierListe::Get()->EffacerNom(titre);
         m_positionListe--;
         #if DEBUG
         FichierLog::Get()->Ajouter(_T("Musique::SupprimerNom - (titre actuel) ") + wxString::Format(_T("%d"), titre.Pos) + _T(" - ") + titre.Nom);
@@ -570,7 +583,7 @@ void Musique::SupprimerNom(int position)//wxString chaine)
     }
     else
     {
-        m_liste->EffacerNom(titre);
+        FichierListe::Get()->EffacerNom(titre);
         if (m_positionListe > titre.Pos)
             m_positionListe--;
         #if DEBUG
@@ -587,7 +600,7 @@ void Musique::SupprimerNom(int position)//wxString chaine)
 void Musique::SupprimerNom(wxArrayString *tableau, bool maj)
 {
     unsigned int i = 0, taille = tableau->GetCount(), pos = 0;
-    m_positionListe = m_liste->GetPositionListe(m_cheminComplet, m_positionListe);
+    m_positionListe = FichierListe::Get()->GetPositionListe(m_cheminComplet, m_positionListe);
     bool change = false;
 
     while (i<taille && change == false)
@@ -600,17 +613,17 @@ void Musique::SupprimerNom(wxArrayString *tableau, bool maj)
         i++;
     }
 
-    m_liste->EffacerNom(tableau);
+    FichierListe::Get()->EffacerNom(tableau);
 
     if (change)
     {
-        if (m_liste->GetNombreFichier() > 1)
+        if (FichierListe::Get()->GetNombreFichier() > 1)
         {
-            if (m_positionListe >= m_liste->GetNombreFichier())
+            if (m_positionListe >= FichierListe::Get()->GetNombreFichier())
                     m_positionListe = 0;
             else
                 m_positionListe = pos;
-            ChangementChanson(m_positionListe, m_liste->GetNomPosition(m_positionListe));
+            ChangementChanson(m_positionListe, FichierListe::Get()->GetNomPosition(m_positionListe));
         }
         else
             ModifListeVide();
@@ -655,8 +668,8 @@ wxString Musique::GetDureeFormatMinSec()
  * Retourne l'instance de la classe wxFichierListe. A utiliser le moins possible !
  * @return l'instance
  */
-wxFichierListe* Musique::GetFichier()
-{    return m_liste;}
+/*wxFichierListe* Musique::GetFichier()
+{    return FichierListe::Get();}*/
 
 /**
  * Remplit le tableau spectre avec les valeurs du spectre du titre

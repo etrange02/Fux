@@ -7,15 +7,15 @@
 #include <wx/textfile.h>
 #include <wx/filename.h>
 #include "Define.h"
-#include "RechercheTraverser.h"
+#include "DirTraverser/Recherche.h"
 #include "Parametre.h"
 
-class wxFichierListe
+class FichierListe
 {
     public:
-        wxFichierListe();
-        void Init();
-        void Fermeture();
+        static FichierListe *Get();
+        void Delete();
+        void OnExit();
         int GetPositionListe(wxString, int position = -1);
         int GetNombreFichier();
         wxString GetNomPosition(int);
@@ -32,7 +32,13 @@ class wxFichierListe
         void EchangeNom(wxString, wxString);
         bool CopieFichierTOListe(wxString, wxWindow*);
 
+    private:
+        FichierListe();
+        virtual ~FichierListe();
+
     protected:
+        void Init();
+
         wxString m_Liste, m_Chanson;//chemin complet de la liste
         int m_nombreFichier;//Ne pas dépasser, nombre de lignes comptées
 };

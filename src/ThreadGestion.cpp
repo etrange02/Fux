@@ -13,7 +13,7 @@
  * @brief Thread faisant de la gestion de dossiers et fichiers
  */
 
-static ThreadFichierFichier* instanceThreadFichier = NULL;
+static ThreadFichierFichier* s_instanceThreadFichier = NULL;
 
 /**
  * Constructeur
@@ -59,9 +59,9 @@ void ThreadFichierFichier::AjoutDonnee(wxArrayString *tableau, int action, wxStr
  */
 ThreadFichierFichier* ThreadFichierFichier::Get()
 {
-    if (!instanceThreadFichier)
-        instanceThreadFichier = new ThreadFichierFichier;
-    return instanceThreadFichier;
+    if (!s_instanceThreadFichier)
+        s_instanceThreadFichier = new ThreadFichierFichier;
+    return s_instanceThreadFichier;
 }
 
 /**

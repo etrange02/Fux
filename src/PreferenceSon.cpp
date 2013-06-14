@@ -49,7 +49,6 @@ PrefSon::~PrefSon()
  */
 void PrefSon::Creer()
 {
-    m_musique = Musique::Get();
     SetScrollbars(20, 20, 50, 50);
 
     m_sizer1V = new wxBoxSizer(wxVERTICAL);
@@ -329,7 +328,7 @@ void PrefSon::Son_Bouton_Appliquer(wxCommandEvent &event)
         if (m_listeModif_Nouveau == MODIFIER)
             m_listeModif->SetStringSelection(nom + _T(".sauve"));
 
-        m_musique->SetVolume(m_boiteVolMod->GetValue());
+        Musique::Get()->SetVolume(m_boiteVolMod->GetValue());
         SliderSon::Get()->SetValue(m_boiteVolMod->GetValue());
     }
 }

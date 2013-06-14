@@ -19,17 +19,11 @@
 #include <mpegfile.h>
 #include <id3v2tag.h>
 #include <attachedpictureframe.h>
-/*#include <TAGLIBDLL/tag.h>
-#include <TAGLIBDLL/fileref.h>
-#include <TAGLIBDLL/taglib.h>
-#include <TAGLIBDLL/mpegfile.h>
-#include <TAGLIBDLL/id3v2tag.h>
-#include <TAGLIBDLL/attachedpictureframe.h>*/
-//#include <TAGLIBDLL/tlist.tcc>
 #include "Musique.h"
 #include "PlayListTableau.h"
-#include "DialogueFenetreExt.h"
-#include "ImageFichierMusique.h"
+#include "Dialogue/DialogEnregistreM3U.h"
+#include "Dialogue/DialogTagMP3.h"
+#include "Jaquette/ImagePochetteMusique.h"
 #include "OS_Win.h"
 #include "SliderSon.h"
 
@@ -71,10 +65,9 @@ class PlayList : public wxPanel
         int ligneSel;
         ImagePochetteMusique *m_pochette;
         ListeLecture *m_liste;
-        Musique *m_musique;
         TagLib::FileRef m_ObjetTAG;
 
-        int m_rechercheTailleMot;
+        size_t m_rechercheTailleMot;
 
     DECLARE_EVENT_TABLE()
 };

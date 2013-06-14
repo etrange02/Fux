@@ -7,7 +7,7 @@
 #include <wx/filename.h>
 #include "GestionPeriphTableau.h"
 #include "ThreadGestion.h"
-#include "DialogueFenetreExt.h"
+#include "Dialogue/DialogEnregistreM3U.h"
 #include "GestionPeriphCouperCopier.h"
 #include "OS_Win.h"
 

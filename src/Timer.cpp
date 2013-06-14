@@ -33,19 +33,10 @@ TimerGraph::~TimerGraph()
  */
 void TimerGraph::Notify()
 {
-    if (m_musique->VerifTemps())
-        m_musique->ChangementChanson();
-    if (m_musiqueGraph->IsShownOnScreen())
-        m_musiqueGraph->OnIdle();
-}
-
-/**
- * Associe les instances de classe nécessaires au fonctionnement du timer.
- */
-void TimerGraph::setMusique()
-{
-    m_musique = Musique::Get();
-    m_musiqueGraph = MusiqueGraph::Get();
+    if (Musique::Get()->VerifTemps())
+        Musique::Get()->ChangementChanson();
+    if (MusiqueGraph::Get()->IsShownOnScreen())
+        MusiqueGraph::Get()->OnIdle();
 }
 
 

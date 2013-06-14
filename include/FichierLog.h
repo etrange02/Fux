@@ -8,15 +8,16 @@
 class FichierLog
 {
     public:
-        FichierLog();
-        ~FichierLog();
         static FichierLog* Get();
+        void Delete();
 
         void Ajouter(wxString);
         void Ajouter(const wxChar* ch1);
         void Ajouter(const wxChar* ch1, wxString ch2);
 
     protected:
+        FichierLog();
+        ~FichierLog();
     private:
         wxFile *m_fichier; //!< Member variable "m_fichier"
 };

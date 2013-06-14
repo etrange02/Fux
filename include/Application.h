@@ -6,6 +6,8 @@
 #include <wx/intl.h>
 #include "Fenetre.h"
 #include "FichierLog.h"
+#include "Reseau/TCPClient.h"
+#include "Reseau/TCPConnexionEchangeInstanceLocalHost.h"
 
 class wxFuXApp : public wxApp
 {

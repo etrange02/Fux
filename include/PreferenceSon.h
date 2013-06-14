@@ -43,8 +43,6 @@ class PrefSon : public wxScrolledWindow
 
         int m_listeModif_Nouveau;
 
-        Musique *m_musique;
-
     DECLARE_EVENT_TABLE()
 };
 

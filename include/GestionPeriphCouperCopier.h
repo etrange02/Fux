@@ -12,14 +12,17 @@
 class CouperCopierColler
 {
     public:
-        CouperCopierColler();
-        ~CouperCopierColler();
         static CouperCopierColler* Get();
+        void Delete();
         void SetArrayString(wxArrayString*, int, int, wxString chemin = wxEmptyString);
         void ModifEtatDonnee(bool reset = false);
         bool SetDestination(wxString, int);
         bool estCharge();
         int GetOrigine();
+
+    protected:
+        CouperCopierColler();
+        ~CouperCopierColler();
 
     private:
         wxArrayString m_tableau;

@@ -37,8 +37,6 @@ class PrefDefaut : public wxScrolledWindow
         //wxString CheminOuvertureDefaut();
 
     protected:
-        Musique *m_musique;
-
         wxSizer *m_sizer1V, *m_sizerUseQuo, *m_sizerAvancee;
         wxChoice *m_listeCouleur, *m_listeSon, *m_listeReprise;
         wxTextCtrl *m_boiteCheminChansonRep, *m_boiteCheminDefautRech;

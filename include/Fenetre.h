@@ -16,10 +16,10 @@
 #include "PreferenceDefaut.h"
 #include "PlayList.h"
 #include "GestionPeriph.h"
-#include "ComInterProcess.h"
+#include "Reseau/TCPServeur.h"
 #include "SliderSon.h"
 #include "FichierLog.h"
-#include "BDDThread.h"
+#include "BDD/BDDThread.h"
 #include "ArrayFenetreDetachable.h"
 #include "BoutonFenetreDetachable.h"
 
@@ -82,14 +82,12 @@ class FuXFenetre: public wxFrame
     wxBitmapButton *m_boutonImageLP;
     wxBitmap *m_imageBouton;
 
-    Musique *m_chanson;
     MusiqueGraph *m_musiqueGraph;
     TimerGraph m_TimerGraph;
     PrefSon m_pageSon;
     PrefCouleur m_pageCouleur;
     PrefDefaut m_pageDefaut;
     PlayList *m_playList;
-    GestPeriph *m_periph;
     bool *m_panelsAssocies;
 
     ArrayFenetreDetachable *m_fenetresDetachables;

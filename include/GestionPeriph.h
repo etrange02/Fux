@@ -11,7 +11,6 @@
 #include <wx/gauge.h>
 #include <wx/event.h>
 #include <wx/dynarray.h>
-#include "DialogueFenetreExt.h"
 #include <wx/mimetype.h>
 #include <wx/textfile.h>
 #include <wx/progdlg.h>
@@ -27,9 +26,8 @@ WX_DEFINE_ARRAY(ElementLecteurRacineFichier*, ArrayOfElementLecteurRacineFichier
 class GestPeriph : public wxPanel
 {
     public :
-        GestPeriph();
-        virtual ~GestPeriph();
         static GestPeriph* Get();
+        void Delete();
         void Creer(wxWindow *Parent);
 
         void AfficheMenu_MesDoc(wxCommandEvent &WXUNUSED(event));
@@ -56,6 +54,10 @@ class GestPeriph : public wxPanel
         void ComparaisonStatutEvt(wxCommandEvent &WXUNUSED(event));
         void ComparaisonStatut();
         void MAJPlaylist();
+
+    protected:
+        GestPeriph();
+        virtual ~GestPeriph();
 
     private :
         wxSizer *m_sizer1V, *m_sizerBoutonRacc, *m_sizer2G, *m_sizer2GridG, *m_sizer2GridD, *m_sizerBoutonModif;

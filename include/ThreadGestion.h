@@ -5,16 +5,18 @@
 #include <wx/thread.h>
 #include <wx/dynarray.h>
 #include "Define.h"
-#include "RechercheTraverser.h"
+#include "DirTraverser/TraverserCopieDossier.h"
+#include "DirTraverser/TraverserCopieFichier.h"
+#include "DirTraverser/TraverserDeplaceFichier.h"
+#include "DirTraverser/TraverserSupprimeFichier.h"
 #include "ElementThreadFichier.h"
+#include "FichierLog.h"
 
 WX_DEFINE_ARRAY(ElementThreadFichier*, ArrayOfElementThreadFichier);
 
 class ThreadFichierFichier : public wxThread
 {
     public:
-        ThreadFichierFichier();
-        virtual ~ThreadFichierFichier();
         void AjoutDonnee(wxArrayString*, int, wxString dest = wxEmptyString);
         static ThreadFichierFichier* Get();
         bool GetEtat();
@@ -22,6 +24,8 @@ class ThreadFichierFichier : public wxThread
         void ViderListe();
 
     private:
+        ThreadFichierFichier();
+        virtual ~ThreadFichierFichier();
         virtual void* Entry();
         void DossierSuppression(wxArrayString&);//Deplace inutile !!
         void DossierCopie(wxString, wxString);

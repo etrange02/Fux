@@ -68,7 +68,7 @@ int wxFuXApp::OnExit()
     //Parametre::Get()->~Parametre();
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("Fin de l'application"));
-    FichierLog::Get()->~FichierLog();
+    FichierLog::Get()->Delete();
     #endif
     return 0;
 }
@@ -88,7 +88,7 @@ void wxFuXApp::EnvoiStringAutreInstance()
         {
             chaine = argv[i];
             chaine.Normalize(wxPATH_NORM_SHORTCUT);
-            if (Parametre::Get()->islisable(chaine.GetFullPath().AfterLast('.').Lower()))
+            if (Parametre::Get()->islisable(chaine.GetFullPath().AfterLast('.').Lower()) || chaine.GetFullPath().AfterLast('.').Lower().IsSameAs(_T("m3u")))
             {
                 if (!connexion->Execute(chaine.GetFullPath()))
                 {

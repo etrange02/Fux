@@ -13,14 +13,14 @@
  * @brief Contrôleur du volume sonore de la musique
  */
 
-static SliderSon* instanceSliderSon = NULL;
+static SliderSon* s_instanceSliderSon = NULL;
 
 /**
  * Constructeur
  * @param parent Fenêtre parente (pour les évènements)
  */
-SliderSon::SliderSon(wxWindow *Parent) : wxSlider(Parent, ID_APP_SLIDER_SON, 100, 0, 100, wxDefaultPosition, wxDefaultSize, wxSL_HORIZONTAL)
-{    instanceSliderSon = this;}
+SliderSon::SliderSon()
+{}
 
 /**
  * Destructeur
@@ -33,7 +33,11 @@ SliderSon::~SliderSon()
  * @return l'instance
  */
 SliderSon* SliderSon::Get()
-{    return instanceSliderSon;}
+{
+    if (s_instanceSliderSon == NULL)
+        s_instanceSliderSon = new SliderSon();
+    return s_instanceSliderSon;
+}
 
 /**
  * Augmente la valeur de la barre et en informe le système. Le volume augmente

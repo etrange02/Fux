@@ -12,12 +12,13 @@
 #include <wx/tarstrm.h>
 #include <wx/progdlg.h>
 #include <wx/mstream.h>
-#include <TAGLIB/tag.h>
-#include <TAGLIB/fileref.h>
-#include <TAGLIB/taglib.h>
-#include <TAGLIB/mpegfile.h>
-#include <TAGLIB/id3v2tag.h>
-#include <TAGLIB/attachedpictureframe.h>
+#include <wx/srchctrl.h>
+#include <tag.h>
+#include <fileref.h>
+#include <taglib.h>
+#include <mpegfile.h>
+#include <id3v2tag.h>
+#include <attachedpictureframe.h>
 /*#include <TAGLIBDLL/tag.h>
 #include <TAGLIBDLL/fileref.h>
 #include <TAGLIBDLL/taglib.h>
@@ -37,8 +38,7 @@ class PlayList : public wxPanel
 {
     public:
         PlayList();
-        //PlayList(wxWindow *Parent);
-        ~PlayList();
+        virtual ~PlayList();
 
         ListeLecture* GetListeLecture();
 
@@ -56,6 +56,8 @@ class PlayList : public wxPanel
         void EvtImage(wxCommandEvent&);
         void MouseEvents(wxMouseEvent&);
 
+        void RechercheListeLecture(wxCommandEvent&);
+
     protected:
         wxString fichierTAG;
         wxSizer *sizer, *m_sizerBouton, *m_sizerRep;
@@ -64,12 +66,15 @@ class PlayList : public wxPanel
         wxCollapsiblePane *m_panneauRepliable;
         wxTextCtrl *m_BoiteNom, *m_BoiteArtiste, *m_BoiteAlbum, *m_BoiteTitre, *m_BoiteGenre;
         wxSpinCtrl *m_BoiteAnnee;
+        wxSearchCtrl *m_champsRecherche;
 
         int ligneSel;
         ImagePochetteMusique *m_pochette;
         ListeLecture *m_liste;
         Musique *m_musique;
         TagLib::FileRef m_ObjetTAG;
+
+        int m_rechercheTailleMot;
 
     DECLARE_EVENT_TABLE()
 };

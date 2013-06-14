@@ -6,12 +6,11 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <wx/dir.h>
+#include "Classes.h"
 #include "Musique.h"
 #include "ImageText.h"
 #include "Define.h"
 #include "SliderSon.h"
-
-class Musique;
 
 extern const wxEventType wxEVT_MUSIQUE_SUPPRESSION;
 
@@ -35,7 +34,6 @@ class MusiqueGraph : public wxGLCanvas
         void MouseEvents(wxMouseEvent&);
 
     protected:
-        Musique *m_musique;
 
         float *spectrum, m_intervalle;
         int m_epaisseurSpectre, m_sizer_w, m_sizer_h;//puissance de 2, 64 à 8192

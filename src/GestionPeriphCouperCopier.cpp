@@ -13,19 +13,19 @@
  * @brief Mise en mémoire d'une opération de couper-copier-coller et gère les modifications.
  */
 
-static CouperCopierColler *instanceCouperCopier = NULL;
+static CouperCopierColler *s_instanceCouperCopier = NULL;
 
 /**
- * Constructeur
+ * Constructeur protégé
  */
 CouperCopierColler::CouperCopierColler()
 { m_action = -1; m_objetOrigine = VIDE;}
 
 /**
- * Destructeur
+ * Destructeur protégé
  */
 CouperCopierColler::~CouperCopierColler()
-{ delete instanceCouperCopier; instanceCouperCopier = NULL;}
+{}
 
 /**
  * Retourne une instance de la classe
@@ -33,9 +33,15 @@ CouperCopierColler::~CouperCopierColler()
  */
 CouperCopierColler* CouperCopierColler::Get()
 {
-    if (instanceCouperCopier == NULL)
-        instanceCouperCopier = new CouperCopierColler;
-    return instanceCouperCopier;
+    if (s_instanceCouperCopier == NULL)
+        s_instanceCouperCopier = new CouperCopierColler();
+    return s_instanceCouperCopier;
+}
+
+void CouperCopierColler::Delete()
+{
+    delete s_instanceCouperCopier;
+    s_instanceCouperCopier = NULL;
 }
 
 /**

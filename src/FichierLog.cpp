@@ -13,7 +13,7 @@
  * @brief Gère le fichier log de l'application
  */
 
-static FichierLog* instanceFichierLog = NULL;
+static FichierLog* s_instanceFichierLog = NULL;
 
 /**
  * Constructeur
@@ -37,9 +37,15 @@ FichierLog::~FichierLog()
  */
 FichierLog* FichierLog::Get()
 {
-    if (instanceFichierLog == NULL)
-        instanceFichierLog = new FichierLog();
-    return instanceFichierLog;
+    if (s_instanceFichierLog == NULL)
+        s_instanceFichierLog = new FichierLog();
+    return s_instanceFichierLog;
+}
+
+void FichierLog::Delete()
+{
+    delete s_instanceFichierLog;
+    s_instanceFichierLog = NULL;
 }
 
 /**

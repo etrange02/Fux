@@ -14,7 +14,7 @@
  * @brief Page contenant le double explorateur de fichier
  */
 
-static GestPeriph* instanceGestPeriph = NULL;
+static GestPeriph* s_instanceGestPeriph = NULL;
 
 BEGIN_EVENT_TABLE(GestPeriph, wxPanel)
     EVT_BUTTON(ID_PAGE_PERIHERIQUE_BOUTON_MESDOC, GestPeriph::AfficheMenu_MesDoc)
@@ -32,10 +32,10 @@ BEGIN_EVENT_TABLE(GestPeriph, wxPanel)
 END_EVENT_TABLE()
 
 /**
- * Constructeur
+ * Constructeur protégé
  */
 GestPeriph::GestPeriph()
-{   instanceGestPeriph = this;}
+{}
 
 /**
  * Destructeur
@@ -54,7 +54,17 @@ GestPeriph::~GestPeriph()
  * @return l'instance
  */
 GestPeriph* GestPeriph::Get()
-{    return instanceGestPeriph;}
+{
+    if (s_instanceGestPeriph == NULL)
+        s_instanceGestPeriph = new GestPeriph();
+    return s_instanceGestPeriph;
+}
+
+void GestPeriph::Delete()
+{
+    delete s_instanceGestPeriph;
+    s_instanceGestPeriph = NULL;
+}
 
 /**
  * Crée les composants graphiques de la fenêtre. Elle n'est pas appelé par les constructeur pour ne par surcharger le démarrage de l'application

@@ -6,10 +6,9 @@
 #include <ctime>
 #include <fmod.hpp>
 #include "Define.h"
+#include "Classes.h"
 #include "FichierListe.h"
 #include "FichierLog.h"
-
-class wxFichierListe;
 
 extern const wxEventType wxEVT_MUSIQUE_CHANGE;
 extern const wxEventType wxEVT_MUSIQUE_MAJ;
@@ -19,9 +18,8 @@ extern const wxEventType wxEVT_MUSIQUE_GRAPH;
 class Musique
 {
     public:
-        Musique(wxWindow*);
-        virtual ~Musique();
         static Musique* Get();
+        void Delete();
 
         int GetDureeMS();
         int GetTpsActuel();
@@ -68,7 +66,11 @@ class Musique
         void ModifListeVide();
         void Recharger(bool maj = true, bool lect = true);
 
-        wxFichierListe* GetFichier();
+        void SetParent(wxWindow* parent);
+
+    private:
+        Musique();
+        virtual ~Musique();
 
     protected:
         wxWindow *m_parent;
@@ -82,7 +84,6 @@ class Musique
         bool m_stop, m_aleatoire, m_musCharge, m_isPlaying;
         wxString m_nomChanson, m_cheminComplet, m_album, m_artiste;
         DUREE m_duree, m_tpsActuel;
-        wxFichierListe *m_liste;
 };
 
 #endif // MUSIQUE_H_INCLUDED

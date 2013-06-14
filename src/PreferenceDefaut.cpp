@@ -53,7 +53,6 @@ PrefDefaut::~PrefDefaut()
  */
 void PrefDefaut::Creer()
 {
-    m_musique = Musique::Get();
     SetScrollbars(20, 20, 50, 50);
 
     m_sizer1V = new wxBoxSizer(wxVERTICAL);

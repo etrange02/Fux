@@ -12,7 +12,7 @@
     #pragma hdrstop
 #endif
 
-#include "Fenetre.h"
+#include "../include/Fenetre.h"
 
 /**
  * @class FuXFenetre
@@ -54,7 +54,7 @@ BEGIN_EVENT_TABLE(FuXFenetre, wxFrame)
     EVT_MUSIQUE_MAJ(wxID_ANY, FuXFenetre::MAJplaylist)
     EVT_MUSIQUE_LECTURE(wxID_ANY, FuXFenetre::BoutonChangeImage)
     EVT_SERVEUR(wxID_ANY, FuXFenetre::EvtServeurAjout)
-    EVT_MUSIQUE_GRAPH(wxID_ANY, FuXFenetre::OnTitreChange)
+    //EVT_MUSIQUE_GRAPH(wxID_ANY, FuXFenetre::OnTitreChange)
     EVT_MUSIQUE_SUPPRESSION(wxID_ANY, FuXFenetre::SupprimerListe)
     EVT_CHAR_HOOK(FuXFenetre::OnKeyDownRaccourci)
     EVT_BOUTON_FENETRE_DETACHABLE(wxID_ANY, FuXFenetre::SeparationPanel)
@@ -125,7 +125,9 @@ FuXFenetre::FuXFenetre(int argc, wxChar **argv) : wxFrame(NULL, wxID_ANY, _T("Fu
     ChangeFenetre();
     m_serveur = new TCPServeur(this);
     if (!m_serveur->Create(IPC_SERVICE))
+    {
         wxLogMessage(_T("Impossible d'initialiser le serveur"));
+    }
 
     m_fenetresDetachables = new ArrayFenetreDetachable();
     #if DEBUG
@@ -150,7 +152,7 @@ FuXFenetre::~FuXFenetre()
     m_TimerGraph.Stop();
     delete[] m_imageBouton;
     delete m_chanson;
-    delete m_musiqueGraph;
+    //delete m_musiqueGraph;
     delete m_playList;
     delete m_panelsAssocies;
     delete m_periph;
@@ -168,9 +170,9 @@ void FuXFenetre::Initialisation()
     FichierLog::Get()->Ajouter(_T("Début de FuXFenetre::Initialisation"));
     #endif
 
-    int args[] = {WX_GL_RGBA, WX_GL_DOUBLEBUFFER, WX_GL_DEPTH_SIZE, 16, 0};
+    //int args[] = {WX_GL_RGBA, WX_GL_DOUBLEBUFFER, WX_GL_DEPTH_SIZE, 16, 0};
     m_chanson = new Musique(this);
-    m_musiqueGraph = new MusiqueGraph(this, args);
+    //m_musiqueGraph = new MusiqueGraph(this, args);
     m_playList = new PlayList;
     m_periph = new GestPeriph;
 
@@ -193,8 +195,8 @@ void FuXFenetre::CreerPages()
     sizerDroitPrincipal = new wxBoxSizer(wxVERTICAL);
     m_TimerGraph.Start(70, false);
 
-    sizerDroitPrincipal->Add(m_musiqueGraph, 1, wxEXPAND, 0);
-    sizerDroitPrincipal->Show(m_musiqueGraph);
+//    sizerDroitPrincipal->Add(m_musiqueGraph, 1, wxEXPAND, 0);
+ //   sizerDroitPrincipal->Show(m_musiqueGraph);
     sizerDroitPrincipal->Layout();
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::CreerPages() - Graphe"));
@@ -622,13 +624,15 @@ void FuXFenetre::OuvrirChanson(wxCommandEvent &WXUNUSED(event))
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::OuvrirChanson"));
     #endif
-    int ouvert = 0;
-    //wxFileDialog navig(this, _("Choisissez une chanson"), Parametre::Get()->getRepertoireDefaut(), _T(""), Parametre::Get()->getExtensionValideMusique(), wxFD_OPEN | wxFD_MULTIPLE | wxFD_FILE_MUST_EXIST);//";*.wav");
-    wxFileDialog navig(this, _("Choisissez une playlist (fichier .m3u)"), wxEmptyString,wxEmptyString, wxEmptyString, wxFD_OPEN);
-    ouvert = navig.ShowModal();
+    //int ouvert = 0;
+    wxFileDialog navig(this, _("Choisissez une chanson"), Parametre::Get()->getRepertoireDefaut(), _T(""), Parametre::Get()->getExtensionValideMusique(), wxFD_OPEN | wxFD_MULTIPLE | wxFD_FILE_MUST_EXIST);//";*.wav");
 
-    if (ouvert == wxID_OK)
+    int result=navig.ShowModal();
+
+    if (result==wxID_CANCEL) return;
+    //if (ouvert == wxID_OK)
     {
+        //return;
         wxArrayString musNav;
         navig.GetPaths(musNav);
         /*for (int i = 0; i<musNav.GetCount(); i++)
@@ -773,7 +777,7 @@ void FuXFenetre::ChangeFenetre()/////////////////
     switch(m_nouvelleFenetre)
     {
         case PRINCIPAL:
-            m_musiqueGraph->SetFocus();
+      //      m_musiqueGraph->SetFocus();
             break;
         case PREFERENCE:
             NotebookPreference->SetFocus();
@@ -1010,7 +1014,7 @@ void FuXFenetre::OnTitreChange(wxCommandEvent &WXUNUSED(event))
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::OnTitreChange"));
     #endif
-    m_musiqueGraph->TitreChange();
+   // m_musiqueGraph->TitreChange();
 }
 
 /**
@@ -1057,7 +1061,7 @@ void FuXFenetre::SeparationPanel(wxCommandEvent &event)
     {
         case PRINCIPAL:
             sizerDroit->Detach(sizerDroitPrincipal);
-            m_fenetresDetachables->Add(this, (wxWindow*) m_musiqueGraph, sizerDroitPrincipal, PRINCIPAL, event.GetId(), _("Graphe - Fu(X) 2.0"));
+          //  m_fenetresDetachables->Add(this, (wxWindow*) m_musiqueGraph, sizerDroitPrincipal, PRINCIPAL, event.GetId(), _("Graphe - Fu(X) 2.0"));
             sizerDroitPrincipal = NULL;
             #if DEBUG
             FichierLog::Get()->Ajouter(_T("FuXFenetre::SeparationPanel - PRINCIPAL"));
