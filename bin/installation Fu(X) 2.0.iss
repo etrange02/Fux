@@ -7,7 +7,7 @@
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{B3473793-E9EE-4923-9E8D-0CD6311484EA}
 AppName=Fu(X) 2.0
-AppVerName=Fu(X) 2.0 a5.alpha3
+AppVerName=Fu(X) 2.0 a5.alpha4 (stable mais non complète)
 AppVersion=a3
 VersionInfoVersion=2.0.0.5
 AppPublisher=Lecoconnier David
@@ -15,13 +15,18 @@ DefaultDirName={pf}\Fu(X)
 DefaultGroupName=Fu(X) 2.0
 AllowNoIcons=yes
 OutputDir=.
-OutputBaseFilename=Setup-Fu(X)-2.0-a5.alpha3
+OutputBaseFilename=Setup-Fu(X)-2.0-a5.alpha4
 SetupIconFile=..\lib\play.ico
 Compression=lzma
 SolidCompression=yes
 PrivilegesRequired = admin
 WizardImageStretch=no
 VersionInfoCompany=Lecoconnier David
+
+[InstallDelete]       
+Type: files; Name: "{app}\Fu(X) 2.0.exe"
+Type: files; Name: "{app}\Fu(X) 2.exe"
+Type: files; Name: "{app}\Fu(X)_2.exe"
 
 [Languages]
 Name: "french"; MessagesFile: "compiler:Languages\French.isl"
