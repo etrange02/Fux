@@ -44,13 +44,26 @@ PrefCouleur::PrefCouleur(wxWindow *Parent) : wxScrolledWindow(Parent, wxID_ANY, 
  * Destructeur
  */
 PrefCouleur::~PrefCouleur()
-{}
+{
+    delete[] m_bitmap;
+    delete[] m_sliderBarre;
+    delete[] m_sliderFond;
+    delete[] m_sliderPolice;
+    delete[] m_TextBarre;
+    delete[] m_TextFond;
+    delete[] m_TextPolice;
+    delete[] m_checkBoxBas;
+    delete[] m_checkBoxHaut;
+    delete[] m_checkBoxMiInf;
+    delete[] m_checkBoxMiSup;
+}
 
 /**
  * Crée les différents éléments graphique du panel et les place dessus.
  */
-void PrefCouleur::Creer()
+void PrefCouleur::Creer(wxWindow *parent, wxWindowID id)
 {
+    Create(parent, id);
     //m_musiqueGraph = MusiqueGraph::Get();
     SetScrollbars(20, 20, 50, 50);
 

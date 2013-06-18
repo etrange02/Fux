@@ -42,11 +42,14 @@ GestPeriph::GestPeriph()
  */
 GestPeriph::~GestPeriph()
 {
-    //DetruireListes();
-    //ThreadFichierFichier::Get()->SetStop();
-    //ThreadFichierFichier::Get()->ViderListe();
+    DetruireListes();
+    ThreadFichierFichier::Get()->SetStop();
+    ThreadFichierFichier::Get()->ViderListe();
     //delete ThreadFichierFichier::Get();
+    delete[] m_boutonModif;
+    #if DEBUG
     FichierLog::Get()->Ajouter(_T("GestPeriph::~GestPeriph"));
+    #endif
 }
 
 /**

@@ -57,7 +57,7 @@ class GestPeriph : public wxPanel
 
     protected:
         GestPeriph();
-        virtual ~GestPeriph();
+        ~GestPeriph();
 
     private :
         wxSizer *m_sizer1V, *m_sizerBoutonRacc, *m_sizer2G, *m_sizer2GridG, *m_sizer2GridD, *m_sizerBoutonModif;

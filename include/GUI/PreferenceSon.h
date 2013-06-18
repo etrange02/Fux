@@ -18,7 +18,7 @@ class PrefSon : public wxScrolledWindow
         PrefSon();
         PrefSon(wxWindow *Parent);
         virtual ~PrefSon();
-        void Creer();
+        void Creer(wxWindow *parent, wxWindowID id);
         int CreerListe(wxChoice*);
         void Son_RadioModif_Nouveau(wxCommandEvent &event);
         void Son_Modif_Nouveau(int);
@@ -40,6 +40,7 @@ class PrefSon : public wxScrolledWindow
         wxTextCtrl *m_boiteNomMod, *m_boiteNomActuel, *m_boiteVolActuel, *m_boiteVolPCActuel;
         wxSpinCtrl *m_boiteVolMod, *m_boiteVolPCMod;
         wxButton *m_Bouton_Supprimer, *m_Bouton_Appliquer;
+        wxStaticText* m_textNom, *m_textVolume, *m_textVolumePC;
 
         int m_listeModif_Nouveau;
 

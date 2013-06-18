@@ -42,13 +42,18 @@ PrefSon::PrefSon(wxWindow *Parent) : wxScrolledWindow(Parent, wxID_ANY, wxDefaul
  * Destructeur
  */
 PrefSon::~PrefSon()
-{}
+{
+    delete[] m_textNom;
+    delete[] m_textVolume;
+    delete[] m_textVolumePC;
+}
 
 /**
  * Crée les différents éléments graphique du panel et les place dessus.
  */
-void PrefSon::Creer()
+void PrefSon::Creer(wxWindow *parent, wxWindowID id)
 {
+    Create(parent, id);
     SetScrollbars(20, 20, 50, 50);
 
     m_sizer1V = new wxBoxSizer(wxVERTICAL);
@@ -70,12 +75,12 @@ void PrefSon::Creer()
     m_sizer2H->Add(m_sizerNewModif, 0, wxALL | wxEXPAND, 5);
     m_sizer2H->Add(m_sizerActuel, 0, wxALL | wxEXPAND | wxALIGN_RIGHT, 5);
 
-    wxStaticText* TextNom = new wxStaticText[2];
-    TextNom[0].Create(this, wxID_ANY, _("Nom")); TextNom[1].Create(this, wxID_ANY, _("Nom"));
-    wxStaticText* TextVolume = new wxStaticText[2];
-    TextVolume[0].Create(this, wxID_ANY, _("Volume")); TextVolume[1].Create(this, wxID_ANY, _("Volume"));
-    wxStaticText* TextVolumePC = new wxStaticText[2];
-    TextVolumePC[0].Create(this, wxID_ANY, _("Volume PC")); TextVolumePC[1].Create(this, wxID_ANY, _("Volume PC"));
+    m_textNom = new wxStaticText[2];
+    m_textNom[0].Create(this, wxID_ANY, _("Nom")); m_textNom[1].Create(this, wxID_ANY, _("Nom"));
+    m_textVolume = new wxStaticText[2];
+    m_textVolume[0].Create(this, wxID_ANY, _("Volume")); m_textVolume[1].Create(this, wxID_ANY, _("Volume"));
+    m_textVolumePC = new wxStaticText[2];
+    m_textVolumePC[0].Create(this, wxID_ANY, _("Volume PC")); m_textVolumePC[1].Create(this, wxID_ANY, _("Volume PC"));
 
 
  //////////////Partie Modification de jeu//////////////////////
@@ -87,11 +92,11 @@ void PrefSon::Creer()
     m_boiteVolPCMod = new wxSpinCtrl(this, wxID_ANY, _T(""));
     m_boiteVolPCMod->SetRange(-1, 100);
 
-    m_sizerNewModifTAB->Add(&TextNom[0], 0, wxALL, 0);
+    m_sizerNewModifTAB->Add(&m_textNom[0], 0, wxALL, 0);
     m_sizerNewModifTAB->Add(m_boiteNomMod, 0, wxALL | wxEXPAND, 0);
-    m_sizerNewModifTAB->Add(&TextVolume[0], 0, wxALL, 0);
+    m_sizerNewModifTAB->Add(&m_textVolume[0], 0, wxALL, 0);
     m_sizerNewModifTAB->Add(m_boiteVolMod, 0, wxALL | wxEXPAND, 0);
-    m_sizerNewModifTAB->Add(&TextVolumePC[0], 0, wxALL, 0);
+    m_sizerNewModifTAB->Add(&m_textVolumePC[0], 0, wxALL, 0);
     m_sizerNewModifTAB->Add(m_boiteVolPCMod, 0, wxALL | wxEXPAND, 0);
 
 //////////////Partie Valeurs actuelles//////////////////////
@@ -105,11 +110,11 @@ void PrefSon::Creer()
     m_boiteVolActuel->ChangeValue(_T("100"));
     m_boiteVolPCActuel->ChangeValue(_T("-1"));
 
-    sizer4Actuel_NON_Modifiable->Add(&TextNom[1], 0, wxALL, 0);
+    sizer4Actuel_NON_Modifiable->Add(&m_textNom[1], 0, wxALL, 0);
     sizer4Actuel_NON_Modifiable->Add(m_boiteNomActuel, 0, wxALL | wxEXPAND, 0);
-    sizer4Actuel_NON_Modifiable->Add(&TextVolume[1], 0, wxALL, 0);
+    sizer4Actuel_NON_Modifiable->Add(&m_textVolume[1], 0, wxALL, 0);
     sizer4Actuel_NON_Modifiable->Add(m_boiteVolActuel, 0, wxALL | wxEXPAND, 0);
-    sizer4Actuel_NON_Modifiable->Add(&TextVolumePC[1], 0, wxALL, 0);
+    sizer4Actuel_NON_Modifiable->Add(&m_textVolumePC[1], 0, wxALL, 0);
     sizer4Actuel_NON_Modifiable->Add(m_boiteVolPCActuel, 0, wxALL | wxEXPAND, 0);
 
 //////////////Partie Création des boutons//////////////////////

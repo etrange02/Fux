@@ -18,7 +18,7 @@ class PrefCouleur : public wxScrolledWindow
         PrefCouleur();
         PrefCouleur(wxWindow *Parent);
         virtual ~PrefCouleur();
-        void Creer();
+        void Creer(wxWindow *parent, wxWindowID id);
         int CreerListe(wxChoice*);
         void Couleur_RadioModif_Nouveau(wxCommandEvent &event);
         void Couleur_Modif_Nouveau(int);

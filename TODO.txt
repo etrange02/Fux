@@ -1,2 +1,2 @@
-- Mettre une classe par fichier
-- séparer les widgets des autres classes
+- Supprimer tout les messages d'erreurs présent lors de la compilation (WXUNUSED et création de classes Couleur et Titre)
+- Travailler sur la recherche dans la playlist (recherche locale)

@@ -144,19 +144,22 @@ FuXFenetre::~FuXFenetre()
     #endif
 //    s_mutexProtectionDemarrage.Lock();
 //    s_mutexProtectionDemarrage.Unlock();
-    //m_fenetresDetachables->Vider();
+    m_fenetresDetachables->Vider();
     delete m_fenetresDetachables;
     delete m_serveur;
     BDDThread::Get()->Stop();
     m_TimerGraph.Stop();
     delete[] m_imageBouton;
     Musique::Get()->Delete();
+    GestPeriph::Get()->Delete();
     delete m_musiqueGraph;
     delete m_playList;
     delete m_panelsAssocies;
-    GestPeriph::Get()->Delete();
+    delete m_pageCouleur;
+    delete m_pageDefaut;
+    delete m_pageSon;
     #if DEBUG
-    FichierLog::Get()->Ajouter(_T("FuXFenetre::~FuXFenetre - fin"));
+//    FichierLog::Get()->Ajouter(_T("FuXFenetre::~FuXFenetre - fin"));
     #endif
 }
 
@@ -203,18 +206,18 @@ void FuXFenetre::CreerPages()
     sizerDroitPreference = new wxBoxSizer(wxVERTICAL);
     NotebookPreference = new wxNotebook(this, -1);
 
-    m_pageCouleur.Create(NotebookPreference, -1);
-    m_pageCouleur.Creer();
+    m_pageCouleur = new PrefCouleur;
+    m_pageCouleur->Creer(NotebookPreference, -1);
 
-    m_pageSon.Create(NotebookPreference, -1);
-    m_pageSon.Creer();
+    m_pageSon = new PrefSon;
+    m_pageSon->Creer(NotebookPreference, -1);
 
-    m_pageDefaut.Create(NotebookPreference, -1);
-    m_pageDefaut.Creer();
+    m_pageDefaut = new PrefDefaut;
+    m_pageDefaut->Creer(NotebookPreference, -1);
 
-    NotebookPreference->AddPage(&m_pageCouleur, _("Couleur"));
-    NotebookPreference->AddPage(&m_pageSon, _("Son"));
-    NotebookPreference->AddPage(&m_pageDefaut, _("Défaut"));
+    NotebookPreference->AddPage(m_pageCouleur, _("Couleur"));
+    NotebookPreference->AddPage(m_pageSon, _("Son"));
+    NotebookPreference->AddPage(m_pageDefaut, _("Défaut"));
 
     sizerDroitPreference->Add(NotebookPreference, 1, wxEXPAND, 0);
     sizerDroitPreference->Show(NotebookPreference);
@@ -622,15 +625,15 @@ void FuXFenetre::OuvrirChanson(wxCommandEvent &WXUNUSED(event))
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::OuvrirChanson"));
     #endif
-    wxFileDialog navig(this, _("Choisissez une chanson"), Parametre::Get()->getRepertoireDefaut(), _T(""), Parametre::Get()->getExtensionValideMusique(), wxFD_OPEN | wxFD_MULTIPLE | wxFD_FILE_MUST_EXIST);//";*.wav");
+    wxFileDialog *navig = new wxFileDialog(this, _("Choisissez une chanson"), Parametre::Get()->getRepertoireDefaut(), _T(""), Parametre::Get()->getExtensionValideMusique(), wxFD_OPEN | wxFD_MULTIPLE | wxFD_FILE_MUST_EXIST);//";*.wav");
 
-    if (navig.ShowModal()==wxID_CANCEL)
-        return;
+    if (navig->ShowModal()==wxID_CANCEL) {delete navig; return;}
+
     //if (ouvert == wxID_OK)
     {
         //return;
         wxArrayString musNav;
-        navig.GetPaths(musNav);
+        navig->GetPaths(musNav);
         /*for (int i = 0; i<musNav.GetCount(); i++)
             musNav.Item(i).SetChar(0, musNav.Item(i).Upper()[0]);*/
 
@@ -653,6 +656,7 @@ void FuXFenetre::OuvrirChanson(wxCommandEvent &WXUNUSED(event))
         m_playList->GetListeLecture()->MAJ();
         GestPeriph::Get()->MAJPlaylist();
     }
+    delete navig;
 }
 
 /**
@@ -792,7 +796,7 @@ void FuXFenetre::ChangeFenetre()/////////////////
 void FuXFenetre::ModifSon(wxScrollEvent &WXUNUSED(event))
 {
     Musique::Get()->SetVolume(SliderSon::Get()->GetValue());
-    m_pageSon.SetValeurMusique(SliderSon::Get()->GetValue());
+    m_pageSon->SetValeurMusique(SliderSon::Get()->GetValue());
     ChangeFenetre();
 }
 
@@ -874,7 +878,7 @@ void FuXFenetre::LecturePreference(bool lecture)
     {
         ///////Couleur
         if (!fichierPref.GetLine(1).IsSameAs(_T("Couleur= NON")))
-            m_pageCouleur.Couleur_OuvrirFichier(fichierPref.GetLine(1).AfterFirst(' '), false);
+            m_pageCouleur->Couleur_OuvrirFichier(fichierPref.GetLine(1).AfterFirst(' '), false);
 
         ///////Son
         if (!fichierPref.GetLine(2).IsSameAs(_T("Son= NON")))
@@ -888,7 +892,7 @@ void FuXFenetre::LecturePreference(bool lecture)
                 fichierS.GetLine(2).ToLong(&volume);
                 Musique::Get()->SetVolume(volume);
                 SliderSon::Get()->SetValue(volume);
-                m_pageSon.SetValeurMusique(volume);
+                m_pageSon->SetValeurMusique(volume);
                 fichierS.Close();
             }
         }
@@ -937,8 +941,8 @@ void FuXFenetre::AffichCouleurNouv(wxCommandEvent &WXUNUSED(event))
     m_nouvelleFenetre = PREFERENCE;
     ChangeFenetre();
     NotebookPreference->ChangeSelection(0);
-    m_pageCouleur.GetRadioBox()->SetSelection(0);
-    m_pageCouleur.Couleur_Modif_Nouveau(0);
+    m_pageCouleur->GetRadioBox()->SetSelection(0);
+    m_pageCouleur->Couleur_Modif_Nouveau(0);
 }
 
 
@@ -950,8 +954,8 @@ void FuXFenetre::AffichCouleurMod(wxCommandEvent &WXUNUSED(event))
     m_nouvelleFenetre = PREFERENCE;
     ChangeFenetre();
     NotebookPreference->ChangeSelection(0);
-    m_pageCouleur.GetRadioBox()->SetSelection(1);
-    m_pageCouleur.Couleur_Modif_Nouveau(1);
+    m_pageCouleur->GetRadioBox()->SetSelection(1);
+    m_pageCouleur->Couleur_Modif_Nouveau(1);
 }
 
 
@@ -963,8 +967,8 @@ void FuXFenetre::AffichSonNouv(wxCommandEvent &WXUNUSED(event))
     m_nouvelleFenetre = PREFERENCE;
     ChangeFenetre();
     NotebookPreference->ChangeSelection(1);
-    m_pageSon.GetRadioBox()->SetSelection(0);
-    m_pageSon.Son_Modif_Nouveau(0);
+    m_pageSon->GetRadioBox()->SetSelection(0);
+    m_pageSon->Son_Modif_Nouveau(0);
 }
 
 
@@ -976,8 +980,8 @@ void FuXFenetre::AffichSonMod(wxCommandEvent &WXUNUSED(event))
     m_nouvelleFenetre = PREFERENCE;
     ChangeFenetre();
     NotebookPreference->ChangeSelection(1);
-    m_pageSon.GetRadioBox()->SetSelection(1);
-    m_pageSon.Son_Modif_Nouveau(1);
+    m_pageSon->GetRadioBox()->SetSelection(1);
+    m_pageSon->Son_Modif_Nouveau(1);
 }
 
 /**

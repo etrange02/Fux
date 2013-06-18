@@ -46,13 +46,16 @@ PrefDefaut::PrefDefaut(wxWindow *Parent) : wxScrolledWindow(Parent, wxID_ANY, wx
  * Destructeur
  */
 PrefDefaut::~PrefDefaut()
-{}
+{
+    delete[] m_checkBox;
+}
 
 /**
  * Crée les différents composants graphiques du panel
  */
-void PrefDefaut::Creer()
+void PrefDefaut::Creer(wxWindow *parent, wxWindowID id)
 {
+    Create(parent, id);
     SetScrollbars(20, 20, 50, 50);
 
     m_sizer1V = new wxBoxSizer(wxVERTICAL);

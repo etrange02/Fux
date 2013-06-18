@@ -16,7 +16,7 @@ class PrefDefaut : public wxScrolledWindow
         PrefDefaut();
         PrefDefaut(wxWindow *Parent);
         virtual ~PrefDefaut();
-        void Creer();
+        void Creer(wxWindow *parent, wxWindowID id);
         int CreerListe(wxChoice *liste);
         int ListerContenuFichier(wxChoice *liste, int);
         void Defaut_Bouton_Enregistrer(wxCommandEvent &WXUNUSED(event));

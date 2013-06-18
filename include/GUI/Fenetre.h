@@ -78,15 +78,14 @@ class FuXFenetre: public wxFrame
     wxMenuBar *menuBarre;
     wxMenu *menuFichier, *menuAffichage, *menuPreferences, *menuSon, *menuCouleur, *menuExtraction, *menuAide, *menuControle;
     wxNotebook *NotebookPreference;
-    wxButton *bouton2;
     wxBitmapButton *m_boutonImageLP;
     wxBitmap *m_imageBouton;
 
     MusiqueGraph *m_musiqueGraph;
     TimerGraph m_TimerGraph;
-    PrefSon m_pageSon;
-    PrefCouleur m_pageCouleur;
-    PrefDefaut m_pageDefaut;
+    PrefSon *m_pageSon;
+    PrefCouleur *m_pageCouleur;
+    PrefDefaut *m_pageDefaut;
     PlayList *m_playList;
     bool *m_panelsAssocies;
 

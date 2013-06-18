@@ -48,20 +48,21 @@ IMPORTANT, A FAIRE !!!
 			<Environment>
 				<Variable name="AU" value="u" />
 				<Variable name="AURD" value="$(AU)$(RD)" />
-				<Variable name="FMODEX" value='&quot;C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Windows\api&quot;' />
+				<Variable name="FMODEX" value='&quot;C:\Program Files\FMOD SoundSystem\FMOD Programmers API Windows\api&quot;' />
 				<Variable name="RD" value="" />
 				<Variable name="SQLITE3" value="${WXSQLITE3}\sqlite3" />
 				<Variable name="TAGLIB" value="C:\CMake\cmake_taglib\taglib" />
-				<Variable name="WXSQLITE3" value="C:\wxsqlite3-3.0.2" />
+				<Variable name="WXSQLITE3" value="C:\wxsqlite3-3.0.3" />
 				<Variable name="WX_CFG" value="msw$(AURD)" />
 				<Variable name="WX_DIR" value="$(DIR_LIB)\wx" />
 				<Variable name="WX_GL_VER" value="GL" />
 				<Variable name="WX_VER1" value="2" />
 				<Variable name="WX_VER2" value="8" />
-				<Variable name="WX_VER3" value="10" />
+				<Variable name="WX_VER3" value="12" />
 			</Environment>
 		</Build>
 		<Compiler>
+			<Add option="-O2" />
 			<Add option="-Wextra" />
 			<Add option="-Wall" />
 			<Add option="-g" />
@@ -83,6 +84,7 @@ IMPORTANT, A FAIRE !!!
 			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/include" />
 		</ResourceCompiler>
 		<Linker>
+			<Add option="-s" />
 			<Add library="libwxcode_msw$(WX_VER1)$(WX_VER2)$(AURD)_wxsqlite3.a" />
 			<Add library="${SQLITE3}\lib\sqlite3.a" />
 			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_core.a" />
