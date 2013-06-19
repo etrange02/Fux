@@ -841,7 +841,7 @@ void FuXFenetre::SauvegardeListeLecture(wxCommandEvent &event)
  */
 void FuXFenetre::MenuAbout(wxCommandEvent &WXUNUSED(event))
 {
-    wxString message(_T("Nom : Fu(X) 2.0\tVersion : a5\tDate : ") + wxString(_T(__DATE__)) + _T("\n\nAuteur : David Lecoconnier (etrange02@aol.com)\n\nInterface réalisée avec wxWidgets 2.8.10\n\n\n") +
+    wxString message(_T("Nom : Fu(X) 2.0\tVersion : a5\tDate : ") + wxString(_T(__DATE__)) + _T("\n\nAuteur : David Lecoconnier (etrange02@aol.com)\n\nInterface réalisée avec wxWidgets 2.8.12\n\n\n") +
                         _T("Copyright © 2009-2013 David Lecoconnier, tous droits réservés\n\nFMOD Sound System, copyright © Firelight Technologies Pty, Ltd., 1994-2007\n"));
     wxMessageBox(message, _("A propos"), wxOK | wxICON_INFORMATION, this);
 }

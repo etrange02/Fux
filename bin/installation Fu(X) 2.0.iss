@@ -42,9 +42,11 @@ Name:AssocierExtensions; Description: Lecteur par défaut (mp3, wav, ogg, wma)
 Name: "{userappdata}\Fu(X)"; Flags: uninsneveruninstall
 
 [Files]
-Source: "..\Fu(X).exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\Fu(X).exe"; DestDir: "{app}"; Flags: ignoreversion   
 Source: "..\fmodex.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\libtag.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\lib\*"; Excludes: "\play.png"; DestDir: "{app}\lib"; Flags: ignoreversion
 Source: "..\Architecture\*"; Excludes: "\Fu(X).conf"; DestDir: "{userappdata}\Fu(X)"; Flags: recursesubdirs createallsubdirs uninsneveruninstall
 ; Source: "..\Architecture\Fu(X).conf"; DestDir: "{userappdata}\Fu(X)"; Flags: ignoreversion uninsneveruninstall
