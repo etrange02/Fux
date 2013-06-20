@@ -30,6 +30,14 @@ END_EVENT_TABLE()
 }
 
 /**
+ * Destructeur
+ */
+DialogEnregistreM3U::~DialogEnregistreM3U()
+{
+    delete[] m_text;
+}
+
+/**
  * Crée les éléments graphiques de la fenêtre
  */
 void DialogEnregistreM3U::Creer()
@@ -37,21 +45,21 @@ void DialogEnregistreM3U::Creer()
     wxBoxSizer *sizerV = new wxBoxSizer(wxVERTICAL);
     SetSizer(sizerV);
 
-    wxStaticText* Text = new wxStaticText[3];
-    Text[0].Create(this, wxID_ANY, _("Choisissez une sauvegarde existante"));
-    sizerV->Add(&Text[0], 0, wxALL, 5);
+    m_text = new wxStaticText[3];
+    m_text[0].Create(this, wxID_ANY, _("Choisissez une sauvegarde existante"));
+    sizerV->Add(&m_text[0], 0, wxALL, 5);
     m_liste = new wxChoice(this, wxID_ANY);
     sizerV->Add(m_liste, 0, wxLEFT|wxRIGHT|wxDOWN|wxEXPAND, 5);
 
-    Text[1].Create(this, wxID_ANY, _("Ou bien créez une nouvelle sauvegarde"));
-    sizerV->Add(&Text[1], 0, wxALL, 5);
+    m_text[1].Create(this, wxID_ANY, _("Ou bien créez une nouvelle sauvegarde"));
+    sizerV->Add(&m_text[1], 0, wxALL, 5);
     m_boiteNouveau = new wxTextCtrl(this, wxID_ANY, _T(""));
     sizerV->Add(m_boiteNouveau, 0, wxLEFT|wxRIGHT|wxDOWN|wxEXPAND, 5);
 
     sizerV->Add(new wxStaticLine(this), 0, wxUP|wxLEFT|wxRIGHT|wxEXPAND, 15);
 
-    Text[2].Create(this, wxID_ANY, _("Créer un raccourci ? Où le place-t-on ?"));
-    sizerV->Add(&Text[2], 0, wxALL, 5);
+    m_text[2].Create(this, wxID_ANY, _("Créer un raccourci ? Où le place-t-on ?"));
+    sizerV->Add(&m_text[2], 0, wxALL, 5);
 
     wxBoxSizer *sizerH1 = new wxBoxSizer(wxHORIZONTAL);
     sizerV->Add(sizerH1, 0, wxDOWN|wxEXPAND, 5);

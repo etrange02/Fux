@@ -176,7 +176,7 @@ void FuXFenetre::Initialisation()
     Musique::Get()->SetParent(this);
     m_musiqueGraph = new MusiqueGraph(this, args);
     m_playList = new PlayList;
-
+    FichierListe::Get();
     BDDThread::Get();
 
     #if DEBUG
@@ -625,17 +625,12 @@ void FuXFenetre::OuvrirChanson(wxCommandEvent &WXUNUSED(event))
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::OuvrirChanson"));
     #endif
-    wxFileDialog *navig = new wxFileDialog(this, _("Choisissez une chanson"), Parametre::Get()->getRepertoireDefaut(), _T(""), Parametre::Get()->getExtensionValideMusique(), wxFD_OPEN | wxFD_MULTIPLE | wxFD_FILE_MUST_EXIST);//";*.wav");
+    wxFileDialog navig(this, _("Choisissez une chanson"), Parametre::Get()->getRepertoireDefaut(), _T(""), Parametre::Get()->getExtensionValideMusique(), wxFD_OPEN | wxFD_MULTIPLE | wxFD_FILE_MUST_EXIST);//";*.wav");
 
-    if (navig->ShowModal()==wxID_CANCEL) {delete navig; return;}
-
-    //if (ouvert == wxID_OK)
+    if (navig.ShowModal() == wxID_OK)
     {
-        //return;
         wxArrayString musNav;
-        navig->GetPaths(musNav);
-        /*for (int i = 0; i<musNav.GetCount(); i++)
-            musNav.Item(i).SetChar(0, musNav.Item(i).Upper()[0]);*/
+        navig.GetPaths(musNav);
 
         if (FichierListe::Get()->GetNombreFichier() == 0)
         {
@@ -656,7 +651,6 @@ void FuXFenetre::OuvrirChanson(wxCommandEvent &WXUNUSED(event))
         m_playList->GetListeLecture()->MAJ();
         GestPeriph::Get()->MAJPlaylist();
     }
-    delete navig;
 }
 
 /**
@@ -668,12 +662,10 @@ void FuXFenetre::OuvrirM3U(wxCommandEvent &WXUNUSED(event))
     FichierLog::Get()->Ajouter(_T("FuXFenetre::OuvrirM3U"));
     #endif
     wxFileDialog navig(this, _("Choisissez une playlist (fichier .m3u)"), Parametre::Get()->getRepertoireParametre(_T("Play_list_M3U")), _T(""), _T("Playlist (*.m3u)|*.m3u"), wxFD_OPEN | wxFD_FILE_MUST_EXIST);
-    //wxFileDialog navig(this, _("Choisissez une playlist (fichier .m3u)"), wxEmptyString,wxEmptyString, wxEmptyString, wxFD_OPEN);
 
     if (navig.ShowModal() == wxID_OK)
     {
         wxString chemin = navig.GetPath();
-        //chemin = _T("C:\\Users\\Etrange02\\AppData\\Roaming\\Fu(X)\\Play_list_M3U\\musiques_ok.m3u");
 
         wxTextFile test(chemin); test.Open();
         if (test.IsOpened())

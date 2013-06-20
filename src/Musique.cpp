@@ -517,6 +517,15 @@ wxString Musique::GetNomChanson()
 {    return m_nomChanson;}
 
 /**
+ * Retourne le nom comlet de la chanson en cours de lecture
+ * @return le nom complet
+ */
+wxString Musique::GetNomComplet()
+{
+    return m_cheminComplet;
+}
+
+/**
  * Retourne le nom de l'album selon la structure de fichier artiste\album\titre.
  * @return le nom
  */

@@ -137,7 +137,7 @@ void FichierListe::ListageFichier(wxArrayString *chaine)
     {
         if (wxFileExists(chaine->Item(i)))
         {
-            if (chaine->Item(i).Lower().EndsWith(_T(".m3u")))
+            if (chaine->Item(i).AfterLast('.').Lower().IsSameAs(_T(".m3u")))
             {
                 wxTextFile fichierM3U(chaine->Item(i));
                 if (fichierM3U.Exists())
@@ -168,7 +168,7 @@ void FichierListe::ListageFichier(wxArrayString *chaine)
  * @param Parent Un pointeur sur la fenêtre parente
  * @return vrai si réussi
  */
-bool FichierListe::CopieFichierTOListe(wxString NomFichierOrigine, wxWindow *Parent)
+bool FichierListe::CopieFichierTOListe(wxString NomFichierOrigine, wxWindow *WXUNUSED(Parent))
 {
     bool copie = true, reprise = false;
 
@@ -185,9 +185,8 @@ bool FichierListe::CopieFichierTOListe(wxString NomFichierOrigine, wxWindow *Par
         choix.Add(_("Remplacer la liste de lecture par le contenu du fichier"));
         choix.Add(_("Ne rien faire"));
         wxSingleChoiceDialog actionPlay(NULL, _("La liste de lecture n'est pas vierge !\nQue souhaitez-vous faire ?"), _("Action requise, problème liste de lecture"), choix);
-        int ouvert = actionPlay.ShowModal();
 
-        if (ouvert == wxID_OK)
+        if (actionPlay.ShowModal() == wxID_OK)
         {
             if (actionPlay.GetSelection() == 1)
             {

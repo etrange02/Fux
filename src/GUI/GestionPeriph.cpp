@@ -225,6 +225,8 @@ void GestPeriph::ListePeripherique()
  */
 void GestPeriph::ListeM3U()
 {
+    if (!wxDir::Exists(Parametre::Get()->getRepertoireParametre(_T("Play_list_M3U"))))
+        return;
     bool inclu;
     //Vidage du menu
     ElementLecteurRacineFichier *t = NULL;
@@ -380,9 +382,9 @@ void GestPeriph::AffListeRepertoireLect(wxCommandEvent &event)
 void GestPeriph::AffListePlaylist(wxCommandEvent &event)
 {
     if (event.GetId() == ID_PAGE_PERIHERIQUE_MENU_PLAYLIST_GAUCHE)
-        m_listeG->SetFichierDossier(Parametre::Get()->getRepertoireParametre(_T("musique.liste")), PLAYLIST, true);
+        m_listeG->SetFichierDossier(FichierListe::Get()->GetCheminListe(), PLAYLIST, true);
     else if (event.GetId() == ID_PAGE_PERIHERIQUE_MENU_PLAYLIST_DROITE)
-        m_listeD->SetFichierDossier(Parametre::Get()->getRepertoireParametre(_T("musique.liste")), PLAYLIST, true);
+        m_listeD->SetFichierDossier(FichierListe::Get()->GetCheminListe(), PLAYLIST, true);
 }
 
 /**

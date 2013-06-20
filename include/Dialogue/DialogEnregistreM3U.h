@@ -12,6 +12,7 @@ class DialogEnregistreM3U : public wxDialog
 {
     public:
         DialogEnregistreM3U(wxWindow *parent, wxWindowID id, wxString racc);
+        ~DialogEnregistreM3U();
         void Creer();
         wxString GetChemin();
         wxString GetCheminRaccourci();
@@ -24,6 +25,7 @@ class DialogEnregistreM3U : public wxDialog
         wxTextCtrl *m_boiteNouveau, *m_boiteRaccourci;
         wxButton *m_bouton;//wxDirPickerCtrl
         wxArrayString m_chaineM3U;
+        wxStaticText* m_text;
 
     DECLARE_EVENT_TABLE()
 };

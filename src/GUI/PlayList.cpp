@@ -145,18 +145,18 @@ void PlayList::Creer(wxWindow *Parent, bool MAJListe)
  */
 void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
 {
-    DialogEnregistreM3U fen(this, wxID_ANY, wxEmptyString);
-    fen.Creer();
+    DialogEnregistreM3U *fen = new DialogEnregistreM3U(this, wxID_ANY, wxEmptyString);
+    fen->Creer();
     bool modif = true;
 
-    if (fen.ShowModal() == wxID_OK)
+    if (fen->ShowModal() == wxID_OK)
     {
-        wxTextFile fichierLec(Parametre::Get()->getRepertoireParametre(_T("musique.liste")));
+        wxTextFile fichierLec(FichierListe::Get()->GetCheminListe());
         if (!fichierLec.Open())
             return;
-        if (fen.GetName().IsEmpty())
+        if (fen->GetName().IsEmpty())
             return;
-        wxTextFile fichierEcr(fen.GetChemin());
+        wxTextFile fichierEcr(fen->GetChemin());
 
         if (fichierEcr.Exists())
         {
@@ -171,6 +171,8 @@ void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
         }
         else
         {
+            if (!wxDir::Exists(Parametre::Get()->getRepertoireParametre(_T("Play_list_M3U"))))
+                return;
             if (!fichierEcr.Create())
             {
                 wxLogError(_("Erreur dans le nom.\nVérifiez que vous utilisez des caractères autorisés."), _("Erreur"));
@@ -184,9 +186,9 @@ void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
                 fichierEcr.AddLine(fichierLec.GetLine(i));
             fichierEcr.Write();
 
-            if (fen.GetCheminRaccourci() != wxEmptyString && !wxFileExists(fen.GetCheminRaccourci()))
+            if (!fen->GetCheminRaccourci().IsEmpty() && !wxFileExists(fen->GetCheminRaccourci()))
             {
-                if (!CreationRaccourci(fen.GetCheminRaccourci(), fen.GetChemin()))
+                if (!CreationRaccourci(fen->GetCheminRaccourci(), fen->GetChemin()))
                 {
                     wxLogMessage(_("Echec de la création du raccourci."));
                 }
@@ -195,7 +197,7 @@ void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
         fichierLec.Close();
         fichierEcr.Close();
     }
-    fen.Destroy();
+    delete fen;
 }
 
 /**
@@ -209,8 +211,19 @@ void PlayList::OnPanneau(wxCollapsiblePaneEvent &WXUNUSED(event))
  */
 void PlayList::OnAfficheDetails(wxListEvent &event)
 {
-    ligneSel = event.GetIndex();
-    fichierTAG = FichierListe::Get()->GetNomPosition(ligneSel);
+    //ligneSel = event.GetIndex();
+    wxListItem item;
+    item.SetId(event.GetIndex());
+    item.SetColumn(6);
+    item.SetMask(wxLIST_MASK_TEXT);
+    m_liste->GetItem(item);
+
+    wxString chemin = item.GetText();
+    item.SetColumn(0);
+    m_liste->GetItem(item);
+    chemin << wxFileName::GetPathSeparator() << item.GetText();
+
+    fichierTAG = chemin;//FichierListe::Get()->GetNomPosition(ligneSel);
 
     m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
     if (!m_ObjetTAG.isNull() && m_ObjetTAG.file()->isValid())
@@ -253,8 +266,11 @@ void PlayList::OnAfficheDetails(wxListEvent &event)
  */
 void PlayList::OnAppliquerTAG(wxCommandEvent &WXUNUSED(event))
 {
+    if (fichierTAG.IsEmpty())
+        return;
+
     m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
-    if (!m_ObjetTAG.isNull() && ligneSel != m_liste->GetPositionChansonLecture())
+    if (!m_ObjetTAG.isNull() && !Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
     {
         wxString tempo = fichierTAG;
         wxString art = m_BoiteArtiste->GetValue();
@@ -287,7 +303,7 @@ void PlayList::OnAppliquerTAG(wxCommandEvent &WXUNUSED(event))
         m_liste->MAJ();
         //m_liste->SetItemState(ligneSel, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED);/////////////////////
     }
-    else if (ligneSel == m_liste->GetPositionChansonLecture())
+    else if (Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
         wxMessageBox(_("Vous ne pouvez pas modifier un fichier lorsque celui-ci est en cours de lecture."), _("Erreur !"));
     else
         wxMessageBox(_("Sélectionnez un fichier"), _("Erreur !"));
@@ -351,7 +367,7 @@ void PlayList::EvtImage(wxCommandEvent &event)
     if (fichierTAG.IsEmpty())
         return;
 
-    if (ligneSel != GetListeLecture()->GetPositionChansonLecture())
+    if (!Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
     {
         m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
         if (!m_ObjetTAG.isNull())
@@ -450,7 +466,7 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
             if (fen->IsModified())
             {
                 m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
-                if (!m_ObjetTAG.isNull() && ligneSel != m_liste->GetPositionChansonLecture())
+                if (!m_ObjetTAG.isNull() && !Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
                 {
                     wxString tempo = fichierTAG;
                     wxString art = fen->GetArtiste();
@@ -521,7 +537,7 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
                     m_liste->MAJ();
                    //m_liste->SetItemState(ligneSel, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED);/////////////////////
                 }
-                else if (ligneSel == m_liste->GetPositionChansonLecture())
+                else if (Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
                     wxMessageBox(_("Vous ne pouvez pas modifier un fichier lorsque celui-ci est en cours de lecture."), _("Erreur !"));
                 else
                     wxMessageBox(_("Sélectionnez un fichier"), _("Erreur !"));
@@ -560,7 +576,7 @@ void PlayList::MouseEvents(wxMouseEvent &event)
         event.Skip();
 }
 
-void PlayList::RechercheListeLecture(wxCommandEvent &event)
+void PlayList::RechercheListeLecture(wxCommandEvent &WXUNUSED(event))
 {
     if (m_liste->RechercheRunning())
         m_liste->StopRecherche();

@@ -729,7 +729,7 @@ void PageGestionPeriph::MenuCreerM3U()
             }
             else if (m_liste->GetSelectedItemCount() > 1 && m_liste->GetEtat() == PLAYLIST)
             {
-                wxTextFile fichierLec(Parametre::Get()->getRepertoireParametre(_T("musique.liste")));
+                wxTextFile fichierLec(FichierListe::Get()->GetCheminListe());
                 if (!fichierLec.Open())
                 {   fichierEcr.Write(); fichierEcr.Close(); return;}
 

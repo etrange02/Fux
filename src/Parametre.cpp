@@ -46,11 +46,11 @@ Parametre::Parametre()
     m_sousDossier = false;
 
     m_cheminRepertParam = wxStandardPaths::Get().GetUserConfigDir() + wxFileName::GetPathSeparator() + REPERTOIRE;
-    if (wxDir::Exists(m_cheminRepertParam))
+    if (wxDir::Exists(m_cheminRepertParam))//installation classique
     {
         m_paramInstallation = true;
     }
-    else if (wxFile::Exists(wxStandardPaths::Get().GetDataDir() + wxFileName::GetPathSeparator() + _T("Fu(X).conf")))
+    else if (wxDir::Exists(wxStandardPaths::Get().GetDataDir() + wxFileName::GetPathSeparator() + _T("Play_list_M3U")))//portable
     {
         m_cheminRepertParam = wxStandardPaths::Get().GetDataDir();
         m_paramInstallation = false;

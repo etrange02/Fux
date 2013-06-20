@@ -102,7 +102,7 @@ void ListeLecture::MAJ()
 
     DeleteAllItems();
 
-    wxTextFile fichier(Parametre::Get()->getRepertoireParametre(_T("musique.liste")));
+    wxTextFile fichier(FichierListe::Get()->GetCheminListe());
     if (!fichier.Open())
     {
         m_majEnCours = false;
@@ -697,6 +697,8 @@ void ListeLecture::RecherchePrecise(wxString chaine)
     int i = 0, k = 0, j = 0;
     bool cont = true;
 
+    chaine.MakeLower();
+
     while (m_rechercheEnCours && i < GetItemCount())
     {
         k = 0;
@@ -707,7 +709,7 @@ void ListeLecture::RecherchePrecise(wxString chaine)
             item.SetColumn(k++);
             item.SetMask(wxLIST_MASK_TEXT);
             GetItem(item);
-            if (item.GetText().Contains(chaine))
+            if (item.GetText().Lower().Find(chaine) != wxNOT_FOUND)
                 cont = false;
         }
         if (cont)// l'élément doit être supprimé, il ne correspond pas à la recherche

@@ -370,7 +370,7 @@ void BDDThread::AjouterRequete(BDDRequete *bddRequete)
     //s_mutexGestionGlobale->Unlock();
 }
 
-void BDDThread::SendEvent(BDDRequete* requete, bool etat, wxArrayString* arrayS)
+void BDDThread::SendEvent(BDDRequete* requete, bool WXUNUSED(etat), wxArrayString* arrayS)
 {
     BDDThreadEvent event;
     event.SetArrayString(arrayS);

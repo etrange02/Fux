@@ -33,25 +33,25 @@ DialogTagMP3Info::DialogTagMP3Info(wxWindow *parent, wxWindowID id, wxString cha
     m_boiteTitre = new wxTextCtrl(this, -1);
     m_boiteGenre = new wxTextCtrl(this, -1);
     m_boiteAnnee = new wxSpinCtrl(this, -1, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 0, 3000, 0, _("Année de parution"));
-    wxStaticText *texte = new wxStaticText[6];
-    texte[0].Create(this, -1, _("Nom"));
-    texte[1].Create(this, -1, _("Artiste"));
-    texte[2].Create(this, -1, _("Album"));
-    texte[3].Create(this, -1, _("Titre"));
-    texte[4].Create(this, -1, _("Genre"));
-    texte[5].Create(this, -1, _("Année"));
+    m_texte = new wxStaticText[6];
+    m_texte[0].Create(this, -1, _("Nom"));
+    m_texte[1].Create(this, -1, _("Artiste"));
+    m_texte[2].Create(this, -1, _("Album"));
+    m_texte[3].Create(this, -1, _("Titre"));
+    m_texte[4].Create(this, -1, _("Genre"));
+    m_texte[5].Create(this, -1, _("Année"));
 
-    sizerGrid->Add(&texte[0], 0, wxGROW|wxALL, 0);
+    sizerGrid->Add(&m_texte[0], 0, wxGROW|wxALL, 0);
     sizerGrid->Add(m_boiteNom, 1, wxGROW|wxALL|wxEXPAND, 0);
-    sizerGrid->Add(&texte[1], 0, wxGROW|wxALL, 0);
+    sizerGrid->Add(&m_texte[1], 0, wxGROW|wxALL, 0);
     sizerGrid->Add(m_boiteArtiste, 1, wxGROW|wxALL|wxEXPAND, 0);
-    sizerGrid->Add(&texte[2], 0, wxGROW|wxALL, 0);
+    sizerGrid->Add(&m_texte[2], 0, wxGROW|wxALL, 0);
     sizerGrid->Add(m_boiteAlbum, 1, wxGROW|wxALL|wxEXPAND, 0);
-    sizerGrid->Add(&texte[3], 0, wxGROW|wxALL, 0);
+    sizerGrid->Add(&m_texte[3], 0, wxGROW|wxALL, 0);
     sizerGrid->Add(m_boiteTitre, 1, wxGROW|wxALL|wxEXPAND, 0);
-    sizerGrid->Add(&texte[4], 0, wxGROW|wxALL, 0);
+    sizerGrid->Add(&m_texte[4], 0, wxGROW|wxALL, 0);
     sizerGrid->Add(m_boiteGenre, 1, wxGROW|wxALL|wxEXPAND, 0);
-    sizerGrid->Add(&texte[5], 0, wxGROW|wxALL, 0);
+    sizerGrid->Add(&m_texte[5], 0, wxGROW|wxALL, 0);
     sizerGrid->Add(m_boiteAnnee, 1, wxGROW|wxALL|wxEXPAND, 0);
 
     m_echantillonage = new wxStaticText(this, -1, _("Débit - inconnu"));
@@ -62,6 +62,14 @@ DialogTagMP3Info::DialogTagMP3Info(wxWindow *parent, wxWindowID id, wxString cha
     sizerV->Add(m_taille, 0, wxALL, 5);
 
     SetChanson(chanson);
+}
+
+/**
+ * Destructeur
+ */
+DialogTagMP3Info::~DialogTagMP3Info()
+{
+    delete[] m_texte;
 }
 
 /**

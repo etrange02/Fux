@@ -35,6 +35,7 @@ class Musique
         wxString GetAlbum();
         wxString GetArtiste();
         wxString GetNomChanson();
+        wxString GetNomComplet();
         wxString GetPlaylist();
         wxString GetDureeFormatMinSec();
         ChansonNomPos GetNomPos();

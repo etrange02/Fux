@@ -62,7 +62,6 @@ class PlayList : public wxPanel
         wxSpinCtrl *m_BoiteAnnee;
         wxSearchCtrl *m_champsRecherche;
 
-        int ligneSel;
         ImagePochetteMusique *m_pochette;
         ListeLecture *m_liste;
         TagLib::FileRef m_ObjetTAG;

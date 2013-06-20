@@ -10,6 +10,7 @@ class DialogTagMP3Info : public wxPanel
 {
     public:
         DialogTagMP3Info(wxWindow *parent, wxWindowID id, wxString chanson);
+        ~DialogTagMP3Info();
         void SetChanson(wxString chanson);
         wxString GetNom();
         wxString GetTitre();
@@ -32,6 +33,7 @@ class DialogTagMP3Info : public wxPanel
         wxTextCtrl *m_boiteNom, *m_boiteArtiste, *m_boiteTitre, *m_boiteAlbum, *m_boiteGenre;
         wxSpinCtrl *m_boiteAnnee;
         wxStaticText *m_echantillonage, *m_taille, *m_duree;
+        wxStaticText *m_texte;
 };
 
 #endif // DIALOGUEFENETREEXT_H_INCLUDED
