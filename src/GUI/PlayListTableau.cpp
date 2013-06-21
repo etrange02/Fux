@@ -82,7 +82,7 @@ ListeLecture::~ListeLecture()
  */
 void ListeLecture::MAJ()
 {
-    if (m_majEnCours || m_supprEnCours)
+    if (m_majEnCours || m_supprEnCours || m_rechercheEnCours)
         return;
 
     #if DEBUG
@@ -91,7 +91,7 @@ void ListeLecture::MAJ()
 
     m_majEnCours = true;
     wxString chaine, extrait;
-    int pos = 1, i;
+    int pos = 1;
 
     if (GetSelectedItemCount() > 0)
         extrait = GetItemText(GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED));
@@ -124,12 +124,14 @@ void ListeLecture::MAJ()
     for (j=0; j<fichier.GetLineCount(); j++)
     {
         chaine = fichier.GetLine(j);
-        i = chaine.Find(wxFileName::GetPathSeparator(), true);
+        //i = chaine.Find(wxFileName::GetPathSeparator(), true);
 
         pos = GetItemCount();
-        pos = InsertItem(pos, chaine.Right(chaine.Length()-i-1));//Nom du fichier
+        //pos = InsertItem(pos, chaine.Right(chaine.Length()-i-1));//Nom du fichier
+        pos = InsertItem(pos, chaine.AfterLast(wxFileName::GetPathSeparator()));//Nom du fichier
 
-        SetItem(pos, 6, chaine.Left(i));//Emplacement
+        SetItem(pos, 6, chaine.BeforeLast(wxFileName::GetPathSeparator()));
+        //SetItem(pos, 6, chaine.Left(i));//Emplacement
         SetItem(pos, 8, chaine.AfterLast('.'));//Extension
         if (pos%10 == 5)
             wxYield();
@@ -166,11 +168,11 @@ void ListeLecture::MAJ()
         GetItem(item);
         chaine << wxFileName::GetPathSeparator() << item.GetText();
 
-        chansonTAG = TagLib::FileRef(TagLib::FileName(chaine.fn_str()));//
         pos = k;//GetItemCount();
 
         if (wxFileExists(chaine))
         {
+            chansonTAG = TagLib::FileRef(TagLib::FileName(chaine.fn_str()));//
             BDDRequete *req = new BDDRequete(this);
             wxString annee;
 
@@ -664,27 +666,103 @@ void ListeLecture::RechercheElargie(wxString chaine)
 {
     m_rechercheEnCours = true;
     wxListItem item;
-    //int i = 0, k = 0;
-    //bool cont = true;
+    size_t j=0;
+    int i = 0, pos = 1;
 
-    /*while (m_rechercheEnCours && i < GetItemCount())
+    wxTextFile fichier(FichierListe::Get()->GetCheminListe());
+    if (!fichier.Open())
     {
-        k = 0;
+        m_rechercheEnCours = false;
+        return;
+    }
+    if (fichier.GetLineCount() == 0)
+    {
+        m_rechercheEnCours = false;
+        fichier.Close();
+        return;
+    }
+
+    wxString ligneFic, ligneTab, titre, duree, annee, genre, artiste, album;
+    TagLib::FileRef chansonTAG;
+
+    if (i<GetItemCount())
+    {
         item.SetId(i);
-        cont = true;
-        while (k < GetColumnCount() && cont)
+        item.SetColumn(6);
+        item.SetMask(wxLIST_MASK_TEXT);
+        GetItem(item);
+        ligneTab = item.GetText();
+        item.SetColumn(0);
+        GetItem(item);
+        ligneTab << wxFileName::GetPathSeparator() << item.GetText();
+    }
+
+    while (m_rechercheEnCours && j<fichier.GetLineCount())
+    {
+        ligneFic = fichier.GetLine(j++);
+
+        if (ligneFic.IsSameAs(ligneTab))
         {
-            item.SetColumn(k++);
-            item.SetMask(wxLIST_MASK_TEXT);
-            GetItem(item);
-            if (item.GetText().Contains(chaine))
-                cont = false;
-        }
-        if (cont)// l'élément doit être supprimé, il ne correspond pas à la recherche
-            DeleteItem(i);
-        else
             i++;
-    }*/
+            if (i<GetItemCount())
+            {
+                item.SetId(i);
+                item.SetColumn(6);
+                item.SetMask(wxLIST_MASK_TEXT);
+                GetItem(item);
+                ligneTab = item.GetText();
+                item.SetColumn(0);
+                GetItem(item);
+                ligneTab << wxFileName::GetPathSeparator() << item.GetText();
+            }
+            else
+                ligneTab.Clear();
+        }
+        else
+        {
+            //ajouter la ligne si tag oks
+            chansonTAG = TagLib::FileRef(TagLib::FileName(ligneFic.fn_str()));
+            if (chansonTAG.file()->isValid())
+            {
+                titre = wxString(chansonTAG.tag()->title().toCString(true), wxConvUTF8);
+                duree = wxString(GetDuree(chansonTAG.audioProperties()->length()));
+                if (chansonTAG.tag()->year() != 0)
+                    annee << chansonTAG.tag()->year();
+                else
+                    annee << _T("?");
+                genre = wxString(chansonTAG.tag()->genre().toCString(true), wxConvUTF8);
+                artiste = wxString(chansonTAG.tag()->artist().toCString(true), wxConvUTF8);
+                album = wxString(chansonTAG.tag()->album().toCString(true), wxConvUTF8);
+
+                if (ligneFic.Lower().Find(chaine) != wxNOT_FOUND
+                 || titre.Lower().Find(chaine) != wxNOT_FOUND
+                 || duree.Lower().Find(chaine) != wxNOT_FOUND
+                 || annee.Lower().Find(chaine) != wxNOT_FOUND
+                 || genre.Lower().Find(chaine) != wxNOT_FOUND
+                 || album.Lower().Find(chaine) != wxNOT_FOUND
+                 || artiste.Lower().Find(chaine) != wxNOT_FOUND
+                 || duree.Lower().Find(chaine) != wxNOT_FOUND)
+                {
+                    pos = InsertItem(i, ligneFic.AfterLast(wxFileName::GetPathSeparator()));
+                    SetItem(pos, 1, artiste);
+                    SetItem(pos, 2, album);
+                    SetItem(pos, 3, titre);
+                    SetItem(pos, 4, duree);
+                    SetItem(pos, 5, annee);
+                    SetItem(pos, 6, ligneFic.BeforeLast(wxFileName::GetPathSeparator()));
+                    SetItem(pos, 7, genre);
+                    SetItem(pos, 8, ligneFic.AfterLast('.'));
+                    i++;
+                }
+            }
+            //sinon, passer à la ligne suivante dans le fichier
+        }
+        if (j%2)
+            wxYield();
+    }
+    fichier.Close();
+    ChangementChanson(Musique::Get()->GetNomPos());
+
     m_rechercheEnCours = false;
     m_modeRecherche = !chaine.IsEmpty();
 }
@@ -716,7 +794,7 @@ void ListeLecture::RecherchePrecise(wxString chaine)
             DeleteItem(i);
         else
             i++;
-        if ((++j)%20 == 0)
+        if ((++j)%5 == 2)
             wxYield();
     }
     m_rechercheEnCours = false;
