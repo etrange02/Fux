@@ -10,13 +10,13 @@
 
 /**
  * @class TraverserCopieDossier
- * @brief Copie le contenu d'un dossier origine dans un répertoire destination. Les fichiers ne sont pas copiés.
+ * @brief Copie le contenu d'un dossier origine dans un rÃ©pertoire destination. Les fichiers ne sont pas copiÃ©s.
  */
 
 /**
  * Construteur
- * @param destination le dossier à copier
- * @param origine le répertoire de destination
+ * @param destination le dossier Ã  copier
+ * @param origine le rÃ©pertoire de destination
  */
 TraverserCopieDossier::TraverserCopieDossier(wxString destination, wxString origine)
 {

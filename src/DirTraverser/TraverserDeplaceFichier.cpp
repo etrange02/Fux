@@ -10,14 +10,14 @@
 
 /**
  * @class TraverserDeplaceFichier
- * @brief Déplace le contenu d'un dossier origine dans un répertoire destination. Les dossiers vidés ne sont pas supprimés
+ * @brief DÃ©place le contenu d'un dossier origine dans un rÃ©pertoire destination. Les dossiers vidÃ©s ne sont pas supprimÃ©s
  */
 
 /**
  * Construteur
- * @param origine le dossier de départ
- * @param destination le dossier d'arrivée
- * @param tableau ce tableau est rempli par la classe. Il contient le nom des dossiers vidés. Ces dossiers ne sont pas supprimés
+ * @param origine le dossier de dÃ©part
+ * @param destination le dossier d'arrivÃ©e
+ * @param tableau ce tableau est rempli par la classe. Il contient le nom des dossiers vidÃ©s. Ces dossiers ne sont pas supprimÃ©s
  */
 TraverserDeplaceFichier::TraverserDeplaceFichier(wxString destination, wxString origine, wxArrayString &tableau): m_tableau(tableau)
 {

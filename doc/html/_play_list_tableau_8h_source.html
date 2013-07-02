@@ -3,10 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Fu(X) 2.0:  Fichier source de C:/FuX/include/PlayListTableau.h</title>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>Fu(X) 2.0:  Fichier source de C:/Fux/include/GUI/PlayListTableau.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -37,7 +45,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.2 -->
+<!-- Généré par Doxygen 1.8.4 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -69,6 +77,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_play_list_tableau_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -83,11 +106,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">PlayListTableau.h</div>  </div>
@@ -96,86 +114,86 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PLAYLISTTABLEAU_H_INCLUDED</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PLAYLISTTABLEAU_H_INCLUDED</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Define.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../Define.h&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;wx/wx.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;wx/stdpaths.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;wx/dir.h&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;wx/listctrl.h&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//#include &lt;wx/collpane.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//#include &lt;wx/gbsizer.h&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//#include &lt;wx/spinctrl.h&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//#include &lt;wx/textdlg.h&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;wx/tarstrm.h&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;wx/progdlg.h&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;wx/dnd.h&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;wx/mstream.h&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;wx/renderer.h&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/*#include &lt;TAGLIBDLL/tag.h&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">#include &lt;TAGLIBDLL/fileref.h&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">#include &lt;TAGLIBDLL/taglib.h&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">#include &lt;TAGLIBDLL/mpegfile.h&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">#include &lt;TAGLIBDLL/id3v2tag.h&gt;*/</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;TAGLIB/tag.h&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;TAGLIB/fileref.h&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;Musique.h&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;DnDCible.h&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//#include &quot;DialogueFenetreExt.h&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;GestionPeriph.h&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;SliderSon.h&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;FichierLog.h&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;BDDRequete.h&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;BDDThread.h&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> wxEventType wxEVT_VIDER_PANNEAU;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> wxEventType wxEVT_LISTE_DETAILS;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;wx/tarstrm.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;wx/progdlg.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;wx/dnd.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;wx/mstream.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;wx/renderer.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;tag.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;fileref.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;../Musique.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;../DnD/DnDCible.h&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;GestionPeriph.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;SliderSon.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;../FichierLog.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;../BDD/BDDRequete.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;../BDD/BDDThread.h&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> wxEventType wxEVT_VIDER_PANNEAU;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> wxEventType wxEVT_LISTE_DETAILS;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="class_liste_lecture.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_liste_lecture.html" title="Tableau (GUI) dans lequel sont affichés les informations des titres mis dans la liste de lecture...">ListeLecture</a> : <span class="keyword">public</span> wxListCtrl</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="class_liste_lecture.html#acd9201b0a41cab0d1bb287deba85f885" title="Constructeur. ">ListeLecture</a>(wxWindow *Parent);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="class_liste_lecture.html" title="Tableau (GUI) dans lequel sont affichés les informations des titres mis dans la liste de lecture...">ListeLecture</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a2f2fb2d71c56f47b9931648be9340bde" title="Efface le contenu de la liste et affiche les données relatives au fichier musique.liste. ">MAJ</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#ab57184abf6dab50ad09e7e361bd43c4e" title="Supprime le titre en cours de lecture de la liste affichée. ">supprimerNomLigne</a>(<a class="code" href="struct_chanson_nom_pos.html" title="Structure contenant le nom et la position de la chanson dans le fichier musique.liste. ">ChansonNomPos</a>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        wxString <a class="code" href="class_liste_lecture.html#abec594f4ed458a228d4de7001e263634" title="Transforme un temps en seconde en chaine de caractère. ">GetDuree</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_liste_lecture.html#a2726c89c43a976e2078a6b1e2f84b3c3" title="Retourne la position du titre en cours dans le tableau. ">GetPositionChansonLecture</a>();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="class_liste_lecture.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_liste_lecture.html" title="Tableau (GUI) dans lequel sont affichés les informations des titres mis dans la liste de lecture...">ListeLecture</a> : <span class="keyword">public</span> wxListCtrl</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="class_liste_lecture.html#acd9201b0a41cab0d1bb287deba85f885" title="Constructeur.">ListeLecture</a>(wxWindow *Parent);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="class_liste_lecture.html" title="Tableau (GUI) dans lequel sont affichés les informations des titres mis dans la liste de lecture...">ListeLecture</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a2f2fb2d71c56f47b9931648be9340bde" title="Efface le contenu de la liste et affiche les données relatives au fichier musique.liste.">MAJ</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#ab57184abf6dab50ad09e7e361bd43c4e" title="Supprime le titre en cours de lecture de la liste affichée.">supprimerNomLigne</a>(<a class="code" href="struct_chanson_nom_pos.html" title="Structure contenant le nom et la position de la chanson dans le fichier musique.liste.">ChansonNomPos</a>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        wxString <a class="code" href="class_liste_lecture.html#abec594f4ed458a228d4de7001e263634" title="Transforme un temps en seconde en chaine de caractère.">GetDuree</a>(<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_liste_lecture.html#a2726c89c43a976e2078a6b1e2f84b3c3" title="Retourne la position du titre en cours dans le tableau.">GetPositionChansonLecture</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a2dfb1366cf91c76146a9bcd3feab65ec" title="Évènement.">ChansonActive</a>(wxListEvent&amp;);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a467a466b005da7c2c37d93208182401f" title="Évènements clavier.">OnKey</a>(wxKeyEvent&amp;);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#accb2e177d4409218c5163781ffcf9fa2" title="Évènements souris.">MouseEvents</a>(wxMouseEvent&amp;);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a05df13ebba88d0b5e8d295431e035b4a" title="Opération de Drag&amp;Drop.">Glisser</a>(wxListEvent &amp;WXUNUSED(event));</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a20af0e050843d7cdb68b9b626a35f33b" title="Lors du changement de musique, cette méthode modifie les couleurs de chaque ligne du tableau...">ChangementChanson</a>(<a class="code" href="struct_chanson_nom_pos.html" title="Structure contenant le nom et la position de la chanson dans le fichier musique.liste.">ChansonNomPos</a>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#ad83d0481d2ac399b38be29afec4b5f13" title="Affiche le menu obtenu lors d&#39;un clic droit dans la liste.">AfficheMenu</a>(wxMouseEvent &amp;WXUNUSED(event));</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#af2e76a30699144e7c15e9372199aeb6c" title="Évènement.">menuLecture</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a25659fb2a44bc46ad5424e65dca60e02" title="Évènement.">menuPause</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a024d117bd87f2d7ee524ceac9dafae5b" title="Évènement.">menuSupprimer</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#aa3c268d08d4d253ecc4bf912b6d75751" title="Évènement.">menuCouper</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a9640c1ecaa600f5a1c9d5afdb8ff9972" title="Évènement.">menuColler</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a75291bf286357b9e010085965ca1ce03" title="Évènement.">menuDetails</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a1ff1a4799b2ec38392ce83fbcbb61c36" title="Supprime les lignes sélectionnées de la liste de lecture.">SuppressionLigne</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">bool</span> m_couper, m_majEnCours, m_supprEnCours;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        wxMenu *m_menu;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        wxArrayString m_tableauCouper;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        wxArrayInt m_ocurrenceLigne;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">long</span> m_yMenu;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">int</span> m_positionChanson;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="class_musique.html" title="Classe centrale de Fu(X).">Musique</a> *m_musique;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    DECLARE_EVENT_TABLE()</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif // PLAYLISTTABLEAU_H_INCLUDED</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a2dfb1366cf91c76146a9bcd3feab65ec" title="Évènement. ">ChansonActive</a>(wxListEvent&amp;);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a467a466b005da7c2c37d93208182401f" title="Évènements clavier. ">OnKey</a>(wxKeyEvent&amp;);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#accb2e177d4409218c5163781ffcf9fa2" title="Évènements souris. ">MouseEvents</a>(wxMouseEvent&amp;);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a05df13ebba88d0b5e8d295431e035b4a" title="Opération de Drag&amp;Drop. ">Glisser</a>(wxListEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a20af0e050843d7cdb68b9b626a35f33b" title="Lors du changement de musique, cette méthode modifie les couleurs de chaque ligne du tableau...">ChangementChanson</a>(<a class="code" href="struct_chanson_nom_pos.html" title="Structure contenant le nom et la position de la chanson dans le fichier musique.liste. ">ChansonNomPos</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#ad83d0481d2ac399b38be29afec4b5f13" title="Affiche le menu obtenu lors d&#39;un clic droit dans la liste. ">AfficheMenu</a>(wxMouseEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#af2e76a30699144e7c15e9372199aeb6c" title="Évènement. ">menuLecture</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a25659fb2a44bc46ad5424e65dca60e02" title="Évènement. ">menuPause</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a024d117bd87f2d7ee524ceac9dafae5b" title="Évènement. ">menuSupprimer</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#aa3c268d08d4d253ecc4bf912b6d75751" title="Évènement. ">menuCouper</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a9640c1ecaa600f5a1c9d5afdb8ff9972" title="Évènement. ">menuColler</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a75291bf286357b9e010085965ca1ce03" title="Évènement. ">menuDetails</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_liste_lecture.html#a1ff1a4799b2ec38392ce83fbcbb61c36" title="Supprime les lignes sélectionnées de la liste de lecture. ">SuppressionLigne</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> RechercheElargie(wxString chaine);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> RecherchePrecise(wxString chaine);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> StopRecherche();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">bool</span> RechercheRunning();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">bool</span> m_couper;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        wxMenu *m_menu;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        wxArrayString m_tableauCouper;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        wxArrayInt m_ocurrenceLigne;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">long</span> m_yMenu;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">int</span> m_positionChanson;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">bool</span> m_rechercheEnCours, m_modeRecherche;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        wxString m_motRecherche;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    DECLARE_EVENT_TABLE()</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif // PLAYLISTTABLEAU_H_INCLUDED</span></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Généré le Jeudi Mai 23 2013 22:50:39 pour Fu(X) 2.0 par &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.2
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_f938830485ea5fc932d9051b851477f4.html">GUI</a></li><li class="navelem"><b>PlayListTableau.h</b></li>
+    <li class="footer">Généré le Mardi Juillet 2 2013 21:15:13 pour Fu(X) 2.0 par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
+  </ul>
+</div>
 </body>
 </html>

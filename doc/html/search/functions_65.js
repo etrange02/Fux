@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['echangenom',['EchangeNom',['../classwx_fichier_liste.html#a71bf156b0dd773962cf15fdd2240209b',1,'wxFichierListe']]],
-  ['effacernom',['EffacerNom',['../classwx_fichier_liste.html#ac82f6c2107f475508e63669ec78bbe3b',1,'wxFichierListe::EffacerNom(ChansonNomPos)'],['../classwx_fichier_liste.html#ac66ff466ab6046f54ffe1fbc2385dd21',1,'wxFichierListe::EffacerNom(wxArrayString *)']]],
+  ['echangenom',['EchangeNom',['../class_fichier_liste.html#a20514855ba44cad663a8366a3f31f10a',1,'FichierListe']]],
+  ['effacernom',['EffacerNom',['../class_fichier_liste.html#ac222790878a6b3c6e00880adba7f0be1',1,'FichierListe::EffacerNom(ChansonNomPos)'],['../class_fichier_liste.html#a2536857a0648e92ec6ef4f76435f81e5',1,'FichierListe::EffacerNom(wxArrayString *)']]],
   ['elementlecteurracinefichier',['ElementLecteurRacineFichier',['../class_element_lecteur_racine_fichier.html#a3d0e294d66a1aafa85d0814bbd9442a5',1,'ElementLecteurRacineFichier']]],
   ['elementthreadfichier',['ElementThreadFichier',['../class_element_thread_fichier.html#af34e5bcd8b0a5b9433261566877035a3',1,'ElementThreadFichier']]],
   ['enregistrerm3u',['EnregistrerM3U',['../class_play_list.html#a9aa01c3962ff4c199981f16718b2dd1f',1,'PlayList']]],

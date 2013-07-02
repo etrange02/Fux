@@ -10,13 +10,13 @@
 
 /**
  * @class TraverserCopieFichier
- * @brief Copie les fichiers se trouvant dans l'arborescence dep dans le répertoire dest. Les dossiers doivent exister !
+ * @brief Copie les fichiers se trouvant dans l'arborescence dep dans le rÃ©pertoire dest. Les dossiers doivent exister !
  */
 
 /**
  * Construteur
- * @param destination le répertoire de départ
- * @param origine le répertoire d'arrivée
+ * @param destination le rÃ©pertoire de dÃ©part
+ * @param origine le rÃ©pertoire d'arrivÃ©e
  */
 TraverserCopieFichier::TraverserCopieFichier(wxString destination, wxString origine)
 {

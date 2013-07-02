@@ -10,12 +10,12 @@
 
 /**
  * @class Recherche
- * @brief Parcours une arborescence et place dans un fichier texte tous les noms des fichiers rencontrés
+ * @brief Parcours une arborescence et place dans un fichier texte tous les noms des fichiers rencontrÃ©s
  */
 
 /**
  * Constructeur
- * @param fichier le fichier où copier les noms
+ * @param fichier le fichier oÃ¹ copier les noms
  */
 Recherche::Recherche(wxTextFile *fichier): m_fichier(fichier)
 {}

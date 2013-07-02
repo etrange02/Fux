@@ -10,7 +10,7 @@
 
 /**
 * @class TCPClient
-* @brief Représente le client. Échange local de chaînes de caractères vers le serveur.
+* @brief ReprÃ©sente le client. Ã‰change local de chaÃ®nes de caractÃ¨res vers le serveur.
 */
 
 /**
@@ -20,7 +20,7 @@ TCPClient::TCPClient() : wxClient()
 {}
 
 /**
- * Demande la création d'une connexion
+ * Demande la crÃ©ation d'une connexion
  * @return l'instance de la connexion
  */
 wxConnectionBase* TCPClient::OnMakeConnection()

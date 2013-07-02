@@ -517,8 +517,25 @@ void ListeLecture::AfficheMenu(wxMouseEvent &WXUNUSED(event))
 void ListeLecture::menuLecture(wxCommandEvent &WXUNUSED(event))
 {
     long pos = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_FOCUSED);
-    if (!Musique::Get()->ChangementChanson(pos, _T("")))
-        MAJ();
+    if (m_modeRecherche)
+    {
+        wxListItem item;
+        item.SetId(pos);
+        item.SetColumn(6);
+        item.SetMask(wxLIST_MASK_TEXT);
+        GetItem(item);
+
+        wxString chemin = item.GetText();
+        item.SetColumn(0);
+        GetItem(item);
+        chemin << wxFileName::GetPathSeparator() << item.GetText();
+        Musique::Get()->Lecture(chemin);
+    }
+    else
+    {
+        if (!Musique::Get()->ChangementChanson(pos, _T("")))
+            MAJ();
+    }
 }
 
 /**

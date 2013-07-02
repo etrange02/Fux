@@ -6,7 +6,7 @@ var searchData=
   ['maj_5ffond',['MAJ_Fond',['../class_pref_couleur.html#a5cee0ddbf5016f2d98f6b8a191023cc8',1,'PrefCouleur']]],
   ['maj_5fgraphinf',['MAJ_GraphInf',['../class_pref_couleur.html#ad434491b7fb450e59512bebc136c4d8d',1,'PrefCouleur']]],
   ['maj_5fgraphsup',['MAJ_GraphSup',['../class_pref_couleur.html#a7b971f658ad4e009d01bea2336b0e2e7',1,'PrefCouleur']]],
-  ['majplaylist',['MAJPlaylist',['../class_gest_periph.html#aae0fbb84376085738681530fbb6d756e',1,'GestPeriph::MAJPlaylist()'],['../class_fu_x_fenetre.html#a6277fc2344896f970f1947dd58d1a5b5',1,'FuXFenetre::MAJplaylist()']]],
+  ['majplaylist',['MAJplaylist',['../class_fu_x_fenetre.html#a6277fc2344896f970f1947dd58d1a5b5',1,'FuXFenetre::MAJplaylist()'],['../class_gest_periph.html#aae0fbb84376085738681530fbb6d756e',1,'GestPeriph::MAJPlaylist()']]],
   ['menuabout',['MenuAbout',['../class_fu_x_fenetre.html#a98780b7c73142d15a4a11d10f701f554',1,'FuXFenetre']]],
   ['menuaide',['MenuAide',['../class_fu_x_fenetre.html#a92d517f1cf801e82a06e915e96c9cd43',1,'FuXFenetre']]],
   ['menucoller',['MenuColler',['../class_page_gestion_periph.html#a8e77f888f5a73d371d17d1dcc440db93',1,'PageGestionPeriph::MenuColler()'],['../class_liste_lecture.html#a9640c1ecaa600f5a1c9d5afdb8ff9972',1,'ListeLecture::menuColler()']]],
@@ -34,6 +34,6 @@ var searchData=
   ['modiflistevide',['ModifListeVide',['../class_musique.html#add13e7c6fa024a151edc779d47e49060',1,'Musique']]],
   ['modifson',['ModifSon',['../class_fu_x_fenetre.html#a4724d5aeeaae24d12c7e95980379dff0',1,'FuXFenetre']]],
   ['mouseevents',['MouseEvents',['../class_musique_graph.html#a64e87038d857f1519220cdd5c3b1602f',1,'MusiqueGraph::MouseEvents()'],['../class_play_list.html#ae1366eb3ef8497573136b9e394b6422b',1,'PlayList::MouseEvents()'],['../class_liste_lecture.html#accb2e177d4409218c5163781ffcf9fa2',1,'ListeLecture::MouseEvents()']]],
-  ['musique',['Musique',['../class_musique.html',1,'Musique'],['../class_musique.html#af69aedef0357e37534051e14b72e8bd0',1,'Musique::Musique()']]],
+  ['musique',['Musique',['../class_musique.html',1,'']]],
   ['musiquegraph',['MusiqueGraph',['../class_musique_graph.html',1,'MusiqueGraph'],['../class_musique_graph.html#a75479e307eb7a7d61b21707058696669',1,'MusiqueGraph::MusiqueGraph()']]]
 ];

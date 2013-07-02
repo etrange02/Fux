@@ -11,7 +11,7 @@
 
 /**
  * @class ImagePochetteMusique
- * @brief Composant affichant une image, acceptant le Drag & Drop, et ouvre le navigateur de fichier pour changer l'image ; lors de tout changement, la fenêtre parente peut en être informée.
+ * @brief Composant affichant une image, acceptant le Drag & Drop, et ouvre le navigateur de fichier pour changer l'image ; lors de tout changement, la fenÃªtre parente peut en Ãªtre informÃ©e.
  */
 
 BEGIN_EVENT_TABLE(ImagePochetteMusique, wxStaticBitmap)
@@ -22,9 +22,9 @@ const wxEventType wxEVT_IMAGE_SELECTION = wxNewEventType();
 
 /**
  * Constructeur
- * @param Parent la fenêtre parente
+ * @param Parent la fenÃªtre parente
  * @param id l'identifiant de l'instance
- * @param label un wxBitmap à modifier
+ * @param label un wxBitmap Ã  modifier
  */
 ImagePochetteMusique::ImagePochetteMusique(wxWindow *Parent, wxWindowID id, wxBitmap label, bool avertirParent) : wxStaticBitmap(Parent, id, label)
 {
@@ -40,8 +40,8 @@ ImagePochetteMusique::~ImagePochetteMusique()
 {}
 
 /**
- * Si affiche vaut vrai, l'image est affiché sinon, elle est effacée
- * @param affiche vrai si l'on veut prendre une l'image en mémoire
+ * Si affiche vaut vrai, l'image est affichÃ© sinon, elle est effacÃ©e
+ * @param affiche vrai si l'on veut prendre une l'image en mÃ©moire
  * @return vrai si l'affiche a pu se faire
  */
 bool ImagePochetteMusique::AfficheImage(bool affiche)
@@ -78,7 +78,7 @@ void ImagePochetteMusique::SetImage(wxImage image)
 }
 
 /**
- * Évènement - Affiche une boîte de dialogue pour sélectionner une nouvelle image. L'affichage n'est pas rafraichi.
+ * Ã‰vÃ¨nement - Affiche une boÃ®te de dialogue pour sÃ©lectionner une nouvelle image. L'affichage n'est pas rafraichi.
  */
 void ImagePochetteMusique::EvtSouris(wxMouseEvent &WXUNUSED(event))
 {
@@ -90,7 +90,7 @@ void ImagePochetteMusique::EvtSouris(wxMouseEvent &WXUNUSED(event))
 }
 
 /**
- * Lit une image se trouvant à l'adresse chaine. Affichage non rafraichi
+ * Lit une image se trouvant Ã  l'adresse chaine. Affichage non rafraichi
  * @param chaine le nom complet de l'image
  */
 void ImagePochetteMusique::LectureImageEvent(wxString chaine)
@@ -108,7 +108,7 @@ void ImagePochetteMusique::LectureImageEvent(wxString chaine)
 }
 
 /**
- * Test si l'image a été modifiée après sa création
+ * Test si l'image a Ã©tÃ© modifiÃ©e aprÃ¨s sa crÃ©ation
  * @return true si une modification a eu lieu.
  */
 bool ImagePochetteMusique::IsModified()

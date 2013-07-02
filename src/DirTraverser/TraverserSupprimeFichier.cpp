@@ -15,8 +15,8 @@
 
 /**
  * Construteur
- * @param origine le répertoire où doit être supprimé les fichiers
- * @param tableau ce tableau est rempli par la classe. Il contient le nom des dossiers vidés. Ces dossiers ne sont pas supprimés
+ * @param origine le rÃ©pertoire oÃ¹ doit Ãªtre supprimÃ© les fichiers
+ * @param tableau ce tableau est rempli par la classe. Il contient le nom des dossiers vidÃ©s. Ces dossiers ne sont pas supprimÃ©s
  */
 TraverserSupprimeFichier::TraverserSupprimeFichier(wxString origine, wxArrayString &tableau): m_tableau(tableau)
 {
