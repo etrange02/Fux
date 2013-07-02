@@ -1,0 +1,6 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node2" href="$class_dialog_tag_m_p3_info.html" title="Page affichant les propriétés du titre donné en paramètre. " alt="" coords="130,5,257,32"/>
+<area shape="rect" id="node3" href="$class_gest_periph.html" title="Page contenant le double explorateur de fichier. " alt="" coords="150,56,237,83"/>
+<area shape="rect" id="node4" href="$class_page_gestion_periph.html" title="Interface graphique permettant un déplacement dans l&#39;arborescence des fichiers. " alt="" coords="126,107,261,133"/>
+<area shape="rect" id="node5" href="$class_play_list.html" title="Page contenant la liste de lecture et une description détaillée des titres. " alt="" coords="159,157,228,184"/>
+</map>

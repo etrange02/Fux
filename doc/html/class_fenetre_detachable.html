@@ -76,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
       <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="hierarchy.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
     </ul>
   </div>
@@ -121,13 +121,12 @@ $(document).ready(function(){initNavTree('class_fenetre_detachable.html','');});
 <p>Fenêtre qui peut accueillir un panel.  
  <a href="class_fenetre_detachable.html#details">Plus de détails...</a></p>
 <div class="dynheader">
-Graphe d'héritage de FenetreDetachable:</div>
+Graphe de collaboration de FenetreDetachable:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_fenetre_detachable.png" usemap="#FenetreDetachable_map" alt=""/>
-  <map id="FenetreDetachable_map" name="FenetreDetachable_map">
+<div class="center"><img src="class_fenetre_detachable__coll__graph.png" border="0" usemap="#_fenetre_detachable_coll__map" alt="Collaboration graph"/></div>
+<map name="_fenetre_detachable_coll__map" id="_fenetre_detachable_coll__map">
 </map>
- </div></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -159,6 +158,8 @@ Fonctions membres publiques</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Fenêtre qui peut accueillir un panel. </p>
 <p>On obtient un "panel flottant" </p>
+
+<p>Définition à la ligne <a class="el" href="#L11">11</a> du fichier <a class="el" href="">FenetreDetachable.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a class="anchor" id="a47f7e1acb44fa484cb14cc527650d84d"></a>
 <div class="memitem">
@@ -210,6 +211,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Constructeur. </p>
 
+<p>Définition à la ligne <a class="el" href="#L26">26</a> du fichier <a class="el" href="">FenetreDetachable.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2ac66c59198a3db359259da2a0abfd59"></a>
@@ -226,6 +229,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructeur. </p>
+
+<p>Définition à la ligne <a class="el" href="#L44">44</a> du fichier <a class="el" href="">FenetreDetachable.cpp</a>.</p>
 
 </div>
 </div>
@@ -253,6 +258,8 @@ Fonctions membres publiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L79">79</a> du fichier <a class="el" href="">FenetreDetachable.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0aa3332143896ef254d5c4c7dc72b235"></a>
@@ -269,6 +276,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retourne l'identifiant du bouton qui a causé la création de cette fenêtre. </p>
+
+<p>Définition à la ligne <a class="el" href="#L72">72</a> du fichier <a class="el" href="">FenetreDetachable.cpp</a>.</p>
 
 </div>
 </div>
@@ -288,6 +297,8 @@ Fonctions membres publiques</h2></td></tr>
 <p>Retourne le panel associé </p>
 <dl class="section return"><dt>Renvoie</dt><dd>l'instance du panel associé </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L53">53</a> du fichier <a class="el" href="">FenetreDetachable.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0900489201c5844c4bd9032522bed662"></a>
@@ -305,6 +316,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Retourne le type de la fenêtre, correspond à la classe. </p>
 <p>UTILE ????? </p>
+
+<p>Définition à la ligne <a class="el" href="#L66">66</a> du fichier <a class="el" href="">FenetreDetachable.cpp</a>.</p>
 
 </div>
 </div>
@@ -324,6 +337,8 @@ Fonctions membres publiques</h2></td></tr>
 <p>Permet de remettre le panel dans son état d'origine. </p>
 <p>Renvoie le sizer contenant le panel </p>
 <dl class="section return"><dt>Renvoie</dt><dd>un pointeur vers le sizer de la fenêtre </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L90">90</a> du fichier <a class="el" href="">FenetreDetachable.cpp</a>.</p>
 
 </div>
 </div>
@@ -349,11 +364,13 @@ Fonctions membres publiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L60">60</a> du fichier <a class="el" href="">FenetreDetachable.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
-<li>C:/Fux/include/GUI/<a class="el" href="_fenetre_detachable_8h_source.html">FenetreDetachable.h</a></li>
-<li>C:/Fux/src/GUI/FenetreDetachable.cpp</li>
+<li>C:/Fux/include/GUI/<a class="el" href="">FenetreDetachable.h</a></li>
+<li>C:/Fux/src/GUI/<a class="el" href="">FenetreDetachable.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -361,7 +378,7 @@ Fonctions membres publiques</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_fenetre_detachable.html">FenetreDetachable</a></li>
-    <li class="footer">Généré le Mardi Juillet 2 2013 21:23:43 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Mardi Juillet 2 2013 22:18:50 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

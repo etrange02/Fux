@@ -76,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
       <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="hierarchy.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
     </ul>
   </div>
@@ -122,13 +122,12 @@ $(document).ready(function(){initNavTree('class_musique_graph.html','');});
 <p>Panel affichant le graph, la barre de temps et le titre de la chanson.  
  <a href="class_musique_graph.html#details">Plus de détails...</a></p>
 <div class="dynheader">
-Graphe d'héritage de MusiqueGraph:</div>
+Graphe de collaboration de MusiqueGraph:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_musique_graph.png" usemap="#MusiqueGraph_map" alt=""/>
-  <map id="MusiqueGraph_map" name="MusiqueGraph_map">
-</map>
- </div></div>
+<div class="center"><img src="class_musique_graph__coll__graph.png" border="0" usemap="#_musique_graph_coll__map" alt="Collaboration graph"/></div>
+<map name="_musique_graph_coll__map" id="_musique_graph_coll__map">
+<area shape="rect" id="node3" href="struct_couleur.html" title="Champs RVB. " alt="" coords="127,5,193,32"/><area shape="rect" id="node4" href="class_image_text.html" title="Transforme et affiche une chaîne de caractère dans une surface OpenGL. " alt="" coords="217,5,300,32"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -180,6 +179,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Panel affichant le graph, la barre de temps et le titre de la chanson. </p>
+
+<p>Définition à la ligne <a class="el" href="#L17">17</a> du fichier <a class="el" href="">MusiqueGraph.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a class="anchor" id="a75479e307eb7a7d61b21707058696669"></a>
 <div class="memitem">
@@ -214,6 +215,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L34">34</a> du fichier <a class="el" href="">MusiqueGraph.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6cb9b8a8b1987b754add777ffd6012cc"></a>
@@ -238,6 +241,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructeur. </p>
+
+<p>Définition à la ligne <a class="el" href="#L70">70</a> du fichier <a class="el" href="">MusiqueGraph.cpp</a>.</p>
 
 </div>
 </div>
@@ -311,6 +316,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L376">376</a> du fichier <a class="el" href="">MusiqueGraph.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad0a2db468b292694225a5b0d926f7bd3"></a>
@@ -354,6 +361,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>la couleur </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L260">260</a> du fichier <a class="el" href="">MusiqueGraph.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a14946ee2f1b1eb437c36a1678d88c2ca"></a>
@@ -380,6 +389,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 <p>Retourne l'instance de la classe <a class="el" href="class_musique_graph.html" title="Panel affichant le graph, la barre de temps et le titre de la chanson. ">MusiqueGraph</a>. </p>
 <p>Attention, l'instance n'est pas créée ici ! </p>
 <dl class="section return"><dt>Renvoie</dt><dd>l'instance </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L87">87</a> du fichier <a class="el" href="">MusiqueGraph.cpp</a>.</p>
 
 </div>
 </div>
@@ -445,6 +456,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Inutilisé </p>
 
+<p>Définition à la ligne <a class="el" href="#L241">241</a> du fichier <a class="el" href="">MusiqueGraph.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a64e87038d857f1519220cdd5c3b1602f"></a>
@@ -464,6 +477,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 <p>Évènement clavier et souris simultané. </p>
 <p>Ctrl + utilisation de la molette, Alt +... </p>
 
+<p>Définition à la ligne <a class="el" href="#L429">429</a> du fichier <a class="el" href="">MusiqueGraph.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a409adab5869873c645ebbf839d3239e3"></a>
@@ -482,6 +497,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Redéfinition empêche l'effacement. </p>
 
+<p>Définition à la ligne <a class="el" href="#L235">235</a> du fichier <a class="el" href="">MusiqueGraph.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af3a67b5ac746a2a80d1970ee63e1bb2f"></a>
@@ -498,6 +515,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Redéfinition de OnIdle. </p>
+
+<p>Définition à la ligne <a class="el" href="#L93">93</a> du fichier <a class="el" href="">MusiqueGraph.cpp</a>.</p>
 
 </div>
 </div>
@@ -517,6 +536,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Redéfinition de OnPaint. </p>
 
+<p>Définition à la ligne <a class="el" href="#L99">99</a> du fichier <a class="el" href="">MusiqueGraph.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2473c1254ee1dd7d796e0e7506c29172"></a>
@@ -534,6 +555,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Évènement clavier. </p>
+
+<p>Définition à la ligne <a class="el" href="#L387">387</a> du fichier <a class="el" href="">MusiqueGraph.cpp</a>.</p>
 
 </div>
 </div>
@@ -559,6 +582,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L359">359</a> du fichier <a class="el" href="">MusiqueGraph.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2770a698e0947b5c5dd69c07cf7120f0"></a>
@@ -577,6 +602,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Redéfinie les valeurs à prendre en compte en fonction de la taille de la fenêtre. </p>
 
+<p>Définition à la ligne <a class="el" href="#L316">316</a> du fichier <a class="el" href="">MusiqueGraph.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a752be92e858170294d5e1d4c6b2b28cc"></a>
@@ -594,11 +621,13 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Modifie le texte affiché à l'écran indiquant le nom de la chanson. </p>
 
+<p>Définition à la ligne <a class="el" href="#L423">423</a> du fichier <a class="el" href="">MusiqueGraph.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
-<li>C:/Fux/include/GUI/<a class="el" href="_musique_graph_8h_source.html">MusiqueGraph.h</a></li>
-<li>C:/Fux/src/GUI/MusiqueGraph.cpp</li>
+<li>C:/Fux/include/GUI/<a class="el" href="">MusiqueGraph.h</a></li>
+<li>C:/Fux/src/GUI/<a class="el" href="">MusiqueGraph.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -606,7 +635,7 @@ Fonctions membres publiques statiques</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_musique_graph.html">MusiqueGraph</a></li>
-    <li class="footer">Généré le Mardi Juillet 2 2013 21:23:44 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Mardi Juillet 2 2013 22:18:50 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

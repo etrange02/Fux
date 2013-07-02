@@ -1,0 +1,14 @@
+<map id="FuXFenetre" name="FuXFenetre">
+<area shape="rect" id="node3" href="$class_pref_defaut.html" title="Gère l&#39;application des filtres (couleur et sonore), et le comportement par défaut de l&#39;application..." alt="" coords="533,56,616,83"/>
+<area shape="rect" id="node19" href="$class_pref_son.html" title="Interface représentant différents volumes sonores &#45; Passer les fichiers au format XML..." alt="" coords="541,107,609,133"/>
+<area shape="rect" id="node22" href="$class_pref_couleur.html" title="Interface de sélection des couleurs &#45; Passer les fichiers au format XML. " alt="" coords="530,157,619,184"/>
+<area shape="rect" id="node5" href="$class_array_fenetre_detachable.html" title="Array contenant des FenetreDetachable. " alt="" coords="493,208,656,235"/>
+<area shape="rect" id="node7" href="$class_play_list.html" title="Page contenant la liste de lecture et une description détaillée des titres. " alt="" coords="540,259,609,285"/>
+<area shape="rect" id="node9" href="$class_liste_lecture.html" title="Tableau (GUI) dans lequel sont affichés les informations des titres mis dans la liste de lecture..." alt="" coords="212,255,305,281"/>
+<area shape="rect" id="node11" href="$class_image_pochette_musique.html" title="Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour chang..." alt="" coords="179,305,338,332"/>
+<area shape="rect" id="node13" href="$class_t_c_p_serveur.html" title="Représente le serveur. " alt="" coords="529,333,620,360"/>
+<area shape="rect" id="node15" href="$class_musique_graph.html" title="Panel affichant le graph, la barre de temps et le titre de la chanson. " alt="" coords="521,427,628,453"/>
+<area shape="rect" id="node17" href="$struct_couleur.html" title="Champs RVB. " alt="" coords="225,520,292,547"/>
+<area shape="rect" id="node18" href="$class_image_text.html" title="Transforme et affiche une chaîne de caractère dans une surface OpenGL. " alt="" coords="217,580,300,607"/>
+<area shape="rect" id="node20" href="$class_timer_graph.html" title="Timer gérant la mise à jour du graphe et le passage d&#39;une chanson à l&#39;autre. " alt="" coords="530,564,619,591"/>
+</map>

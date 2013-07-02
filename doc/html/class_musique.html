@@ -76,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
       <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="hierarchy.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
     </ul>
   </div>
@@ -121,6 +121,13 @@ $(document).ready(function(){initNavTree('class_musique.html','');});
 
 <p>Classe centrale de Fu(X).  
  <a href="class_musique.html#details">Plus de détails...</a></p>
+<div class="dynheader">
+Graphe de collaboration de Musique:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_musique__coll__graph.png" border="0" usemap="#_musique_coll__map" alt="Collaboration graph"/></div>
+<map name="_musique_coll__map" id="_musique_coll__map">
+<area shape="rect" id="node2" href="struct_d_u_r_e_e.html" title="Structure représentant le temps en minute, seconde, et la totalité en seconde. " alt="" coords="7,5,73,32"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -263,6 +270,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Classe centrale de Fu(X). </p>
 <p>Elle gère la lecture ainsi que toutes les opérations liées. </p>
+
+<p>Définition à la ligne <a class="el" href="#L18">18</a> du fichier <a class="el" href="">Musique.h</a>.</p>
 </div><h2 class="groupheader">Documentation des fonctions membres</h2>
 <a class="anchor" id="a18fa452686971312ec9719be5cea032d"></a>
 <div class="memitem">
@@ -287,6 +296,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai si réussite </dd></dl>
 <dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_musique.html#ad2089663f19bf602d01a819fd20e92f5" title="Définie la façon dont le prochain titre sera à lire. ">Musique::SetAction(e_ChangeChanson)</a> </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L185">185</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -325,6 +336,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai si réussite </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L264">264</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a36da5eabc4e2dd9e17248c24a468263e"></a>
@@ -343,6 +356,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 <p>Changement de titre "automatique". </p>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai si réussite </dd></dl>
 <dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_musique.html#a18fa452686971312ec9719be5cea032d" title="Effectus le changement de chanson en fonction de la valeur contenu dans action. ">Musique::ChangementChanson(e_ChangeChanson)</a> </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L252">252</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -369,6 +384,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L358">358</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6745d824f66c7423d38b2118083454f5"></a>
@@ -385,6 +402,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Modifie (en interne) le contenu de m_duree : traduit le temps en ms de la chanson en minutes et secondes. </p>
+
+<p>Définition à la ligne <a class="el" href="#L389">389</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -412,6 +431,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 <p>Récupère l'instance de la classe. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>l'instance </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L58">58</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a39c081fc51099293d7aea7690f35474c"></a>
@@ -429,6 +450,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Retourne le nom de l'album selon la structure de fichier artiste. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>le nom </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L532">532</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -448,6 +471,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 <p>Indique si l'on est en mode "Aléatoire". </p>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai si aléatoire </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L495">495</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1bd771930d9cdc94707022402467f85b"></a>
@@ -465,6 +490,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Retourne le nom de l'album selon la structure de fichier artiste. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>le nom </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L539">539</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -484,6 +511,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 <p>Retourne la structure contenant les informations sur la durée du titre. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>la durée </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L449">449</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1a083398ac1f98ebdd5dbbf77d64e72b"></a>
@@ -501,6 +530,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Retourne une chaine contenant les informations dur la durée su titre au format mm:ss. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>la chaine </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L669">669</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -520,6 +551,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 <p>Retourne la durée en ms de la chanson. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>la durée </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L435">435</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa07104ab4e7603bd40d800faaca86909"></a>
@@ -538,6 +571,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 <p>Retourne la structure contenant les informations sur le temps écoulé du titre. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>le temps écoulé </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L456">456</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6d03862aaa38d43e2b88b2ceb31f6eee"></a>
@@ -555,6 +590,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Indique si un titre est en lecture (ni pause ni stop) </p>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai si lecture (écoute) </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L502">502</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -575,6 +612,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 <p>Ex : chanson.mp3 </p>
 <dl class="section return"><dt>Renvoie</dt><dd>le nom </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L516">516</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0d8debbbf1c9ed091137b71d5e5cb2ef"></a>
@@ -593,6 +632,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 <p>Retourne le nom comlet de la chanson en cours de lecture. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>le nom complet </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L523">523</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a886bd412abc2a2bb179b7793c34cc880"></a>
@@ -610,6 +651,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Retourne le nom et la position du titre en cours de lecture. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>la position et le nom </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L546">546</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -630,6 +673,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 <p>Pause ne veut pas dire stoppé </p>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai si en pause </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L154">154</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a478d62dcf5a50e8684972dc327219e56"></a>
@@ -647,6 +692,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Indique si le mode de lecture est "répétition". </p>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai si répétition du titre </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L477">477</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -666,6 +713,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 <p>Retourne le temps écoulé en ms de la chanson. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>le temps écoulé </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L442">442</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aee062ee25563549355656db047c1b6ae"></a>
@@ -684,6 +733,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 <p>Retourne le volume. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>le volume </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L647">647</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a02e3cef3f32cbd65793144ffab845d63"></a>
@@ -701,6 +752,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Indique si des titres ont été placés dans la liste de lecture. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai si la liste n'est pas vide </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L470">470</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -727,6 +780,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L98">98</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5ba748d39b91b2f1d0629627709abf77"></a>
@@ -744,6 +799,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Provoque le remplissage de la liste de lecture. </p>
 <p>Elle est utilisée lorsque le fichier est vide. Le contenu du fichier correspond donc au contenu du dossier contenant le titre envoyé en lecture </p>
+
+<p>Définition à la ligne <a class="el" href="#L293">293</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -773,6 +830,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Provoque l'ajout de chaine à la liste de lecture chaine un tableau de wxString contenant des adresses maj si vrai, informe l'application du changement (pas toujours nécessaire) </p>
 
+<p>Définition à la ligne <a class="el" href="#L305">305</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0282eda6a9e39790a637b47fb5b34a7c"></a>
@@ -791,6 +850,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Provoque l'ajout de chaine à la liste de lecture chaine l'adresse du titre à ajouter. </p>
 
+<p>Définition à la ligne <a class="el" href="#L344">344</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="add13e7c6fa024a151edc779d47e49060"></a>
@@ -808,6 +869,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Modifie les attributs de la classe pour prendre en compte le fait que la liste de lecture soit vide. </p>
 <p>Elle n'effectue aucun test. </p>
+
+<p>Définition à la ligne <a class="el" href="#L694">694</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -858,6 +921,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L321">321</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae7610edf2f31603cf5a5f77f3325e5e7"></a>
@@ -900,6 +965,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L333">333</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a81f5acc9080b0dbd86df547f3164dc8b"></a>
@@ -934,6 +1001,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Définition à la ligne <a class="el" href="#L714">714</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -972,6 +1041,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L688">688</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad2089663f19bf602d01a819fd20e92f5"></a>
@@ -997,6 +1068,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L176">176</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3337a6cdaefc17522412385b78ecc53d"></a>
@@ -1020,6 +1093,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Définition à la ligne <a class="el" href="#L509">509</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -1045,6 +1120,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L89">89</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae7ad9c5bf845920ee85eb3b6c034f12b"></a>
@@ -1069,6 +1146,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L136">136</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6e371e76c926592b997523f56db3df35"></a>
@@ -1092,6 +1171,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Définition à la ligne <a class="el" href="#L463">463</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -1118,6 +1199,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L486">486</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a964d7d555eba3a6606ab8a0c4aee274a"></a>
@@ -1134,6 +1217,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Stop la lecture. </p>
+
+<p>Définition à la ligne <a class="el" href="#L165">165</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -1159,6 +1244,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L658">658</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae4f060fb0614dd95bd93f83b841ad22e"></a>
@@ -1176,6 +1263,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 
 <p>Efface de la liste le titre en cours de lecture. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>le nom et la position du titre effacé </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L557">557</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -1200,6 +1289,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Définition à la ligne <a class="el" href="#L577">577</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -1237,6 +1328,8 @@ Fonctions membres publiques statiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L609">609</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7e48c7a0711ef1872b7b81c330e83073"></a>
@@ -1253,6 +1346,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Modifie (en interne) le contenu de m_tpsActuel : traduit le temps en ms de la chanson en minutes et secondes. </p>
+
+<p>Définition à la ligne <a class="el" href="#L403">403</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
 
 </div>
 </div>
@@ -1277,11 +1372,13 @@ Fonctions membres publiques statiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L418">418</a> du fichier <a class="el" href="">Musique.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
-<li>C:/Fux/include/<a class="el" href="_musique_8h_source.html">Musique.h</a></li>
-<li>C:/Fux/src/Musique.cpp</li>
+<li>C:/Fux/include/<a class="el" href="">Musique.h</a></li>
+<li>C:/Fux/src/<a class="el" href="">Musique.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1289,7 +1386,7 @@ Fonctions membres publiques statiques</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_musique.html">Musique</a></li>
-    <li class="footer">Généré le Mardi Juillet 2 2013 21:23:44 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Mardi Juillet 2 2013 22:18:50 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

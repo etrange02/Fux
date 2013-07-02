@@ -76,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
       <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="hierarchy.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
     </ul>
   </div>
@@ -122,6 +122,13 @@ $(document).ready(function(){initNavTree('class_parametre.html','');});
 
 <p>La classe Paramètre contient toutes les informations sur l'emplacement des différents fichiers et dossiers nécessaires à l'exécution de Fu(X).  
  <a href="class_parametre.html#details">Plus de détails...</a></p>
+<div class="dynheader">
+Graphe de collaboration de Parametre:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_parametre__coll__graph.png" border="0" usemap="#_parametre_coll__map" alt="Collaboration graph"/></div>
+<map name="_parametre_coll__map" id="_parametre_coll__map">
+<area shape="rect" id="node2" href="struct_couleur.html" title="Champs RVB. " alt="" coords="13,5,80,32"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -206,6 +213,8 @@ Fonctions membres protégées</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>La classe Paramètre contient toutes les informations sur l'emplacement des différents fichiers et dossiers nécessaires à l'exécution de Fu(X). </p>
+
+<p>Définition à la ligne <a class="el" href="#L12">12</a> du fichier <a class="el" href="">Parametre.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a class="anchor" id="a7f33063b2094bbfbc6be12e5c7abb3e0"></a>
 <div class="memitem">
@@ -230,6 +239,8 @@ Fonctions membres protégées</h2></td></tr>
 
 <p>Constructeur. </p>
 
+<p>Définition à la ligne <a class="el" href="#L21">21</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
@@ -248,6 +259,8 @@ Fonctions membres protégées</h2></td></tr>
 
 <p>Créé la structure des fichiers de Fu(X) si celle-ce est inexistante. </p>
 <p>Elle utilise le répertoire par défaut. </p>
+
+<p>Définition à la ligne <a class="el" href="#L266">266</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
 
 </div>
 </div>
@@ -272,6 +285,8 @@ Fonctions membres protégées</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Définition à la ligne <a class="el" href="#L275">275</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
 
 </div>
 </div>
@@ -299,6 +314,8 @@ Fonctions membres protégées</h2></td></tr>
 <p>Retourne l'instance de la classe <a class="el" href="class_parametre.html" title="La classe Paramètre contient toutes les informations sur l&#39;emplacement des différents fichiers et dos...">Parametre</a>. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>l'instance </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L77">77</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae163f9a7dcff57df93ea835921003bf8"></a>
@@ -317,6 +334,8 @@ Fonctions membres protégées</h2></td></tr>
 <p>Retourne le chemin complet du fichier contenant les paramètres du graphe. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>le chemin </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L108">108</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0c6ac03ac47a22c2ea434e0ee48c8f6e"></a>
@@ -334,6 +353,8 @@ Fonctions membres protégées</h2></td></tr>
 
 <p>Retourne le chemin complet du fichier contenant les paramètres du son. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>le chemin </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L115">115</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
 
 </div>
 </div>
@@ -354,6 +375,8 @@ Fonctions membres protégées</h2></td></tr>
 <p>Elle sert à créer le filtre des fenêtres de recherche </p>
 <dl class="section return"><dt>Renvoie</dt><dd>le filtre </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L157">157</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a175ad0ea2e02f2e5ae79a79481d9435a"></a>
@@ -371,6 +394,8 @@ Fonctions membres protégées</h2></td></tr>
 
 <p>Retourne une chaine utilisable pour filtrer les fichiers par extension. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>le filtre </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L214">214</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
 
 </div>
 </div>
@@ -390,6 +415,8 @@ Fonctions membres protégées</h2></td></tr>
 <p>Retourne le chemin complet du répertoire qui doit être ouvert lors d'une recherche. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>le chemin </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L164">164</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7d1c77b7b3c50df1a962ab010b36b5d2"></a>
@@ -407,6 +434,8 @@ Fonctions membres protégées</h2></td></tr>
 
 <p>Retourne l'adresse du répertoire dans lequel se trouve l'exécutable. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>l'adresse du répertoire </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L328">328</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
 
 </div>
 </div>
@@ -434,6 +463,8 @@ Fonctions membres protégées</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>l'adresse complète </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L338">338</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a18a6e103534a955fcf2bef73b8b1094c"></a>
@@ -451,6 +482,8 @@ Fonctions membres protégées</h2></td></tr>
 
 <p>Retourne l'adresse qui contient tous les fichiers et paramètres nécessaires à Fu(X) </p>
 <dl class="section return"><dt>Renvoie</dt><dd>l'adresse du répertoire </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L226">226</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
 
 </div>
 </div>
@@ -476,6 +509,8 @@ Fonctions membres protégées</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>l'adresse du fichier </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L234">234</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
 
 </div>
 </div>
@@ -512,6 +547,8 @@ Fonctions membres protégées</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>l'adresse du fichier </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L243">243</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
 
 </div>
 </div>
@@ -556,6 +593,8 @@ Fonctions membres protégées</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>l'adresse du fichier </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L253">253</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa06b482406215b03426f26693e0d9788"></a>
@@ -573,6 +612,8 @@ Fonctions membres protégées</h2></td></tr>
 
 <p>Indique si l'on doit lister les sous dossiers d'un répertoire lors d'une recherche. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai si les sous-dossiers doivent être pris en compte </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L143">143</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
 
 </div>
 </div>
@@ -598,6 +639,8 @@ Fonctions membres protégées</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai si l'extension permet l'ID3v2 </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L179">179</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
 
 </div>
 </div>
@@ -625,6 +668,8 @@ Fonctions membres protégées</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai si la lecture est possible </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L197">197</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a04fcf91df13d7233ed99a0d157532ea4"></a>
@@ -643,6 +688,8 @@ Fonctions membres protégées</h2></td></tr>
 <p>Indique si le répertoire contenant les fichiers nécessaires à Fu(X) est celui créé au moment de l'installation. </p>
 <p>C'est à dire C:(X) </p>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai si installation classique </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L260">260</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
 
 </div>
 </div>
@@ -668,6 +715,8 @@ Fonctions membres protégées</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L88">88</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa3861add4f19dd9da00196195df3c0d1"></a>
@@ -691,6 +740,8 @@ Fonctions membres protégées</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Définition à la ligne <a class="el" href="#L98">98</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
 
 </div>
 </div>
@@ -769,6 +820,8 @@ Fonctions membres protégées</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L129">129</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6941cf06c034b914942bba72ca0624a4"></a>
@@ -792,6 +845,8 @@ Fonctions membres protégées</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Définition à la ligne <a class="el" href="#L171">171</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
 
 </div>
 </div>
@@ -817,11 +872,13 @@ Fonctions membres protégées</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L150">150</a> du fichier <a class="el" href="">Parametre.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
-<li>C:/Fux/include/<a class="el" href="_parametre_8h_source.html">Parametre.h</a></li>
-<li>C:/Fux/src/Parametre.cpp</li>
+<li>C:/Fux/include/<a class="el" href="">Parametre.h</a></li>
+<li>C:/Fux/src/<a class="el" href="">Parametre.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -829,7 +886,7 @@ Fonctions membres protégées</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_parametre.html">Parametre</a></li>
-    <li class="footer">Généré le Mardi Juillet 2 2013 21:23:44 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Mardi Juillet 2 2013 22:18:51 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

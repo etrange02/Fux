@@ -76,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
       <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="hierarchy.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
     </ul>
   </div>
@@ -121,13 +121,12 @@ $(document).ready(function(){initNavTree('class_fu_x_fenetre.html','');});
 <p>Interface principale de l'application : barre de menu.  
  <a href="class_fu_x_fenetre.html#details">Plus de détails...</a></p>
 <div class="dynheader">
-Graphe d'héritage de FuXFenetre:</div>
+Graphe de collaboration de FuXFenetre:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_fu_x_fenetre.png" usemap="#FuXFenetre_map" alt=""/>
-  <map id="FuXFenetre_map" name="FuXFenetre_map">
-</map>
- </div></div>
+<div class="center"><img src="class_fu_x_fenetre__coll__graph.png" border="0" usemap="#_fu_x_fenetre_coll__map" alt="Collaboration graph"/></div>
+<map name="_fu_x_fenetre_coll__map" id="_fu_x_fenetre_coll__map">
+<area shape="rect" id="node3" href="class_pref_defaut.html" title="Gère l&#39;application des filtres (couleur et sonore), et le comportement par défaut de l&#39;application..." alt="" coords="533,56,616,83"/><area shape="rect" id="node19" href="class_pref_son.html" title="Interface représentant différents volumes sonores &#45; Passer les fichiers au format XML..." alt="" coords="541,107,609,133"/><area shape="rect" id="node22" href="class_pref_couleur.html" title="Interface de sélection des couleurs &#45; Passer les fichiers au format XML. " alt="" coords="530,157,619,184"/><area shape="rect" id="node5" href="class_array_fenetre_detachable.html" title="Array contenant des FenetreDetachable. " alt="" coords="493,208,656,235"/><area shape="rect" id="node7" href="class_play_list.html" title="Page contenant la liste de lecture et une description détaillée des titres. " alt="" coords="540,259,609,285"/><area shape="rect" id="node9" href="class_liste_lecture.html" title="Tableau (GUI) dans lequel sont affichés les informations des titres mis dans la liste de lecture..." alt="" coords="212,255,305,281"/><area shape="rect" id="node11" href="class_image_pochette_musique.html" title="Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour chang..." alt="" coords="179,305,338,332"/><area shape="rect" id="node13" href="class_t_c_p_serveur.html" title="Représente le serveur. " alt="" coords="529,333,620,360"/><area shape="rect" id="node15" href="class_musique_graph.html" title="Panel affichant le graph, la barre de temps et le titre de la chanson. " alt="" coords="521,427,628,453"/><area shape="rect" id="node17" href="struct_couleur.html" title="Champs RVB. " alt="" coords="225,520,292,547"/><area shape="rect" id="node18" href="class_image_text.html" title="Transforme et affiche une chaîne de caractère dans une surface OpenGL. " alt="" coords="217,580,300,607"/><area shape="rect" id="node20" href="class_timer_graph.html" title="Timer gérant la mise à jour du graphe et le passage d&#39;une chanson à l&#39;autre. " alt="" coords="530,564,619,591"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -261,6 +260,8 @@ Fonctions membres publiques</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Interface principale de l'application : barre de menu. </p>
 <p>Elle contient plusieurs wxSizer. </p>
+
+<p>Définition à la ligne <a class="el" href="#L26">26</a> du fichier <a class="el" href="">Fenetre.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a class="anchor" id="a05c9974b2c91c6e4caf5b0f3fcbc05d0"></a>
 <div class="memitem">
@@ -295,6 +296,8 @@ Fonctions membres publiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L71">71</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a022dbf6f1a30d0ed01b2eb2d29fcc547"></a>
@@ -320,6 +323,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Destructeur. </p>
 
+<p>Définition à la ligne <a class="el" href="#L139">139</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
@@ -339,6 +344,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Bascule sur la page des Préférences, onglet <a class="el" href="struct_couleur.html" title="Champs RVB. ">Couleur</a>, choix sur modifier. </p>
 
+<p>Définition à la ligne <a class="el" href="#L941">941</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0845475e2abdc698c5dd1f5d58247e39"></a>
@@ -356,6 +363,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Bascule sur la page des Préférences, onglet <a class="el" href="struct_couleur.html" title="Champs RVB. ">Couleur</a>, choix sur nouveau. </p>
+
+<p>Définition à la ligne <a class="el" href="#L928">928</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -375,6 +384,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Barre de menu : Page des préférences, onglet Défaut. </p>
 
+<p>Définition à la ligne <a class="el" href="#L423">423</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa6216ca48d3908daf0770da6a280378b"></a>
@@ -392,6 +403,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Opère un basculement sur la page contenant la gestion de CDs. </p>
+
+<p>Définition à la ligne <a class="el" href="#L451">451</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -411,6 +424,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Opère un basculement sur la page permettant une exploration de l'ordinateur. </p>
 
+<p>Définition à la ligne <a class="el" href="#L469">469</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4032c54b71618bb9b106a61d540cb9c3"></a>
@@ -428,6 +443,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Opère un basculement sur la page affichant la liste complète des titres mis en mémoire. </p>
+
+<p>Définition à la ligne <a class="el" href="#L460">460</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -447,6 +464,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Opère un basculement sur la page contenant les préférences. </p>
 
+<p>Définition à la ligne <a class="el" href="#L442">442</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1b4a1f03261617dbca99943e2508c252"></a>
@@ -464,6 +483,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Opère un basculement sur la page contenant le graphe (page principal) </p>
+
+<p>Définition à la ligne <a class="el" href="#L433">433</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -483,6 +504,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Bascule sur la page des Préférences, onglet Son, choix sur modifier. </p>
 
+<p>Définition à la ligne <a class="el" href="#L967">967</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a97687051753a345f6a1a3a2f5b223c92"></a>
@@ -500,6 +523,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Bascule sur la page des Préférences, onglet Son, choix sur nouveau. </p>
+
+<p>Définition à la ligne <a class="el" href="#L954">954</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -519,6 +544,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Active/Désactive la lecture aléatoire. </p>
 
+<p>Définition à la ligne <a class="el" href="#L614">614</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a8390aa723b88eea43c01964f0e07228b"></a>
@@ -536,6 +563,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Modifie l'image du bouton lecture/pause en fonction de l'état du système. </p>
+
+<p>Définition à la ligne <a class="el" href="#L550">550</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -555,6 +584,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Relance la lecture si un titre est chargé, ouvre une fenêtre de sélection sinon. </p>
 
+<p>Définition à la ligne <a class="el" href="#L511">511</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0336b5da68e635658b78f3c87d65ab31"></a>
@@ -571,6 +602,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Échange la page actuelle contre une autre page (effectue l'opération) </p>
+
+<p>Définition à la ligne <a class="el" href="#L710">710</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -590,6 +623,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Provoque les changements nécessaires afin de s'adapter à la nouvelle situation : changement de titre ou suppression de tous les titres. </p>
 
+<p>Définition à la ligne <a class="el" href="#L795">795</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="acf014d28dc29043ac9f58b143791d496"></a>
@@ -606,6 +641,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Construit la barre de menu. </p>
+
+<p>Définition à la ligne <a class="el" href="#L288">288</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -624,6 +661,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Construit la partie gauche de la fenêtre : les 4 raccourcis et les 5 boutons donnant accès aux pages. </p>
 
+<p>Définition à la ligne <a class="el" href="#L354">354</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5b8412397c58fb4a64d8fde06b684a06"></a>
@@ -640,6 +679,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Attache les panels à la fenêtre principal. </p>
+
+<p>Définition à la ligne <a class="el" href="#L187">187</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -659,6 +700,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Évènement provenant du serveur de l'application : un titre ajouté </p>
 
+<p>Définition à la ligne <a class="el" href="#L979">979</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7e1c2397da059f629cbcce9c006a59b2"></a>
@@ -675,6 +718,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialise les instances des classes nécessaire au lancement de Fu(X) </p>
+
+<p>Définition à la ligne <a class="el" href="#L166">166</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -693,6 +738,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Barre de menu : relance la lecture. </p>
+
+<p>Définition à la ligne <a class="el" href="#L484">484</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -718,6 +765,8 @@ Fonctions membres publiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L854">854</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6277fc2344896f970f1947dd58d1a5b5"></a>
@@ -735,6 +784,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Provoque une mise à jour de la liste de lecture affichée à l'utilisateur. </p>
+
+<p>Définition à la ligne <a class="el" href="#L816">816</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -754,6 +805,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Affiche le menu About de l'application. </p>
 
+<p>Définition à la ligne <a class="el" href="#L831">831</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a92d517f1cf801e82a06e915e96c9cd43"></a>
@@ -771,6 +824,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Affiche la page d'aide à travers le navigateur internet. </p>
+
+<p>Définition à la ligne <a class="el" href="#L847">847</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -790,6 +845,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Affiche le site de l'application à travers le navigateur internet. </p>
 
+<p>Définition à la ligne <a class="el" href="#L841">841</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4724d5aeeaae24d12c7e95980379dff0"></a>
@@ -807,6 +864,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Modifie le volume sonore. </p>
+
+<p>Définition à la ligne <a class="el" href="#L785">785</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -832,6 +891,8 @@ Fonctions membres publiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L1008">1008</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad3cd58ca80405317fe1dca9ecb8752f7"></a>
@@ -849,6 +910,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Informe le panel du graphe que le titre de la chanson a été modifié. </p>
+
+<p>Définition à la ligne <a class="el" href="#L996">996</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -869,6 +932,8 @@ Fonctions membres publiques</h2></td></tr>
 <p>Ouvre une fenêtre pour choisir le ou les titres de musique à lire. </p>
 <p>Ajoute le(s) titre(s) à liste si celle-ci n'est pas vide </p>
 
+<p>Définition à la ligne <a class="el" href="#L620">620</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac93643e3e0fb4871024ab80d38baecd2"></a>
@@ -886,6 +951,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Ouvre une fenêtre afin de choisir une liste de lecture enregistrée. </p>
+
+<p>Définition à la ligne <a class="el" href="#L656">656</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -905,6 +972,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Passe au titre précédent. </p>
 
+<p>Définition à la ligne <a class="el" href="#L596">596</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3cf48862d3d8031ce0b6a6a6f2b0316f"></a>
@@ -923,6 +992,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Provoque la fermeture du programme. </p>
 
+<p>Définition à la ligne <a class="el" href="#L478">478</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ade9b509e50ad56df4404a40629408e43"></a>
@@ -940,6 +1011,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Active/Désactive la répétition. </p>
+
+<p>Définition à la ligne <a class="el" href="#L608">608</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -965,6 +1038,8 @@ Fonctions membres publiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L1094">1094</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ac79527f9328b74aef864e81c7c0d05fd"></a>
@@ -982,6 +1057,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Affiche une fenêtre permettant l'enregistrement de la liste de lecture. </p>
+
+<p>Définition à la ligne <a class="el" href="#L825">825</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -1007,6 +1084,8 @@ Fonctions membres publiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L1040">1040</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="abddd46b80eec48298034cb56c6a6b545"></a>
@@ -1024,6 +1103,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Arrête la chanson. </p>
+
+<p>Définition à la ligne <a class="el" href="#L571">571</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
 
 </div>
 </div>
@@ -1043,6 +1124,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Passe au titre suivant. </p>
 
+<p>Définition à la ligne <a class="el" href="#L584">584</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a579f4772208b4a00b2cfe41d4874f5c8"></a>
@@ -1061,11 +1144,13 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Supprime le titre en cours de diffusion de la liste de lecture. </p>
 
+<p>Définition à la ligne <a class="el" href="#L697">697</a> du fichier <a class="el" href="">Fenetre.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
-<li>C:/Fux/include/GUI/<a class="el" href="_fenetre_8h_source.html">Fenetre.h</a></li>
-<li>C:/Fux/src/GUI/Fenetre.cpp</li>
+<li>C:/Fux/include/GUI/<a class="el" href="">Fenetre.h</a></li>
+<li>C:/Fux/src/GUI/<a class="el" href="">Fenetre.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1073,7 +1158,7 @@ Fonctions membres publiques</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_fu_x_fenetre.html">FuXFenetre</a></li>
-    <li class="footer">Généré le Mardi Juillet 2 2013 21:23:43 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Mardi Juillet 2 2013 22:18:50 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

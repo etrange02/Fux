@@ -76,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
       <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="hierarchy.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
     </ul>
   </div>
@@ -123,13 +123,12 @@ $(document).ready(function(){initNavTree('class_slider_son.html','');});
 <p>Contrôleur du volume sonore de la musique.  
  <a href="class_slider_son.html#details">Plus de détails...</a></p>
 <div class="dynheader">
-Graphe d'héritage de SliderSon:</div>
+Graphe de collaboration de SliderSon:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_slider_son.png" usemap="#SliderSon_map" alt=""/>
-  <map id="SliderSon_map" name="SliderSon_map">
+<div class="center"><img src="class_slider_son__coll__graph.png" border="0" usemap="#_slider_son_coll__map" alt="Collaboration graph"/></div>
+<map name="_slider_son_coll__map" id="_slider_son_coll__map">
 </map>
- </div></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -157,6 +156,8 @@ Fonctions membres protégées</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Contrôleur du volume sonore de la musique. </p>
+
+<p>Définition à la ligne <a class="el" href="#L9">9</a> du fichier <a class="el" href="">SliderSon.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a class="anchor" id="a29c53e5cb77d97098ba8d0c8b56a3b85"></a>
 <div class="memitem">
@@ -187,6 +188,8 @@ Fonctions membres protégées</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L22">22</a> du fichier <a class="el" href="">SliderSon.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a43d89b45a1e71ac17f64ebfea15e4f62"></a>
@@ -212,6 +215,8 @@ Fonctions membres protégées</h2></td></tr>
 
 <p>Default destructor. </p>
 <p>Destructeur. </p>
+
+<p>Définition à la ligne <a class="el" href="#L28">28</a> du fichier <a class="el" href="">SliderSon.cpp</a>.</p>
 
 </div>
 </div>
@@ -240,6 +245,8 @@ Fonctions membres protégées</h2></td></tr>
 <p>Retourne l'instance de la classe. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>l'instance </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L35">35</a> du fichier <a class="el" href="">SliderSon.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a607a6b7d7646e36cafb277d31268924f"></a>
@@ -258,6 +265,8 @@ Fonctions membres protégées</h2></td></tr>
 <p>Diminue la valeur de la barre et en informe le système. </p>
 <p>Le volume baisse </p>
 <dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_slider_son.html#a13a08cfb9767cae6454c116d774f5e21" title="Augmente la valeur de la barre et en informe le système. ">SonUp</a> </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L58">58</a> du fichier <a class="el" href="">SliderSon.cpp</a>.</p>
 
 </div>
 </div>
@@ -278,11 +287,13 @@ Fonctions membres protégées</h2></td></tr>
 <p>Le volume augmente </p>
 <dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_slider_son.html#a607a6b7d7646e36cafb277d31268924f" title="Diminue la valeur de la barre et en informe le système. ">SonDown</a> </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="#L46">46</a> du fichier <a class="el" href="">SliderSon.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
-<li>C:/Fux/include/GUI/<a class="el" href="_slider_son_8h_source.html">SliderSon.h</a></li>
-<li>C:/Fux/src/GUI/SliderSon.cpp</li>
+<li>C:/Fux/include/GUI/<a class="el" href="">SliderSon.h</a></li>
+<li>C:/Fux/src/GUI/<a class="el" href="">SliderSon.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -290,7 +301,7 @@ Fonctions membres protégées</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_slider_son.html">SliderSon</a></li>
-    <li class="footer">Généré le Mardi Juillet 2 2013 21:23:44 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Mardi Juillet 2 2013 22:18:51 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

@@ -76,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
       <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="hierarchy.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
     </ul>
   </div>
@@ -121,13 +121,12 @@ $(document).ready(function(){initNavTree('class_play_list.html','');});
 <p>Page contenant la liste de lecture et une description détaillée des titres.  
  <a href="class_play_list.html#details">Plus de détails...</a></p>
 <div class="dynheader">
-Graphe d'héritage de PlayList:</div>
+Graphe de collaboration de PlayList:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_play_list.png" usemap="#PlayList_map" alt=""/>
-  <map id="PlayList_map" name="PlayList_map">
-</map>
- </div></div>
+<div class="center"><img src="class_play_list__coll__graph.png" border="0" usemap="#_play_list_coll__map" alt="Collaboration graph"/></div>
+<map name="_play_list_coll__map" id="_play_list_coll__map">
+<area shape="rect" id="node3" href="class_liste_lecture.html" title="Tableau (GUI) dans lequel sont affichés les informations des titres mis dans la liste de lecture..." alt="" coords="100,83,193,109"/><area shape="rect" id="node5" href="class_image_pochette_musique.html" title="Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour chang..." alt="" coords="218,83,376,109"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -179,6 +178,8 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Page contenant la liste de lecture et une description détaillée des titres. </p>
+
+<p>Définition à la ligne <a class="el" href="#L31">31</a> du fichier <a class="el" href="">PlayList.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a class="anchor" id="ae0dfa1097c048135343a8d68ebac8cd5"></a>
 <div class="memitem">
@@ -195,6 +196,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Constructeur. </p>
 <dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_play_list.html#a8c36c323fce92ddc8fc1b88ca5e7b8e5" title="Crée les composants graphiques de la page. ">Creer</a> </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L39">39</a> du fichier <a class="el" href="">PlayList.cpp</a>.</p>
 
 </div>
 </div>
@@ -220,6 +223,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructeur. </p>
+
+<p>Définition à la ligne <a class="el" href="#L47">47</a> du fichier <a class="el" href="">PlayList.cpp</a>.</p>
 
 </div>
 </div>
@@ -257,6 +262,8 @@ Fonctions membres publiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L67">67</a> du fichier <a class="el" href="">PlayList.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9aa01c3962ff4c199981f16718b2dd1f"></a>
@@ -274,6 +281,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Évènement - Affiche une boîte de dialogue pour enregistrer la liste de lecture dans un fichier .m3u. </p>
+
+<p>Définition à la ligne <a class="el" href="#L146">146</a> du fichier <a class="el" href="">PlayList.cpp</a>.</p>
 
 </div>
 </div>
@@ -294,6 +303,8 @@ Fonctions membres publiques</h2></td></tr>
 <p>Évènement - Appelé lors du changement de la pochette du titre. </p>
 <p>L'enregistrement dans le fichier se fait automatiquement </p>
 
+<p>Définition à la ligne <a class="el" href="#L365">365</a> du fichier <a class="el" href="">PlayList.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a244fd7ac15347c8ded574e98335d11dd"></a>
@@ -311,6 +322,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Évènement - Efface tous les champs. </p>
+
+<p>Définition à la ligne <a class="el" href="#L359">359</a> du fichier <a class="el" href="">PlayList.cpp</a>.</p>
 
 </div>
 </div>
@@ -330,6 +343,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Évènement - Affiche une fenêtre détaillant les propriétés du titre. </p>
 
+<p>Définition à la ligne <a class="el" href="#L418">418</a> du fichier <a class="el" href="">PlayList.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9a8a26cccfff742c22549f3f33498d90"></a>
@@ -347,6 +362,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Retourne l'instance de la liste que gère la page. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>le liste gérée par la page </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="#L59">59</a> du fichier <a class="el" href="">PlayList.cpp</a>.</p>
 
 </div>
 </div>
@@ -366,6 +383,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Évènement Souris -. </p>
 
+<p>Définition à la ligne <a class="el" href="#L559">559</a> du fichier <a class="el" href="">PlayList.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6a534818c958d9a72b72eb65dc5a11cc"></a>
@@ -383,6 +402,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Évènement - Appelé lors de la sélection d'une ligne dans la liste. </p>
+
+<p>Définition à la ligne <a class="el" href="#L212">212</a> du fichier <a class="el" href="">PlayList.cpp</a>.</p>
 
 </div>
 </div>
@@ -402,6 +423,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Évènement - Remet les TAGs à leur valeur d'origine ie ceux dans le fichier. </p>
 
+<p>Définition à la ligne <a class="el" href="#L315">315</a> du fichier <a class="el" href="">PlayList.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0c9f2c79c66667ff86bbb5a59746a8b1"></a>
@@ -420,6 +443,8 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Évènement - Applique les les modifications des TAGs au fichier sélectionné </p>
 
+<p>Définition à la ligne <a class="el" href="#L267">267</a> du fichier <a class="el" href="">PlayList.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4dc1677d57e8777262d35305d2c433c4"></a>
@@ -437,6 +462,8 @@ Fonctions membres publiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Évènement - Lors de l'ouverture/fermeture du panneau, redimensionne le sizer de la page. </p>
+
+<p>Définition à la ligne <a class="el" href="#L206">206</a> du fichier <a class="el" href="">PlayList.cpp</a>.</p>
 
 </div>
 </div>
@@ -462,6 +489,8 @@ Fonctions membres publiques</h2></td></tr>
   </dd>
 </dl>
 
+<p>Définition à la ligne <a class="el" href="#L342">342</a> du fichier <a class="el" href="">PlayList.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a27f3908a9bfbb5c292a6901eaba6078f"></a>
@@ -479,11 +508,13 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Efface tous les champs. </p>
 
+<p>Définition à la ligne <a class="el" href="#L328">328</a> du fichier <a class="el" href="">PlayList.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
-<li>C:/Fux/include/GUI/<a class="el" href="_play_list_8h_source.html">PlayList.h</a></li>
-<li>C:/Fux/src/GUI/PlayList.cpp</li>
+<li>C:/Fux/include/GUI/<a class="el" href="">PlayList.h</a></li>
+<li>C:/Fux/src/GUI/<a class="el" href="">PlayList.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -491,7 +522,7 @@ Fonctions membres publiques</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_play_list.html">PlayList</a></li>
-    <li class="footer">Généré le Mardi Juillet 2 2013 21:23:44 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Mardi Juillet 2 2013 22:18:51 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>
