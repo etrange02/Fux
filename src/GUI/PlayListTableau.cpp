@@ -529,7 +529,7 @@ void ListeLecture::menuLecture(wxCommandEvent &WXUNUSED(event))
         item.SetColumn(0);
         GetItem(item);
         chemin << wxFileName::GetPathSeparator() << item.GetText();
-        Musique::Get()->Lecture(chemin);
+        Musique::Get()->ChangementChanson(-1, chemin);
     }
     else
     {
