@@ -65,6 +65,7 @@ class ListeLecture : public wxListCtrl
 
         int m_positionChanson;
         bool m_rechercheEnCours, m_modeRecherche;
+        wxString m_motRecherche;
 
     DECLARE_EVENT_TABLE()
 };

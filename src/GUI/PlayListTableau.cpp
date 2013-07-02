@@ -33,6 +33,8 @@ END_EVENT_TABLE()
 const wxEventType wxEVT_VIDER_PANNEAU = wxNewEventType();
 const wxEventType wxEVT_LISTE_DETAILS = wxNewEventType();
 
+static wxMutex s_mutexMAJPlaylist;
+
 /**
  * Constructeur
  * @param Parent La fenêtre parente
@@ -82,14 +84,20 @@ ListeLecture::~ListeLecture()
  */
 void ListeLecture::MAJ()
 {
-    if (m_majEnCours || m_supprEnCours || m_rechercheEnCours)
+    wxMutexLocker lock(s_mutexMAJPlaylist);
+    /*if (m_majEnCours || m_supprEnCours || m_rechercheEnCours)
+        return;*/
+    if(m_modeRecherche)
+    {
+        RechercheElargie(m_motRecherche);
         return;
+    }
 
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("ListeLecture::MAJ - Début après les tests"));
     #endif
 
-    m_majEnCours = true;
+    //m_majEnCours = true;
     wxString chaine, extrait;
     int pos = 1;
 
@@ -230,7 +238,7 @@ void ListeLecture::MAJ()
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("ListeLecture::MAJ - Fin"));
     #endif
-    m_majEnCours = false;
+    //m_majEnCours = false;
 }
 
 /**
@@ -285,7 +293,7 @@ void ListeLecture::OnKey(wxKeyEvent &event)
         SuppressionLigne();
     else if (event.GetKeyCode() == 'A' && event.ControlDown())
         SetItemState(-1, wxLIST_STATE_SELECTED, wxLIST_STATE_SELECTED);
-    else if (event.GetKeyCode() == 'R' && event.ControlDown())
+    else if ((event.GetKeyCode() == 'R' && event.ControlDown()) || event.GetKeyCode() == WXK_F5)
         MAJ();
     else if (event.ControlDown() && (event.GetKeyCode() == '+' || event.GetKeyCode() == WXK_ADD || event.GetKeyCode() == WXK_NUMPAD_ADD ||
                                      event.GetKeyCode() == '-' || event.GetKeyCode() == WXK_SUBTRACT || event.GetKeyCode() == WXK_NUMPAD_SUBTRACT))
@@ -347,14 +355,16 @@ void ListeLecture::MouseEvents(wxMouseEvent &event)
  */
 void ListeLecture::supprimerNomLigne(ChansonNomPos titre)
 {
+    wxMutexLocker lock(s_mutexMAJPlaylist);
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("ListeLecture::supprimerNomLigne(ChansonNomPos)"));
     #endif
     wxString extrait;
-    for (int i = 0; i < GetItemCount(); i++)
+    int i = 0;
+    while (i < GetItemCount())
     {
         extrait = GetItemText(i);
-        if (titre.Nom.EndsWith(extrait) && (i == titre.Pos || titre.Pos == -1))
+        if (titre.Nom.EndsWith(extrait) && (i == titre.Pos || titre.Pos == -1 || m_modeRecherche))
         {
             DeleteItem(i);
             for (size_t k = 0; k < m_ocurrenceLigne.GetCount(); k++)
@@ -362,7 +372,9 @@ void ListeLecture::supprimerNomLigne(ChansonNomPos titre)
                 if (m_ocurrenceLigne.Item(k) >= i)
                     m_ocurrenceLigne.Item(k)--;
             }
+            return;
         }
+        ++i;
     }
 }
 
@@ -394,7 +406,7 @@ void ListeLecture::ChangementChanson(ChansonNomPos titre)
         if (titre.Nom == GetItemText(i))
         {
             m_ocurrenceLigne.Add(i);
-            if (titre.Pos == i)
+            if (titre.Pos == i && !m_modeRecherche)//La couleur orange perd son sens lorsqu'il y a une recherche locale
             {
                 SetItemTextColour(i, wxColor(247, 236, 50));
                 SetItemBackgroundColour(i, wxColor(243, 124, 45));
@@ -414,6 +426,10 @@ void ListeLecture::ChangementChanson(ChansonNomPos titre)
  */
 void ListeLecture::Glisser(wxListEvent &WXUNUSED(event))
 {
+    wxMutexLocker lock(s_mutexMAJPlaylist);
+    if (m_modeRecherche)
+        return;
+
     long item = -1;
     DnDListeFichier* transfile = new DnDListeFichier();
 
@@ -456,6 +472,7 @@ void ListeLecture::AfficheMenu(wxMouseEvent &WXUNUSED(event))
 
     if ((pos == m_positionChanson) || (pos == wxNOT_FOUND && GetItemCount() > 0))//Element sélectionné est chargé ou pas d'éléments sélectionnés
     {
+       ////////////////////// Musique::Get()->GetNomChanson().IsSameAs(GetItem(pos));/////////////////
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_LECTURE, false);
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_PAUSE, true);
         if (Musique::Get()->GetLecture())//En lecture
@@ -463,7 +480,7 @@ void ListeLecture::AfficheMenu(wxMouseEvent &WXUNUSED(event))
         else
             m_menu->SetLabel(ID_PAGE_PLAYLIST_MENU_PAUSE, _("Reprendre"));
     }
-    else if (GetItemCount() > 0)//Element sélectionné pas en lecture
+    else if (GetItemCount() > 0)//L'élément sélectionné n'est pas en lecture
     {
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_LECTURE, true);
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_PAUSE, true);
@@ -479,12 +496,12 @@ void ListeLecture::AfficheMenu(wxMouseEvent &WXUNUSED(event))
     }
 
 
-    if (m_couper)
+    if (m_couper && !m_modeRecherche)
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_COLLER, true);
     else
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_COLLER, false);
 
-    if (pos == wxNOT_FOUND)//Pas délément sélectionné
+    if (pos == wxNOT_FOUND)//Pas d'élément sélectionnés
     {
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_COUPER, false);
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_SUPPRIMER, false);
@@ -492,8 +509,8 @@ void ListeLecture::AfficheMenu(wxMouseEvent &WXUNUSED(event))
     }
     else
     {
-        m_menu->Enable(ID_PAGE_PLAYLIST_MENU_COUPER, true);
-        m_menu->Enable(ID_PAGE_PLAYLIST_MENU_SUPPRIMER, true);
+        m_menu->Enable(ID_PAGE_PLAYLIST_MENU_COUPER, !m_modeRecherche);// couper accessible si on est pas en recherche
+        m_menu->Enable(ID_PAGE_PLAYLIST_MENU_SUPPRIMER, !m_modeRecherche);// idem
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_DETAILS, true);
     }
 
@@ -578,7 +595,8 @@ int ListeLecture::GetPositionChansonLecture()
  */
 void ListeLecture::SuppressionLigne()
 {
-    m_supprEnCours = true;
+    wxMutexLocker lock(s_mutexMAJPlaylist);
+    //m_supprEnCours = true;
     if (GetItemCount() == 0)
         return;
 
@@ -588,7 +606,7 @@ void ListeLecture::SuppressionLigne()
     long position = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
     if (position != -1 && GetItemCount() > 0)
     {
-        if (GetSelectedItemCount() == 1)
+        if (GetSelectedItemCount() == 1 && !m_modeRecherche)
         {
             #if DEBUG
             FichierLog::Get()->Ajouter(_T("ListeLecture::SuppressionLigne - 1 ligne"));
@@ -659,11 +677,12 @@ void ListeLecture::SuppressionLigne()
     FichierLog::Get()->Ajouter(_T("ListeLecture::SuppressionLigne - Fin"));
     #endif
 
-    m_supprEnCours = false;
+    //m_supprEnCours = false;
 }
 
 void ListeLecture::RechercheElargie(wxString chaine)
 {
+    wxMutexLocker lock(s_mutexMAJPlaylist);
     m_rechercheEnCours = true;
     wxListItem item;
     size_t j=0;
@@ -672,16 +691,19 @@ void ListeLecture::RechercheElargie(wxString chaine)
     wxTextFile fichier(FichierListe::Get()->GetCheminListe());
     if (!fichier.Open())
     {
-        m_rechercheEnCours = false;
+        //m_rechercheEnCours = false;
         return;
     }
     if (fichier.GetLineCount() == 0)
     {
-        m_rechercheEnCours = false;
+        //m_rechercheEnCours = false;
         fichier.Close();
         return;
     }
 
+    m_motRecherche = chaine;
+
+    m_motRecherche.MakeLower();
     wxString ligneFic, ligneTab, titre, duree, annee, genre, artiste, album;
     TagLib::FileRef chansonTAG;
 
@@ -701,24 +723,8 @@ void ListeLecture::RechercheElargie(wxString chaine)
     {
         ligneFic = fichier.GetLine(j++);
 
-        if (ligneFic.IsSameAs(ligneTab))
-        {
-            i++;
-            if (i<GetItemCount())
-            {
-                item.SetId(i);
-                item.SetColumn(6);
-                item.SetMask(wxLIST_MASK_TEXT);
-                GetItem(item);
-                ligneTab = item.GetText();
-                item.SetColumn(0);
-                GetItem(item);
-                ligneTab << wxFileName::GetPathSeparator() << item.GetText();
-            }
-            else
-                ligneTab.Clear();
-        }
-        else
+
+        //else
         {
             //ajouter la ligne si tag oks
             chansonTAG = TagLib::FileRef(TagLib::FileName(ligneFic.fn_str()));
@@ -734,14 +740,14 @@ void ListeLecture::RechercheElargie(wxString chaine)
                 artiste = wxString(chansonTAG.tag()->artist().toCString(true), wxConvUTF8);
                 album = wxString(chansonTAG.tag()->album().toCString(true), wxConvUTF8);
 
-                if (ligneFic.Lower().Find(chaine) != wxNOT_FOUND
-                 || titre.Lower().Find(chaine) != wxNOT_FOUND
-                 || duree.Lower().Find(chaine) != wxNOT_FOUND
-                 || annee.Lower().Find(chaine) != wxNOT_FOUND
-                 || genre.Lower().Find(chaine) != wxNOT_FOUND
-                 || album.Lower().Find(chaine) != wxNOT_FOUND
-                 || artiste.Lower().Find(chaine) != wxNOT_FOUND
-                 || duree.Lower().Find(chaine) != wxNOT_FOUND)
+                if (ligneFic.Lower().Find(m_motRecherche) != wxNOT_FOUND
+                 || titre.Lower().Find(m_motRecherche) != wxNOT_FOUND
+                 || duree.Lower().Find(m_motRecherche) != wxNOT_FOUND
+                 || annee.Lower().Find(m_motRecherche) != wxNOT_FOUND
+                 || genre.Lower().Find(m_motRecherche) != wxNOT_FOUND
+                 || album.Lower().Find(m_motRecherche) != wxNOT_FOUND
+                 || artiste.Lower().Find(m_motRecherche) != wxNOT_FOUND
+                 || duree.Lower().Find(m_motRecherche) != wxNOT_FOUND)
                 {
                     pos = InsertItem(i, ligneFic.AfterLast(wxFileName::GetPathSeparator()));
                     SetItem(pos, 1, artiste);
@@ -752,7 +758,24 @@ void ListeLecture::RechercheElargie(wxString chaine)
                     SetItem(pos, 6, ligneFic.BeforeLast(wxFileName::GetPathSeparator()));
                     SetItem(pos, 7, genre);
                     SetItem(pos, 8, ligneFic.AfterLast('.'));
-                    i++;
+                    ++i;
+                    if (ligneFic.IsSameAs(ligneTab))
+                    {
+                        ++i;
+                        if (i<GetItemCount())
+                        {
+                            item.SetId(i);
+                            item.SetColumn(6);
+                            item.SetMask(wxLIST_MASK_TEXT);
+                            GetItem(item);
+                            ligneTab = item.GetText();
+                            item.SetColumn(0);
+                            GetItem(item);
+                            ligneTab << wxFileName::GetPathSeparator() << item.GetText();
+                        }
+                        else
+                            ligneTab.Clear();
+                    }
                 }
             }
             //sinon, passer à la ligne suivante dans le fichier
@@ -760,22 +783,26 @@ void ListeLecture::RechercheElargie(wxString chaine)
         if (j%2)
             wxYield();
     }
+    while (i<GetItemCount())
+        DeleteItem(i++);
     fichier.Close();
     ChangementChanson(Musique::Get()->GetNomPos());
 
-    m_rechercheEnCours = false;
-    m_modeRecherche = !chaine.IsEmpty();
+    //m_rechercheEnCours = false;
+    m_modeRecherche = !m_motRecherche.IsEmpty();
 }
 
 void ListeLecture::RecherchePrecise(wxString chaine)
 {
+    wxMutexLocker lock(s_mutexMAJPlaylist);
     m_rechercheEnCours = true;
     m_modeRecherche = true;
     wxListItem item;
     int i = 0, k = 0, j = 0;
     bool cont = true;
+    m_motRecherche = chaine;
 
-    chaine.MakeLower();
+    m_motRecherche.MakeLower();
 
     while (m_rechercheEnCours && i < GetItemCount())
     {
@@ -787,7 +814,7 @@ void ListeLecture::RecherchePrecise(wxString chaine)
             item.SetColumn(k++);
             item.SetMask(wxLIST_MASK_TEXT);
             GetItem(item);
-            if (item.GetText().Lower().Find(chaine) != wxNOT_FOUND)
+            if (item.GetText().Lower().Find(m_motRecherche) != wxNOT_FOUND)
                 cont = false;
         }
         if (cont)// l'élément doit être supprimé, il ne correspond pas à la recherche
@@ -797,7 +824,7 @@ void ListeLecture::RecherchePrecise(wxString chaine)
         if ((++j)%5 == 2)
             wxYield();
     }
-    m_rechercheEnCours = false;
+    //m_rechercheEnCours = false;
 }
 
 void ListeLecture::StopRecherche()
