@@ -101,7 +101,6 @@ FuXFenetre::FuXFenetre(int argc, wxChar **argv) : wxFrame(NULL, wxID_ANY, _T("Fu
                 if (test.GetLineCount() > 1)
                 {
                     Musique::Get()->CopieFichier(fichierMem.GetFullPath());
-                    Musique::Get()->ChangementChanson();
                     m_MAJliste = true;
                 }
                 else wxLogMessage(_("Impossible de charger le fichier, celui-ci est vierge !"));
