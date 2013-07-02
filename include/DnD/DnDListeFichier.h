@@ -4,7 +4,7 @@
 #include <wx/wx.h>
 #include <wx/dnd.h>
 
-class DnDListeFichier//Type de donnée glissé
+class DnDListeFichier//Type de donnÃ©e glissÃ©
 {
     public:
         DnDListeFichier();

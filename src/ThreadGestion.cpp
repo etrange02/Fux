@@ -37,10 +37,10 @@ ThreadFichierFichier::~ThreadFichierFichier()
 }
 
 /**
- * Ajoute à la liste de traitement les combinaisons d'éléments données en paramètre
+ * Ajoute Ã  la liste de traitement les combinaisons d'Ã©lÃ©ments donnÃ©es en paramÃ¨tre
  * @param tableau un array contenant des chemins complets
- * @param action l'action à effectuer (copie, déplacement, suppression)
- * @param dest le répertoire de destination si besoin
+ * @param action l'action Ã  effectuer (copie, dÃ©placement, suppression)
+ * @param dest le rÃ©pertoire de destination si besoin
  */
 void ThreadFichierFichier::AjoutDonnee(wxArrayString *tableau, int action, wxString dest)
 {
@@ -65,8 +65,8 @@ ThreadFichierFichier* ThreadFichierFichier::Get()
 }
 
 /**
- * Retourne l'état du thread
- * @return l'état
+ * Retourne l'Ã©tat du thread
+ * @return l'Ã©tat
  */
 bool ThreadFichierFichier::GetEtat()
 {    return m_estActif;}
@@ -78,7 +78,7 @@ void ThreadFichierFichier::SetStop()
 {    m_continue = false;}
 
 /**
- * Efface la liste des modifications non effectuées
+ * Efface la liste des modifications non effectuÃ©es
  */
 void ThreadFichierFichier::ViderListe()
 {
@@ -161,9 +161,9 @@ void ThreadFichierFichier::DossierSuppression(wxArrayString &dossier)
 }
 
 /**
- * Copie le contenu du dossier dep dans le répertoire dest. Les fichiers ne sont pas copiés.
- * @param dep le dossier à copier
- * @param dest le répertoire de destination
+ * Copie le contenu du dossier dep dans le rÃ©pertoire dest. Les fichiers ne sont pas copiÃ©s.
+ * @param dep le dossier Ã  copier
+ * @param dest le rÃ©pertoire de destination
  * @see FichierCopie
  */
 void ThreadFichierFichier::DossierCopie(wxString dep, wxString dest)
@@ -174,8 +174,8 @@ void ThreadFichierFichier::DossierCopie(wxString dep, wxString dest)
 }
 
 /**
- * Supprime le répertoire chemin ainsi que les fichiers et dossiers se trouvant à l'intérieur
- * @param chemin le répertoire à supprimer
+ * Supprime le rÃ©pertoire chemin ainsi que les fichiers et dossiers se trouvant Ã  l'intÃ©rieur
+ * @param chemin le rÃ©pertoire Ã  supprimer
  */
 void ThreadFichierFichier::FichierSuppression(wxString chemin)
 {
@@ -187,9 +187,9 @@ void ThreadFichierFichier::FichierSuppression(wxString chemin)
 }
 
 /**
- * Copie les fichiers se trouvant dans l'arborescence dep dans le répertoire dest. Les dossiers doivent exister !
- * @param dep le répertoire de départ
- * @param dest le répertoire d'arrivée
+ * Copie les fichiers se trouvant dans l'arborescence dep dans le rÃ©pertoire dest. Les dossiers doivent exister !
+ * @param dep le rÃ©pertoire de dÃ©part
+ * @param dest le rÃ©pertoire d'arrivÃ©e
  */
 void ThreadFichierFichier::FichierCopie(wxString dep, wxString dest)
 {
@@ -199,9 +199,9 @@ void ThreadFichierFichier::FichierCopie(wxString dep, wxString dest)
 }
 
 /**
- * Déplace le contenu de dep dans le répertoire dest
- * @param dep le dossier de départ
- * @param dest le dossier d'arrivée
+ * DÃ©place le contenu de dep dans le rÃ©pertoire dest
+ * @param dep le dossier de dÃ©part
+ * @param dest le dossier d'arrivÃ©e
  */
 void ThreadFichierFichier::FichierDeplace(wxString dep, wxString dest)
 {
