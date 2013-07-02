@@ -32,6 +32,7 @@ END_EVENT_TABLE()
 
 const wxEventType wxEVT_VIDER_PANNEAU = wxNewEventType();
 const wxEventType wxEVT_LISTE_DETAILS = wxNewEventType();
+static wxMutex *s_mutexRechercheEnCours = new wxMutex;
 
 /**
  * Constructeur
@@ -134,7 +135,7 @@ void ListeLecture::MAJ()
         //SetItem(pos, 6, chaine.Left(i));//Emplacement
         SetItem(pos, 8, chaine.AfterLast('.'));//Extension
         if (pos%10 == 5)
-            wxYield();
+            wxApp::GetInstance()->Yield(false);
     }
     fichier.Close();
     //wxYield();
@@ -208,7 +209,7 @@ void ListeLecture::MAJ()
             }
 
             if (pos%10 == 5)
-                wxYield();
+                wxApp::GetInstance()->Yield(false);
             BDDThread::Get()->AjouterRequete(req);
         }
         else
@@ -223,7 +224,7 @@ void ListeLecture::MAJ()
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("ListeLecture::MAJ - Fin du for : ") + wxString::Format(_T("%u / %u"), j, GetItemCount()));
     #endif
-    wxYield();
+    //wxApp::GetInstance()->Yield(false);
     this->ChangementChanson(Musique::Get()->GetNomPos());
     //Musique::Get()->GetNomPos();
 
@@ -664,6 +665,7 @@ void ListeLecture::SuppressionLigne()
 
 void ListeLecture::RechercheElargie(wxString chaine)
 {
+    wxMutexLocker lock(*s_mutexRechercheEnCours);
     m_rechercheEnCours = true;
     wxListItem item;
     size_t j=0;
@@ -683,6 +685,7 @@ void ListeLecture::RechercheElargie(wxString chaine)
     }
 
     wxString ligneFic, ligneTab, titre, duree, annee, genre, artiste, album;
+    chaine.MakeLower();
     TagLib::FileRef chansonTAG;
 
     if (i<GetItemCount())
@@ -701,9 +704,47 @@ void ListeLecture::RechercheElargie(wxString chaine)
     {
         ligneFic = fichier.GetLine(j++);
 
-        if (ligneFic.IsSameAs(ligneTab))
+        if (ligneFic.IsSameAs(ligneTab))//si la comparaison est positive entre fichier et ListCtrl, on charge la ligne suivante
         {
-            i++;
+            item.SetId(i);
+            item.SetColumn(1);
+            item.SetMask(wxLIST_MASK_TEXT);
+            GetItem(item);
+            artiste = item.GetText();
+            item.SetColumn(2);
+            item.SetMask(wxLIST_MASK_TEXT);
+            GetItem(item);
+            album = item.GetText();
+            item.SetColumn(3);
+            item.SetMask(wxLIST_MASK_TEXT);
+            GetItem(item);
+            titre = item.GetText();
+            item.SetColumn(4);
+            item.SetMask(wxLIST_MASK_TEXT);
+            GetItem(item);
+            duree = item.GetText();
+            item.SetColumn(5);
+            item.SetMask(wxLIST_MASK_TEXT);
+            GetItem(item);
+            annee = item.GetText();
+            item.SetColumn(7);
+            item.SetMask(wxLIST_MASK_TEXT);
+            GetItem(item);
+            genre = item.GetText();
+
+
+            if (ligneFic.Lower().Find(chaine) != wxNOT_FOUND
+             || titre.Lower().Find(chaine) != wxNOT_FOUND
+             || duree.Lower().Find(chaine) != wxNOT_FOUND
+             || annee.Lower().Find(chaine) != wxNOT_FOUND
+             || genre.Lower().Find(chaine) != wxNOT_FOUND
+             || album.Lower().Find(chaine) != wxNOT_FOUND
+             || artiste.Lower().Find(chaine) != wxNOT_FOUND
+             || duree.Lower().Find(chaine) != wxNOT_FOUND)
+                i++;
+            else
+                DeleteItem(i);
+
             if (i<GetItemCount())
             {
                 item.SetId(i);
@@ -758,7 +799,7 @@ void ListeLecture::RechercheElargie(wxString chaine)
             //sinon, passer à la ligne suivante dans le fichier
         }
         if (j%2)
-            wxYield();
+            wxApp::GetInstance()->Yield(false);
     }
     fichier.Close();
     ChangementChanson(Musique::Get()->GetNomPos());
@@ -769,6 +810,7 @@ void ListeLecture::RechercheElargie(wxString chaine)
 
 void ListeLecture::RecherchePrecise(wxString chaine)
 {
+    wxMutexLocker lock(*s_mutexRechercheEnCours);
     m_rechercheEnCours = true;
     m_modeRecherche = true;
     wxListItem item;
@@ -795,8 +837,9 @@ void ListeLecture::RecherchePrecise(wxString chaine)
         else
             i++;
         if ((++j)%5 == 2)
-            wxYield();
+            wxApp::GetInstance()->Yield(false);
     }
+    wxApp::GetInstance()->Yield(false);
     m_rechercheEnCours = false;
 }
 
@@ -807,6 +850,9 @@ void ListeLecture::StopRecherche()
 
 bool ListeLecture::RechercheRunning()
 {
-    return m_rechercheEnCours;
+    if (s_mutexRechercheEnCours->TryLock() != wxMUTEX_NO_ERROR)
+        return true;
+    s_mutexRechercheEnCours->Unlock();
+    return false;
 }
 
