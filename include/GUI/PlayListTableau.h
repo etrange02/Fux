@@ -57,7 +57,7 @@ class ListeLecture : public wxListCtrl
         bool RechercheRunning();
 
     protected:
-        bool m_couper, m_majEnCours, m_supprEnCours;
+        bool m_couper;
         wxMenu *m_menu;
         wxArrayString m_tableauCouper;
         wxArrayInt m_ocurrenceLigne;

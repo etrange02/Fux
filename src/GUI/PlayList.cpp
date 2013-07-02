@@ -71,7 +71,7 @@ void PlayList::Creer(wxWindow *Parent, bool MAJListe)
     SetSizer(sizer);
 
     wxSizer *sizerHorizRecherche = new wxBoxSizer(wxHORIZONTAL);
-    m_champsRecherche = new wxSearchCtrl(this, ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE);
+    m_champsRecherche = new wxSearchCtrl(this, ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER);
     m_champsRecherche->SetDescriptiveText(_T("Faire une recherche dans la liste courante..."));
     m_BoutonEnregistrerM3U = new wxButton(this, ID_PAGE_PLAYLIST_BOUTON_ENREGISTRE_M3U, _("Enregistrer la liste de lecture"));
     m_BoutonEnregistrerM3U->SetToolTip(_("Enregistre la liste de lecture au format m3u"));
@@ -579,7 +579,12 @@ void PlayList::MouseEvents(wxMouseEvent &event)
 void PlayList::RechercheListeLecture(wxCommandEvent &WXUNUSED(event))
 {
     if (m_liste->RechercheRunning())
+    {
         m_liste->StopRecherche();
+        while (m_liste->RechercheRunning())
+            //wxLogMessage(_("att"));//
+            wxApp::GetInstance()->Yield(false);//wxSleep(20);
+    }
 
     if (m_champsRecherche->GetValue().Length() > m_rechercheTailleMot)
     {

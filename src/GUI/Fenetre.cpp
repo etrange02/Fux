@@ -61,7 +61,7 @@ BEGIN_EVENT_TABLE(FuXFenetre, wxFrame)
     EVT_FERMER_FENETRE_DETACHABLE(wxID_ANY, FuXFenetre::ReunionPanel)
 END_EVENT_TABLE()
 
-static wxMutex s_mutexProtectionDemarrage;
+static wxMutex *s_mutexProtectionDemarrage = new wxMutex;
 
 /**
  * Constructeur
@@ -70,7 +70,7 @@ static wxMutex s_mutexProtectionDemarrage;
  */
 FuXFenetre::FuXFenetre(int argc, wxChar **argv) : wxFrame(NULL, wxID_ANY, _T("Fu(X) 2.0"))
 {
-    wxMutexLocker lock(s_mutexProtectionDemarrage);
+    wxMutexLocker lock(*s_mutexProtectionDemarrage);
     m_FenetreActuel = PRINCIPAL;
     m_nouvelleFenetre = PRINCIPAL;
     sizerPrincipalH = new wxBoxSizer(wxHORIZONTAL);
@@ -142,8 +142,6 @@ FuXFenetre::~FuXFenetre()
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::~FuXFenetre - début"));
     #endif
-//    s_mutexProtectionDemarrage.Lock();
-//    s_mutexProtectionDemarrage.Unlock();
     m_fenetresDetachables->Vider();
     delete m_fenetresDetachables;
     delete m_serveur;
