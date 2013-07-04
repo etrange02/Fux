@@ -20,13 +20,13 @@ static Parametre* instanceParametre = NULL;
  */
 Parametre::Parametre()
 {
-    m_fond.R = 0; m_fond.V = 0; m_fond.B = 0;
-    m_barre.R = 0; m_barre.V = 0; m_barre.B = 255;
-    m_police.R = 255; m_police.V = 0; m_police.B = 255;
-    m_haut.R = 255; m_haut.V = 0; m_haut.B = 0;
-    m_miSup.R = 0; m_miSup.V = 255; m_miSup.B = 0;
-    m_miInf.R = 0; m_miInf.V = 0; m_miInf.B = 0;
-    m_bas.R = 0; m_bas.V = 0; m_bas.B = 0;
+    m_fond.SetRGB(0, 0, 0);
+    m_barre.SetRGB(0, 0, 255);
+    m_police.SetRGB(255, 0, 255);
+    m_haut.SetRGB(255, 0, 0);
+    m_miSup.SetRGB(0, 255, 0);
+    m_miInf.SetRGB(0, 0, 0);
+    m_bas.SetRGB(0, 0, 0);
     m_doubleBarre = false;
 
     m_cheminCouleur = _T("");

@@ -8,6 +8,7 @@
 #include <wx/stdpaths.h>
 #include <wx/textfile.h>
 #include <wx/filename.h>
+#include "Couleur.h"
 
 class Parametre
 {

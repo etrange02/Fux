@@ -298,17 +298,6 @@ struct ChansonNomPos
 };
 
 /**
- * @struct Couleur
- * @brief Champs RVB
- */
-struct Couleur
-{
-    long R;
-    long V;
-    long B;
-};
-
-/**
  * @struct DUREE
  * @brief Structure représentant le temps en minute, seconde, et la totalité en seconde
  */

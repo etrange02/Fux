@@ -523,15 +523,15 @@ void PrefCouleur::Couleur_OuvrirFichier(wxString chemin, bool evenement)
         {
             wxString nom = fichier.GetLine(1);
             m_boiteNom->ChangeValue(nom);
-            m_sliderFond[ROUGE].SetValue(colFond.R);
-            m_sliderFond[VERT].SetValue(colFond.V);
-            m_sliderFond[BLEU].SetValue(colFond.B);
-            m_sliderBarre[ROUGE].SetValue(colBarre.R);
-            m_sliderBarre[VERT].SetValue(colBarre.V);
-            m_sliderBarre[BLEU].SetValue(colBarre.B);
-            m_sliderPolice[ROUGE].SetValue(colPolice.R);
-            m_sliderPolice[VERT].SetValue(colPolice.V);
-            m_sliderPolice[BLEU].SetValue(colPolice.B);
+            m_sliderFond[ROUGE].SetValue(colFond.GetRed());
+            m_sliderFond[VERT].SetValue(colFond.GetGreen());
+            m_sliderFond[BLEU].SetValue(colFond.GetBlue());
+            m_sliderBarre[ROUGE].SetValue(colBarre.GetRed());
+            m_sliderBarre[VERT].SetValue(colBarre.GetGreen());
+            m_sliderBarre[BLEU].SetValue(colBarre.GetBlue());
+            m_sliderPolice[ROUGE].SetValue(colPolice.GetRed());
+            m_sliderPolice[VERT].SetValue(colPolice.GetGreen());
+            m_sliderPolice[BLEU].SetValue(colPolice.GetBlue());
             TFSup_ExtraitString(fichier.GetLine(5), fichier.GetLine(6));
             TFInf_ExtraitString(fichier.GetLine(8), fichier.GetLine(9), fichier.GetLine(7));
             MAJ_Fond();
@@ -541,7 +541,7 @@ void PrefCouleur::Couleur_OuvrirFichier(wxString chemin, bool evenement)
         }
         else
         {
-            Couleur haut = {0, 0, 0}, miSup = {0, 0, 0}, miInf = {0, 0, 0}, bas = {0, 0, 0};
+            Couleur haut, miSup, miInf, bas;
 
             wxString temp, chaineCol1[3], chaineCol2[3];
             temp = fichier.GetLine(5).AfterFirst(' ');
@@ -558,17 +558,17 @@ void PrefCouleur::Couleur_OuvrirFichier(wxString chemin, bool evenement)
             }
 
             if (chaineCol1[0] == _T("t"))
-                haut.R = 255;
+                haut.SetRed(255);
             if (chaineCol1[1] == _T("t"))
-                haut.V = 255;
+                haut.SetGreen(255);
             if (chaineCol1[2] == _T("t"))
-                haut.B = 255;
+                haut.SetBlue(255);
             if (chaineCol2[0] == _T("t"))
-                miSup.R = 255;
+                miSup.SetRed(255);
             if (chaineCol2[1] == _T("t"))
-                miSup.V = 255;
+                miSup.SetGreen(255);
             if (chaineCol2[2] == _T("t"))
-                miSup.B = 255;
+                miSup.SetBlue(255);
 
             wxString chaineCol3;
             temp = fichier.GetLine(8).AfterFirst(' ');
@@ -587,17 +587,17 @@ void PrefCouleur::Couleur_OuvrirFichier(wxString chemin, bool evenement)
             chaineCol3 = temp.BeforeFirst(' ');
 
             if (chaineCol1[0] == _T("t"))
-                miInf.R = 255;
+                miInf.SetRed(255);
             if (chaineCol1[1] == _T("t"))
-                miInf.V = 255;
+                miInf.SetGreen(255);
             if (chaineCol1[2] == _T("t"))
-                miInf.B = 255;
+                miInf.SetBlue(255);
             if (chaineCol2[0] == _T("t"))
-                bas.R = 255;
+                bas.SetRed(255);
             if (chaineCol2[1] == _T("t"))
-                bas.V = 255;
+                bas.SetGreen(255);
             if (chaineCol2[2] == _T("t"))
-                bas.B = 255;
+                bas.SetBlue(255);
 
             bool doubleBarre = false;
             if (chaineCol3 == _T("t"))
@@ -616,8 +616,9 @@ void PrefCouleur::Couleur_OuvrirFichier(wxString chemin, bool evenement)
  */
 Couleur PrefCouleur::Couleur_ExtraitString(wxString chaine) const
 {
-    Couleur ObjetCouleur = {0, 0, 0};
+    Couleur ObjetCouleur;
     wxString temp, chaineCol[3];
+    long val = 0;
     temp = chaine.AfterFirst(' ');
 
     for (int i=0; i<3; i++)
@@ -626,9 +627,12 @@ Couleur PrefCouleur::Couleur_ExtraitString(wxString chaine) const
         temp = temp.AfterFirst(' ');
     }
 
-    chaineCol[ROUGE].ToLong(&ObjetCouleur.R);
-    chaineCol[VERT].ToLong(&ObjetCouleur.V);
-    chaineCol[BLEU].ToLong(&ObjetCouleur.B);
+    chaineCol[ROUGE].ToLong(&val);
+    ObjetCouleur.SetRed(val);
+    chaineCol[VERT].ToLong(&val);
+    ObjetCouleur.SetGreen(val);
+    chaineCol[BLEU].ToLong(&val);
+    ObjetCouleur.SetBlue(val);
 
     return ObjetCouleur;
 }
@@ -892,9 +896,9 @@ void PrefCouleur::Couleur_Bouton_Appliquer(wxCommandEvent &event)
         Couleur haut, miSup, miInf, bas;
         int colHaut[3], colMiSup[3], colMiInf[3], colBas[3];
 
-        Couleur fond = {m_sliderFond[0].GetValue(), m_sliderFond[1].GetValue(), m_sliderFond[2].GetValue()};
-        Couleur barre = {m_sliderBarre[0].GetValue(), m_sliderBarre[1].GetValue(), m_sliderBarre[2].GetValue()};
-        Couleur police = {m_sliderPolice[0].GetValue(), m_sliderPolice[1].GetValue(), m_sliderPolice[2].GetValue()};
+        Couleur fond(m_sliderFond[0].GetValue(), m_sliderFond[1].GetValue(), m_sliderFond[2].GetValue());
+        Couleur barre(m_sliderBarre[0].GetValue(), m_sliderBarre[1].GetValue(), m_sliderBarre[2].GetValue());
+        Couleur police(m_sliderPolice[0].GetValue(), m_sliderPolice[1].GetValue(), m_sliderPolice[2].GetValue());
 
         for (int i=0; i<3; i++)
         {
@@ -915,10 +919,10 @@ void PrefCouleur::Couleur_Bouton_Appliquer(wxCommandEvent &event)
             else
                 colBas[i] = 0;
         }
-        haut.R = colHaut[0]; haut.V = colHaut[1]; haut.B = colHaut[2];
-        miSup.R = colMiSup[0]; miSup.V = colMiSup[1]; miSup.B = colMiSup[2];
-        miInf.R = colMiInf[0]; miInf.V = colMiInf[1]; miInf.B = colMiInf[2];
-        bas.R = colBas[0]; bas.V = colBas[1]; bas.B = colBas[2];
+        haut.SetRGB(colHaut[0], colHaut[1], colHaut[2]);
+        miSup.SetRGB(colMiSup[0], colMiSup[1], colMiSup[2]);
+        miInf.SetRGB(colMiInf[0], colMiInf[1], colMiInf[2]);
+        bas.SetRGB(colBas[0], colBas[1], colBas[2]);
         //m_musiqueGraph->AffecteCouleurs(fond, barre, police, haut, miSup, m_doubleBarre->GetValue(), miInf, bas);
         Parametre::Get()->setCouleurs(fond, barre, police, haut, miSup, miInf, bas, m_doubleBarre->GetValue());
     }

@@ -11,6 +11,7 @@
 #include "ImageText.h"
 #include "../Define.h"
 #include "SliderSon.h"
+#include "../Couleur.h"
 
 extern const wxEventType wxEVT_MUSIQUE_SUPPRESSION;
 
