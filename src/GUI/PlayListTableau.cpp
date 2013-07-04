@@ -85,6 +85,7 @@ void ListeLecture::MAJ()
 
     if(m_modeRecherche)
     {
+        s_mutexMAJPlaylist->Unlock();
         RechercheElargie(m_motRecherche);
         return;
     }
@@ -767,7 +768,16 @@ void ListeLecture::RechercheElargie(wxString chaine)
              || duree.Lower().Find(chaine) != wxNOT_FOUND)
                 i++;
             else
+            {
                 DeleteItem(i);
+                for (size_t k = 0; k < m_ocurrenceLigne.GetCount(); ++k)
+                {
+                    if (m_ocurrenceLigne.Item(k) == i)
+                        m_ocurrenceLigne.RemoveAt(k);
+                    else if (m_ocurrenceLigne.Item(k) > i)
+                        m_ocurrenceLigne.Item(k)--;
+                }
+            }
 
             if (i<GetItemCount())
             {
@@ -817,8 +827,29 @@ void ListeLecture::RechercheElargie(wxString chaine)
                     SetItem(pos, 6, ligneFic.BeforeLast(wxFileName::GetPathSeparator()));
                     SetItem(pos, 7, genre);
                     SetItem(pos, 8, ligneFic.AfterLast('.'));
+
+                    if (Musique::Get()->GetNomComplet().IsSameAs(ligneFic))
+                    {
+                        bool present = false;
+                        size_t k = 0;
+                        while (!present && k < m_ocurrenceLigne.GetCount())
+                        {
+                            if (m_ocurrenceLigne.Item(k))
+                                present = true;
+                            ++k;
+                        }
+                        if (!present)
+                            m_ocurrenceLigne.Add(i);
+                    }
+
+                    for (size_t k = 0; k < m_ocurrenceLigne.GetCount(); ++k)
+                    {
+                        if (m_ocurrenceLigne.Item(k) > i)
+                            m_ocurrenceLigne.Item(k)++;
+                    }
+
                     ++i;
-                    if (ligneFic.IsSameAs(ligneTab))
+                    /*if (ligneFic.IsSameAs(ligneTab))
                     {
                         ++i;
                         if (i<GetItemCount())
@@ -834,7 +865,7 @@ void ListeLecture::RechercheElargie(wxString chaine)
                         }
                         else
                             ligneTab.Clear();
-                    }
+                    }*/
                 }
             }
             //sinon, passer à la ligne suivante dans le fichier
@@ -845,9 +876,8 @@ void ListeLecture::RechercheElargie(wxString chaine)
     while (i<GetItemCount())
         DeleteItem(i++);
     fichier.Close();
-    ChangementChanson(Musique::Get()->GetNomPos());
-
     m_modeRecherche = !m_motRecherche.IsEmpty();
+    ChangementChanson(Musique::Get()->GetNomPos());
 }
 
 void ListeLecture::RecherchePrecise(wxString chaine)
@@ -876,7 +906,16 @@ void ListeLecture::RecherchePrecise(wxString chaine)
                 cont = false;
         }
         if (cont)// l'élément doit être supprimé, il ne correspond pas à la recherche
+        {
             DeleteItem(i);
+            for (size_t k = 0; k < m_ocurrenceLigne.GetCount(); ++k)
+            {
+                if (m_ocurrenceLigne.Item(k) == i)
+                    m_ocurrenceLigne.RemoveAt(k);
+                else if (m_ocurrenceLigne.Item(k) > i)
+                    m_ocurrenceLigne.Item(k)--;
+            }
+        }
         else
             i++;
         if ((++j)%5 == 2)
