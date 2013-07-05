@@ -259,54 +259,53 @@ void MusiqueGraph::GetCouleurNom(Couleur **fond, Couleur **barre, Couleur **poli
  */
 Couleur MusiqueGraph::CouleurExtrem(int hauteur, int sizer_h, e_GraphPosition niveau)
 {
-    unsigned int r = 0, v = 0, b = 0;
+    Couleur retour;
     if (niveau == HAUT_SUP)
     {
         if (m_haut.GetRed() == m_miSup.GetRed())
-            r = m_haut.GetRed();
+            retour.SetRed(m_haut.GetRed());
         else if (m_haut.GetRed() > m_miSup.GetRed())
-            r = 255*hauteur/(sizer_h-19);
+            retour.SetRed(255*hauteur/(sizer_h-19));
         else
-            r = 255-255*hauteur/(sizer_h-19);
+            retour.SetRed(255-255*hauteur/(sizer_h-19));
 
         if (m_haut.GetGreen() == m_miSup.GetGreen())
-            v = m_haut.GetGreen();
+            retour.SetGreen(m_haut.GetGreen());
         else if (m_haut.GetGreen() > m_miSup.GetGreen())
-            v = 255*hauteur/(sizer_h-19);
+            retour.SetGreen(255*hauteur/(sizer_h-19));
         else
-            v = 255-255*hauteur/(sizer_h-19);
+            retour.SetGreen(255-255*hauteur/(sizer_h-19));
 
         if (m_haut.GetBlue() == m_miSup.GetBlue())
-            b = m_haut.GetBlue();
+            retour.SetBlue(m_haut.GetBlue());
         else if (m_haut.GetBlue() > m_miSup.GetBlue())
-            b = 255*hauteur/(sizer_h-19);
+            retour.SetBlue(255*hauteur/(sizer_h-19));
         else
-            b = 255-255*hauteur/(sizer_h-19);
+            retour.SetBlue(255-255*hauteur/(sizer_h-19));
     }
     else if (niveau == BAS_INF)
     {
         if (m_miInf.GetRed() == m_bas.GetRed())
-            r = m_miInf.GetRed();
+            retour.SetRed(m_miInf.GetRed());
         else if (m_miInf.GetRed() > m_bas.GetRed())
-            r = 255-255*hauteur/(sizer_h-19);
+            retour.SetRed(255-255*hauteur/(sizer_h-19));
         else
-            r = 255*hauteur/(sizer_h-19);
+            retour.SetRed(255*hauteur/(sizer_h-19));
 
         if (m_miInf.GetGreen() == m_bas.GetGreen())
-            v = m_miInf.GetGreen();
+            retour.SetGreen(m_miInf.GetGreen());
         else if (m_miInf.GetGreen() > m_bas.GetGreen())
-            v = 255-255*hauteur/(sizer_h-19);
+            retour.SetGreen(255-255*hauteur/(sizer_h-19));
         else
-            v = 255*hauteur/(sizer_h-19);
+            retour.SetGreen(255*hauteur/(sizer_h-19));
 
         if (m_miInf.GetBlue() == m_bas.GetBlue())
-            b = m_miInf.GetBlue();
+            retour.SetBlue(m_miInf.GetBlue());
         else if (m_miInf.GetBlue() > m_bas.GetBlue())
-            b = 255-255*hauteur/(sizer_h-19);
+            retour.SetBlue(255-255*hauteur/(sizer_h-19));
         else
-            b = 255*hauteur/(sizer_h-19);
+            retour.SetBlue(255*hauteur/(sizer_h-19));
     }
-    Couleur retour(r, v, b);
     return retour;
 }
 
@@ -375,10 +374,14 @@ void MusiqueGraph::PlacerChanson(wxMouseEvent &event)
  */
 void MusiqueGraph::AffecteCouleurs(Couleur fond, Couleur barre, Couleur police, Couleur haut, Couleur miSup, bool doubleBarre, Couleur miInf, Couleur bas)
 {
-    m_fond = fond; m_barre = barre; m_police = police;
-    m_haut = haut; m_miSup = miSup;
+    m_fond = fond;
+    m_barre = barre;
+    m_police = police;
+    m_haut = haut;
+    m_miSup = miSup;
     m_doubleBarre = doubleBarre;
-    m_miInf = miInf; m_bas = bas;
+    m_miInf = miInf;
+    m_bas = bas;
 }
 
 /**

@@ -48,7 +48,7 @@ IMPORTANT, A FAIRE !!!
 			<Environment>
 				<Variable name="AU" value="u" />
 				<Variable name="AURD" value="$(AU)$(RD)" />
-				<Variable name="FMODEX" value='&quot;C:\Program Files\FMOD SoundSystem\FMOD Programmers API Windows\api&quot;' />
+				<Variable name="FMODEX" value='&quot;C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Windows\api&quot;' />
 				<Variable name="RD" value="" />
 				<Variable name="SQLITE3" value="${WXSQLITE3}\sqlite3" />
 				<Variable name="TAGLIB" value="C:\CMake\cmake_taglib\taglib" />
@@ -122,6 +122,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/BDD/BDDThread.h" />
 		<Unit filename="include/BDD/BDDThreadEvent.h" />
 		<Unit filename="include/Classes.h" />
+		<Unit filename="include/Couleur.h" />
 		<Unit filename="include/Define.h" />
 		<Unit filename="include/Dialogue/DialogEnregistreM3U.h" />
 		<Unit filename="include/Dialogue/DialogTagMP3.h" />
@@ -180,6 +181,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/BDD/BDDRequete.cpp" />
 		<Unit filename="src/BDD/BDDThread.cpp" />
 		<Unit filename="src/BDD/BDDThreadEvent.cpp" />
+		<Unit filename="src/Couleur.cpp" />
 		<Unit filename="src/Dialogue/DialogEnregistreM3U.cpp" />
 		<Unit filename="src/Dialogue/DialogTagMP3.cpp" />
 		<Unit filename="src/Dialogue/DialogTagMP3Info.cpp" />

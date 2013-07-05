@@ -893,7 +893,6 @@ void PrefCouleur::Couleur_Bouton_Appliquer(wxCommandEvent &event)
 
     if (!m_boiteNom->IsEmpty())
     {
-        Couleur haut, miSup, miInf, bas;
         int colHaut[3], colMiSup[3], colMiInf[3], colBas[3];
 
         Couleur fond(m_sliderFond[0].GetValue(), m_sliderFond[1].GetValue(), m_sliderFond[2].GetValue());
@@ -919,10 +918,10 @@ void PrefCouleur::Couleur_Bouton_Appliquer(wxCommandEvent &event)
             else
                 colBas[i] = 0;
         }
-        haut.SetRGB(colHaut[0], colHaut[1], colHaut[2]);
-        miSup.SetRGB(colMiSup[0], colMiSup[1], colMiSup[2]);
-        miInf.SetRGB(colMiInf[0], colMiInf[1], colMiInf[2]);
-        bas.SetRGB(colBas[0], colBas[1], colBas[2]);
+        Couleur haut(colHaut[0], colHaut[1], colHaut[2]);
+        Couleur miSup(colMiSup[0], colMiSup[1], colMiSup[2]);
+        Couleur miInf(colMiInf[0], colMiInf[1], colMiInf[2]);
+        Couleur bas(colBas[0], colBas[1], colBas[2]);
         //m_musiqueGraph->AffecteCouleurs(fond, barre, police, haut, miSup, m_doubleBarre->GetValue(), miInf, bas);
         Parametre::Get()->setCouleurs(fond, barre, police, haut, miSup, miInf, bas, m_doubleBarre->GetValue());
     }

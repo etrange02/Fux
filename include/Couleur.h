@@ -22,8 +22,8 @@ class Couleur
         //Couleur& operator=(const Couleur& other);
     private:
         unsigned int m_red;
-        unsigned int m_blue;
         unsigned int m_green;
+        unsigned int m_blue;
 };
 
 #endif // COULEUR_H
