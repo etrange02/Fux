@@ -297,15 +297,5 @@ struct ChansonNomPos
     int Pos;
 };
 
-/**
- * @struct DUREE
- * @brief Structure représentant le temps en minute, seconde, et la totalité en seconde
- */
-struct DUREE
-{
-    int minute;
-    int seconde;
-    int msecondeTot;
-};
 
 #endif // DEFINE_H_INCLUDED

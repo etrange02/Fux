@@ -42,8 +42,8 @@ Musique::Musique()
     m_cheminComplet = wxEmptyString;
     m_nomChanson = wxEmptyString;
 
-    m_duree.msecondeTot = 1;
-    m_tpsActuel.msecondeTot = 0;
+    m_duree.SetMSecondeTot(1);
+    m_tpsActuel.SetMSecondeTot(0);
     m_volume = 1;
 
     m_aleatoire = false;
@@ -300,7 +300,7 @@ void Musique::Listage()
 /**
  * Provoque l'ajout de chaine à la liste de lecture
  * chaine un tableau de wxString contenant des adresses
- * maj si vrai, informa l'application du changement (pas toujours nécessaire)
+ * maj si vrai, informe l'application du changement (pas toujours nécessaire)
  */
 void Musique::Listage(wxArrayString *chaine, bool maj)
 {
@@ -391,10 +391,7 @@ void Musique::DureeMS()
     unsigned int temps;
     FMOD_Sound_GetLength(m_sound, &temps, FMOD_TIMEUNIT_MS);
 
-    m_duree.msecondeTot = temps;
-    temps/=1000;
-    m_duree.seconde = temps%60;
-    m_duree.minute = temps/60;
+    m_duree.SetMSecondeTot(temps);
 }
 
 /**
@@ -515,6 +512,15 @@ void Musique::SetAleatoire(bool aleatoire)
  */
 wxString Musique::GetNomChanson()
 {    return m_nomChanson;}
+
+/**
+ * Retourne le nom comlet de la chanson en cours de lecture
+ * @return le nom complet
+ */
+wxString Musique::GetNomComplet()
+{
+    return m_cheminComplet;
+}
 
 /**
  * Retourne le nom de l'album selon la structure de fichier artiste\album\titre.

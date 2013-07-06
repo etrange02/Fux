@@ -1,7 +1,10 @@
 #include "../include/Couleur.h"
 
-Couleur::Couleur(unsigned int red, unsigned int green, unsigned int blue): m_red(red), m_green(green), m_blue(blue)
+Couleur::Couleur(unsigned int red, unsigned int green, unsigned int blue)
 {
+    m_red = red;
+    m_green = green;
+    m_blue = blue;
 }
 
 Couleur::~Couleur()

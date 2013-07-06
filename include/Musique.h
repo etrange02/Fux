@@ -9,6 +9,7 @@
 #include "Classes.h"
 #include "FichierListe.h"
 #include "FichierLog.h"
+#include "Duree.h"
 
 extern const wxEventType wxEVT_MUSIQUE_CHANGE;
 extern const wxEventType wxEVT_MUSIQUE_MAJ;
@@ -23,8 +24,8 @@ class Musique
 
         int GetDureeMS();
         int GetTpsActuel();
-        DUREE GetDUREEDuree();
-        DUREE GetDUREETpsActuel();
+        Duree GetDUREEDuree();
+        Duree GetDUREETpsActuel();
         void SetPositionMS(int);
         bool IsContainingMus();
         bool GetPause();
@@ -84,7 +85,7 @@ class Musique
         e_ChangeChanson m_action;//puissance de 2, 64 à 8192
         bool m_stop, m_aleatoire, m_musCharge, m_isPlaying;
         wxString m_nomChanson, m_cheminComplet, m_album, m_artiste;
-        DUREE m_duree, m_tpsActuel;
+        Duree m_duree, m_tpsActuel;
 };
 
 #endif // MUSIQUE_H_INCLUDED

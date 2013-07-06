@@ -6,7 +6,7 @@
  * Copyright: David Lecoconnier (http://www.fuxplay.com)
  * License:
  **************************************************************/
-#include "../include/MusiqueGraph.h"
+#include "../../include/GUI/MusiqueGraph.h"
 
 /**
  * @class MusiqueGraph
@@ -27,12 +27,13 @@ END_EVENT_TABLE()
 static MusiqueGraph* s_instanceMusiqueGraph = NULL;
 
 /**
- * Constructeur
+ * Constructeur.
  * @param Parent la classe parente de cette instance
  * @param args les arguments à appliquer à la fenêtre
  */
 MusiqueGraph::MusiqueGraph(wxWindow *Parent, int *args) : wxGLCanvas(Parent, wxID_ANY, args, wxDefaultPosition, wxDefaultSize, wxFULL_REPAINT_ON_RESIZE)//wxPanel(Parent)
 {
+    s_instanceMusiqueGraph = this;
     m_context = new wxGLContext(this);
        // m_context->SetCurrent(this);
     //wxGLCanvas::SetCurrent(*m_context);
@@ -51,14 +52,14 @@ MusiqueGraph::MusiqueGraph(wxWindow *Parent, int *args) : wxGLCanvas(Parent, wxI
     m_bandeRestante = 0;
     m_intervalle = 0;
     m_moitEcran = 246;
-    m_fond.R = 0; m_fond.V = 0; m_fond.B = 0;
-    m_barre.R = 0; m_barre.V = 0; m_barre.B = 255;
-    m_police.R = 255; m_police.V = 0; m_police.B = 255;
-    m_haut.R = 255; m_haut.V = 0; m_haut.B = 0;
-    m_miSup.R = 0; m_miSup.V = 255; m_miSup.B = 0;
+    m_fond.SetRGB(0, 0, 0);
+    m_barre.SetRGB(0, 0, 255);
+    m_police.SetRGB(255, 0, 255);
+    m_haut.SetRGB(255, 0, 0);
+    m_miSup.SetRGB(0, 255, 0);
     m_doubleBarre = false;
-    m_miInf.R = 0; m_miInf.V = 0; m_miInf.B = 0;
-    m_bas.R = 0; m_bas.V = 0; m_bas.B = 0;
+    m_miInf.SetRGB(0, 0, 0);
+    m_bas.SetRGB(0, 0, 0);
     spectrum = NULL;
     SetBackgroundStyle(wxBG_STYLE_CUSTOM);
 }
@@ -80,11 +81,11 @@ MusiqueGraph::~MusiqueGraph()
 }
 
 /**
- * Retourne l'instance de la classe MusiqueGraph
+ * Retourne l'instance de la classe MusiqueGraph. Attention, l'instance n'est pas créée ici !
  * @return l'instance
  */
 MusiqueGraph* MusiqueGraph::Get()
-{    if (return s_instanceMusiqueGraph;}
+{    return s_instanceMusiqueGraph;}
 
 /**
  * Redéfinition de OnIdle
@@ -108,7 +109,7 @@ void MusiqueGraph::OnPaint(wxPaintEvent&)
     wxPaintDC(this);//Permet un arrêt rapide et non unblocage de la fenêtre
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glClearColor(m_fond.R/255.0, m_fond.V/255.0, m_fond.B/255.0, 1);
+    glClearColor(m_fond.GetRed()/255.0, m_fond.GetGreen()/255.0, m_fond.GetBlue()/255.0, 1);
 
     if (Musique::Get()->IsContainingMus())
     {
@@ -116,7 +117,7 @@ void MusiqueGraph::OnPaint(wxPaintEvent&)
         if (Musique::Get()->GetLecture())
         {
             register unsigned int spec = 0, retard = 0;
-            Couleur couleur = {0, 0, 0};
+            Couleur couleur;
 
             Musique::Get()->RemplirSpectre(spectrum, m_largeur_tab);
             glBegin(GL_LINES);
@@ -128,26 +129,26 @@ void MusiqueGraph::OnPaint(wxPaintEvent&)
 
                 if (m_doubleBarre)
                 {
-                    glColor3ub(m_miSup.R, m_miSup.V, m_miSup.B);
+                    glColor3ub(m_miSup.GetRed(), m_miSup.GetGreen(), m_miSup.GetBlue());
                     glVertex2i(i+1+retard, m_moitEcran);
                     couleur = CouleurExtrem(spec, m_sizer_h, HAUT_SUP);
-                    glColor3ub(couleur.R, couleur.V, couleur.B);
+                    glColor3ub(couleur.GetRed(), couleur.GetGreen(), couleur.GetBlue());
                     glVertex2i(i+1+retard, m_moitEcran + spec/2);
                     //Dc.GradientFillLinear(wxRect(i + retard, (m_sizer_h-19-spec)/2, 1, spec/2), m_miSup, CouleurExtrem(spec, m_sizer_h, HAUT_SUP), wxNORTH);
 
-                    glColor3ub(m_miInf.R, m_miInf.V, m_miInf.B);
+                    glColor3ub(m_miInf.GetRed(), m_miInf.GetGreen(), m_miInf.GetBlue());
                     glVertex2i(i+1+retard, m_moitEcran);
                     couleur = CouleurExtrem(spec, m_sizer_h, BAS_INF);
-                    glColor3ub(couleur.R, couleur.V, couleur.B);
+                    glColor3ub(couleur.GetRed(), couleur.GetGreen(), couleur.GetBlue());
                     glVertex2i(i+1+retard, m_moitEcran - spec/2);
                     //Dc.GradientFillLinear(wxRect(i + retard, (m_sizer_h-19)/2, 1, spec/2), m_miInf, CouleurExtrem(spec, m_sizer_h, BAS_INF), wxSOUTH);
                 }
                 else
                 {
-                    glColor3ub(m_miSup.R, m_miSup.V, m_miSup.B);
+                    glColor3ub(m_miSup.GetRed(), m_miSup.GetGreen(), m_miSup.GetBlue());
                     glVertex2i(i+1+retard, 19);//-1, -1);
                     couleur = CouleurExtrem(spec, m_sizer_h);
-                    glColor3ub(couleur.R, couleur.V, couleur.B);
+                    glColor3ub(couleur.GetRed(), couleur.GetGreen(), couleur.GetBlue());
                     glVertex2i(i+1+retard, spec + 19);
                     //Dc.GradientFillLinear(wxRect(i + retard, m_sizer_h-19-spec, 1, spec), m_miSup, CouleurExtrem(spec, m_sizer_h), wxNORTH);
                 }
@@ -165,26 +166,26 @@ void MusiqueGraph::OnPaint(wxPaintEvent&)
 
                         if (m_doubleBarre)
                         {
-                            glColor3ub(m_miSup.R, m_miSup.V, m_miSup.B);
+                            glColor3ub(m_miSup.GetRed(), m_miSup.GetGreen(), m_miSup.GetBlue());
                             glVertex2i(i+1+retard, m_moitEcran);
                             couleur = CouleurExtrem(spec, m_sizer_h, HAUT_SUP);
-                            glColor3ub(couleur.R, couleur.V, couleur.B);
+                            glColor3ub(couleur.GetRed(), couleur.GetGreen(), couleur.GetBlue());
                             glVertex2i(i+1+retard, m_moitEcran + spec/2);
                             //Dc.GradientFillLinear(wxRect(i + retard, (m_sizer_h-19-spec)/2, 1, spec/2), m_miSup, CouleurExtrem(spec, m_sizer_h, HAUT_SUP), wxNORTH);
 
-                            glColor3ub(m_miInf.R, m_miInf.V, m_miInf.B);
+                            glColor3ub(m_miInf.GetRed(), m_miInf.GetGreen(), m_miInf.GetBlue());
                             glVertex2i(i+1+retard, m_moitEcran);
                             couleur = CouleurExtrem(spec, m_sizer_h, BAS_INF);
-                            glColor3ub(couleur.R, couleur.V, couleur.B);
+                            glColor3ub(couleur.GetRed(), couleur.GetGreen(), couleur.GetBlue());
                             glVertex2i(i+1+retard, m_moitEcran - spec/2 -1);
                             //Dc.GradientFillLinear(wxRect(i + retard, (m_sizer_h-19)/2, 1, spec/2), m_miInf, CouleurExtrem(spec, m_sizer_h, BAS_INF), wxSOUTH);
                         }
                         else
                         {
-                            glColor3ub(m_miSup.R, m_miSup.V, m_miSup.B);
+                            glColor3ub(m_miSup.GetRed(), m_miSup.GetGreen(), m_miSup.GetBlue());
                             glVertex2i(i+1+retard, 19);
                             couleur = CouleurExtrem(spec, m_sizer_h);
-                            glColor3ub(couleur.R, couleur.V, couleur.B);
+                            glColor3ub(couleur.GetRed(), couleur.GetGreen(), couleur.GetBlue());
                             glVertex2i(i+1+retard, spec + 19);
                             //Dc.GradientFillLinear(wxRect(i + retard, m_sizer_h-19-spec, 1, spec), m_miSup, CouleurExtrem(spec, m_sizer_h), wxNORTH);
                         }
@@ -197,20 +198,20 @@ void MusiqueGraph::OnPaint(wxPaintEvent&)
         // Un test à faire sur l'état de Musique
         int largeur = Musique::Get()->GetTpsActuel()*m_sizer_w/Musique::Get()->GetDureeMS();
         glBegin(GL_QUADS);
-            glColor4ub(m_barre.R, m_barre.V, m_barre.B, 255);
+            glColor4ub(m_barre.GetRed(), m_barre.GetGreen(), m_barre.GetBlue(), 255);
             glVertex2i(0, 0);
             glVertex2i(0, 19);
             glVertex2i(largeur, 19);
             glVertex2i(largeur, 0);
         glEnd();
 
-        glColor4ub(m_police.R, m_police.V, m_police.B, 255);
+        glColor4ub(m_police.GetRed(), m_police.GetGreen(), m_police.GetBlue(), 255);
         m_imageText->Affiche();
 
         if (ScreenToClient(wxGetMousePosition()).y >= m_sizer_h-19 && ScreenToClient(wxGetMousePosition()).x >= 0 && ScreenToClient(wxGetMousePosition()).x <= m_sizer_w+30)
         {
             int point = ScreenToClient(wxGetMousePosition()).x, tot = (point*Musique::Get()->GetDureeMS())/(1024*m_sizer_w);
-            wxString duree = wxString::Format(_T("%d:%2d/%d:%2d"), Musique::Get()->GetDUREETpsActuel().minute, Musique::Get()->GetDUREETpsActuel().seconde, Musique::Get()->GetDUREEDuree().minute, Musique::Get()->GetDUREEDuree().seconde);
+            wxString duree = wxString::Format(_T("%d:%2d/%d:%2d"), Musique::Get()->GetDUREETpsActuel().GetMinute(), Musique::Get()->GetDUREETpsActuel().GetSeconde(), Musique::Get()->GetDUREEDuree().minute, Musique::Get()->GetDUREEDuree().seconde);
             wxString tps = wxString::Format(_T("%d:%2d"), tot/60, tot%60);
             for (i = 0; i<duree.length(); i++)
                 if (duree[i] == ' ')
@@ -258,54 +259,53 @@ void MusiqueGraph::GetCouleurNom(Couleur **fond, Couleur **barre, Couleur **poli
  */
 Couleur MusiqueGraph::CouleurExtrem(int hauteur, int sizer_h, e_GraphPosition niveau)
 {
-    unsigned int r = 0, v = 0, b = 0;
+    Couleur retour;
     if (niveau == HAUT_SUP)
     {
-        if (m_haut.R == m_miSup.R)
-            r = m_haut.R;
-        else if (m_haut.R > m_miSup.R)
-            r = 255*hauteur/(sizer_h-19);
+        if (m_haut.GetRed() == m_miSup.GetRed())
+            retour.SetRed(m_haut.GetRed());
+        else if (m_haut.GetRed() > m_miSup.GetRed())
+            retour.SetRed(255*hauteur/(sizer_h-19));
         else
-            r = 255-255*hauteur/(sizer_h-19);
+            retour.SetRed(255-255*hauteur/(sizer_h-19));
 
-        if (m_haut.V == m_miSup.V)
-            v = m_haut.V;
-        else if (m_haut.V > m_miSup.V)
-            v = 255*hauteur/(sizer_h-19);
+        if (m_haut.GetGreen() == m_miSup.GetGreen())
+            retour.SetGreen(m_haut.GetGreen());
+        else if (m_haut.GetGreen() > m_miSup.GetGreen())
+            retour.SetGreen(255*hauteur/(sizer_h-19));
         else
-            v = 255-255*hauteur/(sizer_h-19);
+            retour.SetGreen(255-255*hauteur/(sizer_h-19));
 
-        if (m_haut.B == m_miSup.B)
-            b = m_haut.B;
-        else if (m_haut.B > m_miSup.B)
-            b = 255*hauteur/(sizer_h-19);
+        if (m_haut.GetBlue() == m_miSup.GetBlue())
+            retour.SetBlue(m_haut.GetBlue());
+        else if (m_haut.GetBlue() > m_miSup.GetBlue())
+            retour.SetBlue(255*hauteur/(sizer_h-19));
         else
-            b = 255-255*hauteur/(sizer_h-19);
+            retour.SetBlue(255-255*hauteur/(sizer_h-19));
     }
     else if (niveau == BAS_INF)
     {
-        if (m_miInf.R == m_bas.R)
-            r = m_miInf.R;
-        else if (m_miInf.R > m_bas.R)
-            r = 255-255*hauteur/(sizer_h-19);
+        if (m_miInf.GetRed() == m_bas.GetRed())
+            retour.SetRed(m_miInf.GetRed());
+        else if (m_miInf.GetRed() > m_bas.GetRed())
+            retour.SetRed(255-255*hauteur/(sizer_h-19));
         else
-            r = 255*hauteur/(sizer_h-19);
+            retour.SetRed(255*hauteur/(sizer_h-19));
 
-        if (m_miInf.V == m_bas.V)
-            v = m_miInf.V;
-        else if (m_miInf.V > m_bas.V)
-            v = 255-255*hauteur/(sizer_h-19);
+        if (m_miInf.GetGreen() == m_bas.GetGreen())
+            retour.SetGreen(m_miInf.GetGreen());
+        else if (m_miInf.GetGreen() > m_bas.GetGreen())
+            retour.SetGreen(255-255*hauteur/(sizer_h-19));
         else
-            v = 255*hauteur/(sizer_h-19);
+            retour.SetGreen(255*hauteur/(sizer_h-19));
 
-        if (m_miInf.B == m_bas.B)
-            b = m_miInf.B;
-        else if (m_miInf.B > m_bas.B)
-            b = 255-255*hauteur/(sizer_h-19);
+        if (m_miInf.GetBlue() == m_bas.GetBlue())
+            retour.SetBlue(m_miInf.GetBlue());
+        else if (m_miInf.GetBlue() > m_bas.GetBlue())
+            retour.SetBlue(255-255*hauteur/(sizer_h-19));
         else
-            b = 255*hauteur/(sizer_h-19);
+            retour.SetBlue(255*hauteur/(sizer_h-19));
     }
-    Couleur retour = {r, v, b};
     return retour;
 }
 
@@ -374,10 +374,14 @@ void MusiqueGraph::PlacerChanson(wxMouseEvent &event)
  */
 void MusiqueGraph::AffecteCouleurs(Couleur fond, Couleur barre, Couleur police, Couleur haut, Couleur miSup, bool doubleBarre, Couleur miInf, Couleur bas)
 {
-    m_fond = fond; m_barre = barre; m_police = police;
-    m_haut = haut; m_miSup = miSup;
+    m_fond = fond;
+    m_barre = barre;
+    m_police = police;
+    m_haut = haut;
+    m_miSup = miSup;
     m_doubleBarre = doubleBarre;
-    m_miInf = miInf; m_bas = bas;
+    m_miInf = miInf;
+    m_bas = bas;
 }
 
 /**

@@ -211,7 +211,7 @@ void MusiqueGraph::OnPaint(wxPaintEvent&)
         if (ScreenToClient(wxGetMousePosition()).y >= m_sizer_h-19 && ScreenToClient(wxGetMousePosition()).x >= 0 && ScreenToClient(wxGetMousePosition()).x <= m_sizer_w+30)
         {
             int point = ScreenToClient(wxGetMousePosition()).x, tot = (point*Musique::Get()->GetDureeMS())/(1024*m_sizer_w);
-            wxString duree = wxString::Format(_T("%d:%2d/%d:%2d"), Musique::Get()->GetDUREETpsActuel().minute, Musique::Get()->GetDUREETpsActuel().seconde, Musique::Get()->GetDUREEDuree().minute, Musique::Get()->GetDUREEDuree().seconde);
+            wxString duree = wxString::Format(_T("%d:%2d/%d:%2d"), Musique::Get()->GetDUREETpsActuel().GetMinute(), Musique::Get()->GetDUREETpsActuel().GetSeconde(), Musique::Get()->GetDUREEDuree().GetMinute(), Musique::Get()->GetDUREEDuree().GetSeconde());
             wxString tps = wxString::Format(_T("%d:%2d"), tot/60, tot%60);
             for (i = 0; i<duree.length(); i++)
                 if (duree[i] == ' ')

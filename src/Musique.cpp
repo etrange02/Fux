@@ -42,8 +42,8 @@ Musique::Musique()
     m_cheminComplet = wxEmptyString;
     m_nomChanson = wxEmptyString;
 
-    m_duree.msecondeTot = 1;
-    m_tpsActuel.msecondeTot = 0;
+    m_duree.SetMSecondeTot(1);
+    m_tpsActuel.SetMSecondeTot(0);
     m_volume = 1;
 
     m_aleatoire = false;
@@ -391,10 +391,7 @@ void Musique::DureeMS()
     unsigned int temps;
     FMOD_Sound_GetLength(m_sound, &temps, FMOD_TIMEUNIT_MS);
 
-    m_duree.msecondeTot = temps;
-    temps/=1000;
-    m_duree.seconde = temps%60;
-    m_duree.minute = temps/60;
+    m_duree.SetMSecondeTot(temps);
 }
 
 /**
@@ -405,10 +402,7 @@ void Musique::TpsActuelMS()
     unsigned int position;
     FMOD_Channel_GetPosition(m_channel, &position, FMOD_TIMEUNIT_MS);
 
-    m_tpsActuel.msecondeTot = position;
-    position/=1000;
-    m_tpsActuel.seconde = position%60;
-    m_tpsActuel.minute = position/60;
+    m_tpsActuel.SetMSecondeTot(position);
 }
 
 /**
@@ -422,7 +416,7 @@ bool Musique::VerifTemps()
     else
         return false;
 
-    if (m_tpsActuel.msecondeTot >= m_duree.msecondeTot - 200)
+    if (m_tpsActuel.GetMSecondeTot() >= m_duree.GetMSecondeTot() - 200)
         return true;
     else
         return false;
@@ -433,27 +427,27 @@ bool Musique::VerifTemps()
  * @return la durée
  */
 int Musique::GetDureeMS()
-{    return m_duree.msecondeTot;}
+{    return m_duree.GetMSecondeTot();}
 
 /**
  * Retourne le temps écoulé en ms de la chanson
 * @return le temps écoulé
  */
 int Musique::GetTpsActuel()
-{    return m_tpsActuel.msecondeTot;}
+{    return m_tpsActuel.GetMSecondeTot();}
 
 /**
  * Retourne la structure contenant les informations sur la durée du titre
  * @return la durée
  */
-DUREE Musique::GetDUREEDuree()
+Duree Musique::GetDUREEDuree()
 {    return m_duree;}
 
 /**
  * Retourne la structure contenant les informations sur le temps écoulé du titre
  * @return le temps écoulé
  */
-DUREE Musique::GetDUREETpsActuel()
+Duree Musique::GetDUREETpsActuel()
 {    return m_tpsActuel;}
 
 /**
@@ -669,7 +663,7 @@ void Musique::SetVolume(int volume)
 wxString Musique::GetDureeFormatMinSec()
 {
     wxString chaine;
-    chaine << m_duree.minute << _T(":") << m_duree.seconde;
+    chaine << m_duree.GetMinute() << _T(":") << m_duree.GetSeconde();
     return chaine;
 }
 
