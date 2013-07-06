@@ -9,6 +9,7 @@
 #include "Define.h"
 #include "DirTraverser/Recherche.h"
 #include "Parametre.h"
+#include "ChansonNomPos.h"
 
 class FichierListe
 {

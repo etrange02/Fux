@@ -332,10 +332,10 @@ void FichierListe::SetDossierRecherche(wxString chanson)
 void FichierListe::EffacerNom(ChansonNomPos titre)
 {
     int ligneASuppr;
-    if (titre.Pos != -1)
-        ligneASuppr = titre.Pos;
+    if (titre.GetPos() != -1)
+        ligneASuppr = titre.GetPos();
     else
-        ligneASuppr = GetPositionListe(titre.Nom);
+        ligneASuppr = GetPositionListe(titre.GetNom());
 
     wxTextFile fichierListe(m_Liste);
     if (!fichierListe.Open())

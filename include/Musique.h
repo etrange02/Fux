@@ -10,6 +10,7 @@
 #include "FichierListe.h"
 #include "FichierLog.h"
 #include "Duree.h"
+#include "ChansonNomPos.h"
 
 extern const wxEventType wxEVT_MUSIQUE_CHANGE;
 extern const wxEventType wxEVT_MUSIQUE_MAJ;

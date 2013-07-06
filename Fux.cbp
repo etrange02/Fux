@@ -121,6 +121,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/BDD/BDDRequete.h" />
 		<Unit filename="include/BDD/BDDThread.h" />
 		<Unit filename="include/BDD/BDDThreadEvent.h" />
+		<Unit filename="include/ChansonNomPos.h" />
 		<Unit filename="include/Classes.h" />
 		<Unit filename="include/Couleur.h" />
 		<Unit filename="include/Define.h" />
@@ -136,6 +137,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/DnD/DnDBufferData.h" />
 		<Unit filename="include/DnD/DnDCible.h" />
 		<Unit filename="include/DnD/DnDListeFichier.h" />
+		<Unit filename="include/Duree.h" />
 		<Unit filename="include/ElementThreadFichier.h" />
 		<Unit filename="include/FichierListe.h" />
 		<Unit filename="include/FichierLog.h" />
@@ -181,6 +183,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/BDD/BDDRequete.cpp" />
 		<Unit filename="src/BDD/BDDThread.cpp" />
 		<Unit filename="src/BDD/BDDThreadEvent.cpp" />
+		<Unit filename="src/ChansonNomPos.cpp" />
 		<Unit filename="src/Couleur.cpp" />
 		<Unit filename="src/Dialogue/DialogEnregistreM3U.cpp" />
 		<Unit filename="src/Dialogue/DialogTagMP3.cpp" />
@@ -194,6 +197,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/DnD/DnDBufferData.cpp" />
 		<Unit filename="src/DnD/DnDCible.cpp" />
 		<Unit filename="src/DnD/DnDListeFichier.cpp" />
+		<Unit filename="src/Duree.cpp" />
 		<Unit filename="src/ElementThreadFichier.cpp" />
 		<Unit filename="src/FichierListe.cpp" />
 		<Unit filename="src/FichierLog.cpp" />

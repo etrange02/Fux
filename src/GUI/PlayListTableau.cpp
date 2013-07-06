@@ -357,7 +357,7 @@ void ListeLecture::supprimerNomLigne(ChansonNomPos titre)
     while (i < GetItemCount())
     {
         extrait = GetItemText(i);
-        if (titre.Nom.EndsWith(extrait) && (i == titre.Pos || titre.Pos == -1 || m_modeRecherche))
+        if (titre.GetNom().EndsWith(extrait) && (i == titre.GetPos() || titre.GetPos() == -1 || m_modeRecherche))
         {
             DeleteItem(i);
             for (size_t k = 0; k < m_ocurrenceLigne.GetCount(); k++)
@@ -380,7 +380,7 @@ void ListeLecture::ChangementChanson(ChansonNomPos titre)
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("ListeLecture::ChangementChanson(ChansonNomPos)"));
     #endif
-    if (titre.Pos == -1 && (GetItemCount() == 0 || titre.Nom.IsEmpty()))
+    if (titre.GetPos() == -1 && (GetItemCount() == 0 || titre.GetNom().IsEmpty()))
         return;
     if (m_ocurrenceLigne.GetCount())
     {
@@ -396,10 +396,10 @@ void ListeLecture::ChangementChanson(ChansonNomPos titre)
 
     for (int i = 0; i < max; i++)
     {
-        if (titre.Nom == GetItemText(i))
+        if (titre.GetNom() == GetItemText(i))
         {
             m_ocurrenceLigne.Add(i);
-            if (titre.Pos == i && !m_modeRecherche)//La couleur orange perd son sens lorsqu'il y a une recherche locale
+            if (titre.GetPos() == i && !m_modeRecherche)//La couleur orange perd son sens lorsqu'il y a une recherche locale
             {
                 SetItemTextColour(i, wxColor(247, 236, 50));
                 SetItemBackgroundColour(i, wxColor(243, 124, 45));

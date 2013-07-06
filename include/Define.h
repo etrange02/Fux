@@ -287,15 +287,4 @@ enum e_BDDRequete
     BDD_GET = 100
 };
 
-/**
- * @struct ChansonNomPos
- * @brief Structure contenant le nom et la position de la chanson dans le fichier musique.liste
- */
-struct ChansonNomPos
-{
-    wxString Nom;
-    int Pos;
-};
-
-
 #endif // DEFINE_H_INCLUDED

@@ -540,7 +540,7 @@ wxString Musique::GetArtiste()
 ChansonNomPos Musique::GetNomPos()
 {
     m_positionListe = FichierListe::Get()->GetPositionListe(m_cheminComplet, m_positionListe);//FichierListe::Get().GetPositionListe(m_cheminComplet, m_positionListe));
-    ChansonNomPos titre = {m_nomChanson, m_positionListe};
+    ChansonNomPos titre(m_nomChanson, m_positionListe);
     return titre;
 }
 
@@ -551,8 +551,8 @@ ChansonNomPos Musique::GetNomPos()
 ChansonNomPos Musique::SupprimerNom()
 {
     if(FichierListe::Get()->GetNombreFichier() == 0)
-        return {wxEmptyString, -1};
-    ChansonNomPos Asuppr = {m_cheminComplet, m_positionListe};
+        return ChansonNomPos();
+    ChansonNomPos Asuppr(m_cheminComplet, m_positionListe);
 
     if(FichierListe::Get()->GetNombreFichier() > 1)
         ChangementChanson(SUIVANT);
@@ -570,9 +570,9 @@ ChansonNomPos Musique::SupprimerNom()
  */
 void Musique::SupprimerNom(int position)//wxString chaine)
 {
-    ChansonNomPos titre = {FichierListe::Get()->GetNomPosition(position), position};
+    ChansonNomPos titre(FichierListe::Get()->GetNomPosition(position), position);
 
-    if (m_cheminComplet.IsSameAs(titre.Nom) && titre.Nom.Length() != 0 && titre.Pos == m_positionListe)//titre actuellement en cours de lecture
+    if (m_cheminComplet.IsSameAs(titre.GetNom()) && titre.GetNom().Length() != 0 && titre.GetPos() == m_positionListe)//titre actuellement en cours de lecture
     {
         if(FichierListe::Get()->GetNombreFichier() > 1)
             ChangementChanson(SUIVANT);
@@ -581,16 +581,16 @@ void Musique::SupprimerNom(int position)//wxString chaine)
         FichierListe::Get()->EffacerNom(titre);
         m_positionListe--;
         #if DEBUG
-        FichierLog::Get()->Ajouter(_T("Musique::SupprimerNom - (titre actuel) ") + wxString::Format(_T("%d"), titre.Pos) + _T(" - ") + titre.Nom);
+        FichierLog::Get()->Ajouter(_T("Musique::SupprimerNom - (titre actuel) ") + wxString::Format(_T("%d"), titre.GetPos()) + _T(" - ") + titre.GetNom());
         #endif
     }
     else
     {
         FichierListe::Get()->EffacerNom(titre);
-        if (m_positionListe > titre.Pos)
+        if (m_positionListe > titre.GetPos())
             m_positionListe--;
         #if DEBUG
-        FichierLog::Get()->Ajouter(_T("Musique::SupprimerNom - ") + wxString::Format(_T("%d"), titre.Pos) + _T(" - ") + titre.Nom);
+        FichierLog::Get()->Ajouter(_T("Musique::SupprimerNom - ") + wxString::Format(_T("%d"), titre.GetPos()) + _T(" - ") + titre.GetNom());
         #endif
     }
 }
