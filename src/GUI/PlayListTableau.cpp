@@ -922,6 +922,7 @@ void ListeLecture::RecherchePrecise(wxString chaine)
             wxApp::GetInstance()->Yield(false);
     }
     wxApp::GetInstance()->Yield(false);
+    ChangementChanson(Musique::Get()->GetNomPos());
 }
 
 void ListeLecture::StopRecherche()
