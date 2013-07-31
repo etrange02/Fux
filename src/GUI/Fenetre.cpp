@@ -206,8 +206,8 @@ void FuXFenetre::CreerPages()
     m_pageCouleur = new PrefCouleur;
     m_pageCouleur->Creer(NotebookPreference, -1);
 
-    m_pageSon = new PrefSon;
-    m_pageSon->Creer(NotebookPreference, -1);
+    m_pageSon = new PreferenceSon(NotebookPreference, -1);
+    //m_pageSon->Creer(NotebookPreference, -1);
 
     m_pageDefaut = new PrefDefaut;
     m_pageDefaut->Creer(NotebookPreference, -1);
@@ -268,10 +268,10 @@ void FuXFenetre::CreerPages()
         m_panelsAssocies[i] = true;
 
     sizerDroitPrincipal->SetMinSize(512, 292);
-    sizerDroitPreference->SetMinSize(512, 256);
-    sizerDroitExtracteur->SetMinSize(512, 256);
-    sizerDroitPlayist->SetMinSize(512, 256);
-    sizerDroitIPod->SetMinSize(512, 256);
+    sizerDroitPreference->SetMinSize(512, 292);
+    sizerDroitExtracteur->SetMinSize(512, 292);
+    sizerDroitPlayist->SetMinSize(512, 292);
+    sizerDroitIPod->SetMinSize(512, 292);
 
     sizerDroit->Hide(sizerDroitPreference);
     sizerDroit->Hide(sizerDroitExtracteur);
@@ -785,7 +785,7 @@ void FuXFenetre::ChangeFenetre()/////////////////
 void FuXFenetre::ModifSon(wxScrollEvent &WXUNUSED(event))
 {
     Musique::Get()->SetVolume(SliderSon::Get()->GetValue());
-    m_pageSon->SetValeurMusique(SliderSon::Get()->GetValue());
+    //m_pageSon->SetValeurMusique(SliderSon::Get()->GetValue());
     ChangeFenetre();
 }
 
@@ -881,7 +881,7 @@ void FuXFenetre::LecturePreference(bool lecture)
                 fichierS.GetLine(2).ToLong(&volume);
                 Musique::Get()->SetVolume(volume);
                 SliderSon::Get()->SetValue(volume);
-                m_pageSon->SetValeurMusique(volume);
+                //m_pageSon->SetValeurMusique(volume);
                 fichierS.Close();
             }
         }
@@ -956,8 +956,8 @@ void FuXFenetre::AffichSonNouv(wxCommandEvent &WXUNUSED(event))
     m_nouvelleFenetre = PREFERENCE;
     ChangeFenetre();
     NotebookPreference->ChangeSelection(1);
-    m_pageSon->GetRadioBox()->SetSelection(0);
-    m_pageSon->Son_Modif_Nouveau(0);
+    //m_pageSon->GetRadioBox()->SetSelection(0);
+    //m_pageSon->Son_Modif_Nouveau(0);
 }
 
 
@@ -969,8 +969,8 @@ void FuXFenetre::AffichSonMod(wxCommandEvent &WXUNUSED(event))
     m_nouvelleFenetre = PREFERENCE;
     ChangeFenetre();
     NotebookPreference->ChangeSelection(1);
-    m_pageSon->GetRadioBox()->SetSelection(1);
-    m_pageSon->Son_Modif_Nouveau(1);
+    //m_pageSon->GetRadioBox()->SetSelection(1);
+    //m_pageSon->Son_Modif_Nouveau(1);
 }
 
 /**
