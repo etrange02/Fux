@@ -35,11 +35,9 @@ BEGIN_EVENT_TABLE(FuXFenetre, wxFrame)
     EVT_MENU(ID_APP_BAR_A_PROPOS, FuXFenetre::MenuAbout)
     EVT_MENU(ID_APP_BAR_SITE_INTERNET, FuXFenetre::MenuSiteWeb)
     EVT_MENU(ID_APP_BAR_AIDE, FuXFenetre::MenuAide)
-    EVT_MENU(ID_APP_BAR_COULEUR_NOUVEL_ENSEMBLE, FuXFenetre::AffichCouleurNouv)
-    EVT_MENU(ID_APP_BAR_COULEUR_MODIFIER_APPLIQ_JEU, FuXFenetre::AffichCouleurMod)
-    EVT_MENU(ID_APP_BAR_SON_NOUVEL_ENSEMBLE, FuXFenetre::AffichSonNouv)
-    EVT_MENU(ID_APP_BAR_SON_MODIFIER_APPLIQ_JEU, FuXFenetre::AffichSonMod)
-    EVT_MENU(ID_APP_BAR_DEFAUT, FuXFenetre::AfficheDefaut)
+    EVT_MENU(ID_APP_BAR_COULEUR_PREFERENCE, FuXFenetre::AfficherPreferenceCouleur)
+    EVT_MENU(ID_APP_BAR_SON_PREFERENCE, FuXFenetre::AfficherPreferenceSon)
+    EVT_MENU(ID_APP_BAR_DEFAUT_PREFERENCE, FuXFenetre::AfficheDefaut)
     EVT_BUTTON(ID_APP_AFF_BOUTON_PRECEDENT, FuXFenetre::Precedent)//////////////////////
     EVT_BUTTON(ID_APP_AFF_BOUTON_SUIVANT, FuXFenetre::Suivant)//////////////////////
     EVT_BUTTON(ID_APP_AFF_BOUTON_SUPPRIMER, FuXFenetre::SupprimerListe)//////////////////////
@@ -203,8 +201,8 @@ void FuXFenetre::CreerPages()
     sizerDroitPreference = new wxBoxSizer(wxVERTICAL);
     NotebookPreference = new wxNotebook(this, -1);
 
-    m_pageCouleur = new PrefCouleur;
-    m_pageCouleur->Creer(NotebookPreference, -1);
+    m_pageCouleur = new PreferenceCouleur(NotebookPreference, -1);
+    //m_pageCouleur->Creer(NotebookPreference, -1);
 
     m_pageSon = new PreferenceSon(NotebookPreference, -1);
     //m_pageSon->Creer(NotebookPreference, -1);
@@ -263,9 +261,9 @@ void FuXFenetre::CreerPages()
     sizerDroit->Add(sizerDroitPlayist, 1, wxALL | wxEXPAND, 0);
     sizerDroit->Add(sizerDroitIPod, 1, wxALL | wxEXPAND, 0);
 
-    m_panelsAssocies = new bool[5];//{true, true, true, true, true};
-    for (int i = 0; i < 5 ; i++)
-        m_panelsAssocies[i] = true;
+    m_panelsAssocies = new bool[5];// {true, true, true, true, true};
+    for (int i = 0; i < 5 ; i++){m_panelsAssocies[i] = true;}
+
 
     sizerDroitPrincipal->SetMinSize(512, 292);
     sizerDroitPreference->SetMinSize(512, 292);
@@ -303,15 +301,9 @@ void FuXFenetre::ConstructionBarre()
     menuFichier->Append(ID_APP_BAR_QUITTER, _("Quitter Fu(X)\tCtrl-Q"));//"));//
 
     menuPreferences = new wxMenu;
-    menuCouleur = new wxMenu;
-    menuCouleur->Append(ID_APP_BAR_COULEUR_NOUVEL_ENSEMBLE, _("Nouveau jeu de couleur"));
-    menuCouleur->Append(ID_APP_BAR_COULEUR_MODIFIER_APPLIQ_JEU, _("Modifier/Appliquer un jeu de couleur existant"));
-    menuSon = new wxMenu;
-    menuSon->Append(ID_APP_BAR_SON_NOUVEL_ENSEMBLE, _("Nouvel ensemble audio"));
-    menuSon->Append(ID_APP_BAR_SON_MODIFIER_APPLIQ_JEU, _("Modifier/Appliquer une présélection audio"));
-    menuPreferences->AppendSubMenu(menuCouleur, _("Couleur"));
-    menuPreferences->AppendSubMenu(menuSon, _("Son"));
-    menuPreferences->Append(ID_APP_BAR_DEFAUT, _("Défaut"));
+    menuPreferences->Append(ID_APP_BAR_COULEUR_PREFERENCE, _("Couleur"));
+    menuPreferences->Append(ID_APP_BAR_SON_PREFERENCE, _("Son"));
+    menuPreferences->Append(ID_APP_BAR_DEFAUT_PREFERENCE, _("Défaut"));
 
     menuExtraction = new wxMenu;
     menuExtraction->Append(ID_APP_BAR_EXTRACTION, _("Extration de CD"));
@@ -867,7 +859,7 @@ void FuXFenetre::LecturePreference(bool lecture)
     {
         ///////Couleur
         if (!fichierPref.GetLine(1).IsSameAs(_T("Couleur= NON")))
-            m_pageCouleur->Couleur_OuvrirFichier(fichierPref.GetLine(1).AfterFirst(' '), false);
+            //m_pageCouleur->Couleur_OuvrirFichier(fichierPref.GetLine(1).AfterFirst(' '), false);
 
         ///////Son
         if (!fichierPref.GetLine(2).IsSameAs(_T("Son= NON")))
@@ -923,54 +915,24 @@ void FuXFenetre::LecturePreference(bool lecture)
 }
 
 /**
- * Bascule sur la page des Préférences, onglet Couleur, choix sur nouveau
+ * Bascule sur la page des Préférences, onglet Couleur
  */
-void FuXFenetre::AffichCouleurNouv(wxCommandEvent &WXUNUSED(event))
+void FuXFenetre::AfficherPreferenceCouleur(wxCommandEvent &WXUNUSED(event))
 {
     m_nouvelleFenetre = PREFERENCE;
     ChangeFenetre();
     NotebookPreference->ChangeSelection(0);
-    m_pageCouleur->GetRadioBox()->SetSelection(0);
-    m_pageCouleur->Couleur_Modif_Nouveau(0);
 }
 
 
 /**
- * Bascule sur la page des Préférences, onglet Couleur, choix sur modifier
+ * Bascule sur la page des Préférences, onglet Son
  */
-void FuXFenetre::AffichCouleurMod(wxCommandEvent &WXUNUSED(event))
-{
-    m_nouvelleFenetre = PREFERENCE;
-    ChangeFenetre();
-    NotebookPreference->ChangeSelection(0);
-    m_pageCouleur->GetRadioBox()->SetSelection(1);
-    m_pageCouleur->Couleur_Modif_Nouveau(1);
-}
-
-
-/**
- * Bascule sur la page des Préférences, onglet Son, choix sur nouveau
- */
-void FuXFenetre::AffichSonNouv(wxCommandEvent &WXUNUSED(event))
+void FuXFenetre::AfficherPreferenceSon(wxCommandEvent &WXUNUSED(event))
 {
     m_nouvelleFenetre = PREFERENCE;
     ChangeFenetre();
     NotebookPreference->ChangeSelection(1);
-    //m_pageSon->GetRadioBox()->SetSelection(0);
-    //m_pageSon->Son_Modif_Nouveau(0);
-}
-
-
-/**
- * Bascule sur la page des Préférences, onglet Son, choix sur modifier
- */
-void FuXFenetre::AffichSonMod(wxCommandEvent &WXUNUSED(event))
-{
-    m_nouvelleFenetre = PREFERENCE;
-    ChangeFenetre();
-    NotebookPreference->ChangeSelection(1);
-    //m_pageSon->GetRadioBox()->SetSelection(1);
-    //m_pageSon->Son_Modif_Nouveau(1);
 }
 
 /**

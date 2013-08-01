@@ -12,6 +12,13 @@ class GenericTreePanel : public wxScrolledWindow
         virtual ~GenericTreePanel();
         virtual void Create(wxWindow *Parent, wxWindowID Id, wxWindowID IdTreeCtrl);
         virtual void MajListe(wxChoice *liste) = 0;
+        virtual void EvtTreeMenu(wxTreeEvent &event) = 0;
+        virtual void EvtTreeModifNomDebut(wxTreeEvent &event) = 0;
+        virtual void EvtTreeModifNomFin(wxTreeEvent &event) = 0;
+        virtual void EvtTreeVoirNoeud(wxTreeEvent &event) = 0;
+        virtual void EvtTreeAppliquerNoeud(wxTreeEvent &event) = 0;
+        virtual void EvtMenuSupprimer(wxCommandEvent &WXUNUSED(event)) = 0;
+        virtual void EvtMenuRenommer(wxCommandEvent &WXUNUSED(event)) = 0;
 
     protected:
         wxTreeCtrl *m_treeFiles;

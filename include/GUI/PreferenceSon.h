@@ -38,9 +38,6 @@ class PreferenceSon : public GenericTreePanel
         wxSpinCtrl *m_spinVolume, *m_spinVolumePC;
         wxTextCtrl *m_textNomSet, *m_textVolumeCurr, *m_textVolumePCCurr;
         wxMenu *m_menu;
-        /*wxChoice *m_listeModif;
-        wxRadioBox *m_choix;
-        int m_listeModif_Nouveau;*/
 
     DECLARE_EVENT_TABLE()
 };

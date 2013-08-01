@@ -29,6 +29,8 @@ END_EVENT_TABLE()
 
 /**
  * Constructeur
+ * @param Parent la fenêtre parente
+ * @param Id l'identifiant de la fenêtre
  */
 PreferenceSon::PreferenceSon(wxWindow *Parent, wxWindowID Id): GenericTreePanel(Parent, Id, ID_APP_PREF_SON_TREE)
 {
@@ -93,19 +95,10 @@ void PreferenceSon::RemplirTree()
         wxDir Repertoire(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son")));
         bool continuer = Repertoire.GetFirst(&copie, _T("*.sauve"), wxDIR_FILES);
 
-        //wxTreeItemId noeudCourant = m_treeFiles->GetFirstChild(m_nodeExistant);
         while (continuer)
         {
-            /*if (m_treeFiles->GetItemText(noeudCourant).IsSameAs(copie))
-            {
-                noeudCourant = m_treeFiles->GetNextSibling(noeudCourant);
-                continuer = Repertoire.GetNext(&copie);
-            }
-            else*/
-            {
-                m_treeFiles->AppendItem(m_nodeExistant, copie);
-                continuer = Repertoire.GetNext(&copie);
-            }
+            m_treeFiles->AppendItem(m_nodeExistant, copie);
+            continuer = Repertoire.GetNext(&copie);
         }
     }
     m_treeFiles->ExpandAll();
@@ -252,7 +245,8 @@ void PreferenceSon::EvtTreeAppliquerNoeud(wxTreeEvent &event)
             {
                 if (ModifierFiltre(dlg->GetValue() + _T(".sauve"), m_textVolumeCurr->GetValue(), m_textVolumePCCurr->GetValue()))
                 {
-                    m_treeFiles->AppendItem(m_nodeExistant, dlg->GetValue() + _T(".sauve"));
+                    wxTreeItemId item = m_treeFiles->AppendItem(m_nodeExistant, dlg->GetValue() + _T(".sauve"));
+                    m_treeFiles->SelectItem(item);
                     m_treeFiles->SortChildren(m_nodeExistant);
                 }
                 else
@@ -271,11 +265,11 @@ void PreferenceSon::EvtMenuSupprimer(wxCommandEvent &WXUNUSED(event))
     if (!wxRemoveFile(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), m_treeFiles->GetItemText(m_treeFiles->GetSelection()))))
         return;
 
-    m_treeFiles->Delete(m_treeFiles->GetSelection());
-
     m_textNomSet->Clear();
     m_spinVolume->SetValue(0);
     m_spinVolumePC->SetValue(0);
+
+    m_treeFiles->Delete(m_treeFiles->GetSelection());
 }
 
 /**
@@ -294,7 +288,7 @@ void PreferenceSon::EvtTextNom(wxCommandEvent &WXUNUSED(event))
 {
     if (m_treeFiles->GetItemParent(m_treeFiles->GetSelection()) == m_nodeExistant)
     {
-        ModifierFiltre(m_textNomSet->GetValue(), m_spinVolume->GetValue(), m_spinVolumePC->GetValue(), Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), m_treeFiles->GetItemText(m_treeFiles->GetSelection())));
+        ModifierFiltre(m_textNomSet->GetValue(), m_spinVolume->GetValue(), m_spinVolumePC->GetValue(), m_treeFiles->GetItemText(m_treeFiles->GetSelection()));
         m_treeFiles->SetItemText(m_treeFiles->GetSelection(), m_textNomSet->GetValue());
     }
 
@@ -309,6 +303,8 @@ void PreferenceSon::EvtSpinVolume(wxSpinEvent &WXUNUSED(event))
 }
 
 /**
+ * Modification du volume de l'ordinateur
+ */
 void PreferenceSon::EvtSpinVolumePC(wxSpinEvent &WXUNUSED(event))
 {
     ModifierFiltre(m_textNomSet->GetValue(), m_spinVolumePC->GetValue(), m_spinVolumePC->GetValue());
@@ -335,8 +331,16 @@ void PreferenceSon::SetValeurMusique(long valeur)
  */
 bool PreferenceSon::ModifierFiltre(wxString nom, wxString vol, wxString volPC, wxString oldNom)
 {
-    wxTextFile fichier(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), _T(".temp")));
-    if (fichier.Create())
+    if (nom.IsEmpty())
+        return false;
+    if (oldNom.IsEmpty())
+    {
+        
+    }
+    else
+    {
+        wxTextFile fichier(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), _T(".temp")));
+    if (fichier.Create() || fichier.Open())
     {
         fichier.AddLine(_T("#EXTSAUVE_S1"));
         fichier.AddLine(nom);
@@ -351,6 +355,8 @@ bool PreferenceSon::ModifierFiltre(wxString nom, wxString vol, wxString volPC, w
             wxRemoveFile(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), oldNom));
         return wxRenameFile(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), _T(".temp")), Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), nom), true);
     }
+    }
+    
     return false;
 }
 

@@ -26,7 +26,8 @@ class PreferenceSon : public GenericTreePanel
         void EvtSpinVolume(wxSpinEvent &WXUNUSED(event));
         void EvtSpinVolumePC(wxSpinEvent &WXUNUSED(event));
         void SetValeurMusique(long valeur);
-        void Nou
+        bool ModifierFiltre(wxString nom, wxString vol, wxString volPC, wxString oldNom = wxEmptyString);
+        bool ModifierFiltre(wxString nom, int vol, int volPC, wxString oldNom = wxEmptyString);
 
     private:
         void Creer();
@@ -37,9 +38,6 @@ class PreferenceSon : public GenericTreePanel
         wxSpinCtrl *m_spinVolume, *m_spinVolumePC;
         wxTextCtrl *m_textNomSet, *m_textVolumeCurr, *m_textVolumePCCurr;
         wxMenu *m_menu;
-        /*wxChoice *m_listeModif;
-        wxRadioBox *m_choix;
-        int m_listeModif_Nouveau;*/
 
     DECLARE_EVENT_TABLE()
 };

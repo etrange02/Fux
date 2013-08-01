@@ -56,10 +56,8 @@ class FuXFenetre: public wxFrame
     void MenuAbout(wxCommandEvent &WXUNUSED(event));
     void MenuSiteWeb(wxCommandEvent &WXUNUSED(event));
     void MenuAide(wxCommandEvent &WXUNUSED(event));
-    void AffichCouleurNouv(wxCommandEvent &WXUNUSED(event));
-    void AffichCouleurMod(wxCommandEvent &WXUNUSED(event));
-    void AffichSonNouv(wxCommandEvent &WXUNUSED(event));
-    void AffichSonMod(wxCommandEvent &WXUNUSED(event));
+    void AfficherPreferenceCouleur(wxCommandEvent &WXUNUSED(event));
+    void AfficherPreferenceSon(wxCommandEvent &WXUNUSED(event));
     void EvtServeurAjout(wxCommandEvent&);
     void OnTitreChange(wxCommandEvent &WXUNUSED(event));
     void OnKeyDownRaccourci(wxKeyEvent&);
@@ -76,7 +74,7 @@ class FuXFenetre: public wxFrame
     wxBoxSizer *sizerPrincipalH, *sizerGaucheV, *sizerDroit, *sizerDroitPrincipal, *sizerDroitPreference, *sizerDroitExtracteur, *sizerDroitPlayist, *sizerDroitIPod;
 
     wxMenuBar *menuBarre;
-    wxMenu *menuFichier, *menuAffichage, *menuPreferences, *menuSon, *menuCouleur, *menuExtraction, *menuAide, *menuControle;
+    wxMenu *menuFichier, *menuAffichage, *menuPreferences, *menuExtraction, *menuAide, *menuControle;
     wxNotebook *NotebookPreference;
     wxBitmapButton *m_boutonImageLP;
     wxBitmap *m_imageBouton;
@@ -84,7 +82,7 @@ class FuXFenetre: public wxFrame
     MusiqueGraph *m_musiqueGraph;
     TimerGraph m_TimerGraph;
     PreferenceSon *m_pageSon;
-    PrefCouleur *m_pageCouleur;
+    PreferenceCouleur *m_pageCouleur;
     PrefDefaut *m_pageDefaut;
     PlayList *m_playList;
     bool *m_panelsAssocies;
