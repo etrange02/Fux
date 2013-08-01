@@ -1,8 +1,10 @@
 var class_parametre =
 [
     [ "Parametre", "class_parametre.html#a7f33063b2094bbfbc6be12e5c7abb3e0", null ],
+    [ "~Parametre", "class_parametre.html#ad199d7d9dfee5860baa43a8fcdf4a521", null ],
     [ "creerRepertoireParametre", "class_parametre.html#ada64bfc9bc451877ba8611f3faff27a9", null ],
     [ "creerRepertoireParametre", "class_parametre.html#a4ba62181e16c9b8b1fa4c01fe9b8ff5b", null ],
+    [ "Get", "class_parametre.html#afc0de0da7d04486d5ba6932562d96ed8", null ],
     [ "getCheminCouleur", "class_parametre.html#ae163f9a7dcff57df93ea835921003bf8", null ],
     [ "getCheminSon", "class_parametre.html#a0c6ac03ac47a22c2ea434e0ee48c8f6e", null ],
     [ "getExtensionValideMusique", "class_parametre.html#a92af71aeefcdc34893611906e118123f", null ],
@@ -22,5 +24,22 @@ var class_parametre =
     [ "setCheminSon", "class_parametre.html#aa3861add4f19dd9da00196195df3c0d1", null ],
     [ "setCouleurs", "class_parametre.html#a7e567bd7a74025f5ba9dcc6413e498ec", null ],
     [ "setRepertoireDefaut", "class_parametre.html#a6941cf06c034b914942bba72ca0624a4", null ],
-    [ "setSousDossier", "class_parametre.html#a407df5eef395bcb30d18010cf93ab660", null ]
+    [ "setSousDossier", "class_parametre.html#a407df5eef395bcb30d18010cf93ab660", null ],
+    [ "m_barre", "class_parametre.html#a703e72c138b01d37c6b45baeaef3fbbb", null ],
+    [ "m_bas", "class_parametre.html#a0bca709786504bf9d927b8261c5a38bf", null ],
+    [ "m_cheminCouleur", "class_parametre.html#a554671127b6634b6a1d847bc942e9779", null ],
+    [ "m_cheminRepertParam", "class_parametre.html#a5cfe36284e79fad802fd20344ae953ac", null ],
+    [ "m_cheminSon", "class_parametre.html#a3a0e74ed5c3010917e628ebd598ddc0e", null ],
+    [ "m_doubleBarre", "class_parametre.html#aca34f39d7d0168986a269291c4357d02", null ],
+    [ "m_extension", "class_parametre.html#a61a227088de6b8501bfe6dbf590753c6", null ],
+    [ "m_extensionValide", "class_parametre.html#a71dc470b44645f603bb50cf8d5969f92", null ],
+    [ "m_fond", "class_parametre.html#ad2749657f2d540ef0624d675c7d1c76a", null ],
+    [ "m_haut", "class_parametre.html#ab211905945e438dfd41c75d2dd7590fa", null ],
+    [ "m_id3v2", "class_parametre.html#accb1c4c5b7d330b5146db56530dc52b8", null ],
+    [ "m_miInf", "class_parametre.html#aa11eaaf97e2ccdee122a07da0ac50e65", null ],
+    [ "m_miSup", "class_parametre.html#a95ca1fc49cb184d8db2378111e3ea586", null ],
+    [ "m_paramInstallation", "class_parametre.html#a9833c96eff16f3b281bb208dc0218ef2", null ],
+    [ "m_police", "class_parametre.html#a6b3bebfee02f258456ab1c00deb59d45", null ],
+    [ "m_repertoireDefaut", "class_parametre.html#a60826cc25c72eb35e59d9d009daf6267", null ],
+    [ "m_sousDossier", "class_parametre.html#a9cbd0c46aeb6d0a1d44d2ecc6bdac7f6", null ]
 ];

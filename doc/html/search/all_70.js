@@ -10,5 +10,5 @@ var searchData=
   ['precedent',['Precedent',['../class_fu_x_fenetre.html#a473cf9a591f6af4a4750cd39682f3d51',1,'FuXFenetre']]],
   ['prefcouleur',['PrefCouleur',['../class_pref_couleur.html',1,'PrefCouleur'],['../class_pref_couleur.html#aa54dfc7c3e67a415cb2001d62c3dc954',1,'PrefCouleur::PrefCouleur()'],['../class_pref_couleur.html#a38307f7938820166a5a203476ea5336e',1,'PrefCouleur::PrefCouleur(wxWindow *Parent)']]],
   ['prefdefaut',['PrefDefaut',['../class_pref_defaut.html',1,'PrefDefaut'],['../class_pref_defaut.html#ab1ecf9898a3879d109eab3dd7a6a25b5',1,'PrefDefaut::PrefDefaut()']]],
-  ['prefson',['PrefSon',['../class_pref_son.html',1,'PrefSon'],['../class_pref_son.html#a04cac5d810c33bc464520b3d22cab172',1,'PrefSon::PrefSon()'],['../class_pref_son.html#ae7fac7d6359f69a50b22c1e4fb308ee1',1,'PrefSon::PrefSon(wxWindow *Parent)']]]
+  ['preferenceson',['PreferenceSon',['../class_preference_son.html',1,'']]]
 ];

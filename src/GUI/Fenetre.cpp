@@ -785,7 +785,7 @@ void FuXFenetre::ChangeFenetre()/////////////////
 void FuXFenetre::ModifSon(wxScrollEvent &WXUNUSED(event))
 {
     Musique::Get()->SetVolume(SliderSon::Get()->GetValue());
-    //m_pageSon->SetValeurMusique(SliderSon::Get()->GetValue());
+    m_pageSon->SetValeurMusique(SliderSon::Get()->GetValue());
     ChangeFenetre();
 }
 
@@ -881,7 +881,7 @@ void FuXFenetre::LecturePreference(bool lecture)
                 fichierS.GetLine(2).ToLong(&volume);
                 Musique::Get()->SetVolume(volume);
                 SliderSon::Get()->SetValue(volume);
-                //m_pageSon->SetValeurMusique(volume);
+                m_pageSon->SetValeurMusique(volume);
                 fichierS.Close();
             }
         }

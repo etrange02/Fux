@@ -1,3 +1,6 @@
 <map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
-<area shape="rect" id="node2" href="$class_image_pochette_musique.html" title="Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour chang..." alt="" coords="169,5,327,32"/>
+<area shape="rect" id="node2" href="$class_generic_tree_panel.html" title="Inteface générique pour les préférences." alt="" coords="184,5,309,32"/>
+<area shape="rect" id="node4" href="$class_pref_couleur.html" title="Interface de sélection des couleurs &#45; Passer les fichiers au format XML." alt="" coords="202,56,291,83"/>
+<area shape="rect" id="node5" href="$class_pref_defaut.html" title="Gère l&#39;application des filtres (couleur et sonore), et le comportement par défaut de l&#39;application..." alt="" coords="205,107,288,133"/>
+<area shape="rect" id="node3" href="$class_preference_son.html" title="Interface représentant différents volumes sonores &#45; Passer les fichiers au format XML Les fichiers so..." alt="" coords="357,5,464,32"/>
 </map>

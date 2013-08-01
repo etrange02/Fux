@@ -3,7 +3,7 @@
 
 /**
  * @struct Duree
- * @brief Structure représentant le temps en minute, seconde, et la totalité en seconde
+ * @brief Structure reprÃ©sentant le temps en minute, seconde, et la totalitÃ© en seconde
  */
 
 class Duree

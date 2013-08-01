@@ -5,12 +5,12 @@ var hierarchy =
     ] ],
     [ "BDD", "class_b_d_d.html", null ],
     [ "BDDRequete", "class_b_d_d_requete.html", null ],
-    [ "ChansonNomPos", "struct_chanson_nom_pos.html", null ],
+    [ "ChansonNomPos", "class_chanson_nom_pos.html", null ],
     [ "ComparaisonRequete", "class_comparaison_requete.html", null ],
-    [ "Couleur", "struct_couleur.html", null ],
+    [ "Couleur", "class_couleur.html", null ],
     [ "CouperCopierColler", "class_couper_copier_coller.html", null ],
     [ "DnDListeFichier", "class_dn_d_liste_fichier.html", null ],
-    [ "DUREE", "struct_d_u_r_e_e.html", null ],
+    [ "Duree", "class_duree.html", null ],
     [ "ElementLecteurRacineFichier", "class_element_lecteur_racine_fichier.html", null ],
     [ "ElementThreadFichier", "class_element_thread_fichier.html", null ],
     [ "FichierListe", "class_fichier_liste.html", null ],
@@ -71,9 +71,11 @@ var hierarchy =
       [ "PlayList", "class_play_list.html", null ]
     ] ],
     [ "wxScrolledWindow", null, [
+      [ "GenericTreePanel", "class_generic_tree_panel.html", [
+        [ "PreferenceSon", "class_preference_son.html", null ]
+      ] ],
       [ "PrefCouleur", "class_pref_couleur.html", null ],
-      [ "PrefDefaut", "class_pref_defaut.html", null ],
-      [ "PrefSon", "class_pref_son.html", null ]
+      [ "PrefDefaut", "class_pref_defaut.html", null ]
     ] ],
     [ "wxServer", null, [
       [ "TCPServeur", "class_t_c_p_serveur.html", null ]

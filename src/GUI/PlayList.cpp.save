@@ -26,10 +26,9 @@ BEGIN_EVENT_TABLE(PlayList, wxPanel)
     EVT_IMAGE_SELECTION(ID_PAGE_PLAYLIST_POCHETTE, PlayList::EvtImage)
     EVT_LISTE_DETAILS(ID_PAGE_PLAYLIST_LISTE, PlayList::FenetreDetails)
     EVT_MOUSE_EVENTS(PlayList::MouseEvents)
-    //EVT_SEARCHCTRL_SEARCH_BTN(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::RechercheListeLecture)
-    //EVT_SEARCHCTRL_CANCEL_BTN(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::)
     EVT_TEXT(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::RechercheListeLecture)
     EVT_TEXT_ENTER(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::RechercheListeLecture)
+    EVT_CHAR_HOOK()
 END_EVENT_TABLE()
 
 /**
@@ -597,4 +596,10 @@ void PlayList::RechercheListeLecture(wxCommandEvent &WXUNUSED(event))
         m_liste->RechercheElargie(m_champsRecherche->GetValue());
     }
 }
+
+void PlayList::OnKeyDown(wxKeyEvent &event)
+{
+    
+}
+
 

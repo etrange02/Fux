@@ -25,5 +25,6 @@ var searchData=
   ['dndcible',['DnDCible',['../class_dn_d_cible.html#ab2a639f7e15845eb5bc7eed889a4e31b',1,'DnDCible::DnDCible(wxListCtrl *)'],['../class_dn_d_cible.html#a5c8b56644ac623dcd05cd567b84e4f3a',1,'DnDCible::DnDCible(wxListCtrl *, wxWindow *)']]],
   ['dndlistefichier',['DnDListeFichier',['../class_dn_d_liste_fichier.html#ac0d119906763e6c8fb836cfa55541aef',1,'DnDListeFichier']]],
   ['dropfichierimagepochettemusique',['DropFichierImagePochetteMusique',['../class_drop_fichier_image_pochette_musique.html#ae0491ffe79cebeca35760536f578eb61',1,'DropFichierImagePochetteMusique']]],
+  ['duree',['Duree',['../class_duree.html#aa2a28a5a1412b9829178b9d4d0918571',1,'Duree']]],
   ['dureems',['DureeMS',['../class_musique.html#a6745d824f66c7423d38b2118083454f5',1,'Musique']]]
 ];

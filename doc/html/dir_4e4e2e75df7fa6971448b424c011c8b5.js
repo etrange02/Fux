@@ -4,6 +4,7 @@ var dir_4e4e2e75df7fa6971448b424c011c8b5 =
     [ "BoutonFenetreDetachable.cpp", null, null ],
     [ "Fenetre.cpp", null, null ],
     [ "FenetreDetachable.cpp", null, null ],
+    [ "GenericTreePanel.cpp", null, null ],
     [ "GestionPeriph.cpp", null, null ],
     [ "GestionPeriphCouperCopier.cpp", null, null ],
     [ "GestionPeriphElementLecteurRacineFichier.cpp", null, null ],

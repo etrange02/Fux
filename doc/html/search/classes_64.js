@@ -7,5 +7,5 @@ var searchData=
   ['dndcible',['DnDCible',['../class_dn_d_cible.html',1,'']]],
   ['dndlistefichier',['DnDListeFichier',['../class_dn_d_liste_fichier.html',1,'']]],
   ['dropfichierimagepochettemusique',['DropFichierImagePochetteMusique',['../class_drop_fichier_image_pochette_musique.html',1,'']]],
-  ['duree',['DUREE',['../struct_d_u_r_e_e.html',1,'']]]
+  ['duree',['Duree',['../class_duree.html',1,'']]]
 ];

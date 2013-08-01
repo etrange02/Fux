@@ -5,5 +5,5 @@ var searchData=
   ['playlist',['PlayList',['../class_play_list.html',1,'']]],
   ['prefcouleur',['PrefCouleur',['../class_pref_couleur.html',1,'']]],
   ['prefdefaut',['PrefDefaut',['../class_pref_defaut.html',1,'']]],
-  ['prefson',['PrefSon',['../class_pref_son.html',1,'']]]
+  ['preferenceson',['PreferenceSon',['../class_preference_son.html',1,'']]]
 ];

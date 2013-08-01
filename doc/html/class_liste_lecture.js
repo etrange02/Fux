@@ -1,6 +1,7 @@
 var class_liste_lecture =
 [
     [ "ListeLecture", "class_liste_lecture.html#acd9201b0a41cab0d1bb287deba85f885", null ],
+    [ "~ListeLecture", "class_liste_lecture.html#a9c7cc692a3f17d7fe745050a2eae2891", null ],
     [ "AfficheMenu", "class_liste_lecture.html#ad83d0481d2ac399b38be29afec4b5f13", null ],
     [ "ChangementChanson", "class_liste_lecture.html#a20af0e050843d7cdb68b9b626a35f33b", null ],
     [ "ChansonActive", "class_liste_lecture.html#a2dfb1366cf91c76146a9bcd3feab65ec", null ],
@@ -16,6 +17,19 @@ var class_liste_lecture =
     [ "menuSupprimer", "class_liste_lecture.html#a024d117bd87f2d7ee524ceac9dafae5b", null ],
     [ "MouseEvents", "class_liste_lecture.html#accb2e177d4409218c5163781ffcf9fa2", null ],
     [ "OnKey", "class_liste_lecture.html#a467a466b005da7c2c37d93208182401f", null ],
+    [ "RechercheElargie", "class_liste_lecture.html#af2aca9b099149522508a7174c0b6f100", null ],
+    [ "RecherchePrecise", "class_liste_lecture.html#abdfec554c318a8e4b0173319bcd493a2", null ],
+    [ "RechercheRunning", "class_liste_lecture.html#a10728cc07d16d5da55b16f6ab68e8a8b", null ],
+    [ "StopRecherche", "class_liste_lecture.html#aff775bba50013ac6837a0aef1c7b5edd", null ],
     [ "SuppressionLigne", "class_liste_lecture.html#a1ff1a4799b2ec38392ce83fbcbb61c36", null ],
-    [ "supprimerNomLigne", "class_liste_lecture.html#ab57184abf6dab50ad09e7e361bd43c4e", null ]
+    [ "supprimerNomLigne", "class_liste_lecture.html#ab57184abf6dab50ad09e7e361bd43c4e", null ],
+    [ "m_couper", "class_liste_lecture.html#a80762f0f3520a37b88bd3f50362a2bef", null ],
+    [ "m_menu", "class_liste_lecture.html#aa9265de85b5d40f58562d6ae1713117c", null ],
+    [ "m_modeRecherche", "class_liste_lecture.html#a13fda54a12030aa204600737bcf45963", null ],
+    [ "m_motRecherche", "class_liste_lecture.html#a0755ffbdc66e7d27213490fd3520de05", null ],
+    [ "m_ocurrenceLigne", "class_liste_lecture.html#aa7d7adb1de7d26a29d88ac496f4efe39", null ],
+    [ "m_positionChanson", "class_liste_lecture.html#acd71388ac40f352a30b9f021b3ed8bb9", null ],
+    [ "m_rechercheEnCours", "class_liste_lecture.html#a490852a107e7c716ae904525a61fbbed", null ],
+    [ "m_tableauCouper", "class_liste_lecture.html#a1415f05968cc9de4632b44414d3f3ccd", null ],
+    [ "m_yMenu", "class_liste_lecture.html#ae8210ddf674f6d9f0a3a3f51e6042187", null ]
 ];

@@ -4,6 +4,7 @@ var dir_f938830485ea5fc932d9051b851477f4 =
     [ "BoutonFenetreDetachable.h", null, null ],
     [ "Fenetre.h", null, null ],
     [ "FenetreDetachable.h", null, null ],
+    [ "GenericTreePanel.h", null, null ],
     [ "GestionPeriph.h", null, null ],
     [ "GestionPeriphCouperCopier.h", null, null ],
     [ "GestionPeriphElementLecteurRacineFichier.h", null, null ],

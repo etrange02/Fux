@@ -83,7 +83,7 @@ class FuXFenetre: public wxFrame
 
     MusiqueGraph *m_musiqueGraph;
     TimerGraph m_TimerGraph;
-    PrefSon *m_pageSon;
+    PreferenceSon *m_pageSon;
     PrefCouleur *m_pageCouleur;
     PrefDefaut *m_pageDefaut;
     PlayList *m_playList;
