@@ -351,6 +351,7 @@ void PreferenceCouleur::EvtTreeModifNomFin(wxTreeEvent &event)
             }
         }
     }
+    m_nomAvantModif.Clear();
 }
 
 /**
@@ -368,10 +369,12 @@ void PreferenceCouleur::EvtTreeVoirNoeud(wxTreeEvent &event)
             loaded = true;
         }
     }
-    if (!loaded && event.GetItem() == m_nodeExistant)
+    if (!loaded)
     {
-        m_textNomSet->Clear();
-        ValeursDefaut();
+        if (event.GetItem() == m_nodeExistant)
+            ValeursDefaut();
+        else if (event.GetItem() == m_nodeNouveau)
+            m_textNomSet->Clear();
     }
 }
 
@@ -455,7 +458,10 @@ void PreferenceCouleur::EvtTextNom(wxCommandEvent &WXUNUSED(event))
  * @see MAJ_Fond
  */
 void PreferenceCouleur::Couleur_MAJ_Fond(wxScrollEvent &WXUNUSED(event))
-{    MAJ_Fond();}
+{
+    MAJ_Fond();
+    ModifierFiltre(m_textNomSet->GetValue());
+}
 
 /**
  * Modifie les informations et la couleur du carré de visualisation "Arrière plan"
@@ -477,7 +483,6 @@ void PreferenceCouleur::MAJ_Fond()
     m_TextFond[VERT].SetLabel(es[1]);
     m_TextFond[BLEU].SetLabel(es[2]);
     AppliquerFiltreSelectionne();
-    ModifierFiltre(m_textNomSet->GetValue());
 }
 
 /**
@@ -485,7 +490,10 @@ void PreferenceCouleur::MAJ_Fond()
  * @see MAJ_Barre
  */
 void PreferenceCouleur::Couleur_MAJ_Barre(wxScrollEvent &WXUNUSED(event))
-{    MAJ_Barre();}
+{
+    MAJ_Barre();
+    ModifierFiltre(m_textNomSet->GetValue());
+}
 
 /**
  * Modifie les informations et la couleur du carré de visualisation "Barre de progression et texte"
@@ -518,7 +526,6 @@ void PreferenceCouleur::MAJ_Barre()
     m_TextPolice[BLEU].SetLabel(es[5]);
 
     AppliquerFiltreSelectionne();
-    ModifierFiltre(m_textNomSet->GetValue());
 }
 
 /**
@@ -526,7 +533,10 @@ void PreferenceCouleur::MAJ_Barre()
  * @see MAJ_GraphSup
  */
 void PreferenceCouleur::Couleur_MAJ_GraphSup(wxCommandEvent &WXUNUSED(event))
-{    MAJ_GraphSup();}
+{
+    MAJ_GraphSup();
+    ModifierFiltre(m_textNomSet->GetValue());
+}
 
 /**
  * Modifie la couleur du carré de visualisation "Partie supérieure du graphe"
@@ -549,7 +559,6 @@ void PreferenceCouleur::MAJ_GraphSup()
     m_apercuGraphHaut->SetBitmap(m_bitmap[HAUT_SUP]);
 
     AppliquerFiltreSelectionne();
-    ModifierFiltre(m_textNomSet->GetValue());
 }
 
 /**
@@ -557,7 +566,10 @@ void PreferenceCouleur::MAJ_GraphSup()
  * @see MAJ_GraphInf
  */
 void PreferenceCouleur::Couleur_MAJ_GraphInf(wxCommandEvent &WXUNUSED(event))
-{    MAJ_GraphInf();}
+{
+    MAJ_GraphInf();
+    ModifierFiltre(m_textNomSet->GetValue());
+}
 
 /**
  * Modifie la couleur du carré de visualisation "Partie inférieure du graphe"
@@ -580,7 +592,6 @@ void PreferenceCouleur::MAJ_GraphInf()
     m_apercuGraphBas->SetBitmap(m_bitmap[BAS_INF]);
 
     AppliquerFiltreSelectionne();
-    ModifierFiltre(m_textNomSet->GetValue());
 }
 
 /**
@@ -588,7 +599,10 @@ void PreferenceCouleur::MAJ_GraphInf()
  * @see MAJ_Symetrie
  */
 void PreferenceCouleur::Couleur_MAJ_Symetrie(wxCommandEvent &WXUNUSED(event))
-{    MAJ_Symetrie();}
+{
+    MAJ_Symetrie();
+    ModifierFiltre(m_textNomSet->GetValue());
+}
 
 /**
  * Modifie l'accès au bloc sur la partie inférieure du graphe
@@ -613,7 +627,6 @@ void PreferenceCouleur::MAJ_Symetrie()
     }
 
     AppliquerFiltreSelectionne();
-    ModifierFiltre(m_textNomSet->GetValue());
 }
 
 /**
@@ -637,6 +650,7 @@ void PreferenceCouleur::ValeursDefaut()
     MAJ_Fond();
     MAJ_GraphSup();
     MAJ_GraphInf();
+    MAJ_Symetrie();
 }
 
 /**

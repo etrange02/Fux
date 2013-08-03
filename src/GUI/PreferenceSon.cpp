@@ -268,7 +268,6 @@ void PreferenceSon::EvtTextNom(wxCommandEvent &WXUNUSED(event))
         ModifierFiltre(m_textNomSet->GetValue(), m_spinVolume->GetValue(), m_spinVolumePC->GetValue(), m_treeFiles->GetItemText(m_treeFiles->GetSelection()));
         m_treeFiles->SetItemText(m_treeFiles->GetSelection(), m_textNomSet->GetValue() + _T(".sauve"));
     }
-
 }
 
 /**
