@@ -316,7 +316,7 @@ void Musique::Listage(wxArrayString *chaine, bool maj)
  * @param chaine contient les positions des titres à déplacer
  * @param pos la ligne où doivent se retrouver les titres
  * @param maj si une mise à jour des tableaux est nécessaires
- * @param supprim doit valoir vrai
+ * @param supprime doit valoir vrai
  */
 void Musique::PlacerLigneInt(wxArrayString* chaine, long pos, bool maj, bool supprime)
 {
@@ -407,7 +407,7 @@ void Musique::TpsActuelMS()
 
 /**
  * Indique si l'on arrive à la fin du titre
- * @param vrai si fin du titre
+ * @return vrai si fin du titre
  */
 bool Musique::VerifTemps()
 {

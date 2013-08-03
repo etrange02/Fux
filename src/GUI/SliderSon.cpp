@@ -17,7 +17,6 @@ static SliderSon* s_instanceSliderSon = NULL;
 
 /**
  * Constructeur
- * @param parent Fenêtre parente (pour les évènements)
  */
 SliderSon::SliderSon()
 {}

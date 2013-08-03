@@ -3,8 +3,6 @@ var searchData=
   ['tcpclient',['TCPClient',['../class_t_c_p_client.html',1,'TCPClient'],['../class_t_c_p_client.html#ad37bba4f2ebcc899b9871656802dcbe9',1,'TCPClient::TCPClient()']]],
   ['tcpconnexionechangeinstancelocalhost',['TCPConnexionEchangeInstanceLocalHost',['../class_t_c_p_connexion_echange_instance_local_host.html',1,'TCPConnexionEchangeInstanceLocalHost'],['../class_t_c_p_connexion_echange_instance_local_host.html#a3d69ac2a6fae5e5d6a382df9d789b71d',1,'TCPConnexionEchangeInstanceLocalHost::TCPConnexionEchangeInstanceLocalHost()']]],
   ['tcpserveur',['TCPServeur',['../class_t_c_p_serveur.html',1,'TCPServeur'],['../class_t_c_p_serveur.html#a72138b6ea208d26bfdbcd1821c23aeb2',1,'TCPServeur::TCPServeur()']]],
-  ['tfinf_5fextraitstring',['TFInf_ExtraitString',['../class_pref_couleur.html#a8a395fb9138afbda1dcfc64237566aea',1,'PrefCouleur']]],
-  ['tfsup_5fextraitstring',['TFSup_ExtraitString',['../class_pref_couleur.html#a17e652d53d68f06db5d021071fbc245d',1,'PrefCouleur']]],
   ['threadfichierfichier',['ThreadFichierFichier',['../class_thread_fichier_fichier.html',1,'']]],
   ['timergraph',['TimerGraph',['../class_timer_graph.html',1,'TimerGraph'],['../class_timer_graph.html#ae5090319da87bdb776c6b4c2cf2724d0',1,'TimerGraph::TimerGraph()']]],
   ['titrechange',['TitreChange',['../class_musique_graph.html#a752be92e858170294d5e1d4c6b2b28cc',1,'MusiqueGraph']]],

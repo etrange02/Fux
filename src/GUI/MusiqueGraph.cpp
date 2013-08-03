@@ -369,8 +369,14 @@ void MusiqueGraph::PlacerChanson(wxMouseEvent &event)
 
 /**
  * Modifie les couleurs de la fenêtre
- * @param fond
- * @param barre
+ * @param fond la couleur de fond du graphe
+ * @param barre la couleur de la barre de progression du graphe
+ * @param police la couleur du texte sur la barre de progression
+ * @param haut la couleur de la partie haute du graphe
+ * @param miSup la couleur de la moitié supérieure du graphe
+ * @param doubleBarre
+ * @param miInf la couleur de la moitié inférieure du graphe
+ * @param bas la couleur de la partie basse du graphe
  */
 void MusiqueGraph::AffecteCouleurs(Couleur fond, Couleur barre, Couleur police, Couleur haut, Couleur miSup, bool doubleBarre, Couleur miInf, Couleur bas)
 {

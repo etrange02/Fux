@@ -469,7 +469,7 @@ bool FichierListe::PlacerLigneInt(wxArrayString *ligne, long position, bool supp
 /**
  * Place les chaines contenues dans le tableau ligne à la position pos
  * @param ligne un pointeur de tableau contenant du texte
- * @param pos
+ * @param pos la position où placer le contenu du tableau
  * @see FichierListe::PlacerLigneInt
  */
 void FichierListe::PlacerLigneString(wxArrayString *ligne, long pos)

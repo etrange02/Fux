@@ -30,6 +30,6 @@ var searchData=
   ['ouvrirdossierprec',['OuvrirDossierPrec',['../class_page_gestion_periph.html#a9204c60f46d71199ba14251a3afc7d8a',1,'PageGestionPeriph']]],
   ['ouvrirdossierprecedent',['OuvrirDossierPrecedent',['../class_page_gestion_periph.html#a238b3ca91cdb7e833e7f9b0a804640f6',1,'PageGestionPeriph']]],
   ['ouvrirdossiersuivant',['OuvrirDossierSuivant',['../class_page_gestion_periph.html#af38ea3d005a1efcca8372700cee94d1b',1,'PageGestionPeriph']]],
-  ['ouvrirfichier',['OuvrirFichier',['../class_pref_couleur.html#ae56a821f09bb1b1ef324b81716bc7597',1,'PrefCouleur']]],
+  ['ouvrirfiltre',['OuvrirFiltre',['../class_preference_couleur.html#a48229c2bb8321b902b910edd02b42010',1,'PreferenceCouleur']]],
   ['ouvrirm3u',['OuvrirM3U',['../class_fu_x_fenetre.html#ac93643e3e0fb4871024ab80d38baecd2',1,'FuXFenetre']]]
 ];

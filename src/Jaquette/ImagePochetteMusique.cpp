@@ -25,6 +25,7 @@ const wxEventType wxEVT_IMAGE_SELECTION = wxNewEventType();
  * @param Parent la fenêtre parente
  * @param id l'identifiant de l'instance
  * @param label un wxBitmap à modifier
+ * @param avertirParent si vrai, le parent est averti des modifications de l'image
  */
 ImagePochetteMusique::ImagePochetteMusique(wxWindow *Parent, wxWindowID id, wxBitmap label, bool avertirParent) : wxStaticBitmap(Parent, id, label)
 {

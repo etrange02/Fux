@@ -72,9 +72,9 @@ var hierarchy =
     ] ],
     [ "wxScrolledWindow", null, [
       [ "GenericTreePanel", "class_generic_tree_panel.html", [
+        [ "PreferenceCouleur", "class_preference_couleur.html", null ],
         [ "PreferenceSon", "class_preference_son.html", null ]
       ] ],
-      [ "PrefCouleur", "class_pref_couleur.html", null ],
       [ "PrefDefaut", "class_pref_defaut.html", null ]
     ] ],
     [ "wxServer", null, [
