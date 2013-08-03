@@ -89,10 +89,10 @@ void PreferenceSon::Creer()
  */
 void PreferenceSon::RemplirTree()
 {
-    if (wxDir::Exists(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"))))
+    if (wxDir::Exists(Parametre::Get()->getCheminSon()))
     {
         wxString copie;
-        wxDir Repertoire(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son")));
+        wxDir Repertoire(Parametre::Get()->getCheminSon());
         bool continuer = Repertoire.GetFirst(&copie, _T("*.sauve"), wxDIR_FILES);
 
         while (continuer)
@@ -110,10 +110,10 @@ void PreferenceSon::RemplirTree()
  */
 void PreferenceSon::MajListe(wxChoice *liste)
 {
-    if (wxDir::Exists(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"))) && liste != NULL)
+    if (wxDir::Exists(Parametre::Get()->getCheminSon()) && liste != NULL)
     {
         wxString copie;
-        wxDir Repertoire(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son")));
+        wxDir Repertoire(Parametre::Get()->getCheminSon());
         bool continuer = Repertoire.GetFirst(&copie, _T("*.sauve"), wxDIR_FILES);
 
         while (continuer)
@@ -147,6 +147,7 @@ void PreferenceSon::EvtTreeModifNomDebut(wxTreeEvent &event)
         m_treeFiles->EndEditLabel(event.GetItem(), true);
         m_treeFiles->SetFocus();
         m_treeFiles->SelectItem(event.GetItem());
+        m_nomAvantModif.Clear();
     }
 }
 
@@ -159,7 +160,7 @@ void PreferenceSon::EvtTreeModifNomFin(wxTreeEvent &event)
     if (!event.IsEditCancelled())
     {
         //renommer le fichier - event.GetLabel();
-        if (wxFileExists(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), event.GetLabel())))
+        if (wxFileExists(Parametre::Get()->getCheminSon(event.GetLabel())))
         {
             wxLogMessage(_T("Fichier Existant !"));
             m_treeFiles->EndEditLabel(event.GetItem(), true);
@@ -167,17 +168,11 @@ void PreferenceSon::EvtTreeModifNomFin(wxTreeEvent &event)
         }
         else
         {
-            wxTextFile ficOld(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), m_treeFiles->GetItemText(event.GetItem())));
-            if (ficOld.Exists() && ficOld.Open())
+            if (wxFileExists(Parametre::Get()->getCheminSon(m_treeFiles->GetItemText(event.GetItem()))))
             {
-                wxString volTemp, volPCTemp;
-                volTemp = ficOld.GetLine(2);
-                volPCTemp = ficOld.GetLine(3);
-                ficOld.Close();
-                ModifierFiltre(event.GetLabel(), volTemp, volPCTemp, m_treeFiles->GetItemText(event.GetItem()));
-
-                wxRemoveFile(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), m_treeFiles->GetItemText(event.GetItem())));
-                m_textNomSet->ChangeValue(event.GetLabel());
+                ModifierFiltre(event.GetLabel().BeforeLast('.'), m_spinVolume->GetValue(), m_spinVolumePC->GetValue(), m_treeFiles->GetItemText(event.GetItem()));
+                wxRemoveFile(Parametre::Get()->getCheminSon(m_treeFiles->GetItemText(event.GetItem())));
+                m_textNomSet->ChangeValue(event.GetLabel().BeforeLast('.'));
             }
         }
     }
@@ -189,20 +184,12 @@ void PreferenceSon::EvtTreeModifNomFin(wxTreeEvent &event)
  */
 void PreferenceSon::EvtTreeVoirNoeud(wxTreeEvent &event)
 {
-    wxTextFile fichier(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), m_treeFiles->GetItemText(event.GetItem())));
     bool loaded = false;
-    if (fichier.Exists())
+    if (wxFileExists(Parametre::Get()->getCheminSon(m_treeFiles->GetItemText(event.GetItem()))))
     {
-        fichier.Open();
-        if (fichier.IsOpened())
+        if (OuvrirFiltre(m_treeFiles->GetItemText(event.GetItem())))
         {
-            if (fichier.GetLine(0).IsSameAs(_T("#EXTSAUVE_S1")))
-            {
-                m_textNomSet->ChangeValue(fichier.GetLine(1));
-                m_spinVolume->SetValue(fichier.GetLine(2));
-                m_spinVolumePC->SetValue(fichier.GetLine(3));
-                loaded = true;
-            }
+            loaded = true;
         }
     }
     if (!loaded)
@@ -221,15 +208,7 @@ void PreferenceSon::EvtTreeAppliquerNoeud(wxTreeEvent &event)
 {
     if (!m_textNomSet->IsEmpty())
     {
-        wxString nom = m_textNomSet->GetValue(), volume, volumePC;
-        volume << m_spinVolume->GetValue();
-        volumePC << m_spinVolumePC->GetValue();
-
-        m_textVolumeCurr->ChangeValue(volume);
-        m_textVolumePCCurr->ChangeValue(volumePC);
-
-        Musique::Get()->SetVolume(m_spinVolume->GetValue());
-        SliderSon::Get()->SetValue(m_spinVolume->GetValue());
+        AppliquerFiltreSelectionne();
     }
     else if (event.GetItem() == m_nodeNouveau)
     {
@@ -237,13 +216,13 @@ void PreferenceSon::EvtTreeAppliquerNoeud(wxTreeEvent &event)
 
         if (dlg->ShowModal() == wxID_OK)
         {
-            if (wxFileExists(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), dlg->GetValue() + _T(".sauve"))))
+            if (wxFileExists(Parametre::Get()->getCheminSon(dlg->GetValue() + _T(".sauve"))))
             {
                 wxLogMessage(_("Fichier Existant !"));
             }
             else
             {
-                if (ModifierFiltre(dlg->GetValue() + _T(".sauve"), m_textVolumeCurr->GetValue(), m_textVolumePCCurr->GetValue()))
+                if (ModifierFiltre(dlg->GetValue(), m_textVolumeCurr->GetValue(), m_textVolumePCCurr->GetValue()))
                 {
                     wxTreeItemId item = m_treeFiles->AppendItem(m_nodeExistant, dlg->GetValue() + _T(".sauve"));
                     m_treeFiles->SelectItem(item);
@@ -258,11 +237,10 @@ void PreferenceSon::EvtTreeAppliquerNoeud(wxTreeEvent &event)
 
 /**
  * Efface le nœud (et le fichier correspondant)
- * @param event un évènement
  */
 void PreferenceSon::EvtMenuSupprimer(wxCommandEvent &WXUNUSED(event))
 {
-    if (!wxRemoveFile(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), m_treeFiles->GetItemText(m_treeFiles->GetSelection()))))
+    if (!wxRemoveFile(Parametre::Get()->getCheminSon(m_treeFiles->GetItemText(m_treeFiles->GetSelection()))))
         return;
 
     m_textNomSet->Clear();
@@ -274,7 +252,6 @@ void PreferenceSon::EvtMenuSupprimer(wxCommandEvent &WXUNUSED(event))
 
 /**
  * Renommage d'un nœud (et de son fichier correspondant)
- * @param event un évènement
  */
 void PreferenceSon::EvtMenuRenommer(wxCommandEvent &WXUNUSED(event))
 {
@@ -289,7 +266,7 @@ void PreferenceSon::EvtTextNom(wxCommandEvent &WXUNUSED(event))
     if (m_treeFiles->GetItemParent(m_treeFiles->GetSelection()) == m_nodeExistant)
     {
         ModifierFiltre(m_textNomSet->GetValue(), m_spinVolume->GetValue(), m_spinVolumePC->GetValue(), m_treeFiles->GetItemText(m_treeFiles->GetSelection()));
-        m_treeFiles->SetItemText(m_treeFiles->GetSelection(), m_textNomSet->GetValue());
+        m_treeFiles->SetItemText(m_treeFiles->GetSelection(), m_textNomSet->GetValue() + _T(".sauve"));
     }
 
 }
@@ -335,9 +312,10 @@ bool PreferenceSon::ModifierFiltre(wxString nom, wxString vol, wxString volPC, w
         return false;
     if (oldNom.IsEmpty())
     {
-        wxTextFile fichier(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), nom));
+        wxTextFile fichier(Parametre::Get()->getCheminSon(nom + _T(".sauve")));
         if (fichier.Create() || fichier.Open())
         {
+            fichier.Clear();
             fichier.AddLine(_T("#EXTSAUVE_S1"));
             fichier.AddLine(nom);
             fichier.AddLine(vol);
@@ -351,7 +329,7 @@ bool PreferenceSon::ModifierFiltre(wxString nom, wxString vol, wxString volPC, w
     }
     else
     {
-        wxTextFile fichier(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), nom));
+        wxTextFile fichier(Parametre::Get()->getCheminSon(nom + _T(".sauve")));
         if (fichier.Create()/* || fichier.Open()*/)
         {
             fichier.AddLine(_T("#EXTSAUVE_S1"));
@@ -363,7 +341,7 @@ bool PreferenceSon::ModifierFiltre(wxString nom, wxString vol, wxString volPC, w
             fichier.Write();
             fichier.Close();
 
-            return wxRemoveFile(Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), oldNom));
+            return wxRemoveFile(Parametre::Get()->getCheminSon(oldNom));
         }
     }
     return false;
@@ -384,5 +362,59 @@ bool PreferenceSon::ModifierFiltre(wxString nom, int vol, int volPC, wxString ol
     volumePC << volPC;
     return ModifierFiltre(nom, volume, volumePC, oldNom);
 }
+
+/**
+ * Lit le contenu d'un fichier(filtre) et modifie le volume sonore
+ * @param nom le nom du filtre à lire
+ * @param evenement si vrai, les paramètres sont juste visualisés, si faux les paramètres sont appliqués au graphe
+ * @return vrai si réussite
+ */
+bool PreferenceSon::OuvrirFiltre(wxString filtre)
+{
+    wxTextFile fichier(Parametre::Get()->getCheminCouleur(filtre));
+    if (fichier.Open())
+    {
+        if (fichier.GetLine(0).IsSameAs(_T("#EXTSAUVE_S1")))
+        {
+            /*wxString nom = fichier.GetLine(1);
+            wxString volume = fichier.GetLine(1);
+            wxString volumePC = fichier.GetLine(2);
+            fichier.Close();
+
+            m_textNomSet->ChangeValue(nom);
+            m_spinVolume->SetValue(volume);
+            m_spinVolumePC->SetValue(volumePC);*/
+            m_textNomSet->ChangeValue(fichier.GetLine(1));
+            m_spinVolume->SetValue(fichier.GetLine(2));
+            m_spinVolumePC->SetValue(fichier.GetLine(3));
+            fichier.Close();
+            return true;
+        }
+        else
+            fichier.Close();
+    }
+    return false;
+}
+
+/**
+ * Applique les valeurs du filtre audio sélectionné
+ */
+void PreferenceSon::AppliquerFiltreSelectionne()
+{
+    wxString volume, volumePC;
+    volume << m_spinVolume->GetValue();
+    volumePC << m_spinVolumePC->GetValue();
+
+    m_textVolumeCurr->ChangeValue(volume);
+    m_textVolumePCCurr->ChangeValue(volumePC);
+
+    Musique::Get()->SetVolume(m_spinVolume->GetValue());
+    SliderSon::Get()->SetValue(m_spinVolume->GetValue());
+}
+
+
+
+
+
 
 

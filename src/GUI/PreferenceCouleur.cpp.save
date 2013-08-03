@@ -368,7 +368,7 @@ void PreferenceCouleur::EvtTreeVoirNoeud(wxTreeEvent &event)
             loaded = true;
         }
     }
-    if (!loaded && event.GetItem() == m_nodeExistant)
+    if (!loaded)
     {
         m_textNomSet->Clear();
         ValeursDefaut();
@@ -412,6 +412,7 @@ void PreferenceCouleur::EvtTreeAppliquerNoeud(wxTreeEvent &event)
 
 /**
  * Efface le nœud (et le fichier correspondant)
+ * @param event un évènement
  */
 void PreferenceCouleur::EvtMenuSupprimer(wxCommandEvent &WXUNUSED(event))
 {
@@ -425,6 +426,7 @@ void PreferenceCouleur::EvtMenuSupprimer(wxCommandEvent &WXUNUSED(event))
 
 /**
  * Renommage d'un nœud (et de son fichier correspondant)
+ * @param event un évènement
  */
 void PreferenceCouleur::EvtMenuRenommer(wxCommandEvent &WXUNUSED(event))
 {
@@ -441,12 +443,11 @@ void PreferenceCouleur::EvtTextNom(wxCommandEvent &WXUNUSED(event))
         ModifierFiltre(m_textNomSet->GetValue(), m_treeFiles->GetItemText(m_treeFiles->GetSelection()));
         m_treeFiles->SetItemText(m_treeFiles->GetSelection(), m_textNomSet->GetValue() + _T(".sauve"));
     }
-    else if (!m_textNomSet->IsEmpty())
+    else
     {
         ModifierFiltre(m_textNomSet->GetValue());
-        wxTreeItemId item = m_treeFiles->AppendItem(m_nodeExistant, m_textNomSet->GetValue() + _T(".sauve"));
-        m_treeFiles->SelectItem(item);
-        m_treeFiles->SortChildren(m_nodeExistant);
+        m_treeFiles
+        m_treeFiles->SetItemText(m_treeFiles->GetSelection(), m_textNomSet->GetValue() + _T(".sauve"));
     }
 }
 
@@ -728,7 +729,7 @@ bool PreferenceCouleur::ModifierFiltre(wxString nom, wxString oldNom)
 
 /**
  * Lit le contenu d'un fichier(filtre) et modifie le graphe ou la fenêtre de visualisation
- * @param filtre le nom du filtre à lire
+ * @param nom le nom du filtre à lire
  * @param evenement si vrai, les paramètres sont juste visualisés, si faux les paramètres sont appliqués au graphe
  * @return vrai si réussite
  */

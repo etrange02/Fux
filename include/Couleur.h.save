@@ -1,22 +1,19 @@
 #ifndef COULEUR_H
 #define COULEUR_H
 
-#include <wx/wx.h>
+#include 
+
 
 class Couleur
 {
     public:
-        Couleur(unsigned int red = 0, unsigned int green = 0, unsigned int blue = 0, bool boolValue = false);
-        Couleur(wxString chaine, bool boolValue);
+        Couleur(unsigned int red = 0, unsigned int green = 0, unsigned int blue = 0);
         virtual ~Couleur();
         unsigned int GetRed();
-        bool GetBoolRed();
         void SetRed(unsigned int val);
         unsigned int GetBlue();
-        bool GetBoolBlue();
         void SetBlue(unsigned int val);
         unsigned int GetGreen();
-        bool GetBoolGreen();
         void SetGreen(unsigned int val);
         void SetRGB(unsigned int red, unsigned int green, unsigned int blue);
         void SetBoolRGB(bool red, bool green, bool blue);

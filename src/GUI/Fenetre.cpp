@@ -859,7 +859,7 @@ void FuXFenetre::LecturePreference(bool lecture)
     {
         ///////Couleur
         if (!fichierPref.GetLine(1).IsSameAs(_T("Couleur= NON")))
-            //m_pageCouleur->Couleur_OuvrirFichier(fichierPref.GetLine(1).AfterFirst(' '), false);
+            m_pageCouleur->OuvrirFiltre(fichierPref.GetLine(1).AfterFirst(' '), false);
 
         ///////Son
         if (!fichierPref.GetLine(2).IsSameAs(_T("Son= NON")))

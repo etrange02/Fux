@@ -15,7 +15,9 @@ class Parametre
     public:
         static Parametre* Get();
 
+        wxString getCheminCouleur(wxString nom);
         wxString getCheminCouleur();
+        wxString getCheminSon(wxString nom);
         wxString getCheminSon();
         bool getSousDossier();
         wxString getExtensionValideMusique();

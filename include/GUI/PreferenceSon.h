@@ -32,6 +32,8 @@ class PreferenceSon : public GenericTreePanel
     private:
         void Creer();
         void RemplirTree();
+        bool OuvrirFiltre(wxString filtre);
+        void AppliquerFiltreSelectionne();
 
     protected:
         wxSizer *m_sizerNewSet, *m_sizerCurrentSet, *m_gridSizerNew, *m_gridSizerCurr;
