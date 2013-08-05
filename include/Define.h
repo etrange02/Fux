@@ -241,6 +241,11 @@
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
     (wxObject *) NULL ),
 
+#define EVT_PREFERENCE_MAJ_LISTE(id, fn) \
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_PREFERENCE_MAJ_LISTE, id, wxID_ANY, \
+    (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
+    (wxObject *) NULL ),
+
 /* #define EVT_BDDTHREAD_RESULTAT(id, fn) \
     DECLARE_EVENT_TABLE_ENTRY( wxEVT_BDDTHREAD_RESULTAT, id, wxID_ANY, \
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxBDDResultatEventFunction, &fn ), \

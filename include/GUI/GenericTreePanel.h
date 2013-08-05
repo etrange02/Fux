@@ -5,6 +5,9 @@
 #include <wx/treectrl.h>
 #include "../Define.h"
 
+WX_DEFINE_ARRAY(wxPanel*, ArrayOfwxPanel);
+extern const wxEventType wxEVT_PREFERENCE_MAJ_LISTE;
+
 class GenericTreePanel : public wxScrolledWindow
 {
     public:
@@ -12,6 +15,8 @@ class GenericTreePanel : public wxScrolledWindow
         virtual ~GenericTreePanel();
         virtual void Create(wxWindow *Parent, wxWindowID Id, wxWindowID IdTreeCtrl);
         virtual void MajListe(wxChoice *liste) = 0;
+        virtual void AddListener(wxPanel *panel);
+        virtual void CallListeners();
         virtual void EvtTreeMenu(wxTreeEvent &event) = 0;
         virtual void EvtTreeModifNomDebut(wxTreeEvent &event) = 0;
         virtual void EvtTreeModifNomFin(wxTreeEvent &event) = 0;
@@ -25,6 +30,8 @@ class GenericTreePanel : public wxScrolledWindow
         wxTreeItemId m_nodeExistant, m_nodeNouveau;
         wxSizer *m_sizer2Preferences;
         wxString m_nomAvantModif;
+        ArrayOfwxPanel *m_arrayPanel;
+
     private:
         wxSizer *m_sizer1H, *m_sizer2V;
 };

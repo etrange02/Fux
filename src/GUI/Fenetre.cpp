@@ -207,8 +207,8 @@ void FuXFenetre::CreerPages()
     m_pageSon = new PreferenceSon(NotebookPreference, -1);
     //m_pageSon->Creer(NotebookPreference, -1);
 
-    m_pageDefaut = new PrefDefaut;
-    m_pageDefaut->Creer(NotebookPreference, -1);
+    m_pageDefaut = new PrefDefaut(NotebookPreference, -1, m_pageCouleur, m_pageSon);
+    //m_pageDefaut->Creer(NotebookPreference, -1);
 
     NotebookPreference->AddPage(m_pageCouleur, _("Couleur"));
     NotebookPreference->AddPage(m_pageSon, _("Son"));

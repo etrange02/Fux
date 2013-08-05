@@ -33,26 +33,16 @@ END_EVENT_TABLE()
 /**
  * Constructeur
  * @param Parent un pointeur vers la fenêtre parente
- * @param Id l'identifiant de la fenêtre
  */
 PrefDefaut::PrefDefaut(wxWindow *Parent, wxWindowID Id)
 {
     PrefDefaut::Creer(Parent, Id);
-    OuvertureFichier();
 }
 
-/**
- * Constructeur
- * @param Parent un pointeur vers la fenêtre parente
- * @param Id l'identifiant de la fenêtre
- * @param pageCouleur
- * @param pageSon
- */
 PrefDefaut::PrefDefaut(wxWindow *Parent, wxWindowID Id, PreferenceCouleur *pageCouleur, PreferenceSon *pageSon)
 {
     PrefDefaut::Creer(Parent, Id);
-    SetPreferencePage(pageCouleur, pageSon);
-    OuvertureFichier();
+    SetPreferencePage(pageCouleur, )
 }
 
 /**
@@ -65,8 +55,6 @@ PrefDefaut::~PrefDefaut()
 
 /**
  * Crée les différents composants graphiques du panel
- * @param Parent un pointeur vers la fenêtre parente
- * @param Id l'identifiant de la fenêtre
  */
 void PrefDefaut::Creer(wxWindow *Parent, wxWindowID Id)
 {
@@ -165,6 +153,7 @@ void PrefDefaut::Creer(wxWindow *Parent, wxWindowID Id)
     m_choix->Enable(false);
     m_boiteCheminChansonRep->Enable(false);
     m_boutonRecherche->Enable(false);
+    OuvertureFichier();
     m_sizer1V->Layout();
 }
 
@@ -482,11 +471,6 @@ void PrefDefaut::OuvertureFichier()
     fichierPref.Close();
 }
 
-/**
- * Associe des pages de préférences à celle-ci
- * @param pageCouleur
- * @param pageSon
- */
 void PrefDefaut::SetPreferencePage(PreferenceCouleur *pageCouleur, PreferenceSon *pageSon)
 {
     m_pageCouleur = pageCouleur;

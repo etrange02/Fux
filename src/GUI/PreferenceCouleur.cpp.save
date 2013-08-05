@@ -348,9 +348,12 @@ void PreferenceCouleur::EvtTreeModifNomFin(wxTreeEvent &event)
                 ModifierFiltre(event.GetLabel().BeforeLast('.'), m_treeFiles->GetItemText(event.GetItem()));
                 wxRemoveFile(Parametre::Get()->getCheminCouleur(m_treeFiles->GetItemText(event.GetItem())));
                 m_textNomSet->ChangeValue(event.GetLabel().BeforeLast('.'));
+                m_treeFiles->SortChildren(m_nodeExistant)
+                CallListeners();
             }
         }
     }
+    m_nomAvantModif.Clear();
 }
 
 /**
@@ -370,8 +373,10 @@ void PreferenceCouleur::EvtTreeVoirNoeud(wxTreeEvent &event)
     }
     if (!loaded)
     {
-        m_textNomSet->Clear();
-        ValeursDefaut();
+        if (event.GetItem() == m_nodeExistant)
+            ValeursDefaut();
+        else if (event.GetItem() == m_nodeNouveau)
+            m_textNomSet->Clear();
     }
 }
 
@@ -402,6 +407,7 @@ void PreferenceCouleur::EvtTreeAppliquerNoeud(wxTreeEvent &event)
                     wxTreeItemId item = m_treeFiles->AppendItem(m_nodeExistant, dlg->GetValue() + _T(".sauve"));
                     m_treeFiles->SelectItem(item);
                     m_treeFiles->SortChildren(m_nodeExistant);
+                    CallListeners();
                 }
                 else
                     wxMessageBox(_("Erreur dans le nom.\nVérifiez que vous utilisez des caractères autorisés."), _("Erreur"));
@@ -412,7 +418,6 @@ void PreferenceCouleur::EvtTreeAppliquerNoeud(wxTreeEvent &event)
 
 /**
  * Efface le nœud (et le fichier correspondant)
- * @param event un évènement
  */
 void PreferenceCouleur::EvtMenuSupprimer(wxCommandEvent &WXUNUSED(event))
 {
@@ -426,7 +431,6 @@ void PreferenceCouleur::EvtMenuSupprimer(wxCommandEvent &WXUNUSED(event))
 
 /**
  * Renommage d'un nœud (et de son fichier correspondant)
- * @param event un évènement
  */
 void PreferenceCouleur::EvtMenuRenommer(wxCommandEvent &WXUNUSED(event))
 {
@@ -443,11 +447,12 @@ void PreferenceCouleur::EvtTextNom(wxCommandEvent &WXUNUSED(event))
         ModifierFiltre(m_textNomSet->GetValue(), m_treeFiles->GetItemText(m_treeFiles->GetSelection()));
         m_treeFiles->SetItemText(m_treeFiles->GetSelection(), m_textNomSet->GetValue() + _T(".sauve"));
     }
-    else
+    else if (!m_textNomSet->IsEmpty())
     {
         ModifierFiltre(m_textNomSet->GetValue());
-        m_treeFiles
-        m_treeFiles->SetItemText(m_treeFiles->GetSelection(), m_textNomSet->GetValue() + _T(".sauve"));
+        wxTreeItemId item = m_treeFiles->AppendItem(m_nodeExistant, m_textNomSet->GetValue() + _T(".sauve"));
+        m_treeFiles->SelectItem(item);
+        m_treeFiles->SortChildren(m_nodeExistant);
     }
 }
 
@@ -456,7 +461,10 @@ void PreferenceCouleur::EvtTextNom(wxCommandEvent &WXUNUSED(event))
  * @see MAJ_Fond
  */
 void PreferenceCouleur::Couleur_MAJ_Fond(wxScrollEvent &WXUNUSED(event))
-{    MAJ_Fond();}
+{
+    MAJ_Fond();
+    ModifierFiltre(m_textNomSet->GetValue());
+}
 
 /**
  * Modifie les informations et la couleur du carré de visualisation "Arrière plan"
@@ -478,7 +486,6 @@ void PreferenceCouleur::MAJ_Fond()
     m_TextFond[VERT].SetLabel(es[1]);
     m_TextFond[BLEU].SetLabel(es[2]);
     AppliquerFiltreSelectionne();
-    ModifierFiltre(m_textNomSet->GetValue());
 }
 
 /**
@@ -486,7 +493,10 @@ void PreferenceCouleur::MAJ_Fond()
  * @see MAJ_Barre
  */
 void PreferenceCouleur::Couleur_MAJ_Barre(wxScrollEvent &WXUNUSED(event))
-{    MAJ_Barre();}
+{
+    MAJ_Barre();
+    ModifierFiltre(m_textNomSet->GetValue());
+}
 
 /**
  * Modifie les informations et la couleur du carré de visualisation "Barre de progression et texte"
@@ -519,7 +529,6 @@ void PreferenceCouleur::MAJ_Barre()
     m_TextPolice[BLEU].SetLabel(es[5]);
 
     AppliquerFiltreSelectionne();
-    ModifierFiltre(m_textNomSet->GetValue());
 }
 
 /**
@@ -527,7 +536,10 @@ void PreferenceCouleur::MAJ_Barre()
  * @see MAJ_GraphSup
  */
 void PreferenceCouleur::Couleur_MAJ_GraphSup(wxCommandEvent &WXUNUSED(event))
-{    MAJ_GraphSup();}
+{
+    MAJ_GraphSup();
+    ModifierFiltre(m_textNomSet->GetValue());
+}
 
 /**
  * Modifie la couleur du carré de visualisation "Partie supérieure du graphe"
@@ -550,7 +562,6 @@ void PreferenceCouleur::MAJ_GraphSup()
     m_apercuGraphHaut->SetBitmap(m_bitmap[HAUT_SUP]);
 
     AppliquerFiltreSelectionne();
-    ModifierFiltre(m_textNomSet->GetValue());
 }
 
 /**
@@ -558,7 +569,10 @@ void PreferenceCouleur::MAJ_GraphSup()
  * @see MAJ_GraphInf
  */
 void PreferenceCouleur::Couleur_MAJ_GraphInf(wxCommandEvent &WXUNUSED(event))
-{    MAJ_GraphInf();}
+{
+    MAJ_GraphInf();
+    ModifierFiltre(m_textNomSet->GetValue());
+}
 
 /**
  * Modifie la couleur du carré de visualisation "Partie inférieure du graphe"
@@ -581,7 +595,6 @@ void PreferenceCouleur::MAJ_GraphInf()
     m_apercuGraphBas->SetBitmap(m_bitmap[BAS_INF]);
 
     AppliquerFiltreSelectionne();
-    ModifierFiltre(m_textNomSet->GetValue());
 }
 
 /**
@@ -589,7 +602,10 @@ void PreferenceCouleur::MAJ_GraphInf()
  * @see MAJ_Symetrie
  */
 void PreferenceCouleur::Couleur_MAJ_Symetrie(wxCommandEvent &WXUNUSED(event))
-{    MAJ_Symetrie();}
+{
+    MAJ_Symetrie();
+    ModifierFiltre(m_textNomSet->GetValue());
+}
 
 /**
  * Modifie l'accès au bloc sur la partie inférieure du graphe
@@ -614,7 +630,6 @@ void PreferenceCouleur::MAJ_Symetrie()
     }
 
     AppliquerFiltreSelectionne();
-    ModifierFiltre(m_textNomSet->GetValue());
 }
 
 /**
@@ -638,6 +653,7 @@ void PreferenceCouleur::ValeursDefaut()
     MAJ_Fond();
     MAJ_GraphSup();
     MAJ_GraphInf();
+    MAJ_Symetrie();
 }
 
 /**
@@ -729,7 +745,7 @@ bool PreferenceCouleur::ModifierFiltre(wxString nom, wxString oldNom)
 
 /**
  * Lit le contenu d'un fichier(filtre) et modifie le graphe ou la fenêtre de visualisation
- * @param nom le nom du filtre à lire
+ * @param filtre le nom du filtre à lire
  * @param evenement si vrai, les paramètres sont juste visualisés, si faux les paramètres sont appliqués au graphe
  * @return vrai si réussite
  */

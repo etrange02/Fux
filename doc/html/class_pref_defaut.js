@@ -1,9 +1,9 @@
 var class_pref_defaut =
 [
-    [ "PrefDefaut", "class_pref_defaut.html#ac3d7b6bc92092bd93cb48e3c0b21fb53", null ],
-    [ "PrefDefaut", "class_pref_defaut.html#ab1ecf9898a3879d109eab3dd7a6a25b5", null ],
+    [ "PrefDefaut", "class_pref_defaut.html#a9ba1f4a58b49af3a72ec69b505af90e0", null ],
+    [ "PrefDefaut", "class_pref_defaut.html#aaaf4e72e7e38481ecc564be9265b5bff", null ],
     [ "~PrefDefaut", "class_pref_defaut.html#a6ff379a0c30c3396e481f43f9d5c45be", null ],
-    [ "Creer", "class_pref_defaut.html#af71a333685b07ea6b33cfef4c0e542be", null ],
+    [ "Creer", "class_pref_defaut.html#ad0ebbe1a91e4db647d738ddb8ef84022", null ],
     [ "CreerListe", "class_pref_defaut.html#ac228d5edb8880c38f693d8f56ae39a76", null ],
     [ "Defaut_Bouton_Annuler", "class_pref_defaut.html#a9e4b3a275cdbe63ab8480dfc0fd861b7", null ],
     [ "Defaut_Bouton_CheminDefaut", "class_pref_defaut.html#a1a745399d5ca690776fc27e9b53c28da", null ],
@@ -18,8 +18,9 @@ var class_pref_defaut =
     [ "Defaut_CheckBoxSon", "class_pref_defaut.html#af81a9100fd8ee54b5c54cf06e56645bf", null ],
     [ "Defaut_CheckBoxTAG", "class_pref_defaut.html#ad7f343b5d482c70d5468b0ed29d98a9c", null ],
     [ "Defaut_RadioMP3_M3U", "class_pref_defaut.html#a201bc70bef5cfac057eaa0b2bb57bf31", null ],
-    [ "ListerContenuFichier", "class_pref_defaut.html#af04f2c03a2643ac3039f6c6b60e5fdd6", null ],
+    [ "MAJListe", "class_pref_defaut.html#a4d6ff2dba090a0467a0f59ab68bff1fa", null ],
     [ "OuvertureFichier", "class_pref_defaut.html#aff43f0f9d3338ae4fd9befb0fad7c169", null ],
+    [ "SetPreferencePage", "class_pref_defaut.html#afa3a1f564c3b5d0c78977db57ce00422", null ],
     [ "m_boiteCheminChansonRep", "class_pref_defaut.html#a99656b58466c8f26c3c9193b22174c17", null ],
     [ "m_boiteCheminDefautRech", "class_pref_defaut.html#a15d791afd6a9fcdc421a640d64834012", null ],
     [ "m_boutonAnnuler", "class_pref_defaut.html#a2c5ea21088908c8b4778b401534c1e89", null ],
@@ -34,6 +35,8 @@ var class_pref_defaut =
     [ "m_listeM3u_mp3", "class_pref_defaut.html#a16962a340144d6cbd2b862edb788452e", null ],
     [ "m_listeReprise", "class_pref_defaut.html#ae34a8261582a797fba1a956609812ab5", null ],
     [ "m_listeSon", "class_pref_defaut.html#a2249ecc1cda8f37150b6042819b0fa66", null ],
+    [ "m_pageCouleur", "class_pref_defaut.html#aeb8d343122d37f2dc05bed2d7450ab0e", null ],
+    [ "m_pageSon", "class_pref_defaut.html#a0033c627768978510989743d340fcf32", null ],
     [ "m_sizer1V", "class_pref_defaut.html#a508108560c3e49b900506d2c96e2b3d9", null ],
     [ "m_sizerAvancee", "class_pref_defaut.html#a9e32c82fb133e2e716b3df5a89feda53", null ],
     [ "m_sizerUseQuo", "class_pref_defaut.html#a161a2ce78535e4ddb8f5b2e0ae8ea468", null ]

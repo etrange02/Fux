@@ -173,6 +173,8 @@ void PreferenceSon::EvtTreeModifNomFin(wxTreeEvent &event)
                 ModifierFiltre(event.GetLabel().BeforeLast('.'), m_spinVolume->GetValue(), m_spinVolumePC->GetValue(), m_treeFiles->GetItemText(event.GetItem()));
                 wxRemoveFile(Parametre::Get()->getCheminSon(m_treeFiles->GetItemText(event.GetItem())));
                 m_textNomSet->ChangeValue(event.GetLabel().BeforeLast('.'));
+                m_treeFiles->SortChildren(m_nodeExistant);
+                CallListeners();
             }
         }
     }
@@ -227,6 +229,7 @@ void PreferenceSon::EvtTreeAppliquerNoeud(wxTreeEvent &event)
                     wxTreeItemId item = m_treeFiles->AppendItem(m_nodeExistant, dlg->GetValue() + _T(".sauve"));
                     m_treeFiles->SelectItem(item);
                     m_treeFiles->SortChildren(m_nodeExistant);
+                    CallListeners();
                 }
                 else
                     wxMessageBox(_("Erreur dans le nom.\nVérifiez que vous utilisez des caractères autorisés."), _("Erreur"));
@@ -248,6 +251,7 @@ void PreferenceSon::EvtMenuSupprimer(wxCommandEvent &WXUNUSED(event))
     m_spinVolumePC->SetValue(0);
 
     m_treeFiles->Delete(m_treeFiles->GetSelection());
+    CallListeners();
 }
 
 /**
@@ -267,6 +271,8 @@ void PreferenceSon::EvtTextNom(wxCommandEvent &WXUNUSED(event))
     {
         ModifierFiltre(m_textNomSet->GetValue(), m_spinVolume->GetValue(), m_spinVolumePC->GetValue(), m_treeFiles->GetItemText(m_treeFiles->GetSelection()));
         m_treeFiles->SetItemText(m_treeFiles->GetSelection(), m_textNomSet->GetValue() + _T(".sauve"));
+        m_treeFiles->SortChildren(m_nodeExistant);
+        CallListeners();
     }
 }
 

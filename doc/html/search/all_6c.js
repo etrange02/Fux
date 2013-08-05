@@ -8,6 +8,5 @@ var searchData=
   ['listegestionperiph',['ListeGestionPeriph',['../class_liste_gestion_periph.html',1,'ListeGestionPeriph'],['../class_liste_gestion_periph.html#adcb43ae1264c84d1790231705981c7b0',1,'ListeGestionPeriph::ListeGestionPeriph()'],['../class_liste_gestion_periph.html#a5039cd7c6f4ceae0696f7e030697b5de',1,'ListeGestionPeriph::ListeGestionPeriph(wxWindow *, wxWindowID)']]],
   ['listelecture',['ListeLecture',['../class_liste_lecture.html',1,'ListeLecture'],['../class_liste_lecture.html#acd9201b0a41cab0d1bb287deba85f885',1,'ListeLecture::ListeLecture()']]],
   ['listem3u',['ListeM3U',['../class_gest_periph.html#a83b82bf14ec525d79cb71a7890759bc3',1,'GestPeriph']]],
-  ['listeperipherique',['ListePeripherique',['../class_gest_periph.html#ad96aadfed6a98013c577d241600d8b01',1,'GestPeriph']]],
-  ['listercontenufichier',['ListerContenuFichier',['../class_pref_defaut.html#af04f2c03a2643ac3039f6c6b60e5fdd6',1,'PrefDefaut']]]
+  ['listeperipherique',['ListePeripherique',['../class_gest_periph.html#ad96aadfed6a98013c577d241600d8b01',1,'GestPeriph']]]
 ];

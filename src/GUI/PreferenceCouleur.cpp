@@ -348,6 +348,8 @@ void PreferenceCouleur::EvtTreeModifNomFin(wxTreeEvent &event)
                 ModifierFiltre(event.GetLabel().BeforeLast('.'), m_treeFiles->GetItemText(event.GetItem()));
                 wxRemoveFile(Parametre::Get()->getCheminCouleur(m_treeFiles->GetItemText(event.GetItem())));
                 m_textNomSet->ChangeValue(event.GetLabel().BeforeLast('.'));
+                m_treeFiles->SortChildren(m_nodeExistant);
+                CallListeners();
             }
         }
     }
@@ -405,6 +407,7 @@ void PreferenceCouleur::EvtTreeAppliquerNoeud(wxTreeEvent &event)
                     wxTreeItemId item = m_treeFiles->AppendItem(m_nodeExistant, dlg->GetValue() + _T(".sauve"));
                     m_treeFiles->SelectItem(item);
                     m_treeFiles->SortChildren(m_nodeExistant);
+                    CallListeners();
                 }
                 else
                     wxMessageBox(_("Erreur dans le nom.\nVérifiez que vous utilisez des caractères autorisés."), _("Erreur"));
@@ -424,6 +427,7 @@ void PreferenceCouleur::EvtMenuSupprimer(wxCommandEvent &WXUNUSED(event))
     m_textNomSet->Clear();
     ValeursDefaut();
     m_treeFiles->Delete(m_treeFiles->GetSelection());
+    CallListeners();
 }
 
 /**
@@ -443,6 +447,8 @@ void PreferenceCouleur::EvtTextNom(wxCommandEvent &WXUNUSED(event))
     {
         ModifierFiltre(m_textNomSet->GetValue(), m_treeFiles->GetItemText(m_treeFiles->GetSelection()));
         m_treeFiles->SetItemText(m_treeFiles->GetSelection(), m_textNomSet->GetValue() + _T(".sauve"));
+        m_treeFiles->SortChildren(m_nodeExistant);
+        CallListeners();
     }
     else if (!m_textNomSet->IsEmpty())
     {
@@ -450,6 +456,7 @@ void PreferenceCouleur::EvtTextNom(wxCommandEvent &WXUNUSED(event))
         wxTreeItemId item = m_treeFiles->AppendItem(m_nodeExistant, m_textNomSet->GetValue() + _T(".sauve"));
         m_treeFiles->SelectItem(item);
         m_treeFiles->SortChildren(m_nodeExistant);
+        CallListeners();
     }
 }
 

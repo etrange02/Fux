@@ -8,6 +8,8 @@
  **************************************************************/
 #include "../../include/GUI/GenericTreePanel.h"
 
+const wxEventType wxEVT_PREFERENCE_MAJ_LISTE = wxNewEventType();
+
 /**
  * @class GenericTreePanel
  * @brief Inteface générique pour les préférences
@@ -26,6 +28,7 @@ GenericTreePanel::GenericTreePanel(wxWindow *Parent, wxWindowID Id, wxWindowID I
  */
 GenericTreePanel::~GenericTreePanel()
 {
+    m_arrayPanel->Clear();
 }
 
 void GenericTreePanel::Create(wxWindow *Parent, wxWindowID Id, wxWindowID IdTreeCtrl)
@@ -46,5 +49,22 @@ void GenericTreePanel::Create(wxWindow *Parent, wxWindowID Id, wxWindowID IdTree
 
     m_sizer2Preferences = new wxBoxSizer(wxVERTICAL);
     m_sizer1H->Add(m_sizer2Preferences, 0, wxUP|wxDOWN|wxRIGHT|wxEXPAND, 5);
+
+    m_arrayPanel = new ArrayOfwxPanel;
 }
+
+void GenericTreePanel::AddListener(wxPanel *panel)
+{
+    m_arrayPanel->Add(panel);
+}
+
+void GenericTreePanel::CallListeners()
+{
+    for (ArrayOfwxPanel::iterator iter = m_arrayPanel->begin(); iter != m_arrayPanel->end(); iter++)
+    {
+        wxCommandEvent evt(wxEVT_PREFERENCE_MAJ_LISTE, wxID_ANY);
+        (*iter)->GetEventHandler()->AddPendingEvent(evt);
+    }
+}
+
 

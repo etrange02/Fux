@@ -5,7 +5,7 @@ var searchData=
   ['majplaylist',['MAJPlaylist',['../class_gest_periph.html#aae0fbb84376085738681530fbb6d756e',1,'GestPeriph::MAJPlaylist()'],['../class_fu_x_fenetre.html#a6277fc2344896f970f1947dd58d1a5b5',1,'FuXFenetre::MAJplaylist()']]],
   ['menuabout',['MenuAbout',['../class_fu_x_fenetre.html#a98780b7c73142d15a4a11d10f701f554',1,'FuXFenetre']]],
   ['menuaide',['MenuAide',['../class_fu_x_fenetre.html#a92d517f1cf801e82a06e915e96c9cd43',1,'FuXFenetre']]],
-  ['menucoller',['menuColler',['../class_liste_lecture.html#a9640c1ecaa600f5a1c9d5afdb8ff9972',1,'ListeLecture::menuColler()'],['../class_page_gestion_periph.html#a8e77f888f5a73d371d17d1dcc440db93',1,'PageGestionPeriph::MenuColler()']]],
+  ['menucoller',['MenuColler',['../class_page_gestion_periph.html#a8e77f888f5a73d371d17d1dcc440db93',1,'PageGestionPeriph::MenuColler()'],['../class_liste_lecture.html#a9640c1ecaa600f5a1c9d5afdb8ff9972',1,'ListeLecture::menuColler()']]],
   ['menucopier',['MenuCopier',['../class_page_gestion_periph.html#a3dc995a0f830a3ac40e0cd9419657617',1,'PageGestionPeriph']]],
   ['menucouper',['MenuCouper',['../class_page_gestion_periph.html#a8b4edf9f1c5868c2b55d46569bbb514c',1,'PageGestionPeriph::MenuCouper()'],['../class_liste_lecture.html#aa3c268d08d4d253ecc4bf912b6d75751',1,'ListeLecture::menuCouper()']]],
   ['menucreerdossier',['MenuCreerDossier',['../class_page_gestion_periph.html#aa4dba74428600043796c14a924ec1e4a',1,'PageGestionPeriph']]],
