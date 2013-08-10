@@ -255,7 +255,7 @@ bool Musique::ChangementChanson()
 }
 
 /**
- * Change le titre avec les arguments qui lui sont envoyés. Cette méthode est utilisée par ListeLecture et GestionPeriphMoitiePage.
+ * Change le titre avec les arguments qui lui sont envoyés. Cette méthode est utilisée par PlayListTableau et GestionPeriphMoitiePage.
  *Si la position vaut -1, le titre lu sera la première occurrence de chaine. Sinon, la recherche est faite à partir de la position peu importe le contenu de chaine.
  * @param position la position du titre dans la liste (ou dans le fichier musique.liste)
  * @param chaine l'adresse du titre
@@ -316,7 +316,7 @@ void Musique::Listage(wxArrayString *chaine, bool maj)
  * @param chaine contient les positions des titres à déplacer
  * @param pos la ligne où doivent se retrouver les titres
  * @param maj si une mise à jour des tableaux est nécessaires
- * @param supprim doit valoir vrai
+ * @param supprime doit valoir vrai
  */
 void Musique::PlacerLigneInt(wxArrayString* chaine, long pos, bool maj, bool supprime)
 {
@@ -402,15 +402,12 @@ void Musique::TpsActuelMS()
     unsigned int position;
     FMOD_Channel_GetPosition(m_channel, &position, FMOD_TIMEUNIT_MS);
 
-    m_tpsActuel.msecondeTot = position;
-    position/=1000;
-    m_tpsActuel.seconde = position%60;
-    m_tpsActuel.minute = position/60;
+    m_tpsActuel.SetMSecondeTot(position);
 }
 
 /**
  * Indique si l'on arrive à la fin du titre
- * @param vrai si fin du titre
+ * @return vrai si fin du titre
  */
 bool Musique::VerifTemps()
 {
@@ -419,7 +416,7 @@ bool Musique::VerifTemps()
     else
         return false;
 
-    if (m_tpsActuel.msecondeTot >= m_duree.msecondeTot - 200)
+    if (m_tpsActuel.GetMSecondeTot() >= m_duree.GetMSecondeTot() - 200)
         return true;
     else
         return false;
@@ -430,27 +427,27 @@ bool Musique::VerifTemps()
  * @return la durée
  */
 int Musique::GetDureeMS()
-{    return m_duree.msecondeTot;}
+{    return m_duree.GetMSecondeTot();}
 
 /**
  * Retourne le temps écoulé en ms de la chanson
 * @return le temps écoulé
  */
 int Musique::GetTpsActuel()
-{    return m_tpsActuel.msecondeTot;}
+{    return m_tpsActuel.GetMSecondeTot();}
 
 /**
  * Retourne la structure contenant les informations sur la durée du titre
  * @return la durée
  */
-DUREE Musique::GetDUREEDuree()
+Duree Musique::GetDUREEDuree()
 {    return m_duree;}
 
 /**
  * Retourne la structure contenant les informations sur le temps écoulé du titre
  * @return le temps écoulé
  */
-DUREE Musique::GetDUREETpsActuel()
+Duree Musique::GetDUREETpsActuel()
 {    return m_tpsActuel;}
 
 /**
@@ -543,7 +540,7 @@ wxString Musique::GetArtiste()
 ChansonNomPos Musique::GetNomPos()
 {
     m_positionListe = FichierListe::Get()->GetPositionListe(m_cheminComplet, m_positionListe);//FichierListe::Get().GetPositionListe(m_cheminComplet, m_positionListe));
-    ChansonNomPos titre = {m_nomChanson, m_positionListe};
+    ChansonNomPos titre(m_nomChanson, m_positionListe);
     return titre;
 }
 
@@ -554,8 +551,8 @@ ChansonNomPos Musique::GetNomPos()
 ChansonNomPos Musique::SupprimerNom()
 {
     if(FichierListe::Get()->GetNombreFichier() == 0)
-        return {wxEmptyString, -1};
-    ChansonNomPos Asuppr = {m_cheminComplet, m_positionListe};
+        return ChansonNomPos();
+    ChansonNomPos Asuppr(m_cheminComplet, m_positionListe);
 
     if(FichierListe::Get()->GetNombreFichier() > 1)
         ChangementChanson(SUIVANT);
@@ -573,9 +570,9 @@ ChansonNomPos Musique::SupprimerNom()
  */
 void Musique::SupprimerNom(int position)//wxString chaine)
 {
-    ChansonNomPos titre = {FichierListe::Get()->GetNomPosition(position), position};
+    ChansonNomPos titre(FichierListe::Get()->GetNomPosition(position), position);
 
-    if (m_cheminComplet.IsSameAs(titre.Nom) && titre.Nom.Length() != 0 && titre.Pos == m_positionListe)//titre actuellement en cours de lecture
+    if (m_cheminComplet.IsSameAs(titre.GetNom()) && titre.GetNom().Length() != 0 && titre.GetPos() == m_positionListe)//titre actuellement en cours de lecture
     {
         if(FichierListe::Get()->GetNombreFichier() > 1)
             ChangementChanson(SUIVANT);
@@ -584,16 +581,16 @@ void Musique::SupprimerNom(int position)//wxString chaine)
         FichierListe::Get()->EffacerNom(titre);
         m_positionListe--;
         #if DEBUG
-        FichierLog::Get()->Ajouter(_T("Musique::SupprimerNom - (titre actuel) ") + wxString::Format(_T("%d"), titre.Pos) + _T(" - ") + titre.Nom);
+        FichierLog::Get()->Ajouter(_T("Musique::SupprimerNom - (titre actuel) ") + wxString::Format(_T("%d"), titre.GetPos()) + _T(" - ") + titre.GetNom());
         #endif
     }
     else
     {
         FichierListe::Get()->EffacerNom(titre);
-        if (m_positionListe > titre.Pos)
+        if (m_positionListe > titre.GetPos())
             m_positionListe--;
         #if DEBUG
-        FichierLog::Get()->Ajouter(_T("Musique::SupprimerNom - ") + wxString::Format(_T("%d"), titre.Pos) + _T(" - ") + titre.Nom);
+        FichierLog::Get()->Ajouter(_T("Musique::SupprimerNom - ") + wxString::Format(_T("%d"), titre.GetPos()) + _T(" - ") + titre.GetNom());
         #endif
     }
 }
@@ -666,7 +663,7 @@ void Musique::SetVolume(int volume)
 wxString Musique::GetDureeFormatMinSec()
 {
     wxString chaine;
-    chaine << m_duree.minute << _T(":") << m_duree.seconde;
+    chaine << m_duree.GetMinute() << _T(":") << m_duree.GetSeconde();
     return chaine;
 }
 

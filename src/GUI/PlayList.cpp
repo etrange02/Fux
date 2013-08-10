@@ -56,7 +56,7 @@ PlayList::~PlayList()
  * Retourne l'instance de la liste que gère la page
  * @return le liste gérée par la page
  */
-ListeLecture* PlayList::GetListeLecture()
+PlayListTableau* PlayList::GetPlayListTableau()
 {    return m_liste;}
 
 /**
@@ -78,7 +78,7 @@ void PlayList::Creer(wxWindow *Parent, bool MAJListe)
     sizerHorizRecherche->Add(m_champsRecherche, 1, wxRIGHT|wxEXPAND, 5);
     sizerHorizRecherche->Add(m_BoutonEnregistrerM3U, 0, 0, 0);
 
-    m_liste = new ListeLecture(this);
+    m_liste = new PlayListTableau(this);
 
     m_panneauRepliable = new wxCollapsiblePane(this, ID_PAGE_PLAYLIST_PANNEAUREPLIABLE, _("Détails"), wxDefaultPosition, wxDefaultSize, wxCP_NO_TLW_RESIZE | wxALWAYS_SHOW_SB);
     m_sizerRep = new wxBoxSizer(wxHORIZONTAL);

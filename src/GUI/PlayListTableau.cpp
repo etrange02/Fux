@@ -11,22 +11,22 @@
 using namespace TagLib;
 
 /**
- * @class ListeLecture
+ * @class PlayListTableau
  * @brief Tableau (GUI) dans lequel sont affichés les informations des titres mis dans la liste de lecture. D'une certaine manière, c'est la liste de lecture
  */
 
-BEGIN_EVENT_TABLE(ListeLecture, wxListCtrl)
-    EVT_LIST_ITEM_ACTIVATED(ID_PAGE_PLAYLIST_LISTE, ListeLecture::ChansonActive)
-    EVT_KEY_DOWN(ListeLecture::OnKey)
-    EVT_LIST_BEGIN_DRAG(ID_PAGE_PLAYLIST_LISTE, ListeLecture::Glisser)
-    EVT_RIGHT_DOWN(ListeLecture::AfficheMenu)
-    EVT_MENU(ID_PAGE_PLAYLIST_MENU_LECTURE, ListeLecture::menuLecture)
-    EVT_MENU(ID_PAGE_PLAYLIST_MENU_PAUSE, ListeLecture::menuPause)
-    EVT_MENU(ID_PAGE_PLAYLIST_MENU_SUPPRIMER, ListeLecture::menuSupprimer)
-    EVT_MENU(ID_PAGE_PLAYLIST_MENU_COUPER, ListeLecture::menuCouper)
-    EVT_MENU(ID_PAGE_PLAYLIST_MENU_COLLER, ListeLecture::menuColler)
-    EVT_MENU(ID_PAGE_PLAYLIST_MENU_DETAILS, ListeLecture::menuDetails)
-    EVT_MOUSE_EVENTS(ListeLecture::MouseEvents)
+BEGIN_EVENT_TABLE(PlayListTableau, wxListCtrl)
+    EVT_LIST_ITEM_ACTIVATED(ID_PAGE_PLAYLIST_LISTE, PlayListTableau::ChansonActive)
+    EVT_KEY_DOWN(PlayListTableau::OnKey)
+    EVT_LIST_BEGIN_DRAG(ID_PAGE_PLAYLIST_LISTE, PlayListTableau::Glisser)
+    EVT_RIGHT_DOWN(PlayListTableau::AfficheMenu)
+    EVT_MENU(ID_PAGE_PLAYLIST_MENU_LECTURE, PlayListTableau::menuLecture)
+    EVT_MENU(ID_PAGE_PLAYLIST_MENU_PAUSE, PlayListTableau::menuPause)
+    EVT_MENU(ID_PAGE_PLAYLIST_MENU_SUPPRIMER, PlayListTableau::menuSupprimer)
+    EVT_MENU(ID_PAGE_PLAYLIST_MENU_COUPER, PlayListTableau::menuCouper)
+    EVT_MENU(ID_PAGE_PLAYLIST_MENU_COLLER, PlayListTableau::menuColler)
+    EVT_MENU(ID_PAGE_PLAYLIST_MENU_DETAILS, PlayListTableau::menuDetails)
+    EVT_MOUSE_EVENTS(PlayListTableau::MouseEvents)
 END_EVENT_TABLE()
 
 
@@ -38,10 +38,10 @@ static wxMutex *s_mutexMAJPlaylist = new wxMutex;
  * Constructeur
  * @param Parent La fenêtre parente
  */
-ListeLecture::ListeLecture(wxWindow *Parent) : wxListCtrl(Parent, ID_PAGE_PLAYLIST_LISTE, wxDefaultPosition, wxDefaultSize, wxLC_REPORT |  wxLC_HRULES | wxLC_VRULES)
+PlayListTableau::PlayListTableau(wxWindow *Parent) : wxListCtrl(Parent, ID_PAGE_PLAYLIST_LISTE, wxDefaultPosition, wxDefaultSize, wxLC_REPORT |  wxLC_HRULES | wxLC_VRULES)
 {
     #if DEBUG
-    FichierLog::Get()->Ajouter(_T("ListeLecture::ListeLecture - Création"));
+    FichierLog::Get()->Ajouter(_T("PlayListTableau::PlayListTableau - Création"));
     #endif
     m_rechercheEnCours = false;
     m_modeRecherche = false;
@@ -69,17 +69,17 @@ ListeLecture::ListeLecture(wxWindow *Parent) : wxListCtrl(Parent, ID_PAGE_PLAYLI
     m_couper = false;
 }
 
-ListeLecture::~ListeLecture()
+PlayListTableau::~PlayListTableau()
 {
     #if DEBUG
-    FichierLog::Get()->Ajouter(_T("ListeLecture::~ListeLecture"));
+    FichierLog::Get()->Ajouter(_T("PlayListTableau::~PlayListTableau"));
     #endif
 }
 
 /**
  * Efface le contenu de la liste et affiche les données relatives au fichier musique.liste
  */
-void ListeLecture::MAJ()
+void PlayListTableau::MAJ()
 {
     wxMutexLocker lock(*s_mutexMAJPlaylist);
 
@@ -91,7 +91,7 @@ void ListeLecture::MAJ()
     }
 
     #if DEBUG
-    FichierLog::Get()->Ajouter(_T("ListeLecture::MAJ - Début après les tests"));
+    FichierLog::Get()->Ajouter(_T("PlayListTableau::MAJ - Début après les tests"));
     #endif
 
     wxString chaine, extrait;
@@ -119,7 +119,7 @@ void ListeLecture::MAJ()
     }
 
     #if DEBUG
-    FichierLog::Get()->Ajouter(_T("ListeLecture::MAJ - Début du for"));
+    FichierLog::Get()->Ajouter(_T("PlayListTableau::MAJ - Début du for"));
     #endif
 
     size_t j=0;
@@ -223,14 +223,14 @@ void ListeLecture::MAJ()
         }
     }
     #if DEBUG
-    FichierLog::Get()->Ajouter(_T("ListeLecture::MAJ - Fin du for : ") + wxString::Format(_T("%u / %u"), j, GetItemCount()));
+    FichierLog::Get()->Ajouter(_T("PlayListTableau::MAJ - Fin du for : ") + wxString::Format(_T("%u / %u"), j, GetItemCount()));
     #endif
     //wxApp::GetInstance()->Yield(false);
     this->ChangementChanson(Musique::Get()->GetNomPos());
     //Musique::Get()->GetNomPos();
 
     #if DEBUG
-    FichierLog::Get()->Ajouter(_T("ListeLecture::MAJ - Fin"));
+    FichierLog::Get()->Ajouter(_T("PlayListTableau::MAJ - Fin"));
     #endif
 }
 
@@ -239,7 +239,7 @@ void ListeLecture::MAJ()
  * @param temps le temps en secondes
  * @return la chaine nouvellement formée
  */
-wxString ListeLecture::GetDuree(int temps)
+wxString PlayListTableau::GetDuree(int temps)
 {
     wxString chaine;
     chaine << temps/60 << _T(":");
@@ -253,7 +253,7 @@ wxString ListeLecture::GetDuree(int temps)
 /**
  * Évènement. Informe l'application que le titre en cours de lecture doit changer
  */
-void ListeLecture::ChansonActive(wxListEvent &event)
+void PlayListTableau::ChansonActive(wxListEvent &event)
 {
     if (m_modeRecherche)
     {
@@ -280,7 +280,7 @@ void ListeLecture::ChansonActive(wxListEvent &event)
 /**
  * Évènements clavier
  */
-void ListeLecture::OnKey(wxKeyEvent &event)
+void PlayListTableau::OnKey(wxKeyEvent &event)
 {
     if (event.GetKeyCode() == WXK_DELETE)
         SuppressionLigne();
@@ -302,7 +302,7 @@ void ListeLecture::OnKey(wxKeyEvent &event)
 /**
  * Évènements souris
  */
-void ListeLecture::MouseEvents(wxMouseEvent &event)
+void PlayListTableau::MouseEvents(wxMouseEvent &event)
 {
     if (event.ControlDown() && event.GetWheelRotation() != 0)
     {
@@ -346,11 +346,11 @@ void ListeLecture::MouseEvents(wxMouseEvent &event)
  * Supprime le titre en cours de lecture de la liste affichée
  * @param titre la structure contenant le nom et la position du titre dans le fichier musique.liste (donc aussi dans le tableau)
  */
-void ListeLecture::supprimerNomLigne(ChansonNomPos titre)
+void PlayListTableau::supprimerNomLigne(ChansonNomPos titre)
 {
     wxMutexLocker lock(*s_mutexMAJPlaylist);
     #if DEBUG
-    FichierLog::Get()->Ajouter(_T("ListeLecture::supprimerNomLigne(ChansonNomPos)"));
+    FichierLog::Get()->Ajouter(_T("PlayListTableau::supprimerNomLigne(ChansonNomPos)"));
     #endif
     wxString extrait;
     int i = 0;
@@ -375,10 +375,10 @@ void ListeLecture::supprimerNomLigne(ChansonNomPos titre)
  * Lors du changement de musique, cette méthode modifie les couleurs de chaque ligne du tableau. Le titre en cours est en orange, les doubles en vert.
  * @param titre les nom et position du titre en cours
  */
-void ListeLecture::ChangementChanson(ChansonNomPos titre)
+void PlayListTableau::ChangementChanson(ChansonNomPos titre)
 {
     #if DEBUG
-    FichierLog::Get()->Ajouter(_T("ListeLecture::ChangementChanson(ChansonNomPos)"));
+    FichierLog::Get()->Ajouter(_T("PlayListTableau::ChangementChanson(ChansonNomPos)"));
     #endif
     if (titre.GetPos() == -1 && (GetItemCount() == 0 || titre.GetNom().IsEmpty()))
         return;
@@ -417,7 +417,7 @@ void ListeLecture::ChangementChanson(ChansonNomPos titre)
 /**
  * Opération de Drag&Drop. Déplace les lignes sélectionnées à un autre endroit de liste
  */
-void ListeLecture::Glisser(wxListEvent &WXUNUSED(event))
+void PlayListTableau::Glisser(wxListEvent &WXUNUSED(event))
 {
     wxMutexLocker lock(*s_mutexMAJPlaylist);
     if (m_modeRecherche)
@@ -450,7 +450,7 @@ void ListeLecture::Glisser(wxListEvent &WXUNUSED(event))
 /**
  * Affiche le menu obtenu lors d'un clic droit dans la liste
  */
-void ListeLecture::AfficheMenu(wxMouseEvent &WXUNUSED(event))
+void PlayListTableau::AfficheMenu(wxMouseEvent &WXUNUSED(event))
 {
     int flag = wxLIST_HITTEST_ONITEM | wxLIST_HITTEST_ONITEMRIGHT | wxLIST_HITTEST_TOLEFT | wxLIST_HITTEST_TORIGHT;
     long pos = HitTest(ScreenToClient(wxGetMousePosition()), flag);
@@ -515,7 +515,7 @@ void ListeLecture::AfficheMenu(wxMouseEvent &WXUNUSED(event))
 /**
  * Évènement. Lance la lecture du titre sélectionné
  */
-void ListeLecture::menuLecture(wxCommandEvent &WXUNUSED(event))
+void PlayListTableau::menuLecture(wxCommandEvent &WXUNUSED(event))
 {
     long pos = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_FOCUSED);
     if (m_modeRecherche)
@@ -542,7 +542,7 @@ void ListeLecture::menuLecture(wxCommandEvent &WXUNUSED(event))
 /**
  * Évènement. Met en pause ou reprend la l'écoute
  */
-void ListeLecture::menuPause(wxCommandEvent &WXUNUSED(event))
+void PlayListTableau::menuPause(wxCommandEvent &WXUNUSED(event))
 {
     if (Musique::Get()->GetLecture())
         Musique::Get()->SetPause(true);
@@ -555,13 +555,13 @@ void ListeLecture::menuPause(wxCommandEvent &WXUNUSED(event))
 /**
  * Évènement. Supprime l'élément sélectionné de la liste
  */
-void ListeLecture::menuSupprimer(wxCommandEvent &WXUNUSED(event))
+void PlayListTableau::menuSupprimer(wxCommandEvent &WXUNUSED(event))
 {    SuppressionLigne();}
 
 /**
  * Évènement. Mise en mémoire, Ctrl+X
  */
-void ListeLecture::menuCouper(wxCommandEvent &WXUNUSED(event))
+void PlayListTableau::menuCouper(wxCommandEvent &WXUNUSED(event))
 {
     long item = -1;
     item = GetNextItem(item, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
@@ -576,7 +576,7 @@ void ListeLecture::menuCouper(wxCommandEvent &WXUNUSED(event))
 /**
  * Évènement. Déplacement, Ctrl+V
  */
-void ListeLecture::menuColler(wxCommandEvent &WXUNUSED(event))
+void PlayListTableau::menuColler(wxCommandEvent &WXUNUSED(event))
 {
     Musique::Get()->PlacerLigneInt(&m_tableauCouper, m_yMenu, true);
     m_tableauCouper.Clear();
@@ -587,7 +587,7 @@ void ListeLecture::menuColler(wxCommandEvent &WXUNUSED(event))
 /**
  * Évènement. Affiche une fenêtre dans laquelle des détails sur le titre sont présent (durée, taille sur le disque)
  */
-void ListeLecture::menuDetails(wxCommandEvent &WXUNUSED(event))
+void PlayListTableau::menuDetails(wxCommandEvent &WXUNUSED(event))
 {
     wxCommandEvent evt(wxEVT_LISTE_DETAILS, GetId());
     GetParent()->GetEventHandler()->AddPendingEvent(evt);
@@ -597,20 +597,20 @@ void ListeLecture::menuDetails(wxCommandEvent &WXUNUSED(event))
  * Retourne la position du titre en cours dans le tableau
  * @return la position du titre
  */
-int ListeLecture::GetPositionChansonLecture()
+int PlayListTableau::GetPositionChansonLecture()
 {    return m_positionChanson;}
 
 /**
  * Supprime les lignes sélectionnées de la liste de lecture
  */
-void ListeLecture::SuppressionLigne()
+void PlayListTableau::SuppressionLigne()
 {
     wxMutexLocker lock(*s_mutexMAJPlaylist);
     if (GetItemCount() == 0)
         return;
 
     #if DEBUG
-    FichierLog::Get()->Ajouter(_T("ListeLecture::SuppressionLigne - Début"));
+    FichierLog::Get()->Ajouter(_T("PlayListTableau::SuppressionLigne - Début"));
     #endif
     long position = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
     if (position != -1 && GetItemCount() > 0)
@@ -618,7 +618,7 @@ void ListeLecture::SuppressionLigne()
         if (GetSelectedItemCount() == 1 && !m_modeRecherche)
         {
             #if DEBUG
-            FichierLog::Get()->Ajouter(_T("ListeLecture::SuppressionLigne - 1 ligne"));
+            FichierLog::Get()->Ajouter(_T("PlayListTableau::SuppressionLigne - 1 ligne"));
             #endif
             DeleteItem(position);
             for (size_t k = 0; k < m_ocurrenceLigne.GetCount(); k++)
@@ -633,7 +633,7 @@ void ListeLecture::SuppressionLigne()
             long i = 0, j = 0, max = GetSelectedItemCount();
 
             #if DEBUG
-            FichierLog::Get()->Ajouter(_T("ListeLecture::SuppressionLigne - ") + wxString::Format(_T("%ld lignes"), max));
+            FichierLog::Get()->Ajouter(_T("PlayListTableau::SuppressionLigne - ") + wxString::Format(_T("%ld lignes"), max));
             #endif
 
             wxProgressDialog barProgre(_("Mise à jour"), _("Suppression en cours"), max);//
@@ -683,11 +683,11 @@ void ListeLecture::SuppressionLigne()
         SetFocus();
     }
     #if DEBUG
-    FichierLog::Get()->Ajouter(_T("ListeLecture::SuppressionLigne - Fin"));
+    FichierLog::Get()->Ajouter(_T("PlayListTableau::SuppressionLigne - Fin"));
     #endif
 }
 
-void ListeLecture::RechercheElargie(wxString chaine)
+void PlayListTableau::RechercheElargie(wxString chaine)
 {
     wxMutexLocker lock(*s_mutexMAJPlaylist);
     m_rechercheEnCours = true;
@@ -880,7 +880,7 @@ void ListeLecture::RechercheElargie(wxString chaine)
     ChangementChanson(Musique::Get()->GetNomPos());
 }
 
-void ListeLecture::RecherchePrecise(wxString chaine)
+void PlayListTableau::RecherchePrecise(wxString chaine)
 {
     wxMutexLocker lock(*s_mutexMAJPlaylist);
     m_rechercheEnCours = true;
@@ -925,12 +925,12 @@ void ListeLecture::RecherchePrecise(wxString chaine)
     ChangementChanson(Musique::Get()->GetNomPos());
 }
 
-void ListeLecture::StopRecherche()
+void PlayListTableau::StopRecherche()
 {
     m_rechercheEnCours = false;
 }
 
-bool ListeLecture::RechercheRunning()
+bool PlayListTableau::RechercheRunning()
 {
     if (s_mutexMAJPlaylist->TryLock() != wxMUTEX_NO_ERROR)
         return true;

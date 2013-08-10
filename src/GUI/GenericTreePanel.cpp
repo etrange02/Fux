@@ -41,7 +41,7 @@ void GenericTreePanel::Create(wxWindow *Parent, wxWindowID Id, wxWindowID IdTree
 
     m_sizer2V = new wxBoxSizer(wxVERTICAL);
     m_sizer1H->Add(m_sizer2V, 0, wxALL|wxEXPAND|wxFIXED_MINSIZE, 0);
-    m_treeFiles = new wxTreeCtrl(this, IdTreeCtrl, wxDefaultPosition, wxDefaultSize, wxTR_NO_BUTTONS|wxTR_EDIT_LABELS|wxTR_NO_LINES|wxTR_FULL_ROW_HIGHLIGHT|wxTR_SINGLE|wxTR_HIDE_ROOT);
+    m_treeFiles = new wxTreeCtrl(this, IdTreeCtrl, wxDefaultPosition, wxSize(120, -1), wxTR_NO_BUTTONS|wxTR_EDIT_LABELS|wxTR_NO_LINES|wxTR_FULL_ROW_HIGHLIGHT|wxTR_SINGLE|wxTR_HIDE_ROOT);
     m_sizer2V->Add(m_treeFiles, 1, wxALL|wxEXPAND|wxFIXED_MINSIZE, 5);
     wxTreeItemId root = m_treeFiles->AddRoot(_T("root"));
     m_nodeExistant = m_treeFiles->AppendItem(root, _("Existants"));

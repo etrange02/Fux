@@ -34,7 +34,7 @@ class PlayList : public wxPanel
         PlayList();
         virtual ~PlayList();
 
-        ListeLecture* GetListeLecture();
+        PlayListTableau* GetPlayListTableau();
 
         void Creer(wxWindow *Parent, bool MAJListe = false);
         void EnregistrerM3U(wxCommandEvent &WXUNUSED(event));
@@ -63,7 +63,7 @@ class PlayList : public wxPanel
         wxSearchCtrl *m_champsRecherche;
 
         ImagePochetteMusique *m_pochette;
-        ListeLecture *m_liste;
+        PlayListTableau *m_liste;
         TagLib::FileRef m_ObjetTAG;
 
         size_t m_rechercheTailleMot;

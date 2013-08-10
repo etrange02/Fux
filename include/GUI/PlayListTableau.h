@@ -25,11 +25,11 @@ extern const wxEventType wxEVT_VIDER_PANNEAU;
 extern const wxEventType wxEVT_LISTE_DETAILS;
 
 
-class ListeLecture : public wxListCtrl
+class PlayListTableau : public wxListCtrl
 {
     public:
-        ListeLecture(wxWindow *Parent);
-        virtual ~ListeLecture();
+        PlayListTableau(wxWindow *Parent);
+        virtual ~PlayListTableau();
         void MAJ();
         void supprimerNomLigne(ChansonNomPos);
         wxString GetDuree(int);

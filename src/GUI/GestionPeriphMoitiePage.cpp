@@ -689,7 +689,7 @@ void PageGestionPeriph::MenuCreerM3U()
     if (m_liste->GetEtat() != DOSSIER && m_liste->GetEtat() != PLAYLIST)
         return;
 
-    DialogEnregistreM3U fen(NULL, wxID_ANY, (m_liste->GetEtat() == PLAYLIST) ? _T("") : m_chemin);
+    DialogEnregistreM3U fen(this, wxID_ANY, (m_liste->GetEtat() == PLAYLIST) ? _T("") : m_chemin);
     fen.Creer();
     bool modif = true;
 

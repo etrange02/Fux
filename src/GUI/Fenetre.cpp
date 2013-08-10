@@ -116,7 +116,7 @@ FuXFenetre::FuXFenetre(int argc, wxChar **argv) : wxFrame(NULL, wxID_ANY, _T("Fu
     SetIcon(wxIcon(Parametre::Get()->getRepertoireExecutableLib(_T("play.ico")), wxBITMAP_TYPE_ICO));
 
     if (m_MAJliste)
-        m_playList->GetListeLecture()->MAJ();
+        m_playList->GetPlayListTableau()->MAJ();
 
     ChangeFenetre();
     m_serveur = new TCPServeur(this);
@@ -189,7 +189,7 @@ void FuXFenetre::CreerPages()
     #endif
 
     sizerDroitPrincipal = new wxBoxSizer(wxVERTICAL);
-    m_TimerGraph.Start(70, false);
+    m_TimerGraph.Start(40, false);
 
     sizerDroitPrincipal->Add(m_musiqueGraph, 1, wxEXPAND, 0);
     sizerDroitPrincipal->Show(m_musiqueGraph);
@@ -361,13 +361,12 @@ void FuXFenetre::ConstructionSizerGauche()
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::ConstructionSizerGauche - chargement des images"));
     #endif
-    m_imageBouton = new wxBitmap[6];
+    m_imageBouton = new wxBitmap[5];
     m_imageBouton[PREC].LoadFile(Parametre::Get()->getRepertoireExecutableLib(_T("prec.png")), wxBITMAP_TYPE_PNG);
     m_imageBouton[LECT].LoadFile(Parametre::Get()->getRepertoireExecutableLib(_T("lect.png")), wxBITMAP_TYPE_PNG);
     m_imageBouton[PAUS].LoadFile(Parametre::Get()->getRepertoireExecutableLib(_T("paus.png")), wxBITMAP_TYPE_PNG);
     m_imageBouton[SUIV].LoadFile(Parametre::Get()->getRepertoireExecutableLib(_T("suiv.png")), wxBITMAP_TYPE_PNG);
     m_imageBouton[SUPPR].LoadFile(Parametre::Get()->getRepertoireExecutableLib(_T("suppr.png")), wxBITMAP_TYPE_PNG);
-    m_imageBouton[5].LoadFile(Parametre::Get()->getRepertoireExecutableLib(_T("suppr2.png")), wxBITMAP_TYPE_PNG);
 
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::ConstructionSizerGauche - Application des images aux boutons"));
@@ -391,8 +390,8 @@ void FuXFenetre::ConstructionSizerGauche()
     sizerGaucheV->Add(BoutonG_EcranPrincipal, 0, wxALL, 5);
 
     //wxButton *BoutonG_Playist = new wxButton(this, ID_APP_AFF_PLAYIST, _("Liste de lecture"), wxDefaultPosition, wxSize(140, 38));
-    wxButton *BoutonG_Playist = new BoutonFenetreDetachable(this, ID_APP_AFF_PLAYIST, _("Liste de lecture"), wxSize(140, 38), LISTELECTURE);
-    sizerGaucheV->Add(BoutonG_Playist, 0, wxBOTTOM | wxRIGHT | wxLEFT, 5);
+    wxButton *BoutonG_PlayList = new BoutonFenetreDetachable(this, ID_APP_AFF_PLAYIST, _("Liste de lecture"), wxSize(140, 38), LISTELECTURE);
+    sizerGaucheV->Add(BoutonG_PlayList, 0, wxBOTTOM | wxRIGHT | wxLEFT, 5);
 
     //wxButton *BoutonG_ModuleIPod = new wxButton(this, ID_APP_AFF_MODULE_IPOD, _("Exploration"), wxDefaultPosition, wxSize(140, 38));
     wxButton *BoutonG_ModuleIPod = new BoutonFenetreDetachable(this, ID_APP_AFF_MODULE_IPOD, _("Exploration"), wxSize(140, 38), GESTIONPERIPH);
@@ -637,7 +636,7 @@ void FuXFenetre::OuvrirChanson(wxCommandEvent &WXUNUSED(event))
                 Musique::Get()->Listage(&musNav);
         }
         musNav.Clear();
-        m_playList->GetListeLecture()->MAJ();
+        m_playList->GetPlayListTableau()->MAJ();
         GestPeriph::Get()->MAJPlaylist();
     }
 }
@@ -672,7 +671,7 @@ void FuXFenetre::OuvrirM3U(wxCommandEvent &WXUNUSED(event))
                 }
                 else*/
                     Musique::Get()->CopieFichier(chemin);
-                m_playList->GetListeLecture()->MAJ();
+                m_playList->GetPlayListTableau()->MAJ();
                 GestPeriph::Get()->MAJPlaylist();
             }
             else
@@ -691,7 +690,7 @@ void FuXFenetre::SupprimerListe(wxCommandEvent &WXUNUSED(event))
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::SupprimerListe"));
     #endif
-    m_playList->GetListeLecture()->supprimerNomLigne(Musique::Get()->SupprimerNom());
+    m_playList->GetPlayListTableau()->supprimerNomLigne(Musique::Get()->SupprimerNom());
     GestPeriph::Get()->MAJPlaylist();
     ChangeFenetre();
 }
@@ -762,7 +761,7 @@ void FuXFenetre::ChangeFenetre()/////////////////
         case ENCODAGE:
             break;
         case LISTELECTURE:
-            m_playList->GetListeLecture()->SetFocus();
+            m_playList->GetPlayListTableau()->SetFocus();
             break;
         case GESTIONPERIPH:
             GestPeriph::Get()->SetFocus();
@@ -791,7 +790,7 @@ void FuXFenetre::ChangementChanson(wxCommandEvent &event)
     #endif
     if (event.GetInt())
     {
-        m_playList->GetListeLecture()->ChangementChanson(Musique::Get()->GetNomPos());
+        m_playList->GetPlayListTableau()->ChangementChanson(Musique::Get()->GetNomPos());
         m_boutonImageLP->SetBitmapLabel(m_imageBouton[PAUS]);
         menuControle->FindItem(ID_APP_BAR_LECTURE)->SetItemLabel(_("Pause\tCtrl-P"));//"));//
     }
@@ -807,7 +806,7 @@ void FuXFenetre::ChangementChanson(wxCommandEvent &event)
  */
 void FuXFenetre::MAJplaylist(wxCommandEvent &WXUNUSED(event))
 {
-    m_playList->GetListeLecture()->MAJ();
+    m_playList->GetPlayListTableau()->MAJ();
     GestPeriph::Get()->MAJPlaylist();
 }
 
