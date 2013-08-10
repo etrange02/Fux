@@ -11,6 +11,7 @@
 #include "../Parametre.h"
 #include "PreferenceCouleur.h"
 #include "PreferenceSon.h"
+#include "../Dialogue/DialogEnregistreM3U.h"
 
 class PrefDefaut : public wxScrolledWindow
 {

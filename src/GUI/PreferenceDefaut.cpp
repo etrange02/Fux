@@ -28,6 +28,7 @@ BEGIN_EVENT_TABLE(PrefDefaut, wxScrolledWindow)
     EVT_BUTTON(ID_APP_PREF_DEFAUT_PORTABLE, PrefDefaut::Defaut_Bouton_Portable)
     EVT_BUTTON(ID_APP_PREF_DEFAUT_CHEMIN_RECHERCHE_DEFAUT, PrefDefaut::Defaut_Bouton_CheminDefaut)//Répertoire à afficher lors du début d'une recherche
     EVT_PREFERENCE_MAJ_LISTE(-1, PrefDefaut::Defaut_Bouton_MAJListe)
+    EVT_PREFERENCE_MAJ_M3U(-1, PrefDefaut::Defaut_Bouton_MAJListe)
 END_EVENT_TABLE()
 
 /**
@@ -166,6 +167,8 @@ void PrefDefaut::Creer(wxWindow *Parent, wxWindowID Id)
     m_boiteCheminChansonRep->Enable(false);
     m_boutonRecherche->Enable(false);
     m_sizer1V->Layout();
+
+    DialogEnregistreM3U::SetPanelToBeCall(this);
 }
 
 /**

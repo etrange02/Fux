@@ -20,9 +20,9 @@ var NAVTREEINDEX =
 [
 ".html",
 "class_chanson_nom_pos.html",
-"class_fu_x_fenetre.html#a961c379eb488ecb480b27445686da7bd",
-"class_page_gestion_periph.html#a1f78ceec92b78eb02ecc719595bab107",
-"class_thread_fichier_fichier.html"
+"class_fu_x_fenetre.html#a8b849e45d843e71b7ea574ebd6daad93",
+"class_parametre.html#a04fcf91df13d7233ed99a0d157532ea4",
+"class_t_c_p_serveur.html#a8d0878ba9345bf230980a91f6d037675"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

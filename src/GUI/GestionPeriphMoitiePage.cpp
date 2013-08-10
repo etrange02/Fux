@@ -769,6 +769,7 @@ void PageGestionPeriph::MenuCreerM3U()
         }
         fichierEcr.Close();
     }
+    fen.CallPanel();
 }
 
 /**

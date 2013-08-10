@@ -8,6 +8,9 @@
  **************************************************************/
  #include "../../include/Dialogue/DialogEnregistreM3U.h"
 
+static wxPanel *s_panelToBeCall = NULL;
+const wxEventType wxEVT_PREFERENCE_MAJ_M3U = wxNewEventType();
+
 /**
  * @class DialogEnregistreM3U
  * @brief Ouvre une boîte de dialogue permettant de choisir le nom du fichiers .m3u à créer et éventuellement le raccourci.
@@ -129,5 +132,27 @@ void DialogEnregistreM3U::OuvrirDossier(wxCommandEvent &WXUNUSED(event))
 
     if (ouvert == wxID_OK)
         m_boiteRaccourci->SetValue(navig.GetPath());
+}
+
+/**
+ * Associe un panel qui doit recevoir un évènement lors d'une modification
+ * @param Panel un panel qui doit recevoir les évènements
+ */
+void DialogEnregistreM3U::SetPanelToBeCall(wxPanel* Panel)
+{
+    s_panelToBeCall = Panel;
+}
+
+/**
+ * Informe le panel de la mise à jour
+ * @see DialogEnregistreM3U::SetPanelToBeCall
+ */
+void DialogEnregistreM3U::CallPanel()
+{
+    if (s_panelToBeCall)
+    {
+        wxCommandEvent evt(wxEVT_PREFERENCE_MAJ_M3U, wxID_ANY);
+        s_panelToBeCall->GetEventHandler()->AddPendingEvent(evt);
+    }
 }
 

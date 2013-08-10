@@ -13,7 +13,7 @@ var searchData=
   ['affichegestperiph',['AfficheGestPeriph',['../class_fu_x_fenetre.html#a88f03b00dc45ac874093c834fdb707f1',1,'FuXFenetre']]],
   ['afficheimage',['AfficheImage',['../class_image_pochette_musique.html#aaa2cce30ae1e03d76893ba959ee297e6',1,'ImagePochetteMusique']]],
   ['affichelistedelecture',['AfficheListeDeLecture',['../class_fu_x_fenetre.html#a4032c54b71618bb9b106a61d540cb9c3',1,'FuXFenetre']]],
-  ['affichemenu',['AfficheMenu',['../class_liste_gestion_periph.html#a587fdb6f1ed3732290b2a615bd6f14e6',1,'ListeGestionPeriph::AfficheMenu()'],['../class_liste_lecture.html#ad83d0481d2ac399b38be29afec4b5f13',1,'ListeLecture::AfficheMenu()']]],
+  ['affichemenu',['AfficheMenu',['../class_liste_gestion_periph.html#a587fdb6f1ed3732290b2a615bd6f14e6',1,'ListeGestionPeriph::AfficheMenu()'],['../class_play_list_tableau.html#a9cca151e5f31b4e1cabdf61950175326',1,'PlayListTableau::AfficheMenu()']]],
   ['affichemenu_5fautre',['AfficheMenu_Autre',['../class_gest_periph.html#a2413312d16a8b1e53ee5f067c5d34a46',1,'GestPeriph']]],
   ['affichemenu_5fmesdoc',['AfficheMenu_MesDoc',['../class_gest_periph.html#ad1041cb0a48857e5026ffefc1e20c813',1,'GestPeriph']]],
   ['affichemenu_5fperiph',['AfficheMenu_Periph',['../class_gest_periph.html#a5f4526a256b85188eac3ae5bf77fa47d',1,'GestPeriph']]],

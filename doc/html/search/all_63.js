@@ -1,8 +1,9 @@
 var searchData=
 [
+  ['callpanel',['CallPanel',['../class_dialog_enregistre_m3_u.html#a55400562b8d7d2452d0071cafc109d59',1,'DialogEnregistreM3U']]],
   ['changefenetre',['ChangeFenetre',['../class_fu_x_fenetre.html#a0336b5da68e635658b78f3c87d65ab31',1,'FuXFenetre']]],
-  ['changementchanson',['ChangementChanson',['../class_fu_x_fenetre.html#ae24a9cc0d03a9cc86805295e3c4cf267',1,'FuXFenetre::ChangementChanson()'],['../class_liste_lecture.html#a20af0e050843d7cdb68b9b626a35f33b',1,'ListeLecture::ChangementChanson()'],['../class_musique.html#a18fa452686971312ec9719be5cea032d',1,'Musique::ChangementChanson(e_ChangeChanson)'],['../class_musique.html#a2fb3a6edbf6b9261453cd1f18c9f23e3',1,'Musique::ChangementChanson(long, wxString chaine=wxEmptyString)'],['../class_musique.html#a36da5eabc4e2dd9e17248c24a468263e',1,'Musique::ChangementChanson()']]],
-  ['chansonactive',['ChansonActive',['../class_liste_lecture.html#a2dfb1366cf91c76146a9bcd3feab65ec',1,'ListeLecture']]],
+  ['changementchanson',['ChangementChanson',['../class_fu_x_fenetre.html#ae24a9cc0d03a9cc86805295e3c4cf267',1,'FuXFenetre::ChangementChanson()'],['../class_play_list_tableau.html#a1050c918b463d81190f053592c8e5034',1,'PlayListTableau::ChangementChanson()'],['../class_musique.html#a18fa452686971312ec9719be5cea032d',1,'Musique::ChangementChanson(e_ChangeChanson)'],['../class_musique.html#a2fb3a6edbf6b9261453cd1f18c9f23e3',1,'Musique::ChangementChanson(long, wxString chaine=wxEmptyString)'],['../class_musique.html#a36da5eabc4e2dd9e17248c24a468263e',1,'Musique::ChangementChanson()']]],
+  ['chansonactive',['ChansonActive',['../class_play_list_tableau.html#a9b1f1f3cbd8eac3550b5a75dbb34f94d',1,'PlayListTableau']]],
   ['chansonnompos',['ChansonNomPos',['../class_chanson_nom_pos.html',1,'ChansonNomPos'],['../class_chanson_nom_pos.html#a2dafbcbdb6cdf55050cf88240e815ba8',1,'ChansonNomPos::ChansonNomPos()']]],
   ['clear',['Clear',['../class_dn_d_liste_fichier.html#a0290ff68a2fc776ad7afbea98baafc4e',1,'DnDListeFichier']]],
   ['close',['Close',['../class_b_d_d.html#ae4fe2aa311bce61f06dd0d746daa18bb',1,'BDD']]],

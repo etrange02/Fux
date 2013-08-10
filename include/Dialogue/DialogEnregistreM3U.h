@@ -8,6 +8,8 @@
 #include "../Define.h"
 #include "../Parametre.h"
 
+extern const wxEventType wxEVT_PREFERENCE_MAJ_M3U;
+
 class DialogEnregistreM3U : public wxDialog
 {
     public:
@@ -18,6 +20,8 @@ class DialogEnregistreM3U : public wxDialog
         wxString GetCheminRaccourci();
         void CreerListeM3U();
         void OuvrirDossier(wxCommandEvent &WXUNUSED(event));
+        static void SetPanelToBeCall(wxPanel *Panel);
+        void CallPanel();
 
     private:
         wxString m_chemin, m_raccourci, m_rep;

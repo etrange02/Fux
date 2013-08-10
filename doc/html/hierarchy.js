@@ -62,7 +62,7 @@ var hierarchy =
     ] ],
     [ "wxListCtrl", null, [
       [ "ListeGestionPeriph", "class_liste_gestion_periph.html", null ],
-      [ "ListeLecture", "class_liste_lecture.html", null ]
+      [ "PlayListTableau", "class_play_list_tableau.html", null ]
     ] ],
     [ "wxPanel", null, [
       [ "DialogTagMP3Info", "class_dialog_tag_m_p3_info.html", null ],

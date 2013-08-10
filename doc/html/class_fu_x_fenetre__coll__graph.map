@@ -5,8 +5,8 @@
 <area shape="rect" id="node7" href="$class_preference_couleur.html" title="Interface représentant différentes compositions graphiques &#45; Passer les fichiers au format XML Les fi..." alt="" coords="387,83,515,110"/>
 <area shape="rect" id="node8" href="$class_array_fenetre_detachable.html" title="Array contenant des FenetreDetachable." alt="" coords="685,246,848,272"/>
 <area shape="rect" id="node10" href="$class_play_list.html" title="Page contenant la liste de lecture et une description détaillée des titres." alt="" coords="732,296,801,323"/>
-<area shape="rect" id="node12" href="$class_liste_lecture.html" title="Tableau (GUI) dans lequel sont affichés les informations des titres mis dans la liste de lecture..." alt="" coords="404,296,497,323"/>
-<area shape="rect" id="node14" href="$class_image_pochette_musique.html" title="Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour chang..." alt="" coords="371,347,530,374"/>
+<area shape="rect" id="node12" href="$class_image_pochette_musique.html" title="Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour chang..." alt="" coords="371,296,530,323"/>
+<area shape="rect" id="node14" href="$class_play_list_tableau.html" title="Tableau (GUI) dans lequel sont affichés les informations des titres mis dans la liste de lecture..." alt="" coords="393,347,508,374"/>
 <area shape="rect" id="node16" href="$class_t_c_p_serveur.html" title="Représente le serveur." alt="" coords="721,372,812,399"/>
 <area shape="rect" id="node18" href="$class_musique_graph.html" title="Panel affichant le graph, la barre de temps et le titre de la chanson." alt="" coords="713,466,820,492"/>
 <area shape="rect" id="node20" href="$class_couleur.html" title="Champs RVB." alt="" coords="417,562,484,588"/>

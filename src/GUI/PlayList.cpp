@@ -197,6 +197,7 @@ void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
         fichierLec.Close();
         fichierEcr.Close();
     }
+    fen->CallPanel();
     delete fen;
 }
 
