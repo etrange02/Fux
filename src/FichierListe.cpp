@@ -137,7 +137,7 @@ void FichierListe::ListageFichier(wxArrayString *chaine)
     {
         if (wxFileExists(chaine->Item(i)))
         {
-            if (chaine->Item(i).AfterLast('.').Lower().IsSameAs(_T(".m3u")))
+            if (chaine->Item(i).AfterLast('.').Lower().IsSameAs(_T("m3u")))
             {
                 wxTextFile fichierM3U(chaine->Item(i));
                 if (fichierM3U.Exists())

@@ -7,7 +7,7 @@
  * License:
  **************************************************************/
 
-#include "GestionPeriphMoitiePage.h"
+#include "../../include/GUI/GestionPeriphMoitiePage.h"
 
 /**
  * @class PageGestionPeriph
@@ -689,7 +689,7 @@ void PageGestionPeriph::MenuCreerM3U()
     if (m_liste->GetEtat() != DOSSIER && m_liste->GetEtat() != PLAYLIST)
         return;
 
-    DialogEnregistreM3U fen(NULL, wxID_ANY, (m_liste->GetEtat() == PLAYLIST) ? _T("") : m_chemin);
+    DialogEnregistreM3U fen(this, wxID_ANY, (m_liste->GetEtat() == PLAYLIST) ? _T("") : m_chemin);
     fen.Creer();
     bool modif = true;
 
@@ -729,7 +729,7 @@ void PageGestionPeriph::MenuCreerM3U()
             }
             else if (m_liste->GetSelectedItemCount() > 1 && m_liste->GetEtat() == PLAYLIST)
             {
-                wxTextFile fichierLec(Parametre::Get()->getRepertoireParametre(_T("musique.liste")));
+                wxTextFile fichierLec(FichierListe::Get()->GetCheminListe());
                 if (!fichierLec.Open())
                 {   fichierEcr.Write(); fichierEcr.Close(); return;}
 
@@ -742,13 +742,11 @@ void PageGestionPeriph::MenuCreerM3U()
             fichierEcr.Write();
             if (fen.GetCheminRaccourci() != wxEmptyString && !wxFileExists(fen.GetCheminRaccourci()))
             {
-                
-            }
                 if (!CreationRaccourci(fen.GetCheminRaccourci(), fen.GetChemin()))
                 {
-                    
-                }
                     wxLogMessage(_("Echec de la création du raccourci."));
+                }
+            }
 
             wxArrayString chaine;
             chaine.Add(_("Non"));
@@ -771,6 +769,7 @@ void PageGestionPeriph::MenuCreerM3U()
         }
         fichierEcr.Close();
     }
+    fen.CallPanel();
 }
 
 /**
@@ -827,11 +826,17 @@ void PageGestionPeriph::MenuRenommer()//Uniquement dans un dossier
             {
                 wxMessageDialog boite2(this, _("Fichier déjà existant. Souhaitez-vous le remplacer ?"), _("Fichier déjà existant"), wxYES_NO|wxICON_QUESTION|wxCENTRE|wxYES_DEFAULT);
                 if (boite2.ShowModal() != wxID_YES)
+                {
                     modif = false;
+                }
             }
             if (modif)
+            {
                 if (!wxRenameFile(nomF, nom, true))
+                {
                     wxLogError(_("Impossible de modifier le nom"));
+                }
+            }
         }
     }
 }
@@ -933,7 +938,7 @@ void PageGestionPeriph::MenuLire()
         size_t i = 0;
         while(i < tableau->GetCount())
         {
-            if (Parametre::Get()->islisable(tableau->Item(i).AfterLast('.').Lower()))
+            if (Parametre::Get()->islisable(tableau->Item(i).AfterLast('.').Lower()) ||)
                 i++;
             else
                 tableau->RemoveAt(i);
@@ -957,8 +962,12 @@ void PageGestionPeriph::MenuRaccourci()
     ouvert = navig.ShowModal();
 
     if (ouvert == wxID_OK)
+    {
         if (!CreationRaccourci(navig.GetPath() + wxFileName::GetPathSeparator() + m_liste->GetItemText(m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED)).BeforeLast('.') + _(" (raccourci).lnk"), m_chemin + wxFileName::GetPathSeparator() + m_liste->GetItemText(m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED))))
+        {
             wxLogMessage(_("Echec de la création du raccourci."));
+        }
+    }
 }
 
 ////////////////Dnd

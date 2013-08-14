@@ -938,7 +938,7 @@ void PageGestionPeriph::MenuLire()
         size_t i = 0;
         while(i < tableau->GetCount())
         {
-            if (Parametre::Get()->islisable(tableau->Item(i).AfterLast('.').Lower()))
+            if (Parametre::Get()->islisable(tableau->Item(i).AfterLast('.').Lower()) || tableau->Item(i).AfterLast('.').Lower().IsSameAs(_("m3u")))
                 i++;
             else
                 tableau->RemoveAt(i);
@@ -946,7 +946,7 @@ void PageGestionPeriph::MenuLire()
         if (!tableau->IsEmpty())
         {
             Musique::Get()->Listage(tableau, true);
-            Musique::Get()->ChangementChanson(-1, tableau->Item(0));
+            //Musique::Get()->ChangementChanson(-1, tableau->Item(0));
         }
         delete tableau;
     }

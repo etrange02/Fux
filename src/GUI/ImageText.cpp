@@ -85,6 +85,7 @@ void ImageText::Creer(wxString nom, int largeur, int largeurEcran, int hauteur)
     m_largeurEcran = largeurEcran;
 
 	wxBitmap bitmap;
+	largeur*=2;
     bitmap.Create(largeur, hauteur);
     wxMemoryDC Dc;
     Dc.SelectObject(bitmap);

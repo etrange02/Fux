@@ -376,7 +376,7 @@ bool PreferenceSon::ModifierFiltre(wxString nom, int vol, int volPC, wxString ol
  */
 bool PreferenceSon::OuvrirFiltre(wxString filtre)
 {
-    wxTextFile fichier(Parametre::Get()->getCheminCouleur(filtre));
+    wxTextFile fichier(Parametre::Get()->getCheminSon(filtre));
     if (fichier.Open())
     {
         if (fichier.GetLine(0).IsSameAs(_T("#EXTSAUVE_S1")))

@@ -336,7 +336,6 @@ void FuXFenetre::ConstructionBarre()
     menuBarre->Append(menuAide, _("?"));
     menuBarre->Append(menuControle, _("Contrôles"));
 
-
     SetMenuBar(menuBarre);
 }
 
