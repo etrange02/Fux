@@ -263,7 +263,7 @@ void PageGestionPeriph::OnKey(wxKeyEvent &event)
         else if (GetId() == ID_PAGE_PERIHERIQUE_DROITE)
             Deplace();
     }
-    else if (event.GetKeyCode() == 'R' && event.ControlDown())
+    else if ((event.GetKeyCode() == WXK_F5) || (event.GetKeyCode() == 'R' && event.ControlDown()))
         Recharger();
     else if (event.GetKeyCode() == 'X' && event.ControlDown())
         MenuCouper();
@@ -797,6 +797,10 @@ void PageGestionPeriph::MenuRenommer()//Uniquement dans un dossier
     wxString mes1 = est_dossier ? _("Nouveau nom du dossier") : _("Nouveau nom du fichier");
     wxString titre1 = est_dossier ? _("Renommer un dossier") : _("Renommer un fichier");
     wxTextEntryDialog boite(this, mes1, titre1);
+    if (est_dossier)
+        boite.SetValue(m_liste->GetItemText(pos));
+    else
+        boite.SetValue(m_liste->GetItemText(pos).BeforeLast('.'));
 
     if (boite.ShowModal() == wxID_OK)
     {
@@ -835,6 +839,8 @@ void PageGestionPeriph::MenuRenommer()//Uniquement dans un dossier
                 if (!wxRenameFile(nomF, nom, true))
                 {
                     wxLogError(_("Impossible de modifier le nom"));
+                    if (nom.EndsWith(_(".m3u")))
+                        DialogEnregistreM3U::CallPanel();
                 }
             }
         }

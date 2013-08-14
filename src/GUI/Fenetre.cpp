@@ -37,7 +37,7 @@ BEGIN_EVENT_TABLE(FuXFenetre, wxFrame)
     EVT_MENU(ID_APP_BAR_AIDE, FuXFenetre::MenuAide)
     EVT_MENU(ID_APP_BAR_COULEUR_PREFERENCE, FuXFenetre::AfficherPreferenceCouleur)
     EVT_MENU(ID_APP_BAR_SON_PREFERENCE, FuXFenetre::AfficherPreferenceSon)
-    EVT_MENU(ID_APP_BAR_DEFAUT_PREFERENCE, FuXFenetre::AfficheDefaut)
+    EVT_MENU(ID_APP_BAR_DEFAUT_PREFERENCE, FuXFenetre::AfficherPreferenceDefaut)
     EVT_BUTTON(ID_APP_AFF_BOUTON_PRECEDENT, FuXFenetre::Precedent)//////////////////////
     EVT_BUTTON(ID_APP_AFF_BOUTON_SUIVANT, FuXFenetre::Suivant)//////////////////////
     EVT_BUTTON(ID_APP_AFF_BOUTON_SUPPRIMER, FuXFenetre::SupprimerListe)//////////////////////
@@ -405,16 +405,6 @@ void FuXFenetre::ConstructionSizerGauche()
 
     sizerGaucheV->SetMinSize(150, 256);
     //sizerPrincipalH->Add(sizerGaucheV, 0, wxALL | wxEXPAND, 0);
-}
-
-/**
- * Barre de menu : Page des préférences, onglet Défaut
- */
-void FuXFenetre::AfficheDefaut(wxCommandEvent &WXUNUSED(event))
-{
-    m_nouvelleFenetre = PREFERENCE;
-    ChangeFenetre();
-    NotebookPreference->ChangeSelection(2);
 }
 
 /**
@@ -920,6 +910,16 @@ void FuXFenetre::AfficherPreferenceCouleur(wxCommandEvent &WXUNUSED(event))
     m_nouvelleFenetre = PREFERENCE;
     ChangeFenetre();
     NotebookPreference->ChangeSelection(0);
+}
+
+/**
+ * Bascule sur la page des Préférences, onglet Défaut
+ */
+void FuXFenetre::AfficherPreferenceDefaut(wxCommandEvent &WXUNUSED(event))
+{
+    m_nouvelleFenetre = PREFERENCE;
+    ChangeFenetre();
+    NotebookPreference->ChangeSelection(2);
 }
 
 

@@ -31,8 +31,8 @@ class FuXFenetre: public wxFrame
 
     void ConstructionBarre();
     void ConstructionSizerGauche();
-    void AfficheDefaut(wxCommandEvent &WXUNUSED(event));
     void AffichePrincipal(wxCommandEvent &WXUNUSED(event));
+    void AfficheDefaut(wxCommandEvent &WXUNUSED(event));
     void AffichePreference(wxCommandEvent &WXUNUSED(event));
     void AfficheEncodage(wxCommandEvent &WXUNUSED(event));
     void AfficheListeDeLecture(wxCommandEvent &WXUNUSED(event));
@@ -58,6 +58,7 @@ class FuXFenetre: public wxFrame
     void MenuAide(wxCommandEvent &WXUNUSED(event));
     void AfficherPreferenceCouleur(wxCommandEvent &WXUNUSED(event));
     void AfficherPreferenceSon(wxCommandEvent &WXUNUSED(event));
+    void AfficherPreferenceDefaut(wxCommandEvent &WXUNUSED(event));
     void EvtServeurAjout(wxCommandEvent&);
     void OnTitreChange(wxCommandEvent &WXUNUSED(event));
     void OnKeyDownRaccourci(wxKeyEvent&);

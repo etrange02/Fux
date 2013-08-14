@@ -21,7 +21,7 @@ class DialogEnregistreM3U : public wxDialog
         void CreerListeM3U();
         void OuvrirDossier(wxCommandEvent &WXUNUSED(event));
         static void SetPanelToBeCall(wxPanel *Panel);
-        void CallPanel();
+        static void CallPanel();
 
     private:
         wxString m_chemin, m_raccourci, m_rep;
