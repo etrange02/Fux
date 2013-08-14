@@ -946,7 +946,7 @@ void PageGestionPeriph::MenuLire()
         if (!tableau->IsEmpty())
         {
             Musique::Get()->Listage(tableau, true);
-            //Musique::Get()->ChangementChanson(-1, tableau->Item(0));
+            Musique::Get()->ChangementChanson(-1, tableau->Item(0));
         }
         delete tableau;
     }
