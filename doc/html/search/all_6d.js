@@ -1,13 +1,13 @@
 var searchData=
 [
   ['maj',['MAJ',['../class_play_list_tableau.html#a43dc67b763c691e534410ef502f9f897',1,'PlayListTableau']]],
-  ['majliste',['MajListe',['../class_preference_couleur.html#a3ed047d009e78608bec5c42a0bbe00b0',1,'PreferenceCouleur::MajListe()'],['../class_preference_son.html#a5f04a1c48214577aabeecfbadb7bbd75',1,'PreferenceSon::MajListe()']]],
-  ['majplaylist',['MAJplaylist',['../class_fu_x_fenetre.html#a6277fc2344896f970f1947dd58d1a5b5',1,'FuXFenetre::MAJplaylist()'],['../class_gest_periph.html#aae0fbb84376085738681530fbb6d756e',1,'GestPeriph::MAJPlaylist()']]],
+  ['majliste',['MAJListe',['../class_preference_defaut.html#ad33c1e80e10c47c1e2e8af3c1a15b80f',1,'PreferenceDefaut::MAJListe()'],['../class_preference_couleur.html#a3ed047d009e78608bec5c42a0bbe00b0',1,'PreferenceCouleur::MajListe()'],['../class_preference_son.html#a5f04a1c48214577aabeecfbadb7bbd75',1,'PreferenceSon::MajListe()']]],
+  ['majplaylist',['MAJPlaylist',['../class_gest_periph.html#aae0fbb84376085738681530fbb6d756e',1,'GestPeriph::MAJPlaylist()'],['../class_fu_x_fenetre.html#a6277fc2344896f970f1947dd58d1a5b5',1,'FuXFenetre::MAJplaylist()']]],
   ['menuabout',['MenuAbout',['../class_fu_x_fenetre.html#a98780b7c73142d15a4a11d10f701f554',1,'FuXFenetre']]],
   ['menuaide',['MenuAide',['../class_fu_x_fenetre.html#a92d517f1cf801e82a06e915e96c9cd43',1,'FuXFenetre']]],
-  ['menucoller',['MenuColler',['../class_page_gestion_periph.html#a8e77f888f5a73d371d17d1dcc440db93',1,'PageGestionPeriph::MenuColler()'],['../class_play_list_tableau.html#a46e1e54943b4e647db929e70385ccc73',1,'PlayListTableau::menuColler()']]],
+  ['menucoller',['menuColler',['../class_play_list_tableau.html#a46e1e54943b4e647db929e70385ccc73',1,'PlayListTableau::menuColler()'],['../class_page_gestion_periph.html#a8e77f888f5a73d371d17d1dcc440db93',1,'PageGestionPeriph::MenuColler()']]],
   ['menucopier',['MenuCopier',['../class_page_gestion_periph.html#a3dc995a0f830a3ac40e0cd9419657617',1,'PageGestionPeriph']]],
-  ['menucouper',['menuCouper',['../class_play_list_tableau.html#a93b0018070983a2f053caad7f3b3206f',1,'PlayListTableau::menuCouper()'],['../class_page_gestion_periph.html#a8b4edf9f1c5868c2b55d46569bbb514c',1,'PageGestionPeriph::MenuCouper()']]],
+  ['menucouper',['MenuCouper',['../class_page_gestion_periph.html#a8b4edf9f1c5868c2b55d46569bbb514c',1,'PageGestionPeriph::MenuCouper()'],['../class_play_list_tableau.html#a93b0018070983a2f053caad7f3b3206f',1,'PlayListTableau::menuCouper()']]],
   ['menucreerdossier',['MenuCreerDossier',['../class_page_gestion_periph.html#aa4dba74428600043796c14a924ec1e4a',1,'PageGestionPeriph']]],
   ['menucreerm3u',['MenuCreerM3U',['../class_page_gestion_periph.html#a117294b04fe8c379c591b1c0cd1baf8c',1,'PageGestionPeriph']]],
   ['menudetails',['menuDetails',['../class_play_list_tableau.html#a606b59612a947bac9b6448d026d6787b',1,'PlayListTableau']]],

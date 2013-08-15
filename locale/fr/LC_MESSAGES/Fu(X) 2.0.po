@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fu(X) 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-01 00:53+0100\n"
+"POT-Creation-Date: 2013-08-15 19:08+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: David Lecoconnier <david.lecoconnier@free.fr>\n"
 "Language-Team: \n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: ../../../src\n"
 
 #: ../../../src/Application.cpp:41
@@ -47,29 +47,29 @@ msgstr "Action requise, problème liste de lecture"
 msgid "Musique::CopieFichier - arrêt"
 msgstr "Musique::CopieFichier - arrêt"
 
-#: ../../../src/Dialogue/DialogEnregistreM3U.cpp:25
+#: ../../../src/Dialogue/DialogEnregistreM3U.cpp:28
 msgid "Création de playlist (fichier .m3u)"
 msgstr "Création de playlist (fichier .m3u)"
 
-#: ../../../src/Dialogue/DialogEnregistreM3U.cpp:49
+#: ../../../src/Dialogue/DialogEnregistreM3U.cpp:52
 msgid "Choisissez une sauvegarde existante"
 msgstr "Choisissez une sauvegarde existante"
 
-#: ../../../src/Dialogue/DialogEnregistreM3U.cpp:54
+#: ../../../src/Dialogue/DialogEnregistreM3U.cpp:57
 msgid "Ou bien créez une nouvelle sauvegarde"
 msgstr "Ou bien créez une nouvelle sauvegarde"
 
-#: ../../../src/Dialogue/DialogEnregistreM3U.cpp:61
+#: ../../../src/Dialogue/DialogEnregistreM3U.cpp:64
 msgid "Créer un raccourci ? Où le place-t-on ?"
 msgstr "Créer un raccourci ? Où le place-t-on ?"
 
-#: ../../../src/Dialogue/DialogEnregistreM3U.cpp:113
-#: ../../../src/Dialogue/DialogEnregistreM3U.cpp:115
-#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:965
+#: ../../../src/Dialogue/DialogEnregistreM3U.cpp:116
+#: ../../../src/Dialogue/DialogEnregistreM3U.cpp:118
+#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:972
 msgid " (raccourci).lnk"
 msgstr " (raccourci).lnk"
 
-#: ../../../src/Dialogue/DialogEnregistreM3U.cpp:127
+#: ../../../src/Dialogue/DialogEnregistreM3U.cpp:130
 msgid "Choisissez le répertoire dans lequel vous voulez créer un raccourci"
 msgstr "Choisissez le répertoire dans lequel vous voulez créer un raccourci"
 
@@ -93,7 +93,7 @@ msgstr "Année de parution"
 #: ../../../src/Dialogue/DialogTagMP3Info.cpp:37
 #: ../../../src/GUI/GestionPeriphTableau.cpp:56
 #: ../../../src/GUI/PlayList.cpp:100 ../../../src/GUI/PlayListTableau.cpp:49
-#: ../../../src/GUI/PreferenceSon.cpp:60
+#: ../../../src/GUI/PreferenceSon.cpp:66
 msgid "Nom"
 msgstr "Nom"
 
@@ -154,174 +154,158 @@ msgstr "Taille - "
 msgid " Mo"
 msgstr " Mo"
 
-#: ../../../src/GUI/Fenetre.cpp:106
+#: ../../../src/GUI/Fenetre.cpp:104
 msgid "Impossible de charger le fichier, celui-ci est vierge !"
 msgstr "Impossible de charger le fichier, celui-ci est vierge !"
 
-#: ../../../src/GUI/Fenetre.cpp:215 ../../../src/GUI/Fenetre.cpp:312
-#: ../../../src/GUI/PreferenceDefaut.cpp:70
+#: ../../../src/GUI/Fenetre.cpp:213 ../../../src/GUI/Fenetre.cpp:304
+#: ../../../src/GUI/PreferenceDefaut.cpp:86
 msgid "Couleur"
 msgstr "Couleur"
 
-#: ../../../src/GUI/Fenetre.cpp:216 ../../../src/GUI/Fenetre.cpp:313
-#: ../../../src/GUI/PreferenceDefaut.cpp:71
+#: ../../../src/GUI/Fenetre.cpp:214 ../../../src/GUI/Fenetre.cpp:305
+#: ../../../src/GUI/PreferenceDefaut.cpp:87
 msgid "Son"
 msgstr "Son"
 
-#: ../../../src/GUI/Fenetre.cpp:217 ../../../src/GUI/Fenetre.cpp:314
+#: ../../../src/GUI/Fenetre.cpp:215 ../../../src/GUI/Fenetre.cpp:306
 msgid "Défaut"
 msgstr "Défaut"
 
-#: ../../../src/GUI/Fenetre.cpp:227
+#: ../../../src/GUI/Fenetre.cpp:225
 msgid "Extraction indisponible pour le moment"
 msgstr "Extraction indisponible pour le moment"
 
-#: ../../../src/GUI/Fenetre.cpp:294
+#: ../../../src/GUI/Fenetre.cpp:292
 msgid "Ouvrir"
 msgstr "Ouvrir"
 
-#: ../../../src/GUI/Fenetre.cpp:295
+#: ../../../src/GUI/Fenetre.cpp:293
 msgid "Charger une playlist"
 msgstr "Charger une playlist"
 
-#: ../../../src/GUI/Fenetre.cpp:296
+#: ../../../src/GUI/Fenetre.cpp:294
 msgid "Charger un .matin"
 msgstr "Charger un .matin"
 
-#: ../../../src/GUI/Fenetre.cpp:299
+#: ../../../src/GUI/Fenetre.cpp:297
 msgid "Enregistrer la liste de lecture\tCtrl-S"
 msgstr "Enregistrer la liste de lecture\tCtrl-S"
 
-#: ../../../src/GUI/Fenetre.cpp:300
+#: ../../../src/GUI/Fenetre.cpp:298
 msgid "Créer un fichier matin"
 msgstr "Créer un fichier matin"
 
-#: ../../../src/GUI/Fenetre.cpp:303
+#: ../../../src/GUI/Fenetre.cpp:301
 msgid "Quitter Fu(X)\tCtrl-Q"
 msgstr "Quitter Fu(X)\tCtrl-Q"
 
-#: ../../../src/GUI/Fenetre.cpp:307
-msgid "Nouveau jeu de couleur"
-msgstr "Nouveau jeu de couleur"
-
-#: ../../../src/GUI/Fenetre.cpp:308
-msgid "Modifier/Appliquer un jeu de couleur existant"
-msgstr "Modifier/Appliquer un jeu de couleur existant"
-
-#: ../../../src/GUI/Fenetre.cpp:310
-msgid "Nouvel ensemble audio"
-msgstr "Nouvel ensemble audio"
-
-#: ../../../src/GUI/Fenetre.cpp:311
-msgid "Modifier/Appliquer une présélection audio"
-msgstr "Modifier/Appliquer une présélection audio"
-
-#: ../../../src/GUI/Fenetre.cpp:317
+#: ../../../src/GUI/Fenetre.cpp:309
 msgid "Extration de CD"
 msgstr "Extration de CD"
 
-#: ../../../src/GUI/Fenetre.cpp:319
+#: ../../../src/GUI/Fenetre.cpp:311
 msgid "MAJ Liste de lecture"
 msgstr "MAJ Liste de lecture"
 
-#: ../../../src/GUI/Fenetre.cpp:324
+#: ../../../src/GUI/Fenetre.cpp:316
 msgid "Aide\tF1"
 msgstr "Aide\tF1"
 
-#: ../../../src/GUI/Fenetre.cpp:325
+#: ../../../src/GUI/Fenetre.cpp:317
 msgid "Site internet"
 msgstr "Site internet"
 
-#: ../../../src/GUI/Fenetre.cpp:326 ../../../src/GUI/Fenetre.cpp:835
+#: ../../../src/GUI/Fenetre.cpp:318 ../../../src/GUI/Fenetre.cpp:815
 msgid "A propos"
 msgstr "A propos"
 
-#: ../../../src/GUI/Fenetre.cpp:330 ../../../src/GUI/Fenetre.cpp:504
-#: ../../../src/GUI/Fenetre.cpp:528 ../../../src/GUI/Fenetre.cpp:541
-#: ../../../src/GUI/Fenetre.cpp:558 ../../../src/GUI/Fenetre.cpp:577
-#: ../../../src/GUI/Fenetre.cpp:809
+#: ../../../src/GUI/Fenetre.cpp:322 ../../../src/GUI/Fenetre.cpp:484
+#: ../../../src/GUI/Fenetre.cpp:508 ../../../src/GUI/Fenetre.cpp:521
+#: ../../../src/GUI/Fenetre.cpp:538 ../../../src/GUI/Fenetre.cpp:557
+#: ../../../src/GUI/Fenetre.cpp:789
 msgid "Lecture\tCtrl-P"
 msgstr "Lecture\tCtrl-P"
 
-#: ../../../src/GUI/Fenetre.cpp:331
+#: ../../../src/GUI/Fenetre.cpp:323
 msgid "Stop"
 msgstr "Stop"
 
-#: ../../../src/GUI/Fenetre.cpp:333
+#: ../../../src/GUI/Fenetre.cpp:325
 msgid "Suivant\tCtrl-RIGHT"
 msgstr "Suivant\tCtrl-RIGHT"
 
-#: ../../../src/GUI/Fenetre.cpp:334
+#: ../../../src/GUI/Fenetre.cpp:326
 msgid "Précédent\tCtrl-LEFT"
 msgstr "Précédent\tCtrl-LEFT"
 
-#: ../../../src/GUI/Fenetre.cpp:335
+#: ../../../src/GUI/Fenetre.cpp:327
 msgid "Répétition"
 msgstr "Répétition"
 
-#: ../../../src/GUI/Fenetre.cpp:336
+#: ../../../src/GUI/Fenetre.cpp:328
 msgid "Aléatoire"
 msgstr "Aléatoire"
 
-#: ../../../src/GUI/Fenetre.cpp:338
+#: ../../../src/GUI/Fenetre.cpp:330
 msgid "Retirer de la liste de lecture\tCtrl-DELETE"
 msgstr "Retirer de la liste de lecture\tCtrl-DELETE"
 
-#: ../../../src/GUI/Fenetre.cpp:341
+#: ../../../src/GUI/Fenetre.cpp:333
 msgid "Fichier"
 msgstr "Fichier"
 
-#: ../../../src/GUI/Fenetre.cpp:342 ../../../src/GUI/Fenetre.cpp:409
+#: ../../../src/GUI/Fenetre.cpp:334 ../../../src/GUI/Fenetre.cpp:399
 msgid "Préférences"
 msgstr "Préférences"
 
-#: ../../../src/GUI/Fenetre.cpp:343
+#: ../../../src/GUI/Fenetre.cpp:335
 msgid "Outils"
 msgstr "Outils"
 
-#: ../../../src/GUI/Fenetre.cpp:344
+#: ../../../src/GUI/Fenetre.cpp:336
 msgid "?"
 msgstr "?"
 
-#: ../../../src/GUI/Fenetre.cpp:345
+#: ../../../src/GUI/Fenetre.cpp:337
 msgid "Contrôles"
 msgstr "Contrôles"
 
-#: ../../../src/GUI/Fenetre.cpp:398
+#: ../../../src/GUI/Fenetre.cpp:388
 msgid "Ecran principal"
 msgstr "Ecran principal"
 
-#: ../../../src/GUI/Fenetre.cpp:402 ../../../src/GUI/GestionPeriph.cpp:143
+#: ../../../src/GUI/Fenetre.cpp:392 ../../../src/GUI/GestionPeriph.cpp:143
 msgid "Liste de lecture"
 msgstr "Liste de lecture"
 
-#: ../../../src/GUI/Fenetre.cpp:406
+#: ../../../src/GUI/Fenetre.cpp:396
 msgid "Exploration"
 msgstr "Exploration"
 
-#: ../../../src/GUI/Fenetre.cpp:412
+#: ../../../src/GUI/Fenetre.cpp:402
 msgid "Encodage"
 msgstr "Encodage"
 
-#: ../../../src/GUI/Fenetre.cpp:499 ../../../src/GUI/Fenetre.cpp:520
-#: ../../../src/GUI/Fenetre.cpp:536 ../../../src/GUI/Fenetre.cpp:563
-#: ../../../src/GUI/Fenetre.cpp:804
+#: ../../../src/GUI/Fenetre.cpp:479 ../../../src/GUI/Fenetre.cpp:500
+#: ../../../src/GUI/Fenetre.cpp:516 ../../../src/GUI/Fenetre.cpp:543
+#: ../../../src/GUI/Fenetre.cpp:784
 msgid "Pause\tCtrl-P"
 msgstr "Pause\tCtrl-P"
 
-#: ../../../src/GUI/Fenetre.cpp:625 ../../../src/GUI/PreferenceDefaut.cpp:295
+#: ../../../src/GUI/Fenetre.cpp:605 ../../../src/GUI/PreferenceDefaut.cpp:200
 msgid "Choisissez une chanson"
 msgstr "Choisissez une chanson"
 
-#: ../../../src/GUI/Fenetre.cpp:661
+#: ../../../src/GUI/Fenetre.cpp:641
 msgid "Choisissez une playlist (fichier .m3u)"
 msgstr "Choisissez une playlist (fichier .m3u)"
 
-#: ../../../src/GUI/Fenetre.cpp:688 ../../../src/GUI/Fenetre.cpp:907
+#: ../../../src/GUI/Fenetre.cpp:668 ../../../src/GUI/Fenetre.cpp:887
 msgid "Impossible d'ouvrir le fichier, celui-ci est vierge !"
 msgstr "Impossible d'ouvrir le fichier, celui-ci est vierge !"
 
-#: ../../../src/GUI/Fenetre.cpp:920
+#: ../../../src/GUI/Fenetre.cpp:900
 msgid ""
 "Vous devez mettre les paramètres par défaut de Fu(X) à jour.\n"
 "Merci de votre compréhension"
@@ -329,25 +313,24 @@ msgstr ""
 "Vous devez mettre les paramètres par défaut de Fu(X) à jour.\n"
 "Merci de votre compréhension"
 
-#: ../../../src/GUI/Fenetre.cpp:1048
+#: ../../../src/GUI/Fenetre.cpp:1008
 msgid "Graphe - Fu(X) 2.0"
 msgstr "Graphe - Fu(X) 2.0"
 
-#: ../../../src/GUI/Fenetre.cpp:1056
+#: ../../../src/GUI/Fenetre.cpp:1016
 msgid "Liste de lecture - Fu(X) 2.0"
 msgstr "Liste de lecture - Fu(X) 2.0"
 
-#: ../../../src/GUI/Fenetre.cpp:1064
+#: ../../../src/GUI/Fenetre.cpp:1024
 msgid "Exploration - Fu(X) 2.0"
 msgstr "Exploration - Fu(X) 2.0"
 
-#: ../../../src/GUI/GenericTreePanel.cpp:44
+#: ../../../src/GUI/GenericTreePanel.cpp:47
 msgid "Existants"
 msgstr "Existants"
 
-#: ../../../src/GUI/GenericTreePanel.cpp:45
-#: ../../../src/GUI/PreferenceCouleur.cpp:74
-#: ../../../src/GUI/PreferenceSon.cpp:45
+#: ../../../src/GUI/GenericTreePanel.cpp:48
+#: ../../../src/GUI/PreferenceSon.cpp:51
 msgid "Nouveau"
 msgstr "Nouveau"
 
@@ -497,22 +480,22 @@ msgid "Création impossible"
 msgstr "Création impossible"
 
 #: ../../../src/GUI/GestionPeriphMoitiePage.cpp:701
-#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:826
+#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:831
 #: ../../../src/GUI/PlayList.cpp:163
 msgid "Fichier déjà existant. Souhaitez-vous le remplacer ?"
 msgstr "Fichier déjà existant. Souhaitez-vous le remplacer ?"
 
 #: ../../../src/GUI/GestionPeriphMoitiePage.cpp:701
-#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:826
+#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:831
 #: ../../../src/GUI/PlayList.cpp:163
 msgid "Fichier déjà existant"
 msgstr "Fichier déjà existant"
 
 #: ../../../src/GUI/GestionPeriphMoitiePage.cpp:714
-#: ../../../src/GUI/PlayList.cpp:178 ../../../src/GUI/PlayList.cpp:301
-#: ../../../src/GUI/PlayList.cpp:498
-#: ../../../src/GUI/PreferenceCouleur.cpp:795
-#: ../../../src/GUI/PreferenceSon.cpp:248
+#: ../../../src/GUI/PlayList.cpp:178 ../../../src/GUI/PlayList.cpp:302
+#: ../../../src/GUI/PlayList.cpp:499
+#: ../../../src/GUI/PreferenceCouleur.cpp:413
+#: ../../../src/GUI/PreferenceSon.cpp:235
 msgid ""
 "Erreur dans le nom.\n"
 "Vérifiez que vous utilisez des caractères autorisés."
@@ -521,15 +504,15 @@ msgstr ""
 "Vérifiez que vous utilisez des caractères autorisés."
 
 #: ../../../src/GUI/GestionPeriphMoitiePage.cpp:714
-#: ../../../src/GUI/PlayList.cpp:178 ../../../src/GUI/PlayList.cpp:301
-#: ../../../src/GUI/PlayList.cpp:498
-#: ../../../src/GUI/PreferenceCouleur.cpp:795
-#: ../../../src/GUI/PreferenceSon.cpp:248
+#: ../../../src/GUI/PlayList.cpp:178 ../../../src/GUI/PlayList.cpp:302
+#: ../../../src/GUI/PlayList.cpp:499
+#: ../../../src/GUI/PreferenceCouleur.cpp:413
+#: ../../../src/GUI/PreferenceSon.cpp:235
 msgid "Erreur"
 msgstr "Erreur"
 
 #: ../../../src/GUI/GestionPeriphMoitiePage.cpp:747
-#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:967
+#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:974
 #: ../../../src/GUI/PlayList.cpp:193
 msgid "Echec de la création du raccourci."
 msgstr "Echec de la création du raccourci."
@@ -554,35 +537,43 @@ msgstr "Souhaitez-vous afficher le contenu du fichier ?"
 msgid "Création M3U"
 msgstr "Création M3U"
 
-#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:796
+#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:797
 msgid "Nouveau nom du dossier"
 msgstr "Nouveau nom du dossier"
 
-#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:796
+#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:797
 msgid "Nouveau nom du fichier"
 msgstr "Nouveau nom du fichier"
 
-#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:797
+#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:798
 msgid "Renommer un dossier"
 msgstr "Renommer un dossier"
 
-#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:797
+#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:798
 msgid "Renommer un fichier"
 msgstr "Renommer un fichier"
 
-#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:809
+#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:814
 msgid "Ce nom est déjà pris !"
 msgstr "Ce nom est déjà pris !"
 
-#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:813
+#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:818
 msgid "Impossible de renommer le fichier"
 msgstr "Impossible de renommer le fichier"
 
-#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:836
+#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:841
 msgid "Impossible de modifier le nom"
 msgstr "Impossible de modifier le nom"
 
-#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:960
+#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:842
+msgid ".m3u"
+msgstr ""
+
+#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:947
+msgid "m3u"
+msgstr ""
+
+#: ../../../src/GUI/GestionPeriphMoitiePage.cpp:967
 msgid ""
 "Dans quel répertoire voulez-vous créer un raccourci de l'élément "
 "sélectionné ?"
@@ -619,7 +610,8 @@ msgid "Supprimer\tSuppr"
 msgstr "Supprimer\tSuppr"
 
 #: ../../../src/GUI/GestionPeriphTableau.cpp:72
-#: ../../../src/GUI/PreferenceSon.cpp:77
+#: ../../../src/GUI/PreferenceCouleur.cpp:258
+#: ../../../src/GUI/PreferenceSon.cpp:83
 msgid "Renommer"
 msgstr "Renommer"
 
@@ -649,18 +641,14 @@ msgid "Enregistre la liste de lecture au format m3u"
 msgstr "Enregistre la liste de lecture au format m3u"
 
 #: ../../../src/GUI/PlayList.cpp:127
-#: ../../../src/GUI/PreferenceCouleur.cpp:263
-#: ../../../src/GUI/PreferenceDefaut.cpp:134
 msgid "Enregistrer"
 msgstr "Enregistrer"
 
 #: ../../../src/GUI/PlayList.cpp:128
-#: ../../../src/GUI/PreferenceCouleur.cpp:264
-#: ../../../src/GUI/PreferenceDefaut.cpp:135
 msgid "Annuler"
 msgstr "Annuler"
 
-#: ../../../src/GUI/PlayList.cpp:307 ../../../src/GUI/PlayList.cpp:541
+#: ../../../src/GUI/PlayList.cpp:308 ../../../src/GUI/PlayList.cpp:542
 msgid ""
 "Vous ne pouvez pas modifier un fichier lorsque celui-ci est en cours de "
 "lecture."
@@ -668,20 +656,18 @@ msgstr ""
 "Vous ne pouvez pas modifier un fichier lorsque celui-ci est en cours de "
 "lecture."
 
-#: ../../../src/GUI/PlayList.cpp:307 ../../../src/GUI/PlayList.cpp:309
-#: ../../../src/GUI/PlayList.cpp:321 ../../../src/GUI/PlayList.cpp:541
-#: ../../../src/GUI/PlayList.cpp:543 ../../../src/GUI/PlayList.cpp:550
-#: ../../../src/GUI/PreferenceCouleur.cpp:741
-#: ../../../src/GUI/PreferenceCouleur.cpp:828
+#: ../../../src/GUI/PlayList.cpp:308 ../../../src/GUI/PlayList.cpp:310
+#: ../../../src/GUI/PlayList.cpp:322 ../../../src/GUI/PlayList.cpp:542
+#: ../../../src/GUI/PlayList.cpp:544 ../../../src/GUI/PlayList.cpp:551
 msgid "Erreur !"
 msgstr "Erreur !"
 
-#: ../../../src/GUI/PlayList.cpp:309 ../../../src/GUI/PlayList.cpp:321
-#: ../../../src/GUI/PlayList.cpp:543 ../../../src/GUI/PlayList.cpp:550
+#: ../../../src/GUI/PlayList.cpp:310 ../../../src/GUI/PlayList.cpp:322
+#: ../../../src/GUI/PlayList.cpp:544 ../../../src/GUI/PlayList.cpp:551
 msgid "Sélectionnez un fichier"
 msgstr "Sélectionnez un fichier"
 
-#: ../../../src/GUI/PlayList.cpp:412
+#: ../../../src/GUI/PlayList.cpp:413
 msgid ""
 "Il est impossible de modifer les pochettes d'album lorsque\n"
 "le fichier est en cours de lecture."
@@ -745,267 +731,298 @@ msgid "Suppression en cours"
 msgstr "Suppression en cours"
 
 #: ../../../src/GUI/PreferenceCouleur.cpp:74
-msgid "Modifier"
-msgstr "Modifier"
-
-#: ../../../src/GUI/PreferenceCouleur.cpp:75
-msgid "Mon choix"
-msgstr "Mon choix"
-
-#: ../../../src/GUI/PreferenceCouleur.cpp:92
 msgid "Arrière plan"
 msgstr "Arrière plan"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:106
-#: ../../../src/GUI/PreferenceCouleur.cpp:130
+#: ../../../src/GUI/PreferenceCouleur.cpp:88
+#: ../../../src/GUI/PreferenceCouleur.cpp:112
 msgid "R : 0"
 msgstr "R : 0"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:107
-#: ../../../src/GUI/PreferenceCouleur.cpp:131
-#: ../../../src/GUI/PreferenceCouleur.cpp:163
+#: ../../../src/GUI/PreferenceCouleur.cpp:89
+#: ../../../src/GUI/PreferenceCouleur.cpp:113
+#: ../../../src/GUI/PreferenceCouleur.cpp:145
 msgid "V : 0"
 msgstr "V : 0"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:108
+#: ../../../src/GUI/PreferenceCouleur.cpp:90
 msgid "B : 0"
 msgstr "B : 0"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:118
+#: ../../../src/GUI/PreferenceCouleur.cpp:100
 msgid "Barre de progression et texte"
 msgstr "Barre de progression et texte"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:132
-#: ../../../src/GUI/PreferenceCouleur.cpp:164
+#: ../../../src/GUI/PreferenceCouleur.cpp:114
+#: ../../../src/GUI/PreferenceCouleur.cpp:146
 msgid "B : 255"
 msgstr "B : 255"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:148
-#: ../../../src/GUI/PreferenceCouleur.cpp:149
-#: ../../../src/GUI/PreferenceCouleur.cpp:413
-#: ../../../src/GUI/PreferenceCouleur.cpp:414
-msgid "Texte"
-msgstr "Texte"
+#: ../../../src/GUI/PreferenceCouleur.cpp:130
+#: ../../../src/GUI/PreferenceCouleur.cpp:131
+#: ../../../src/GUI/PreferenceCouleur.cpp:516
+#: ../../../src/GUI/PreferenceCouleur.cpp:517
+msgid "Musique"
+msgstr ""
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:162
+#: ../../../src/GUI/PreferenceCouleur.cpp:144
 msgid "R : 255"
 msgstr "R : 255"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:174
+#: ../../../src/GUI/PreferenceCouleur.cpp:161
 msgid "Partie supérieure du graph"
 msgstr "Partie supérieure du graph"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:180
+#: ../../../src/GUI/PreferenceCouleur.cpp:167
 msgid "Haut de l'écran"
 msgstr "Haut de l'écran"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:183
-#: ../../../src/GUI/PreferenceCouleur.cpp:205
-#: ../../../src/GUI/PreferenceCouleur.cpp:228
-#: ../../../src/GUI/PreferenceCouleur.cpp:250
+#: ../../../src/GUI/PreferenceCouleur.cpp:170
+#: ../../../src/GUI/PreferenceCouleur.cpp:192
+#: ../../../src/GUI/PreferenceCouleur.cpp:218
+#: ../../../src/GUI/PreferenceCouleur.cpp:240
 msgid "Rouge"
 msgstr "Rouge"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:185
-#: ../../../src/GUI/PreferenceCouleur.cpp:206
-#: ../../../src/GUI/PreferenceCouleur.cpp:229
-#: ../../../src/GUI/PreferenceCouleur.cpp:251
+#: ../../../src/GUI/PreferenceCouleur.cpp:172
+#: ../../../src/GUI/PreferenceCouleur.cpp:193
+#: ../../../src/GUI/PreferenceCouleur.cpp:219
+#: ../../../src/GUI/PreferenceCouleur.cpp:241
 msgid "Vert"
 msgstr "Vert"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:186
-#: ../../../src/GUI/PreferenceCouleur.cpp:208
-#: ../../../src/GUI/PreferenceCouleur.cpp:230
-#: ../../../src/GUI/PreferenceCouleur.cpp:252
+#: ../../../src/GUI/PreferenceCouleur.cpp:173
+#: ../../../src/GUI/PreferenceCouleur.cpp:195
+#: ../../../src/GUI/PreferenceCouleur.cpp:220
+#: ../../../src/GUI/PreferenceCouleur.cpp:242
 msgid "Bleu"
 msgstr "Bleu"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:203
+#: ../../../src/GUI/PreferenceCouleur.cpp:190
 msgid "Moitié supérieure"
 msgstr "Moitié supérieure"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:215
-msgid "Symétrie horizontal"
+#: ../../../src/GUI/PreferenceCouleur.cpp:205
+#, fuzzy
+msgid "Symétrie horizontale"
 msgstr "Symétrie horizontal"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:219
+#: ../../../src/GUI/PreferenceCouleur.cpp:209
 msgid "Partie inférieure du graph"
 msgstr "Partie inférieure du graph"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:225
+#: ../../../src/GUI/PreferenceCouleur.cpp:215
 msgid "Moitié inférieure"
 msgstr "Moitié inférieure"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:248
+#: ../../../src/GUI/PreferenceCouleur.cpp:238
 msgid "Bas de l'écran"
 msgstr "Bas de l'écran"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:265
-msgid "Appliquer"
-msgstr "Appliquer"
-
-#: ../../../src/GUI/PreferenceCouleur.cpp:266
-#: ../../../src/GUI/PreferenceSon.cpp:78
+#: ../../../src/GUI/PreferenceCouleur.cpp:259
+#: ../../../src/GUI/PreferenceSon.cpp:84
 msgid "Supprimer"
 msgstr "Supprimer"
 
-#: ../../../src/GUI/PreferenceCouleur.cpp:387
-#: ../../../src/GUI/PreferenceCouleur.cpp:419
-#: ../../../src/GUI/PreferenceCouleur.cpp:422
-msgid "R : "
-msgstr "R : "
-
-#: ../../../src/GUI/PreferenceCouleur.cpp:388
-#: ../../../src/GUI/PreferenceCouleur.cpp:420
-#: ../../../src/GUI/PreferenceCouleur.cpp:423
-msgid "V : "
-msgstr "V : "
-
-#: ../../../src/GUI/PreferenceCouleur.cpp:389
-#: ../../../src/GUI/PreferenceCouleur.cpp:421
-#: ../../../src/GUI/PreferenceCouleur.cpp:424
-msgid "B : "
-msgstr "B : "
-
-#: ../../../src/GUI/PreferenceCouleur.cpp:741
-msgid "Un fichier portant ce nom existe déjà !"
-msgstr "Un fichier portant ce nom existe déjà !"
-
-#: ../../../src/GUI/PreferenceCouleur.cpp:828
-msgid "Vous devez renseigner tous les champs"
-msgstr "Vous devez renseigner tous les champs"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:64
-msgid "Filtres"
-msgstr "Filtres"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:72
-msgid "Reprise"
-msgstr "Reprise"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:73
-msgid "Inclure les fichiers des sous-dossiers lors d'une opération"
-msgstr "Inclure les fichiers des sous-dossiers lors d'une opération"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:74
-msgid "Afficher les noms en fonction des TAGs"
-msgstr "Afficher les noms en fonction des TAGs"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:75
-msgid "Application par défaut"
-msgstr "Application par défaut"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:77
-msgid "Appliquer un filtre couleur sur le graphe."
-msgstr "Appliquer un filtre couleur sur le graphe."
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:78
-msgid "Appliquer un filtre son à l'écoute."
-msgstr "Appliquer un filtre son à l'écoute."
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:79
-msgid "Lancer automatiquement un fichier lors du lancement de Fu(X)."
-msgstr "Lancer automatiquement un fichier lors du lancement de Fu(X)."
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:80
-msgid ""
-"Fu(X) recherchera dans toute l'arborescence du dossier les fichiers lors "
-"d'une opération de lecture par exemple."
-msgstr ""
-"Fu(X) recherchera dans toute l'arborescence du dossier les fichiers lors "
-"d'une opération de lecture par exemple."
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:81
-msgid ""
-"Le titre de la chanson se fait à partir des données enregistrées dans le "
-"fichier musical et non à partir du nom de celui-ci."
-msgstr ""
-"Le titre de la chanson se fait à partir des données enregistrées dans le "
-"fichier musical et non à partir du nom de celui-ci."
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:82
-msgid ""
-"Faire de Fu(X) le programme par défaut pour les mp3, m3u.\n"
-"Ne pas utiliser si vous avez fait une installation classique."
-msgstr ""
-"Faire de Fu(X) le programme par défaut pour les mp3, m3u.\n"
-"Ne pas utiliser si vous avez fait une installation classique."
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:93
-msgid "Avancée"
-msgstr "Avancée"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:96
-msgid "Portable"
-msgstr "Portable"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:97
-msgid ""
-"Configure Fu(X) pour une utilisation sur clef USB.\n"
-"Ne pas utiliser si vous avez fait une installation classique."
-msgstr ""
-"Configure Fu(X) pour une utilisation sur clef USB.\n"
-"Ne pas utiliser si vous avez fait une installation classique."
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:104
-msgid "MP3"
-msgstr "MP3"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:104
-msgid "M3U"
-msgstr "M3U"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:114
-msgid "Dossier par défaut"
-msgstr "Dossier par défaut"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:136
-msgid "Rechargement des listes"
-msgstr "Rechargement des listes"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:308
-msgid "Choisissez le répertoire par défaut"
-msgstr "Choisissez le répertoire par défaut"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:405
-msgid "Non implémenté - Tag"
-msgstr "Non implémenté - Tag"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:421
-msgid "Non implémenté - Application par défaut"
-msgstr "Non implémenté - Application par défaut"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:429
-msgid "Non implémenté - Répertoire par défaut"
-msgstr "Non implémenté - Répertoire par défaut"
-
-#: ../../../src/GUI/PreferenceSon.cpp:46
-msgid "Valeurs actuelles"
-msgstr "Valeurs actuelles"
-
-#: ../../../src/GUI/PreferenceSon.cpp:62 ../../../src/GUI/PreferenceSon.cpp:70
-msgid "Volume"
-msgstr "Volume"
-
-#: ../../../src/GUI/PreferenceSon.cpp:64 ../../../src/GUI/PreferenceSon.cpp:72
-msgid "Volume PC"
-msgstr "Volume PC"
-
-#: ../../../src/GUI/PreferenceSon.cpp:223
+#: ../../../src/GUI/PreferenceCouleur.cpp:395
+#: ../../../src/GUI/PreferenceSon.cpp:217
 msgid "Choisissez un nom"
 msgstr "Choisissez un nom"
 
+#: ../../../src/GUI/PreferenceCouleur.cpp:395
+#, fuzzy
+msgid "Création de filtre couleur"
+msgstr "Création de filtre audio"
+
+#: ../../../src/GUI/PreferenceCouleur.cpp:401
 #: ../../../src/GUI/PreferenceSon.cpp:223
+#, fuzzy
+msgid "Fichier Existant !"
+msgstr "Fichier inexistant"
+
+#: ../../../src/GUI/PreferenceCouleur.cpp:486
+#: ../../../src/GUI/PreferenceCouleur.cpp:522
+#: ../../../src/GUI/PreferenceCouleur.cpp:525
+msgid "R : "
+msgstr "R : "
+
+#: ../../../src/GUI/PreferenceCouleur.cpp:487
+#: ../../../src/GUI/PreferenceCouleur.cpp:523
+#: ../../../src/GUI/PreferenceCouleur.cpp:526
+msgid "V : "
+msgstr "V : "
+
+#: ../../../src/GUI/PreferenceCouleur.cpp:488
+#: ../../../src/GUI/PreferenceCouleur.cpp:524
+#: ../../../src/GUI/PreferenceCouleur.cpp:527
+msgid "B : "
+msgstr "B : "
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:80
+msgid "Filtres"
+msgstr "Filtres"
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:88
+msgid "Reprise"
+msgstr "Reprise"
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:89
+msgid "Inclure les fichiers des sous-dossiers lors d'une opération"
+msgstr "Inclure les fichiers des sous-dossiers lors d'une opération"
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:90
+msgid "Afficher les noms en fonction des TAGs"
+msgstr "Afficher les noms en fonction des TAGs"
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:91
+msgid "Application par défaut"
+msgstr "Application par défaut"
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:93
+msgid "Appliquer un filtre couleur sur le graphe."
+msgstr "Appliquer un filtre couleur sur le graphe."
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:94
+msgid "Appliquer un filtre son à l'écoute."
+msgstr "Appliquer un filtre son à l'écoute."
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:95
+msgid "Lancer automatiquement un fichier lors du lancement de Fu(X)."
+msgstr "Lancer automatiquement un fichier lors du lancement de Fu(X)."
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:96
+msgid ""
+"Fu(X) recherchera dans toute l'arborescence du dossier les fichiers lors "
+"d'une opération de lecture par exemple."
+msgstr ""
+"Fu(X) recherchera dans toute l'arborescence du dossier les fichiers lors "
+"d'une opération de lecture par exemple."
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:97
+msgid ""
+"Le titre de la chanson se fait à partir des données enregistrées dans le "
+"fichier musical et non à partir du nom de celui-ci."
+msgstr ""
+"Le titre de la chanson se fait à partir des données enregistrées dans le "
+"fichier musical et non à partir du nom de celui-ci."
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:98
+msgid ""
+"Faire de Fu(X) le programme par défaut pour les mp3, m3u.\n"
+"Ne pas utiliser si vous avez fait une installation classique."
+msgstr ""
+"Faire de Fu(X) le programme par défaut pour les mp3, m3u.\n"
+"Ne pas utiliser si vous avez fait une installation classique."
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:109
+msgid "Avancée"
+msgstr "Avancée"
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:112
+msgid "Portable"
+msgstr "Portable"
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:113
+msgid ""
+"Configure Fu(X) pour une utilisation sur clef USB.\n"
+"Ne pas utiliser si vous avez fait une installation classique."
+msgstr ""
+"Configure Fu(X) pour une utilisation sur clef USB.\n"
+"Ne pas utiliser si vous avez fait une installation classique."
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:120
+msgid "MP3"
+msgstr "MP3"
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:120
+msgid "M3U"
+msgstr "M3U"
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:130
+msgid "Dossier par défaut"
+msgstr "Dossier par défaut"
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:214
+msgid "Choisissez le répertoire par défaut"
+msgstr "Choisissez le répertoire par défaut"
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:332
+msgid "Non implémenté - Tag"
+msgstr "Non implémenté - Tag"
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:349
+msgid "Non implémenté - Application par défaut"
+msgstr "Non implémenté - Application par défaut"
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:358
+msgid "Non implémenté - Répertoire par défaut"
+msgstr "Non implémenté - Répertoire par défaut"
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:425
+#, fuzzy
+msgid "Couleur= "
+msgstr "Couleur"
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:425
+msgid "Chemin= "
+msgstr ""
+
+#: ../../../src/GUI/PreferenceSon.cpp:52
+msgid "Valeurs actuelles"
+msgstr "Valeurs actuelles"
+
+#: ../../../src/GUI/PreferenceSon.cpp:68 ../../../src/GUI/PreferenceSon.cpp:76
+msgid "Volume"
+msgstr "Volume"
+
+#: ../../../src/GUI/PreferenceSon.cpp:70 ../../../src/GUI/PreferenceSon.cpp:78
+msgid "Volume PC"
+msgstr "Volume PC"
+
+#: ../../../src/GUI/PreferenceSon.cpp:217
 msgid "Création de filtre audio"
 msgstr "Création de filtre audio"
 
-#: ../../../src/Jaquette/ImagePochetteMusique.cpp:85
+#: ../../../src/Jaquette/ImagePochetteMusique.cpp:86
 msgid "Choisissez une image"
 msgstr "Choisissez une image"
 
 #: ../../../src/Reseau/TCPServeur.cpp:47
 msgid "Connexion non autorisée"
 msgstr "Connexion non autorisée"
+
+#~ msgid "Nouveau jeu de couleur"
+#~ msgstr "Nouveau jeu de couleur"
+
+#~ msgid "Modifier/Appliquer un jeu de couleur existant"
+#~ msgstr "Modifier/Appliquer un jeu de couleur existant"
+
+#~ msgid "Nouvel ensemble audio"
+#~ msgstr "Nouvel ensemble audio"
+
+#~ msgid "Modifier/Appliquer une présélection audio"
+#~ msgstr "Modifier/Appliquer une présélection audio"
+
+#~ msgid "Modifier"
+#~ msgstr "Modifier"
+
+#~ msgid "Mon choix"
+#~ msgstr "Mon choix"
+
+#~ msgid "Texte"
+#~ msgstr "Texte"
+
+#~ msgid "Appliquer"
+#~ msgstr "Appliquer"
+
+#~ msgid "Un fichier portant ce nom existe déjà !"
+#~ msgstr "Un fichier portant ce nom existe déjà !"
+
+#~ msgid "Vous devez renseigner tous les champs"
+#~ msgstr "Vous devez renseigner tous les champs"
+
+#~ msgid "Rechargement des listes"
+#~ msgstr "Rechargement des listes"
 
 #~ msgid "Jeu par défaut"
 #~ msgstr "Jeu par défaut"

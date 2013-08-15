@@ -199,23 +199,23 @@ void FuXFenetre::CreerPages()
     #endif
     ///////////////////////////////////////////////////////
     sizerDroitPreference = new wxBoxSizer(wxVERTICAL);
-    NotebookPreference = new wxNotebook(this, -1);
+    m_notebookPreference = new wxNotebook(this, -1);
 
-    m_pageCouleur = new PreferenceCouleur(NotebookPreference, -1);
-    //m_pageCouleur->Creer(NotebookPreference, -1);
+    m_pageCouleur = new PreferenceCouleur(m_notebookPreference, -1);
+    //m_pageCouleur->Creer(m_notebookPreference, -1);
 
-    m_pageSon = new PreferenceSon(NotebookPreference, -1);
-    //m_pageSon->Creer(NotebookPreference, -1);
+    m_pageSon = new PreferenceSon(m_notebookPreference, -1);
+    //m_pageSon->Creer(m_notebookPreference, -1);
 
-    m_pageDefaut = new PrefDefaut(NotebookPreference, -1, m_pageCouleur, m_pageSon);
-    //m_pageDefaut->Creer(NotebookPreference, -1);
+    m_pageDefaut = new PreferenceDefaut(m_notebookPreference, -1, m_pageCouleur, m_pageSon);
+    //m_pageDefaut->Creer(m_notebookPreference, -1);
 
-    NotebookPreference->AddPage(m_pageCouleur, _("Couleur"));
-    NotebookPreference->AddPage(m_pageSon, _("Son"));
-    NotebookPreference->AddPage(m_pageDefaut, _("Défaut"));
+    m_notebookPreference->AddPage(m_pageCouleur, _("Couleur"));
+    m_notebookPreference->AddPage(m_pageSon, _("Son"));
+    m_notebookPreference->AddPage(m_pageDefaut, _("Défaut"));
 
-    sizerDroitPreference->Add(NotebookPreference, 1, wxEXPAND, 0);
-    sizerDroitPreference->Show(NotebookPreference);
+    sizerDroitPreference->Add(m_notebookPreference, 1, wxEXPAND, 0);
+    sizerDroitPreference->Show(m_notebookPreference);
     sizerDroitPreference->Layout();
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::CreerPages() - Préférences"));
@@ -745,7 +745,7 @@ void FuXFenetre::ChangeFenetre()/////////////////
             m_musiqueGraph->SetFocus();
             break;
         case PREFERENCE:
-            NotebookPreference->SetFocus();
+            m_notebookPreference->SetFocus();
             break;
         case ENCODAGE:
             break;
@@ -909,7 +909,7 @@ void FuXFenetre::AfficherPreferenceCouleur(wxCommandEvent &WXUNUSED(event))
 {
     m_nouvelleFenetre = PREFERENCE;
     ChangeFenetre();
-    NotebookPreference->ChangeSelection(0);
+    m_notebookPreference->ChangeSelection(0);
 }
 
 /**
@@ -919,7 +919,7 @@ void FuXFenetre::AfficherPreferenceDefaut(wxCommandEvent &WXUNUSED(event))
 {
     m_nouvelleFenetre = PREFERENCE;
     ChangeFenetre();
-    NotebookPreference->ChangeSelection(2);
+    m_notebookPreference->ChangeSelection(2);
 }
 
 
@@ -930,7 +930,7 @@ void FuXFenetre::AfficherPreferenceSon(wxCommandEvent &WXUNUSED(event))
 {
     m_nouvelleFenetre = PREFERENCE;
     ChangeFenetre();
-    NotebookPreference->ChangeSelection(1);
+    m_notebookPreference->ChangeSelection(1);
 }
 
 /**

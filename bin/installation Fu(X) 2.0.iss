@@ -25,8 +25,9 @@ VersionInfoCompany=Lecoconnier David
 
 [InstallDelete]       
 Type: files; Name: "{app}\Fu(X) 2.0.exe"
-Type: files; Name: "{app}\Fu(X) 2.exe"
+Type: files; Name: "{app}\Fu(X) 2.exe"   
 Type: files; Name: "{app}\Fu(X)_2.exe"
+Type: files; Name: "{app}\lib\suppr2.png"
 
 [Languages]
 Name: "french"; MessagesFile: "compiler:Languages\French.isl"

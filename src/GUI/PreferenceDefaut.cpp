@@ -10,25 +10,25 @@
 #include "../../include/GUI/PreferenceDefaut.h"
 
 /**
- * @class PrefDefaut
+ * @class PreferenceDefaut
  * @brief Gère l'application des filtres (couleur et sonore), et le comportement par défaut de l'application
  */
 
-BEGIN_EVENT_TABLE(PrefDefaut, wxScrolledWindow)
-    EVT_RADIOBOX(ID_APP_PREF_DEFAUT_CHOIX, PrefDefaut::Defaut_RadioMP3_M3U)
-    EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_COULEUR, PrefDefaut::Defaut_CheckBoxCouleur)
-    EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_SON, PrefDefaut::Defaut_CheckBoxSon)
-    EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_REPRISE, PrefDefaut::Defaut_CheckBoxReprise)
-    EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_TAG, PrefDefaut::Defaut_CheckBoxTAG)// TAG
-    EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_DEFAUT_BDR, PrefDefaut::Defaut_CheckBoxDefautBDR)// application par défaut
-    EVT_BUTTON(ID_APP_PREF_DEFAUT_ENREGISTRER, PrefDefaut::Defaut_Bouton_Enregistrer)
-    EVT_BUTTON(ID_APP_PREF_DEFAUT_ANNULER, PrefDefaut::Defaut_Bouton_Annuler)
-    EVT_BUTTON(ID_APP_PREF_DEFAUT_RECHERCHE, PrefDefaut::Defaut_Bouton_Recherche)
-    EVT_BUTTON(ID_APP_PREF_DEFAUT_MAJLISTE, PrefDefaut::Defaut_Bouton_MAJListe)
-    EVT_BUTTON(ID_APP_PREF_DEFAUT_PORTABLE, PrefDefaut::Defaut_Bouton_Portable)
-    EVT_BUTTON(ID_APP_PREF_DEFAUT_CHEMIN_RECHERCHE_DEFAUT, PrefDefaut::Defaut_Bouton_CheminDefaut)//Répertoire à afficher lors du début d'une recherche
-    EVT_PREFERENCE_MAJ_LISTE(-1, PrefDefaut::Defaut_Bouton_MAJListe)
-    EVT_PREFERENCE_MAJ_M3U(-1, PrefDefaut::Defaut_Bouton_MAJListe)
+BEGIN_EVENT_TABLE(PreferenceDefaut, wxScrolledWindow)
+    EVT_RADIOBOX(ID_APP_PREF_DEFAUT_CHOIX, PreferenceDefaut::Defaut_RadioMP3_M3U)
+    EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_COULEUR, PreferenceDefaut::Defaut_CheckBoxCouleur)
+    EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_SON, PreferenceDefaut::Defaut_CheckBoxSon)
+    EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_REPRISE, PreferenceDefaut::Defaut_CheckBoxReprise)
+    EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_TAG, PreferenceDefaut::Defaut_CheckBoxTAG)// TAG
+    EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_DEFAUT_BDR, PreferenceDefaut::Defaut_CheckBoxDefautBDR)// application par défaut
+    EVT_BUTTON(ID_APP_PREF_DEFAUT_RECHERCHE, PreferenceDefaut::Defaut_Bouton_Recherche)
+    EVT_BUTTON(ID_APP_PREF_DEFAUT_PORTABLE, PreferenceDefaut::Defaut_Bouton_Portable)
+    EVT_BUTTON(ID_APP_PREF_DEFAUT_CHEMIN_RECHERCHE_DEFAUT, PreferenceDefaut::Defaut_Bouton_CheminDefaut)//Répertoire à afficher lors du début d'une recherche
+    EVT_CHOICE(ID_APP_PREF_DEFAUT_LISTE_COULEUR, PreferenceDefaut::AutoSave)
+    EVT_CHOICE(ID_APP_PREF_DEFAUT_LISTE_SON, PreferenceDefaut::AutoSave)
+    EVT_CHOICE(ID_APP_PREF_DEFAUT_LISTE_M3U, PreferenceDefaut::AutoSave)
+    EVT_PREFERENCE_MAJ_LISTE(-1, PreferenceDefaut::Evt_MAJListe)
+    EVT_PREFERENCE_MAJ_M3U(-1, PreferenceDefaut::Evt_MAJListe)
 END_EVENT_TABLE()
 
 /**
@@ -36,9 +36,9 @@ END_EVENT_TABLE()
  * @param Parent un pointeur vers la fenêtre parente
  * @param Id l'identifiant de la fenêtre
  */
-PrefDefaut::PrefDefaut(wxWindow *Parent, wxWindowID Id)
+PreferenceDefaut::PreferenceDefaut(wxWindow *Parent, wxWindowID Id)
 {
-    PrefDefaut::Creer(Parent, Id);
+    PreferenceDefaut::Creer(Parent, Id);
     OuvertureFichier();
 }
 
@@ -49,9 +49,9 @@ PrefDefaut::PrefDefaut(wxWindow *Parent, wxWindowID Id)
  * @param pageCouleur
  * @param pageSon
  */
-PrefDefaut::PrefDefaut(wxWindow *Parent, wxWindowID Id, PreferenceCouleur *pageCouleur, PreferenceSon *pageSon)
+PreferenceDefaut::PreferenceDefaut(wxWindow *Parent, wxWindowID Id, PreferenceCouleur *pageCouleur, PreferenceSon *pageSon)
 {
-    PrefDefaut::Creer(Parent, Id);
+    PreferenceDefaut::Creer(Parent, Id);
     SetPreferencePage(pageCouleur, pageSon);
     OuvertureFichier();
 }
@@ -59,7 +59,7 @@ PrefDefaut::PrefDefaut(wxWindow *Parent, wxWindowID Id, PreferenceCouleur *pageC
 /**
  * Destructeur
  */
-PrefDefaut::~PrefDefaut()
+PreferenceDefaut::~PreferenceDefaut()
 {
     delete[] m_checkBox;
 }
@@ -69,7 +69,7 @@ PrefDefaut::~PrefDefaut()
  * @param Parent un pointeur vers la fenêtre parente
  * @param Id l'identifiant de la fenêtre
  */
-void PrefDefaut::Creer(wxWindow *Parent, wxWindowID Id)
+void PreferenceDefaut::Creer(wxWindow *Parent, wxWindowID Id)
 {
     Create(Parent, Id, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL | wxVSCROLL | wxHSCROLL);
     SetScrollbars(20, 20, 50, 50);
@@ -144,16 +144,6 @@ void PrefDefaut::Creer(wxWindow *Parent, wxWindowID Id)
     m_sizerAvancee->Add(&m_checkBox[SOUSDOSSIER], 0, wxALL | wxEXPAND, 5);
     m_sizerAvancee->Add(&m_checkBox[TAG], 0, wxALL | wxEXPAND, 5);
 
-    wxFlexGridSizer *sizerAvancee4F = new wxFlexGridSizer(1, 3, 5, 5);
-    m_sizer1V->Add(sizerAvancee4F, 0, wxALL, 5);
-
-    m_boutonEnregistrer = new wxButton(this, ID_APP_PREF_DEFAUT_ENREGISTRER, _("Enregistrer"));//, wxDefaultPosition, wxSize(30, 21));
-    m_boutonAnnuler = new wxButton(this, ID_APP_PREF_DEFAUT_ANNULER, _("Annuler"));//, wxDefaultPosition, wxSize(30, 21));
-    m_boutonMAJListe = new wxButton(this, ID_APP_PREF_DEFAUT_MAJLISTE, _("Rechargement des listes"));
-    sizerAvancee4F->Add(m_boutonEnregistrer, 0, wxALL, 0);
-    sizerAvancee4F->Add(m_boutonAnnuler, 0, wxALL, 0);
-    sizerAvancee4F->Add(m_boutonMAJListe, 0, wxALL, 0);
-
     //ListerContenuFichier(m_listeCouleur, COULEUR);
     m_pageCouleur = NULL;
     //ListerContenuFichier(m_listeSon, SON);
@@ -176,7 +166,7 @@ void PrefDefaut::Creer(wxWindow *Parent, wxWindowID Id)
  * @param liste une liste à remplir
  * @return le nombre d'éléments dans la liste
  */
-int PrefDefaut::CreerListe(wxChoice *liste)
+int PreferenceDefaut::CreerListe(wxChoice *liste)
 {
     int nombre = 0;
     wxFile fichier;
@@ -202,83 +192,9 @@ int PrefDefaut::CreerListe(wxChoice *liste)
 }
 
 /**
- * Évènement - Enregistre dans un fichier de configuration les paramètres saisies
- */
-void PrefDefaut::Defaut_Bouton_Enregistrer(wxCommandEvent &WXUNUSED(event))
-{
-    wxFile FichierListe;
-    wxString chemin = Parametre::Get()->getRepertoireParametre(_T("Fu(X).conf")), chaineCouleur, chaineSon, chaineReprise, chaineRecherche;
-
-    if (m_checkBox[COULEUR].GetValue() && m_listeCouleur->GetCurrentSelection() != wxNOT_FOUND)
-        chaineCouleur << _T("Couleur= ") << m_listeCouleur->GetString(m_listeCouleur->GetCurrentSelection());
-    else
-        chaineCouleur << _T("Couleur= NON");
-
-    if (m_checkBox[SON].GetValue() && m_listeSon->GetCurrentSelection() != wxNOT_FOUND)
-        chaineSon << _T("Son= ") << m_listeSon->GetString(m_listeSon->GetCurrentSelection());
-    else
-        chaineSon << _T("Son= NON");
-
-    if (m_checkBox[REPRISE].GetValue())
-    {
-        if(m_listeM3u_mp3 == MP3 && !m_boiteCheminChansonRep->IsEmpty())
-            chaineReprise << _T("Reprise= MP3\r\nChemin= ") << m_boiteCheminChansonRep->GetValue();
-        else if (m_listeM3u_mp3 == M3U && !m_listeReprise->GetCurrentSelection() != wxNOT_FOUND)
-            chaineReprise << _T("Reprise= M3U\r\nChemin= ") << m_listeReprise->GetString(m_listeReprise->GetCurrentSelection());
-        else
-            chaineReprise << _T("Reprise= NON\r\nChemin= NON");
-    }
-    else
-        chaineReprise << _T("Reprise= NON\r\nChemin= NON");
-
-    if (m_checkBox[SOUSDOSSIER].GetValue())
-    {
-        chaineRecherche << _T("SousDossier= OUI");
-        Parametre::Get()->setSousDossier(true);
-    }
-    else
-    {
-        chaineRecherche << _T("SousDossier= NON");
-        Parametre::Get()->setSousDossier(false);
-    }
-
-    FichierListe.Create(chemin, true);
-    FichierListe.Write(_T("#EXTCONF_1\r\n"));
-    FichierListe.Write(chaineCouleur + _T("\r\n"));
-    FichierListe.Write(chaineSon + _T("\r\n"));
-    FichierListe.Write(chaineReprise + _T("\r\n"));
-    FichierListe.Write(chaineRecherche + _T("\r\n"));
-    FichierListe.Close();
-}
-
-/**
- * Évènement - Annule toutes les modifications pour remettre les valeurs par défaut
- */
-void PrefDefaut::Defaut_Bouton_Annuler(wxCommandEvent &WXUNUSED(event))
-{
-    for (int i=0; i<5; i++)
-        m_checkBox[i].SetValue(false);
-
-    m_listeCouleur->SetSelection(wxNOT_FOUND);
-    m_listeReprise->SetSelection(wxNOT_FOUND);
-    m_listeSon->SetSelection(wxNOT_FOUND);
-
-    m_choix->SetSelection(wxNOT_FOUND);
-    m_listeM3u_mp3 = MP3;
-    m_boiteCheminChansonRep->Clear();
-
-    m_listeCouleur->Enable(false);
-    m_listeReprise->Enable(false);
-    m_listeSon->Enable(false);
-    m_choix->Enable(false);
-    m_boiteCheminChansonRep->Enable(false);
-    m_boutonRecherche->Enable(false);
-}
-
-/**
  * Évènement - Ouvre une fenêtre de navigation pour sélectionner un .mp3 (Il sera lu au lancement de Fu(X))
  */
-void PrefDefaut::Defaut_Bouton_Recherche(wxCommandEvent &WXUNUSED(event))
+void PreferenceDefaut::Defaut_Bouton_Recherche(wxCommandEvent &WXUNUSED(event))
 {
     int ouvert;
     wxFileDialog navig(this, _("Choisissez une chanson"), wxStandardPaths::Get().GetDocumentsDir(), m_boiteCheminChansonRep->GetValue(), Parametre::Get()->getExtensionValideMusique(), wxFD_OPEN | wxFD_FILE_MUST_EXIST);
@@ -286,12 +202,13 @@ void PrefDefaut::Defaut_Bouton_Recherche(wxCommandEvent &WXUNUSED(event))
     ouvert = navig.ShowModal();
 
     m_boiteCheminChansonRep->SetValue( (ouvert == wxID_OK) ? navig.GetPath() : _T("") );
+    AutoSave();
 }
 
 /**
  * Évènement - Ouvre une fenêtre de navigation pour sélectionner le dossier à ouvrir par défaut
  */
-void PrefDefaut::Defaut_Bouton_DossierDefaut(wxCommandEvent &WXUNUSED(event))
+void PreferenceDefaut::Defaut_Bouton_DossierDefaut(wxCommandEvent &WXUNUSED(event))
 {
     int ouvert;
     wxDirDialog navig(this, _("Choisissez le répertoire par défaut"), m_boiteCheminDefautRech->GetValue(), wxDD_DEFAULT_STYLE|wxDD_DIR_MUST_EXIST);
@@ -299,17 +216,21 @@ void PrefDefaut::Defaut_Bouton_DossierDefaut(wxCommandEvent &WXUNUSED(event))
     ouvert = navig.ShowModal();
 
     m_boiteCheminDefautRech->SetValue((ouvert == wxID_OK) ? navig.GetPath() : _T(""));
+    AutoSave();
 }
 
 /**
  * Évènement - Met à jour toutes les listes de la page
  */
-void PrefDefaut::Defaut_Bouton_MAJListe(wxCommandEvent &WXUNUSED(event))
+void PreferenceDefaut::Evt_MAJListe(wxCommandEvent &WXUNUSED(event))
 {
     MAJListe();
 }
 
-void PrefDefaut::MAJListe()
+/**
+ * Met à jour toutes les listes de la page
+ */
+void PreferenceDefaut::MAJListe(bool save)
 {
     wxString coul = m_listeCouleur->GetStringSelection(), son = m_listeSon->GetStringSelection(), rep = m_listeReprise->GetStringSelection();
 
@@ -317,26 +238,26 @@ void PrefDefaut::MAJListe()
     {
         m_listeCouleur->Clear();
         m_pageCouleur->MajListe(m_listeCouleur);
-        //ListerContenuFichier(m_listeCouleur, COULEUR);
         m_listeCouleur->SetStringSelection(coul);
     }
     if (m_pageSon)
     {
         m_listeSon->Clear();
         m_pageSon->MajListe(m_listeSon);
-        //ListerContenuFichier(m_listeSon, SON);
         m_listeSon->SetStringSelection(son);
     }
 
     m_listeReprise->Clear();
     CreerListe(m_listeReprise);
     m_listeReprise->SetStringSelection(rep);
+    if (save)
+        AutoSave();
 }
 
 /**
  * Évènement - Active/Désactive les listes en fonction du type (MP3 ou M3U) choisi.
  */
-void PrefDefaut::Defaut_RadioMP3_M3U(wxCommandEvent &event)
+void PreferenceDefaut::Defaut_RadioMP3_M3U(wxCommandEvent &event)
 {
     m_listeM3u_mp3 = event.GetSelection();
     if (m_listeM3u_mp3 == MP3)
@@ -351,28 +272,31 @@ void PrefDefaut::Defaut_RadioMP3_M3U(wxCommandEvent &event)
         m_boiteCheminChansonRep->Enable(false);
         m_boutonRecherche->Enable(false);
     }
+    AutoSave();
 }
 
 /**
  * Évènement - Active/Désactive la liste des filtres couleurs
  */
-void PrefDefaut::Defaut_CheckBoxCouleur(wxCommandEvent &event)
+void PreferenceDefaut::Defaut_CheckBoxCouleur(wxCommandEvent &event)
 {
     m_listeCouleur->Enable(event.IsChecked());
+    AutoSave();
 }
 
 /**
  * Évènement - Active/Désactive la liste des filtres sons
  */
-void PrefDefaut::Defaut_CheckBoxSon(wxCommandEvent &event)
+void PreferenceDefaut::Defaut_CheckBoxSon(wxCommandEvent &event)
 {
     m_listeSon->Enable(event.IsChecked());
+    AutoSave();
 }
 
 /**
  * Évènement - Active/Désactive les listes permettant une lecture de musique sans donner de paramètre à l'application
  */
-void PrefDefaut::Defaut_CheckBoxReprise(wxCommandEvent &event)
+void PreferenceDefaut::Defaut_CheckBoxReprise(wxCommandEvent &event)
 {
     if (event.IsChecked())
     {
@@ -397,20 +321,22 @@ void PrefDefaut::Defaut_CheckBoxReprise(wxCommandEvent &event)
         m_boiteCheminChansonRep->Enable(false);
         m_boutonRecherche->Enable(false);
     }
+    AutoSave();
 }
 
 /**
  * Évènement/Non implémenté - Modifie le mode d'affichage des titres : titre du fichier ou données incorporées (TAG)
  */
-void PrefDefaut::Defaut_CheckBoxTAG(wxCommandEvent &WXUNUSED(event))
+void PreferenceDefaut::Defaut_CheckBoxTAG(wxCommandEvent &WXUNUSED(event))
 {
     wxLogMessage(_("Non implémenté - Tag"));
+    //AutoSave();
 }
 
 /**
  * Évènement - Lance la création de l'arborescence contenant les fichiers de configuration dans le répertoire d'installation de Fu(X)
  */
-void PrefDefaut::Defaut_Bouton_Portable(wxCommandEvent &WXUNUSED(event))
+void PreferenceDefaut::Defaut_Bouton_Portable(wxCommandEvent &WXUNUSED(event))
 {
     Parametre::Get()->creerRepertoireParametre(wxStandardPaths::Get().GetDataDir());
 }
@@ -418,23 +344,25 @@ void PrefDefaut::Defaut_Bouton_Portable(wxCommandEvent &WXUNUSED(event))
 /**
  * Évènement/Non implémenté - Modifie la Base de Registre (BDR de Windows) pour mettre Fu(X) en application par défaut
  */
-void PrefDefaut::Defaut_CheckBoxDefautBDR(wxCommandEvent &WXUNUSED(event))
+void PreferenceDefaut::Defaut_CheckBoxDefautBDR(wxCommandEvent &WXUNUSED(event))
 {
     wxLogMessage(_("Non implémenté - Application par défaut"));
+    //AutoSave();
 }
 
 /**
  * Évènement/Non implémenté - Lance l'ouverture d'une fenêtre pour sélectionner le répertoire devant être ouvert lors d'une recherche
  */
-void PrefDefaut::Defaut_Bouton_CheminDefaut(wxCommandEvent &WXUNUSED(event))
+void PreferenceDefaut::Defaut_Bouton_CheminDefaut(wxCommandEvent &WXUNUSED(event))
 {
     wxLogMessage(_("Non implémenté - Répertoire par défaut"));
+    //AutoSave();
 }
 
 /**
  * Applique à la fenêtre les paramètres contenus dans le fichier de configuration enregistré
  */
-void PrefDefaut::OuvertureFichier()
+void PreferenceDefaut::OuvertureFichier()
 {
     wxString cheminFichier = Parametre::Get()->getRepertoireParametre(_T("Fu(X).conf")), nomFichierCouleur, nomFichierSon;
     wxTextFile fichierPref(cheminFichier);
@@ -486,11 +414,86 @@ void PrefDefaut::OuvertureFichier()
 }
 
 /**
+ * Enregistre les préférences dans un fichier
+ * @return vrai si réussite
+ */
+bool PreferenceDefaut::AutoSave()
+{
+    wxTextFile fichier(Parametre::Get()->getRepertoireParametre(_T("Fu(X).conf")));
+    if (fichier.Create() || fichier.Open())
+    {
+        wxString chaineCouleur(_("Couleur= ")), chaineSon(_T("Son= ")), chaineReprise(_T("Reprise= ")), chaineChemin(_("Chemin= ")), chaineRecherche(_T("SousDossier= "));
+
+        if (m_checkBox[COULEUR].GetValue() && m_listeCouleur->GetCurrentSelection() != wxNOT_FOUND)
+            chaineCouleur << m_listeCouleur->GetString(m_listeCouleur->GetCurrentSelection());
+        else
+            chaineCouleur << _T("NON");
+
+        if (m_checkBox[SON].GetValue() && m_listeSon->GetCurrentSelection() != wxNOT_FOUND)
+            chaineSon << m_listeSon->GetString(m_listeSon->GetCurrentSelection());
+        else
+            chaineSon << _T("NON");
+
+        if (m_checkBox[REPRISE].GetValue())
+        {
+            if(m_listeM3u_mp3 == MP3 && !m_boiteCheminChansonRep->IsEmpty())
+            {
+                chaineReprise << _T("MP3");
+                chaineChemin << m_boiteCheminChansonRep->GetValue();
+            }
+            else if (m_listeM3u_mp3 == M3U && !m_listeReprise->GetCurrentSelection() != wxNOT_FOUND)
+            {
+                chaineReprise << _T("M3U");
+                chaineChemin << m_listeReprise->GetString(m_listeReprise->GetCurrentSelection());
+            }
+            else
+            {
+                chaineReprise << _T("NON");
+                chaineChemin << _T("NON");
+            }
+        }
+        else
+        {
+            chaineReprise << _T("NON");
+            chaineChemin << _T("NON");
+        }
+
+        if (m_checkBox[SOUSDOSSIER].GetValue())
+        {
+            chaineRecherche << _T("OUI");
+            Parametre::Get()->setSousDossier(true);
+        }
+        else
+        {
+            chaineRecherche << _T("NON");
+            Parametre::Get()->setSousDossier(false);
+        }
+
+        fichier.Clear();
+        fichier.AddLine(_T("#EXTCONF_1"));
+        fichier.AddLine(chaineCouleur);
+        fichier.AddLine(chaineSon);
+        fichier.AddLine(chaineReprise);
+        fichier.AddLine(chaineChemin);
+        fichier.AddLine(chaineRecherche);
+        fichier.Write();
+        fichier.Close();
+        return true;
+    }
+    return false;
+}
+
+void PreferenceDefaut::AutoSave(wxCommandEvent &WXUNUSED(event))
+{
+    AutoSave();
+}
+
+/**
  * Associe des pages de préférences à celle-ci
  * @param pageCouleur
  * @param pageSon
  */
-void PrefDefaut::SetPreferencePage(PreferenceCouleur *pageCouleur, PreferenceSon *pageSon)
+void PreferenceDefaut::SetPreferencePage(PreferenceCouleur *pageCouleur, PreferenceSon *pageSon)
 {
     m_pageCouleur = pageCouleur;
     m_pageSon = pageSon;
@@ -499,7 +502,7 @@ void PrefDefaut::SetPreferencePage(PreferenceCouleur *pageCouleur, PreferenceSon
     if (m_pageSon)
         m_pageSon->AddListener(this);
 
-    MAJListe();
+    MAJListe(false);
 }
 
 

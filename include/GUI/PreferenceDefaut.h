@@ -13,19 +13,17 @@
 #include "PreferenceSon.h"
 #include "../Dialogue/DialogEnregistreM3U.h"
 
-class PrefDefaut : public wxScrolledWindow
+class PreferenceDefaut : public wxScrolledWindow
 {
     public:
-        PrefDefaut(wxWindow *Parent, wxWindowID Id);
-        PrefDefaut(wxWindow *Parent, wxWindowID Id, PreferenceCouleur *pageCouleur, PreferenceSon *pageSon);
-        virtual ~PrefDefaut();
+        PreferenceDefaut(wxWindow *Parent, wxWindowID Id);
+        PreferenceDefaut(wxWindow *Parent, wxWindowID Id, PreferenceCouleur *pageCouleur, PreferenceSon *pageSon);
+        virtual ~PreferenceDefaut();
         void Creer(wxWindow *Parent, wxWindowID Id);
         int CreerListe(wxChoice *liste);
-        void Defaut_Bouton_Enregistrer(wxCommandEvent &WXUNUSED(event));
-        void Defaut_Bouton_Annuler(wxCommandEvent &WXUNUSED(event));
         void Defaut_Bouton_Recherche(wxCommandEvent &WXUNUSED(event));
         void Defaut_Bouton_DossierDefaut(wxCommandEvent &WXUNUSED(event));
-        void Defaut_Bouton_MAJListe(wxCommandEvent &WXUNUSED(event));
+        void Evt_MAJListe(wxCommandEvent &WXUNUSED(event));
         void Defaut_RadioMP3_M3U(wxCommandEvent &event);
         void Defaut_CheckBoxCouleur(wxCommandEvent &event);
         void Defaut_CheckBoxSon(wxCommandEvent &event);
@@ -35,8 +33,10 @@ class PrefDefaut : public wxScrolledWindow
         void Defaut_Bouton_Portable(wxCommandEvent &WXUNUSED(event));
         void Defaut_CheckBoxDefautBDR(wxCommandEvent &WXUNUSED(event));
         void Defaut_Bouton_CheminDefaut(wxCommandEvent &WXUNUSED(event));
-        void MAJListe();
+        void MAJListe(bool save = true);
         void SetPreferencePage(PreferenceCouleur *pageCouleur, PreferenceSon *pageSon);
+        bool AutoSave();
+        void AutoSave(wxCommandEvent &WXUNUSED(event));
 
         //wxString CheminOuvertureDefaut();
 
@@ -45,7 +45,7 @@ class PrefDefaut : public wxScrolledWindow
         wxChoice *m_listeCouleur, *m_listeSon, *m_listeReprise;
         wxTextCtrl *m_boiteCheminChansonRep, *m_boiteCheminDefautRech;
         wxRadioBox *m_choix;
-        wxButton *m_boutonEnregistrer, *m_boutonAnnuler, *m_boutonMAJListe, *m_boutonRecherche, *m_boutonCheminDefautRecherche, *m_boutonPortable;
+        wxButton *m_boutonEnregistrer, *m_boutonAnnuler, *m_boutonRecherche, *m_boutonCheminDefautRecherche, *m_boutonPortable;
         wxCheckBox *m_checkBox;
 
         PreferenceCouleur* m_pageCouleur;

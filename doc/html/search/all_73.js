@@ -36,7 +36,7 @@ var searchData=
   ['setpause',['SetPause',['../class_musique.html#ae7ad9c5bf845920ee85eb3b6c034f12b',1,'Musique']]],
   ['setpos',['SetPos',['../class_chanson_nom_pos.html#a338bb8508a2684ee937737a303f5ffa1',1,'ChansonNomPos']]],
   ['setpositionms',['SetPositionMS',['../class_musique.html#a6e371e76c926592b997523f56db3df35',1,'Musique']]],
-  ['setpreferencepage',['SetPreferencePage',['../class_pref_defaut.html#afa3a1f564c3b5d0c78977db57ce00422',1,'PrefDefaut']]],
+  ['setpreferencepage',['SetPreferencePage',['../class_preference_defaut.html#af4fe70f224ab173a30e110ea0795c26b',1,'PreferenceDefaut']]],
   ['setrepertoiredefaut',['setRepertoireDefaut',['../class_parametre.html#a6941cf06c034b914942bba72ca0624a4',1,'Parametre']]],
   ['setrepete',['SetRepete',['../class_musique.html#a6b61628cc6077b1492bc66fbc91768c0',1,'Musique']]],
   ['setseconde',['SetSeconde',['../class_duree.html#a526d1801eca0815d9546055ae18d5dd4',1,'Duree']]],

@@ -1,15 +1,15 @@
 <map id="FuXFenetre" name="FuXFenetre">
-<area shape="rect" id="node3" href="$class_pref_defaut.html" title="Gère l&#39;application des filtres (couleur et sonore), et le comportement par défaut de l&#39;application..." alt="" coords="725,58,808,84"/>
-<area shape="rect" id="node6" href="$class_generic_tree_panel.html" title="Inteface générique pour les préférences." alt="" coords="187,83,312,110"/>
-<area shape="rect" id="node5" href="$class_preference_son.html" title="Interface représentant différents volumes sonores &#45; Passer les fichiers au format XML Les fichiers so..." alt="" coords="397,140,504,167"/>
-<area shape="rect" id="node7" href="$class_preference_couleur.html" title="Interface représentant différentes compositions graphiques &#45; Passer les fichiers au format XML Les fi..." alt="" coords="387,83,515,110"/>
-<area shape="rect" id="node8" href="$class_array_fenetre_detachable.html" title="Array contenant des FenetreDetachable." alt="" coords="685,246,848,272"/>
-<area shape="rect" id="node10" href="$class_play_list.html" title="Page contenant la liste de lecture et une description détaillée des titres." alt="" coords="732,296,801,323"/>
-<area shape="rect" id="node12" href="$class_image_pochette_musique.html" title="Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour chang..." alt="" coords="371,296,530,323"/>
-<area shape="rect" id="node14" href="$class_play_list_tableau.html" title="Tableau (GUI) dans lequel sont affichés les informations des titres mis dans la liste de lecture..." alt="" coords="393,347,508,374"/>
-<area shape="rect" id="node16" href="$class_t_c_p_serveur.html" title="Représente le serveur." alt="" coords="721,372,812,399"/>
-<area shape="rect" id="node18" href="$class_musique_graph.html" title="Panel affichant le graph, la barre de temps et le titre de la chanson." alt="" coords="713,466,820,492"/>
-<area shape="rect" id="node20" href="$class_couleur.html" title="Champs RVB." alt="" coords="417,562,484,588"/>
-<area shape="rect" id="node21" href="$class_image_text.html" title="Transforme et affiche une chaîne de caractère dans une surface OpenGL." alt="" coords="409,622,492,648"/>
-<area shape="rect" id="node22" href="$class_timer_graph.html" title="Timer gérant la mise à jour du graphe et le passage d&#39;une chanson à l&#39;autre." alt="" coords="722,603,811,630"/>
+<area shape="rect" id="node3" href="$class_array_fenetre_detachable.html" title="Array contenant des FenetreDetachable. " alt="" coords="685,107,848,133"/>
+<area shape="rect" id="node5" href="$class_play_list.html" title="Page contenant la liste de lecture et une description détaillée des titres. " alt="" coords="732,157,801,184"/>
+<area shape="rect" id="node7" href="$class_image_pochette_musique.html" title="Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour chang..." alt="" coords="371,107,530,133"/>
+<area shape="rect" id="node9" href="$class_play_list_tableau.html" title="Tableau (GUI) dans lequel sont affichés les informations des titres mis dans la liste de lecture..." alt="" coords="393,157,508,184"/>
+<area shape="rect" id="node11" href="$class_t_c_p_serveur.html" title="Représente le serveur. " alt="" coords="721,260,812,287"/>
+<area shape="rect" id="node13" href="$class_musique_graph.html" title="Panel affichant le graph, la barre de temps et le titre de la chanson. " alt="" coords="713,364,820,391"/>
+<area shape="rect" id="node15" href="$class_couleur.html" title="Champs RVB. " alt="" coords="417,364,484,391"/>
+<area shape="rect" id="node16" href="$class_image_text.html" title="Transforme et affiche une chaîne de caractère dans une surface OpenGL. " alt="" coords="409,421,492,448"/>
+<area shape="rect" id="node17" href="$class_timer_graph.html" title="Timer gérant la mise à jour du graphe et le passage d&#39;une chanson à l&#39;autre. " alt="" coords="722,432,811,459"/>
+<area shape="rect" id="node19" href="$class_preference_son.html" title="Interface représentant différents volumes sonores &#45; Passer les fichiers au format XML Les fichiers so..." alt="" coords="397,599,504,625"/>
+<area shape="rect" id="node23" href="$class_preference_defaut.html" title="Gère l&#39;application des filtres (couleur et sonore), et le comportement par défaut de l&#39;application..." alt="" coords="706,641,827,668"/>
+<area shape="rect" id="node20" href="$class_generic_tree_panel.html" title="Inteface générique pour les préférences. " alt="" coords="187,599,312,625"/>
+<area shape="rect" id="node22" href="$class_preference_couleur.html" title="Interface représentant différentes compositions graphiques &#45; Passer les fichiers au format XML Les fi..." alt="" coords="387,536,515,563"/>
 </map>

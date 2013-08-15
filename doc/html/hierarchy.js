@@ -75,7 +75,7 @@ var hierarchy =
         [ "PreferenceCouleur", "class_preference_couleur.html", null ],
         [ "PreferenceSon", "class_preference_son.html", null ]
       ] ],
-      [ "PrefDefaut", "class_pref_defaut.html", null ]
+      [ "PreferenceDefaut", "class_preference_defaut.html", null ]
     ] ],
     [ "wxServer", null, [
       [ "TCPServeur", "class_t_c_p_serveur.html", null ]

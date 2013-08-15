@@ -9,5 +9,5 @@ var searchData=
   ['playlist',['PlayList',['../class_play_list.html#ae0dfa1097c048135343a8d68ebac8cd5',1,'PlayList']]],
   ['playlisttableau',['PlayListTableau',['../class_play_list_tableau.html#a486a32be7a8bbf1d3dc19781fba94919',1,'PlayListTableau']]],
   ['precedent',['Precedent',['../class_fu_x_fenetre.html#a473cf9a591f6af4a4750cd39682f3d51',1,'FuXFenetre']]],
-  ['prefdefaut',['PrefDefaut',['../class_pref_defaut.html#aaaf4e72e7e38481ecc564be9265b5bff',1,'PrefDefaut']]]
+  ['preferencedefaut',['PreferenceDefaut',['../class_preference_defaut.html#a1d2329377d1fd1dbf9cf3a71642b4d6b',1,'PreferenceDefaut']]]
 ];

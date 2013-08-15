@@ -8,7 +8,6 @@ var searchData=
   ['affichecentrehorizontal',['AfficheCentreHorizontal',['../class_image_text.html#a33bb66800815fc699783afb245bbf335',1,'ImageText']]],
   ['affichecontenudossier',['AfficheContenuDossier',['../class_liste_gestion_periph.html#a3dfd988be0fc81ca909e8e70cccaa107',1,'ListeGestionPeriph']]],
   ['affichecontenufichier',['AfficheContenuFichier',['../class_liste_gestion_periph.html#afe95cc617789825a621fa079ecf47681',1,'ListeGestionPeriph']]],
-  ['affichedefaut',['AfficheDefaut',['../class_fu_x_fenetre.html#a97af72acf9fab8b8ca4d8cc5c387bde1',1,'FuXFenetre']]],
   ['afficheencodage',['AfficheEncodage',['../class_fu_x_fenetre.html#aa6216ca48d3908daf0770da6a280378b',1,'FuXFenetre']]],
   ['affichegestperiph',['AfficheGestPeriph',['../class_fu_x_fenetre.html#a88f03b00dc45ac874093c834fdb707f1',1,'FuXFenetre']]],
   ['afficheimage',['AfficheImage',['../class_image_pochette_musique.html#aaa2cce30ae1e03d76893ba959ee297e6',1,'ImagePochetteMusique']]],
@@ -20,6 +19,7 @@ var searchData=
   ['affichepreference',['AffichePreference',['../class_fu_x_fenetre.html#a72fae3f2664c50ae90c039b4be2cb732',1,'FuXFenetre']]],
   ['afficheprincipal',['AffichePrincipal',['../class_fu_x_fenetre.html#a1b4a1f03261617dbca99943e2508c252',1,'FuXFenetre']]],
   ['afficherpreferencecouleur',['AfficherPreferenceCouleur',['../class_fu_x_fenetre.html#a5d8e70c8fe164ea0eb90153fcebb0dde',1,'FuXFenetre']]],
+  ['afficherpreferencedefaut',['AfficherPreferenceDefaut',['../class_fu_x_fenetre.html#aa1f2e6d13c0828ec3dc558d26b0279bc',1,'FuXFenetre']]],
   ['afficherpreferenceson',['AfficherPreferenceSon',['../class_fu_x_fenetre.html#a9c8c379e87daa9e6b726a8a6986b1748',1,'FuXFenetre']]],
   ['afflistem3u',['AffListeM3U',['../class_gest_periph.html#af8e2df70f462dad3053538477eb27f3d',1,'GestPeriph']]],
   ['afflistemesdoc',['AffListeMesDoc',['../class_gest_periph.html#ad6d44bb39ebeba55d2bef2e21abe1feb',1,'GestPeriph']]],
@@ -37,5 +37,6 @@ var searchData=
   ['ajouterutilisateur',['AjouterUtilisateur',['../class_b_d_d.html#aa8f3077dce91d4727ba244c70c456e83',1,'BDD']]],
   ['aleatoire',['Aleatoire',['../class_fu_x_fenetre.html#a7fbb14222d6b4bb7f203e103fc71304d',1,'FuXFenetre']]],
   ['arrayfenetredetachable',['ArrayFenetreDetachable',['../class_array_fenetre_detachable.html',1,'ArrayFenetreDetachable'],['../class_array_fenetre_detachable.html#a5ae23803ecd41957417dee3a38535bd7',1,'ArrayFenetreDetachable::ArrayFenetreDetachable()']]],
-  ['arraystring',['arrayString',['../class_dn_d_liste_fichier.html#a31c63ffa72e40c23e744702f226716b3',1,'DnDListeFichier']]]
+  ['arraystring',['arrayString',['../class_dn_d_liste_fichier.html#a31c63ffa72e40c23e744702f226716b3',1,'DnDListeFichier']]],
+  ['autosave',['AutoSave',['../class_preference_defaut.html#a552807a2009f13a27ebad2055a5781b2',1,'PreferenceDefaut']]]
 ];
