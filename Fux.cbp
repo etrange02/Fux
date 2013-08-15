@@ -48,7 +48,7 @@ IMPORTANT, A FAIRE !!!
 			<Environment>
 				<Variable name="AU" value="u" />
 				<Variable name="AURD" value="$(AU)$(RD)" />
-				<Variable name="FMODEX" value='&quot;C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Windows\api&quot;' />
+				<Variable name="FMODEX" value='&quot;C:\Program Files\FMOD SoundSystem\FMOD Programmers API Windows\api&quot;' />
 				<Variable name="RD" value="" />
 				<Variable name="SQLITE3" value="${WXSQLITE3}\sqlite3" />
 				<Variable name="TAGLIB" value="C:\CMake\cmake_taglib\taglib" />
@@ -86,31 +86,33 @@ IMPORTANT, A FAIRE !!!
 			<Add option="-s" />
 			<Add library="libwxcode_msw$(WX_VER1)$(WX_VER2)$(AURD)_wxsqlite3.a" />
 			<Add library="${SQLITE3}\lib\sqlite3.a" />
+			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_gl.a" />
 			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_core.a" />
 			<Add library="libwxbase$(WX_VER1)$(WX_VER2)$(AURD).a" />
+			<Add library="libwxpng$(RD).a" />
+			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_xrc.a" />
+			<Add library="libwxjpeg$(RD).a" />
+			<Add library="libwxzlib$(RD).a" />
+			<Add library="libwxregex$(AURD).a" />
+			<Add library="libwxexpat.a" />
+			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_adv.a" />
 			<Add library="libkernel32.a" />
 			<Add library="libuser32.a" />
 			<Add library="libgdi32.a" />
-			<Add library="libwinspool.a" />
 			<Add library="libcomdlg32.a" />
-			<Add library="libadvapi32.a" />
+			<Add library="libwinspool.a" />
+			<Add library="libwinmm" />
 			<Add library="libshell32.a" />
+			<Add library="libcomctl32.a" />
 			<Add library="libole32.a" />
 			<Add library="liboleaut32.a" />
 			<Add library="libuuid.a" />
-			<Add library="libwxpng$(RD).a" />
 			<Add library="libodbc32.a" />
-			<Add library="libcomctl32.a" />
+			<Add library="libadvapi32.a" />
 			<Add library="libwsock32.a" />
-			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_xrc.a" />
-			<Add library="libwxzlib$(RD).a" />
-			<Add library="libwxjpeg$(RD).a" />
-			<Add library="libwxregex$(AURD).a" />
-			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_gl.a" />
-			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_adv.a" />
-			<Add library="${FMODEX}\lib\libfmodex.a" />
 			<Add library="libopengl32.a" />
 			<Add library="libglu32.a" />
+			<Add library="${FMODEX}\lib\libfmodex.a" />
 			<Add library="${TAGLIB}\libtag.dll.a" />
 			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/lib/gcc_lib" />
 			<Add directory="${SQLITE3}/lib" />

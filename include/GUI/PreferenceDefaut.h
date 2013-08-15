@@ -6,6 +6,7 @@
 #include <wx/radiobox.h>
 #include <wx/textfile.h>
 #include <wx/scrolwin.h>
+#include <wx/xml/xml.h>
 #include "../Define.h"
 #include "../Musique.h"
 #include "../Parametre.h"
