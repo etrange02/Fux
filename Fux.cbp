@@ -88,7 +88,7 @@ IMPORTANT, A FAIRE !!!
 			<Add library="${SQLITE3}\lib\sqlite3.a" />
 			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_gl.a" />
 			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_core.a" />
-			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_xml.a" />
+			<Add library="libwxbase$(WX_VER1)$(WX_VER2)$(AURD)_xml.a" />
 			<Add library="libwxbase$(WX_VER1)$(WX_VER2)$(AURD).a" />
 			<Add library="libwxpng$(RD).a" />
 			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_xrc.a" />
