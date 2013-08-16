@@ -21,6 +21,7 @@ BEGIN_EVENT_TABLE(PreferenceDefaut, wxScrolledWindow)
     EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_REPRISE, PreferenceDefaut::Defaut_CheckBoxReprise)
     EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_TAG, PreferenceDefaut::Defaut_CheckBoxTAG)// TAG
     EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_DEFAUT_BDR, PreferenceDefaut::Defaut_CheckBoxDefautBDR)// application par défaut
+    EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_RECHERCHE, PreferenceDefaut::AutoSave)// application par défaut
     EVT_BUTTON(ID_APP_PREF_DEFAUT_RECHERCHE, PreferenceDefaut::Defaut_Bouton_Recherche)
     EVT_BUTTON(ID_APP_PREF_DEFAUT_PORTABLE, PreferenceDefaut::Defaut_Bouton_Portable)
     EVT_BUTTON(ID_APP_PREF_DEFAUT_CHEMIN_RECHERCHE_DEFAUT, PreferenceDefaut::Defaut_Bouton_CheminDefaut)//Répertoire à afficher lors du début d'une recherche
@@ -169,8 +170,6 @@ void PreferenceDefaut::Creer(wxWindow *Parent, wxWindowID Id)
 int PreferenceDefaut::CreerListe(wxChoice *liste)
 {
     int nombre = 0;
-    wxFile fichier;
-    fichier.Create(Parametre::Get()->getRepertoireParametre(_T("Liste_M3U.txt")), true);
 
     if (wxDir::Exists(Parametre::Get()->getRepertoireParametre(_T("Play_list_M3U"))))
     {
@@ -180,14 +179,11 @@ int PreferenceDefaut::CreerListe(wxChoice *liste)
 
         while (continuer)
         {
-            fichier.Write(copie);
-            fichier.Write(_T("\r\n"));
             nombre++;
             liste->Append(copie);
             continuer = Repertoire.GetNext(&copie);
         }
     }
-    fichier.Close();
     return nombre;
 }
 
@@ -480,16 +476,17 @@ bool PreferenceDefaut::AutoSave()
     }
     if (m_checkBox[REPRISE].GetValue())
     {
-        childNode = new wxXmlNode(rootNode, wxXML_TEXT_NODE, _("reprise"));
+        childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _("reprise"));
+        wxXmlNode *sub = new wxXmlNode(childNode, wxXML_TEXT_NODE, _(""));
         if(m_listeM3u_mp3 == MP3 && !m_boiteCheminChansonRep->IsEmpty())
         {
             childNode->AddAttribute(_("type"), _("MP3"));
-            childNode->SetContent(m_boiteCheminChansonRep->GetValue());
+            sub->SetContent(m_boiteCheminChansonRep->GetValue());
         }
         else if (m_listeM3u_mp3 == M3U && !m_listeReprise->GetCurrentSelection() != wxNOT_FOUND)
         {
             childNode->AddAttribute(_("type"), _("M3U"));
-            childNode->SetContent(m_listeReprise->GetString(m_listeReprise->GetCurrentSelection()));
+            sub->SetContent(m_listeReprise->GetString(m_listeReprise->GetCurrentSelection()));
         }
     }
     if (m_checkBox[SOUSDOSSIER].GetValue())

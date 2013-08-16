@@ -895,11 +895,76 @@ void FuXFenetre::LecturePreference(bool lecture)
                 m_MAJliste = true;
             }
         }
+        fichierPref.Close();
     }
     else
-        wxLogMessage(_("Vous devez mettre les paramètres par défaut de Fu(X) à jour.\nMerci de votre compréhension"));
+    {
+        fichierPref.Close();
+        wxXmlDocument doc;
+        if (!doc.Load(Parametre::Get()->getRepertoireParametre(_T("Fu(X).conf"))))
+            return;
+        if (doc.GetRoot()->GetName() != _("default"))
+            return;
+        wxXmlNode *child = doc.GetRoot()->GetChildren(), *nodeReprise = NULL;
+        while (child)
+        {
+            if (child->GetName() == _("filter_colour"))
+            {
+                m_pageCouleur->OuvrirFiltre(child->GetAttribute(_("file"), wxEmptyString), false);
+            }
+            else if (child->GetName() == _("filter_sound"))
+            {
+                long volume;
+                nomFichierSon = Parametre::Get()->getCheminSon(child->GetAttribute(_("file"), wxEmptyString));
+                wxTextFile fichierS(nomFichierSon);
+                fichierS.Open();
+                if (fichierS.GetLine(0).IsSameAs(_T("#EXTSAUVE_S1")))
+                {
+                    fichierS.GetLine(2).ToLong(&volume);
+                    Musique::Get()->SetVolume(volume);
+                    SliderSon::Get()->SetValue(volume);
+                    m_pageSon->SetValeurMusique(volume);
+                    fichierS.Close();
+                }
+            }
+            else if (child->GetName() == _("reprise"))
+            {
+                nodeReprise = child;
+            }
+            else if (child->GetName() == _("subfile"))
+            {
+                Parametre::Get()->setSousDossier(true);
+            }
+            child = child->GetNext();
+        }
 
-    fichierPref.Close();
+        if (lecture && nodeReprise)
+        {
+            if (nodeReprise->GetAttribute(_("type"), wxEmptyString) == _T("M3U"))
+            {
+                wxString cheminM3U = Parametre::Get()->getRepertoireParametre(_T("Play_list_M3U"), nodeReprise->GetNodeContent());
+
+                wxTextFile test(cheminM3U);
+                if (test.Open())
+                {
+                    if (test.GetLineCount() > 1)
+                    {
+                        Musique::Get()->CopieFichier(cheminM3U);
+                        //Musique::Get()->Lecture(FichierListe::Get()->GetNomPosition(0));
+                        m_MAJliste = true;
+                    }
+                    else wxLogMessage(_("Impossible d'ouvrir le fichier, celui-ci est vierge !"));
+                    test.Close();
+                }
+            }
+            else if (nodeReprise->GetAttribute(_("type"), wxEmptyString) == _T("MP3"))
+            {
+                Musique::Get()->Lecture(nodeReprise->GetNodeContent());
+                Musique::Get()->Listage();
+                m_MAJliste = true;
+            }
+        }
+    }
 }
 
 /**

@@ -324,7 +324,13 @@ void Parametre::creerRepertoireParametre(wxString chemin)
     repertoire = chemin + wxFileName::GetPathSeparator() + _T("Fu(X).conf");
     if(!wxFileName::FileExists(repertoire))
     {
-        wxTextFile fichier(repertoire);
+        wxXmlNode *rootNode = new wxXmlNode(wxXML_ELEMENT_NODE, _("default"));
+        new wxXmlNode(rootNode, wxXML_TEXT_NODE, _(""));
+        wxXmlDocument doc;
+        doc.SetRoot(rootNode);
+        doc.Save(repertoire);
+
+        /*wxTextFile fichier(repertoire);
         if (fichier.Create())
         {
             fichier.AddLine(_T("#EXTCONF_1"));
@@ -336,7 +342,7 @@ void Parametre::creerRepertoireParametre(wxString chemin)
 
             fichier.Write();
             fichier.Close();
-        }
+        }*/
     }
 }
 

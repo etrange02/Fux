@@ -1,4 +1,0 @@
-<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
-<area shape="rect" id="node2" href="$class_b_d_d_thread.html" title="Thread gérant la base de données. " alt="" coords="156,5,244,32"/>
-<area shape="rect" id="node3" href="$class_thread_fichier_fichier.html" title="Thread faisant de la gestion de dossiers et fichiers. " alt="" coords="131,56,269,83"/>
-</map>
