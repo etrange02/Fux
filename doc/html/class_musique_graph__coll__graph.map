@@ -1,0 +1,4 @@
+<map id="MusiqueGraph" name="MusiqueGraph">
+<area shape="rect" id="node3" href="$class_couleur.html" title="Champs RVB. " alt="" coords="127,5,193,32"/>
+<area shape="rect" id="node4" href="$class_image_text.html" title="Transforme et affiche une chaîne de caractère dans une surface OpenGL. " alt="" coords="217,5,300,32"/>
+</map>
