@@ -3,6 +3,7 @@
 
 #include <wx/wx.h>
 #include <wx/spinctrl.h>
+#include <wx/xml/xml.h>
 #include "../Define.h"
 #include "GenericTreePanel.h"
 #include "../Musique.h"
@@ -28,11 +29,11 @@ class PreferenceSon : public GenericTreePanel
         void SetValeurMusique(long valeur);
         bool ModifierFiltre(wxString nom, wxString vol, wxString volPC, wxString oldNom = wxEmptyString);
         bool ModifierFiltre(wxString nom, int vol, int volPC, wxString oldNom = wxEmptyString);
+        bool OuvrirFiltre(wxString filtre, bool evenement = true);
 
     private:
         void Creer();
         void RemplirTree();
-        bool OuvrirFiltre(wxString filtre);
         void AppliquerFiltreSelectionne();
 
     protected:

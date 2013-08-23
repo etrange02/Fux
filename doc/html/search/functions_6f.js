@@ -30,6 +30,6 @@ var searchData=
   ['ouvrirdossierprec',['OuvrirDossierPrec',['../class_page_gestion_periph.html#a9204c60f46d71199ba14251a3afc7d8a',1,'PageGestionPeriph']]],
   ['ouvrirdossierprecedent',['OuvrirDossierPrecedent',['../class_page_gestion_periph.html#a238b3ca91cdb7e833e7f9b0a804640f6',1,'PageGestionPeriph']]],
   ['ouvrirdossiersuivant',['OuvrirDossierSuivant',['../class_page_gestion_periph.html#af38ea3d005a1efcca8372700cee94d1b',1,'PageGestionPeriph']]],
-  ['ouvrirfiltre',['OuvrirFiltre',['../class_preference_couleur.html#a48229c2bb8321b902b910edd02b42010',1,'PreferenceCouleur']]],
+  ['ouvrirfiltre',['OuvrirFiltre',['../class_preference_couleur.html#a48229c2bb8321b902b910edd02b42010',1,'PreferenceCouleur::OuvrirFiltre()'],['../class_preference_son.html#a7b38f22d545e6ba1e6b9b53aa3dce9a2',1,'PreferenceSon::OuvrirFiltre()']]],
   ['ouvrirm3u',['OuvrirM3U',['../class_fu_x_fenetre.html#ac93643e3e0fb4871024ab80d38baecd2',1,'FuXFenetre']]]
 ];

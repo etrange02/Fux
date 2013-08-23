@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fu(X) 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-15 19:08+0100\n"
+"POT-Creation-Date: 2013-08-23 17:54+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: David Lecoconnier <david.lecoconnier@free.fr>\n"
 "Language-Team: \n"
@@ -46,6 +46,10 @@ msgstr "Action requise, problème liste de lecture"
 #: ../../../src/Musique.cpp:368
 msgid "Musique::CopieFichier - arrêt"
 msgstr "Musique::CopieFichier - arrêt"
+
+#: ../../../src/Parametre.cpp:341 ../../../src/GUI/Fenetre.cpp:895
+msgid "default"
+msgstr ""
 
 #: ../../../src/Dialogue/DialogEnregistreM3U.cpp:28
 msgid "Création de playlist (fichier .m3u)"
@@ -159,12 +163,12 @@ msgid "Impossible de charger le fichier, celui-ci est vierge !"
 msgstr "Impossible de charger le fichier, celui-ci est vierge !"
 
 #: ../../../src/GUI/Fenetre.cpp:213 ../../../src/GUI/Fenetre.cpp:304
-#: ../../../src/GUI/PreferenceDefaut.cpp:86
+#: ../../../src/GUI/PreferenceDefaut.cpp:87
 msgid "Couleur"
 msgstr "Couleur"
 
 #: ../../../src/GUI/Fenetre.cpp:214 ../../../src/GUI/Fenetre.cpp:305
-#: ../../../src/GUI/PreferenceDefaut.cpp:87
+#: ../../../src/GUI/PreferenceDefaut.cpp:88
 msgid "Son"
 msgstr "Son"
 
@@ -293,7 +297,7 @@ msgstr "Encodage"
 msgid "Pause\tCtrl-P"
 msgstr "Pause\tCtrl-P"
 
-#: ../../../src/GUI/Fenetre.cpp:605 ../../../src/GUI/PreferenceDefaut.cpp:200
+#: ../../../src/GUI/Fenetre.cpp:605 ../../../src/GUI/PreferenceDefaut.cpp:196
 msgid "Choisissez une chanson"
 msgstr "Choisissez une chanson"
 
@@ -301,27 +305,45 @@ msgstr "Choisissez une chanson"
 msgid "Choisissez une playlist (fichier .m3u)"
 msgstr "Choisissez une playlist (fichier .m3u)"
 
-#: ../../../src/GUI/Fenetre.cpp:668 ../../../src/GUI/Fenetre.cpp:887
+#: ../../../src/GUI/Fenetre.cpp:668 ../../../src/GUI/Fenetre.cpp:876
+#: ../../../src/GUI/Fenetre.cpp:934
 msgid "Impossible d'ouvrir le fichier, celui-ci est vierge !"
 msgstr "Impossible d'ouvrir le fichier, celui-ci est vierge !"
 
 #: ../../../src/GUI/Fenetre.cpp:900
-msgid ""
-"Vous devez mettre les paramètres par défaut de Fu(X) à jour.\n"
-"Merci de votre compréhension"
+msgid "filter_colour"
 msgstr ""
-"Vous devez mettre les paramètres par défaut de Fu(X) à jour.\n"
-"Merci de votre compréhension"
 
-#: ../../../src/GUI/Fenetre.cpp:1008
+#: ../../../src/GUI/Fenetre.cpp:902 ../../../src/GUI/Fenetre.cpp:906
+msgid "file"
+msgstr ""
+
+#: ../../../src/GUI/Fenetre.cpp:904
+msgid "filter_sound"
+msgstr ""
+
+#: ../../../src/GUI/Fenetre.cpp:908
+#, fuzzy
+msgid "reprise"
+msgstr "Reprise"
+
+#: ../../../src/GUI/Fenetre.cpp:912
+msgid "subfile"
+msgstr ""
+
+#: ../../../src/GUI/Fenetre.cpp:921 ../../../src/GUI/Fenetre.cpp:938
+msgid "type"
+msgstr ""
+
+#: ../../../src/GUI/Fenetre.cpp:1051
 msgid "Graphe - Fu(X) 2.0"
 msgstr "Graphe - Fu(X) 2.0"
 
-#: ../../../src/GUI/Fenetre.cpp:1016
+#: ../../../src/GUI/Fenetre.cpp:1059
 msgid "Liste de lecture - Fu(X) 2.0"
 msgstr "Liste de lecture - Fu(X) 2.0"
 
-#: ../../../src/GUI/Fenetre.cpp:1024
+#: ../../../src/GUI/Fenetre.cpp:1067
 msgid "Exploration - Fu(X) 2.0"
 msgstr "Exploration - Fu(X) 2.0"
 
@@ -858,71 +880,71 @@ msgstr "V : "
 msgid "B : "
 msgstr "B : "
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:80
+#: ../../../src/GUI/PreferenceDefaut.cpp:81
 msgid "Filtres"
 msgstr "Filtres"
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:88
+#: ../../../src/GUI/PreferenceDefaut.cpp:89
 msgid "Reprise"
 msgstr "Reprise"
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:89
+#: ../../../src/GUI/PreferenceDefaut.cpp:90
 msgid "Inclure les fichiers des sous-dossiers lors d'une opération"
 msgstr "Inclure les fichiers des sous-dossiers lors d'une opération"
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:90
+#: ../../../src/GUI/PreferenceDefaut.cpp:91
 msgid "Afficher les noms en fonction des TAGs"
 msgstr "Afficher les noms en fonction des TAGs"
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:91
+#: ../../../src/GUI/PreferenceDefaut.cpp:92
 msgid "Application par défaut"
 msgstr "Application par défaut"
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:93
+#: ../../../src/GUI/PreferenceDefaut.cpp:94
 msgid "Appliquer un filtre couleur sur le graphe."
 msgstr "Appliquer un filtre couleur sur le graphe."
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:94
+#: ../../../src/GUI/PreferenceDefaut.cpp:95
 msgid "Appliquer un filtre son à l'écoute."
 msgstr "Appliquer un filtre son à l'écoute."
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:95
+#: ../../../src/GUI/PreferenceDefaut.cpp:96
 msgid "Lancer automatiquement un fichier lors du lancement de Fu(X)."
 msgstr "Lancer automatiquement un fichier lors du lancement de Fu(X)."
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:96
-msgid ""
-"Fu(X) recherchera dans toute l'arborescence du dossier les fichiers lors "
-"d'une opération de lecture par exemple."
-msgstr ""
-"Fu(X) recherchera dans toute l'arborescence du dossier les fichiers lors "
-"d'une opération de lecture par exemple."
-
 #: ../../../src/GUI/PreferenceDefaut.cpp:97
 msgid ""
-"Le titre de la chanson se fait à partir des données enregistrées dans le "
-"fichier musical et non à partir du nom de celui-ci."
+"Fu(X) recherchera dans toute l'arborescence du dossier les fichiers lors "
+"d'une opération de lecture par exemple."
 msgstr ""
-"Le titre de la chanson se fait à partir des données enregistrées dans le "
-"fichier musical et non à partir du nom de celui-ci."
+"Fu(X) recherchera dans toute l'arborescence du dossier les fichiers lors "
+"d'une opération de lecture par exemple."
 
 #: ../../../src/GUI/PreferenceDefaut.cpp:98
 msgid ""
+"Le titre de la chanson se fait à partir des données enregistrées dans le "
+"fichier musical et non à partir du nom de celui-ci."
+msgstr ""
+"Le titre de la chanson se fait à partir des données enregistrées dans le "
+"fichier musical et non à partir du nom de celui-ci."
+
+#: ../../../src/GUI/PreferenceDefaut.cpp:99
+msgid ""
 "Faire de Fu(X) le programme par défaut pour les mp3, m3u.\n"
 "Ne pas utiliser si vous avez fait une installation classique."
 msgstr ""
 "Faire de Fu(X) le programme par défaut pour les mp3, m3u.\n"
 "Ne pas utiliser si vous avez fait une installation classique."
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:109
+#: ../../../src/GUI/PreferenceDefaut.cpp:110
 msgid "Avancée"
 msgstr "Avancée"
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:112
+#: ../../../src/GUI/PreferenceDefaut.cpp:113
 msgid "Portable"
 msgstr "Portable"
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:113
+#: ../../../src/GUI/PreferenceDefaut.cpp:114
 msgid ""
 "Configure Fu(X) pour une utilisation sur clef USB.\n"
 "Ne pas utiliser si vous avez fait une installation classique."
@@ -930,42 +952,33 @@ msgstr ""
 "Configure Fu(X) pour une utilisation sur clef USB.\n"
 "Ne pas utiliser si vous avez fait une installation classique."
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:120
+#: ../../../src/GUI/PreferenceDefaut.cpp:121
 msgid "MP3"
 msgstr "MP3"
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:120
+#: ../../../src/GUI/PreferenceDefaut.cpp:121
 msgid "M3U"
 msgstr "M3U"
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:130
+#: ../../../src/GUI/PreferenceDefaut.cpp:131
 msgid "Dossier par défaut"
 msgstr "Dossier par défaut"
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:214
+#: ../../../src/GUI/PreferenceDefaut.cpp:210
 msgid "Choisissez le répertoire par défaut"
 msgstr "Choisissez le répertoire par défaut"
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:332
+#: ../../../src/GUI/PreferenceDefaut.cpp:328
 msgid "Non implémenté - Tag"
 msgstr "Non implémenté - Tag"
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:349
+#: ../../../src/GUI/PreferenceDefaut.cpp:345
 msgid "Non implémenté - Application par défaut"
 msgstr "Non implémenté - Application par défaut"
 
-#: ../../../src/GUI/PreferenceDefaut.cpp:358
+#: ../../../src/GUI/PreferenceDefaut.cpp:354
 msgid "Non implémenté - Répertoire par défaut"
 msgstr "Non implémenté - Répertoire par défaut"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:425
-#, fuzzy
-msgid "Couleur= "
-msgstr "Couleur"
-
-#: ../../../src/GUI/PreferenceDefaut.cpp:425
-msgid "Chemin= "
-msgstr ""
 
 #: ../../../src/GUI/PreferenceSon.cpp:52
 msgid "Valeurs actuelles"
@@ -990,6 +1003,17 @@ msgstr "Choisissez une image"
 #: ../../../src/Reseau/TCPServeur.cpp:47
 msgid "Connexion non autorisée"
 msgstr "Connexion non autorisée"
+
+#~ msgid ""
+#~ "Vous devez mettre les paramètres par défaut de Fu(X) à jour.\n"
+#~ "Merci de votre compréhension"
+#~ msgstr ""
+#~ "Vous devez mettre les paramètres par défaut de Fu(X) à jour.\n"
+#~ "Merci de votre compréhension"
+
+#, fuzzy
+#~ msgid "Couleur= "
+#~ msgstr "Couleur"
 
 #~ msgid "Nouveau jeu de couleur"
 #~ msgstr "Nouveau jeu de couleur"

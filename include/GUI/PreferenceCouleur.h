@@ -8,6 +8,7 @@
 #include <wx/dcmemory.h>
 //#include <wx/textfile.h>
 //#include <wx/scrolwin.h>
+#include <wx/xml/xml.h>
 #include <wx/dir.h>
 #include "../Define.h"
 #include "GenericTreePanel.h"

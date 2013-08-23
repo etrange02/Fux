@@ -2,13 +2,17 @@
 #define COULEUR_H
 
 #include <wx/wx.h>
+#include <wx/xml/xml.h>
 
 class Couleur
 {
     public:
         Couleur(unsigned int red = 0, unsigned int green = 0, unsigned int blue = 0, bool boolValue = false);
         Couleur(wxString chaine, bool boolValue);
+        Couleur(wxXmlNode *node);
         virtual ~Couleur();
+        void FromXMLNode(wxXmlNode *node);
+        void FromString(wxString chaine, bool boolValue);
         unsigned int GetRed();
         bool GetBoolRed();
         void SetRed(unsigned int val);
@@ -24,6 +28,7 @@ class Couleur
         wxString ToString(wxString mot);
         wxString ToBoolString();
         wxString ToBoolString(wxString mot);
+        wxXmlNode* ToXMLNode(wxXmlNode *parent, wxString titre);
 
         //Couleur& operator=(const Couleur& other);
     private:

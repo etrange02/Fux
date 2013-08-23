@@ -411,34 +411,34 @@ void PreferenceDefaut::OuvertureFichier()
         wxXmlDocument doc;
         if (!doc.Load(Parametre::Get()->getRepertoireParametre(_T("Fu(X).conf"))))
             return;
-        if (doc.GetRoot()->GetName() != _("default"))
+        if (doc.GetRoot()->GetName() != _T("default"))
             return;
         wxXmlNode *child = doc.GetRoot()->GetChildren();
         while (child)
         {
-            if (child->GetName() == _("filter_colour"))
+            if (child->GetName() == _T("filter_colour"))
             {
                 m_checkBox[COULEUR].SetValue(true);
                 m_listeCouleur->Enable(true);
-                m_listeCouleur->SetStringSelection(child->GetAttribute(_("file"), wxEmptyString));
+                m_listeCouleur->SetStringSelection(child->GetAttribute(_T("file"), wxEmptyString));
             }
-            else if (child->GetName() == _("filter_sound"))
+            else if (child->GetName() == _T("filter_sound"))
             {
                 m_checkBox[SON].SetValue(true);
                 m_listeSon->Enable(true);
-                m_listeSon->SetStringSelection(child->GetAttribute(_("file"), wxEmptyString));
+                m_listeSon->SetStringSelection(child->GetAttribute(_T("file"), wxEmptyString));
             }
-            else if (child->GetName() == _("reprise"))
+            else if (child->GetName() == _T("reprise"))
             {
                 m_checkBox[REPRISE].SetValue(true);
                 m_choix->Enable(true);
-                if (child->GetAttribute(_("type"), wxEmptyString) == _T("M3U"))
+                if (child->GetAttribute(_T("type"), wxEmptyString) == _T("M3U"))
                 {
                     m_listeReprise->Enable(true);
                     m_listeReprise->SetStringSelection(child->GetNodeContent());
                     m_choix->SetSelection(M3U);
                 }
-                else if (child->GetAttribute(_("type"), wxEmptyString) == _T("MP3"))
+                else if (child->GetAttribute(_T("type"), wxEmptyString) == _T("MP3"))
                 {
                     m_boiteCheminChansonRep->Enable(true);
                     m_boutonRecherche->Enable(true);
@@ -446,7 +446,7 @@ void PreferenceDefaut::OuvertureFichier()
                     m_choix->SetSelection(MP3);
                 }
             }
-            else if (child->GetName() == _("subfile"))
+            else if (child->GetName() == _T("subfile"))
             {
                 m_checkBox[SOUSDOSSIER].SetValue(true);
             }
@@ -461,37 +461,37 @@ void PreferenceDefaut::OuvertureFichier()
  */
 bool PreferenceDefaut::AutoSave()
 {
-    wxXmlNode *rootNode = new wxXmlNode(wxXML_ELEMENT_NODE, _("default"));
+    wxXmlNode *rootNode = new wxXmlNode(wxXML_ELEMENT_NODE, _T("default"));
     wxXmlNode *childNode = NULL;
 
     if (m_checkBox[COULEUR].GetValue() && m_listeCouleur->GetCurrentSelection() != wxNOT_FOUND)
     {
-        childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _("filter_colour"));
-        childNode->AddAttribute(_("file"), m_listeCouleur->GetString(m_listeCouleur->GetCurrentSelection()));
+        childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _T("filter_colour"));
+        childNode->AddAttribute(_T("file"), m_listeCouleur->GetString(m_listeCouleur->GetCurrentSelection()));
     }
     if (m_checkBox[SON].GetValue() && m_listeSon->GetCurrentSelection() != wxNOT_FOUND)
     {
-        childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _("filter_sound"));
-        childNode->AddAttribute(_("file"), m_listeSon->GetString(m_listeSon->GetCurrentSelection()));
+        childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _T("filter_sound"));
+        childNode->AddAttribute(_T("file"), m_listeSon->GetString(m_listeSon->GetCurrentSelection()));
     }
     if (m_checkBox[REPRISE].GetValue())
     {
-        childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _("reprise"));
+        childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _T("reprise"));
         wxXmlNode *sub = new wxXmlNode(childNode, wxXML_TEXT_NODE, _(""));
         if(m_listeM3u_mp3 == MP3 && !m_boiteCheminChansonRep->IsEmpty())
         {
-            childNode->AddAttribute(_("type"), _("MP3"));
+            childNode->AddAttribute(_T("type"), _T("MP3"));
             sub->SetContent(m_boiteCheminChansonRep->GetValue());
         }
         else if (m_listeM3u_mp3 == M3U && !m_listeReprise->GetCurrentSelection() != wxNOT_FOUND)
         {
-            childNode->AddAttribute(_("type"), _("M3U"));
+            childNode->AddAttribute(_T("type"), _T("M3U"));
             sub->SetContent(m_listeReprise->GetString(m_listeReprise->GetCurrentSelection()));
         }
     }
     if (m_checkBox[SOUSDOSSIER].GetValue())
     {
-        childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _("subfile"));
+        childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _T("subfile"));
         Parametre::Get()->setSousDossier(true);
     }
     else

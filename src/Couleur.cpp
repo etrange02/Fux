@@ -25,11 +25,59 @@ Couleur::Couleur(unsigned int red, unsigned int green, unsigned int blue, bool b
 }
 
 /**
- * Convertit une cha�ne de caract�res en structure Couleur (Couleur.R, Couleur.V, Couleur.B)
+ * Constructeur
  * @param chaine une chaine contenant le code de la couleur
- * @param boolValue Si vrai, chaine contient des 't' et des 'f' pour repr�senter les valeurs. Sinon, ce sont des entiers 0-255 s�par� par des espaces ' '
+ * @param boolValue Si vrai, chaine contient des 't' et des 'f' pour représenter les valeurs. Sinon, ce sont des entiers 0-255 séparé par des espaces ' '
+ * @see Couleur::FromString
  */
 Couleur::Couleur(wxString chaine, bool boolValue)
+{
+    FromString(chaine, boolValue);
+}
+
+/**
+ * Constructeur
+ * @param node un nœud XML
+ * @see Couleur::FromXMLNode
+ */
+Couleur::Couleur(wxXmlNode *node)
+{
+    FromXMLNode(node);
+}
+
+/**
+ * Destructeur
+ */
+Couleur::~Couleur()
+{
+}
+
+/**
+ * Lit un nœud XML
+ * @param node
+ */
+void Couleur::FromXMLNode(wxXmlNode *node)
+{
+    if (node)
+    {
+        long val = 0;
+        node->GetAttribute(_T("red"), wxEmptyString).ToLong(&val);
+        SetRed(val);
+        node->GetAttribute(_T("green"), wxEmptyString).ToLong(&val);
+        SetGreen(val);
+        node->GetAttribute(_T("blue"), wxEmptyString).ToLong(&val);
+        SetBlue(val);
+    }
+    else
+        SetRGB(0, 0, 0);
+}
+
+/**
+ * Convertit une chaîne de caractères en structure Couleur (Couleur.R, Couleur.V, Couleur.B)
+ * @param chaine une chaine contenant le code de la couleur
+ * @param boolValue Si vrai, chaine contient des 't' et des 'f' pour représenter les valeurs. Sinon, ce sont des entiers 0-255 séparé par des espaces ' '
+ */
+void Couleur::FromString(wxString chaine, bool boolValue)
 {
     wxString temp = chaine.AfterFirst(' '), tabCouleur[3];
     if (boolValue)
@@ -57,13 +105,6 @@ Couleur::Couleur(wxString chaine, bool boolValue)
         tabCouleur[2].ToLong(&val);
         SetBlue(val);
     }
-}
-
-/**
- * Destructeur
- */
-Couleur::~Couleur()
-{
 }
 
 unsigned int Couleur::GetRed()
@@ -156,3 +197,20 @@ wxString Couleur::ToBoolString()
     m_blue = other.GetBlue();
     return *this;
 }*/
+
+/**
+ * Renvoie les valeurs de la classe sous forme de nœud XML
+ * @param parent le nœud parent
+ * @param titre le nom du nœud
+ * @return un nœud XML
+ */
+wxXmlNode* Couleur::ToXMLNode(wxXmlNode *parent, wxString titre)
+{
+    wxXmlNode *node = new wxXmlNode(parent, wxXML_ELEMENT_NODE, titre);
+    node->AddAttribute(_T("red"), wxString::Format(_T("%u"), GetRed()));
+    node->AddAttribute(_T("green"),wxString::Format(_T("%u"), GetGreen()));
+    node->AddAttribute(_T("blue"), wxString::Format(_T("%u"), GetBlue()));
+    return node;
+}
+
+

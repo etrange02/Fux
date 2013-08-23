@@ -852,18 +852,7 @@ void FuXFenetre::LecturePreference(bool lecture)
         ///////Son
         if (!fichierPref.GetLine(2).IsSameAs(_T("Son= NON")))
         {
-            long volume;
-            nomFichierSon = Parametre::Get()->getRepertoireParametre(_T("Preference"), _T("Son"), fichierPref.GetLine(2).AfterFirst(' '));
-            wxTextFile fichierS(nomFichierSon);
-            fichierS.Open();
-            if (fichierS.GetLine(0).IsSameAs(_T("#EXTSAUVE_S1")))
-            {
-                fichierS.GetLine(2).ToLong(&volume);
-                Musique::Get()->SetVolume(volume);
-                SliderSon::Get()->SetValue(volume);
-                m_pageSon->SetValeurMusique(volume);
-                fichierS.Close();
-            }
+            m_pageSon->OuvrirFiltre(fichierPref.GetLine(2).AfterFirst(' '), false);
         }
         ///////Sous-dossier
         if (fichierPref.GetLine(5) != _T("SousDossier= NON"))
@@ -914,18 +903,7 @@ void FuXFenetre::LecturePreference(bool lecture)
             }
             else if (child->GetName() == _("filter_sound"))
             {
-                long volume;
-                nomFichierSon = Parametre::Get()->getCheminSon(child->GetAttribute(_("file"), wxEmptyString));
-                wxTextFile fichierS(nomFichierSon);
-                fichierS.Open();
-                if (fichierS.GetLine(0).IsSameAs(_T("#EXTSAUVE_S1")))
-                {
-                    fichierS.GetLine(2).ToLong(&volume);
-                    Musique::Get()->SetVolume(volume);
-                    SliderSon::Get()->SetValue(volume);
-                    m_pageSon->SetValeurMusique(volume);
-                    fichierS.Close();
-                }
+                m_pageSon->OuvrirFiltre(child->GetAttribute(_("file"), wxEmptyString), false);
             }
             else if (child->GetName() == _("reprise"))
             {

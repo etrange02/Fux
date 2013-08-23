@@ -10,7 +10,7 @@
 
 /**
  * @class PreferenceSon
- * @brief Interface représentant différents volumes sonores - Passer les fichiers au format XML
+ * @brief Interface représentant différents volumes sonores
  * Les fichiers sont synchronisés en même temps que chaque modification. Chaque fichier est associé à un nœud dans l'arbre d'exploration
  */
 
@@ -289,7 +289,7 @@ void PreferenceSon::EvtSpinVolume(wxSpinEvent &WXUNUSED(event))
  */
 void PreferenceSon::EvtSpinVolumePC(wxSpinEvent &WXUNUSED(event))
 {
-    ModifierFiltre(m_textNomSet->GetValue(), m_spinVolumePC->GetValue(), m_spinVolumePC->GetValue());
+    ModifierFiltre(m_textNomSet->GetValue(), m_spinVolume->GetValue(), m_spinVolumePC->GetValue());
 }
 
 /**
@@ -315,7 +315,7 @@ bool PreferenceSon::ModifierFiltre(wxString nom, wxString vol, wxString volPC, w
 {
     if (nom.IsEmpty())
         return false;
-    if (oldNom.IsEmpty())
+    /*if (oldNom.IsEmpty())
     {
         wxTextFile fichier(Parametre::Get()->getCheminSon(nom + _T(".sauve")));
         if (fichier.Create() || fichier.Open())
@@ -335,7 +335,7 @@ bool PreferenceSon::ModifierFiltre(wxString nom, wxString vol, wxString volPC, w
     else
     {
         wxTextFile fichier(Parametre::Get()->getCheminSon(nom + _T(".sauve")));
-        if (fichier.Create()/* || fichier.Open()*/)
+        if (fichier.Create()/ * || fichier.Open()* /)
         {
             fichier.AddLine(_T("#EXTSAUVE_S1"));
             fichier.AddLine(nom);
@@ -348,8 +348,26 @@ bool PreferenceSon::ModifierFiltre(wxString nom, wxString vol, wxString volPC, w
 
             return wxRemoveFile(Parametre::Get()->getCheminSon(oldNom));
         }
-    }
-    return false;
+    }*/
+
+    if (oldNom)
+        wxRemoveFile(Parametre::Get()->getCheminSon(oldNom));
+    wxXmlNode *rootNode = new wxXmlNode(wxXML_ELEMENT_NODE, _T("sound"));
+    wxXmlNode *childNode = NULL;
+
+    childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _T("name"));
+    new wxXmlNode(childNode, wxXML_TEXT_NODE, _T(""), nom);
+    childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _T("volume"));
+    new wxXmlNode(childNode, wxXML_TEXT_NODE, _T(""), vol);
+    childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _T("pc_volume"));
+    new wxXmlNode(childNode, wxXML_TEXT_NODE, _T(""), volPC);
+    childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _T("balance"));
+    childNode->AddAttribute(_T("left"), _T("0.5"));
+    childNode->AddAttribute(_T("right"), _T("0.5"));
+
+    wxXmlDocument doc;
+    doc.SetRoot(rootNode);
+    return doc.Save(Parametre::Get()->getCheminSon(nom + _T(".sauve")));
 }
 
 /**
@@ -370,35 +388,70 @@ bool PreferenceSon::ModifierFiltre(wxString nom, int vol, int volPC, wxString ol
 
 /**
  * Lit le contenu d'un fichier(filtre) et modifie le volume sonore
- * @param nom le nom du filtre à lire
+ * @param filtre le nom du filtre à lire
  * @param evenement si vrai, les paramètres sont juste visualisés, si faux les paramètres sont appliqués au graphe
  * @return vrai si réussite
  */
-bool PreferenceSon::OuvrirFiltre(wxString filtre)
+bool PreferenceSon::OuvrirFiltre(wxString filtre, bool evenement)
 {
     wxTextFile fichier(Parametre::Get()->getCheminSon(filtre));
-    if (fichier.Open())
-    {
-        if (fichier.GetLine(0).IsSameAs(_T("#EXTSAUVE_S1")))
-        {
-            /*wxString nom = fichier.GetLine(1);
-            wxString volume = fichier.GetLine(1);
-            wxString volumePC = fichier.GetLine(2);
-            fichier.Close();
 
-            m_textNomSet->ChangeValue(nom);
-            m_spinVolume->SetValue(volume);
-            m_spinVolumePC->SetValue(volumePC);*/
-            m_textNomSet->ChangeValue(fichier.GetLine(1));
-            m_spinVolume->SetValue(fichier.GetLine(2));
-            m_spinVolumePC->SetValue(fichier.GetLine(3));
-            fichier.Close();
-            return true;
-        }
-        else
-            fichier.Close();
+    if (!(fichier.Exists() && fichier.Open()))
+        return false;
+
+    wxString nom, volume, volumePC;
+
+    if (fichier.GetLine(0).IsSameAs(_T("#EXTSAUVE_S1")))
+    {
+        nom = fichier.GetLine(1);
+        volume = fichier.GetLine(2);
+        volumePC = fichier.GetLine(3);
+        fichier.Close();
     }
-    return false;
+    else
+    {
+        fichier.Close();
+        wxXmlDocument doc;
+        if (!doc.Load(Parametre::Get()->getCheminSon(filtre)))
+            return false;
+        if (doc.GetRoot()->GetName() != _T("sound"))
+            return false;
+        wxXmlNode *child = doc.GetRoot()->GetChildren();
+        while (child)
+        {
+            if (child->GetName() == _T("name"))
+            {
+                nom = child->GetNodeContent();
+            }
+            else if (child->GetName() == _T("volume"))
+            {
+                volume = child->GetNodeContent();
+            }
+            else if (child->GetName() == _T("pc_volume"))
+            {
+                volumePC = child->GetNodeContent();
+            }
+            /*else if (child->GetName() == _T("balance"))
+            {
+                child->GetAttribute(_T("left"), wxEmptyString);
+                child->GetAttribute(_T("right"), wxEmptyString);
+            }*/
+            child = child->GetNext();
+        }
+    }
+
+    if (evenement)
+    {
+        m_textNomSet->ChangeValue(nom);
+        m_spinVolume->SetValue(volume);
+        m_spinVolumePC->SetValue(volumePC);
+    }
+    else
+    {
+        m_textVolumeCurr->SetValue(volume);
+        Parametre::Get()->setVolume(volume, volumePC);
+    }
+    return true;
 }
 
 /**
@@ -413,8 +466,7 @@ void PreferenceSon::AppliquerFiltreSelectionne()
     m_textVolumeCurr->ChangeValue(volume);
     m_textVolumePCCurr->ChangeValue(volumePC);
 
-    Musique::Get()->SetVolume(m_spinVolume->GetValue());
-    SliderSon::Get()->SetValue(m_spinVolume->GetValue());
+    Parametre::Get()->setVolume(m_spinVolume->GetValue(), m_spinVolumePC->GetValue());
 }
 
 

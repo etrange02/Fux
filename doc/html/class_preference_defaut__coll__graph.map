@@ -1,5 +1,5 @@
 <map id="PreferenceDefaut" name="PreferenceDefaut">
 <area shape="rect" id="node4" href="$class_generic_tree_panel.html" title="Inteface générique pour les préférences. " alt="" coords="75,83,200,109"/>
-<area shape="rect" id="node3" href="$class_preference_son.html" title="Interface représentant différents volumes sonores &#45; Passer les fichiers au format XML Les fichiers so..." alt="" coords="75,160,181,187"/>
-<area shape="rect" id="node5" href="$class_preference_couleur.html" title="Interface représentant différentes compositions graphiques &#45; Passer les fichiers au format XML Les fi..." alt="" coords="205,160,333,187"/>
+<area shape="rect" id="node3" href="$class_preference_son.html" title="Interface représentant différents volumes sonores Les fichiers sont synchronisés en même temps que ch..." alt="" coords="75,160,181,187"/>
+<area shape="rect" id="node5" href="$class_preference_couleur.html" title="Interface représentant différentes compositions graphiques Les fichiers sont synchronisés en même tem..." alt="" coords="205,160,333,187"/>
 </map>

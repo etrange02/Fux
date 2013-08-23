@@ -4,6 +4,7 @@
 #include "Define.h"
 #include "GUI/MusiqueGraph.h"
 #include "Musique.h"
+#include "GUI/SliderSon.h"
 #include <wx/wx.h>
 #include <wx/stdpaths.h>
 #include <wx/textfile.h>
@@ -35,6 +36,8 @@ class Parametre
         void setCheminCouleur(wxString);
         void setCheminSon(wxString);
         void setCouleurs(Couleur, Couleur, Couleur, Couleur, Couleur, Couleur, Couleur, bool);
+        void setVolume(int, int);
+        void setVolume(wxString, wxString);
         void setSousDossier(bool);
         void setRepertoireDefaut(wxString);
         bool isID3V2(const wxString&);

@@ -155,6 +155,20 @@ void Parametre::setCouleurs(Couleur fond, Couleur barre, Couleur police, Couleur
     MusiqueGraph::Get()->AffecteCouleurs(fond, barre, police, haut, miSup, doubleBarre, miInf, bas);
 }
 
+void Parametre::setVolume(wxString volume, wxString volumePC)
+{
+    long vol = 0, volPC = 0;
+    volume.ToLong(&vol);
+    volumePC.ToLong(&volPC);
+    setVolume(vol, volPC);
+}
+
+void Parametre::setVolume(int volume, int volumePC)
+{
+    Musique::Get()->SetVolume(volume);
+    SliderSon::Get()->SetValue(volume);
+}
+
 /**
  * Indique si l'on doit lister les sous dossiers d'un répertoire lors d'une recherche
  * @return vrai si les sous-dossiers doivent être pris en compte

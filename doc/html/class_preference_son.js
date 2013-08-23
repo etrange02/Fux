@@ -14,5 +14,6 @@ var class_preference_son =
     [ "MajListe", "class_preference_son.html#a5f04a1c48214577aabeecfbadb7bbd75", null ],
     [ "ModifierFiltre", "class_preference_son.html#a9803e3959c388ede6922dc7157855534", null ],
     [ "ModifierFiltre", "class_preference_son.html#a83225bc24b3e91a84d07436e783e8a98", null ],
+    [ "OuvrirFiltre", "class_preference_son.html#a7b38f22d545e6ba1e6b9b53aa3dce9a2", null ],
     [ "SetValeurMusique", "class_preference_son.html#a1e467f2a6452d53b62ecceaa40090089", null ]
 ];

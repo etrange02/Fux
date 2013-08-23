@@ -16,7 +16,7 @@ var searchData=
   ['copiefichier',['CopieFichier',['../class_musique.html#ad9f6278ec246342608a70fcd15e137be',1,'Musique']]],
   ['copiefichiertoliste',['CopieFichierTOListe',['../class_fichier_liste.html#acdd25b563d061313f734524a7983fb21',1,'FichierListe']]],
   ['copier',['Copier',['../class_gest_periph.html#ac7be646b28a40de872c18cbc47ead8c8',1,'GestPeriph']]],
-  ['couleur',['Couleur',['../class_couleur.html',1,'Couleur'],['../class_couleur.html#a217b44db83d67a5f03ef9421abfa77e2',1,'Couleur::Couleur(unsigned int red=0, unsigned int green=0, unsigned int blue=0, bool boolValue=false)'],['../class_couleur.html#a0f2787e05075543bb088dc85fb6e1673',1,'Couleur::Couleur(wxString chaine, bool boolValue)']]],
+  ['couleur',['Couleur',['../class_couleur.html',1,'Couleur'],['../class_couleur.html#a217b44db83d67a5f03ef9421abfa77e2',1,'Couleur::Couleur(unsigned int red=0, unsigned int green=0, unsigned int blue=0, bool boolValue=false)'],['../class_couleur.html#a0f2787e05075543bb088dc85fb6e1673',1,'Couleur::Couleur(wxString chaine, bool boolValue)'],['../class_couleur.html#a690e8f8999ca535442a5a5e58f56812a',1,'Couleur::Couleur(wxXmlNode *node)']]],
   ['couleur_5fmaj_5fbarre',['Couleur_MAJ_Barre',['../class_preference_couleur.html#a614d95fd1ceb52469636199b7f65cf95',1,'PreferenceCouleur']]],
   ['couleur_5fmaj_5ffond',['Couleur_MAJ_Fond',['../class_preference_couleur.html#a73fb5fbf66b38b5a5cab9d77021919e1',1,'PreferenceCouleur']]],
   ['couleur_5fmaj_5fgraphinf',['Couleur_MAJ_GraphInf',['../class_preference_couleur.html#ac6c92b2599517ca87813390f6c470ad4',1,'PreferenceCouleur']]],

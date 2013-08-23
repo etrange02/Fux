@@ -10,7 +10,7 @@
 
 /**
  * @class PreferenceCouleur
- * @brief Interface représentant différentes compositions graphiques - Passer les fichiers au format XML
+ * @brief Interface représentant différentes compositions graphiques
  * Les fichiers sont synchronisés en même temps que chaque modification. Chaque fichier est associé à un nœud dans l'arbre d'exploration
  */
 
@@ -678,7 +678,7 @@ bool PreferenceCouleur::ModifierFiltre(wxString nom, Couleur fond, Couleur barre
 {
     if (nom.IsEmpty())
         return false;
-    if (oldNom.IsEmpty())
+    /*if (oldNom.IsEmpty())
     {
         wxTextFile fichier(Parametre::Get()->getCheminCouleur(nom + _T(".sauve")));
         if (fichier.Create() || fichier.Open())
@@ -704,7 +704,7 @@ bool PreferenceCouleur::ModifierFiltre(wxString nom, Couleur fond, Couleur barre
     else
     {
         wxTextFile fichier(Parametre::Get()->getCheminCouleur(nom + _T(".sauve")));
-        if (fichier.Create()/* || fichier.Open()*/)
+        if (fichier.Create()/ * || fichier.Open()* /)
         {
             wxString sym;
             sym << _T("Double= ") << (symetrie?_T("t"):_T("f"));
@@ -724,7 +724,28 @@ bool PreferenceCouleur::ModifierFiltre(wxString nom, Couleur fond, Couleur barre
             return wxRemoveFile(Parametre::Get()->getCheminCouleur(oldNom));
         }
     }
-    return false;
+    return false;*/
+
+    if (oldNom)
+        wxRemoveFile(Parametre::Get()->getCheminCouleur(oldNom));
+    wxXmlNode *rootNode = new wxXmlNode(wxXML_ELEMENT_NODE, _T("colour"));
+    wxXmlNode *childNode = NULL;
+
+    childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _T("name"));
+    new wxXmlNode(childNode, wxXML_TEXT_NODE, _T(""), nom);
+    fond.ToXMLNode(rootNode, _T("fond"));
+    barre.ToXMLNode(rootNode, _T("barre"));
+    police.ToXMLNode(rootNode, _T("police"));
+    haut.ToXMLNode(rootNode, _T("haut"));
+    miSup.ToXMLNode(rootNode, _T("mi_sup"));
+    miInf.ToXMLNode(rootNode, _T("mi_inf"));
+    bas.ToXMLNode(rootNode, _T("bas"));
+    if (symetrie)
+        childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _T("symetrie"));
+
+    wxXmlDocument doc;
+    doc.SetRoot(rootNode);
+    return doc.Save(Parametre::Get()->getCheminCouleur(nom + _T(".sauve")));
 }
 
 /**
@@ -756,65 +777,117 @@ bool PreferenceCouleur::ModifierFiltre(wxString nom, wxString oldNom)
 bool PreferenceCouleur::OuvrirFiltre(wxString filtre, bool evenement)
 {
     wxTextFile fichier(Parametre::Get()->getCheminCouleur(filtre));
-    if (fichier.Open())
+
+    if (!(fichier.Exists() && fichier.Open()))
+        return false;
+
+    wxString nom;
+    Couleur colFond, colBarre, colPolice, colHaut, colMiSup, colMiInf, colBas;
+    bool symetrie = false;
+
+    if (fichier.GetLine(0).IsSameAs(_T("#EXTSAUVE_C1")))
     {
-        if (fichier.GetLine(0).IsSameAs(_T("#EXTSAUVE_C1")))
-        {
-            wxString nom = fichier.GetLine(1);
-            Couleur colFond(fichier.GetLine(2), false);
-            Couleur colBarre(fichier.GetLine(3), false);
-            Couleur colPolice(fichier.GetLine(4), false);
-            Couleur colHaut(fichier.GetLine(5), true);
-            Couleur colMiSup(fichier.GetLine(6), true);
-            bool symetrie = fichier.GetLine(7).AfterFirst(' ').BeforeFirst(' ').IsSameAs(_T("t"));
-            Couleur colMiInf(fichier.GetLine(8), true);
-            Couleur colBas(fichier.GetLine(9), true);
-            fichier.Close();
-
-            if (evenement)
-            {
-                m_textNomSet->ChangeValue(nom);
-                m_sliderFond[ROUGE].SetValue(colFond.GetRed());
-                m_sliderFond[VERT].SetValue(colFond.GetGreen());
-                m_sliderFond[BLEU].SetValue(colFond.GetBlue());
-                m_sliderBarre[ROUGE].SetValue(colBarre.GetRed());
-                m_sliderBarre[VERT].SetValue(colBarre.GetGreen());
-                m_sliderBarre[BLEU].SetValue(colBarre.GetBlue());
-                m_sliderPolice[ROUGE].SetValue(colPolice.GetRed());
-                m_sliderPolice[VERT].SetValue(colPolice.GetGreen());
-                m_sliderPolice[BLEU].SetValue(colPolice.GetBlue());
-
-                m_checkBoxHaut[ROUGE].SetValue(colHaut.GetBoolRed());
-                m_checkBoxHaut[VERT].SetValue(colHaut.GetBoolGreen());
-                m_checkBoxHaut[BLEU].SetValue(colHaut.GetBoolBlue());
-                m_checkBoxMiSup[ROUGE].SetValue(colMiSup.GetBoolRed());
-                m_checkBoxMiSup[VERT].SetValue(colMiSup.GetBoolGreen());
-                m_checkBoxMiSup[BLEU].SetValue(colMiSup.GetBoolBlue());
-                m_checkBoxMiInf[ROUGE].SetValue(colMiInf.GetBoolRed());
-                m_checkBoxMiInf[VERT].SetValue(colMiInf.GetBoolGreen());
-                m_checkBoxMiInf[BLEU].SetValue(colMiInf.GetBoolBlue());
-                m_checkBoxBas[ROUGE].SetValue(colBas.GetBoolRed());
-                m_checkBoxBas[VERT].SetValue(colBas.GetBoolGreen());
-                m_checkBoxBas[BLEU].SetValue(colBas.GetBoolBlue());
-
-                m_doubleBarre->SetValue(symetrie);
-
-                MAJ_Fond();
-                MAJ_Barre();
-                MAJ_GraphSup();
-                MAJ_GraphInf();
-                MAJ_Symetrie();
-            }
-            else
-            {
-                Parametre::Get()->setCouleurs(colFond, colBarre, colPolice, colHaut, colMiSup, colMiInf, colBas, symetrie);
-            }
-            return true;
-        }
-        else
-            fichier.Close();
+        nom = fichier.GetLine(1);
+        colFond.FromString(fichier.GetLine(2), false);
+        colBarre.FromString(fichier.GetLine(3), false);
+        colPolice.FromString(fichier.GetLine(4), false);
+        colHaut.FromString(fichier.GetLine(5), true);
+        colMiSup.FromString(fichier.GetLine(6), true);
+        symetrie = fichier.GetLine(7).AfterFirst(' ').BeforeFirst(' ').IsSameAs(_T("t"));
+        colMiInf.FromString(fichier.GetLine(8), true);
+        colBas.FromString(fichier.GetLine(9), true);
+        fichier.Close();
     }
-    return false;
+    else
+    {
+        fichier.Close();
+        wxXmlDocument doc;
+        if (!doc.Load(Parametre::Get()->getCheminCouleur(filtre)))
+            return false;
+        if (doc.GetRoot()->GetName() != _T("colour"))
+            return false;
+        wxXmlNode *child = doc.GetRoot()->GetChildren();
+        while (child)
+        {
+            if (child->GetName() == _T("name"))
+            {
+                nom = child->GetNodeContent();
+            }
+            else if (child->GetName() == _T("fond"))
+            {
+                colFond.FromXMLNode(child);
+            }
+            else if (child->GetName() == _T("barre"))
+            {
+                colBarre.FromXMLNode(child);
+            }
+            else if (child->GetName() == _T("police"))
+            {
+                colPolice.FromXMLNode(child);
+            }
+            else if (child->GetName() == _T("haut"))
+            {
+                colHaut.FromXMLNode(child);
+            }
+            else if (child->GetName() == _T("mi_sup"))
+            {
+                colMiSup.FromXMLNode(child);
+            }
+            else if (child->GetName() == _T("mi_inf"))
+            {
+                colMiInf.FromXMLNode(child);
+            }
+            else if (child->GetName() == _T("bas"))
+            {
+                colBas.FromXMLNode(child);
+            }
+            else if (child->GetName() == _T("symetrie"))
+            {
+                symetrie = true;
+            }
+            child = child->GetNext();
+        }
+    }
+
+    if (evenement)
+    {
+        m_textNomSet->ChangeValue(nom);
+        m_sliderFond[ROUGE].SetValue(colFond.GetRed());
+        m_sliderFond[VERT].SetValue(colFond.GetGreen());
+        m_sliderFond[BLEU].SetValue(colFond.GetBlue());
+        m_sliderBarre[ROUGE].SetValue(colBarre.GetRed());
+        m_sliderBarre[VERT].SetValue(colBarre.GetGreen());
+        m_sliderBarre[BLEU].SetValue(colBarre.GetBlue());
+        m_sliderPolice[ROUGE].SetValue(colPolice.GetRed());
+        m_sliderPolice[VERT].SetValue(colPolice.GetGreen());
+        m_sliderPolice[BLEU].SetValue(colPolice.GetBlue());
+
+        m_checkBoxHaut[ROUGE].SetValue(colHaut.GetBoolRed());
+        m_checkBoxHaut[VERT].SetValue(colHaut.GetBoolGreen());
+        m_checkBoxHaut[BLEU].SetValue(colHaut.GetBoolBlue());
+        m_checkBoxMiSup[ROUGE].SetValue(colMiSup.GetBoolRed());
+        m_checkBoxMiSup[VERT].SetValue(colMiSup.GetBoolGreen());
+        m_checkBoxMiSup[BLEU].SetValue(colMiSup.GetBoolBlue());
+        m_checkBoxMiInf[ROUGE].SetValue(colMiInf.GetBoolRed());
+        m_checkBoxMiInf[VERT].SetValue(colMiInf.GetBoolGreen());
+        m_checkBoxMiInf[BLEU].SetValue(colMiInf.GetBoolBlue());
+        m_checkBoxBas[ROUGE].SetValue(colBas.GetBoolRed());
+        m_checkBoxBas[VERT].SetValue(colBas.GetBoolGreen());
+        m_checkBoxBas[BLEU].SetValue(colBas.GetBoolBlue());
+
+        m_doubleBarre->SetValue(symetrie);
+
+        MAJ_Fond();
+        MAJ_Barre();
+        MAJ_GraphSup();
+        MAJ_GraphInf();
+        MAJ_Symetrie();
+    }
+    else
+    {
+        Parametre::Get()->setCouleurs(colFond, colBarre, colPolice, colHaut, colMiSup, colMiInf, colBas, symetrie);
+    }
+    return true;
 }
 
 /**

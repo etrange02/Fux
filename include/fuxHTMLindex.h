@@ -21,8 +21,8 @@
  * <h2> A faire</h2>
  * <p><ul>
  * <li>Mettre en place la BDD... en cours ;)</li>
- * <li>Remplacer la structure des fichiers sauve par du XML</li>
- * <li>Unifier les classes ImageMusique et ImagePochette --- > Fait (ImagePochetteMusique)</li>
+ * <li>Remplacer la structure des fichiers sauve par du XML ---> Fait</li>
+ * <li>Unifier les classes ImageMusique et ImagePochette ---> Fait (ImagePochetteMusique)</li>
  * <li>Mettre en place le réveil</li>
  * <li>...</li>
  * <li>Garder quelques surprises !</li>
