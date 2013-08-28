@@ -888,6 +888,7 @@ void PlayListTableau::RecherchePrecise(wxString chaine)
     wxListItem item;
     int i = 0, k = 0, j = 0;
     bool cont = true;
+    int fenetreVisible = GetTopItem() + GetCountPerPage();
     m_motRecherche = chaine;
 
     m_motRecherche.MakeLower();
@@ -918,7 +919,7 @@ void PlayListTableau::RecherchePrecise(wxString chaine)
         }
         else
             i++;
-        if ((++j)%5 == 2)
+        if (i > GetTopItem() ++j)%5 == 2)
             wxApp::GetInstance()->Yield(false);
     }
     wxApp::GetInstance()->Yield(false);

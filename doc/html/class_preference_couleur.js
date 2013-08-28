@@ -1,5 +1,6 @@
 var class_preference_couleur =
 [
+    [ "PreferenceCouleur", "class_preference_couleur.html#a07d852b288bcd466bbdf4d6da165a79b", null ],
     [ "~PreferenceCouleur", "class_preference_couleur.html#a6357976dc48d8d722621e22df7e5cb08", null ],
     [ "Couleur_MAJ_Barre", "class_preference_couleur.html#a614d95fd1ceb52469636199b7f65cf95", null ],
     [ "Couleur_MAJ_Fond", "class_preference_couleur.html#a73fb5fbf66b38b5a5cab9d77021919e1", null ],
@@ -17,5 +18,28 @@ var class_preference_couleur =
     [ "MajListe", "class_preference_couleur.html#a3ed047d009e78608bec5c42a0bbe00b0", null ],
     [ "ModifierFiltre", "class_preference_couleur.html#ab490a8022f0be74e7f532a4fdb4d6883", null ],
     [ "ModifierFiltre", "class_preference_couleur.html#a07bfb194d6fb267d39a68852b4bcab6b", null ],
-    [ "OuvrirFiltre", "class_preference_couleur.html#a48229c2bb8321b902b910edd02b42010", null ]
+    [ "OuvrirFiltre", "class_preference_couleur.html#a48229c2bb8321b902b910edd02b42010", null ],
+    [ "m_apercuBarre", "class_preference_couleur.html#a654a1d5d08547b62e5ce2a5ae78102a5", null ],
+    [ "m_apercuFond", "class_preference_couleur.html#a35467f2e683fbe4877430334791a249c", null ],
+    [ "m_apercuGraphBas", "class_preference_couleur.html#a91db794a2e194495fd16e0df43e73dff", null ],
+    [ "m_apercuGraphHaut", "class_preference_couleur.html#a01e701b168c69488c80078f8211173df", null ],
+    [ "m_bitmap", "class_preference_couleur.html#a306c3097a70583ecc079a298d3fd8ca5", null ],
+    [ "m_checkBoxBas", "class_preference_couleur.html#aa3849e6b8d59eb0bd9cf5aa22dcbd213", null ],
+    [ "m_checkBoxHaut", "class_preference_couleur.html#a994be7a1ff1d18df9c0999446e358eb2", null ],
+    [ "m_checkBoxMiInf", "class_preference_couleur.html#ace1daa55f55622955c74661c51888a99", null ],
+    [ "m_checkBoxMiSup", "class_preference_couleur.html#acfe0d1b04e72d14be77b8a8027c2dd03", null ],
+    [ "m_doubleBarre", "class_preference_couleur.html#a713b53f33467127047a57fa1e5c25cb6", null ],
+    [ "m_menu", "class_preference_couleur.html#a4fb9b05cb15022932ec4fa22e008442c", null ],
+    [ "m_sizerBarrePolice", "class_preference_couleur.html#a7101a4309dacb57350ec93fe722a5488", null ],
+    [ "m_sizerFond", "class_preference_couleur.html#a7e125e2fb9524a2f9025b8d4f14416ea", null ],
+    [ "m_sizerGraph", "class_preference_couleur.html#aeb3c355ecaa6d61c6fc4158968da6958", null ],
+    [ "m_sizerGraphBas", "class_preference_couleur.html#a3378d9e9ed8730df0214f74502fe08a2", null ],
+    [ "m_sizerGraphHaut", "class_preference_couleur.html#acc4d4b67ea539967014af045b9ae1242", null ],
+    [ "m_sliderBarre", "class_preference_couleur.html#a636ad4d599f141f41de1984173c3e5ad", null ],
+    [ "m_sliderFond", "class_preference_couleur.html#affdb5d0cfc5755f3c7e2b874ca96b319", null ],
+    [ "m_sliderPolice", "class_preference_couleur.html#a4f17a634437a436ee493ba8ecabf2c7f", null ],
+    [ "m_TextBarre", "class_preference_couleur.html#a758ee44f35e19ba80e011c4b4b047348", null ],
+    [ "m_TextFond", "class_preference_couleur.html#a169d565e0ec2259906178a13633070e6", null ],
+    [ "m_textNomSet", "class_preference_couleur.html#a6d0d860f367f6c67de497322beac3058", null ],
+    [ "m_TextPolice", "class_preference_couleur.html#af6e877e2d3a74a03d861a97056488be1", null ]
 ];

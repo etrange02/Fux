@@ -46,13 +46,13 @@ class PreferenceDefaut : public wxScrolledWindow
         wxChoice *m_listeCouleur, *m_listeSon, *m_listeReprise;
         wxTextCtrl *m_boiteCheminChansonRep, *m_boiteCheminDefautRech;
         wxRadioBox *m_choix;
-        wxButton *m_boutonEnregistrer, *m_boutonAnnuler, *m_boutonRecherche, *m_boutonCheminDefautRecherche, *m_boutonPortable;
+        wxButton *m_boutonRecherche, *m_boutonCheminDefautRecherche, *m_boutonPortable;
         wxCheckBox *m_checkBox;
 
         PreferenceCouleur* m_pageCouleur;
         PreferenceSon *m_pageSon;
 
-        int m_listeM3u_mp3;
+        //int m_listeM3u_mp3;
 
     DECLARE_EVENT_TABLE()
 };

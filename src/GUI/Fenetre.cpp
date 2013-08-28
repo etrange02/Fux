@@ -644,8 +644,8 @@ void FuXFenetre::OuvrirM3U(wxCommandEvent &WXUNUSED(event))
     {
         wxString chemin = navig.GetPath();
 
-        wxTextFile test(chemin); test.Open();
-        if (test.IsOpened())
+        wxTextFile test(chemin);
+        if (test.Open())
         {
             int nb = test.GetLineCount();
             test.Close();

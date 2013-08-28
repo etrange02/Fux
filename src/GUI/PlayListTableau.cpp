@@ -886,11 +886,12 @@ void PlayListTableau::RecherchePrecise(wxString chaine)
     m_rechercheEnCours = true;
     m_modeRecherche = true;
     wxListItem item;
-    int i = 0, k = 0, j = 0;
+    int i = 0, k = 0;
     bool cont = true;
     m_motRecherche = chaine;
 
     m_motRecherche.MakeLower();
+    SetDoubleBuffered(true);
 
     while (m_rechercheEnCours && i < GetItemCount())
     {
@@ -918,10 +919,12 @@ void PlayListTableau::RecherchePrecise(wxString chaine)
         }
         else
             i++;
-        if ((++j)%5 == 2)
+        if ((i >= GetTopItem()) && i <= (GetTopItem()+GetCountPerPage()))// (++j)%5 == 2)
             wxApp::GetInstance()->Yield(false);
     }
+    SetDoubleBuffered(false);
     wxApp::GetInstance()->Yield(false);
+    m_modeRecherche = !m_motRecherche.IsEmpty();
     ChangementChanson(Musique::Get()->GetNomPos());
 }
 

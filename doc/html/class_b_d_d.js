@@ -1,6 +1,7 @@
 var class_b_d_d =
 [
     [ "BDD", "class_b_d_d.html#abc551344b2e136090b8d2d82ab6ff0f2", null ],
+    [ "~BDD", "class_b_d_d.html#a865c7d7590e1c3f227346b1045713099", null ],
     [ "AjouterAlbum", "class_b_d_d.html#a6cb2ff3b902135bf6bfa51ac98168427", null ],
     [ "AjouterAlbumContientChanson", "class_b_d_d.html#a7a2ab5dff08afcc13ecf12ecb25ca1f4", null ],
     [ "AjouterArtiste", "class_b_d_d.html#a30e27d8e757bbb58a4e62837824e4468", null ],
@@ -12,9 +13,12 @@ var class_b_d_d =
     [ "AjouterUtilisateur", "class_b_d_d.html#aa8f3077dce91d4727ba244c70c456e83", null ],
     [ "Close", "class_b_d_d.html#ae4fe2aa311bce61f06dd0d746daa18bb", null ],
     [ "CreerTables", "class_b_d_d.html#a99763e8bbbd155499f31888cff1962e4", null ],
+    [ "ExisteAlbum", "class_b_d_d.html#ae396ed908c29a611b0dfc27176301051", null ],
+    [ "ExisteContient", "class_b_d_d.html#a1067a00a55f9a46fd27e361c43e08eed", null ],
     [ "ExisteProduit", "class_b_d_d.html#a8afd3ea33ec12bd6a6f8e54267a4b192", null ],
     [ "GetAlbumAnnee", "class_b_d_d.html#aa7812609cd5e75aec3fe38ea8760d5b9", null ],
     [ "GetAlbumArtiste", "class_b_d_d.html#a8062dabde190377163fa21ca48afb8b1", null ],
+    [ "GetAlbumID", "class_b_d_d.html#ace975b5600dcca38f6e5313cf4c7d04b", null ],
     [ "GetAlbumIDs", "class_b_d_d.html#aa55f1077f1a792e3fbe3e62de6ae0565", null ],
     [ "GetAlbumIDs", "class_b_d_d.html#a1022f0178c4d95cf1a387bc49e1867f3", null ],
     [ "GetAlbumNom", "class_b_d_d.html#a746162d4081425ca35b897ab684731a5", null ],
@@ -57,5 +61,6 @@ var class_b_d_d =
     [ "SupprimerProduit", "class_b_d_d.html#ae70a1eca6b7911ee91b43c3d2a7f0c5d", null ],
     [ "SupprimerRemix", "class_b_d_d.html#abfcd15cb557e371b94f0de1ce1320eb8", null ],
     [ "SupprimerUtilisateur", "class_b_d_d.html#a94cf83087b8405b5505f678b6de3fb2c", null ],
-    [ "SupprimerUtilisateur", "class_b_d_d.html#a5c0ad3eb4de4f4711fb0992cf7e39a04", null ]
+    [ "SupprimerUtilisateur", "class_b_d_d.html#a5c0ad3eb4de4f4711fb0992cf7e39a04", null ],
+    [ "m_database", "class_b_d_d.html#a94b1f9e3c73ef101bc241b5f8cf0b628", null ]
 ];

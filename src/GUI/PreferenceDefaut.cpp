@@ -149,7 +149,7 @@ void PreferenceDefaut::Creer(wxWindow *Parent, wxWindowID Id)
     m_pageCouleur = NULL;
     //ListerContenuFichier(m_listeSon, SON);
     m_pageSon = NULL;
-    m_listeM3u_mp3 = MP3;
+    //m_listeM3u_mp3 = MP3;
     CreerListe(m_listeReprise);
     m_listeCouleur->Enable(false);
     m_listeReprise->Enable(false);
@@ -255,14 +255,14 @@ void PreferenceDefaut::MAJListe(bool save)
  */
 void PreferenceDefaut::Defaut_RadioMP3_M3U(wxCommandEvent &event)
 {
-    m_listeM3u_mp3 = event.GetSelection();
-    if (m_listeM3u_mp3 == MP3)
+    //m_listeM3u_mp3 = event.GetSelection();
+    if (/*m_listeM3u_mp3 */event.GetSelection() == MP3)
     {
         m_listeReprise->Enable(false);
         m_boiteCheminChansonRep->Enable(true);
         m_boutonRecherche->Enable(true);
     }
-    else if (m_listeM3u_mp3 == M3U)
+    else if (/*m_listeM3u_mp3 */event.GetSelection() == M3U)
     {
         m_listeReprise->Enable(true);
         m_boiteCheminChansonRep->Enable(false);
@@ -297,13 +297,13 @@ void PreferenceDefaut::Defaut_CheckBoxReprise(wxCommandEvent &event)
     if (event.IsChecked())
     {
         m_choix->Enable(true);
-        if (m_listeM3u_mp3 == MP3)
+        if (m_choix->GetSelection() == MP3)//m_listeM3u_mp3 == MP3)
         {
             m_listeReprise->Enable(false);
             m_boiteCheminChansonRep->Enable(true);
             m_boutonRecherche->Enable(true);
         }
-        else if (m_listeM3u_mp3 == M3U)
+        else if (/*m_listeM3u_mp3 */m_choix->GetSelection() == M3U)
         {
             m_listeReprise->Enable(true);
             m_boiteCheminChansonRep->Enable(false);
@@ -478,12 +478,12 @@ bool PreferenceDefaut::AutoSave()
     {
         childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _T("reprise"));
         wxXmlNode *sub = new wxXmlNode(childNode, wxXML_TEXT_NODE, _(""));
-        if(m_listeM3u_mp3 == MP3 && !m_boiteCheminChansonRep->IsEmpty())
+        if(/*m_listeM3u_mp3*/m_choix->GetSelection() == MP3 && !m_boiteCheminChansonRep->IsEmpty())
         {
             childNode->AddAttribute(_T("type"), _T("MP3"));
             sub->SetContent(m_boiteCheminChansonRep->GetValue());
         }
-        else if (m_listeM3u_mp3 == M3U && !m_listeReprise->GetCurrentSelection() != wxNOT_FOUND)
+        else if (/*m_listeM3u_mp3 */m_choix->GetSelection() == M3U && !m_listeReprise->GetCurrentSelection() != wxNOT_FOUND)
         {
             childNode->AddAttribute(_T("type"), _T("M3U"));
             sub->SetContent(m_listeReprise->GetString(m_listeReprise->GetCurrentSelection()));

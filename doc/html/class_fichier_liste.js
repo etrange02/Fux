@@ -1,9 +1,11 @@
 var class_fichier_liste =
 [
     [ "CopieFichierTOListe", "class_fichier_liste.html#acdd25b563d061313f734524a7983fb21", null ],
+    [ "Delete", "class_fichier_liste.html#a1a02c3ce33d1fa899c5baeb1e18eb1ad", null ],
     [ "EchangeNom", "class_fichier_liste.html#a20514855ba44cad663a8366a3f31f10a", null ],
     [ "EffacerNom", "class_fichier_liste.html#ac222790878a6b3c6e00880adba7f0be1", null ],
     [ "EffacerNom", "class_fichier_liste.html#a2536857a0648e92ec6ef4f76435f81e5", null ],
+    [ "Get", "class_fichier_liste.html#a4f48cb4490c14c746713a7ae60663b40", null ],
     [ "GetCheminListe", "class_fichier_liste.html#a11afc49a31c2fff5e9b256e59b8e46f4", null ],
     [ "GetNombreFichier", "class_fichier_liste.html#a90b35559e9fefc415d75b3abaabaa0f3", null ],
     [ "GetNomPosition", "class_fichier_liste.html#a92593bb79b29b6a0108c7cf64aa68f7a", null ],
@@ -15,5 +17,8 @@ var class_fichier_liste =
     [ "OnExit", "class_fichier_liste.html#a2fbd395cf1b7b424d1889a1b7e72b515", null ],
     [ "PlacerLigneInt", "class_fichier_liste.html#abc599c4904c9031dfd485db2d7b70056", null ],
     [ "PlacerLigneString", "class_fichier_liste.html#aa0fdcd71132317cfed6ccb2a6bfcdd5e", null ],
-    [ "SetDossierRecherche", "class_fichier_liste.html#a93025b62a98b77fc068eab3187a91ed2", null ]
+    [ "SetDossierRecherche", "class_fichier_liste.html#a93025b62a98b77fc068eab3187a91ed2", null ],
+    [ "m_Chanson", "class_fichier_liste.html#a22395665ad86a4ab5507aca3a43e30a4", null ],
+    [ "m_Liste", "class_fichier_liste.html#a9deb837762f5182ebb790f68a22c8473", null ],
+    [ "m_nombreFichier", "class_fichier_liste.html#ad8ed730c4eace8dd1ab913cbe48da5bc", null ]
 ];

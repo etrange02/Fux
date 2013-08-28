@@ -585,6 +585,7 @@ void PlayList::RechercheListeLecture(wxCommandEvent &WXUNUSED(event))
         while (m_liste->RechercheRunning())
             //wxLogMessage(_("att"));//
             wxApp::GetInstance()->Yield(false);//wxSleep(20);
+        wxApp::GetInstance()->Yield(false);
     }
 
     if (m_champsRecherche->GetValue().Length() > m_rechercheTailleMot)
