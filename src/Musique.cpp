@@ -67,7 +67,8 @@ Musique* Musique::Get()
  */
 Musique::~Musique()
 {
-    FMOD_Sound_Release(m_sound);
+    if (m_musCharge)
+        FMOD_Sound_Release(m_sound);
     //FMOD_System_UnloadPlugin(m_system, codec);
     FMOD_System_Release(m_system);
 
