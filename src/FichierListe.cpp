@@ -165,7 +165,6 @@ void FichierListe::ListageFichier(wxArrayString *chaine)
 /**
  * Copie le contenu d'un fichier dans la liste de lecture. Si celle-ci n'est pas vide, une fenêtre demande l'action à effectuer
  * @param NomFichierOrigine le nom du fichier à copier
- * @param Parent Un pointeur sur la fenêtre parente
  * @return vrai si réussi
  */
 bool FichierListe::CopieFichierTOListe(wxString NomFichierOrigine, wxWindow *WXUNUSED(Parent))
@@ -407,8 +406,8 @@ void FichierListe::EchangeNom(wxString nom1, wxString nom2)////////////////Revu
 }
 
 /**
- * Si <b>supprime</b> vaut vrai, déplace les lignes dont le numéro se trouve dans le tableau <b>ligne</b> à la position <b>position<b/>.
- *Si <b>supprime</b> vaut faux, crée une copie des lignes dont le numéro se trouve dans le tableau <b>ligne</b> à la position <b>position<b/>.
+ * Si <b>supprime</b> vaut vrai, déplace les lignes dont le numéro se trouve dans le tableau <b>ligne</b> à la position <b>position</b>.
+ *Si <b>supprime</b> vaut faux, crée une copie des lignes dont le numéro se trouve dans le tableau <b>ligne</b> à la position <b>position</b>.
  * @param ligne un pointeur sur le tableau contenant <b>le numéro</b> des lignes
  * @param position
  * @param supprime si vrai, l'ancienne position

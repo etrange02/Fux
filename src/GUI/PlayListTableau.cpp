@@ -690,6 +690,10 @@ void PlayListTableau::SuppressionLigne()
     #endif
 }
 
+/**
+ * Recherche locale avec un mot moins long que lors de la précédente recherche. Si le mot est nul, la totalité de la liste de lecture est de nouveau affiché.
+ * @param chaine la recherche
+ */
 void PlayListTableau::RechercheElargie(wxString chaine)
 {
     wxMutexLocker lock(*s_mutexMAJPlaylist);
@@ -883,6 +887,10 @@ void PlayListTableau::RechercheElargie(wxString chaine)
     ChangementChanson(Musique::Get()->GetNomPos());
 }
 
+/**
+ * Recherche locale avec un mot plus long que lors de la précédente recherche. La recherche s'affine.
+ * @param chaine la recherche
+ */
 void PlayListTableau::RecherchePrecise(wxString chaine)
 {
     wxMutexLocker lock(*s_mutexMAJPlaylist);
@@ -929,11 +937,18 @@ void PlayListTableau::RecherchePrecise(wxString chaine)
     ChangementChanson(Musique::Get()->GetNomPos());
 }
 
+/**
+ * Arrête la recherche
+ */
 void PlayListTableau::StopRecherche()
 {
     m_rechercheEnCours = false;
 }
 
+/**
+ * Renvoie vrai si une recherche est en cours
+ * @return vrai si une recherche tourne
+ */
 bool PlayListTableau::RechercheRunning()
 {
     if (s_mutexMAJPlaylist->TryLock() != wxMUTEX_NO_ERROR)

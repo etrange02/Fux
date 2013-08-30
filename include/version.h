@@ -16,17 +16,17 @@ namespace AutoVersion{
 	//Standard Version Type
 	static const long MAJOR  = 2;
 	static const long MINOR  = 10;
-	static const long BUILD  = 2120;
-	static const long REVISION  = 11716;
+	static const long BUILD  = 2127;
+	static const long REVISION  = 11757;
 	
 	//Miscellaneous Version Types
-	static const long BUILDS_COUNT  = 4148;
-	#define RC_FILEVERSION 2,10,2120,11716
-	#define RC_FILEVERSION_STRING "2, 10, 2120, 11716\0"
-	static const char FULLVERSION_STRING [] = "2.10.2120.11716";
+	static const long BUILDS_COUNT  = 4156;
+	#define RC_FILEVERSION 2,10,2127,11757
+	#define RC_FILEVERSION_STRING "2, 10, 2127, 11757\0"
+	static const char FULLVERSION_STRING [] = "2.10.2127.11757";
 	
 	//These values are to keep track of your versioning state, don't modify them.
-	static const long BUILD_HISTORY  = 20;
+	static const long BUILD_HISTORY  = 27;
 	
 
 }

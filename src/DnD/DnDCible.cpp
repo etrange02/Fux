@@ -42,9 +42,8 @@ wxDragResult DnDCible::OnDragOver(wxCoord WXUNUSED(x), wxCoord WXUNUSED(y), wxDr
 
 /**
  * Surcharge - Traitement d'un évènement de Drag&Drop
- * @param x l'abscisse du relâché
  * @param y l'ordonnée du relâché
- * @param def
+ * @return
  */
 wxDragResult DnDCible::OnData(wxCoord WXUNUSED(x), wxCoord y, wxDragResult WXUNUSED(def))
 {

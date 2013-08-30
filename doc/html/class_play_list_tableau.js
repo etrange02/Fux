@@ -25,7 +25,6 @@ var class_play_list_tableau =
     [ "supprimerNomLigne", "class_play_list_tableau.html#a0a7b92535a50bfcd89ed1a9c589541b4", null ],
     [ "m_couper", "class_play_list_tableau.html#a9e789d853ece3e27a8d5b8f07852ee1a", null ],
     [ "m_menu", "class_play_list_tableau.html#a21c67ef1c6515308487d9d5a2cd1efa8", null ],
-    [ "m_modeRecherche", "class_play_list_tableau.html#a2ff731ec21dfa6f0dfcf3758aab6aff4", null ],
     [ "m_motRecherche", "class_play_list_tableau.html#a2b40bd6472d8862812cb3088a269693a", null ],
     [ "m_ocurrenceLigne", "class_play_list_tableau.html#aaaaab619afb4758bd52229a66463b28c", null ],
     [ "m_positionChanson", "class_play_list_tableau.html#a16745f21d4a60da4b4ecffc6a3b72770", null ],

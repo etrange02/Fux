@@ -520,14 +520,14 @@ wxString Musique::GetNomComplet()
 }
 
 /**
- * Retourne le nom de l'album selon la structure de fichier artiste\album\titre.
+ * Retourne le nom de l'album selon la structure de fichier artiste/album/titre.
  * @return le nom
  */
 wxString Musique::GetAlbum()
 {    return m_album;}
 
 /**
- * Retourne le nom de l'album selon la structure de fichier artiste\album\titre.
+ * Retourne le nom de l'album selon la structure de fichier artiste/album/titre.
  * @return le nom
  */
 wxString Musique::GetArtiste()

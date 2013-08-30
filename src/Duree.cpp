@@ -15,7 +15,7 @@ Duree::~Duree()
 }
 
 /** Assignment operator
- *  \param other Object to assign from
+ *  \param rhs Object to assign from
  *  \return A reference to this
  */
 Duree& Duree::operator=(const Duree& rhs)

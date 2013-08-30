@@ -22,7 +22,7 @@ var NAVTREEINDEX =
 "class_chanson_nom_pos.html",
 "class_fu_x_fenetre.html#a7e1c2397da059f629cbcce9c006a59b2",
 "class_page_gestion_periph.html#acbcbd472ce3256a6b3ed9d66135beb7a",
-"class_t_c_p_serveur.html"
+"class_t_c_p_serveur.html#a72138b6ea208d26bfdbcd1821c23aeb2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

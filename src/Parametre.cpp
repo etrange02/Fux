@@ -155,6 +155,11 @@ void Parametre::setCouleurs(Couleur fond, Couleur barre, Couleur police, Couleur
     MusiqueGraph::Get()->AffecteCouleurs(fond, barre, police, haut, miSup, doubleBarre, miInf, bas);
 }
 
+/**
+ * Modifie le volume de plusieurs classes (Musique et SliderSon)
+ * @param volume
+ * @param volumePC
+ */
 void Parametre::setVolume(wxString volume, wxString volumePC)
 {
     long vol = 0, volPC = 0;
@@ -163,6 +168,11 @@ void Parametre::setVolume(wxString volume, wxString volumePC)
     setVolume(vol, volPC);
 }
 
+/**
+ * Modifie le volume de plusieurs classes (Musique et SliderSon)
+ * @param volume
+ * @param volumePC
+ */
 void Parametre::setVolume(int volume, int volumePC)
 {
     Musique::Get()->SetVolume(volume);
@@ -287,7 +297,7 @@ wxString Parametre::getRepertoireParametre(wxString dir1, wxString dir2, wxStrin
 {    return m_cheminRepertParam + wxFileName::GetPathSeparator() + dir1 + wxFileName::GetPathSeparator() + dir2 + wxFileName::GetPathSeparator() + element;}
 
 /**
- * Indique si le répertoire contenant les fichiers nécessaires à Fu(X) est celui créé au moment de l'installation. C'est à dire 'C:\Users\username\AppData\Roaming\Fu(X)'
+ * Indique si le répertoire contenant les fichiers nécessaires à Fu(X) est celui créé au moment de l'installation. C'est à dire 'C:/Users/username/AppData/Roaming/Fu(X)'
  * @return vrai si installation classique
  */
 bool Parametre::isRepertoireInstallationDefaut()

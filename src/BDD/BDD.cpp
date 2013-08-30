@@ -181,7 +181,7 @@ bool BDD::AjouterUtilisateur(wxString nom)
 
 /**
  * Associe un titre à un utilisateur
- * @param  l'identifiant de l'utilisateur
+ * @param idUtilisateur l'identifiant de l'utilisateur
  * @param idChanson l'identifiant de la chanson
  * @return vrai si l'ajout a été fait
  */
@@ -547,7 +547,7 @@ wxArrayInt* BDD::GetAlbumIDs(wxString nom, wxString annee, bool nomParam)
 
 /**
  * Renvoie la liste des albums d'un artiste
- * @param id l'identifiant de l'artiste
+ * @param idArtiste l'identifiant de l'artiste
  * @return les albums produit par l'artiste
  */
 wxArrayInt* BDD::GetAlbumIDs(int idArtiste)
@@ -679,7 +679,7 @@ wxArrayInt* BDD::RechercherChansonByNom(wxString nomChanson)
 
 /**
  * Renvoie la liste des chansons se trouvant dans l'album nom
- * @param nom le nom de l'album (pas nécessairement complet)
+ * @param nomAlbum le nom de l'album (pas nécessairement complet)
  * @return les albums parus avec cette chanson
  * @see GetContientAlbum
  */
@@ -690,7 +690,7 @@ wxArrayInt* BDD::RechercherChansonByAlbum(wxString nomAlbum)
 
 /**
  * Renvoie la liste des chansons produites par un artiste
- * @param nom le nom de l'artiste (pas nécessairement complet
+ * @param nomArtiste le nom de l'artiste (pas nécessairement complet
  * @return les chansons produites par l'artiste
  * @see GetProduitChanson
  */
