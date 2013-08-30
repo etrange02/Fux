@@ -1,2 +1,3 @@
-- Supprimer tout les messages d'erreurs présent lors de la compilation (WXUNUSED et création de classes Couleur et Titre)
 - Travailler sur la recherche dans la playlist (recherche locale)
+- Audiothèque
+- M3UToDir

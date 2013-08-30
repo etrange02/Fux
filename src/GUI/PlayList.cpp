@@ -247,8 +247,12 @@ void PlayList::OnAfficheDetails(wxListEvent &event)
                     wxString typeImage(p->mimeType().toCString(true), wxConvLocal);
 
                     if (typeImage.IsSameAs(_T("image/jpeg")) || typeImage.IsSameAs(_T("image/jpg")))
+                    {
                         m_pochette->SetImage(wxImage(stream, _T("image/jpeg")));
-                    m_pochette->AfficheImage(true);
+                        m_pochette->AfficheImage(true);
+                    }
+                    else
+                        m_pochette->AfficheImage(false);
                 }
             }
             else

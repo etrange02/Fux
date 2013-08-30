@@ -25,11 +25,11 @@ IMPORTANT, A FAIRE !!!
 
 3- Mettre en place un fichier log pour la maintenance et la correction d'erreur
 
-4-Ajouter *.wma
+4-Ajouter *.wma (en cours)
 
-5- Remplacer la structure des fichiers sauve par du XML
+5- DnD mise dans un dossier
 
-6- DnD mise dans un dossier
+6- BDD générale
 
 7-]]>
 			</notes>
@@ -48,7 +48,7 @@ IMPORTANT, A FAIRE !!!
 			<Environment>
 				<Variable name="AU" value="u" />
 				<Variable name="AURD" value="$(AU)$(RD)" />
-				<Variable name="FMODEX" value='&quot;C:\Program Files\FMOD SoundSystem\FMOD Programmers API Windows\api&quot;' />
+				<Variable name="FMODEX" value='&quot;C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Windows\api&quot;' />
 				<Variable name="RD" value="" />
 				<Variable name="SQLITE3" value="${WXSQLITE3}\sqlite3" />
 				<Variable name="TAGLIB" value="C:\CMake\cmake_taglib\taglib" />

@@ -156,6 +156,7 @@ void PlayListTableau::MAJ()
 
     TagLib::FileRef chansonTAG;
     wxListItem item;
+    SetDoubleBuffered(true);
     for (int k=0; k<GetItemCount(); k++)
     {
         //chaine = fichier.GetLine(j);
@@ -222,6 +223,7 @@ void PlayListTableau::MAJ()
             SetItemBackgroundColour(pos, wxColor(255, 0, 0));
         }
     }
+    SetDoubleBuffered(false);
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("PlayListTableau::MAJ - Fin du for : ") + wxString::Format(_T("%u / %u"), j, GetItemCount()));
     #endif
@@ -382,6 +384,7 @@ void PlayListTableau::ChangementChanson(ChansonNomPos titre)
     #endif
     if (titre.GetPos() == -1 && (GetItemCount() == 0 || titre.GetNom().IsEmpty()))
         return;
+    SetDoubleBuffered(true);
     if (m_ocurrenceLigne.GetCount())
     {
         for (size_t i = 0; i < m_ocurrenceLigne.GetCount(); i++)
@@ -412,6 +415,7 @@ void PlayListTableau::ChangementChanson(ChansonNomPos titre)
             }
         }
     }
+    SetDoubleBuffered(false);
 }
 
 /**
@@ -642,6 +646,7 @@ void PlayListTableau::SuppressionLigne()
             wxListItem item;
 
             tableau.Alloc(max);
+            SetDoubleBuffered(true);
             while (i < max)
             {
                 j = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
@@ -668,6 +673,7 @@ void PlayListTableau::SuppressionLigne()
             }
             Musique::Get()->SupprimerNom(&tableau);
             tableau.Clear();
+            SetDoubleBuffered(false);
         }
 
         if (GetItemCount() == 0)
@@ -725,6 +731,7 @@ void PlayListTableau::RechercheElargie(wxString chaine)
         ligneTab << wxFileName::GetPathSeparator() << item.GetText();
     }
 
+    SetDoubleBuffered(true);
     while (m_rechercheEnCours && j<fichier.GetLineCount())
     {
         ligneFic = fichier.GetLine(j++);
@@ -870,11 +877,12 @@ void PlayListTableau::RechercheElargie(wxString chaine)
             }
             //sinon, passer à la ligne suivante dans le fichier
         }
-        if (j%2)
+        if (j%2 && Isi)
             wxApp::GetInstance()->Yield(false);
     }
     while (i<GetItemCount())
         DeleteItem(i++);
+    SetDoubleBuffered(false);
     fichier.Close();
     m_modeRecherche = !m_motRecherche.IsEmpty();
     ChangementChanson(Musique::Get()->GetNomPos());
@@ -886,12 +894,12 @@ void PlayListTableau::RecherchePrecise(wxString chaine)
     m_rechercheEnCours = true;
     m_modeRecherche = true;
     wxListItem item;
-    int i = 0, k = 0, j = 0;
+    int i = 0, k = 0;
     bool cont = true;
-    int fenetreVisible = GetTopItem() + GetCountPerPage();
     m_motRecherche = chaine;
 
     m_motRecherche.MakeLower();
+    SetDoubleBuffered(true);
 
     while (m_rechercheEnCours && i < GetItemCount())
     {
@@ -919,10 +927,12 @@ void PlayListTableau::RecherchePrecise(wxString chaine)
         }
         else
             i++;
-        if (i > GetTopItem() ++j)%5 == 2)
+        if ((i >= GetTopItem()) && i <= (GetTopItem()+GetCountPerPage()))// (++j)%5 == 2)
             wxApp::GetInstance()->Yield(false);
     }
+    SetDoubleBuffered(false);
     wxApp::GetInstance()->Yield(false);
+    m_modeRecherche = !m_motRecherche.IsEmpty();
     ChangementChanson(Musique::Get()->GetNomPos());
 }
 

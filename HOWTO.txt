@@ -44,7 +44,7 @@ Utiliser CMake pour configurer le projet, unicode, static (et dyn car ne marche 
 --> utilise la dll
 
 =============================================
-5. Modifier le fichier FuX.cbp
+5. Modifier le fichier FuX.cbp (variables)
 
 =============================================
 6. Compiler le tout

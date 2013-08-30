@@ -64,7 +64,7 @@ class PlayListTableau : public wxListCtrl
         long m_yMenu;
 
         int m_positionChanson;
-        bool m_rechercheEnCours, m_modeRecherche;
+        bool m_rechercheEnCours;
         wxString m_motRecherche;
 
     DECLARE_EVENT_TABLE()
