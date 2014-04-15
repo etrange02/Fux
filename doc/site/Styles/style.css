@@ -1,0 +1,442 @@
+body
+{
+	min-width: 840px;
+	/*height: 100%;*/
+	padding: 0;
+	margin: 0;
+}
+
+#lien
+{	
+	text-decoration: none;
+	color: black;
+}
+
+#entete
+{
+	text-align: center;
+	height: 190px;
+	width: 450px;
+	margin: 0 auto;
+	padding: 0;
+	border: 0;
+	top: 0px;
+}
+
+#entete img, #entete img:visited, #entete img:hover
+{
+	float: left;
+	width: 150px;
+	height: 150px;
+	border-color: white;
+}
+
+#entete h1
+{
+	font-size: 70px;
+	margin: 0;
+	padding: 0;
+}
+
+#entete h3
+{
+	font-size: 40px;
+	margin: 0;
+	padding: 0;
+}
+
+#entete h4
+{
+	font-size: 20px;
+	margin: 0;
+	padding: 100;
+}
+
+#menu
+{
+	clear: both;
+	background-color: yellow;
+	height: 25px;
+	width: 840px;/*1 carré = 120px*/
+	text-align: center;
+	padding: 0;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+
+#menu ul
+{
+	display: block;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#menu li
+{
+	background-color: yellow;
+	color: blue;
+	list-style-type: none;
+	width: 120px;
+	float: left;
+	margin: 0;
+}
+
+#menu li a
+{
+	text-decoration: none;
+	display: block;
+}
+
+#menu li a:visited
+{
+	height: 25px;
+	background-color: yellow;
+	color: blue;
+}
+
+#menu li a:hover, #menu li a:focus
+{
+	height: 25px;
+	background-color: orange;
+	color: red;
+	/*background-image: url("./images/play.png");*/
+}
+
+#corps
+{
+	clear: both;
+	padding: 25px;
+	margin: 0;
+}
+
+#droite
+{
+	width: 250px;
+	height: 50%;
+	background-color: rgb(106, 248, 86);
+	float: right;
+	text-align: center;
+	/*position: fixed;
+	right: 0px;*/
+	margin-bottom: 20px;
+}
+
+#droite #compte
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#milieu
+{
+	min-width: 490px;
+	margin: 0;
+	padding: 0;
+	margin-right: 260px;
+	/*padding-bottom: 15px;*/
+}
+
+#milieu h3
+{
+	margin: 0;
+	margin-left: 8%;
+}
+
+#milieu h4
+{
+	margin: 0;
+	margin-left: 6%;
+	margin-top: 10px;
+}
+
+#milieu p
+{
+	margin-left: 20px;
+}
+
+#milieu #description
+{	
+	border: 1px solid blue;
+	padding: 0;
+	padding-right: 15px;
+	margin: 10px;
+}
+
+#milieu #description #tableauIcone
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#milieu #description .icone
+{	
+	color: white;
+}
+
+#milieu #description .image_fux_grand
+{	
+	color: white;
+	margin-left: 10%;
+	width: 80%;
+	border: 2px solid red;
+}
+
+#milieu #description .image_centre
+{	
+	text-align: center;
+}
+
+#milieu #description .image_centre .max_size
+{	
+	max-width: 100%;
+}
+
+#milieu #description #regle_explo
+{	
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	border: 3px solid black;
+}
+
+#milieu #description #regle_explo td
+{	
+	border: 1px solid black;
+}
+
+#milieu #description  #regle_explo .gras
+{	
+	border: 3px solid black;
+}
+
+#milieu #description  #regle_explo .bas
+{	
+	border-bottom: 3px solid black;
+}
+
+#milieu #description  #regle_explo .gauche
+{	
+	border-left: 3px solid black;
+}
+
+#milieu #description  #regle_explo .gaucheBas
+{	
+	border-left: 3px solid black;
+	border-bottom: 3px solid black;
+}
+
+#milieu #description #racc_explo
+{	
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+	text-align: center;
+}
+
+#milieu #description #racc_explo td
+{	
+	border: 1px solid black;
+}
+
+#milieu #description #centre
+{	
+	margin-left: 4%;
+	margin-right: 4%;
+	margin-top: 5px;
+}
+
+#milieu  .droite
+{	
+	text-align: right;
+}
+
+#milieu #actu
+{	
+	border: 1px solid blue;
+	padding: 0;
+	margin: 10px;
+}
+
+#milieu #actu .gris
+{	
+	background-color: silver;
+}
+
+#milieu #actu #forumNouveau
+{
+	margin-left: 5%;
+}
+
+#milieu #actu #forum
+{	
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+}
+
+#milieu #actu #creerSujet
+{	
+	width: 90%;
+	padding-left: 20px;
+	right: 20px;
+	margin-bottom: 30px;
+	vertical-align: top;
+}
+
+#milieu #actu #creerSujet .rouge, #rouge
+{	
+	color: red;
+}
+
+#milieu #actu ul
+{
+}
+
+#milieu #actu #commentaire
+{
+	padding: 0;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border-collapse: collapse;
+	border: 3px solid blue;
+}
+
+#milieu #actu #commentaire td
+{	
+	border: 1px solid blue;
+	vertical-align: top;
+}
+
+#milieu #actu #commentaire .pseudo
+{
+	width: 150px;
+}
+
+#milieu #actu #commentaire .message
+{
+	min-width: 280px;
+}
+
+#milieu #actu #postMessage
+{
+	margin-left: 5%;
+	/*margin-right: 5%;*/
+	width: 500px;
+}
+
+#milieu #actu #postMessage td
+{
+	vertical-align: top;
+}
+
+#milieu #actu #postInscription
+{
+	margin-left: 5%;
+	padding: 0;
+}
+
+#milieu #actu #formModif
+{
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-bottom: 20px;
+	color: blue;
+}
+
+#milieu #actu #cadre
+{
+	border: 1px solid blue;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+#milieu .info
+{
+	margin: 20px;
+	background-color: #0AC6F5 /*rgb(56, 196, 241);*/
+}
+
+#milieu .info .lienCom
+{
+	display: block;
+	text-align: right;
+}
+
+#milieu .info .lienCom, #milieu .info .lienCom:visited
+{
+	color: white;
+}
+
+#milieu .info .lienCom:focus, #milieu .info .lienCom:hover
+{
+	color: orange;
+}
+
+#milieu .info h4
+{
+	margin-left: 40px;
+}
+
+#milieu .info h4 .auteur
+{
+	font-size: 0.8em;
+	font-weight: normal;
+}
+
+#piedPage
+{
+	text-align: center;
+	vertical-align: middle;
+	background-color: yellow;
+	clear: both;
+	padding: 0;
+}
+
+#piedPage table
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+}
+
+#piedPage table a
+{
+	color: yellow;
+}
+
+#piedPage table #lienRSS
+{
+	color: rgb(255, 114, 9);
+	/*background-image: url(../images/rss_logo.png);*/
+}
+
+#piedPage table #rssLogo
+{
+	max-width: 17px;
+	height: 17px;
+}
+
+/**/
+#PersoTableau
+{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.PersoTableauLigne
+{
+	border: 1px solid black;
+}
+
+.PersoTableauCase
+{
+	border: 1px solid black;
+	background-color: yellow;
+}

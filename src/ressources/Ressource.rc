@@ -1,0 +1,3 @@
+appIcon ICON "../../out/program_files/lib/play.ico"
+1 24 "wx/msw/wx.manifest"
+

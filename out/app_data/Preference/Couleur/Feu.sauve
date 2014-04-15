@@ -1,0 +1,10 @@
+#EXTSAUVE_C1
+Feu
+Fond= 17 0 0
+Barre= 78 0 0
+Police= 255 255 139
+Haut= t t f
+MiSup= t f f
+Double= f
+MiInf= t t f
+Bas= t f f

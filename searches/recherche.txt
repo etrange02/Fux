@@ -1,0 +1,164 @@
+Page d'aide : wxHtmlHelpController
+Comm inter-proceszs : wxServer, wxClient, wxConnection
+Lien hyperText : wxHyperlinkCtrl (l'ouverture se fait seule)
+Pochette album : Code actuel ok, mais surchargé la classe wxImageHandler
+liste : bool = wxListCtrl->EnsureVisible(long pos);
+
+
+ScrWindow::ScrWindow(const wxString& title) : wxFrame(NULL, wxID_ANY, title, wxDefaultPosition, wxSize(300, 200))
+{
+  wxImage::AddHandler(new wxJPEGHandler);
+  wxScrolledWindow *sw = new wxScrolledWindow(this);
+  
+  wxBitmap bmp(wxT("castle.jpg"), wxBITMAP_TYPE_JPEG);//bmp(chemin
+  wxStaticBitmap *sb = new wxStaticBitmap(sw, -1, bmp);
+
+  int width = bmp.GetWidth();
+  int height = bmp.GetHeight();
+
+  sw->SetScrollbars(10, 10, width/10, height/10);
+  sw->Scroll(50,10);
+
+  Center();
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// we've got a block of memory containing a BMP image and we want
+// to use wxImage to load it:
+wxMemoryInputStream stream(my_memory_block, size);
+
+wxImage theBitmap;
+if (!theBitmap.LoadFile(stream, wxBITMAP_TYPE_BMP))
+    return;
+
+// we can now safely delete the original memory buffer as the data
+// has been decoded by wxImage:
+delete [] my_memory_block;
+
+///////////////////////////////////////////////////////////////////////////////////////
+wxImageHandler * jpegLoader = new wxJPEGHandler();
+wxImage::AddHandler(jpegLoader);
+
+wxBitmap bitmap;
+bitmap.LoadFile("thisfile.jpg", wxBITMAP_TYPE_JPEG); 
+
+///// envoi d'info à l'autre instance///////////////////////////////////////////////////////////////////////////////
+bool eApp::SendArgsToInstance() {
+#ifdef __WXMSW__
+// Get handle to main frame of running instance
+HWND hWndRecv = NULL;
+for (unsigned int i = 0; i < 10; ++i) {
+hWndRecv = ::FindWindow(wxT("wxWindowClassNR"), wxT("eIpcWin"));
+if (hWndRecv) break;
+if (!m_checker->IsAnotherRunning()) {
+// Instance has closed. Just open our selves
+return false;
+}
+wxSleep(2);
+}
+ 
+if (!hWndRecv) {
+wxMessageBox(_("Unable to contact the running e instance!\nIf you have a hanging process, you can close it from the Task Manager."));
+return true;
+}
+ 
+// Open files from command-line options
+if (!m_files.IsEmpty()) {
+for (unsigned int i = 0; i < m_files.Count(); ++i) {
+const wxString& arg = m_files[i];
+ 
+wxString cmd = wxT("OPEN_FILE ");
+ 
+// Add position options, but only to first file
+if (i == 0) {
+if (m_lineNum) cmd += wxString::Format(wxT("LINE=%u "), m_lineNum);
+if (m_columnNum) cmd += wxString::Format(wxT("COL=%u "), m_columnNum);
+}
+ 
+if (eDocumentPath::IsRemotePath(arg) || arg.StartsWith(wxT("txmt:")) ) cmd += arg;
+else {
+wxFileName path(arg);
+path.MakeAbsolute();
+cmd += path.GetFullPath();
+}
+ 
+SendCommandToServer(hWndRecv, cmd);
+}
+}
+else {
+// Activate and create new document
+const wxString cmd = wxT("NEW_WINDOW");
+SendCommandToServer(hWndRecv, cmd);
+}
+ 
+{ // Bring window to front
+const wxString cmd = wxT("VIEW_RAISE");
+SendCommandToServer(hWndRecv, cmd);
+}
+ 
+return true;
+#else
+eClient client(*this);
+eConnection* connection = NULL;
+ 
+// Connect to first instance and tell it to open a new window
+// (it may be busy, so we give it a few tries it it does not respond)
+{
+wxLogNull logNo; // we don't want to report DDE errors to user
+for (unsigned int i = 0; i < 5; ++i) {
+if (i) wxSleep(2);
+connection = (eConnection *)client.MakeConnection(wxT("localhost"), wxT("eServer"), wxT("e"));
+if (connection) break;
+}
+}
+ 
+if (!connection)
+{
+wxMessageBox(_("The running e process does not respond.\nIf it has locked up you may have to kill from the Task Manager."), _("e Error"));
+}
+else {
+// The connection may delete itself, so if that happens
+// we want it to invalidate the pointer.
+connection->SetPointer(&connection);
+ 
+if (argc <= 1) connection->Execute(wxT("NEW_WINDOW"));
+else {
+// Open files from command-line options
+bool isFirst = true;
+for (int i = 1; i < argc; ++i) {
+const wxString& arg = argv[i];
+if (arg.StartsWith(wxT("-"))) continue; // ignore options
+ 
+wxString cmd = wxT("OPEN_FILE ");
+ 
+// Add position options
+if (isFirst) {
+if (m_lineNum) cmd += wxString::Format(wxT("LINE=%u "), m_lineNum);
+if (m_columnNum) cmd += wxString::Format(wxT("COL=%u "), m_columnNum);
+isFirst = false;
+}
+ 
+if (arg.StartsWith(wxT("txmt:"))) cmd += arg;
+else {
+if (eDocumentPath::IsRemotePath(arg)) cmd += arg;
+else {
+wxFileName path(arg);
+path.MakeAbsolute();
+cmd += path.GetFullPath();
+}
+}
+ 
+wxLogNull logNo; // we don't want to report DDE errors to user
+if (!connection->Execute(cmd)) {
+wxMessageBox(_("The running e process does not respond.\nIt may just be busy, but if it has locked up you can kill it from the Task Manager."), _("e Error"));
+}
+}
+}
+ 
+if (connection) delete connection; // also disconnects
+}
+return true;
+#endif
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////

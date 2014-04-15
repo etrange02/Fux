@@ -1,3 +1,5 @@
 - Travailler sur la recherche dans la playlist (recherche locale)
 - Audiothèque
 - M3UToDir
+- Composant pour TagLib -> libérer le thread de l'interface pour la BDD
+Maj BDD avec musique et non l'interface

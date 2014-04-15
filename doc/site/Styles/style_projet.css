@@ -1,0 +1,29 @@
+
+
+#milieu #projet
+{
+	border: 1px solid blue;
+	text-align: center;
+}
+
+#milieu #projet h3
+{
+	border-top: 1px solid blue;
+	text-align: center;
+	margin-top: 10px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+#milieu #projet h4
+{
+	text-align: center;
+	margin: 0;
+}
+
+#milieu #projet p
+{
+	text-align: center;
+	margin-left: 10%;
+	margin-right: 10%;
+}

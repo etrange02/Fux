@@ -1,0 +1,180 @@
+/***************************************************************
+ * Name:      Idées.txt
+ * Purpose:   Code for Fu(X) 2.0
+ * Author:    David Lecoconnier (etrange02@aol.com)
+ * Created:   2011-08-28
+ * Copyright: David Lecoconnier (http://www.fuxplay.com)
+ * License:
+ **************************************************************/
+
+Suivant les erreurs de compilation :
+libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_stc.a
+libwxregex$(AURD).a
+$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)\lib\gcc_lib\msw$(AURD)
+C:\wxsqlite3\lib\gcc_lib
+C:\wxsqlite3\sqlite3\lib
+$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)\include
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//Créer une classe Parametre pour contenir toutes les informations que toutes les classes pourraient avoir besoin -> gain en flexibilité
+//Mettre en place un fichier log pour la maintenance et la correction d'erreur
+//Remplacer les listes chaînées par des Array (ThreadFichierFichier)
+Remplacer la structure des fichiers sauve par du XML
+    -> Augmente la flexibilité des évolutions du contenu du fichier
+
+.lrc -> Fichier contenant les paroles d'une chanson, principe du karaoké
+libusb
+wxTextValidator pour les saisies de nom
+mysql++ SQLite / Firebird
+wxFSVolume : lettre des lecteurs sur windows seulement
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Corps de l'application
+    //- Un appuie sur "Ecran principal" remet le focus
+    //- Enregistrement des listes de lecture, fenêtre d'enregistrement à afficher et non un semblant
+    //- Aléatoire
+    //- Création des raccourcis (préprocesseur)
+    - Importer et exporter des fichiers
+        ->.sauve
+        ->.m3u (avec vérif d'existence, sinon répertoire de recherche)
+    - Récupérer les titres d'une autre appli
+        -> sockets (comm interprocessus)
+        -> Améliorer la prise en charge des wxConnection dans un tableau ou file !
+    - Chargement différé
+        -> Préférences
+        -> Gestion des périphériques
+    - Economie de CPU
+    - wxAUI
+
+Partie Principale :
+    //- Optimiser le graph (OpenGl)
+        -> réduire la taille de la police si le texte dépasse la largeur de l'écran
+    //- Raccourcis clavier : volume (+/-)
+    //- Raccourcis souris : volume, suivant/précédent (molette et clique de la molette)
+    //- Affichage du temps
+    //- Copie de cet écran
+        //-> Ecran détachable
+
+Partie Préférence/Défaut :
+    //- Action par défaut lors de l'ouverture (dernière musique jouée, playlist, ne rien faire)
+    //- Méthode de listage : dossier courant ou dossier courant, dossiers et sous-dossiers !
+    //        - Il manque les sous-dossiers (adaptation tri d'iTunes et WMP)
+    - Dossier de recherche par défaut
+    - Tout mettre avec un wxTextFile, plus de sécurité dans l'utilisation, uniformité de travail
+        -> peut-être un format XML ?
+    - Afficher l'artiste et le titre de la chanson à partir des Tag
+        -> option accessible dans les préférences par défaut et les menus
+    - Choix d'une image à mettre sur le côté gauche
+
+Partie Encodage
+    -> Liste contenu CD
+    - wxGauge -> "barre de téléchargement"
+    - wxAnimationCtrl -> dessin/animation en rond de chargement
+    - wxGenericDirCtrl/Dialog -> choisis un chemin spécifique
+
+Partie Liste de lecture :
+    - Fonctions à utiliser :
+        //EVT_LIST_ITEM_RIGHT_CLICK(id, func) // Clique droit sur un élément du tableau -> afficher un menu : lecture, suppression, conversion
+        EVT_LIST_COL_RIGHT_CLICK(id, func) // Colonne cliqué avec le bouton droit
+        //EVT_LIST_BEGIN_DRAG(id, func) // commencement d'un glissé déposé avec le bouton gauche
+    //- Lors de la suppression d'un titre dans la liste, modifier la chanson en lecture afin qu'il n'y ai pas un "saut"
+    //- Création d'une zone expansé/réduite dans la PlayList afin de modifier les TAGs simplement (wxCollapsiblePane)
+    //    -> Intégrer l'image de l'album (ByteVector et méthode data() )
+    //- Création des PlayList au format M3U (avec des raccourcis) : wxFileName::Normalize (raccourci)
+    //    -> Raccourci (préprocesseur)
+    - Ajout d'une colonne débit, position, classement
+    //- wxTextFile
+    - Lors de la modification du titre d'une chanson, faire une recherche dans les playlists pour enregistrer la modification
+    //- Menu clique droit (WXK_MENU) : PopupMenu (wxMenu *menu, int x, int y) ; déplacer/poser, lire, supprimer, pause,
+        -> détails
+    //- Déplacer les lignes
+    - Améliorer l'algo MAJ !!!!!!
+    - Accès aux caractères spéciaux
+    //- clic droit possible partout
+    //- pochette de l'album : DnD, double clic + explorateur, image d'internet
+    //    -> internet, stream
+    - DnD extérieur à l'application
+
+    //- Apparemment, pour afficher le menu, un clique droit suffit n'importe où dans le contrôle et la ligne est récupérés par GetActive ! voir HitTest ??
+    //    -> Surcharger la classe de la liste pour ajuster les cliques de souris en conséquence
+
+Partie Gestion des périphériques :
+    //- Double navigation par dossier
+    //- Modification des M3U par système de "flèche"
+    //- Copier, Supprimer, Renommer
+    //- Raccourci clavier
+    //- Besoin de thread pour les copies ou mise en attente durable grâce à une barre de téléchargement
+    //    -> Suppression ?
+        -> Demande de remplacement si existe déjà
+    //- Colonne type pour les dossier, existence pour les fichiers
+    //- Navig gauche : dossier; m3u; liste de lecture
+    //- Menu clique droit : PopupMenu (wxMenu *menu, int x, int y) ; Fichier (nouveau, renommer)/(fichier/dossier), supprimer/effacer, déplacer/poser, raccourci,
+        -> ajouter et/ou lire, chemin du fichier qui est dans le fichier
+    //- DnD entre les listes
+    - Image : précédent, recharger, flux gauche, flux droit, supprimer, copier (égal)
+    //- Double clic dans dossier ou m3u -> ajout dans la liste de lecture
+    //    -> Uniquement les m3u
+    - Ejection des périphériques (préprocesseur)
+    //- Clic droit possible partout wxMouseEvent, GetId() + item si sélectionné  + GetY()??? wxWindow::FindFocus
+    - SpeedDial
+    //- Modifier le tri par défaut, en retirant le 'filtre'
+    - Modifier l'affiche des infos : icones ou lignes (comme dans l'exploreur)
+
+Partie Recherche/exploration sur les chansons (idée d'audiothèque @/|\:*<>"?) :
+    - champ de recherche
+    - proposition par genre, artiste, reprise, (album)
+    - ajout à la liste de lecture et lecture
+    - Liste de toutes les chansons sur le PC, prise en compte des doubles
+
+Partie WebRadio :
+    - liste de radio présélectionné
+    - accès rapide au site
+    - chanson en cours de lecture
+
+Menu Gauche :
+    //- Liste des boutons raccourci : stop, précédent, lecture/pause, suivant, aléatoire
+    - wxBitmapToggleButton -> bouton portant une image qui reste enfoncée ou non
+    - wxBitmapButton -> Remplace le texte par une image
+
+- Arrêt automatique
+- Prise en charge des MATIN
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Général :
+Volume générale du PC :
+    - MusicSystem::setVolume
+    - FMOD_System_GetWaveData
+
+Evénements souris :
+    - wxEVT_MOUSEWHEEL
+        - GetWheelRotation() const -> rotation positive ou négative
+        - wxPoint wxMouseEvent::GetLogicalPosition (const wxDC &dc) const -> position du curseur
+        -> fonction(wxMouseEvent& event)
+
+Icone dans la barre des tâches :
+    - wxTaskBarIcon
+    - PopupMenu(wxMenu *menu)->Créé le menu pour l'icone dans la barre
+    - SetIcon(const wxIcon &icon, const wxString &tooltip=wxEmptyString)-> Place l'icone dans la barre des taches avec un texte
+    - RemoveIcon()-> Supprime l'icone
+
+Plein écran :
+    wxTopLevelWindow::ShowFullScreen(bool show,	long style = wxFULLSCREEN_ALL)
+
+Texte d'aide :
+    wxToolTip (const wxString &tip)
+Captage de touche lorsque l'appli est en arrière plan : virtual bool UnregisterHotKey (int hotkeyId)
+
+Formats à supporter : mp3, wav, wma, aac = m4a = mp4, ogg
+*.mp3;*.wav;*.m4a;*.ogg;*.wma
+format m4a, codec aac
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Placer la gestion de la liste de lecture dans un thread. Mettre en place une liste d'attente avec des classes et wxArray<T>
+Faire de même avec la gestion du fichier.
+Le thread devra vivre aussi longtemps que l'application et il doit se charger de la création de la classe.
+
+
+
+
+
+
+
