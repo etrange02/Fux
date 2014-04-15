@@ -36,7 +36,7 @@ IMPORTANT, A FAIRE !!!
 		</Option>
 		<Build>
 			<Target title="Release">
-				<Option output="Fu(X)" prefix_auto="1" extension_auto="1" />
+				<Option output="out/program_files/Fu(X)" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="out/program_files" />
 				<Option object_output="obj/Release/" />
 				<Option type="0" />
@@ -197,12 +197,12 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/gui/settings/PreferenceSon.cpp" />
 		<Unit filename="src/gui/tools/ArrayFenetreDetachable.cpp" />
 		<Unit filename="src/gui/tools/DropFichierImagePochetteMusique.cpp" />
-		<Unit filename="src/gui/tools/ImagePochetteMusique.cpp" />
 		<Unit filename="src/gui/tools/ImageText.cpp" />
 		<Unit filename="src/gui/widgets/BoutonFenetreDetachable.cpp" />
 		<Unit filename="src/gui/widgets/Fenetre.cpp" />
 		<Unit filename="src/gui/widgets/FenetreDetachable.cpp" />
 		<Unit filename="src/gui/widgets/GenericTreePanel.cpp" />
+		<Unit filename="src/gui/widgets/ImagePochetteMusique.cpp" />
 		<Unit filename="src/gui/widgets/SliderSon.cpp" />
 		<Unit filename="src/music/ChansonNomPos.cpp" />
 		<Unit filename="src/music/Duree.cpp" />
