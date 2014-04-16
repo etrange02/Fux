@@ -16,7 +16,7 @@ DefaultGroupName=Fu(X) 2.0
 AllowNoIcons=yes
 OutputDir=.
 OutputBaseFilename=Setup-Fu(X)-2.0-a5.alpha4
-SetupIconFile=..\lib\play.ico
+SetupIconFile=..\out\program_files\lib\play.ico
 Compression=lzma
 SolidCompression=yes
 PrivilegesRequired = admin
@@ -43,14 +43,8 @@ Name:AssocierExtensions; Description: Lecteur par défaut (mp3, wav, ogg, wma)
 Name: "{userappdata}\Fu(X)"; Flags: uninsneveruninstall
 
 [Files]
-Source: "..\Fu(X).exe"; DestDir: "{app}"; Flags: ignoreversion   
-Source: "..\fmodex.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\libtag.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\lib\*"; Excludes: "\play.png"; DestDir: "{app}\lib"; Flags: ignoreversion
-Source: "..\Architecture\*"; Excludes: "\Fu(X).conf"; DestDir: "{userappdata}\Fu(X)"; Flags: recursesubdirs createallsubdirs uninsneveruninstall
-; Source: "..\Architecture\Fu(X).conf"; DestDir: "{userappdata}\Fu(X)"; Flags: ignoreversion uninsneveruninstall
+Source: "..\out\program_files\*"; Excludes: "lib\play.png"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\out\app_data\*"; Excludes: "\Fu(X).conf"; DestDir: "{userappdata}\Fu(X)"; Flags: recursesubdirs createallsubdirs uninsneveruninstall
 ; Source: "..\Web\*"; DestDir: "{app}\Web"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
