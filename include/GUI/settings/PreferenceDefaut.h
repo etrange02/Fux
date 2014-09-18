@@ -8,7 +8,8 @@
 #include <wx/scrolwin.h>
 #include <wx/xml/xml.h>
 #include "../../Define.h"
-#include "../../music/Musique.h"
+//#include "../../music/Musique.h"
+#include "../../music/MusicManager.h"
 #include "../../settings/Parametre.h"
 #include "PreferenceCouleur.h"
 #include "PreferenceSon.h"

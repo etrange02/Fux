@@ -1,0 +1,59 @@
+#ifndef MUSIC_H_INCLUDED
+#define MUSIC_H_INCLUDED
+
+#include <wx/wx.h>
+
+
+class Music
+{
+    public:
+        Music();
+        Music(wxString filename);
+        ~Music();
+
+        void SetName(wxString name);
+        void SetArtists(wxString artists);
+        void SetAlbum(wxString album);
+        void SetTitle(wxString title);
+        void SetPath(wxString path);
+        void SetGenres(wxString genres);
+        void SetExtension(wxString extension);
+        void SetYear(int year);
+        void SetDuration(int duration);
+        //void setRecordSleeve( *recordSleeve);
+        void SetDebit(int debit);
+        void SetSize(int size);
+
+        wxString GetName();
+        wxString GetArtists();
+        wxString GetAlbum();
+        wxString GetTitle();
+        wxString GetPath();
+        wxString GetGenres();
+        wxString GetExtension();
+        int GetYear();
+        int GetDuration();
+        int GetDebit();
+        int GetSize();
+
+    protected:
+        void Initialize();
+        void FillFields(wxString filename);
+
+    private:
+        wxString m_name;
+        wxString m_artists;
+        wxString m_album;
+        wxString m_title;
+        wxString m_path;
+        wxString m_genres;
+        wxString m_extension;
+        int m_year;
+        int m_duration;
+        int m_debit;
+        int m_size;
+        //wxStringArray *m_allArtist;
+        // *m_recordSleeve;
+};
+
+#endif // MUSIC_H_INCLUDED

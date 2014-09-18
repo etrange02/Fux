@@ -5,6 +5,7 @@
 #include <wx/dynarray.h>
 #include <wx/wxsqlite3.h>
 #include "../settings/Parametre.h"
+#include "../tools/FichierLog.h"
 //#include "wxsqlite3.h"
 
 /*

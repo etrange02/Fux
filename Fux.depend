@@ -14,8 +14,12 @@
 	"Duree.h"
 	"ChansonNomPos.h"
 
-1376721276 c:\fux\include\define.h
+1401374218 c:\fux\include\define.h
 	<wx/wx.h>
+	"constants/enums.h"
+	"constants/events.h"
+	"constants/ids.h"
+	"constants/strings.h"
 
 1373070984 c:\fux\include\fichierliste.h
 	<wx/wx.h>
@@ -602,7 +606,7 @@
 	<wx/timer.h>
 	"../include/Timer.h"
 
-1371167451 c:\fux\include\classes.h
+1371171051 c:\fux\include\classes.h
 
 1371153444 c:\fux\include\dirtraverser\recherche.h
 	"../Define.h"
@@ -1767,4 +1771,708 @@
 	<wx/app.h>
 	<wx/timer.h>
 	"../../include/tools/Timer.h"
+
+1408293279 source:c:\fux\src\application\application.cpp
+	"wx/wxprec.h"
+	"wx/wx.h"
+	"../../include/application/Application.h"
+
+1397669696 c:\fux\include\application\application.h
+	<wx/wx.h>
+	<wx/snglinst.h>
+	<wx/intl.h>
+	"../gui/widgets/Fenetre.h"
+	"../tools/FichierLog.h"
+	"../network/TCPClient.h"
+	"../network/TCPConnexionEchangeInstanceLocalHost.h"
+
+1408291205 c:\fux\include\gui\widgets\fenetre.h
+	<wx/wx.h>
+	<wx/app.h>
+	<wx/notebook.h>
+	<wx/filedlg.h>
+	<wx/spinctrl.h>
+	<wx/textfile.h>
+	<wx/bmpbuttn.h>
+	<wx/thread.h>
+	"../../settings/Parametre.h"
+	"../../tools/Timer.h"
+	"../settings/PreferenceSon.h"
+	"../settings/PreferenceCouleur.h"
+	"../settings/PreferenceDefaut.h"
+	"../musiclist/PlayList.h"
+	"../explorer/GestionPeriph.h"
+	"../../network/TCPServeur.h"
+	"./SliderSon.h"
+	"../../tools/FichierLog.h"
+	"../../db/BDDThread.h"
+	"../tools/ArrayFenetreDetachable.h"
+	"./BoutonFenetreDetachable.h"
+
+1404340857 c:\fux\include\settings\parametre.h
+	"../Define.h"
+	"../gui/graph/MusiqueGraph.h"
+	"../music/MusicManager.h"
+	"../gui/widgets/SliderSon.h"
+	<wx/wx.h>
+	<wx/stdpaths.h>
+	<wx/textfile.h>
+	<wx/filename.h>
+	<wx/xml/xml.h>
+	"Couleur.h"
+
+1400108868 c:\fux\include\gui\graph\musiquegraph.h
+	<wx/wx.h>
+	<wx/glcanvas.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<wx/dir.h>
+	"../../Classes.h"
+	"../../music/MusicManager.h"
+	"../tools/ImageText.h"
+	"../../Define.h"
+	"../widgets/SliderSon.h"
+	"../../settings/Couleur.h"
+	"../../tools/FichierLog.h"
+
+1397669696 c:\fux\include\music\musique.h
+	<wx/wx.h>
+	<wx/stdpaths.h>
+	<ctime>
+	<fmod.hpp>
+	"../Define.h"
+	"../Classes.h"
+	"FichierListe.h"
+	"../tools/FichierLog.h"
+	"Duree.h"
+	"ChansonNomPos.h"
+
+1399330846 c:\fux\include\music\fichierliste.h
+	<wx/wx.h>
+	<wx/stdpaths.h>
+	<wx/dir.h>
+	<wx/textfile.h>
+	<wx/filename.h>
+	"../Define.h"
+	"../tools/dir_traverser/Search.h"
+	"../settings/Parametre.h"
+	"ChansonNomPos.h"
+
+1397669696 c:\fux\include\tools\dir_traverser\recherche.h
+	"../../Define.h"
+	<wx/wx.h>
+	<wx/dir.h>
+	<wx/filename.h>
+	<wx/textfile.h>
+	"../../settings/Parametre.h"
+
+1400095127 c:\fux\include\music\chansonnompos.h
+	"wx/wx.h"
+
+1397669696 c:\fux\include\tools\fichierlog.h
+	<wx/wx.h>
+	<wx/file.h>
+	"../settings/Parametre.h"
+
+1397669696 c:\fux\include\music\duree.h
+
+1397669696 c:\fux\include\gui\tools\imagetext.h
+	"wx/wx.h"
+	"wx/image.h"
+	<GL/gl.h>
+
+1397669696 c:\fux\include\gui\widgets\sliderson.h
+	<wx/wx.h>
+	<wx/slider.h>
+	"../../Define.h"
+
+1397669696 c:\fux\include\settings\couleur.h
+	<wx/wx.h>
+	<wx/xml/xml.h>
+
+1400107806 c:\fux\include\tools\timer.h
+	<wx/wx.h>
+	<wx/timer.h>
+	"../music/MusicManager.h"
+	"../gui/graph/MusiqueGraph.h"
+
+1400107819 c:\fux\include\gui\settings\preferenceson.h
+	<wx/wx.h>
+	<wx/spinctrl.h>
+	<wx/xml/xml.h>
+	"../../Define.h"
+	"../widgets/GenericTreePanel.h"
+	"../../music/MusicManager.h"
+	"../widgets/SliderSon.h"
+
+1397669696 c:\fux\include\gui\widgets\generictreepanel.h
+	<wx/wx.h>
+	<wx/treectrl.h>
+	"../../Define.h"
+
+1397669696 c:\fux\include\gui\settings\preferencecouleur.h
+	<wx/wx.h>
+	<wx/statbmp.h>
+	<wx/dcmemory.h>
+	<wx/xml/xml.h>
+	<wx/dir.h>
+	"../../Define.h"
+	"../widgets/GenericTreePanel.h"
+	"../../settings/Parametre.h"
+
+1400107827 c:\fux\include\gui\settings\preferencedefaut.h
+	<wx/wx.h>
+	<wx/stdpaths.h>
+	<wx/radiobox.h>
+	<wx/textfile.h>
+	<wx/scrolwin.h>
+	<wx/xml/xml.h>
+	"../../Define.h"
+	"../../music/MusicManager.h"
+	"../../settings/Parametre.h"
+	"PreferenceCouleur.h"
+	"PreferenceSon.h"
+	"../dialogs/DialogEnregistreM3U.h"
+
+1397669696 c:\fux\include\gui\dialogs\dialogenregistrem3u.h
+	<wx/wx.h>
+	<wx/statline.h>
+	<wx/filename.h>
+	<wx/dir.h>
+	"../../Define.h"
+	"../../settings/Parametre.h"
+
+1408236283 c:\fux\include\gui\musiclist\playlist.h
+	"../../Define.h"
+	<wx/wx.h>
+	<wx/stdpaths.h>
+	<wx/dir.h>
+	<wx/collpane.h>
+	<wx/gbsizer.h>
+	<wx/spinctrl.h>
+	<wx/textdlg.h>
+	<wx/tarstrm.h>
+	<wx/progdlg.h>
+	<wx/mstream.h>
+	<wx/srchctrl.h>
+	<tag.h>
+	<fileref.h>
+	<taglib.h>
+	<mpegfile.h>
+	<id3v2tag.h>
+	<attachedpictureframe.h>
+	"../../music/MusicManager.h"
+	"PlayListTableau.h"
+	"../dialogs/DialogEnregistreM3U.h"
+	"../dialogs/DialogTagMP3.h"
+	"../tools/jaquetteClasses.h"
+	"../../tools/OS_Win.h"
+	"../widgets/SliderSon.h"
+
+1411000701 c:\fux\include\gui\musiclist\playlisttableau.h
+	"../../Define.h"
+	<wx/wx.h>
+	<wx/stdpaths.h>
+	<wx/dir.h>
+	<wx/listctrl.h>
+	<wx/tarstrm.h>
+	<wx/progdlg.h>
+	<wx/dnd.h>
+	<wx/mstream.h>
+	<wx/renderer.h>
+	<tag.h>
+	<fileref.h>
+	"../../music/ChansonNomPos.h"
+	"../../music/MusicManager.h"
+	"../../tools/dnd/DnDCible.h"
+	"../explorer/GestionPeriph.h"
+	"../widgets/SliderSon.h"
+	"../../tools/FichierLog.h"
+	"../../db/BDDRequete.h"
+	"../../db/BDDThread.h"
+
+1408283679 c:\fux\include\tools\dnd\dndcible.h
+	<wx/wx.h>
+	<wx/dnd.h>
+	<wx/listctrl.h>
+	<wx/dataobj.h>
+	"../../music/MusicManager.h"
+	"../../gui/explorer/GestionPeriphMoitiePage.h"
+	"MusicPlayListDnDBufferData.h"
+
+1397669696 c:\fux\include\gui\explorer\gestionperiphmoitiepage.h
+	"../../Define.h"
+	<wx/wx.h>
+	<wx/dir.h>
+	<wx/filename.h>
+	"GestionPeriphTableau.h"
+	"../../tools/ThreadGestion.h"
+	"../dialogs/DialogEnregistreM3U.h"
+	"GestionPeriphCouperCopier.h"
+	"../../tools/OS_Win.h"
+
+1397669696 c:\fux\include\gui\explorer\gestionperiphtableau.h
+	"../../Define.h"
+	<wx/wx.h>
+	<wx/dir.h>
+	<wx/listctrl.h>
+	<wx/filename.h>
+	<wx/imaglist.h>
+	"GestionPeriphCouperCopier.h"
+	"../../tools/dnd/DnDCible.h"
+
+1400107863 c:\fux\include\gui\explorer\gestionperiphcoupercopier.h
+	"../../Define.h"
+	<wx/wx.h>
+	<wx/dir.h>
+	<wx/filename.h>
+	"../../music/MusicManager.h"
+	"../../tools/ThreadGestion.h"
+
+1397669696 c:\fux\include\tools\threadgestion.h
+	<wx/wx.h>
+	<wx/thread.h>
+	<wx/dynarray.h>
+	"../Define.h"
+	"dir_traverser/TraverserCopieDossier.h"
+	"dir_traverser/TraverserCopieFichier.h"
+	"dir_traverser/TraverserDeplaceFichier.h"
+	"dir_traverser/TraverserSupprimeFichier.h"
+	"ElementThreadFichier.h"
+	"FichierLog.h"
+
+1397669696 c:\fux\include\tools\dir_traverser\traversercopiedossier.h
+	"../../Define.h"
+	<wx/wx.h>
+	<wx/dir.h>
+	<wx/filename.h>
+	<wx/textfile.h>
+	"../ThreadGestion.h"
+
+1397669696 c:\fux\include\tools\dir_traverser\traversercopiefichier.h
+	"../../Define.h"
+	<wx/wx.h>
+	<wx/dir.h>
+	<wx/filename.h>
+	<wx/textfile.h>
+	"../ThreadGestion.h"
+
+1397669696 c:\fux\include\tools\dir_traverser\traverserdeplacefichier.h
+	"../../Define.h"
+	<wx/wx.h>
+	<wx/dir.h>
+	<wx/filename.h>
+	<wx/textfile.h>
+	"../ThreadGestion.h"
+
+1397669696 c:\fux\include\tools\dir_traverser\traversersupprimefichier.h
+	"../../Define.h"
+	<wx/wx.h>
+	<wx/dir.h>
+	<wx/filename.h>
+	<wx/textfile.h>
+	"../ThreadGestion.h"
+
+1397669696 c:\fux\include\tools\elementthreadfichier.h
+	<wx/wx.h>
+
+1397669696 c:\fux\include\tools\os_win.h
+	<wx/wx.h>
+
+1397669696 c:\fux\include\tools\dnd\dndbufferdata.h
+	<wx/wx.h>
+	<wx/dnd.h>
+	<wx/dataobj.h>
+	"DnDListeFichier.h"
+
+1397669696 c:\fux\include\tools\dnd\dndlistefichier.h
+	<wx/wx.h>
+	<wx/dnd.h>
+
+1397669696 c:\fux\include\gui\explorer\gestionperiph.h
+	"../../Define.h"
+	<wx/wx.h>
+	<wx/stdpaths.h>
+	<wx/dir.h>
+	<wx/listctrl.h>
+	<wx/filename.h>
+	<wx/imaglist.h>
+	<wx/gauge.h>
+	<wx/event.h>
+	<wx/dynarray.h>
+	<wx/mimetype.h>
+	<wx/textfile.h>
+	<wx/progdlg.h>
+	"../../tools/ThreadGestion.h"
+	"../../tools/OS_Win.h"
+	"GestionPeriphMoitiePage.h"
+	"GestionPeriphElementLecteurRacineFichier.h"
+
+1397669696 c:\fux\include\gui\explorer\gestionperiphelementlecteurracinefichier.h
+	<wx/wx.h>
+
+1397669696 c:\fux\include\db\bddrequete.h
+	<wx/wx.h>
+	"../Define.h"
+
+1397669696 c:\fux\include\db\bddthread.h
+	<wx/wx.h>
+	<wx/Thread.h>
+	<queue>
+	"BDD.h"
+	"BDDRequete.h"
+	"BDDThreadEvent.h"
+
+1400107916 c:\fux\include\db\bdd.h
+	<wx/wx.h>
+	<wx/dynarray.h>
+	<wx/wxsqlite3.h>
+	"../settings/Parametre.h"
+	"../tools/FichierLog.h"
+
+1397669696 c:\fux\include\db\bddthreadevent.h
+	<wx/wx.h>
+	<wx/event.h>
+
+1397669696 c:\fux\include\gui\dialogs\dialogtagmp3.h
+	<wx/wx.h>
+	<wx/notebook.h>
+	"../../Define.h"
+	"../widgets/ImagePochetteMusique.h"
+	"DialogTagMP3Info.h"
+
+1397669696 c:\fux\include\gui\widgets\imagepochettemusique.h
+	<wx/wx.h>
+	<wx/stdpaths.h>
+	<wx/dir.h>
+	"../../Define.h"
+	"../tools/DropFichierImagePochetteMusique.h"
+	"../tools/jaquetteClasses.h"
+
+1397669696 c:\fux\include\gui\tools\dropfichierimagepochettemusique.h
+	<wx/wx.h>
+	<wx/dnd.h>
+	"../widgets/ImagePochetteMusique.h"
+	"jaquetteClasses.h"
+
+1397669696 c:\fux\include\gui\tools\jaquetteclasses.h
+
+1397669696 c:\fux\include\gui\dialogs\dialogtagmp3info.h
+	<wx/wx.h>
+	<wx/filename.h>
+	<wx/spinctrl.h>
+	"../../Define.h"
+
+1397669696 c:\fux\include\network\tcpserveur.h
+	<wx/wx.h>
+	<wx/ipc.h>
+	"../Define.h"
+	"TCPConnexionEchangeInstanceLocalHost.h"
+
+1397669696 c:\fux\include\network\tcpconnexionechangeinstancelocalhost.h
+	<wx/wx.h>
+	<wx/ipc.h>
+	"../Define.h"
+
+1397669696 c:\fux\include\gui\tools\arrayfenetredetachable.h
+	<wx/wx.h>
+	"../widgets/FenetreDetachable.h"
+
+1397669696 c:\fux\include\gui\widgets\fenetredetachable.h
+	<wx/wx.h>
+	<wx/frame.h>
+	"../../Define.h"
+	"../../settings/Parametre.h"
+
+1397669696 c:\fux\include\gui\widgets\boutonfenetredetachable.h
+	<wx/wx.h>
+	<wx/button.h>
+	"../../Define.h"
+	"../../tools/FichierLog.h"
+
+1397669696 c:\fux\include\network\tcpclient.h
+	<wx/wx.h>
+	<wx/ipc.h>
+	"../Define.h"
+	"TCPConnexionEchangeInstanceLocalHost.h"
+
+1397669697 source:c:\fux\src\db\bdd.cpp
+	"wx/wxprec.h"
+	"../../include/db/BDD.h"
+
+1397669697 source:c:\fux\src\db\bddrequete.cpp
+	"../../include/db/BDDRequete.h"
+
+1397669697 source:c:\fux\src\db\bddthread.cpp
+	"../../include/db/BDDThread.h"
+
+1397669697 source:c:\fux\src\db\bddthreadevent.cpp
+	"../../include/db/BDDThreadEvent.h"
+
+1397669697 source:c:\fux\src\gui\dialogs\dialogenregistrem3u.cpp
+	"../../../include/gui/dialogs/DialogEnregistreM3U.h"
+
+1397669697 source:c:\fux\src\gui\dialogs\dialogtagmp3.cpp
+	"../../../include/gui/dialogs/DialogTagMP3.h"
+
+1397669697 source:c:\fux\src\gui\dialogs\dialogtagmp3info.cpp
+	"../../../include/gui/dialogs/DialogTagMP3Info.h"
+
+1400108086 source:c:\fux\src\gui\explorer\gestionperiph.cpp
+	"../../../include/gui/explorer/GestionPeriph.h"
+	<wx/volume.h>
+
+1400108155 source:c:\fux\src\gui\explorer\gestionperiphcoupercopier.cpp
+	"../../../include/gui/explorer/GestionPeriphCouperCopier.h"
+
+1397669697 source:c:\fux\src\gui\explorer\gestionperiphelementlecteurracinefichier.cpp
+	"../../../include/gui/explorer/GestionPeriphElementLecteurRacineFichier.h"
+
+1408283679 source:c:\fux\src\gui\explorer\gestionperiphmoitiepage.cpp
+	"../../../include/gui/explorer/GestionPeriphMoitiePage.h"
+
+1397669697 source:c:\fux\src\gui\explorer\gestionperiphtableau.cpp
+	"../../../include/gui/explorer/GestionPeriph.h"
+
+1408294541 source:c:\fux\src\gui\graph\musiquegraph.cpp
+	"../../../include/gui/graph/MusiqueGraph.h"
+
+1411000516 source:c:\fux\src\gui\musiclist\playlist.cpp
+	"../../../include/gui/musiclist/PlayList.h"
+
+1411000212 source:c:\fux\src\gui\musiclist\playlisttableau.cpp
+	"../../../include/gui/musiclist/PlayList.h"
+
+1397669697 source:c:\fux\src\gui\settings\preferencecouleur.cpp
+	"../../../include/gui/settings/PreferenceCouleur.h"
+
+1397669697 source:c:\fux\src\gui\settings\preferencedefaut.cpp
+	"../../../include/gui/settings/PreferenceDefaut.h"
+
+1397669697 source:c:\fux\src\gui\settings\preferenceson.cpp
+	"../../../include/gui/settings/PreferenceSon.h"
+
+1397669697 source:c:\fux\src\gui\tools\arrayfenetredetachable.cpp
+	"../../../include/gui/tools/ArrayFenetreDetachable.h"
+
+1397669697 source:c:\fux\src\gui\tools\dropfichierimagepochettemusique.cpp
+	"../../../include/gui/tools/DropFichierImagePochetteMusique.h"
+
+1397669697 source:c:\fux\src\gui\tools\imagetext.cpp
+	"../../../include/gui/tools/ImageText.h"
+
+1397669697 source:c:\fux\src\gui\widgets\boutonfenetredetachable.cpp
+	"../../../include/gui/widgets/BoutonFenetreDetachable.h"
+
+1408294534 source:c:\fux\src\gui\widgets\fenetre.cpp
+	"wx/wxprec.h"
+	"../../../include/gui/widgets/Fenetre.h"
+
+1397669697 source:c:\fux\src\gui\widgets\fenetredetachable.cpp
+	"../../../include/gui/widgets/FenetreDetachable.h"
+
+1397669697 source:c:\fux\src\gui\widgets\generictreepanel.cpp
+	"../../../include/gui/widgets/GenericTreePanel.h"
+
+1397669697 source:c:\fux\src\gui\widgets\imagepochettemusique.cpp
+	"../../../include/gui/widgets/ImagePochetteMusique.h"
+
+1397669697 source:c:\fux\src\gui\widgets\sliderson.cpp
+	"../../../include/gui/widgets/SliderSon.h"
+
+1400095146 source:c:\fux\src\music\chansonnompos.cpp
+	"../../include/music/ChansonNomPos.h"
+
+1397686315 source:c:\fux\src\music\duree.cpp
+	"../../include/music/Duree.h"
+
+1399331625 source:c:\fux\src\music\fichierliste.cpp
+	"../../include/music/FichierListe.h"
+
+1410824129 source:c:\fux\src\music\music.cpp
+	"../../include/music/Music.h"
+
+1408294656 source:c:\fux\src\music\musiclist.cpp
+	"../../include/music/MusicList.h"
+
+1410535671 source:c:\fux\src\music\musicmanager.cpp
+	"../../include/music/MusicManager.h"
+
+1408294201 source:c:\fux\src\music\musicplayer.cpp
+	"../../include/music/MusicPlayer.h"
+
+1397669697 source:c:\fux\src\music\musique.cpp
+	"../../include/music/Musique.h"
+
+1397669697 source:c:\fux\src\network\tcpclient.cpp
+	"../../include/network/TCPClient.h"
+
+1397669697 source:c:\fux\src\network\tcpconnexionechangeinstancelocalhost.cpp
+	"../../include/network/TCPConnexionEchangeInstanceLocalHost.h"
+
+1397669697 source:c:\fux\src\network\tcpserveur.cpp
+	"../../include/network/TCPServeur.h"
+
+1397669697 source:c:\fux\src\ressources\lect.c
+
+1397669697 source:c:\fux\src\ressources\paus.c
+
+1397669697 source:c:\fux\src\ressources\play.c
+
+1397669697 source:c:\fux\src\ressources\prec.c
+
+1397669697 source:c:\fux\src\ressources\ressource.rc
+
+1397669697 source:c:\fux\src\ressources\suiv.c
+
+1397669697 source:c:\fux\src\ressources\suppr.c
+
+1397669697 source:c:\fux\src\settings\couleur.cpp
+	"../../include/settings/Couleur.h"
+
+1404341157 source:c:\fux\src\settings\parametre.cpp
+	"../../include/settings/Parametre.h"
+
+1397669697 source:c:\fux\src\tools\dir_traverser\recherche.cpp
+	"../../../include/tools/dir_traverser/Recherche.h"
+
+1397669697 source:c:\fux\src\tools\dir_traverser\traversercopiedossier.cpp
+	"../../../include/tools/dir_traverser/TraverserCopieDossier.h"
+
+1397669697 source:c:\fux\src\tools\dir_traverser\traversercopiefichier.cpp
+	"../../../include/tools/dir_traverser/TraverserCopieFichier.h"
+
+1397669697 source:c:\fux\src\tools\dir_traverser\traverserdeplacefichier.cpp
+	"../../../include/tools/dir_traverser/TraverserDeplaceFichier.h"
+
+1397669697 source:c:\fux\src\tools\dir_traverser\traversersupprimedossier.cpp
+	"../../../include/tools/dir_traverser/TraverserSupprimeDossier.h"
+
+1397669696 c:\fux\include\tools\dir_traverser\traversersupprimedossier.h
+	"../../Define.h"
+	<wx/wx.h>
+	<wx/dir.h>
+	<wx/filename.h>
+	<wx/textfile.h>
+	"../../tools/ThreadGestion.h"
+
+1397669697 source:c:\fux\src\tools\dir_traverser\traversersupprimefichier.cpp
+	"../../../include/tools/dir_traverser/TraverserSupprimeFichier.h"
+
+1397669697 source:c:\fux\src\tools\dnd\dndbufferdata.cpp
+	"../../../include/tools/dnd/DnDBufferData.h"
+
+1410534072 source:c:\fux\src\tools\dnd\dndcible.cpp
+	"../../../include/tools/dnd/DnDCible.h"
+
+1408296815 source:c:\fux\src\tools\dnd\dndlistefichier.cpp
+	"../../../include/tools/dnd/DnDListeFichier.h"
+
+1397669697 source:c:\fux\src\tools\elementthreadfichier.cpp
+	"../../include/tools/ElementThreadFichier.h"
+
+1397669697 source:c:\fux\src\tools\fichierlog.cpp
+	"../../include/tools/FichierLog.h"
+
+1397669697 source:c:\fux\src\tools\os_win.cpp
+	"../../include/tools/OS_Win.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<dirent.h>
+	<windows.h>
+	<shlobj.h>
+	<shellapi.h>
+	<unistd.h>
+
+1397669697 source:c:\fux\src\tools\threadgestion.cpp
+	"../../include/tools/ThreadGestion.h"
+
+1401925502 source:c:\fux\src\tools\timer.cpp
+	<wx/wx.h>
+	<wx/app.h>
+	<wx/timer.h>
+	"../../include/tools/Timer.h"
+
+1410824136 c:\fux\include\music\music.h
+	<wx/wx.h>
+	<wx/stdpaths.h>
+	<wx/filename.h>
+	<wx/dir.h>
+	<wx/mstream.h>
+	<wx/image.h>
+	<tag.h>
+	<fileref.h>
+	<taglib.h>
+	<mpegfile.h>
+	<id3v2tag.h>
+	<attachedpictureframe.h>
+	"IMusic.h"
+
+1410535671 c:\fux\include\music\musiclist.h
+	<wx/wx.h>
+	<vector>
+	<wx/dir.h>
+	"../Define.h"
+	"Music.h"
+	"ChansonNomPos.h"
+	"../tools/dir_traverser/ISearchTraversable.h"
+	"../tools/dir_traverser/Search.h"
+	"../settings/Parametre.h"
+
+1402013601 c:\fux\include\tools\dir_traverser\search.h
+	"../../Define.h"
+	<wx/wx.h>
+	<wx/dir.h>
+	"../../settings/Parametre.h"
+	"ISearchTraversable.h"
+
+1404345134 c:\fux\include\tools\dir_traverser\isearchtraversable.h
+
+1404345116 source:c:\fux\src\tools\dir_traverser\search.cpp
+	"../../../include/tools/dir_traverser/Search.h"
+
+1408235310 c:\fux\include\music\musicplayer.h
+	<wx/wx.h>
+	<fmod.hpp>
+	"Duree.h"
+
+1408490788 c:\fux\include\music\musicmanager.h
+	<wx/wx.h>
+	<ctime>
+	<algorithm>
+	"IMusic.h"
+	"MusicPlayer.h"
+	"MusicList.h"
+	"../predicates/findPosition.h"
+
+1400109890 c:\fux\include\music\imusicplayer.h
+	"Duree.h"
+
+1410823854 c:\fux\include\music\imusic.h
+	<wx/wx.h>
+	<wx/image.h>
+
+1401374253 c:\fux\include\constants\enums.h
+
+1408235534 c:\fux\include\constants\events.h
+
+1401374142 c:\fux\include\constants\ids.h
+
+1401374371 c:\fux\include\constants\strings.h
+
+1408283643 c:\fux\include\tools\dnd\musicplaylistdndbufferdata.h
+	<wx/wx.h>
+	<wx/dnd.h>
+	<wx/dataobj.h>
+	"DnDListeFichier.h"
+
+1408488498 source:c:\fux\src\tools\dnd\musicplaylistdndbufferdata.cpp
+	"../../../include/tools/dnd/MusicPlayListDnDBufferData.h"
+
+1408537451 source:c:\fux\src\predicates\findposition.cpp
+	"../../include/predicates/findPosition.h"
+
+1408537459 c:\fux\include\predicates\findposition.h
+	"../music/IMusic.h"
 

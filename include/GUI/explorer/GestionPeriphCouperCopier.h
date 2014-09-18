@@ -5,7 +5,8 @@
 #include <wx/wx.h>
 #include <wx/dir.h>
 #include <wx/filename.h>
-#include "../../music/Musique.h"
+//#include "../../music/Musique.h"
+#include "../../music/MusicManager.h"
 #include "../../tools/ThreadGestion.h"
 
 

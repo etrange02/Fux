@@ -13,7 +13,9 @@
 #include <wx/renderer.h>
 #include <tag.h>
 #include <fileref.h>
-#include "../../music/Musique.h"
+//#include "../../music/Musique.h"
+#include "../../music/ChansonNomPos.h"
+#include "../../music/MusicManager.h"
 #include "../../tools/dnd/DnDCible.h"
 #include "../explorer/GestionPeriph.h"
 #include "../widgets/SliderSon.h"
@@ -39,7 +41,7 @@ class PlayListTableau : public wxListCtrl
         void OnKey(wxKeyEvent&);
         void MouseEvents(wxMouseEvent&);
         void Glisser(wxListEvent &WXUNUSED(event));
-        void ChangementChanson(ChansonNomPos);
+        void ChangementChanson();
         void AfficheMenu(wxMouseEvent &WXUNUSED(event));
 
         void menuLecture(wxCommandEvent &WXUNUSED(event));

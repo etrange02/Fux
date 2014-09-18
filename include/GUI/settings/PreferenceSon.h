@@ -6,7 +6,8 @@
 #include <wx/xml/xml.h>
 #include "../../Define.h"
 #include "../widgets/GenericTreePanel.h"
-#include "../../music/Musique.h"
+//#include "../../music/Musique.h"
+#include "../../music/MusicManager.h"
 #include "../widgets/SliderSon.h"
 
 class PreferenceSon : public GenericTreePanel

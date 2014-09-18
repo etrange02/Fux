@@ -44,6 +44,8 @@ IMPORTANT, A FAIRE !!!
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include/music" />
+					<Add directory="include/preddicates" />
 				</Compiler>
 			</Target>
 			<Environment>
@@ -123,6 +125,10 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/Classes.h" />
 		<Unit filename="include/Define.h" />
 		<Unit filename="include/application/Application.h" />
+		<Unit filename="include/constants/enums.h" />
+		<Unit filename="include/constants/events.h" />
+		<Unit filename="include/constants/ids.h" />
+		<Unit filename="include/constants/strings.h" />
 		<Unit filename="include/db/BDD.h" />
 		<Unit filename="include/db/BDDRequete.h" />
 		<Unit filename="include/db/BDDThread.h" />
@@ -154,11 +160,16 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/gui/widgets/SliderSon.h" />
 		<Unit filename="include/music/ChansonNomPos.h" />
 		<Unit filename="include/music/Duree.h" />
-		<Unit filename="include/music/FichierListe.h" />
-		<Unit filename="include/music/Musique.h" />
+		<Unit filename="include/music/IMusic.h" />
+		<Unit filename="include/music/IMusicPlayer.h" />
+		<Unit filename="include/music/Music.h" />
+		<Unit filename="include/music/MusicList.h" />
+		<Unit filename="include/music/MusicManager.h" />
+		<Unit filename="include/music/MusicPlayer.h" />
 		<Unit filename="include/network/TCPClient.h" />
 		<Unit filename="include/network/TCPConnexionEchangeInstanceLocalHost.h" />
 		<Unit filename="include/network/TCPServeur.h" />
+		<Unit filename="include/predicates/findPosition.h" />
 		<Unit filename="include/settings/Couleur.h" />
 		<Unit filename="include/settings/Parametre.h" />
 		<Unit filename="include/tools/ElementThreadFichier.h" />
@@ -166,15 +177,16 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/tools/OS_Win.h" />
 		<Unit filename="include/tools/ThreadGestion.h" />
 		<Unit filename="include/tools/Timer.h" />
-		<Unit filename="include/tools/dir_traverser/Recherche.h" />
+		<Unit filename="include/tools/dir_traverser/ISearchTraversable.h" />
+		<Unit filename="include/tools/dir_traverser/Search.h" />
 		<Unit filename="include/tools/dir_traverser/TraverserCopieDossier.h" />
 		<Unit filename="include/tools/dir_traverser/TraverserCopieFichier.h" />
 		<Unit filename="include/tools/dir_traverser/TraverserDeplaceFichier.h" />
 		<Unit filename="include/tools/dir_traverser/TraverserSupprimeDossier.h" />
 		<Unit filename="include/tools/dir_traverser/TraverserSupprimeFichier.h" />
-		<Unit filename="include/tools/dnd/DnDBufferData.h" />
 		<Unit filename="include/tools/dnd/DnDCible.h" />
 		<Unit filename="include/tools/dnd/DnDListeFichier.h" />
+		<Unit filename="include/tools/dnd/MusicPlayListDnDBufferData.h" />
 		<Unit filename="include/version.h" />
 		<Unit filename="src/application/Application.cpp" />
 		<Unit filename="src/db/BDD.cpp" />
@@ -206,15 +218,14 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/gui/widgets/SliderSon.cpp" />
 		<Unit filename="src/music/ChansonNomPos.cpp" />
 		<Unit filename="src/music/Duree.cpp" />
-		<Unit filename="src/music/FichierListe.cpp" />
 		<Unit filename="src/music/Music.cpp" />
 		<Unit filename="src/music/MusicList.cpp" />
 		<Unit filename="src/music/MusicManager.cpp" />
 		<Unit filename="src/music/MusicPlayer.cpp" />
-		<Unit filename="src/music/Musique.cpp" />
 		<Unit filename="src/network/TCPClient.cpp" />
 		<Unit filename="src/network/TCPConnexionEchangeInstanceLocalHost.cpp" />
 		<Unit filename="src/network/TCPServeur.cpp" />
+		<Unit filename="src/predicates/findPosition.cpp" />
 		<Unit filename="src/ressources/Ressource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
@@ -243,15 +254,15 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/tools/OS_Win.cpp" />
 		<Unit filename="src/tools/ThreadGestion.cpp" />
 		<Unit filename="src/tools/Timer.cpp" />
-		<Unit filename="src/tools/dir_traverser/Recherche.cpp" />
+		<Unit filename="src/tools/dir_traverser/Search.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserCopieDossier.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserCopieFichier.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserDeplaceFichier.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserSupprimeDossier.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserSupprimeFichier.cpp" />
-		<Unit filename="src/tools/dnd/DnDBufferData.cpp" />
 		<Unit filename="src/tools/dnd/DnDCible.cpp" />
 		<Unit filename="src/tools/dnd/DnDListeFichier.cpp" />
+		<Unit filename="src/tools/dnd/MusicPlayListDnDBufferData.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars set="default" />

@@ -3,7 +3,8 @@
 
 #include "../Define.h"
 #include "../gui/graph/MusiqueGraph.h"
-#include "../music/Musique.h"
+//#include "../music/Musique.h"
+#include "../music/MusicManager.h"
 #include "../gui/widgets/SliderSon.h"
 #include <wx/wx.h>
 #include <wx/stdpaths.h>
@@ -44,6 +45,8 @@ class Parametre
         bool islisable(const wxString&);
         void creerRepertoireParametre();
         void creerRepertoireParametre(wxString);
+
+        bool isContainerFile(const wxString& extension);
 
     protected:
         Parametre();

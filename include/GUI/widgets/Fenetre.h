@@ -29,47 +29,67 @@ class FuXFenetre: public wxFrame
     FuXFenetre(int argc = 0, wxChar** argv = NULL);
     virtual ~FuXFenetre();
 
-    void ConstructionBarre();
-    void ConstructionSizerGauche();
+
+    /// Event methods ///
+    // button left panel event //
     void AffichePrincipal(wxCommandEvent &WXUNUSED(event));
     void AfficheDefaut(wxCommandEvent &WXUNUSED(event));
     void AffichePreference(wxCommandEvent &WXUNUSED(event));
     void AfficheEncodage(wxCommandEvent &WXUNUSED(event));
     void AfficheListeDeLecture(wxCommandEvent &WXUNUSED(event));
     void AfficheGestPeriph(wxCommandEvent &WXUNUSED(event));
-
-    void Quitter(wxCommandEvent &event);
-    void Stop(wxCommandEvent &WXUNUSED(event));
-    void Lecture(wxCommandEvent &WXUNUSED(event));
-    void BoutonLecture(wxCommandEvent &event);
-    void BoutonChangeImage(wxCommandEvent &event);
-    void Suivant(wxCommandEvent &WXUNUSED(event));
-    void Precedent(wxCommandEvent &WXUNUSED(event));
-    void Repete(wxCommandEvent &WXUNUSED(event));
-    void Aleatoire(wxCommandEvent &WXUNUSED(event));
-    void OuvrirChanson(wxCommandEvent &WXUNUSED(event));
-    void OuvrirM3U(wxCommandEvent &WXUNUSED(event));
-    void SupprimerListe(wxCommandEvent &WXUNUSED(event));
-    void ChangementChanson(wxCommandEvent&);
-    void MAJplaylist(wxCommandEvent &WXUNUSED(event));
-    void SauvegardeListeLecture(wxCommandEvent&);
-    void MenuAbout(wxCommandEvent &WXUNUSED(event));
-    void MenuSiteWeb(wxCommandEvent &WXUNUSED(event));
-    void MenuAide(wxCommandEvent &WXUNUSED(event));
     void AfficherPreferenceCouleur(wxCommandEvent &WXUNUSED(event));
     void AfficherPreferenceSon(wxCommandEvent &WXUNUSED(event));
     void AfficherPreferenceDefaut(wxCommandEvent &WXUNUSED(event));
+    void SeparationPanel(wxCommandEvent&);
+    void ReunionPanel(wxCommandEvent&);
+    void EventUpdateMusicVolume(wxScrollEvent &WXUNUSED(event));
+    // Bar menu event //
+    void EventDeleteCurrentPlayingTitle(wxCommandEvent &WXUNUSED(event));
+    void EventMusicStop(wxCommandEvent &WXUNUSED(event));
+    void EventMenuBarPlay(wxCommandEvent &WXUNUSED(event));
+    void EventMusicNext(wxCommandEvent &WXUNUSED(event));
+    void EventMusicPrevious(wxCommandEvent &WXUNUSED(event));
+    void EventMusicRandomize(wxCommandEvent &WXUNUSED(event));
+    void EventMusicRepete(wxCommandEvent &WXUNUSED(event));
+    void EventOpenDialogToPlayMusic(wxCommandEvent &WXUNUSED(event));
+    void EventOpenDialogToSelectPlayListFile(wxCommandEvent &WXUNUSED(event));
+    void EventPlayButtonPressed(wxCommandEvent &event);
+    void EventQuit(wxCommandEvent &event);
+    void EventSavePlayList(wxCommandEvent&);
+    void EventUpdatePlayLists(wxCommandEvent &WXUNUSED(event));
+    void MenuAbout(wxCommandEvent &WXUNUSED(event));
+    void MenuSiteWeb(wxCommandEvent &WXUNUSED(event));
+    void MenuAide(wxCommandEvent &WXUNUSED(event));
+    // Internal management event //
     void EvtServeurAjout(wxCommandEvent&);
     void OnTitreChange(wxCommandEvent &WXUNUSED(event));
     void OnKeyDownRaccourci(wxKeyEvent&);
-    void SeparationPanel(wxCommandEvent&);
-    void ReunionPanel(wxCommandEvent&);
-    void Initialisation();
-    void CreerPages();
-    void ChangeFenetre();
+    void EventMusicChanged(wxCommandEvent&);
+    void EventSwitchButtonImage(wxCommandEvent &event);
+    void EventNoMusic(wxCommandEvent &WXUNUSED(event));
 
-    void ModifSon(wxScrollEvent &WXUNUSED(event));
-    void LecturePreference(bool);
+
+    /// Internal management methods ///
+    void SwitchWindow();
+    void readPreferences(bool loadDefaultMusic);
+    void readPreferencesOldWay(bool loadDefaultMusic, wxTextFile& prefFile);
+    void readPreferencesNewWay(bool loadDefaultMusic, const wxString& fileName);
+
+    void drawPlayImageStatus();
+    void drawPauseImageStatus();
+    void playButtonPressed();
+    void openDialogToPlayMusic();
+    void openDialogToSelectPlayListFile();
+    void deleteCurrentPlayingTitle();
+
+  private :
+
+    /// Initialization methods ///
+    void panelCreation();
+    void panelAssociation();
+    void MenuBarCreation();
+    void LeftSizerCreation();
 
   protected:
     wxBoxSizer *sizerPrincipalH, *sizerGaucheV, *sizerDroit, *sizerDroitPrincipal, *sizerDroitPreference, *sizerDroitExtracteur, *sizerDroitPlayist, *sizerDroitIPod;

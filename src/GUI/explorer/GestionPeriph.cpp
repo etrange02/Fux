@@ -381,10 +381,10 @@ void GestPeriph::AffListeRepertoireLect(wxCommandEvent &event)
  */
 void GestPeriph::AffListePlaylist(wxCommandEvent &event)
 {
-    if (event.GetId() == ID_PAGE_PERIHERIQUE_MENU_PLAYLIST_GAUCHE)
+    /*if (event.GetId() == ID_PAGE_PERIHERIQUE_MENU_PLAYLIST_GAUCHE)
         m_listeG->SetFichierDossier(FichierListe::Get()->GetCheminListe(), PLAYLIST, true);
     else if (event.GetId() == ID_PAGE_PERIHERIQUE_MENU_PLAYLIST_DROITE)
-        m_listeD->SetFichierDossier(FichierListe::Get()->GetCheminListe(), PLAYLIST, true);
+        m_listeD->SetFichierDossier(FichierListe::Get()->GetCheminListe(), PLAYLIST, true);*/
 }
 
 /**

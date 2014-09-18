@@ -63,7 +63,7 @@ PlayListTableau* PlayList::GetPlayListTableau()
  * @param Parent un pointeur sur la fenêtre parente
  * @param MAJListe si vrai, la liste est mis à jour
  */
-void PlayList::Creer(wxWindow *Parent, bool MAJListe)
+void PlayList::Initialize(wxWindow *Parent, bool MAJListe)
 {
     Create(Parent);
     sizer = new wxBoxSizer(wxVERTICAL);
@@ -150,51 +150,35 @@ void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
 
     if (fen->ShowModal() == wxID_OK)
     {
-        wxTextFile fichierLec(FichierListe::Get()->GetCheminListe());
-        if (!fichierLec.Open())
-            return;
         if (fen->GetName().IsEmpty())
             return;
-        wxTextFile fichierEcr(fen->GetChemin());
 
-        if (fichierEcr.Exists())
+        if (wxFileExists(fen->GetChemin()))
         {
-            wxMessageDialog boite2(NULL, _("Fichier déjà existant. Souhaitez-vous le remplacer ?"), _("Fichier déjà existant"), wxYES_NO|wxICON_QUESTION|wxCENTRE|wxYES_DEFAULT);
-            if (boite2.ShowModal() != wxID_YES)
+            wxMessageDialog assertDialog(NULL, _("Fichier déjà existant. Souhaitez-vous le remplacer ?"), _("Fichier déjà existant"), wxYES_NO|wxICON_QUESTION|wxCENTRE|wxYES_DEFAULT);
+            if (assertDialog.ShowModal() != wxID_YES)
                 modif = false;
-            else
-            {
-                fichierEcr.Open();
-                fichierEcr.Clear();
-            }
         }
-        else
+        else if (!wxDir::Exists(Parametre::Get()->getRepertoireParametre(_T("Play_list_M3U"))))
+            return;
+        if (modif)
         {
-            if (!wxDir::Exists(Parametre::Get()->getRepertoireParametre(_T("Play_list_M3U"))))
-                return;
-            if (!fichierEcr.Create())
+            if (!MusicManager::get()->saveMusicListIntoFile(fen->GetChemin()))
             {
                 wxLogError(_("Erreur dans le nom.\nVérifiez que vous utilisez des caractères autorisés."), _("Erreur"));
                 return;
             }
-        }
-        if (modif)
-        {
-            fichierEcr.AddLine(_T("#EXTM3U"));
-            for (unsigned int i=0; i<fichierLec.GetLineCount(); i++)
-                fichierEcr.AddLine(fichierLec.GetLine(i));
-            fichierEcr.Write();
-
-            if (!fen->GetCheminRaccourci().IsEmpty() && !wxFileExists(fen->GetCheminRaccourci()))
+            else
             {
-                if (!CreationRaccourci(fen->GetCheminRaccourci(), fen->GetChemin()))
+                if (!fen->GetCheminRaccourci().IsEmpty() && !wxFileExists(fen->GetCheminRaccourci()))
                 {
-                    wxLogMessage(_("Echec de la création du raccourci."));
+                    if (!CreationRaccourci(fen->GetCheminRaccourci(), fen->GetChemin()))
+                    {
+                        wxLogMessage(_("Echec de la création du raccourci."));
+                    }
                 }
             }
         }
-        fichierLec.Close();
-        fichierEcr.Close();
     }
     fen->CallPanel();
     delete fen;
@@ -273,7 +257,7 @@ void PlayList::OnAppliquerTAG(wxCommandEvent &WXUNUSED(event))
     if (fichierTAG.IsEmpty())
         return;
 
-    m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
+    /*m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
     if (!m_ObjetTAG.isNull() && !Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
     {
         wxString tempo = fichierTAG;
@@ -311,6 +295,7 @@ void PlayList::OnAppliquerTAG(wxCommandEvent &WXUNUSED(event))
         wxMessageBox(_("Vous ne pouvez pas modifier un fichier lorsque celui-ci est en cours de lecture."), _("Erreur !"));
     else
         wxMessageBox(_("Sélectionnez un fichier"), _("Erreur !"));
+        */
 }
 
 /**
@@ -371,7 +356,7 @@ void PlayList::EvtImage(wxCommandEvent &event)
     if (fichierTAG.IsEmpty())
         return;
 
-    if (!Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
+    /*if (!Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
     {
         m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
         if (!m_ObjetTAG.isNull())
@@ -386,7 +371,7 @@ void PlayList::EvtImage(wxCommandEvent &event)
                     {
                         TagLib::ID3v2::AttachedPictureFrame *pict;
                         TagLib::ID3v2::FrameList FrameList = tagv2->frameListMap()["APIC"];
-                        for( std::list<TagLib::ID3v2::Frame*>::iterator iter = FrameList.begin(); iter != FrameList.end(); iter++ )
+                        for( std::list<TagLib::ID3v2::Frame*>::iterator iter = FrameList.begin(); iter != FrameList.end(); ++iter )
                         {
                             pict = static_cast<TagLib::ID3v2::AttachedPictureFrame *>( *iter );
                             tagv2->removeFrame(pict, true);
@@ -414,6 +399,7 @@ void PlayList::EvtImage(wxCommandEvent &event)
     }
     else
         wxLogMessage(_("Il est impossible de modifer les pochettes d'album lorsque\nle fichier est en cours de lecture."));
+        */
 }
 
 /**
@@ -421,7 +407,7 @@ void PlayList::EvtImage(wxCommandEvent &event)
  */
 void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
 {
-    DialogTagMP3 *fen = new DialogTagMP3(this, -1, _T(""));
+    /*DialogTagMP3 *fen = new DialogTagMP3(this, -1, _T(""));
 
     m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
     if (!m_ObjetTAG.isNull())
@@ -508,7 +494,7 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
                     {
                         TagLib::ID3v2::AttachedPictureFrame *pict;
                         TagLib::ID3v2::FrameList FrameList = tagv2->frameListMap()["APIC"];
-                        for( std::list<TagLib::ID3v2::Frame*>::iterator iter = FrameList.begin(); iter != FrameList.end(); iter++ )
+                        for( std::list<TagLib::ID3v2::Frame*>::iterator iter = FrameList.begin(); iter != FrameList.end(); ++iter )
                         {
                             pict = static_cast<TagLib::ID3v2::AttachedPictureFrame *>( *iter );
                             tagv2->removeFrame(pict, true);
@@ -531,7 +517,7 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
                     {
                         TagLib::ID3v2::AttachedPictureFrame *pict;
                         TagLib::ID3v2::FrameList FrameList = tagv2->frameListMap()["APIC"];
-                        for( std::list<TagLib::ID3v2::Frame*>::iterator iter = FrameList.begin(); iter != FrameList.end(); iter++ )
+                        for( std::list<TagLib::ID3v2::Frame*>::iterator iter = FrameList.begin(); iter != FrameList.end(); ++iter )
                         {
                             pict = static_cast<TagLib::ID3v2::AttachedPictureFrame *>( *iter );
                             tagv2->removeFrame(pict, true);
@@ -555,6 +541,7 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
     }
 
     delete fen;
+    */
 }
 
 /**
@@ -565,9 +552,9 @@ void PlayList::MouseEvents(wxMouseEvent &event)
     if (event.ControlDown() && event.GetWheelRotation() != 0)
     {
         if (event.GetWheelRotation() < 0)
-            Musique::Get()->ChangementChanson(SUIVANT);
+            MusicManager::get()->playNextMusic();
         else
-            Musique::Get()->ChangementChanson(PRECEDENT);
+            MusicManager::get()->playPreviousMusic();
     }
     else if (event.AltDown() && event.GetWheelRotation() != 0)
     {
@@ -582,10 +569,10 @@ void PlayList::MouseEvents(wxMouseEvent &event)
 
 void PlayList::RechercheListeLecture(wxCommandEvent &WXUNUSED(event))
 {
-    if (m_liste->RechercheRunning())
+    if (m_liste->IsResearchRunning())
     {
-        m_liste->StopRecherche();
-        while (m_liste->RechercheRunning())
+        m_liste->StopResearch();
+        while (m_liste->IsResearchRunning())
             //wxLogMessage(_("att"));//
             wxApp::GetInstance()->Yield(false);//wxSleep(20);
         wxApp::GetInstance()->Yield(false);
@@ -594,12 +581,12 @@ void PlayList::RechercheListeLecture(wxCommandEvent &WXUNUSED(event))
     if (m_champsRecherche->GetValue().Length() > m_rechercheTailleMot)
     {
         m_rechercheTailleMot = m_champsRecherche->GetValue().Length();
-        m_liste->RecherchePrecise(m_champsRecherche->GetValue());
+        m_liste->PreciseResearch(m_champsRecherche->GetValue());
     }
     else
     {
         m_rechercheTailleMot = m_champsRecherche->GetValue().Length();
-        m_liste->RechercheElargie(m_champsRecherche->GetValue());
+        m_liste->WidelyResearch(m_champsRecherche->GetValue());
     }
 }
 

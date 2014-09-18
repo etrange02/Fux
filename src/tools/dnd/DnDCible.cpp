@@ -17,7 +17,7 @@
  * Constructeur
  * @param liste la liste cible
  */
-DnDCible::DnDCible(wxListCtrl *liste) : wxDropTarget(new DnDBufferData)
+DnDCible::DnDCible(wxListCtrl *liste) : wxDropTarget(new MusicPlayListDnDBufferData)
 {
     m_liste = liste;
     m_pageGestion = NULL;
@@ -28,7 +28,7 @@ DnDCible::DnDCible(wxListCtrl *liste) : wxDropTarget(new DnDBufferData)
  * @param liste la liste cible
  * @param pageGestion la fenêtre parente de la liste cible (c'est elle qui traite les informations)
  */
-DnDCible::DnDCible(wxListCtrl *liste, wxWindow* pageGestion) : wxDropTarget(new DnDBufferData)
+DnDCible::DnDCible(wxListCtrl *liste, wxWindow* pageGestion) : wxDropTarget(new MusicPlayListDnDBufferData)
 {
     m_liste = liste;
     m_pageGestion = (PageGestionPeriph*) pageGestion;
@@ -51,14 +51,16 @@ wxDragResult DnDCible::OnData(wxCoord WXUNUSED(x), wxCoord y, wxDragResult WXUNU
         return wxDragNone;
 
     DnDListeFichier* TransFile;
-    TransFile = ((DnDBufferData *)GetDataObject())->GetTransFile();
+    TransFile = ((MusicPlayListDnDBufferData *)GetDataObject())->GetTransFile();
 
     if (m_pageGestion == NULL)
     {
         if (TransFile->Item(0).IsNumber())
-            Musique::Get()->PlacerLigneInt(TransFile->arrayString(), GetPositionCoord(y), true);
+            //Musique::Get()->PlacerLigneInt(TransFile->arrayString(), GetPositionCoord(y), true);
+            MusicManager::get()->moveIntTitlesAt(TransFile->arrayString(), GetPositionCoord(y), true, true);
         else
-            Musique::Get()->PlacerLigneString(TransFile->arrayString(), GetPositionCoord(y), true);//Les coordonnées commencent au coin sup gauche de la liste, dans les en-têtes
+            MusicManager::get()->placeStringTitlesAt(TransFile->arrayString(), GetPositionCoord(y), true);
+            //Musique::Get()->PlacerLigneString(TransFile->arrayString(), GetPositionCoord(y), true);//Les coordonnées commencent au coin sup gauche de la liste, dans les en-têtes
     }
     else
         m_pageGestion->GlisserTraitement(TransFile->arrayString(), GetPositionCoord(y));//Les coordonnées commencent au coin sup gauche de la liste, dans les en-têtes

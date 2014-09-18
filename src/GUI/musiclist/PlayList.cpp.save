@@ -6,8 +6,7 @@
  * Copyright: David Lecoconnier (http://www.fuxplay.com)
  * License:
  **************************************************************/
-
-#include "../../include/GUI/PlayList.h"
+#include "../../../include/gui/musiclist/PlayList.h"
 
 /**
  * @class PlayList
@@ -26,10 +25,10 @@ BEGIN_EVENT_TABLE(PlayList, wxPanel)
     EVT_IMAGE_SELECTION(ID_PAGE_PLAYLIST_POCHETTE, PlayList::EvtImage)
     EVT_LISTE_DETAILS(ID_PAGE_PLAYLIST_LISTE, PlayList::FenetreDetails)
     EVT_MOUSE_EVENTS(PlayList::MouseEvents)
-    //EVT_SEARCHCTRL_SEARCH_BTN(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::RecherchePlayListTableau)
+    //EVT_SEARCHCTRL_SEARCH_BTN(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::RechercheListeLecture)
     //EVT_SEARCHCTRL_CANCEL_BTN(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::)
-    EVT_TEXT(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::RecherchePlayListTableau)
-    EVT_TEXT_ENTER(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::RecherchePlayListTableau)
+    EVT_TEXT(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::RechercheListeLecture)
+    EVT_TEXT_ENTER(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::RechercheListeLecture)
 END_EVENT_TABLE()
 
 /**
@@ -64,7 +63,7 @@ PlayListTableau* PlayList::GetPlayListTableau()
  * @param Parent un pointeur sur la fenêtre parente
  * @param MAJListe si vrai, la liste est mis à jour
  */
-void PlayList::Creer(wxWindow *Parent, bool MAJListe)
+void PlayList::Initialize(wxWindow *Parent, bool MAJListe)
 {
     Create(Parent);
     sizer = new wxBoxSizer(wxVERTICAL);
@@ -181,7 +180,8 @@ void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
         }
         if (modif)
         {
-            fichierEcr.AddLine(_T("#EXTM3U"));
+            MusicManager::get()->saveMusicListIntoFile(fen->GetChemin());
+            fichierEcr.AddLine(M3U_EXTENSION);
             for (unsigned int i=0; i<fichierLec.GetLineCount(); i++)
                 fichierEcr.AddLine(fichierLec.GetLine(i));
             fichierEcr.Write();
@@ -197,6 +197,7 @@ void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
         fichierLec.Close();
         fichierEcr.Close();
     }
+    fen->CallPanel();
     delete fen;
 }
 
@@ -246,8 +247,12 @@ void PlayList::OnAfficheDetails(wxListEvent &event)
                     wxString typeImage(p->mimeType().toCString(true), wxConvLocal);
 
                     if (typeImage.IsSameAs(_T("image/jpeg")) || typeImage.IsSameAs(_T("image/jpg")))
+                    {
                         m_pochette->SetImage(wxImage(stream, _T("image/jpeg")));
-                    m_pochette->AfficheImage(true);
+                        m_pochette->AfficheImage(true);
+                    }
+                    else
+                        m_pochette->AfficheImage(false);
                 }
             }
             else
@@ -269,7 +274,7 @@ void PlayList::OnAppliquerTAG(wxCommandEvent &WXUNUSED(event))
     if (fichierTAG.IsEmpty())
         return;
 
-    m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
+    /*m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
     if (!m_ObjetTAG.isNull() && !Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
     {
         wxString tempo = fichierTAG;
@@ -307,6 +312,7 @@ void PlayList::OnAppliquerTAG(wxCommandEvent &WXUNUSED(event))
         wxMessageBox(_("Vous ne pouvez pas modifier un fichier lorsque celui-ci est en cours de lecture."), _("Erreur !"));
     else
         wxMessageBox(_("Sélectionnez un fichier"), _("Erreur !"));
+        */
 }
 
 /**
@@ -367,7 +373,7 @@ void PlayList::EvtImage(wxCommandEvent &event)
     if (fichierTAG.IsEmpty())
         return;
 
-    if (!Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
+    /*if (!Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
     {
         m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
         if (!m_ObjetTAG.isNull())
@@ -382,7 +388,7 @@ void PlayList::EvtImage(wxCommandEvent &event)
                     {
                         TagLib::ID3v2::AttachedPictureFrame *pict;
                         TagLib::ID3v2::FrameList FrameList = tagv2->frameListMap()["APIC"];
-                        for( std::list<TagLib::ID3v2::Frame*>::iterator iter = FrameList.begin(); iter != FrameList.end(); iter++ )
+                        for( std::list<TagLib::ID3v2::Frame*>::iterator iter = FrameList.begin(); iter != FrameList.end(); ++iter )
                         {
                             pict = static_cast<TagLib::ID3v2::AttachedPictureFrame *>( *iter );
                             tagv2->removeFrame(pict, true);
@@ -410,6 +416,7 @@ void PlayList::EvtImage(wxCommandEvent &event)
     }
     else
         wxLogMessage(_("Il est impossible de modifer les pochettes d'album lorsque\nle fichier est en cours de lecture."));
+        */
 }
 
 /**
@@ -417,7 +424,7 @@ void PlayList::EvtImage(wxCommandEvent &event)
  */
 void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
 {
-    DialogTagMP3 *fen = new DialogTagMP3(this, -1, _T(""));
+    /*DialogTagMP3 *fen = new DialogTagMP3(this, -1, _T(""));
 
     m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
     if (!m_ObjetTAG.isNull())
@@ -504,7 +511,7 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
                     {
                         TagLib::ID3v2::AttachedPictureFrame *pict;
                         TagLib::ID3v2::FrameList FrameList = tagv2->frameListMap()["APIC"];
-                        for( std::list<TagLib::ID3v2::Frame*>::iterator iter = FrameList.begin(); iter != FrameList.end(); iter++ )
+                        for( std::list<TagLib::ID3v2::Frame*>::iterator iter = FrameList.begin(); iter != FrameList.end(); ++iter )
                         {
                             pict = static_cast<TagLib::ID3v2::AttachedPictureFrame *>( *iter );
                             tagv2->removeFrame(pict, true);
@@ -527,7 +534,7 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
                     {
                         TagLib::ID3v2::AttachedPictureFrame *pict;
                         TagLib::ID3v2::FrameList FrameList = tagv2->frameListMap()["APIC"];
-                        for( std::list<TagLib::ID3v2::Frame*>::iterator iter = FrameList.begin(); iter != FrameList.end(); iter++ )
+                        for( std::list<TagLib::ID3v2::Frame*>::iterator iter = FrameList.begin(); iter != FrameList.end(); ++iter )
                         {
                             pict = static_cast<TagLib::ID3v2::AttachedPictureFrame *>( *iter );
                             tagv2->removeFrame(pict, true);
@@ -551,6 +558,7 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
     }
 
     delete fen;
+    */
 }
 
 /**
@@ -561,9 +569,9 @@ void PlayList::MouseEvents(wxMouseEvent &event)
     if (event.ControlDown() && event.GetWheelRotation() != 0)
     {
         if (event.GetWheelRotation() < 0)
-            Musique::Get()->ChangementChanson(SUIVANT);
+            MusicManager::get()->playNextMusic();
         else
-            Musique::Get()->ChangementChanson(PRECEDENT);
+            MusicManager::get()->playPreviousMusic();
     }
     else if (event.AltDown() && event.GetWheelRotation() != 0)
     {
@@ -576,7 +584,7 @@ void PlayList::MouseEvents(wxMouseEvent &event)
         event.Skip();
 }
 
-void PlayList::RecherchePlayListTableau(wxCommandEvent &WXUNUSED(event))
+void PlayList::RechercheListeLecture(wxCommandEvent &WXUNUSED(event))
 {
     if (m_liste->RechercheRunning())
     {
@@ -584,6 +592,7 @@ void PlayList::RecherchePlayListTableau(wxCommandEvent &WXUNUSED(event))
         while (m_liste->RechercheRunning())
             //wxLogMessage(_("att"));//
             wxApp::GetInstance()->Yield(false);//wxSleep(20);
+        wxApp::GetInstance()->Yield(false);
     }
 
     if (m_champsRecherche->GetValue().Length() > m_rechercheTailleMot)

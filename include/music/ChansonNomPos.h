@@ -12,17 +12,17 @@ class ChansonNomPos
 {
     public:
         ChansonNomPos();
-        ChansonNomPos(wxString nom, int pos);
+        ChansonNomPos(wxString nom, long pos);
         virtual ~ChansonNomPos();
         ChansonNomPos& operator=(const ChansonNomPos& other);
-        int GetPos();
-        void SetPos(int val);
+        long GetPos();
+        void SetPos(long val);
         wxString GetNom();
         void SetNom(wxString val);
 
     protected:
     private:
-        int m_pos; //!< Member variable "m_pos"
+        long m_pos; //!< Member variable "m_pos"
         wxString m_nom; //!< Member variable "m_nom"
 };
 

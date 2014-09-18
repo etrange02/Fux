@@ -175,7 +175,7 @@ void Parametre::setVolume(wxString volume, wxString volumePC)
  */
 void Parametre::setVolume(int volume, int volumePC)
 {
-    Musique::Get()->SetVolume(volume);
+    MusicManager::get()->getMusicPlayer()->setVolume(volume);
     SliderSon::Get()->SetValue(volume);
 }
 
@@ -242,7 +242,7 @@ bool Parametre::islisable(const wxString &ext)
     unsigned int i = 0;
     while (i<m_extension.Count())
     {
-        if (m_extension.Item(i).IsSameAs(ext))
+        if (m_extension.Item(i).IsSameAs(ext, false))
             return true;
         else
             i++;
@@ -379,7 +379,7 @@ wxString Parametre::getRepertoireExecutable()
     return wxStandardPaths::Get().GetDataDir();
 }
 
-/** @brief Je sais pas ce qu'est brief
+/** @brief Je ne sais pas ce qu'est brief
  * Retourne l'adresse du fichier donné en paramètre. Ce fichier doit se trouver dans le dossier lib du répertoire de l'exécutable
  * @param element le nom du fichier avec l'extension
  * @return l'adresse complète
@@ -389,4 +389,8 @@ wxString Parametre::getRepertoireExecutableLib(wxString element)
     return wxStandardPaths::Get().GetDataDir() + wxFileName::GetPathSeparator() + _T("lib") + wxFileName::GetPathSeparator() + element;
 }
 
+bool Parametre::isContainerFile(const wxString& extension)
+{
+    return extension.IsSameAs(_T("m3u"), false);
+}
 

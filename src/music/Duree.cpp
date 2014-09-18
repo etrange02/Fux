@@ -1,3 +1,11 @@
+/***************************************************************
+ * Name:      Duree.cpp
+ * Purpose:   Code for Fu(X) 2.0
+ * Author:    David Lecoconnier (etrange02@aol.com)
+ * Created:   2013-07-06
+ * Copyright: David Lecoconnier (http://www.fuxplay.com)
+ * License:
+ **************************************************************/
 #include "../../include/music/Duree.h"
 
 /** Default constructor */

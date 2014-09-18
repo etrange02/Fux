@@ -3,7 +3,8 @@
 
 #include <wx/wx.h>
 #include <wx/timer.h>
-#include "../music/Musique.h"
+//#include "../music/Musique.h"
+#include "../music/MusicManager.h"
 #include "../gui/graph/MusiqueGraph.h"
 
 

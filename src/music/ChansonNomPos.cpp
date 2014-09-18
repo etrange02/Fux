@@ -7,7 +7,7 @@ ChansonNomPos::ChansonNomPos()
     m_nom = _("");
 }
 
-ChansonNomPos::ChansonNomPos(wxString nom, int pos)
+ChansonNomPos::ChansonNomPos(wxString nom, long pos)
 {
     m_nom = nom;
     m_pos = pos;
@@ -33,7 +33,7 @@ ChansonNomPos& ChansonNomPos::operator=(const ChansonNomPos& rhs)
 /** Access m_pos
  * \return The current value of m_pos
  */
-int ChansonNomPos::GetPos()
+long ChansonNomPos::GetPos()
 {
     return m_pos;
 }
@@ -41,7 +41,7 @@ int ChansonNomPos::GetPos()
 /** Set m_pos
  * \param val New value to set
  */
-void ChansonNomPos::SetPos(int val)
+void ChansonNomPos::SetPos(long val)
 {
     m_pos = val;
 }

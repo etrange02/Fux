@@ -1,0 +1,24 @@
+#ifndef IMUSIC_H_INCLUDED
+#define IMUSIC_H_INCLUDED
+
+class IMusic
+{
+    public:
+        wxString GetName();
+        wxString GetArtists();
+        wxString GetAlbum();
+        wxString GetTitle();
+        wxString GetPath();
+        wxString GetGenres();
+        wxString GetExtension();
+        wxString GetFileName();
+        int GetYear();
+        int GetDuration();
+        int GetDebit();
+        int GetSize();
+        wxImage *GetRecordSleeve();
+
+        bool equalsFilename(Music *music);
+};
+
+#endif // IMUSIC_H_INCLUDED

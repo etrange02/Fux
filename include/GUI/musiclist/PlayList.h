@@ -19,7 +19,8 @@
 #include <mpegfile.h>
 #include <id3v2tag.h>
 #include <attachedpictureframe.h>
-#include "../../music/Musique.h"
+//#include "../../music/Musique.h"
+#include "../../music/MusicManager.h"
 #include "PlayListTableau.h"
 #include "../dialogs/DialogEnregistreM3U.h"
 #include "../dialogs/DialogTagMP3.h"
@@ -36,7 +37,7 @@ class PlayList : public wxPanel
 
         PlayListTableau* GetPlayListTableau();
 
-        void Creer(wxWindow *Parent, bool MAJListe = false);
+        void Initialize(wxWindow *Parent, bool MAJListe = false);
         void EnregistrerM3U(wxCommandEvent &WXUNUSED(event));
         void OnPanneau(wxCollapsiblePaneEvent &WXUNUSED(event));
         void OnAfficheDetails(wxListEvent&);

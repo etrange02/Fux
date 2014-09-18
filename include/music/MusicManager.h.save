@@ -1,0 +1,71 @@
+#ifndef MUSICMANAGER_H
+#define MUSICMANAGER_H
+
+#include <wx/wx.h>
+#include <ctime>
+//#include "../Define.h"
+#include "IMusic.h"
+#include "MusicPlayer.h"
+#include "MusicList.h"
+
+class MusicList;
+
+class MusicManager
+{
+    public:
+        static MusicManager* get();
+
+        bool isRepete();
+        bool isRandom();
+        Music *getMusic();
+        MusicList *getMusicList();
+        MusicPlayer *getMusicPlayer();
+
+        void setRepete(bool repete);
+        void setRandom(bool random);
+
+        bool playNextMusic();
+        bool playPreviousMusic();
+        bool playAMusic();
+        bool playMusicAt(long position);
+        bool playMusic(wxString name/*, long position*/);
+        bool playSameMusic();
+
+        void moveIntTitlesAt(wxArrayString* titles, long position, bool update = true, bool autoDelete = true);
+        void placeStringTitlesAt(wxArrayString* titles, long position, bool update = true);
+
+        ChansonNomPos deleteCurrentTitle();
+        void deleteTitleAt(long position);
+        void deleteTitles(wxArrayString *titles, bool update = false);
+
+        void parse();
+        void parse(wxArrayString* filenames, bool update = true);
+        void parse(wxString filename);
+        void parseThenPlay(wxArrayString* filenames);
+        void parse
+
+        void setParent(wxWindow* parent);
+        wxWindow* getParent();
+
+        bool saveMusicListIntoFile(wxString const &filename);
+
+        bool empty();
+        size_t size();
+
+    protected:
+        void initialize();
+        bool playRandomMusic();
+
+    private:
+        MusicManager();
+        virtual ~MusicManager();
+
+        wxWindow* m_parent;
+        bool m_repete, m_random;
+        MusicList* m_musicList;
+        MusicPlayer* m_musicPlayer;
+        Music* m_music;
+        long m_musicPosition;
+};
+
+#endif // MUSICMANAGER_H

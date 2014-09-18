@@ -52,7 +52,7 @@ void DnDListeFichier::AddStringArray(const wxArrayString* tab)
  * @return la chaîne
  */
 wxString& DnDListeFichier::Item(size_t nIndex)
-{    return m_Nom.Item(nIndex);}
+{   return m_Nom.Item(nIndex);}
 
 /**
  * Retourne la taille du tableau

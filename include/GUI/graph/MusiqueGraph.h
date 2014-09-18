@@ -7,11 +7,13 @@
 #include <GL/glu.h>
 #include <wx/dir.h>
 #include "../../Classes.h"
-#include "../../music/Musique.h"
+//#include "../../music/Musique.h"
+#include "../../music/MusicManager.h"
 #include "../tools/ImageText.h"
 #include "../../Define.h"
 #include "../widgets/SliderSon.h"
 #include "../../settings/Couleur.h"
+#include "../../tools/FichierLog.h"
 
 extern const wxEventType wxEVT_MUSIQUE_SUPPRESSION;
 

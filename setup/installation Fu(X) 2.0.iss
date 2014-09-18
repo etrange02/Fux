@@ -43,7 +43,7 @@ Name:AssocierExtensions; Description: Lecteur par défaut (mp3, wav, ogg, wma)
 Name: "{userappdata}\Fu(X)"; Flags: uninsneveruninstall
 
 [Files]
-Source: "..\out\program_files\*"; Excludes: "lib\play.png"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\out\program_files\*"; Excludes: "\lib\play.png"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "..\out\app_data\*"; Excludes: "\Fu(X).conf"; DestDir: "{userappdata}\Fu(X)"; Flags: recursesubdirs createallsubdirs uninsneveruninstall
 ; Source: "..\Web\*"; DestDir: "{app}\Web"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files

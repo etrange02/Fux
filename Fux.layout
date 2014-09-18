@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Release" />
+	<File name="src\gui\explorer\GestionPeriph.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="13791" topLine="368" />
+		</Cursor>
+	</File>
+	<File name="include\constants\events.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4643" topLine="89" />
+		</Cursor>
+	</File>
+	<File name="include\settings\Parametre.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1690" topLine="23" />
+		</Cursor>
+	</File>
+	<File name="src\music\MusicManager.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5808" topLine="205" />
+		</Cursor>
+		<Folding>
+			<Collapse line="232" />
+		</Folding>
+	</File>
+	<File name="include\tools\dir_traverser\ISearchTraversable.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="86" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\gui\explorer\GestionPeriphMoitiePage.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2269" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\tools\dnd\MusicPlayListDnDBufferData.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="660" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\music\Music.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1385" topLine="36" />
+		</Cursor>
+	</File>
+	<File name="include\music\MusicManager.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="246" topLine="28" />
+		</Cursor>
+	</File>
+	<File name="src\predicates\findPosition.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="249" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\tools\dir_traverser\Search.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="110" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\gui\widgets\Fenetre.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3555" topLine="71" />
+		</Cursor>
+	</File>
+	<File name="include\db\BDD.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="191" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\gui\musiclist\PlayList.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="25182" topLine="524" />
+		</Cursor>
+		<Folding>
+			<Collapse line="141" />
+			<Collapse line="145" />
+		</Folding>
+	</File>
+	<File name="src\gui\explorer\GestionPeriphMoitiePage.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="35647" topLine="221" />
+		</Cursor>
+	</File>
+	<File name="include\gui\dialogs\DialogEnregistreM3U.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="108" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\music\Duree.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="379" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\gui\graph\MusiqueGraph.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2967" topLine="75" />
+		</Cursor>
+		<Folding>
+			<Collapse line="28" />
+			<Collapse line="66" />
+			<Collapse line="70" />
+			<Collapse line="82" />
+			<Collapse line="89" />
+			<Collapse line="95" />
+			<Collapse line="234" />
+			<Collapse line="240" />
+			<Collapse line="244" />
+			<Collapse line="255" />
+			<Collapse line="263" />
+			<Collapse line="314" />
+			<Collapse line="356" />
+			<Collapse line="361" />
+			<Collapse line="372" />
+			<Collapse line="384" />
+			<Collapse line="395" />
+			<Collapse line="399" />
+			<Collapse line="431" />
+			<Collapse line="435" />
+			<Collapse line="442" />
+			<Collapse line="446" />
+		</Folding>
+	</File>
+	<File name="include\tools\dnd\DnDCible.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="538" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\application\Application.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1646" topLine="41" />
+		</Cursor>
+		<Folding>
+			<Collapse line="65" />
+		</Folding>
+	</File>
+	<File name="src\gui\widgets\Fenetre.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="31902" topLine="831" />
+		</Cursor>
+		<Folding>
+			<Collapse line="69" />
+			<Collapse line="96" />
+			<Collapse line="146" />
+		</Folding>
+	</File>
+	<File name="src\tools\Timer.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="799" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="src\db\BDD.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1994" topLine="35" />
+		</Cursor>
+	</File>
+	<File name="src\tools\dir_traverser\Search.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="635" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="include\gui\graph\MusiqueGraph.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1245" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="include\gui\explorer\GestionPeriphCouperCopier.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="261" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="include\gui\musiclist\PlayListTableau.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2079" topLine="47" />
+		</Cursor>
+	</File>
+	<File name="src\tools\dnd\DnDCible.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3571" topLine="72" />
+		</Cursor>
+	</File>
+	<File name="include\Classes.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="130" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\tools\dir_traverser\TraverserCopieDossier.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="include\gui\settings\PreferenceDefaut.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="325" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\tools\dnd\DnDListeFichier.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1644" topLine="34" />
+		</Cursor>
+	</File>
+	<File name="include\gui\settings\PreferenceSon.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="277" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\gui\musiclist\PlayList.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="977" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="src\gui\musiclist\PlayListTableau.cpp" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="32233" topLine="22" />
+		</Cursor>
+		<Folding>
+			<Collapse line="77" />
+			<Collapse line="171" />
+			<Collapse line="253" />
+			<Collapse line="275" />
+			<Collapse line="279" />
+			<Collapse line="297" />
+			<Collapse line="301" />
+			<Collapse line="340" />
+		</Folding>
+	</File>
+	<File name="include\music\IMusicPlayer.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="574" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\tools\dnd\MusicPlayListDnDBufferData.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="513" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\db\BDDThread.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="580" topLine="8" />
+		</Cursor>
+	</File>
+	<File name="include\music\MusicList.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1584" topLine="35" />
+		</Cursor>
+	</File>
+	<File name="include\music\MusicPlayer.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="390" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\settings\Parametre.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7960" topLine="229" />
+		</Cursor>
+	</File>
+	<File name="src\music\ChansonNomPos.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="820" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\gui\explorer\GestionPeriphCouperCopier.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5550" topLine="161" />
+		</Cursor>
+	</File>
+	<File name="include\Define.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="214" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\music\Music.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5204" topLine="239" />
+		</Cursor>
+	</File>
+	<File name="include\predicates\findPosition.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="324" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\gui\explorer\GestionPeriph.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="493" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\music\ChansonNomPos.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="215" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="include\tools\Timer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="141" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\music\MusicList.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4659" topLine="148" />
+		</Cursor>
+		<Folding>
+			<Collapse line="136" />
+		</Folding>
+	</File>
+	<File name="include\music\IMusic.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="461" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\music\MusicPlayer.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2625" topLine="93" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>

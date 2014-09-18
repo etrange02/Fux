@@ -1,0 +1,27 @@
+#include "findPosition.h"
+#include "../../include/predicates/findPosition.h"
+
+findPosition::findPosition(Music *music)
+{
+    m_music = music;
+    m_position = 0;
+}
+
+findPosition::~findPosition()
+{
+    //dtor
+}
+
+size_t findPosition::getPosition()
+{
+    return m_position;
+}
+
+bool findPosition::operator(const Music& music)
+{
+    if (m_music == music)
+        return true;
+    ++m_position;
+    return false;
+}
+
