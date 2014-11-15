@@ -10,13 +10,31 @@ var hierarchy =
     [ "Couleur", "class_couleur.html", null ],
     [ "CouperCopierColler", "class_couper_copier_coller.html", null ],
     [ "DnDListeFichier", "class_dn_d_liste_fichier.html", null ],
+    [ "DriveManagerState", "class_drive_manager_state.html", [
+      [ "DefaultDriveManagerState", "class_default_drive_manager_state.html", null ],
+      [ "DirDriveManagerState", "class_dir_drive_manager_state.html", null ],
+      [ "FileDriveManagerState", "class_file_drive_manager_state.html", null ],
+      [ "PlaylistDriveManagerState", "class_playlist_drive_manager_state.html", null ]
+    ] ],
     [ "Duree", "class_duree.html", null ],
     [ "ElementLecteurRacineFichier", "class_element_lecteur_racine_fichier.html", null ],
     [ "ElementThreadFichier", "class_element_thread_fichier.html", null ],
-    [ "FichierListe", "class_fichier_liste.html", null ],
+    [ "ExplorerDriveManagers", "class_explorer_drive_managers.html", null ],
+    [ "ExplorerDriveManagersData", "class_explorer_drive_managers_data.html", null ],
+    [ "ExplorerManager", "class_explorer_manager.html", null ],
+    [ "ExplorerManagerData", "class_explorer_manager_data.html", null ],
     [ "FichierLog", "class_fichier_log.html", null ],
+    [ "findPosition", "classfind_position.html", null ],
     [ "ImageText", "class_image_text.html", null ],
-    [ "Musique", "class_musique.html", null ],
+    [ "IMusic", "class_i_music.html", [
+      [ "Music", "class_music.html", null ]
+    ] ],
+    [ "IMusicPlayer", "class_i_music_player.html", null ],
+    [ "ISearchTraversable", "class_i_search_traversable.html", [
+      [ "MusicList", "class_music_list.html", null ]
+    ] ],
+    [ "MusicManager", "class_music_manager.html", null ],
+    [ "MusicPlayer", "class_music_player.html", null ],
     [ "Parametre", "class_parametre.html", null ],
     [ "wxApp", null, [
       [ "wxFuXApp", "classwx_fu_x_app.html", null ]
@@ -31,14 +49,14 @@ var hierarchy =
       [ "TCPConnexionEchangeInstanceLocalHost", "class_t_c_p_connexion_echange_instance_local_host.html", null ]
     ] ],
     [ "wxDataObjectSimple", null, [
-      [ "DnDBufferData", "class_dn_d_buffer_data.html", null ]
+      [ "MusicPlayListDnDBufferData", "class_music_play_list_dn_d_buffer_data.html", null ]
     ] ],
     [ "wxDialog", null, [
       [ "DialogEnregistreM3U", "class_dialog_enregistre_m3_u.html", null ],
       [ "DialogTagMP3", "class_dialog_tag_m_p3.html", null ]
     ] ],
     [ "wxDirTraverser", null, [
-      [ "Recherche", "class_recherche.html", null ],
+      [ "Search", "class_search.html", null ],
       [ "TraverserCopieDossier", "class_traverser_copie_dossier.html", null ],
       [ "TraverserCopieFichier", "class_traverser_copie_fichier.html", null ],
       [ "TraverserDeplaceFichier", "class_traverser_deplace_fichier.html", null ],
@@ -61,11 +79,14 @@ var hierarchy =
       [ "MusiqueGraph", "class_musique_graph.html", null ]
     ] ],
     [ "wxListCtrl", null, [
+      [ "ExplorerListCtrl", "class_explorer_list_ctrl.html", null ],
       [ "ListeGestionPeriph", "class_liste_gestion_periph.html", null ],
       [ "PlayListTableau", "class_play_list_tableau.html", null ]
     ] ],
     [ "wxPanel", null, [
       [ "DialogTagMP3Info", "class_dialog_tag_m_p3_info.html", null ],
+      [ "DriveManagersPanel", "class_drive_managers_panel.html", null ],
+      [ "ExplorerPanel", "class_explorer_panel.html", null ],
       [ "GestPeriph", "class_gest_periph.html", null ],
       [ "PageGestionPeriph", "class_page_gestion_periph.html", null ],
       [ "PlayList", "class_play_list.html", null ]

@@ -210,7 +210,7 @@ void MusiqueGraph::OnPaint(wxPaintEvent&)
 
         if (ScreenToClient(wxGetMousePosition()).y >= m_sizer_h-19 && ScreenToClient(wxGetMousePosition()).x >= 0 && ScreenToClient(wxGetMousePosition()).x <= m_sizer_w+30)
         {
-            int point = ScreenToClient(wxGetMousePosition()).x, tot = (point*MusicManager::get()->getMusicPlayer()->getCurrentTime()->GetMSecondeTot())/(1024*m_sizer_w);
+            int point = ScreenToClient(wxGetMousePosition()).x, tot = (point*MusicManager::get()->getMusicPlayer()->getTotalTime()->GetMSecondeTot())/(1000*m_sizer_w);
             wxString duree = wxString::Format(_T("%d:%2d/%d:%2d"), MusicManager::get()->getMusicPlayer()->getCurrentTime()->GetMinute(),
                                                                     MusicManager::get()->getMusicPlayer()->getCurrentTime()->GetSeconde(),
                                                                     MusicManager::get()->getMusicPlayer()->getTotalTime()->GetMinute(),
@@ -365,7 +365,7 @@ void MusiqueGraph::PlacerChanson(wxMouseEvent &event)
 
     if (position.y > m_sizer_h -20)
     {
-        int msposition = (position.x)*(MusicManager::get()->getMusicPlayer()->getCurrentTime()->GetMSecondeTot())/(m_sizer_w);
+        int msposition = (position.x)*(MusicManager::get()->getMusicPlayer()->getTotalTime()->GetMSecondeTot())/(m_sizer_w);
         MusicManager::get()->getMusicPlayer()->setPosition(msposition);
     }
 }
@@ -416,9 +416,9 @@ void MusiqueGraph::OnToucheDown(wxKeyEvent &event)
     else if (event.GetKeyCode() == '-' || event.GetKeyCode() == WXK_SUBTRACT || event.GetKeyCode() == WXK_NUMPAD_SUBTRACT || event.GetKeyCode() == '6')
         SliderSon::Get()->SonDown();
     else if (event.GetKeyCode() == WXK_RIGHT)
-        MusicManager::get()->playNextMusic();
+        MusicManager::get()->playNextOrRandomMusic();
     else if (event.GetKeyCode() == WXK_LEFT)
-        MusicManager::get()->playPreviousMusic();
+        MusicManager::get()->playPreviousOrRandomMusic();
     else if (event.GetKeyCode() == WXK_DELETE)
     {
         wxCommandEvent evt(wxEVT_MUSIQUE_SUPPRESSION, GetId());

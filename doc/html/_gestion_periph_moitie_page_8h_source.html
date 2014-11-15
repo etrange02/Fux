@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Fux:  Fichier source de GestionPeriphMoitiePage.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fux
+   &#160;<span id="projectnumber">3.7.2901</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_48c1f94cd2ae07e13fa9a9f16a1d541c.html">gui</a></li><li class="navelem"><a class="el" href="dir_859fed6e836070b930a0d3fd536fd827.html">explorer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">GestionPeriphMoitiePage.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_gestion_periph_moitie_page_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GESTIONPERIPHMOITIEPAGE_H_INCLUDED</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GESTIONPERIPHMOITIEPAGE_H_INCLUDED</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../../Define.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;wx/wx.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;wx/dir.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;wx/filename.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_gestion_periph_tableau_8h.html">GestionPeriphTableau.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../../tools/ThreadGestion.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;../dialogs/DialogEnregistreM3U.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_gestion_periph_couper_copier_8h.html">GestionPeriphCouperCopier.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../../tools/OS_Win.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="class_page_gestion_periph.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_page_gestion_periph.html" title="Interface graphique permettant un déplacement dans l&#39;arborescence des fichiers.">PageGestionPeriph</a> : <span class="keyword">public</span> wxPanel</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span> :</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="class_page_gestion_periph.html#a2e2226f75815fe7542b27d87e83a6fcf">PageGestionPeriph</a>(wxWindow*, wxWindowID);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_page_gestion_periph.html#ab50b47ddbd1cd0c77629f223a109cd5e">~PageGestionPeriph</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#aefd13a1b43b4b7b9c6235e665824d6f4">SetPageParallele</a>(<a class="code" href="class_page_gestion_periph.html" title="Interface graphique permettant un déplacement dans l&#39;arborescence des fichiers.">PageGestionPeriph</a>*);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#aae9b6fbf4e3a52286dda69d7da6f3a2b">SetFichierDossier</a>(wxString, <span class="keywordtype">int</span>, <span class="keywordtype">bool</span> activeLigne = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_page_gestion_periph.html#ac8e81b5e7a36392aeefb15192a551f60">GetEtat</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        wxString <a class="code" href="class_page_gestion_periph.html#a52a2665960223d06ee075870ae980f4c">GetChemin</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#ad31b4ab3da2c12fb8589bafc579e0f3a">OuvrirDossierSuivant</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a052847abb9b7714a7d3d747c7ecf1410">OuvrirDossierPrecedent</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a9204c60f46d71199ba14251a3afc7d8a">OuvrirDossierPrec</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a14b288458d6f03c27dec265d9b3cbee1">RechargerE</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a1f39ece52cab0143505a3929d7ec39d9">Recharger</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a59b3ddb0729626bd16ef8ae2aab58857">Suppression</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a70b738da23797b6f4f6f2092bf2962ae">Copie</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a095945af47d4a92537015c235db3c997">Deplace</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        wxArrayString* <a class="code" href="class_page_gestion_periph.html#a8cb0a09a2672f3cfe4b2b5d7ec30b1b3">GetFichierLigneSelection</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        wxArrayString* <a class="code" href="class_page_gestion_periph.html#a7594f9c4eeead24be9edbba8441dae7a">GetFichierLigneSelectionInt</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        wxArrayString* <a class="code" href="class_page_gestion_periph.html#ab93f8fcd941a368d25f36b0222b60bd8">GetDossierLigneSelection</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a55f0646c72024f060c8ef94196323aea">OnKey</a>(wxKeyEvent&amp;);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a264190aaa0df5a3073b22819acbc36ca">OnMenu</a>(wxCommandEvent&amp;);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#aa4dba74428600043796c14a924ec1e4a">MenuCreerDossier</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a117294b04fe8c379c591b1c0cd1baf8c">MenuCreerM3U</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#acbcbd472ce3256a6b3ed9d66135beb7a">MenuSuprimer</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a8fece374b4607de829a9f4f018c0f602">MenuRenommer</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a8b4edf9f1c5868c2b55d46569bbb514c">MenuCouper</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a3dc995a0f830a3ac40e0cd9419657617">MenuCopier</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a8e77f888f5a73d371d17d1dcc440db93">MenuColler</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#ac565520c7ba82c616e21823d8bbf0c4a">MenuLire</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#aba3aa0f5777673410c695da8d231c9df">MenuRaccourci</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#aa6a1dedffd5c988e13ff0553510e4014">Glisser</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a55c703fc9b16632bed521e9f87d2e99b">GlisserTraitement</a>(wxArrayString*, <span class="keywordtype">long</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_page_gestion_periph.html#a1f78ceec92b78eb02ecc719595bab107">isDragging</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#aeb9191fc2960d32f4cd9b4ce2bfe1d0b">PlacerLigneInt</a>(wxArrayString*, <span class="keywordtype">long</span>, <span class="keywordtype">bool</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a3cc212b3587c57a68fad9fd3bd63a53e">PlacerLigneString</a>(wxArrayString*, <span class="keywordtype">long</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">private</span> :</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a0273c40e41d3f156008a16a08c8ec3ed">AjoutDansFichierLigne</a>(wxArrayString*);<span class="comment">//Appel uniquement ext�rieur</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a7127662cbebae12c094042012580c472">DeplaceDansFichierLigne</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#add56c7acec22f6035d27162f6150c841">CopieDansFichier</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#ae618ede890e7a7603ce6344dc2c23421">CopieDossierDansFichier</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a575220e3950696f578034a9b8179234f">CopieDansDossier</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#af51ac0a0e7bcebe5b59a6bdeaee0a057">DeplaceDansDossier</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_page_gestion_periph.html#a8cb7fd90b941a145fc8885d3f117fb26">SuppressionDansFichierLigneM3u</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_page_gestion_periph.html#af9af85137a615e292a9edc20989f3adf">SuppressionDansFichierLignePlaylist</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a3048806234e0e3ee874407b7cf53cc57">SuppressionDansDossier</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_page_gestion_periph.html#a994577257fac050b9f6828ed5dac89a7">ArrayIntToString</a>(wxArrayString*, wxString);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="class_page_gestion_periph.html#abc64105ca776111897d4812f22795644">   72</a></span>&#160;        <a class="code" href="class_page_gestion_periph.html" title="Interface graphique permettant un déplacement dans l&#39;arborescence des fichiers.">PageGestionPeriph</a> *<a class="code" href="class_page_gestion_periph.html#abc64105ca776111897d4812f22795644">m_pageParallele</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="class_page_gestion_periph.html#af5fec285bc82c5826b4d10ed095d5317">   73</a></span>&#160;        <a class="code" href="class_liste_gestion_periph.html" title="Liste affichant le contenu d&#39;un fichier ou d&#39;un dossier.">ListeGestionPeriph</a> *<a class="code" href="class_page_gestion_periph.html#af5fec285bc82c5826b4d10ed095d5317">m_liste</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="class_page_gestion_periph.html#a47cf32235fc051a0dc0fd5416770be9d">   74</a></span>&#160;        wxString <a class="code" href="class_page_gestion_periph.html#ab7b55f05cf8c62ca473a51e8de4a0c60">m_chemin</a>, <a class="code" href="class_page_gestion_periph.html#a216e674ef359770ca359aa1855436893">m_navigDef</a>, <a class="code" href="class_page_gestion_periph.html#a47cf32235fc051a0dc0fd5416770be9d">m_texteDef</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="class_page_gestion_periph.html#a6d0f2a16707258ca3ed6b2d3b96f6ba9">   75</a></span>&#160;        wxStaticBoxSizer *<a class="code" href="class_page_gestion_periph.html#a6d0f2a16707258ca3ed6b2d3b96f6ba9">m_sizer1V</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="class_page_gestion_periph.html#a1ab12a5f030ef3e89ba774a510b22188">   76</a></span>&#160;        wxSizer *<a class="code" href="class_page_gestion_periph.html#afbba25f9d5297b68a3524467a3ac02ee">m_sizer1H</a>, *<a class="code" href="class_page_gestion_periph.html#a1ab12a5f030ef3e89ba774a510b22188">m_sizer2H</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="class_page_gestion_periph.html#a39a499d7785ae538ed34087c21af128c">   77</a></span>&#160;        wxTextCtrl *<a class="code" href="class_page_gestion_periph.html#a39a499d7785ae538ed34087c21af128c">m_text</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="class_page_gestion_periph.html#aa301f1de091da7c22b609ddc1e7188a7">   78</a></span>&#160;        wxButton *<a class="code" href="class_page_gestion_periph.html#aa301f1de091da7c22b609ddc1e7188a7">m_boutonRecharge</a>, *<a class="code" href="class_page_gestion_periph.html#af5c125093a4aa56cb36ace2b3128db77">m_boutonPrecedent</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="class_page_gestion_periph.html#a3acd46407a4fb2bf399ede458e1d71a1">   79</a></span>&#160;        wxCheckBox *<a class="code" href="class_page_gestion_periph.html#a20fac905cf265ab44a6d7ed1a42eedc4">m_checkBoxCache</a>, *<a class="code" href="class_page_gestion_periph.html#a3acd46407a4fb2bf399ede458e1d71a1">m_checkBoxFiltre</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="class_page_gestion_periph.html#a759a7440e731c28cf4ab5ca700ded320">   80</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_page_gestion_periph.html#a759a7440e731c28cf4ab5ca700ded320">m_dragging</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    DECLARE_EVENT_TABLE()</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif // GESTIONPERIPHMOITIEPAGE_H_INCLUDED</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Novembre 5 2014 23:24:46 pour Fux par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

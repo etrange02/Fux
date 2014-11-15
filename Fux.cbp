@@ -47,6 +47,27 @@ IMPORTANT, A FAIRE !!!
 					<Add directory="include/music" />
 					<Add directory="include/preddicates" />
 				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Debug">
+				<Option output="out/program_files/Fu(X)" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="out/program_files" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-Wshadow" />
+					<Add option="-Wcast-align" />
+					<Add option="-Wunreachable-code" />
+					<Add option="-Wswitch-enum" />
+					<Add option="-Wswitch-default" />
+					<Add option="-g" />
+					<Add directory="include/music" />
+					<Add directory="include/preddicates" />
+				</Compiler>
 			</Target>
 			<Environment>
 				<Variable name="AU" value="u" />
@@ -65,7 +86,6 @@ IMPORTANT, A FAIRE !!!
 			</Environment>
 		</Build>
 		<Compiler>
-			<Add option="-O2" />
 			<Add option="-Wextra" />
 			<Add option="-Wall" />
 			<Add option="-pipe" />
@@ -86,9 +106,8 @@ IMPORTANT, A FAIRE !!!
 			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/include" />
 		</ResourceCompiler>
 		<Linker>
-			<Add option="-s" />
 			<Add library="libwxcode_msw$(WX_VER1)$(WX_VER2)$(AURD)_wxsqlite3.a" />
-			<Add library="${SQLITE3}\lib\sqlite3.a" />
+			<Add library="${SQLITE3}/lib/sqlite3.a" />
 			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_gl.a" />
 			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_core.a" />
 			<Add library="libwxbase$(WX_VER1)$(WX_VER2)$(AURD)_xml.a" />
@@ -116,8 +135,8 @@ IMPORTANT, A FAIRE !!!
 			<Add library="libwsock32.a" />
 			<Add library="libopengl32.a" />
 			<Add library="libglu32.a" />
-			<Add library="${FMODEX}\lib\libfmodex.a" />
-			<Add library="${TAGLIB}\libtag.dll.a" />
+			<Add library="${FMODEX}/lib/libfmodex.a" />
+			<Add library="${TAGLIB}/libtag.dll.a" />
 			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/lib/gcc_lib" />
 			<Add directory="${SQLITE3}/lib" />
 			<Add directory="${WXSQLITE3}/lib/gcc_lib" />
@@ -133,10 +152,22 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/db/BDDRequete.h" />
 		<Unit filename="include/db/BDDThread.h" />
 		<Unit filename="include/db/BDDThreadEvent.h" />
+		<Unit filename="include/explorer/ExplorerDriveManagers.h" />
+		<Unit filename="include/explorer/ExplorerDriveManagersData.h" />
+		<Unit filename="include/explorer/ExplorerManager.h" />
+		<Unit filename="include/explorer/ExplorerManagerData.h" />
+		<Unit filename="include/explorer/state/DefaultDriveManagerState.h" />
+		<Unit filename="include/explorer/state/DirDriveManagerState.h" />
+		<Unit filename="include/explorer/state/DriveManagerState.h" />
+		<Unit filename="include/explorer/state/FileDriveManagerState.h" />
+		<Unit filename="include/explorer/state/PlaylistDriveManagerState.h" />
 		<Unit filename="include/fuxHTMLindex.h" />
 		<Unit filename="include/gui/dialogs/DialogEnregistreM3U.h" />
 		<Unit filename="include/gui/dialogs/DialogTagMP3.h" />
 		<Unit filename="include/gui/dialogs/DialogTagMP3Info.h" />
+		<Unit filename="include/gui/explorer/DriveManagersPanel.h" />
+		<Unit filename="include/gui/explorer/ExplorerListCtrl.h" />
+		<Unit filename="include/gui/explorer/ExplorerPanel.h" />
 		<Unit filename="include/gui/explorer/GestionPeriph.h" />
 		<Unit filename="include/gui/explorer/GestionPeriphCouperCopier.h" />
 		<Unit filename="include/gui/explorer/GestionPeriphElementLecteurRacineFichier.h" />
@@ -193,9 +224,21 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/db/BDDRequete.cpp" />
 		<Unit filename="src/db/BDDThread.cpp" />
 		<Unit filename="src/db/BDDThreadEvent.cpp" />
+		<Unit filename="src/explorer/ExplorerDriveManagers.cpp" />
+		<Unit filename="src/explorer/ExplorerDriveManagersData.cpp" />
+		<Unit filename="src/explorer/ExplorerManager.cpp" />
+		<Unit filename="src/explorer/ExplorerManagerData.cpp" />
+		<Unit filename="src/explorer/state/DefaultDriveManagerState.cpp" />
+		<Unit filename="src/explorer/state/DirDriveManagerState.cpp" />
+		<Unit filename="src/explorer/state/DriveManagerState.cpp" />
+		<Unit filename="src/explorer/state/FileDriveManagerState.cpp" />
+		<Unit filename="src/explorer/state/PlaylistDriveManagerState.cpp" />
 		<Unit filename="src/gui/dialogs/DialogEnregistreM3U.cpp" />
 		<Unit filename="src/gui/dialogs/DialogTagMP3.cpp" />
 		<Unit filename="src/gui/dialogs/DialogTagMP3Info.cpp" />
+		<Unit filename="src/gui/explorer/DriveManagersPanel.cpp" />
+		<Unit filename="src/gui/explorer/ExplorerListCtrl.cpp" />
+		<Unit filename="src/gui/explorer/ExplorerPanel.cpp" />
 		<Unit filename="src/gui/explorer/GestionPeriph.cpp" />
 		<Unit filename="src/gui/explorer/GestionPeriphCouperCopier.cpp" />
 		<Unit filename="src/gui/explorer/GestionPeriphElementLecteurRacineFichier.cpp" />
@@ -269,7 +312,7 @@ IMPORTANT, A FAIRE !!!
 			<debugger />
 			<DoxyBlocks>
 				<comment_style block="0" line="0" />
-				<doxyfile_project project_number="2.1.1272" output_directory="doc" output_language="French" use_auto_version="1" />
+				<doxyfile_project project_number="3.7.2901" output_directory="doc" output_language="French" use_auto_version="1" />
 				<doxyfile_build extract_all="1" extract_private="1" extract_static="1" />
 				<doxyfile_warnings />
 				<doxyfile_output html_help="1" />

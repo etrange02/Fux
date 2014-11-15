@@ -20,6 +20,11 @@ MusicPlayer::~MusicPlayer()
     delete m_totalTime;
 }
 
+/** @brief Initializes members
+ * Initializes members
+ * @return void
+ *
+ */
 void MusicPlayer::initialize()
 {
     FMOD_System_Create(&m_system);

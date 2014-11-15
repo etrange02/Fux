@@ -10,38 +10,68 @@
 
 const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE = wxNewEventType();
 
-MusicList::MusicList()
+
+/** @brief Default constructor
+ */
+MusicList::MusicList() : m_parent(NULL)
 {
     initialize();
 }
 
+/** @brief Default destructor
+ */
 MusicList::~MusicList()
 {
     delete m_musicList;
 }
 
+/** @brief Initializes members data
+ * Initializes members data
+ * @return void
+ *
+ */
 void MusicList::initialize()
 {
     m_musicList = new std::vector<Music*>();
-	m_parent = NULL;
 }
 
+/** @brief Gets the music list
+ * Get the music list, in which the playlist is stored
+ * @return the music list
+ *
+ */
 std::vector<Music*>* MusicList::getMusicList() const
 {
     return m_musicList;
 }
 
+/** @brief Indicates the presence of elements
+ * Indicates the presence of elements
+ * @return true if the list is empty
+ *
+ */
 bool MusicList::empty() const
 {
-
     return getMusicList()->empty();
 }
 
+/** @brief Gets the list size
+ * Gets the list
+ * @return the list size
+ *
+ */
 size_t MusicList::size() const
 {
     return getMusicList()->size();
 }
 
+/** @brief Parse the directory given in parameter
+ * Parse the directory given in parameter
+ * @param dirname the directory name
+ * @param recursive recurs all subdirectories
+ * @return void
+ *
+ */
 void MusicList::parseDirectory(wxString dirname, bool recursive)
 {
     if (recursive)
@@ -50,6 +80,12 @@ void MusicList::parseDirectory(wxString dirname, bool recursive)
         parseDirectoryWithoutRecurs(dirname);
 }
 
+/** @brief Parse the directory given in parameter and subdirectories
+ * Parse the directory given in parameter and subdirectories
+ * @param dirname the directory name
+ * @return void
+ *
+ */
 void MusicList::parseDirectoryRecursively(wxString dirname)
 {
     wxDir dir(dirname);
@@ -57,6 +93,12 @@ void MusicList::parseDirectoryRecursively(wxString dirname)
     dir.Traverse(research, _T("*.*"), wxDIR_DIRS|wxDIR_FILES|wxDIR_FILES);//Parametre::Get()->getFiltre()
 }
 
+/** @brief Parse only the directory given in parameter
+ * Parse only the directory given in parameter and not subdirectories
+ * @param dirname the directory name
+ * @return void
+ *
+ */
 void MusicList::parseDirectoryWithoutRecurs(wxString dirname)
 {
     wxDir dir(dirname);
@@ -71,11 +113,22 @@ void MusicList::parseDirectoryWithoutRecurs(wxString dirname)
     }
 }
 
+/** @brief Clears the list
+ * Clears the list
+ * @return void
+ *
+ */
 void MusicList::clear()
 {
     m_musicList->clear();
 }
 
+/** @brief Adds in the list some lines
+ * Adds some lines in the list according to their kind (music file, playlist file, directory)
+ * @param pathArray paths
+ * @return void
+ *
+ */
 void MusicList::addLines(wxArrayString *pathArray)
 {
     for ( wxArrayString::iterator iter = pathArray->begin(); iter != pathArray->end(); ++iter)
@@ -84,6 +137,12 @@ void MusicList::addLines(wxArrayString *pathArray)
     }
 }
 
+/** @brief Adds the path in the list after verifications
+ * Adds the path in the list after verifications of its kind
+ * @param path a file or directory path
+ * @return void
+ *
+ */
 void MusicList::addUnknownKindLine(wxString path)
 {
     if (wxFileExists(path))
@@ -101,16 +160,34 @@ void MusicList::addUnknownKindLine(wxString path)
         parseDirectory(path, Parametre::Get()->getSousDossier());
 }
 
+/** @brief Adds a music file in the list
+ * Adds a music file in the list
+ * @param path a music path
+ * @return void
+ *
+ */
 void MusicList::addFileLine(wxString path)
 {
     m_musicList->push_back(new Music(path));
 }
 
+/** @brief Parse the directory
+ * Parse the directory
+ * @param path the directory path
+ * @return void
+ *
+ */
 void MusicList::addDirLine(wxString path)
 {
     parseDirectory(path, Parametre::Get()->getSousDossier());
 }
 
+/** @brief Adds the content of the file into the list
+ * Adds the content of the file into the list
+ * @param filename a filename
+ * @return void
+ *
+ */
 void MusicList::importFileContent(wxString filename)
 {
     wxTextFile m3uFile(filename);
@@ -125,6 +202,12 @@ void MusicList::importFileContent(wxString filename)
     m3uFile.Close();
 }
 
+/** @brief Gets the filename at the wanted position
+ * Gets the filename at the wanted position
+ * @param position a position
+ * @return a filename if found, an empty string otherwise
+ *
+ */
 wxString MusicList::getNameAtPosition(long position)
 {
     if (position >= (long)m_musicList->size() || position < 0)
@@ -133,7 +216,14 @@ wxString MusicList::getNameAtPosition(long position)
     return getMusicList()->at(position)->GetFileName();
 }
 
-long MusicList::getPositionInList(wxString filename, long position)
+/** @brief Gets the nearest position of the pair <filename, position>
+ * Gets the nearest position of the filename at the wanted position.
+ * @param filename a filename
+ * @param position a position if known, else a negative number
+ * @return a positive number indicating the position if found, -1 otherwise
+ *
+ */
+long MusicList::getPositionInList(const wxString& filename, long position)
 {
     if (filename.IsEmpty())
         return -1;
@@ -144,7 +234,7 @@ long MusicList::getPositionInList(wxString filename, long position)
     if (position == (int) m_musicList->size())
         position--;
 
-    unsigned int i = (position == -1) ? 0 : position;
+    unsigned int i = (position < 0) ? 0 : position;
     bool cont = true;
 
     while (i<m_musicList->size() && cont)
@@ -174,7 +264,13 @@ long MusicList::getPositionInList(wxString filename, long position)
     return cont ? -1 : i;
 }
 
-long MusicList::getPositionInList(Music* music)
+/** @brief Gets the position of music
+ * Gets the position of the Music music in the list
+ * @param music an instance
+ * @return a positive number if found, -1 otherwise
+ *
+ */
+long MusicList::getPositionInList(const Music* music)
 {
     if (NULL == music)
         return -1;
@@ -189,14 +285,26 @@ long MusicList::getPositionInList(Music* music)
     return -1;
 }
 
+/** @brief Removes the title from the list
+ * Removes the title from the list. The position is prioritary
+ * @param title a pair <string, position>
+ * @return void
+ *
+ */
 void MusicList::removeLine(ChansonNomPos& title)
 {
     long position = title.GetPos();
-    if (position == -1)
+    if (position <= -1)
         position = getPositionInList(title.GetNom());
     removeLine(position);
 }
 
+/** @brief Removes the title at the given position
+ * Removes the title at the given position
+ * @param position the position to remove
+ * @return void
+ *
+ */
 void MusicList::removeLine(size_t position)
 {
     if (!getMusicList()->empty() && getMusicList()->size() > position)
@@ -206,6 +314,12 @@ void MusicList::removeLine(size_t position)
     }
 }
 
+/** @brief Removes from the current list each filename in filenameArray
+ * Removes from the current list each filename in filenameArray
+ * @param filenameArray A list of filenames
+ * @return void
+ *
+ */
 void MusicList::removeLines(wxArrayString *filenameArray)
 {
     size_t i = 0, maxArray = filenameArray->GetCount(), j = 0;
@@ -237,6 +351,13 @@ void MusicList::removeLines(wxArrayString *filenameArray)
     }
 }
 
+/** @brief Exchange two lines
+ * Exchange two lines
+ * @param filename1 First line
+ * @param filename2 Second line
+ * @return void
+ *
+ */
 void MusicList::exchangeLine(wxString filename1, wxString filename2)
 {
     int lineToChange = getPositionInList(filename1);
@@ -245,8 +366,13 @@ void MusicList::exchangeLine(wxString filename1, wxString filename2)
     delete music;
 }
 
-
-
+/** @brief Insert filenames at a specific position
+ * Insert filenames at a specific position
+ * @param filenameArray A list of filenames
+ * @param position position to put filenames
+ * @return void
+ *
+ */
 void MusicList::insertLines(wxArrayString* filenameArray, long position)
 {
     long insertionLine = position;
@@ -270,16 +396,32 @@ void MusicList::insertLines(wxArrayString* filenameArray, long position)
     delete tmpArray;
 }
 
+/** @brief Modifies the parent window
+ * Modifies the parent window
+ * @param parent The parent
+ * @return void
+ *
+ */
 void MusicList::setParent(wxWindow* parent)
 {
     m_parent = parent;
 }
 
+/** @brief Gets the parent window
+ * Gets the parent window
+ * @return the parent window
+ *
+ */
 wxWindow* MusicList::getParent() const
 {
     return m_parent;
 }
 
+/** @brief Send an event - the music list has been modified
+ * Send an event to the parent window - the music list has been modified
+ * @return void
+ *
+ */
 void MusicList::sendMusicListUpdatedEvent()
 {
     if (NULL == getParent())

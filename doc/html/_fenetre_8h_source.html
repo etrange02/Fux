@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Fux:  Fichier source de Fenetre.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fux
+   &#160;<span id="projectnumber">3.7.2901</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_48c1f94cd2ae07e13fa9a9f16a1d541c.html">gui</a></li><li class="navelem"><a class="el" href="dir_9c862bfce0ba282717230250ac5bcc05.html">widgets</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Fenetre.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_fenetre_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FENETRE_H_INCLUDED</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FENETRE_H_INCLUDED</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;wx/wx.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;wx/app.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;wx/notebook.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;wx/filedlg.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;wx/spinctrl.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;wx/textfile.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;wx/bmpbuttn.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;wx/thread.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../../settings/Parametre.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../tools/Timer.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../settings/PreferenceSon.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../settings/PreferenceCouleur.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;../settings/PreferenceDefaut.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;../musiclist/PlayList.h&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;../explorer/GestionPeriph.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;../../network/TCPServeur.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_slider_son_8h.html">./SliderSon.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;../../tools/FichierLog.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;../../db/BDDThread.h&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;../tools/ArrayFenetreDetachable.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_bouton_fenetre_detachable_8h.html">./BoutonFenetreDetachable.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_fu_x_fenetre.html" title="Interface principale de l&#39;application : barre de menu. Elle contient plusieurs wxSizer.">FuXFenetre</a>: <span class="keyword">public</span> wxFrame</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_fu_x_fenetre.html#a05c9974b2c91c6e4caf5b0f3fcbc05d0">FuXFenetre</a>(<span class="keywordtype">int</span> argc = 0, wxChar** argv = NULL);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_fu_x_fenetre.html#a022dbf6f1a30d0ed01b2eb2d29fcc547">~FuXFenetre</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// button left panel event //</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#ad414fb9434e4488f3c208b6ba34fed7b" title="Event methods ///.">AffichePrincipal</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a9ea89fa0e131a59aaa9e8ba44ffcf73c">AfficheDefaut</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a2a70dbfde937bdc6901e90e14c1ed999">AffichePreference</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#af93e839f288eb361121ec1a9cf675a93">AfficheEncodage</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a862947d92244695d199f3bbfb721849a">AfficheListeDeLecture</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#afb8487d863a7372daaf8c2413a24f4c2">AfficheGestPeriph</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a5f6d4a891e04a09f1199582f1009da8f">AfficherPreferenceCouleur</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a3f815c524daf5a1f7726d90b0a257f29">AfficherPreferenceSon</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#afdda773a4ab38c31586c43ccbdf74568">AfficherPreferenceDefaut</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#af6db73fe9e0380999f97b0f9df1146e7">SeparationPanel</a>(wxCommandEvent&amp;);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a298742a6d6bd9d3bc7809e782401934a">ReunionPanel</a>(wxCommandEvent&amp;);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a4f3d2abdf0b42cab44c2f64a4b283688">EventUpdateMusicVolume</a>(wxScrollEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Bar menu event //</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a10518bf37fe9fbd689d2b9699a9134b8">EventDeleteCurrentPlayingTitle</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a905a8318de21305f02890d4989d9f733">EventMusicStop</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#ae66989f29677396cbd854b25fff637c0">EventMenuBarPlay</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a6f948d166b5e361772daa996266da07e">EventMusicNext</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#af29874ececcbe2ebb7e3584b247cc951">EventMusicPrevious</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a87db290d1d0f928ccee0289daebc0ed5">EventMusicRandomize</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a3747bce5e2a23b0273f2f77b8d4292f2">EventMusicRepete</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#aa53f224389e740e565c5bdd44373f57f">EventOpenDialogToPlayMusic</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#ad3ace96b33e6fec0ce4a98b2ecd5a17c">EventOpenDialogToSelectPlayListFile</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a0478d83dce22cd43c10e36f956aa0b26">EventPlayButtonPressed</a>(wxCommandEvent &amp;event);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a8e88891272ff120f75158dc12ead608b">EventQuit</a>(wxCommandEvent &amp;event);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#ad6ea2d779b498fdb35e3cea2afd832d4">EventSavePlayList</a>(wxCommandEvent&amp;);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a4db91d1ebd969553f5ad022b9345bbec">EventUpdatePlayLists</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#aeae0078eaff31f1ecf3755e206a3260c">MenuAbout</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a5551feee863d6a908b2f16e4a70d78ed">MenuSiteWeb</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a945ddb0c368a1e68b365527a9960a143">MenuAide</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Internal management event //</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#ab6617bec57a7388b499f0a0a0315839a">EvtServeurAjout</a>(wxCommandEvent&amp;);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#adafc00a1de80ce03164a92c85f98c2e8">OnTitreChange</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a2c6d7d5d7dac3b2edfd16a7c68a5f3f9">OnKeyDownRaccourci</a>(wxKeyEvent&amp;);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a0e4d70a0b67be79ea1beeca2afce4236">EventMusicChanged</a>(wxCommandEvent&amp;);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#aecb74a065d16599c59e7fc13ed108701">EventSwitchButtonImage</a>(wxCommandEvent &amp;event);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#add54edc28478448402069fe5be1e74af">EventNoMusic</a>(wxCommandEvent &amp;WXUNUSED(event));</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a2b213e0036a3b7b03c2ce834b983aa3a" title="Internal management methods ///.">SwitchWindow</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#ad6457d2c240231e56c5fea4e5bb6db4a">readPreferences</a>(<span class="keywordtype">bool</span> loadDefaultMusic);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#adce23f7c82d3fd0a8fa43d64c3f28683">readPreferencesOldWay</a>(<span class="keywordtype">bool</span> loadDefaultMusic, wxTextFile&amp; prefFile);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a1a2dd233e0022690587792d55ad35257">readPreferencesNewWay</a>(<span class="keywordtype">bool</span> loadDefaultMusic, <span class="keyword">const</span> wxString&amp; fileName);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a3b8d092885d1de1cbf052d93b8d3665b">drawPlayImageStatus</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a42ab2e302895111e7d86f039d96c19a5" title="Internal management methods ///.">drawPauseImageStatus</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#aced729eefd04c4fa9860d07621145c8d">playButtonPressed</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a766d170a605f453dc51d55f3b4e5f482">openDialogToPlayMusic</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#abf1ba249d5b08cb5ec70675a2fe95625">openDialogToSelectPlayListFile</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#ab10fd77b053da453ce4d7125a09bc054">deleteCurrentPlayingTitle</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">private</span> :</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#ac89e298c5b884ac5bcdd8b5e6de36eaf" title="Initialization methods ///.">panelCreation</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a069dcf25ce91fa2f390bddbd1216c0fc">panelAssociation</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a48bece3a0ab54ff0d65df33e5b359444">MenuBarCreation</a>();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fu_x_fenetre.html#a9ca55f37c16b176c91efebc5fee5270e">LeftSizerCreation</a>();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#a972e54cfbd809100f05a52a67defe55a">   95</a></span>&#160;    wxBoxSizer *<a class="code" href="class_fu_x_fenetre.html#a972e54cfbd809100f05a52a67defe55a">sizerPrincipalH</a>, *<a class="code" href="class_fu_x_fenetre.html#a442ab7b97c04f3e29129bc95e2afb3e1">sizerGaucheV</a>, *<a class="code" href="class_fu_x_fenetre.html#aad136c4c1b7353b83729f8da4c48f756">sizerDroit</a>, *<a class="code" href="class_fu_x_fenetre.html#ad5a7419404a6eb6b022c9cad482857a1">sizerDroitPrincipal</a>, *<a class="code" href="class_fu_x_fenetre.html#a4c9f14dc0a7831ec41776ff857fb6c73">sizerDroitPreference</a>, *<a class="code" href="class_fu_x_fenetre.html#ad50f2c079aa2c271634d9f6155ac6999">sizerDroitExtracteur</a>, *<a class="code" href="class_fu_x_fenetre.html#a22ac0afb1a2e404e26333c0ab064e1bd">sizerDroitPlayist</a>, *<a class="code" href="class_fu_x_fenetre.html#a1a8d2bf58cfaaf4d38241d1aeac8df23">sizerDroitIPod</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#ab9ef086fd458bca27a5c7f2dd593679b">   97</a></span>&#160;    wxMenuBar *<a class="code" href="class_fu_x_fenetre.html#ab9ef086fd458bca27a5c7f2dd593679b">menuBarre</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#a42f804109dfc1dc79923f3ab473db52b">   98</a></span>&#160;    wxMenu *<a class="code" href="class_fu_x_fenetre.html#ad859b96e81dc1f263bcde0bb81860979">menuFichier</a>, *<a class="code" href="class_fu_x_fenetre.html#aaac49ce5682828f8ef4d71eee0170900">menuAffichage</a>, *<a class="code" href="class_fu_x_fenetre.html#a42f804109dfc1dc79923f3ab473db52b">menuPreferences</a>, *<a class="code" href="class_fu_x_fenetre.html#a1384da57be64f7cc6d95355912087df9">menuExtraction</a>, *<a class="code" href="class_fu_x_fenetre.html#a7a8b85dc0c9bacf783e4a7986764ca84">menuAide</a>, *<a class="code" href="class_fu_x_fenetre.html#a82beb1ae71913b7a38f3bb5fa293c1f4">menuControle</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#a5e78af0281644abc9d04e99ca565fd38">   99</a></span>&#160;    wxNotebook *<a class="code" href="class_fu_x_fenetre.html#a5e78af0281644abc9d04e99ca565fd38">m_notebookPreference</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#a961c379eb488ecb480b27445686da7bd">  100</a></span>&#160;    wxBitmapButton *<a class="code" href="class_fu_x_fenetre.html#a961c379eb488ecb480b27445686da7bd">m_boutonImageLP</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#ab2833de4f6cd43b15376622d383f004e">  101</a></span>&#160;    wxBitmap *<a class="code" href="class_fu_x_fenetre.html#ab2833de4f6cd43b15376622d383f004e">m_imageBouton</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#a3ebdce7f8994f6aadc24995ca70caa85">  103</a></span>&#160;    <a class="code" href="class_musique_graph.html" title="Panel affichant le graph, la barre de temps et le titre de la chanson.">MusiqueGraph</a> *<a class="code" href="class_fu_x_fenetre.html#a3ebdce7f8994f6aadc24995ca70caa85">m_musiqueGraph</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#a6e6a5b39e132261e79e6d1af4e2e4f7c">  104</a></span>&#160;    <a class="code" href="class_timer_graph.html" title="Timer gérant la mise à jour du graphe et le passage d&#39;une chanson à l&#39;autre.">TimerGraph</a> <a class="code" href="class_fu_x_fenetre.html#a6e6a5b39e132261e79e6d1af4e2e4f7c">m_TimerGraph</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#a34824d9ae224e9ec5e5837dfa686052f">  105</a></span>&#160;    <a class="code" href="class_preference_son.html" title="Interface représentant différents volumes sonores Les fichiers sont synchronisés en même temps que ch...">PreferenceSon</a> *<a class="code" href="class_fu_x_fenetre.html#a34824d9ae224e9ec5e5837dfa686052f">m_pageSon</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#aefffb1ada02a69d89d6c897cb3121a47">  106</a></span>&#160;    <a class="code" href="class_preference_couleur.html" title="Interface représentant différentes compositions graphiques Les fichiers sont synchronisés en même tem...">PreferenceCouleur</a> *<a class="code" href="class_fu_x_fenetre.html#aefffb1ada02a69d89d6c897cb3121a47">m_pageCouleur</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#afb8013605c0926d079a0056d84d46b9b">  107</a></span>&#160;    <a class="code" href="class_preference_defaut.html" title="Gère l&#39;application des filtres (couleur et sonore), et le comportement par défaut de l&#39;application...">PreferenceDefaut</a> *<a class="code" href="class_fu_x_fenetre.html#afb8013605c0926d079a0056d84d46b9b">m_pageDefaut</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#af5fa6a0426330d1b55bf73ea240c31ab">  108</a></span>&#160;    <a class="code" href="class_play_list.html" title="Page contenant la liste de lecture et une description détaillée des titres.">PlayList</a> *<a class="code" href="class_fu_x_fenetre.html#af5fa6a0426330d1b55bf73ea240c31ab">m_playList</a>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#a043ca0e5955b2a81900da9cf464fb87a">  109</a></span>&#160;    <span class="keywordtype">bool</span> *<a class="code" href="class_fu_x_fenetre.html#a043ca0e5955b2a81900da9cf464fb87a">m_panelsAssocies</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#a8b849e45d843e71b7ea574ebd6daad93">  111</a></span>&#160;    <a class="code" href="class_array_fenetre_detachable.html" title="Array contenant des FenetreDetachable.">ArrayFenetreDetachable</a> *<a class="code" href="class_fu_x_fenetre.html#a8b849e45d843e71b7ea574ebd6daad93">m_fenetresDetachables</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#a488ab2e787687e2d83ec6d449d699605">  113</a></span>&#160;    <a class="code" href="class_t_c_p_serveur.html" title="Représente le serveur. Échange local de chaînes de caractères en provenance du client.">TCPServeur</a> *<a class="code" href="class_fu_x_fenetre.html#a488ab2e787687e2d83ec6d449d699605">m_serveur</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#a6d0caef14949cff82f7d173511dcc531">  115</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_fu_x_fenetre.html#a4557ee831c215bd3d5c5c56a22e44d3c">m_FenetreActuel</a>, <a class="code" href="class_fu_x_fenetre.html#a6d0caef14949cff82f7d173511dcc531">m_nouvelleFenetre</a>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="code" href="class_fu_x_fenetre.html#a5540632c38d14ff0d55f5aaab37df6fb">  116</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_fu_x_fenetre.html#a5540632c38d14ff0d55f5aaab37df6fb">m_MAJliste</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    DECLARE_EVENT_TABLE()</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;};</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#endif // AFFICHAGE_H_INCLUDED</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Novembre 5 2014 23:24:46 pour Fux par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

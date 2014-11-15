@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Fux:  Fichier source de Music.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fux
+   &#160;<span id="projectnumber">3.7.2901</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_bef5442c0c96b47669dde4af199f024d.html">music</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Music.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_music_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MUSIC_H_INCLUDED</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MUSIC_H_INCLUDED</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;wx/wx.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;wx/stdpaths.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;wx/filename.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;wx/dir.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;wx/mstream.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;wx/image.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// TagLib</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;tag.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;fileref.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;taglib.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;mpegfile.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;id3v2tag.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;attachedpictureframe.h&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_i_music_8h.html">IMusic.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="class_music.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_music.html" title="Handles music properties (file and sound)">Music</a> : <span class="keyword">public</span> <a class="code" href="class_i_music.html">IMusic</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="class_music.html#ab5143f67c021bc77894c8e91de2b916b">Music</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_music.html#ab5143f67c021bc77894c8e91de2b916b">Music</a>(wxString filename);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_music.html#a0b4f3b9a018207e0c08003505f1f87fe">~Music</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_music.html#ab4bd834c1a0ec3c676fb4ac92d67b37e" title="Modifies the name Modifies the name.">SetName</a>(wxString name);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_music.html#ad9d2c85ee39011c4c28c2a7caae2d59c" title="Modifies the artists Modifies the artists.">SetArtists</a>(wxString artists);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_music.html#a6736bc3e6e6893e9367c5be61dd0f454" title="Modifies the album Modifies the album.">SetAlbum</a>(wxString album);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_music.html#aaf8cdf2b839713f3ec8b76af6bce817a" title="Modifies the title Modifies the title.">SetTitle</a>(wxString title);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_music.html#a8a772f79e521725bbad31b1d4bd84057" title="Modifies the access path Modifies the access path.">SetPath</a>(wxString path);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_music.html#ae707e347359e93c97e66f7bfff855582" title="Modifies the genres Modifies the genres.">SetGenres</a>(wxString genres);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_music.html#af72e96746d44cff165adf15682d048a9" title="Modifies the extension Modifies the extension.">SetExtension</a>(wxString extension);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_music.html#a093ab8a27a0498e3da670c60ef3f488e" title="Modifies the filename Modifies the filename (path + name + extension)">SetFileName</a>(wxString filename);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_music.html#ad68c04ceec6f813ef328e411c56c634d" title="Modifies the year Modifies the year.">SetYear</a>(<span class="keywordtype">int</span> year);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_music.html#a7e14cbb1de3f321a98361c475b583a17" title="Modifies the music duration Modifies the music duration.">SetDuration</a>(<span class="keywordtype">int</span> duration);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_music.html#a789475b7e12b280e76c1f324bf5b9751" title="Modifies the debit Modifies the debit.">SetDebit</a>(<span class="keywordtype">int</span> debit);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_music.html#a48f0b14624b212109337d22d0b04076a" title="Modifies the file size Modifies the file.">SetSize</a>(<span class="keywordtype">int</span> size);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_music.html#a5bf05b0749d38c6c03d07ed15c4571b8" title="Modifies the sleeve Modifies the record sleeve.">SetRecordSleeve</a>(wxImage *recordSleeve);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        wxString&amp; <a class="code" href="class_music.html#a8fc8bce93a5b400ca31c644d71ca933b" title="Gets the name of the file Gets the name of the file.">GetName</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        wxString&amp; <a class="code" href="class_music.html#abc214d687b86b45f438112433ca33fe7" title="Gets the artists Gets the artists.">GetArtists</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        wxString&amp; <a class="code" href="class_music.html#a3aecaf3a205a9eb177014d71eb3d4bdc" title="Gets the album Gets the album.">GetAlbum</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        wxString&amp; <a class="code" href="class_music.html#a41b825b27a2d804ae7ce52e804f5b991" title="Gets the title Gets the title.">GetTitle</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        wxString&amp; <a class="code" href="class_music.html#a616997d64b7351af5631f64dd5786484" title="Gets the path Gets the path, ie the directory name where the file is written.">GetPath</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        wxString&amp; <a class="code" href="class_music.html#a28ca02cd669f69f082dc8c92a1c14fde" title="Gets the genres Gets the genres.">GetGenres</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        wxString&amp; <a class="code" href="class_music.html#a0bffb82b099b72f2dd6a059ae0e7ba33" title="Gets the file extension Gets the file extension.">GetExtension</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        wxString <a class="code" href="class_music.html#a0738cbcc376533a27dbbaafc00161ddc" title="Gets the music filename Gets the music filename (path + name + extension)">GetFileName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        wxString <a class="code" href="class_music.html#afc4ffcdda2323599ba11ff1d345ea7f3" title="Gets the duration under dd:dd format Gets the duration under dd:dd format. 0 inserted if necessary...">GetStringDuration</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        wxString <a class="code" href="class_music.html#aef741a3f3381f77f06c585a34876a61d" title="Gets the year under string format Gets the year under string format.">GetStringYear</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_music.html#a8baacac1ea65a19c6064cb026283091d" title="Gets the year Gets the year.">GetYear</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_music.html#acfbac5e6e6dc9d03577958fb736f71ca" title="Gets the duration Gets the duration, ie music lenght en ms.">GetDuration</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_music.html#ae781f857d7a2a38c5a16565bbd1a5470" title="Gets the debit Gets the debit in kb/s.">GetDebit</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_music.html#a3331609194112ad5c2a916f8bcd22a0c" title="Gets the file size Getss the file size.">GetSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        wxImage *<a class="code" href="class_music.html#af2d79926f87f77cadcf4ffedae3267ee" title="Gets the sleeve Gets the record sleeve (image)">GetRecordSleeve</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_music.html#a2de177965dbb3291864e238e1318f4b0" title="Equality test Tests the equality between this instance and the parameter. Equality based on filenames...">equalsFilename</a>(<span class="keyword">const</span> <a class="code" href="class_i_music.html">IMusic</a> *music);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_music.html#a9b4ee31286c47167b48df27d1768aa27" title="Fill music data Fill music data thanks to filename.">FillFields</a>(wxString filename);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_music.html#aa088c58096596a4698d5243aebd2e1c4" title="Fill sleeves (images) Fill images associated with the music file.">ImageExtracting</a>(wxString filename);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="class_music.html#a90cd1d7e5c42da1429b7b68cac3bc930">   64</a></span>&#160;        wxString <a class="code" href="class_music.html#a90cd1d7e5c42da1429b7b68cac3bc930">m_name</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="class_music.html#a0758b1302e5fc7a79abf03d787d2b03f">   65</a></span>&#160;        wxString <a class="code" href="class_music.html#a0758b1302e5fc7a79abf03d787d2b03f">m_artists</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="class_music.html#a6ec85ebdcc02e4ace88150b13da5f7c8">   66</a></span>&#160;        wxString <a class="code" href="class_music.html#a6ec85ebdcc02e4ace88150b13da5f7c8">m_album</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="class_music.html#aa2a33320a8400afb12f82fe397c910f9">   67</a></span>&#160;        wxString <a class="code" href="class_music.html#aa2a33320a8400afb12f82fe397c910f9">m_title</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="class_music.html#a22a148d97daa992ff7cf789ae30abe0d">   68</a></span>&#160;        wxString <a class="code" href="class_music.html#a22a148d97daa992ff7cf789ae30abe0d">m_path</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="class_music.html#a7dc85d3d807f7072ddf26cb6d80f6850">   69</a></span>&#160;        wxString <a class="code" href="class_music.html#a7dc85d3d807f7072ddf26cb6d80f6850">m_genres</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="class_music.html#a59aac11b9d135493cc97774b2d0d7dfb">   70</a></span>&#160;        wxString <a class="code" href="class_music.html#a59aac11b9d135493cc97774b2d0d7dfb">m_extension</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="class_music.html#ac8d42c7bd69a9891e79df8cc482e7b38">   71</a></span>&#160;        wxString <a class="code" href="class_music.html#ac8d42c7bd69a9891e79df8cc482e7b38">m_filename</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="class_music.html#ac9c26d190183fc38a55fab328ab56924">   72</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_music.html#ac9c26d190183fc38a55fab328ab56924">m_year</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="class_music.html#aef23822210ace81a026038710bb0650c">   73</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_music.html#aef23822210ace81a026038710bb0650c">m_duration</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="class_music.html#ae988393f759c19c4724523946d2e58f9">   74</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_music.html#ae988393f759c19c4724523946d2e58f9">m_debit</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="class_music.html#a73dd85cb148620fe08851e4e64cdcf7d">   75</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_music.html#a73dd85cb148620fe08851e4e64cdcf7d">m_size</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">//wxStringArray *m_allArtist;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="class_music.html#a83c8f507be26a369b8e1f60a916d235c">   77</a></span>&#160;        wxImage *<a class="code" href="class_music.html#a83c8f507be26a369b8e1f60a916d235c">m_recordSleeve</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;};</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif // MUSIC_H_INCLUDED</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Novembre 5 2014 23:24:46 pour Fux par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

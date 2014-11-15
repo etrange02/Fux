@@ -36,11 +36,12 @@ class MusicManager
         bool playPreviousOrRandomMusic();
         bool playAMusic();
         bool playMusicAt(long position);
-        bool playMusic(wxString name/*, long position*/);
+        bool playMusic(wxString& name/*, long position*/);
+        bool playMusicThenParse(wxString filename);
         bool playSameMusic();
 
         void moveIntTitlesAt(wxArrayString* titles, long position, bool update = true, bool autoDelete = true);
-        void placeStringTitlesAt(wxArrayString* titles, long position, bool update = true);
+        void placeStringTitlesAt(wxArrayString* titles, size_t position, bool update = true);
 
         ChansonNomPos deleteCurrentTitle();
         void deleteTitleAt(long position);

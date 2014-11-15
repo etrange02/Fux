@@ -36,6 +36,7 @@ Compiler avec makefile.gcc
 
 =============================================
 3. Récupérer TagLib
+TagLib nécessaite au préalable zlib pour être compilé.
 Utiliser CMake pour configurer le projet, unicode, static (et dyn car ne marche pas toujours)
 --> utilise la dll, test à faire sans !
 
@@ -48,5 +49,10 @@ Utiliser CMake pour configurer le projet, unicode, static (et dyn car ne marche 
 
 =============================================
 6. Compiler le tout
+
+Développement
+Graphviz
+Doxygen
+innosetup
 
 David Lecoconnier

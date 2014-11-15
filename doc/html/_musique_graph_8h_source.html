@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Fux:  Fichier source de MusiqueGraph.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fux
+   &#160;<span id="projectnumber">3.7.2901</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_48c1f94cd2ae07e13fa9a9f16a1d541c.html">gui</a></li><li class="navelem"><a class="el" href="dir_f7a54a8fb3bbe42f6f5493d1f40ed368.html">graph</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MusiqueGraph.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_musique_graph_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MUSIQUEGRAPH_H_INCLUDED</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MUSIQUEGRAPH_H_INCLUDED</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;wx/wx.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;wx/glcanvas.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;GL/gl.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;GL/glu.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;wx/dir.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../../Classes.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//#include &quot;../../music/Musique.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../../music/MusicManager.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../tools/ImageText.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../Define.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../widgets/SliderSon.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../../settings/Couleur.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;../../tools/FichierLog.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> wxEventType <a class="code" href="_musique_graph_8cpp.html#a5d181b80b30280e624dd6b6b325feb17">wxEVT_MUSIQUE_SUPPRESSION</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="class_musique_graph.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_musique_graph.html" title="Panel affichant le graph, la barre de temps et le titre de la chanson.">MusiqueGraph</a> : <span class="keyword">public</span> wxGLCanvas</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="class_musique_graph.html#a75479e307eb7a7d61b21707058696669">MusiqueGraph</a>(wxWindow *Parent, <span class="keywordtype">int</span> *args);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_musique_graph.html#a6cb9b8a8b1987b754add777ffd6012cc">~MusiqueGraph</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_musique_graph.html" title="Panel affichant le graph, la barre de temps et le titre de la chanson.">MusiqueGraph</a>* <a class="code" href="class_musique_graph.html#a14946ee2f1b1eb437c36a1678d88c2ca">Get</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_musique_graph.html#af3a67b5ac746a2a80d1970ee63e1bb2f">OnIdle</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="class_couleur.html" title="Champs RVB.">Couleur</a> <a class="code" href="class_musique_graph.html#ad0a2db468b292694225a5b0d926f7bd3">CouleurExtrem</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <a class="code" href="enums_8h.html#ae70bc32f8882aa2d79255284d3cbbdf5">e_GraphPosition</a> niveau = <a class="code" href="enums_8h.html#ae70bc32f8882aa2d79255284d3cbbdf5a11fc0d77d8296ca7d496b564c381f7d1">HAUT_SUP</a>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_musique_graph.html#a2770a698e0947b5c5dd69c07cf7120f0">Sizer_Size</a>(wxSizeEvent &amp;event);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_musique_graph.html#a4bf6816621fb45e4be2634b89688ab88">PlacerChanson</a>(wxMouseEvent&amp;);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_musique_graph.html#a039128d3dab0b1d54bae3b149eed2b09">AffecteCouleurs</a>(<a class="code" href="class_couleur.html" title="Champs RVB.">Couleur</a>, <a class="code" href="class_couleur.html" title="Champs RVB.">Couleur</a>, <a class="code" href="class_couleur.html" title="Champs RVB.">Couleur</a>, <a class="code" href="class_couleur.html" title="Champs RVB.">Couleur</a>, <a class="code" href="class_couleur.html" title="Champs RVB.">Couleur</a>, <span class="keywordtype">bool</span>, <a class="code" href="class_couleur.html" title="Champs RVB.">Couleur</a>, <a class="code" href="class_couleur.html" title="Champs RVB.">Couleur</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_musique_graph.html#a858421f5897972f0886fb1f2c62b34b8">GetCouleurNom</a>(<a class="code" href="class_couleur.html" title="Champs RVB.">Couleur</a>**, <a class="code" href="class_couleur.html" title="Champs RVB.">Couleur</a>**, <a class="code" href="class_couleur.html" title="Champs RVB.">Couleur</a>**, <a class="code" href="class_couleur.html" title="Champs RVB.">Couleur</a>**, <a class="code" href="class_couleur.html" title="Champs RVB.">Couleur</a>**, <span class="keywordtype">bool</span>**, <a class="code" href="class_couleur.html" title="Champs RVB.">Couleur</a>**, <a class="code" href="class_couleur.html" title="Champs RVB.">Couleur</a>**);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_musique_graph.html#a2473c1254ee1dd7d796e0e7506c29172">OnToucheDown</a>(wxKeyEvent&amp;);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_musique_graph.html#a5ad6256377e4762af477d940f4942b7f">OnPaint</a>(wxPaintEvent&amp;);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_musique_graph.html#a409adab5869873c645ebbf839d3239e3">OnEraseBackground</a>(wxEraseEvent&amp;);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_musique_graph.html#a752be92e858170294d5e1d4c6b2b28cc">TitreChange</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_musique_graph.html#a64e87038d857f1519220cdd5c3b1602f">MouseEvents</a>(wxMouseEvent&amp;);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="class_musique_graph.html#a5c600f3620d8cb4f24469097948c29e7">   41</a></span>&#160;        <span class="keywordtype">float</span> *<a class="code" href="class_musique_graph.html#a5c600f3620d8cb4f24469097948c29e7">spectrum</a>, <a class="code" href="class_musique_graph.html#a5e4aadc836cc4c0c7192dfe2fb217614">m_intervalle</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="class_musique_graph.html#aea1e4b74b3ab937ace004fc08126dfd1">   42</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_musique_graph.html#ab5647b1668f2d0958bbfa0d12d05ec78">m_epaisseurSpectre</a>, <a class="code" href="class_musique_graph.html#aea1e4b74b3ab937ace004fc08126dfd1">m_sizer_w</a>, <a class="code" href="class_musique_graph.html#a314d42ceab3e77f90d9dc4a7be18e50b">m_sizer_h</a>;<span class="comment">//puissance de 2, 64 à 8192</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="class_musique_graph.html#af0f56466174a037c1731e7d5dab614a0">   43</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_musique_graph.html#a46ea555cbe69c1117507c648fd523ca3">m_largeur_tab</a>, <a class="code" href="class_musique_graph.html#a5fcfeb49065c4bdc25f28c0827a03d69">m_bandeRestante</a>, <a class="code" href="class_musique_graph.html#af0f56466174a037c1731e7d5dab614a0">m_moitEcran</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="class_musique_graph.html#af7668be42597a49eb9afece2a3c6751a">   44</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_musique_graph.html#af7668be42597a49eb9afece2a3c6751a">m_doubleBarre</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="class_musique_graph.html#a08e0ee770d45ca2a4b99a78dae33cf5d">   45</a></span>&#160;        <a class="code" href="class_couleur.html" title="Champs RVB.">Couleur</a> <a class="code" href="class_musique_graph.html#aac89b940dc183f0a7cf629adc564a565">m_fond</a>, <a class="code" href="class_musique_graph.html#aba45220db5f5e158b6d411a4ebf70a7b">m_barre</a>, <a class="code" href="class_musique_graph.html#a08e0ee770d45ca2a4b99a78dae33cf5d">m_police</a>, <a class="code" href="class_musique_graph.html#aea184c4ecd25c997ffa37e9296fc0d43">m_haut</a>, <a class="code" href="class_musique_graph.html#a9ba63cf30adec58399ab10a0b5ea4551">m_miSup</a>, <a class="code" href="class_musique_graph.html#a37ff0088a14566cea1035249cb87b311">m_miInf</a>, <a class="code" href="class_musique_graph.html#a3c50c7bd9ea018d77d34a1ae61fc5586">m_bas</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="class_musique_graph.html#a172bd67ac7a70d4a9e473d405a1f223c">   46</a></span>&#160;        wxGLContext *<a class="code" href="class_musique_graph.html#a172bd67ac7a70d4a9e473d405a1f223c">m_context</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="class_musique_graph.html#a3e92ff77417ab4a5820801619d61441b">   47</a></span>&#160;        <a class="code" href="class_image_text.html" title="Transforme et affiche une chaîne de caractère dans une surface OpenGL.">ImageText</a> *<a class="code" href="class_musique_graph.html#a3e92ff77417ab4a5820801619d61441b">m_imageText</a>, *<a class="code" href="class_musique_graph.html#ac2b82c24f902354c1e9952e97fafe3b0">m_imageTemps</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        DECLARE_EVENT_TABLE()</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif // MUSIQUEGRAPH_H_INCLUDED</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Novembre 5 2014 23:24:47 pour Fux par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Fux:  Fichier source de GenericTreePanel.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fux
+   &#160;<span id="projectnumber">3.7.2901</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_48c1f94cd2ae07e13fa9a9f16a1d541c.html">gui</a></li><li class="navelem"><a class="el" href="dir_9c862bfce0ba282717230250ac5bcc05.html">widgets</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">GenericTreePanel.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_generic_tree_panel_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GENERICTREEPANEL_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GENERICTREEPANEL_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;wx/wx.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;wx/treectrl.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;../../Define.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<a class="code" href="_thread_gestion_8h.html#a4b6231221eab448b69ff3b5554aed518">WX_DEFINE_ARRAY</a>(wxPanel*, ArrayOfwxPanel);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> wxEventType <a class="code" href="_generic_tree_panel_8h.html#a5978b766164551cb65029ea8c25bc0e3">wxEVT_PREFERENCE_MAJ_LISTE</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="class_generic_tree_panel.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_generic_tree_panel.html" title="Inteface générique pour les préférences.">GenericTreePanel</a> : <span class="keyword">public</span> wxScrolledWindow</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="class_generic_tree_panel.html#a05884df99404faca56c71fe642b00aa5">GenericTreePanel</a>(wxWindow *Parent, wxWindowID Id, wxWindowID IdTreeCtrl);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_generic_tree_panel.html#a3b245235e1eb489c711d89d55504ad23">~GenericTreePanel</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_tree_panel.html#af174b1909f4357089b987ab59eeeab69">Create</a>(wxWindow *Parent, wxWindowID Id, wxWindowID IdTreeCtrl);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_tree_panel.html#aad5ff1fce1519bd714293bd883c13dc8">MajListe</a>(wxChoice *liste) = 0;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_tree_panel.html#a2f7dd0074f83f0d0840b6e49c8f2541f">AddListener</a>(wxPanel *panel);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_tree_panel.html#a4cd9835d9bdb0c4ab71a101a54b73fca">CallListeners</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_tree_panel.html#a92e7ce82f3ce6327b415edfd2011e91a">EvtTreeMenu</a>(wxTreeEvent &amp;event) = 0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_tree_panel.html#a080a47bb5e047ba461e1efba49f37082">EvtTreeModifNomDebut</a>(wxTreeEvent &amp;event) = 0;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_tree_panel.html#a2607fc524a244fd2fdc55926c4381c1e">EvtTreeModifNomFin</a>(wxTreeEvent &amp;event) = 0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_tree_panel.html#a69d9597586bababd1c7620eee733f656">EvtTreeVoirNoeud</a>(wxTreeEvent &amp;event) = 0;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_tree_panel.html#a2dd0bb3837c075cd56f8442b4f59545f">EvtTreeAppliquerNoeud</a>(wxTreeEvent &amp;event) = 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_tree_panel.html#ab4cfce0d00a20a41a20365ec19ddf267">EvtMenuSupprimer</a>(wxCommandEvent &amp;WXUNUSED(event)) = 0;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_tree_panel.html#a09f3e317378d22ed260e36a31812213f">EvtMenuRenommer</a>(wxCommandEvent &amp;WXUNUSED(event)) = 0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="class_generic_tree_panel.html#a2db10ce5a875aa9bdad2258ec6e1920b">   29</a></span>&#160;        wxTreeCtrl *<a class="code" href="class_generic_tree_panel.html#a2db10ce5a875aa9bdad2258ec6e1920b">m_treeFiles</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="class_generic_tree_panel.html#ac8d95d8920b11f2904fed7bd3ae90f9d">   30</a></span>&#160;        wxTreeItemId <a class="code" href="class_generic_tree_panel.html#ab6b4cae9ab917251d632dab6dfcf376c">m_nodeExistant</a>, <a class="code" href="class_generic_tree_panel.html#ac8d95d8920b11f2904fed7bd3ae90f9d">m_nodeNouveau</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="class_generic_tree_panel.html#a6cde1ed22236e89c5bffc1b7373f92e9">   31</a></span>&#160;        wxSizer *<a class="code" href="class_generic_tree_panel.html#a6cde1ed22236e89c5bffc1b7373f92e9">m_sizer2Preferences</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="class_generic_tree_panel.html#ac8d971c4fd17299f9bd26f7b90ecd82d">   32</a></span>&#160;        wxString <a class="code" href="class_generic_tree_panel.html#ac8d971c4fd17299f9bd26f7b90ecd82d">m_nomAvantModif</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="class_generic_tree_panel.html#ab11e00142ba9570e2ececd2aacd141de">   33</a></span>&#160;        ArrayOfwxPanel *<a class="code" href="class_generic_tree_panel.html#ab11e00142ba9570e2ececd2aacd141de">m_arrayPanel</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="class_generic_tree_panel.html#ac47a641c84ff064c449cf8a9d10d088b">   36</a></span>&#160;        wxSizer *<a class="code" href="class_generic_tree_panel.html#a584d9134b1bace1dfd322d0c5f9d18a6">m_sizer1H</a>, *<a class="code" href="class_generic_tree_panel.html#ac47a641c84ff064c449cf8a9d10d088b">m_sizer2V</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif // GENERICTREEPANEL_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Novembre 5 2014 23:24:46 pour Fux par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

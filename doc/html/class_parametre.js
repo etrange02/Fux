@@ -19,6 +19,7 @@ var class_parametre =
     [ "getRepertoireParametre", "class_parametre.html#a830c3e398ba3e4251b8f8fb954141de9", null ],
     [ "getRepertoireParametre", "class_parametre.html#aaae8a6d958d66a5a769a042b2bf65ab6", null ],
     [ "getSousDossier", "class_parametre.html#aa06b482406215b03426f26693e0d9788", null ],
+    [ "isContainerFile", "class_parametre.html#ae3f6d5eacac69acf31cb297c5ac3a926", null ],
     [ "isID3V2", "class_parametre.html#af57c65de995367b7e652a3c4e08aa460", null ],
     [ "islisable", "class_parametre.html#a8a9ff3a057d1387d08453bcd779503b3", null ],
     [ "isRepertoireInstallationDefaut", "class_parametre.html#a04fcf91df13d7233ed99a0d157532ea4", null ],

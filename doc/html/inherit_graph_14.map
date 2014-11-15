@@ -1,3 +1,7 @@
-<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
-<area shape="rect" id="node1" href="$class_dn_d_liste_fichier.html" title="Représente un tableau servant aux opérations de Drag &amp; Drop (Glisser et Déposer)" alt="" coords="5,5,120,32"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_drive_manager_state.html" title="DriveManagerState" alt="" coords="5,81,136,108"/>
+<area shape="rect" id="node2" href="$class_default_drive_manager_state.html" title="DefaultDriveManagerState" alt="" coords="187,5,357,32"/>
+<area shape="rect" id="node3" href="$class_dir_drive_manager_state.html" title="DirDriveManagerState" alt="" coords="199,56,345,83"/>
+<area shape="rect" id="node4" href="$class_file_drive_manager_state.html" title="FileDriveManagerState" alt="" coords="196,107,348,133"/>
+<area shape="rect" id="node5" href="$class_playlist_drive_manager_state.html" title="PlaylistDriveManagerState" alt="" coords="185,157,359,184"/>
 </map>

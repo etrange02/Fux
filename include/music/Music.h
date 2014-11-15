@@ -57,7 +57,6 @@ class Music : public IMusic
         bool equalsFilename(const IMusic *music);
 
     protected:
-        void Initialize();
         void FillFields(wxString filename);
         void ImageExtracting(wxString filename);
 

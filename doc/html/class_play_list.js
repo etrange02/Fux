@@ -2,12 +2,12 @@ var class_play_list =
 [
     [ "PlayList", "class_play_list.html#ae0dfa1097c048135343a8d68ebac8cd5", null ],
     [ "~PlayList", "class_play_list.html#a784a88450eb35878667315177e8859aa", null ],
-    [ "Creer", "class_play_list.html#a8c36c323fce92ddc8fc1b88ca5e7b8e5", null ],
     [ "EnregistrerM3U", "class_play_list.html#a9aa01c3962ff4c199981f16718b2dd1f", null ],
     [ "EvtImage", "class_play_list.html#a3c8d165379f10cbbb97948f1140038fa", null ],
     [ "EvtViderPanneauTAG", "class_play_list.html#a244fd7ac15347c8ded574e98335d11dd", null ],
     [ "FenetreDetails", "class_play_list.html#af8fb7556c14a697265c1c528e87d0cd1", null ],
     [ "GetPlayListTableau", "class_play_list.html#aa28117918256798428665452da6082e1", null ],
+    [ "Initialize", "class_play_list.html#a9774f7d53d135dd659ee8f513b49eb5a", null ],
     [ "MouseEvents", "class_play_list.html#ae1366eb3ef8497573136b9e394b6422b", null ],
     [ "OnAfficheDetails", "class_play_list.html#a6a534818c958d9a72b72eb65dc5a11cc", null ],
     [ "OnAnnulerTAG", "class_play_list.html#a75afd79ddccdf141643b4d3becc424dd", null ],

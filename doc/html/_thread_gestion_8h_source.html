@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Fux:  Fichier source de ThreadGestion.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fux
+   &#160;<span id="projectnumber">3.7.2901</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.2 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_db22b1395f615d1428e10e22469fe87b.html">tools</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ThreadGestion.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_thread_gestion_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef THREADGESTION_H_INCLUDED</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define THREADGESTION_H_INCLUDED</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;wx/wx.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;wx/thread.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;wx/dynarray.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../Define.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_traverser_copie_dossier_8h.html">dir_traverser/TraverserCopieDossier.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_traverser_copie_fichier_8h.html">dir_traverser/TraverserCopieFichier.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_traverser_deplace_fichier_8h.html">dir_traverser/TraverserDeplaceFichier.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_traverser_supprime_fichier_8h.html">dir_traverser/TraverserSupprimeFichier.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_element_thread_fichier_8h.html">ElementThreadFichier.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_fichier_log_8h.html">FichierLog.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<a class="code" href="_thread_gestion_8h.html#a4b6231221eab448b69ff3b5554aed518">WX_DEFINE_ARRAY</a>(<a class="code" href="class_element_thread_fichier.html" title="Représente un élément physique (fichier ou dossier) et l&#39;action qu&#39;il doit subir.">ElementThreadFichier</a>*, ArrayOfElementThreadFichier);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="class_thread_fichier_fichier.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_thread_fichier_fichier.html" title="Thread faisant de la gestion de dossiers et fichiers.">ThreadFichierFichier</a> : <span class="keyword">public</span> wxThread</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_thread_fichier_fichier.html#a7a39a0f6eba6a50505f0c11acef61c57">AjoutDonnee</a>(wxArrayString*, <span class="keywordtype">int</span>, wxString dest = wxEmptyString);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_thread_fichier_fichier.html" title="Thread faisant de la gestion de dossiers et fichiers.">ThreadFichierFichier</a>* <a class="code" href="class_thread_fichier_fichier.html#a6260062a1726f6988a5b863969ae5903">Get</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_thread_fichier_fichier.html#a977c6ae889059bc4497a1745a46d979e">GetEtat</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_thread_fichier_fichier.html#a1a0e5867d42ac7b95831dc2de261da06">SetStop</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_thread_fichier_fichier.html#a8509e30b36cceff11fae5b989dae6611">ViderListe</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="class_thread_fichier_fichier.html#a7ae0ed804107b04bfcea7fd764f4d59d">ThreadFichierFichier</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_thread_fichier_fichier.html#aeaa480e8ad3c9bed8bf54ce5c83759a4">~ThreadFichierFichier</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span>* <a class="code" href="class_thread_fichier_fichier.html#a652ce8a36cf616a0793fe234442ea614">Entry</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_thread_fichier_fichier.html#a5f3e319f33e4cebbf585201efd630f0f">DossierSuppression</a>(wxArrayString&amp;);<span class="comment">//Deplace inutile !!</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_thread_fichier_fichier.html#afa1f731cf43ec2bb3517011f06b011cd">DossierCopie</a>(wxString, wxString);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_thread_fichier_fichier.html#a0893770f5452ca1adbc800b0567ba5fa">FichierSuppression</a>(wxString);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_thread_fichier_fichier.html#a0c096a03930219cf7502a9eb7336544c">FichierCopie</a>(wxString, wxString);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_thread_fichier_fichier.html#a8bb0b1e1b8e264f5417689efe78f5729">FichierDeplace</a>(wxString, wxString);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="class_thread_fichier_fichier.html#a8b9c48e85ec493a7da0c816fc585cf86">   36</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_thread_fichier_fichier.html#a8b9c48e85ec493a7da0c816fc585cf86">m_estActif</a>, <a class="code" href="class_thread_fichier_fichier.html#a0edfceaf3584d751780002cb9d00f233">m_continue</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">//ListeThreadFichier m_liste;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="class_thread_fichier_fichier.html#a242814eecf906219f50fa3c85219ef46">   38</a></span>&#160;        ArrayOfElementThreadFichier *<a class="code" href="class_thread_fichier_fichier.html#a242814eecf906219f50fa3c85219ef46">m_liste</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif // THREADGESTION_H_INCLUDED</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Novembre 5 2014 23:24:47 pour Fux par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

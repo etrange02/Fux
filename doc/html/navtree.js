@@ -2,16 +2,16 @@ var NAVTREE =
 [
   [ "Fu(X) 2.0", "index.html", [
     [ "Classes", null, [
-      [ "Liste des classes", "annotated.html", "annotated" ],
-      [ "Index des classes", "classes.html", null ],
-      [ "Hiérarchie des classes", "hierarchy.html", "hierarchy" ],
-      [ "Membres de classe", "functions.html", [
-        [ "Tout", "functions.html", "functions_dup" ],
-        [ "Fonctions", "functions_func.html", "functions_func" ]
+      [ "Class List", "annotated.html", "annotated" ],
+      [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ]
       ] ]
     ] ],
-    [ "Fichiers", null, [
-      [ "Liste des fichiers", "files.html", "files" ]
+    [ "Files", null, [
+      [ "File List", "files.html", "files" ]
     ] ]
   ] ]
 ];
@@ -19,10 +19,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"class_chanson_nom_pos.html",
-"class_fu_x_fenetre.html#a7e1c2397da059f629cbcce9c006a59b2",
-"class_page_gestion_periph.html#acbcbd472ce3256a6b3ed9d66135beb7a",
-"class_t_c_p_serveur.html#a72138b6ea208d26bfdbcd1821c23aeb2"
+"class_b_d_d_requete.html#ab1a56eb35f67f7578605dd25c331b7ba",
+"class_explorer_panel.html#ae5eeb9bf4e55af8ed4e7227d60e8fa5e",
+"class_music.html#aef741a3f3381f77f06c585a34876a61d",
+"class_play_list.html#af3f179b3024830e06294abb4c26f3558",
+"dir_f7a54a8fb3bbe42f6f5493d1f40ed368.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

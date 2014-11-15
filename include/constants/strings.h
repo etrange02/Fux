@@ -8,4 +8,9 @@
 
 #define M3U_EXTENSION _T("#EXTM3U")
 
+#define EXPLORER_PANEL_1_NAME _("Navig gauche")
+#define EXPLORER_PANEL_2_NAME _("Navig droite")
+#define EXPLORER_PANEL_1_DESCRIPTION _("Navigation gauche : Fu(X) toujours en développement")
+#define EXPLORER_PANEL_2_DESCRIPTION _("Navigation droite : donc toujours plus loin !")
+
 #endif // STRINGS_H_INCLUDED

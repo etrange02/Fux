@@ -1,8 +1,12 @@
 var searchData=
 [
   ['add',['Add',['../class_array_fenetre_detachable.html#a0cb54beb43a623be0ab96a4500842086',1,'ArrayFenetreDetachable']]],
+  ['adddirline',['addDirLine',['../class_music_list.html#a3722d40a0178870c3e3c2a48c6359013',1,'MusicList']]],
   ['addfile',['AddFile',['../class_dn_d_liste_fichier.html#a5380b5e3e4ba5c079361528ac9e2160c',1,'DnDListeFichier']]],
+  ['addfileline',['addFileLine',['../class_music_list.html#a436397a59eee24bf8c9f8c94e9e42f7d',1,'MusicList']]],
+  ['addlines',['addLines',['../class_music_list.html#a971bd29cd47eff624bca535a33c5ff6c',1,'MusicList']]],
   ['addstringarray',['AddStringArray',['../class_dn_d_liste_fichier.html#a5bbb3d6dfcc9fdcf766ceb6bf7a3c7f1',1,'DnDListeFichier']]],
+  ['addunknownkindline',['addUnknownKindLine',['../class_music_list.html#a3e79e6ada7c9f3993eb464ea1e07da0f',1,'MusicList']]],
   ['affectecouleurs',['AffecteCouleurs',['../class_musique_graph.html#a039128d3dab0b1d54bae3b149eed2b09',1,'MusiqueGraph']]],
   ['affiche',['Affiche',['../class_image_text.html#a074afee841663a2b038b79929c9d202c',1,'ImageText::Affiche()'],['../class_image_text.html#a5638593bf71a3f77f00ad3945cf85eb1',1,'ImageText::Affiche(int x)']]],
   ['affichecentrehorizontal',['AfficheCentreHorizontal',['../class_image_text.html#a33bb66800815fc699783afb245bbf335',1,'ImageText']]],
@@ -35,7 +39,6 @@ var searchData=
   ['ajouterlisteperso',['AjouterListePerso',['../class_b_d_d.html#ae154f92d498282f43cd8ec247e8d8dd1',1,'BDD']]],
   ['ajouterremixde',['AjouterRemixDe',['../class_b_d_d.html#a85f9a1bcdcd8ab94e2ef450f0421df7d',1,'BDD']]],
   ['ajouterutilisateur',['AjouterUtilisateur',['../class_b_d_d.html#aa8f3077dce91d4727ba244c70c456e83',1,'BDD']]],
-  ['aleatoire',['Aleatoire',['../class_fu_x_fenetre.html#a7fbb14222d6b4bb7f203e103fc71304d',1,'FuXFenetre']]],
   ['arrayfenetredetachable',['ArrayFenetreDetachable',['../class_array_fenetre_detachable.html#a5ae23803ecd41957417dee3a38535bd7',1,'ArrayFenetreDetachable']]],
   ['arraystring',['arrayString',['../class_dn_d_liste_fichier.html#a31c63ffa72e40c23e744702f226716b3',1,'DnDListeFichier']]],
   ['autosave',['AutoSave',['../class_preference_defaut.html#a552807a2009f13a27ebad2055a5781b2',1,'PreferenceDefaut']]]

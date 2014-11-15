@@ -14,6 +14,7 @@
 #include <wx/mimetype.h>
 #include <wx/textfile.h>
 #include <wx/progdlg.h>
+
 #include "../../tools/ThreadGestion.h"
 #include "../../tools/OS_Win.h"
 #include "GestionPeriphMoitiePage.h"

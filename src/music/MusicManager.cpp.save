@@ -12,17 +12,26 @@ static MusicManager* s_musicManager_instance = NULL;
 
 const wxEventType wxEVT_FUX_MUSICMANAGER_NO_FILE = wxNewEventType();
 
+/** @brief Default constructor
+ */
 MusicManager::MusicManager()
 {
     initialize();
 }
 
+/** @brief Destructor
+ */
 MusicManager::~MusicManager()
 {
     delete m_musicPlayer;
     delete m_musicList;
 }
 
+/** @brief Singleton
+ * Singleton
+ * @return the MusicManager
+ *
+ */
 MusicManager* MusicManager::get()
 {
     if (NULL == s_musicManager_instance)
@@ -30,6 +39,11 @@ MusicManager* MusicManager::get()
     return s_musicManager_instance;
 }
 
+/** @brief Initialize members
+ * Initialize members
+ * @return void
+ *
+ */
 void MusicManager::initialize()
 {
     m_repete = false;
@@ -42,47 +56,94 @@ void MusicManager::initialize()
     m_music = NULL;
 }
 
+/** @brief Repete mode
+ * Repete mode
+ * @return true if repete
+ *
+ */
 bool MusicManager::isRepete()
 {
     return m_repete;
 }
 
+/** @brief Modifies the repete mode
+ * Modifies the repete mode
+ * @param repete the repete mode
+ * @return void
+ *
+ */
 void MusicManager::setRepete(bool repete)
 {
     m_repete = repete;
 }
 
+/** @brief Random mode
+ * Random mode
+ * @return true if random
+ *
+ */
 bool MusicManager::isRandom()
 {
     return m_random;
 }
 
+/** @brief Modifies the random mode
+ * Modifies the random mode
+ * @param random the random mode
+ * @return void
+ *
+ */
 void MusicManager::setRandom(bool random)
 {
     m_random = random;
 }
 
+/** @brief Returns the music list
+ * Returns the music list
+ * @return the music list
+ *
+ */
 MusicList* MusicManager::getMusicList()
 {
     return m_musicList;
 }
 
+/** @brief Returns the music player
+ * Returns the music player. This object plays audio files
+ * @return the music player
+ *
+ */
 MusicPlayer* MusicManager::getMusicPlayer()
 {
     return m_musicPlayer;
 }
 
+/** @brief Returns the current playing music
+ * Returns the current playing music
+ * @return the actual playing title
+ *
+ */
 Music* MusicManager::getMusic()
 {
     return m_music;
 }
 
+/** @brief Returns the position of the playing music
+ * Returns the position of the playing music in the music list
+ * @return the position
+ *
+ */
 size_t MusicManager::getCurrentMusicPosition()
 {
     return m_musicPosition;
-    //return getMusicList()->getPositionInList(getMusic());
 }
 
+/** @brief Plays the next title in the playlist
+ * Plays the next title in the playlist. If the end is reached,
+ * the first one is played
+ * @return true on success
+ *
+ */
 bool MusicManager::playNextMusic()
 {
     size_t newPosition = m_musicPosition;
@@ -93,6 +154,11 @@ bool MusicManager::playNextMusic()
     return playMusicAt(newPosition);
 }
 
+/** @brief Plays the next or a random title
+ * Plays the next or a random title
+ * @return true on success
+ *
+ */
 bool MusicManager::playNextOrRandomMusic()
 {
     if (isRandom())
@@ -101,6 +167,12 @@ bool MusicManager::playNextOrRandomMusic()
         return playNextMusic();
 }
 
+/** @brief Plays the previous title in the playlist
+ * Plays the previous title in the playlist. If the begin is reached,
+ * the last one is played
+ * @return true on success
+ *
+ */
 bool MusicManager::playPreviousMusic()
 {
     long newPosition = m_musicPosition;
@@ -111,6 +183,11 @@ bool MusicManager::playPreviousMusic()
     return playMusicAt(newPosition);
 }
 
+/** @brief Plays the previous or a random title
+ * Plays the previous or a random title
+ * @return true on success
+ *
+ */
 bool MusicManager::playPreviousOrRandomMusic()
 {
     if (isRandom())
@@ -119,6 +196,12 @@ bool MusicManager::playPreviousOrRandomMusic()
         return playPreviousMusic();
 }
 
+/** @brief Plays the title found at position position
+ * Plays the title found at position position
+ * @param position the position
+ * @return true on succes
+ *
+ */
 bool MusicManager::playMusicAt(long position)
 {
     if (empty())
@@ -129,7 +212,7 @@ bool MusicManager::playMusicAt(long position)
         sendMusicNoFileEvent();
         return false;
     }
-    if (position < 0 || position >= size())
+    if (position < 0 || position >= (long)size())
         position = 0;
 
     m_musicPosition = position;
@@ -138,6 +221,11 @@ bool MusicManager::playMusicAt(long position)
     return true;
 }
 
+/** @brief Plays a title
+ * Default behaviour when a title ends
+ * @return true on success
+ *
+ */
 bool MusicManager::playAMusic()
 {
     if (isRepete())
@@ -148,9 +236,14 @@ bool MusicManager::playAMusic()
         return playNextMusic();
 }
 
+/** @brief Plays a random title
+ * Plays a random title
+ * @return true on success
+ *
+ */
 bool MusicManager::playRandomMusic()
 {
-    long newPosition = 0;
+    size_t newPosition = 0;
     do
     {
         newPosition = rand() % size();
@@ -159,19 +252,53 @@ bool MusicManager::playRandomMusic()
     return playMusicAt(newPosition);
 }
 
+/** @brief Replay the current title
+ * Replay the current title
+ * @return true on success
+ *
+ */
 bool MusicManager::playSameMusic()
 {
     return playMusicAt(m_musicPosition);
 }
 
-bool MusicManager::playMusic(wxString name/*, long position*/)
+/** @brief Plays the file
+ * Plays the file if it is in the playlist
+ * @param name a filename
+ * @return true on success
+ *
+ */
+bool MusicManager::playMusic(wxString& name)
 {
-    //if (position < 0)
     long position = m_musicList->getPositionInList(name, -1);
 
     return playMusicAt(position);
 }
 
+/** @brief Plays the file then parse the directory
+ * Plays the file then parse the directory
+ * @param filename a music filename
+ * @return true on success
+ *
+ */
+bool MusicManager::playMusicThenParse(wxString filename)
+{
+    m_musicPlayer->play(filename);
+    parse();
+    m_musicPosition = m_musicList->getPositionInList(filename);
+    m_music = m_musicList->getMusicList()->at(m_musicPosition);
+    return true;
+}
+
+/** @brief Reorganizes the music list by moving some titles at a different place
+ * Reorganizes the music list by moving some titles at a different place
+ * @param titles a list of music name
+ * @param position the position to place titles
+ * @param update ??? not used - must be deleted
+ * @param autoDelete ??? not used - must be deleted
+ * @return void
+ *
+ */
 void MusicManager::moveIntTitlesAt(wxArrayString* titles, long position, bool update, bool autoDelete)
 {
     std::vector<Music*> *oldMusics = m_musicList->getMusicList();
@@ -195,7 +322,7 @@ void MusicManager::moveIntTitlesAt(wxArrayString* titles, long position, bool up
                 pos = -1;
             else
                 (*positionIterator).ToLong(&pos);
-            // position is updated to place musics at the good place that is to say between musics and not between
+            // position is updated to place musics at the good place that is to say between musics and not between lines
             if (position > i)
                 --position;
         }
@@ -225,15 +352,30 @@ void MusicManager::moveIntTitlesAt(wxArrayString* titles, long position, bool up
     delete selectedMusics;
     delete notSelectedMusics;
     delete newMusics;
+
+    m_musicList->sendMusicListUpdatedEvent();
 }
 
-void MusicManager::placeStringTitlesAt(wxArrayString* titles, long position, bool update)
+/** @brief Inserts titles at a specific position
+ * Inserts titles at a specific position
+ * @param titles a list of music name
+ * @param position the position to place titles
+ * @param update ??? not used - must be deleted
+ * @return void
+ *
+ */
+void MusicManager::placeStringTitlesAt(wxArrayString* titles, size_t position, bool update)
 {
     m_musicList->insertLines(titles, position);
     if (position <= m_musicPosition)
         m_musicPosition += position;
 }
 
+/** @brief Delete the current playing title
+ * Delete the current playing title and play antoher title
+ * @return Name and position of the deleted title
+ *
+ */
 ChansonNomPos MusicManager::deleteCurrentTitle()
 {
     ChansonNomPos deletedTitle;
@@ -251,6 +393,12 @@ ChansonNomPos MusicManager::deleteCurrentTitle()
     return deletedTitle;
 }
 
+/** @brief Delete a title from the music list
+ * Delete a title from the music list
+ * @param position position of the title to delete
+ * @return void
+ *
+ */    
 void MusicManager::deleteTitleAt(long position)
 {
     if (position == m_musicPosition)
@@ -263,10 +411,16 @@ void MusicManager::deleteTitleAt(long position)
     }
 }
 
+/** @brief Delete titles from the music list
+ *
+ * @param titles wxArrayString*
+ * @param update bool
+ * @return void
+ *
+ */     
 void MusicManager::deleteTitles(wxArrayString* titles, bool update)
 {
     bool change = false;
-    long position = 0;
 
     for (wxArrayString::iterator iter = titles->begin(); iter != titles->end() && !change; ++iter)
     {
@@ -295,7 +449,6 @@ void MusicManager::parse()
 
 void MusicManager::parse(wxArrayString* filenames, bool update)
 {
-    //m_musicList->addLines(filenames);
     bool startPlaying = empty();
     m_musicList->addLines(filenames);
     if (startPlaying)

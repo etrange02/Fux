@@ -1,0 +1,11 @@
+Warning: The selected output language "french" has not been updated
+since release 1.8.0.  As a result some sentences may appear in English.
+
+C:/Fux/src/gui/settings/PreferenceCouleur.cpp:34: warning: argument 'Parent' of command @param is not found in the argument list of EVT_TREE_ITEM_RIGHT_CLICK(ID_APP_PREF_COULEUR_TREE, PreferenceCouleur::EvtTreeMenu)
+C:/Fux/src/gui/settings/PreferenceCouleur.cpp:34: warning: argument 'Id' of command @param is not found in the argument list of EVT_TREE_ITEM_RIGHT_CLICK(ID_APP_PREF_COULEUR_TREE, PreferenceCouleur::EvtTreeMenu)
+C:/Fux/src/gui/settings/PreferenceSon.cpp:31: warning: argument 'Parent' of command @param is not found in the argument list of EVT_TREE_ITEM_RIGHT_CLICK(ID_APP_PREF_SON_TREE, PreferenceSon::EvtTreeMenu)
+C:/Fux/src/gui/settings/PreferenceSon.cpp:31: warning: argument 'Id' of command @param is not found in the argument list of EVT_TREE_ITEM_RIGHT_CLICK(ID_APP_PREF_SON_TREE, PreferenceSon::EvtTreeMenu)
+C:/Fux/src/gui/musiclist/PlayListTableau.cpp:371: warning: argument 'titre' of command @param is not found in the argument list of PlayListTableau::ChangementChanson()
+C:/Fux/src/tools/dir_traverser/Search.cpp:17: warning: argument 'fichier' of command @param is not found in the argument list of Search::Search(ISearchTraversable *searchTraversable)
+C:/Fux/src/tools/dir_traverser/Search.cpp:17: warning: The following parameters of Search::Search(ISearchTraversable *searchTraversable) are not documented:
+  parameter 'searchTraversable'

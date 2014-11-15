@@ -116,8 +116,7 @@ FuXFenetre::FuXFenetre(int argc, wxChar **argv) : wxFrame(NULL, wxID_ANY, _T("Fu
         {
             /*Musique::Get()->Lecture(fichierMem.GetFullPath());
             Musique::Get()->Listage();*/
-            MusicManager::get()->playMusic(fichierMem.GetFullPath());
-            MusicManager::get()->parse();
+            MusicManager::get()->playMusicThenParse(fichierMem.GetFullPath());
             m_MAJliste = true;
         }
     }
@@ -1085,8 +1084,7 @@ void FuXFenetre::readPreferencesNewWay(bool loadDefaultMusic, const wxString& fi
         }
         else if (nodeReprise->GetAttribute(_("type"), wxEmptyString) == _T("MP3"))
         {
-            MusicManager::get()->playMusic(nodeReprise->GetNodeContent());
-            MusicManager::get()->parse();
+            MusicManager::get()->playMusicThenParse(nodeReprise->GetNodeContent());
             m_MAJliste = true;
         }
     }
@@ -1119,7 +1117,7 @@ void FuXFenetre::readPreferencesOldWay(bool loadDefaultMusic, wxTextFile& prefFi
                 if (test.GetLineCount() > 1)
                 {
                     MusicManager::get()->parse(cheminM3U);
-                    MusicManager::get()->playMusic(MusicManager::get()->getMusicList()->getNameAtPosition(0));
+                    //MusicManager::get()->playMusic(MusicManager::get()->getMusicList()->getNameAtPosition(0));
                     m_MAJliste = true;
                 }
                 else wxLogMessage(_("Impossible d'ouvrir le fichier, celui-ci est vierge !"));
@@ -1128,8 +1126,7 @@ void FuXFenetre::readPreferencesOldWay(bool loadDefaultMusic, wxTextFile& prefFi
         }
         else if (prefFile.GetLine(3).IsSameAs(_T("Reprise= MP3")))
         {
-            MusicManager::get()->playMusic(prefFile.GetLine(4).AfterFirst(' '));
-            MusicManager::get()->parse();
+            MusicManager::get()->playMusicThenParse(prefFile.GetLine(4).AfterFirst(' '));
             m_MAJliste = true;
         }
     }

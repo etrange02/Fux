@@ -1,7 +1,6 @@
 #include "../../include/music/MusicPlayer.h"
 
 const wxEventType wxEVT_FUX_MUSICPLAYER_CHANGE_TITLE = wxNewEventType();
-const wxEventType wxEVT_FUX_MUSICPLAYER_NO_FILE = wxNewEventType();
 const wxEventType wxEVT_FUX_MUSICPLAYER_UPDATE_GRAPH = wxNewEventType();
 const wxEventType wxEVT_FUX_MUSICPLAYER_CHANGE_STATUS = wxNewEventType();
 
@@ -21,6 +20,11 @@ MusicPlayer::~MusicPlayer()
     delete m_totalTime;
 }
 
+/** @brief Initializes members
+ * Initializes members
+ * @return void
+ *
+ */   
 void MusicPlayer::initialize()
 {
     FMOD_System_Create(&m_system);
@@ -76,7 +80,6 @@ bool MusicPlayer::hasLoadedMusic()
 
 void MusicPlayer::setPause(bool state)
 {
-    wxLogMessage(_("pause"));
     FMOD_BOOL result;
     FMOD_Channel_SetPaused(m_channel, state);
     FMOD_Channel_GetPaused(m_channel, &result);
@@ -183,15 +186,6 @@ void MusicPlayer::sendMusicChangedTitleEvent()
     if (NULL == m_parent)
         return;
     wxCommandEvent evt(wxEVT_FUX_MUSICPLAYER_CHANGE_TITLE, wxID_ANY);
-    //evt.SetInt(1);
-    m_parent->GetEventHandler()->AddPendingEvent(evt);
-}
-
-void MusicPlayer::sendMusicNoFileEvent()
-{
-    if (NULL == m_parent)
-        return;
-    wxCommandEvent evt(wxEVT_FUX_MUSICPLAYER_NO_FILE, wxID_ANY);
     m_parent->GetEventHandler()->AddPendingEvent(evt);
 }
 
