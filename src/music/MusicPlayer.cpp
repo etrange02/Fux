@@ -44,6 +44,11 @@ void MusicPlayer::initialize()
     m_totalTime = new Duree();
 }
 
+/** @brief Plays a title
+ * @param filename a music filename
+ * @return void
+ *
+ */
 void MusicPlayer::play(wxString filename)
 {
     release();
@@ -63,6 +68,10 @@ void MusicPlayer::play(wxString filename)
     sendMusicUpdateGraphEvent();
 }
 
+/** @brief Stops the music and frees memory *
+ * @return void
+ *
+ */
 void MusicPlayer::release()
 {
     if (!m_hasLoadedMusic)
@@ -73,11 +82,21 @@ void MusicPlayer::release()
     m_filename = wxEmptyString;
 }
 
+/** @brief Indicates the presence of a music in memory
+ *
+ * @return true if present
+ *
+ */
 bool MusicPlayer::hasLoadedMusic()
 {
     return m_hasLoadedMusic;
 }
 
+/** @brief Pauses the music
+ * @param state true means pause, false means play
+ * @return void
+ *
+ */
 void MusicPlayer::setPause(bool state)
 {
     FMOD_BOOL result;
@@ -86,6 +105,11 @@ void MusicPlayer::setPause(bool state)
     sendMusicChangedStatusEvent(state ? 1 : 0);
 }
 
+/** @brief Indicates if the music is paused
+ *
+ * @return true if paused
+ *
+ */
 bool MusicPlayer::isPaused()
 {
     FMOD_BOOL result;
@@ -94,17 +118,32 @@ bool MusicPlayer::isPaused()
     return result;
 }
 
+/** @brief Indicates if the music is stopped
+ *
+ * @return true if stopped
+ *
+ */
 bool MusicPlayer::isStopped()
 {
     return m_stopped;
 }
 
+/** @brief Stops the music
+ *
+ * @return void
+ *
+ */
 void MusicPlayer::stop()
 {
     FMOD_Channel_Stop(m_channel);
     m_stopped = true;
 }
 
+/** @brief Indicates if a music is playing (loaded, not paused and not stopped)
+ *
+ * @return true if playing
+ *
+ */
 bool MusicPlayer::isPlaying()
 {
     return hasLoadedMusic() && !isPaused() && !isStopped();
