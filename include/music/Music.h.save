@@ -2,14 +2,27 @@
 #define MUSIC_H_INCLUDED
 
 #include <wx/wx.h>
+#include <wx/stdpaths.h>
+#include <wx/filename.h>
+#include <wx/dir.h>
+#include <wx/mstream.h>
+#include <wx/image.h>
+// TagLib
+#include <tag.h>
+#include <fileref.h>
+#include <taglib.h>
+#include <mpegfile.h>
+#include <id3v2tag.h>
+#include <attachedpictureframe.h>
 
+#include "IMusic.h"
 
-class Music
+class Music : public IMusic
 {
     public:
         Music();
         Music(wxString filename);
-        ~Music();
+        virtual ~Music();
 
         void SetName(wxString name);
         void SetArtists(wxString artists);
@@ -18,27 +31,38 @@ class Music
         void SetPath(wxString path);
         void SetGenres(wxString genres);
         void SetExtension(wxString extension);
+        void SetFileName(wxString filename);
         void SetYear(int year);
         void SetDuration(int duration);
-        //void setRecordSleeve( *recordSleeve);
         void SetDebit(int debit);
         void SetSize(int size);
+        void SetRecordSleeve(wxImage *recordSleeve);
 
-        wxString GetName();
-        wxString GetArtists();
-        wxString GetAlbum();
-        wxString GetTitle();
-        wxString GetPath();
-        wxString GetGenres();
-        wxString GetExtension();
-        int GetYear();
-        int GetDuration();
-        int GetDebit();
-        int GetSize();
+        wxString GetName() const;
+        wxString GetArtists() const;
+        wxString GetAlbum() const;
+        wxString GetTitle() const;
+        wxString GetPath() const;
+        wxString GetGenres() const;
+        wxString GetExtension() const;
+        wxString GetFileName() const;
+        wxString GetStringDuration();
+        wxString GetStringYear();
+        int GetYear() const;
+        int GetDuration() const;
+        int GetDebit() const;
+        int GetSize() const;
+        bool HasRecordSleeve() const;
+        wxImage *GetRecordSleeve() const;
+
+        bool EqualsFilename(const IMusic *music) const;
+        bool IsMatching(const wxString& word);
+
+        void ShrinkData();
 
     protected:
-        void Initialize();
         void FillFields(wxString filename);
+        void ImageExtracting(wxString filename);
 
     private:
         wxString m_name;
@@ -48,12 +72,13 @@ class Music
         wxString m_path;
         wxString m_genres;
         wxString m_extension;
+        wxString m_filename;
         int m_year;
         int m_duration;
         int m_debit;
         int m_size;
         //wxStringArray *m_allArtist;
-        // *m_recordSleeve;
+        wxImage *m_recordSleeve;
 };
 
 #endif // MUSIC_H_INCLUDED

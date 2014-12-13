@@ -6,9 +6,10 @@
  * Copyright: David Lecoconnier (http://www.fuxplay.com)
  * License:
  **************************************************************/
- #include "../../include/Dialogue/DialogEnregistreM3U.h"
+ #include "../../../include/gui/dialogs/DialogEnregistreM3U.h"
 
 static wxPanel *s_panelToBeCall = NULL;
+const wxEventType wxEVT_PREFERENCE_MAJ_M3U = wxNewEventType();
 
 /**
  * @class DialogEnregistreM3U
@@ -24,7 +25,11 @@ END_EVENT_TABLE()
  * @param id l'identifiant de l'instance
  * @param racc le répertoire où doit être créé un raccourci
  */
- DialogEnregistreM3U::DialogEnregistreM3U(wxWindow *parent, wxWindowID id, wxString racc) : wxDialog(parent, id, _("Création de playlist (fichier .m3u)"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER)
+ DialogEnregistreM3U::DialogEnregistreM3U(wxWindow *parent, wxWindowID id, wxString racc) : 
+     wxDialog(parent, id, _("Création de playlist (fichier .m3u)"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER),
+     m_chemin(wxEmptyString),
+     m_raccourci(racc),
+     m_rep()
 {
     m_chemin = wxEmptyString; m_raccourci = racc;
     m_rep = Parametre::Get()->getRepertoireParametre(_T("Play_list_M3U"));
@@ -133,16 +138,25 @@ void DialogEnregistreM3U::OuvrirDossier(wxCommandEvent &WXUNUSED(event))
         m_boiteRaccourci->SetValue(navig.GetPath());
 }
 
+/**
+ * Associe un panel qui doit recevoir un évènement lors d'une modification
+ * @param Panel un panel qui doit recevoir les évènements
+ */
 void DialogEnregistreM3U::SetPanelToBeCall(wxPanel* Panel)
 {
     s_panelToBeCall = Panel;
 }
 
+/**
+ * Informe le panel de la mise à jour
+ * @see DialogEnregistreM3U::SetPanelToBeCall
+ */
 void DialogEnregistreM3U::CallPanel()
 {
     if (s_panelToBeCall)
     {
-        
+        wxCommandEvent evt(wxEVT_PREFERENCE_MAJ_M3U, wxID_ANY);
+        s_panelToBeCall->GetEventHandler()->AddPendingEvent(evt);
     }
 }
 

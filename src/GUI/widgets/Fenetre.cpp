@@ -105,7 +105,7 @@ FuXFenetre::FuXFenetre(int argc, wxChar **argv) : wxFrame(NULL, wxID_ANY, _T("Fu
                 if (test.GetLineCount() > 1)
                 {
                     //Musique::Get()->Lecture(test.GetLine(1));
-                    MusicManager::get()->parse(fichierMem.GetFullPath());
+                    MusicManager::get().parse(fichierMem.GetFullPath());
                     m_MAJliste = true;
                 }
                 else wxLogMessage(_("Impossible de charger le fichier, celui-ci est vierge !"));
@@ -116,7 +116,7 @@ FuXFenetre::FuXFenetre(int argc, wxChar **argv) : wxFrame(NULL, wxID_ANY, _T("Fu
         {
             /*Musique::Get()->Lecture(fichierMem.GetFullPath());
             Musique::Get()->Listage();*/
-            MusicManager::get()->playMusicThenParse(fichierMem.GetFullPath());
+            MusicManager::get().playMusicThenParse(fichierMem.GetFullPath());
             m_MAJliste = true;
         }
     }
@@ -179,7 +179,7 @@ void FuXFenetre::panelCreation()
     #endif
 
     int args[] = {WX_GL_RGBA, WX_GL_DOUBLEBUFFER, WX_GL_DEPTH_SIZE, 16, 0};
-    MusicManager::get()->setParent(this);
+    MusicManager::get().setParent(this);
     m_musiqueGraph = new MusiqueGraph(this, args);
     m_playList = new PlayList;
     //FichierListe::Get();
@@ -527,6 +527,8 @@ void FuXFenetre::SeparationPanel(wxCommandEvent &event)
             FichierLog::Get()->Ajouter(_T("FuXFenetre::SeparationPanel - GESTIONPERIPH"));
             #endif
             break;
+        default:
+            break;
     }
     m_panelsAssocies[event.GetInt()] = false;
 
@@ -581,6 +583,8 @@ void FuXFenetre::ReunionPanel(wxCommandEvent &event)
             FichierLog::Get()->Ajouter(_T("FuXFenetre::ReunionPanel - GESTIONPERIPH"));
             #endif
             break;
+        default:
+            break;
     }
     if (s)
     {
@@ -606,7 +610,7 @@ void FuXFenetre::ReunionPanel(wxCommandEvent &event)
  */
 void FuXFenetre::EventUpdateMusicVolume(wxScrollEvent &WXUNUSED(event))
 {
-    MusicManager::get()->getMusicPlayer()->setVolume(SliderSon::Get()->GetValue());
+    MusicManager::get().getMusicPlayer().setVolume(SliderSon::Get()->GetValue());
     m_pageSon->SetValeurMusique(SliderSon::Get()->GetValue());
     SwitchWindow();
 }
@@ -651,7 +655,7 @@ void FuXFenetre::EventMusicStop(wxCommandEvent &WXUNUSED(event))
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::Stop"));
     #endif
-    MusicManager::get()->getMusicPlayer()->stop();
+    MusicManager::get().getMusicPlayer().stop();
     drawPlayImageStatus();
 }
 
@@ -663,7 +667,7 @@ void FuXFenetre::EventMusicNext(wxCommandEvent &WXUNUSED(event))
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::suivant"));
     #endif
-    MusicManager::get()->playNextOrRandomMusic();
+    MusicManager::get().playNextOrRandomMusic();
     SwitchWindow();
 }
 
@@ -675,7 +679,7 @@ void FuXFenetre::EventMusicPrevious(wxCommandEvent &WXUNUSED(event))
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::Precedent"));
     #endif
-    MusicManager::get()->playPreviousOrRandomMusic();
+    MusicManager::get().playPreviousOrRandomMusic();
     SwitchWindow();
 }
 
@@ -684,7 +688,7 @@ void FuXFenetre::EventMusicPrevious(wxCommandEvent &WXUNUSED(event))
  */
 void FuXFenetre::EventMusicRepete(wxCommandEvent &WXUNUSED(event))
 {
-    MusicManager::get()->setRepete(!MusicManager::get()->isRepete());
+    MusicManager::get().setRepete(!MusicManager::get().isRepete());
 }
 
 /**
@@ -692,7 +696,7 @@ void FuXFenetre::EventMusicRepete(wxCommandEvent &WXUNUSED(event))
  */
 void FuXFenetre::EventMusicRandomize(wxCommandEvent &WXUNUSED(event))
 {
-    MusicManager::get()->setRandom(!MusicManager::get()->isRandom());
+    MusicManager::get().setRandom(!MusicManager::get().isRandom());
 }
 
 /**
@@ -738,7 +742,7 @@ void FuXFenetre::EventMusicChanged(wxCommandEvent &WXUNUSED(event))
     FichierLog::Get()->Ajouter(_T("FuXFenetre::ChangementChanson"));
     #endif
     m_playList->GetPlayListTableau()->ChangementChanson();
-    drawPauseImageStatus();
+    changePlayPauseImageStatus();
 }
 
 /**
@@ -754,7 +758,9 @@ void FuXFenetre::EventUpdatePlayLists(wxCommandEvent &WXUNUSED(event))
  * Affiche une fenêtre permettant l'enregistrement de la liste de lecture
  */
 void FuXFenetre::EventSavePlayList(wxCommandEvent &event)
-{    m_playList->EnregistrerM3U(event);}
+{
+    m_playList->EnregistrerM3U(event);
+}
 
 /**
  * Affiche le menu About de l'application
@@ -789,14 +795,15 @@ void FuXFenetre::EventSwitchButtonImage(wxCommandEvent &event)
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::BoutonChangeImage - bascule image Lecture/Pause"));
     #endif
-    if (event.GetInt() == 1)
-    {
-        drawPlayImageStatus();
-    }
-    else
-    {
-        drawPauseImageStatus();
-    }
+//    if (event.GetInt() == 1)
+//    {
+//        drawPlayImageStatus();
+//    }
+//    else
+//    {
+//        drawPauseImageStatus();
+//    }
+    changePlayPauseImageStatus();
     SwitchWindow();
 }
 
@@ -811,7 +818,7 @@ void FuXFenetre::EvtServeurAjout(wxCommandEvent &event)
     wxArrayString *a = m_serveur->GetConnexionTableau(event.GetInt());
 
     //bool lire = Musique::Get()->IsContainingMus();
-    MusicManager::get()->parse(a, true);
+    MusicManager::get().parse(a, true);
     /*if (lire && !a->Item(i).Lower().EndsWith(_T(".m3u")))
         Musique::Get()->ChangementChanson(-1, a->Item(0));*/
     m_serveur->Deconnecter(event.GetInt());
@@ -867,6 +874,14 @@ void FuXFenetre::EventNoMusic(wxCommandEvent& WXUNUSED(event))
 
 /// Internal management methods ///
 
+void FuXFenetre::changePlayPauseImageStatus()
+{
+    if (MusicManager::get().getMusicPlayer().isPlaying())
+        drawPauseImageStatus();
+    else
+        drawPlayImageStatus();
+}
+
 void FuXFenetre::drawPauseImageStatus()
 {
     m_boutonImageLP->SetBitmapLabel(m_imageBouton[PAUS]);
@@ -881,19 +896,19 @@ void FuXFenetre::drawPlayImageStatus()
 
 void FuXFenetre::playButtonPressed()
 {
-    if (MusicManager::get()->getMusicPlayer()->isPlaying())//En lecture
+    if (MusicManager::get().getMusicPlayer().isPlaying())//En lecture
     {
-        MusicManager::get()->getMusicPlayer()->setPause(true);
+        MusicManager::get().getMusicPlayer().setPause(true);
     }
-    else if (MusicManager::get()->getMusicList()->empty())//Pas de fichier chargé
+    else if (MusicManager::get().getMusics().empty())//Pas de fichier chargé
         openDialogToPlayMusic();
-    else if (MusicManager::get()->getMusicPlayer()->isPaused())//En pause
+    else if (MusicManager::get().getMusicPlayer().isPaused())//En pause
     {
-        MusicManager::get()->getMusicPlayer()->setPause(false);
+        MusicManager::get().getMusicPlayer().setPause(false);
     }
     else//Musique stoppée
     {
-        MusicManager::get()->playSameMusic();
+        MusicManager::get().playSameMusic();
     }
 }
 
@@ -907,9 +922,9 @@ void FuXFenetre::openDialogToPlayMusic()
         navig.GetPaths(musNav);
 
         if (musNav.GetCount() == 1)
-            MusicManager::get()->parse(musNav.Item(0));
+            MusicManager::get().parse(musNav.Item(0));
         else if (musNav.GetCount() >= 2)
-            MusicManager::get()->parse(&musNav, false);
+            MusicManager::get().parse(&musNav, false);
 
         musNav.Clear();
         m_playList->GetPlayListTableau()->MAJ();
@@ -940,7 +955,7 @@ void FuXFenetre::openDialogToSelectPlayListFile()
                     //Musique::Get()->Lecture(Musique::Get()->GetFichier()->GetNomPosition(0));
                 }
                 else*/
-                    MusicManager::get()->parse(chemin);
+                    MusicManager::get().parse(chemin);
                 m_playList->GetPlayListTableau()->MAJ();
                 GestPeriph::Get()->MAJPlaylist();
             }
@@ -954,7 +969,7 @@ void FuXFenetre::openDialogToSelectPlayListFile()
 
 void FuXFenetre::deleteCurrentPlayingTitle()
 {
-    m_playList->GetPlayListTableau()->supprimerNomLigne(MusicManager::get()->deleteCurrentTitle());
+    MusicManager::get().deleteCurrentTitle();
     GestPeriph::Get()->MAJPlaylist();
 }
 
@@ -988,6 +1003,8 @@ void FuXFenetre::SwitchWindow()/////////////////
                     if (sizerDroitIPod)
                         sizerDroit->Hide(sizerDroitIPod);
                     break;
+                default:
+            break;
             }
         switch(m_nouvelleFenetre)
         {
@@ -1011,6 +1028,8 @@ void FuXFenetre::SwitchWindow()/////////////////
                 m_FenetreActuel = GESTIONPERIPH;
                 sizerDroit->Show(sizerDroitIPod);
                 break;
+            default:
+                break;
         }
     }
     switch(m_nouvelleFenetre)
@@ -1029,6 +1048,8 @@ void FuXFenetre::SwitchWindow()/////////////////
         case GESTIONPERIPH:
             GestPeriph::Get()->SetFocus();
             break;
+        default:
+            break;
     }
     sizerDroit->Layout();
 }
@@ -1040,7 +1061,10 @@ void FuXFenetre::readPreferencesNewWay(bool loadDefaultMusic, const wxString& fi
         return;
     if (doc.GetRoot()->GetName() != _("default"))
         return;
-    wxXmlNode *child = doc.GetRoot()->GetChildren(), *nodeReprise = NULL;
+
+    wxXmlNode *child = doc.GetRoot()->GetChildren();
+    wxXmlNode *nodeReprise = NULL;
+
     while (child)
     {
         if (child->GetName() == _("filter_colour"))
@@ -1074,7 +1098,7 @@ void FuXFenetre::readPreferencesNewWay(bool loadDefaultMusic, const wxString& fi
                 if (test.GetLineCount() > 1)
                 {
                     //Musique::Get()->Lecture(test.GetLine(1));
-                    MusicManager::get()->parse(cheminM3U);
+                    MusicManager::get().parse(cheminM3U);
                     //Musique::Get()->Lecture(FichierListe::Get()->GetNomPosition(0));
                     m_MAJliste = true;
                 }
@@ -1084,8 +1108,8 @@ void FuXFenetre::readPreferencesNewWay(bool loadDefaultMusic, const wxString& fi
         }
         else if (nodeReprise->GetAttribute(_("type"), wxEmptyString) == _T("MP3"))
         {
-            MusicManager::get()->playMusicThenParse(nodeReprise->GetNodeContent());
-            m_MAJliste = true;
+            MusicManager::get().playMusicThenParse(nodeReprise->GetNodeContent());
+            m_MAJliste = MusicManager::get().getMusicPlayer().isPlaying();
         }
     }
 }
@@ -1116,8 +1140,8 @@ void FuXFenetre::readPreferencesOldWay(bool loadDefaultMusic, wxTextFile& prefFi
             {
                 if (test.GetLineCount() > 1)
                 {
-                    MusicManager::get()->parse(cheminM3U);
-                    //MusicManager::get()->playMusic(MusicManager::get()->getMusicList()->getNameAtPosition(0));
+                    MusicManager::get().parse(cheminM3U);
+                    //MusicManager::get().playMusic(MusicManager::get().getMusicList()->getNameAtPosition(0));
                     m_MAJliste = true;
                 }
                 else wxLogMessage(_("Impossible d'ouvrir le fichier, celui-ci est vierge !"));
@@ -1126,7 +1150,7 @@ void FuXFenetre::readPreferencesOldWay(bool loadDefaultMusic, wxTextFile& prefFi
         }
         else if (prefFile.GetLine(3).IsSameAs(_T("Reprise= MP3")))
         {
-            MusicManager::get()->playMusicThenParse(prefFile.GetLine(4).AfterFirst(' '));
+            MusicManager::get().playMusicThenParse(prefFile.GetLine(4).AfterFirst(' '));
             m_MAJliste = true;
         }
     }

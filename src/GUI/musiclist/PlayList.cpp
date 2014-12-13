@@ -37,7 +37,6 @@ END_EVENT_TABLE()
  */
 PlayList::PlayList()
 {
-    m_rechercheTailleMot = 0;
 }
 
 /**
@@ -163,7 +162,7 @@ void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
             return;
         if (modif)
         {
-            if (!MusicManager::get()->saveMusicListIntoFile(fen->GetChemin()))
+            if (!MusicManager::get().saveMusicListIntoFile(fen->GetChemin()))
             {
                 wxLogError(_("Erreur dans le nom.\nVérifiez que vous utilisez des caractères autorisés."), _("Erreur"));
                 return;
@@ -191,62 +190,22 @@ void PlayList::OnPanneau(wxCollapsiblePaneEvent &WXUNUSED(event))
 {    sizer->Layout();}
 
 /**
- * Évènement - Appelé lors de la sélection d'une ligne dans la liste
+ * Event - Called when a line is selected in the play list
  */
 void PlayList::OnAfficheDetails(wxListEvent &event)
 {
-    //ligneSel = event.GetIndex();
-    wxListItem item;
-    item.SetId(event.GetIndex());
-    item.SetColumn(6);
-    item.SetMask(wxLIST_MASK_TEXT);
-    m_liste->GetItem(item);
+    std::vector<Music*>::iterator iter = MusicManager::get().getMusics().begin() + event.GetIndex();
+    Music* music = *iter;
 
-    wxString chemin = item.GetText();
-    item.SetColumn(0);
-    m_liste->GetItem(item);
-    chemin << wxFileName::GetPathSeparator() << item.GetText();
-
-    fichierTAG = chemin;//FichierListe::Get()->GetNomPosition(ligneSel);
-
-    m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
-    if (!m_ObjetTAG.isNull() && m_ObjetTAG.file()->isValid())
+    RemplirPanneauTAG(*music);
+    if (music->HasRecordSleeve())
     {
-        TagLib::MPEG::File f(TagLib::FileName(fichierTAG.fn_str()));
-
-        if(f.ID3v2Tag())
-        {
-            TagLib::ID3v2::FrameList l = f.ID3v2Tag()->frameList("APIC");
-            if (!l.isEmpty())
-            {
-                TagLib::ID3v2::AttachedPictureFrame *p = static_cast<TagLib::ID3v2::AttachedPictureFrame *>(l.front());
-                int imgTaille = p->picture().size();
-
-                if (p != 0)//>
-                {
-                    wxMemoryOutputStream imgStreamOut;
-                    imgStreamOut.Write(p->picture().data(), imgTaille);
-                    wxMemoryInputStream stream(imgStreamOut);
-                    wxString typeImage(p->mimeType().toCString(true), wxConvLocal);
-
-                    if (typeImage.IsSameAs(_T("image/jpeg")) || typeImage.IsSameAs(_T("image/jpg")))
-                    {
-                        m_pochette->SetImage(wxImage(stream, _T("image/jpeg")));
-                        m_pochette->AfficheImage(true);
-                    }
-                    else
-                        m_pochette->AfficheImage(false);
-                }
-            }
-            else
-                m_pochette->AfficheImage(false);
-        }
-        RemplirPanneauTAG(fichierTAG);
-        m_sizerRep->Layout();
+        m_pochette->SetImage(*music->GetRecordSleeve());
+        m_pochette->AfficheImage(true);
     }
     else
-        ViderPanneauTAG();
-    m_ObjetTAG = TagLib::FileRef("");
+        m_pochette->AfficheImage(false);
+    m_sizerRep->Layout();
 }
 
 /**
@@ -309,6 +268,8 @@ void PlayList::OnAnnulerTAG(wxCommandEvent &WXUNUSED(event))
     else
         wxMessageBox(_("Sélectionnez un fichier"), _("Erreur !"));
     m_ObjetTAG = TagLib::FileRef("");
+
+    //OnAfficheDetails();
 }
 
 /**
@@ -340,6 +301,20 @@ void PlayList::RemplirPanneauTAG(wxString chaine)
     m_BoiteAnnee->SetValue(m_ObjetTAG.tag()->year());
     m_BoiteGenre->ChangeValue(wxString(m_ObjetTAG.tag()->genre().toCString(), wxConvLocal));//Genre
     m_ObjetTAG = TagLib::FileRef("");
+}
+
+/**
+ * Fill fields with music data
+ * @param music a music
+ */
+void PlayList::RemplirPanneauTAG(Music& music)
+{
+    m_BoiteNom->ChangeValue(music.GetName());//Nom du fichier
+    m_BoiteArtiste->ChangeValue(music.GetArtists());//Artiste
+    m_BoiteAlbum->ChangeValue(music.GetAlbum());//Album
+    m_BoiteTitre->ChangeValue(music.GetTitle());//Titre
+    m_BoiteAnnee->SetValue(music.GetStringYear());
+    m_BoiteGenre->ChangeValue(music.GetGenres());//Genre
 }
 
 /**
@@ -552,9 +527,9 @@ void PlayList::MouseEvents(wxMouseEvent &event)
     if (event.ControlDown() && event.GetWheelRotation() != 0)
     {
         if (event.GetWheelRotation() < 0)
-            MusicManager::get()->playNextMusic();
+            MusicManager::get().playNextMusic();
         else
-            MusicManager::get()->playPreviousMusic();
+            MusicManager::get().playPreviousMusic();
     }
     else if (event.AltDown() && event.GetWheelRotation() != 0)
     {
@@ -569,24 +544,7 @@ void PlayList::MouseEvents(wxMouseEvent &event)
 
 void PlayList::RechercheListeLecture(wxCommandEvent &WXUNUSED(event))
 {
-    if (m_liste->IsResearchRunning())
-    {
-        m_liste->StopResearch();
-        while (m_liste->IsResearchRunning())
-            //wxLogMessage(_("att"));//
-            wxApp::GetInstance()->Yield(false);//wxSleep(20);
-        wxApp::GetInstance()->Yield(false);
-    }
-
-    if (m_champsRecherche->GetValue().Length() > m_rechercheTailleMot)
-    {
-        m_rechercheTailleMot = m_champsRecherche->GetValue().Length();
-        m_liste->PreciseResearch(m_champsRecherche->GetValue());
-    }
-    else
-    {
-        m_rechercheTailleMot = m_champsRecherche->GetValue().Length();
-        m_liste->WidelyResearch(m_champsRecherche->GetValue());
-    }
+    MusicManager::get().setSearchWord(m_champsRecherche->GetValue());
+    m_liste->MAJ();
 }
 

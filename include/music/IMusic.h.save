@@ -1,24 +1,28 @@
 #ifndef IMUSIC_H_INCLUDED
 #define IMUSIC_H_INCLUDED
 
+#include <wx/wx.h>
+#include <wx/image.h>
+
 class IMusic
 {
     public:
-        wxString GetName();
-        wxString GetArtists();
-        wxString GetAlbum();
-        wxString GetTitle();
-        wxString GetPath();
-        wxString GetGenres();
-        wxString GetExtension();
-        wxString GetFileName();
-        int GetYear();
-        int GetDuration();
-        int GetDebit();
-        int GetSize();
-        wxImage *GetRecordSleeve();
+        virtual wxString GetName()          const = 0;
+        virtual wxString GetArtists()       const = 0;
+        virtual wxString GetAlbum()         const = 0;
+        virtual wxString GetTitle()         const = 0;
+        virtual wxString GetPath()          const = 0;
+        virtual wxString GetGenres()        const = 0;
+        virtual wxString GetExtension()     const = 0;
+        virtual wxString GetFileName()      const = 0;
+        virtual int GetYear()               const = 0;
+        virtual int GetDuration()           const = 0;
+        virtual int GetDebit()              const = 0;
+        virtual int GetSize()               const = 0;
+        virtual bool HasRecordSleeve()      const
+        virtual wxImage *GetRecordSleeve()  const = 0;
 
-        bool equalsFilename(Music *music);
+        virtual bool equalsFilename(const IMusic *music) const = 0;
 };
 
 #endif // IMUSIC_H_INCLUDED

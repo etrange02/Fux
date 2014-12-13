@@ -183,17 +183,17 @@ void PageGestionPeriph::OuvrirDossierSuivant(wxCommandEvent &WXUNUSED(event))
     else if (wxFileExists(nouveauDossier) && Parametre::Get()->islisable(nouveauDossier.AfterLast('.').Lower()) && m_liste->GetEtat() == DOSSIER)
     {
         wxArrayString *tableau = GetDossierLigneSelection();
-        MusicManager::get()->parse(tableau, true);
-        MusicManager::get()->playMusic(tableau->Item(0));
+        MusicManager::get().parse(tableau, true);
+        MusicManager::get().playMusic(tableau->Item(0));
         delete tableau;
     }
     else if (m_liste->GetEtat() == PLAYLIST)
-        MusicManager::get()->playMusicAt(m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED));
+        MusicManager::get().playMusicAt(m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED));
     else if (m_liste->GetEtat() == M3U)
     {
         wxArrayString *tableau = GetFichierLigneSelection();
-        MusicManager::get()->parse(tableau, true);
-        MusicManager::get()->playMusic(tableau->Item(0));
+        MusicManager::get().parse(tableau, true);
+        MusicManager::get().playMusic(tableau->Item(0));
         delete tableau;
     }
 }
@@ -525,7 +525,7 @@ void PageGestionPeriph::AjoutDansFichierLigne(wxArrayString *tableau)
 //////////////// M3U -> Liste de lecture
     else if (m_liste->GetEtat() == PLAYLIST)
     {
-        MusicManager::get()->parse(tableau, true);
+        MusicManager::get().parse(tableau, true);
         return;
     }
 
@@ -580,7 +580,7 @@ bool PageGestionPeriph::SuppressionDansFichierLignePlaylist()
     }
 
     fichier.Close();
-    MusicManager::get()->deleteTitles(&tableau, true);
+    MusicManager::get().deleteTitles(&tableau, true);
     return true;
 }
 
@@ -929,12 +929,12 @@ void PageGestionPeriph::MenuColler()
 void PageGestionPeriph::MenuLire()
 {
     if (m_liste->GetEtat() == PLAYLIST)
-        MusicManager::get()->playMusicAt(m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED));
+        MusicManager::get().playMusicAt(m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED));
     else if (m_liste->GetEtat() == M3U)
     {
         wxArrayString *tableau = GetFichierLigneSelection();
-        MusicManager::get()->parse(tableau, true);
-        MusicManager::get()->playMusic(tableau->Item(0));
+        MusicManager::get().parse(tableau, true);
+        MusicManager::get().playMusic(tableau->Item(0));
         delete tableau;
     }
     else if (m_liste->GetEtat() == DOSSIER)
@@ -950,8 +950,8 @@ void PageGestionPeriph::MenuLire()
         }
         if (!tableau->IsEmpty())
         {
-            MusicManager::get()->parse(tableau, true);
-            MusicManager::get()->playMusic(tableau->Item(0));
+            MusicManager::get().parse(tableau, true);
+            MusicManager::get().playMusic(tableau->Item(0));
         }
         delete tableau;
     }
@@ -1037,7 +1037,7 @@ void PageGestionPeriph::GlisserTraitement(wxArrayString *tableau, long pos)
         }
         if (m_liste->GetEtat() == PLAYLIST)
         {
-            MusicManager::get()->moveIntTitlesAt(tableau, pos, true, true);
+            MusicManager::get().moveIntTitlesAt(tableau, pos, true, true);
             //Recharger();
         }
     }
@@ -1081,15 +1081,15 @@ void PageGestionPeriph::GlisserTraitement(wxArrayString *tableau, long pos)
         else if(m_liste->GetEtat() == PLAYLIST)
         {
             if (m_pageParallele->GetEtat() == DOSSIER)//A modifier, interdiction formel d'ouvrir directement le fichier sans passer par Musique
-                MusicManager::get()->placeStringTitlesAt(tableau, pos, true);
+                MusicManager::get().placeStringTitlesAt(tableau, pos, true);
             else if (m_pageParallele->GetEtat() == M3U)
             {
                 ArrayIntToString(tableau, m_pageParallele->GetChemin());
-                MusicManager::get()->placeStringTitlesAt(tableau, pos, true);
+                MusicManager::get().placeStringTitlesAt(tableau, pos, true);
                 m_pageParallele->SuppressionDansFichierLigneM3u();
             }
             else if (m_pageParallele->GetEtat() == PLAYLIST)
-                MusicManager::get()->moveIntTitlesAt(tableau, pos, true, true);
+                MusicManager::get().moveIntTitlesAt(tableau, pos, true, true);
             //Recharger();
         }
     }

@@ -59,8 +59,6 @@ Music::~Music()
  */
 void Music::FillFields(wxString filename)
 {
-    TagLib::FileRef fileTAG;
-
     if (filename.IsEmpty() || !wxFileExists(filename))
         return;
 
@@ -69,7 +67,7 @@ void Music::FillFields(wxString filename)
     SetPath(filename.BeforeLast(wxFileName::GetPathSeparator()));
     SetExtension(filename.AfterLast('.'));
 
-    fileTAG = TagLib::FileRef(TagLib::FileName(filename.fn_str()));
+    TagLib::FileRef fileTAG = TagLib::FileRef(TagLib::FileName(filename.fn_str()));
 
     SetArtists(wxString(fileTAG.tag()->artist().toCString(true), wxConvUTF8));
     SetAlbum(wxString(fileTAG.tag()->album().toCString(true), wxConvUTF8));
@@ -81,6 +79,8 @@ void Music::FillFields(wxString filename)
     SetSize(fileTAG.file()->length());
     ImageExtracting(filename);
     //.....
+
+    ShrinkData();
 }
 
 /** @brief Fill sleeves (images)
@@ -262,9 +262,9 @@ void Music::SetSize(int size)
  * @return the name of the file
  *
  */
-wxString& Music::GetName()
+wxString Music::GetName() const
 {
-    return this->m_name;
+    return m_name;
 }
 
 /** @brief Gets the artists
@@ -272,7 +272,7 @@ wxString& Music::GetName()
  * @return the artists
  *
  */
-wxString& Music::GetArtists()
+wxString Music::GetArtists() const
 {
     return m_artists;
 }
@@ -282,7 +282,7 @@ wxString& Music::GetArtists()
  * @return the album
  *
  */
-wxString& Music::GetAlbum()
+wxString Music::GetAlbum() const
 {
     return m_album;
 }
@@ -292,7 +292,7 @@ wxString& Music::GetAlbum()
  * @return the title
  *
  */
-wxString& Music::GetTitle()
+wxString Music::GetTitle() const
 {
     return m_title;
 }
@@ -302,7 +302,7 @@ wxString& Music::GetTitle()
  * @return the path
  *
  */
-wxString& Music::GetPath()
+wxString Music::GetPath() const
 {
     return m_path;
 }
@@ -312,7 +312,7 @@ wxString& Music::GetPath()
  * @return the genres
  *
  */
-wxString& Music::GetGenres()
+wxString Music::GetGenres() const
 {
     return m_genres;
 }
@@ -322,7 +322,7 @@ wxString& Music::GetGenres()
  * @return the extension
  *
  */
-wxString& Music::GetExtension()
+wxString Music::GetExtension() const
 {
     return m_extension;
 }
@@ -377,12 +377,17 @@ int Music::GetSize() const
     return m_size;
 }
 
+bool Music::HasRecordSleeve() const
+{
+    return NULL != GetRecordSleeve();
+}
+
 /** @brief Gets the sleeve
  * Gets the record sleeve (image)
  * @return the sleeve
  *
  */
-wxImage* Music::GetRecordSleeve()
+wxImage* Music::GetRecordSleeve() const
 {
     return m_recordSleeve;
 }
@@ -393,7 +398,7 @@ wxImage* Music::GetRecordSleeve()
  * @return true if same
  *
  */
-bool Music::equalsFilename(const IMusic *music)
+bool Music::EqualsFilename(const IMusic *music) const
 {
     if (NULL == music)
         return false;
@@ -427,5 +432,28 @@ wxString Music::GetStringYear()
     return str;
 }
 
+bool Music::IsMatching(const wxString& word)
+{
+    return !(
+                      wxNOT_FOUND == GetFileName()      .Lower().Find(word)
+                 &&   wxNOT_FOUND == GetArtists()       .Lower().Find(word)
+                 &&   wxNOT_FOUND == GetAlbum()         .Lower().Find(word)
+                 &&   wxNOT_FOUND == GetTitle()         .Lower().Find(word)
+                 &&   wxNOT_FOUND == GetGenres()        .Lower().Find(word)
+                 &&   wxNOT_FOUND == GetStringDuration().Lower().Find(word)
+                 &&   wxNOT_FOUND == GetStringYear()    .Lower().Find(word)
+             );
+}
 
+void Music::ShrinkData()
+{
+    m_name.Shrink();
+    m_artists.Shrink();
+    m_album.Shrink();
+    m_title.Shrink();
+    m_path.Shrink();
+    m_genres.Shrink();
+    m_extension.Shrink();
+    m_filename.Shrink();
+}
 

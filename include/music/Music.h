@@ -38,13 +38,13 @@ class Music : public IMusic
         void SetSize(int size);
         void SetRecordSleeve(wxImage *recordSleeve);
 
-        wxString& GetName();
-        wxString& GetArtists();
-        wxString& GetAlbum();
-        wxString& GetTitle();
-        wxString& GetPath();
-        wxString& GetGenres();
-        wxString& GetExtension();
+        wxString GetName() const;
+        wxString GetArtists() const;
+        wxString GetAlbum() const;
+        wxString GetTitle() const;
+        wxString GetPath() const;
+        wxString GetGenres() const;
+        wxString GetExtension() const;
         wxString GetFileName() const;
         wxString GetStringDuration();
         wxString GetStringYear();
@@ -52,12 +52,15 @@ class Music : public IMusic
         int GetDuration() const;
         int GetDebit() const;
         int GetSize() const;
-        wxImage *GetRecordSleeve();
+        bool HasRecordSleeve() const;
+        wxImage *GetRecordSleeve() const;
 
-        bool equalsFilename(const IMusic *music);
+        bool EqualsFilename(const IMusic *music) const;
+        bool IsMatching(const wxString& word);
 
     protected:
         void FillFields(wxString filename);
+        void ShrinkData();
         void ImageExtracting(wxString filename);
 
     private:

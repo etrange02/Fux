@@ -40,9 +40,9 @@ void MusicList::initialize()
  * @return the music list
  *
  */
-std::vector<Music*>* MusicList::getMusicList() const
+std::vector<Music*>& MusicList::getCollection() const
 {
-    return m_musicList;
+    return *m_musicList;
 }
 
 /** @brief Indicates the presence of elements
@@ -52,7 +52,7 @@ std::vector<Music*>* MusicList::getMusicList() const
  */
 bool MusicList::empty() const
 {
-    return getMusicList()->empty();
+    return getCollection().empty();
 }
 
 /** @brief Gets the list size
@@ -62,7 +62,7 @@ bool MusicList::empty() const
  */
 size_t MusicList::size() const
 {
-    return getMusicList()->size();
+    return getCollection().size();
 }
 
 /** @brief Parse the directory given in parameter
@@ -213,7 +213,7 @@ wxString MusicList::getNameAtPosition(long position)
     if (position >= (long)m_musicList->size() || position < 0)
         return wxEmptyString;
 
-    return getMusicList()->at(position)->GetFileName();
+    return getCollection().at(position)->GetFileName();
 }
 
 /** @brief Gets the nearest position of the pair <filename, position>
@@ -277,7 +277,7 @@ long MusicList::getPositionInList(const Music* music)
 
     long index = 0;
 
-    for (std::vector<Music*>::iterator iter = getMusicList()->begin(); iter != getMusicList()->end(); ++iter, ++index)
+    for (std::vector<Music*>::iterator iter = getCollection().begin(); iter != getCollection().end(); ++iter, ++index)
     {
         if (music == *iter)
             return index;
@@ -307,10 +307,11 @@ void MusicList::removeLine(ChansonNomPos& title)
  */
 void MusicList::removeLine(size_t position)
 {
-    if (!getMusicList()->empty() && getMusicList()->size() > position)
+    if (!getCollection().empty() && getCollection().size() > position)
     {
-        std::vector<Music*>::iterator it = getMusicList()->begin() + position;
-        getMusicList()->erase(it);
+        std::vector<Music*>::iterator it = getCollection().begin() + position;
+        getCollection().erase(it);
+        sendMusicListUpdatedEvent();
     }
 }
 
@@ -328,11 +329,11 @@ void MusicList::removeLines(wxArrayString *filenameArray)
     while (j < maxArray && cont)
     {
         i = 0;
-        while (i < getMusicList()->size() && cont)
+        while (i < getCollection().size() && cont)
         {
             if (getNameAtPosition(i).IsSameAs(filenameArray->Item(j)))
             {
-                getMusicList()->erase(getMusicList()->begin() + i);
+                getCollection().erase(getCollection().begin() + i);
                 ++j;
                 --i;
                 seen = false;
@@ -361,8 +362,8 @@ void MusicList::removeLines(wxArrayString *filenameArray)
 void MusicList::exchangeLine(wxString filename1, wxString filename2)
 {
     int lineToChange = getPositionInList(filename1);
-    Music *music = getMusicList()->at(lineToChange);
-    getMusicList()->assign(lineToChange, new Music(filename2));
+    Music *music = getCollection().at(lineToChange);
+    getCollection().assign(lineToChange, new Music(filename2));
     delete music;
 }
 

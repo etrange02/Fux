@@ -25,10 +25,12 @@ END_EVENT_TABLE()
  * @param id l'identifiant de l'instance
  * @param racc le répertoire où doit être créé un raccourci
  */
- DialogEnregistreM3U::DialogEnregistreM3U(wxWindow *parent, wxWindowID id, wxString racc) : wxDialog(parent, id, _("Création de playlist (fichier .m3u)"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER)
+ DialogEnregistreM3U::DialogEnregistreM3U(wxWindow *parent, wxWindowID id, wxString racc) :
+     wxDialog(parent, id, _("Création de playlist (fichier .m3u)"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER),
+     m_chemin(wxEmptyString),
+     m_raccourci(racc),
+     m_rep(Parametre::Get()->getRepertoireParametre(_T("Play_list_M3U")))
 {
-    m_chemin = wxEmptyString; m_raccourci = racc;
-    m_rep = Parametre::Get()->getRepertoireParametre(_T("Play_list_M3U"));
     Centre();
 }
 

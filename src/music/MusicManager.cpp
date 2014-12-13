@@ -32,11 +32,11 @@ MusicManager::~MusicManager()
  * @return the MusicManager
  *
  */
-MusicManager* MusicManager::get()
+MusicManager& MusicManager::get()
 {
     if (NULL == s_musicManager_instance)
         s_musicManager_instance = new MusicManager();
-    return s_musicManager_instance;
+    return *s_musicManager_instance;
 }
 
 /** @brief Initialize members
@@ -103,9 +103,12 @@ void MusicManager::setRandom(bool random)
  * @return the music list
  *
  */
-MusicList* MusicManager::getMusicList()
+std::vector<Music*>& MusicManager::getMusics()
 {
-    return m_musicList;
+    if (!hasEfficientSearchedWord())
+        return m_musicList->getCollection();
+    else
+        return m_searchedMusicCollection;
 }
 
 /** @brief Returns the music player
@@ -113,9 +116,9 @@ MusicList* MusicManager::getMusicList()
  * @return the music player
  *
  */
-MusicPlayer* MusicManager::getMusicPlayer()
+MusicPlayer& MusicManager::getMusicPlayer()
 {
-    return m_musicPlayer;
+    return *m_musicPlayer;
 }
 
 /** @brief Returns the current playing music
@@ -146,8 +149,7 @@ size_t MusicManager::getCurrentMusicPosition()
  */
 bool MusicManager::playNextMusic()
 {
-    size_t newPosition = m_musicPosition;
-    newPosition++;
+    size_t newPosition = m_musicPosition + 1;
     if (newPosition >= size())
         newPosition = 0;
 
@@ -216,9 +218,23 @@ bool MusicManager::playMusicAt(long position)
         position = 0;
 
     m_musicPosition = position;
-    m_music = m_musicList->getMusicList()->at(position);
+    m_music = m_musicList->getCollection().at(position);
     m_musicPlayer->play(m_music->GetFileName());
     return true;
+}
+
+bool MusicManager::playMusicAtInShownCollection(long position)
+{
+    bool play = false;
+    if (hasEfficientSearchedWord())
+    {
+        if (position < 0 || position >= (long)m_searchedMusicCollection.size())
+            position = 0;
+        play = playMusicAt(m_musicList->getPositionInList(m_searchedMusicCollection.at(position)));
+    }
+    else
+        play = playMusicAt(position);
+    return play;
 }
 
 /** @brief Plays a title
@@ -268,7 +284,7 @@ bool MusicManager::playSameMusic()
  * @return true on success
  *
  */
-bool MusicManager::playMusic(wxString& name)
+bool MusicManager::playMusic(const wxString& name)
 {
     long position = m_musicList->getPositionInList(name, -1);
 
@@ -284,9 +300,10 @@ bool MusicManager::playMusic(wxString& name)
 bool MusicManager::playMusicThenParse(wxString filename)
 {
     m_musicPlayer->play(filename);
+    return true;
     parse();
     m_musicPosition = m_musicList->getPositionInList(filename);
-    m_music = m_musicList->getMusicList()->at(m_musicPosition);
+    m_music = m_musicList->getCollection().at(m_musicPosition);
     return true;
 }
 
@@ -301,7 +318,7 @@ bool MusicManager::playMusicThenParse(wxString filename)
  */
 void MusicManager::moveIntTitlesAt(wxArrayString* titles, long position, bool update, bool autoDelete)
 {
-    std::vector<Music*> *oldMusics = m_musicList->getMusicList();
+    std::vector<Music*> *oldMusics = &m_musicList->getCollection();
 
     std::vector<Music*> *selectedMusics = new std::vector<Music*>();
     std::vector<Music*> *notSelectedMusics = new std::vector<Music*>();
@@ -343,10 +360,10 @@ void MusicManager::moveIntTitlesAt(wxArrayString* titles, long position, bool up
 
     oldMusics->swap(*newMusics);
 
-    std::vector<Music*>::iterator iter = std::find_if(m_musicList->getMusicList()->begin(), m_musicList->getMusicList()->end(), findPosition(getMusic()));
+    std::vector<Music*>::iterator iter = std::find_if(m_musicList->getCollection().begin(), m_musicList->getCollection().end(), findPosition(getMusic()));
 
-    size_t index = std::distance(m_musicList->getMusicList()->begin(), iter);
-    if (index < m_musicList->getMusicList()->size())
+    size_t index = std::distance(m_musicList->getCollection().begin(), iter);
+    if (index < m_musicList->getCollection().size())
         m_musicPosition = index;
 
     delete selectedMusics;
@@ -372,25 +389,18 @@ void MusicManager::placeStringTitlesAt(wxArrayString* titles, size_t position, b
 }
 
 /** @brief Delete the current playing title
- * Delete the current playing title and play antoher title
- * @return Name and position of the deleted title
+ * Delete the current playing title and play another title
  *
  */
-ChansonNomPos MusicManager::deleteCurrentTitle()
+void MusicManager::deleteCurrentTitle()
 {
-    ChansonNomPos deletedTitle;
-
     if (NULL != m_music)
     {
-        deletedTitle.SetNom(m_music->GetFileName());
-        deletedTitle.SetPos(m_musicPosition);
         m_musicList->removeLine(m_musicPosition);
         if (m_musicList->size() <= m_musicPosition)
             m_musicPosition--;
         playMusicAt(m_musicPosition);
     }
-
-    return deletedTitle;
 }
 
 /** @brief Delete a title from the music list
@@ -399,7 +409,7 @@ ChansonNomPos MusicManager::deleteCurrentTitle()
  * @return void
  *
  */
-void MusicManager::deleteTitleAt(long position)
+void MusicManager::deleteTitleAt(size_t position)
 {
     if (position == m_musicPosition)
         deleteCurrentTitle();
@@ -443,9 +453,9 @@ void MusicManager::deleteTitles(wxArrayString* titles, bool update)
 
 void MusicManager::parse()
 {
-    if (!getMusicPlayer()->hasLoadedMusic())
+    if (!getMusicPlayer().hasLoadedMusic())
         return;
-    m_musicList->parseDirectory(getMusicPlayer()->getFileName().BeforeLast(wxFileName::GetPathSeparator()), Parametre::Get()->getSousDossier());
+    m_musicList->parseDirectory(getMusicPlayer().getFileName().BeforeLast(wxFileName::GetPathSeparator()), Parametre::Get()->getSousDossier());
 }
 
 void MusicManager::parse(wxArrayString* filenames, bool update)
@@ -529,7 +539,7 @@ bool MusicManager::saveMusicListIntoFile(wxString const &filename)
     }
 
     outputFile.AddLine(M3U_EXTENSION);
-    for (std::vector<Music*>::iterator iter = this->getMusicList()->getMusicList()->begin(); iter != this->getMusicList()->getMusicList()->end(); ++iter)
+    for (std::vector<Music*>::iterator iter = this->getMusics().begin(); iter != this->getMusics().end(); ++iter)
     {
         outputFile.AddLine((*iter)->GetFileName());
     }
@@ -545,5 +555,34 @@ void MusicManager::sendMusicNoFileEvent()
         return;
     wxCommandEvent evt(wxEVT_FUX_MUSICMANAGER_NO_FILE, wxID_ANY);
     m_parent->GetEventHandler()->AddPendingEvent(evt);
+}
+
+wxString MusicManager::getSearchedWord() const
+{
+    return m_searchedWord;
+}
+
+void MusicManager::setSearchWord(const wxString& searchedWord)
+{
+    m_searchedWord = searchedWord;
+    launchSearching();
+}
+
+void MusicManager::launchSearching()
+{
+    m_searchedMusicCollection.clear();
+    if (hasEfficientSearchedWord())
+    {
+        for (vector<Music*>::iterator iter = m_musicList->getCollection().begin(); iter != m_musicList->getCollection().end(); ++iter)
+        {
+            if ((*iter)->IsMatching(m_searchedWord))
+                m_searchedMusicCollection.push_back(*iter);
+        }
+    }
+}
+
+bool MusicManager::hasEfficientSearchedWord() const
+{
+    return !getSearchedWord().IsEmpty();/* && !getSearchedWord().IsSameAs(_T("*"));*/
 }
 

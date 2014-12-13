@@ -11,9 +11,6 @@
 #include <wx/dnd.h>
 #include <wx/mstream.h>
 #include <wx/renderer.h>
-#include <tag.h>
-#include <fileref.h>
-//#include "../../music/Musique.h"
 #include "../../music/ChansonNomPos.h"
 #include "../../music/MusicManager.h"
 #include "../../tools/dnd/DnDCible.h"
@@ -35,7 +32,6 @@ class PlayListTableau : public wxListCtrl
         void MAJ();
         void supprimerNomLigne(ChansonNomPos);
         wxString GetDuree(int);
-        int GetPositionChansonLecture();
 
         void ChansonActive(wxListEvent&);
         void OnKey(wxKeyEvent&);
@@ -53,11 +49,6 @@ class PlayListTableau : public wxListCtrl
 
         void SuppressionLigne();
 
-        void WidelyResearch(wxString chaine);
-        void PreciseResearch(wxString chaine);
-        void StopResearch();
-        bool IsResearchRunning();
-
     protected:
         bool m_couper;
         wxMenu *m_menu;
@@ -66,8 +57,6 @@ class PlayListTableau : public wxListCtrl
         long m_yMenu;
 
         int m_positionChanson;
-        bool m_searchInProgress;
-        wxString m_searchedWord;
 
     DECLARE_EVENT_TABLE()
 };

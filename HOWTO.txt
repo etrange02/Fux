@@ -12,20 +12,22 @@ Configurer configure.gcc
 -> STATIC 1
 -> RELEASE
 
+Faire une variable d'environnement $WXWIN pointant sur le répertoire de wxWidgets
+
 Compiler avec makefile.gcc
 Note: suivant la version de windows, il est possible de faire directement make au lieu de "mingw32-make -f makefile.gcc".
 
 =============================================
 2. Récupérer wxSQLite3
-Créer un projet sqlite3
+Créer un projet "sqlite3"
 Ajouter sqlite3secure.c au projet
 Ajouter les options (dans les #defines) :
-#define SQLITE_HAS_CODEC
+//#define SQLITE_HAS_CODEC
 #define CODEC_TYPE CODEC_TYPE_AES128
-#define SQLITE_CORE
+//#define SQLITE_CORE
 #define THREADSAFE 1
 
-Compiler normalement, mettre le .a résultant à la place du .a fourni dans le dossier wxSQLite3/sqlite3/lib
+Compiler normalement. Renommer le fichier de sortie en sqlite3.a. Placer ce fichier dans sqlite3/lib.
 
 Configurer makefile.gcc
 -> emplacement de wxWidgets
@@ -36,9 +38,14 @@ Compiler avec makefile.gcc
 
 =============================================
 3. Récupérer TagLib
+
+Zlib est à compiler en static. (Configuration dans CMake).
 TagLib nécessaite au préalable zlib pour être compilé.
+Pour utiliser la version statique, il faut préciser le chemin du fichier zlib.a.
 Utiliser CMake pour configurer le projet, unicode, static (et dyn car ne marche pas toujours)
 --> utilise la dll, test à faire sans !
+
+Une fois compilé, créer dans le répertoire de sortie/taglib un dossier Headers. Copier dedans tous les fichiers .h du projet (ceux d'origine et ceux qui ont été créés). Ajouter aussi les fichiers .tcc
 
 =============================================
 4. Récupérer FMODex
@@ -46,6 +53,9 @@ Utiliser CMake pour configurer le projet, unicode, static (et dyn car ne marche 
 
 =============================================
 5. Modifier le fichier FuX.cbp (variables)
+
+Définir la variable globale "wx". Elle pointe sur le répertoire d'installation.
+Définir si besoin des variables d'environnement (DIR_LIB) si nécessaire pour pointer sur les bons répertoires.
 
 =============================================
 6. Compiler le tout

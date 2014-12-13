@@ -175,7 +175,7 @@ void Parametre::setVolume(wxString volume, wxString volumePC)
  */
 void Parametre::setVolume(int volume, int volumePC)
 {
-    MusicManager::get()->getMusicPlayer()->setVolume(volume);
+    MusicManager::get().getMusicPlayer().setVolume(volume);
     SliderSon::Get()->SetValue(volume);
 }
 

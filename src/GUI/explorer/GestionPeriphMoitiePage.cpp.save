@@ -183,20 +183,16 @@ void PageGestionPeriph::OuvrirDossierSuivant(wxCommandEvent &WXUNUSED(event))
     else if (wxFileExists(nouveauDossier) && Parametre::Get()->islisable(nouveauDossier.AfterLast('.').Lower()) && m_liste->GetEtat() == DOSSIER)
     {
         wxArrayString *tableau = GetDossierLigneSelection();
-        //Musique::Get()->Listage(tableau, true);
-        //Musique::Get()->ChangementChanson(-1, tableau->Item(0));
-        MusicManager::get()->parse(tableau, true);
-        MusicManager::get()->playMusic(tableau->Item(0));
+        MusicManager::get().parse(tableau, true);
+        MusicManager::get().playMusic(tableau->Item(0));
         delete tableau;
     }
     else if (m_liste->GetEtat() == PLAYLIST)
-        Musique::Get()->ChangementChanson(m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED));
+        MusicManager::get().playMusicAt(m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED));
     else if (m_liste->GetEtat() == M3U)
     {
         wxArrayString *tableau = GetFichierLigneSelection();
-        //Musique::Get()->Listage(tableau, true);
-        //Musique::Get()->ChangementChanson(-1, tableau->Item(0));
-        MusicManager::get()->parse(tableau, true);
+        MusicManager::get().parse(tableau, true);
         MusicManager::get()->playMusic(tableau->Item(0));
         delete tableau;
     }
@@ -529,7 +525,7 @@ void PageGestionPeriph::AjoutDansFichierLigne(wxArrayString *tableau)
 //////////////// M3U -> Liste de lecture
     else if (m_liste->GetEtat() == PLAYLIST)
     {
-        Musique::Get()->Listage(tableau, true);
+        MusicManager::get()->parse(tableau, true);
         return;
     }
 
@@ -584,7 +580,7 @@ bool PageGestionPeriph::SuppressionDansFichierLignePlaylist()
     }
 
     fichier.Close();
-    Musique::Get()->SupprimerNom(&tableau, true);
+    MusicManager::get()->deleteTitles(&tableau, true);
     return true;
 }
 
@@ -732,7 +728,7 @@ void PageGestionPeriph::MenuCreerM3U()
             }
             else if (m_liste->GetSelectedItemCount() > 1 && m_liste->GetEtat() == PLAYLIST)
             {
-                wxTextFile fichierLec(FichierListe::Get()->GetCheminListe());
+                /*wxTextFile fichierLec(FichierListe::Get()->GetCheminListe());
                 if (!fichierLec.Open())
                 {   fichierEcr.Write(); fichierEcr.Close(); return;}
 
@@ -740,7 +736,7 @@ void PageGestionPeriph::MenuCreerM3U()
                 for (size_t i=0; i<tableau->GetCount(); i++)
                     fichierEcr.AddLine(tableau->Item(i));
                 fichierLec.Close();
-                delete tableau;
+                delete tableau;*/
             }
             fichierEcr.Write();
             if (fen.GetCheminRaccourci() != wxEmptyString && !wxFileExists(fen.GetCheminRaccourci()))
@@ -933,13 +929,12 @@ void PageGestionPeriph::MenuColler()
 void PageGestionPeriph::MenuLire()
 {
     if (m_liste->GetEtat() == PLAYLIST)
-        Musique::Get()->ChangementChanson(m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED));
+        MusicManager::get()->playMusicAt(m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED));
     else if (m_liste->GetEtat() == M3U)
     {
         wxArrayString *tableau = GetFichierLigneSelection();
-        Musique::Get()->Listage(tableau, true);
-        Musique::Get()->ChangementChanson(-1, tableau->Item(0));
-        MusicManager::get()->parse()
+        MusicManager::get()->parse(tableau, true);
+        MusicManager::get()->playMusic(tableau->Item(0));
         delete tableau;
     }
     else if (m_liste->GetEtat() == DOSSIER)
@@ -955,8 +950,6 @@ void PageGestionPeriph::MenuLire()
         }
         if (!tableau->IsEmpty())
         {
-            //Musique::Get()->Listage(tableau, true);
-            //Musique::Get()->ChangementChanson(-1, tableau->Item(0));
             MusicManager::get()->parse(tableau, true);
             MusicManager::get()->playMusic(tableau->Item(0));
         }
@@ -1005,7 +998,7 @@ void PageGestionPeriph::Glisser(wxCommandEvent &WXUNUSED(event))
         return;
     }
 
-    DnDBufferData UploadData(transfile);//Conversion tableau dans buffer
+    MusicPlayListDnDBufferData UploadData(transfile);//Conversion tableau dans buffer
     wxDropSource source(UploadData, this);//met le buffer en déplacement
     source.DoDragDrop(wxDrag_DefaultMove);//Déplace !
 
@@ -1044,7 +1037,6 @@ void PageGestionPeriph::GlisserTraitement(wxArrayString *tableau, long pos)
         }
         if (m_liste->GetEtat() == PLAYLIST)
         {
-            //Musique::Get()->PlacerLigneInt(tableau, pos, true, true);
             MusicManager::get()->moveIntTitlesAt(tableau, pos, true, true);
             //Recharger();
         }
@@ -1089,18 +1081,15 @@ void PageGestionPeriph::GlisserTraitement(wxArrayString *tableau, long pos)
         else if(m_liste->GetEtat() == PLAYLIST)
         {
             if (m_pageParallele->GetEtat() == DOSSIER)//A modifier, interdiction formel d'ouvrir directement le fichier sans passer par Musique
-                //Musique::Get()->PlacerLigneString(tableau, pos, true);
                 MusicManager::get()->placeStringTitlesAt(tableau, pos, true);
             else if (m_pageParallele->GetEtat() == M3U)
             {
                 ArrayIntToString(tableau, m_pageParallele->GetChemin());
-                //Musique::Get()->PlacerLigneString(tableau, pos, true);
                 MusicManager::get()->placeStringTitlesAt(tableau, pos, true);
                 m_pageParallele->SuppressionDansFichierLigneM3u();
             }
             else if (m_pageParallele->GetEtat() == PLAYLIST)
                 MusicManager::get()->moveIntTitlesAt(tableau, pos, true, true);
-                //Musique::Get()->PlacerLigneInt(tableau, pos, true, true);
             //Recharger();
         }
     }

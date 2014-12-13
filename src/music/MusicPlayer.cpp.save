@@ -24,7 +24,7 @@ MusicPlayer::~MusicPlayer()
  * Initializes members
  * @return void
  *
- */   
+ */
 void MusicPlayer::initialize()
 {
     FMOD_System_Create(&m_system);
@@ -44,7 +44,7 @@ void MusicPlayer::initialize()
     m_totalTime = new Duree();
 }
 
-void MusicPlayer::play(wxString filename)
+b MusicPlayer::play(wxString filename)
 {
     release();
     if (wxFileExists(filename))

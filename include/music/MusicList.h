@@ -21,7 +21,7 @@ class MusicList : public ISearchTraversable
         MusicList();
         virtual ~MusicList();
 
-        std::vector<Music*> *getMusicList() const;
+        std::vector<Music*>& getCollection() const;
 
         bool empty() const;
         size_t size() const;

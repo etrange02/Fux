@@ -106,7 +106,7 @@ void CouperCopierColler::ModifEtatDonnee(bool reset)
         }
         else if (m_objetOrigine == PLAYLIST)
         {
-            MusicManager::get()->deleteTitles(&m_tableau, true);
+            MusicManager::get().deleteTitles(&m_tableau, true);
             //Musique::Get()->SupprimerNom();
             reset = true;
         }
@@ -176,7 +176,7 @@ bool CouperCopierColler::SetDestination(wxString destination, int type)
         if (m_tableau.IsEmpty())
             return false;
 
-        MusicManager::get()->deleteTitles(&m_tableau, true);
+        MusicManager::get().deleteTitles(&m_tableau, true);
         //Musique::Get()->Listage(&m_tableau, true);
         fait = true;
         ModifEtatDonnee();

@@ -47,6 +47,7 @@ class PlayList : public wxPanel
 
         void ViderPanneauTAG();
         void RemplirPanneauTAG(wxString chaine);
+        void RemplirPanneauTAG(Music& music);
         void EvtViderPanneauTAG(wxCommandEvent &WXUNUSED(event));
         void EvtImage(wxCommandEvent&);
         void MouseEvents(wxMouseEvent&);
@@ -66,8 +67,6 @@ class PlayList : public wxPanel
         ImagePochetteMusique *m_pochette;
         PlayListTableau *m_liste;
         TagLib::FileRef m_ObjetTAG;
-
-        size_t m_rechercheTailleMot;
 
     DECLARE_EVENT_TABLE()
 };

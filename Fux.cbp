@@ -64,6 +64,8 @@ IMPORTANT, A FAIRE !!!
 					<Add option="-Wunreachable-code" />
 					<Add option="-Wswitch-enum" />
 					<Add option="-Wswitch-default" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
 					<Add option="-g" />
 					<Add directory="include/music" />
 					<Add directory="include/preddicates" />
@@ -75,8 +77,8 @@ IMPORTANT, A FAIRE !!!
 				<Variable name="FMODEX" value='&quot;C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Windows\api&quot;' />
 				<Variable name="RD" value="" />
 				<Variable name="SQLITE3" value="${WXSQLITE3}\sqlite3" />
-				<Variable name="TAGLIB" value="C:\CMake\cmake_taglib\taglib" />
-				<Variable name="WXSQLITE3" value="C:\wxsqlite3-3.0.3" />
+				<Variable name="TAGLIB" value="C:\Workspace\Libraries\taglib\taglib-1.9.1\out\taglib" />
+				<Variable name="WXSQLITE3" value="C:\Workspace\Libraries\wxSQLite3\wxsqlite3-3.1.1\wxsqlite3-3.1.1" />
 				<Variable name="WX_CFG" value="msw$(AURD)" />
 				<Variable name="WX_DIR" value="$(DIR_LIB)\wx" />
 				<Variable name="WX_GL_VER" value="GL" />
@@ -86,8 +88,6 @@ IMPORTANT, A FAIRE !!!
 			</Environment>
 		</Build>
 		<Compiler>
-			<Add option="-Wextra" />
-			<Add option="-Wall" />
 			<Add option="-pipe" />
 			<Add option="-mthreads" />
 			<Add option='[[if (PLATFORM == PLATFORM_MSW &amp;&amp; (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.0.0&quot;))) print(_T(&quot;-Wno-attributes&quot;));]]' />
@@ -143,6 +143,33 @@ IMPORTANT, A FAIRE !!!
 		</Linker>
 		<Unit filename="include/Classes.h" />
 		<Unit filename="include/Define.h" />
+		<Unit filename="include/GUI/dialogs/DialogEnregistreM3U.h" />
+		<Unit filename="include/GUI/dialogs/DialogTagMP3.h" />
+		<Unit filename="include/GUI/dialogs/DialogTagMP3Info.h" />
+		<Unit filename="include/GUI/explorer/DriveManagersPanel.h" />
+		<Unit filename="include/GUI/explorer/ExplorerListCtrl.h" />
+		<Unit filename="include/GUI/explorer/ExplorerPanel.h" />
+		<Unit filename="include/GUI/explorer/GestionPeriph.h" />
+		<Unit filename="include/GUI/explorer/GestionPeriphCouperCopier.h" />
+		<Unit filename="include/GUI/explorer/GestionPeriphElementLecteurRacineFichier.h" />
+		<Unit filename="include/GUI/explorer/GestionPeriphMoitiePage.h" />
+		<Unit filename="include/GUI/explorer/GestionPeriphTableau.h" />
+		<Unit filename="include/GUI/graph/MusiqueGraph.h" />
+		<Unit filename="include/GUI/musiclist/PlayList.h" />
+		<Unit filename="include/GUI/musiclist/PlayListTableau.h" />
+		<Unit filename="include/GUI/settings/PreferenceCouleur.h" />
+		<Unit filename="include/GUI/settings/PreferenceDefaut.h" />
+		<Unit filename="include/GUI/settings/PreferenceSon.h" />
+		<Unit filename="include/GUI/tools/ArrayFenetreDetachable.h" />
+		<Unit filename="include/GUI/tools/DropFichierImagePochetteMusique.h" />
+		<Unit filename="include/GUI/tools/ImageText.h" />
+		<Unit filename="include/GUI/tools/jaquetteClasses.h" />
+		<Unit filename="include/GUI/widgets/BoutonFenetreDetachable.h" />
+		<Unit filename="include/GUI/widgets/Fenetre.h" />
+		<Unit filename="include/GUI/widgets/FenetreDetachable.h" />
+		<Unit filename="include/GUI/widgets/GenericTreePanel.h" />
+		<Unit filename="include/GUI/widgets/ImagePochetteMusique.h" />
+		<Unit filename="include/GUI/widgets/SliderSon.h" />
 		<Unit filename="include/application/Application.h" />
 		<Unit filename="include/constants/enums.h" />
 		<Unit filename="include/constants/events.h" />
@@ -162,33 +189,6 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/explorer/state/FileDriveManagerState.h" />
 		<Unit filename="include/explorer/state/PlaylistDriveManagerState.h" />
 		<Unit filename="include/fuxHTMLindex.h" />
-		<Unit filename="include/gui/dialogs/DialogEnregistreM3U.h" />
-		<Unit filename="include/gui/dialogs/DialogTagMP3.h" />
-		<Unit filename="include/gui/dialogs/DialogTagMP3Info.h" />
-		<Unit filename="include/gui/explorer/DriveManagersPanel.h" />
-		<Unit filename="include/gui/explorer/ExplorerListCtrl.h" />
-		<Unit filename="include/gui/explorer/ExplorerPanel.h" />
-		<Unit filename="include/gui/explorer/GestionPeriph.h" />
-		<Unit filename="include/gui/explorer/GestionPeriphCouperCopier.h" />
-		<Unit filename="include/gui/explorer/GestionPeriphElementLecteurRacineFichier.h" />
-		<Unit filename="include/gui/explorer/GestionPeriphMoitiePage.h" />
-		<Unit filename="include/gui/explorer/GestionPeriphTableau.h" />
-		<Unit filename="include/gui/graph/MusiqueGraph.h" />
-		<Unit filename="include/gui/musiclist/PlayList.h" />
-		<Unit filename="include/gui/musiclist/PlayListTableau.h" />
-		<Unit filename="include/gui/settings/PreferenceCouleur.h" />
-		<Unit filename="include/gui/settings/PreferenceDefaut.h" />
-		<Unit filename="include/gui/settings/PreferenceSon.h" />
-		<Unit filename="include/gui/tools/ArrayFenetreDetachable.h" />
-		<Unit filename="include/gui/tools/DropFichierImagePochetteMusique.h" />
-		<Unit filename="include/gui/tools/ImageText.h" />
-		<Unit filename="include/gui/tools/jaquetteClasses.h" />
-		<Unit filename="include/gui/widgets/BoutonFenetreDetachable.h" />
-		<Unit filename="include/gui/widgets/Fenetre.h" />
-		<Unit filename="include/gui/widgets/FenetreDetachable.h" />
-		<Unit filename="include/gui/widgets/GenericTreePanel.h" />
-		<Unit filename="include/gui/widgets/ImagePochetteMusique.h" />
-		<Unit filename="include/gui/widgets/SliderSon.h" />
 		<Unit filename="include/music/ChansonNomPos.h" />
 		<Unit filename="include/music/Duree.h" />
 		<Unit filename="include/music/IMusic.h" />
@@ -219,6 +219,32 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/tools/dnd/DnDListeFichier.h" />
 		<Unit filename="include/tools/dnd/MusicPlayListDnDBufferData.h" />
 		<Unit filename="include/version.h" />
+		<Unit filename="src/GUI/dialogs/DialogEnregistreM3U.cpp" />
+		<Unit filename="src/GUI/dialogs/DialogTagMP3.cpp" />
+		<Unit filename="src/GUI/dialogs/DialogTagMP3Info.cpp" />
+		<Unit filename="src/GUI/explorer/DriveManagersPanel.cpp" />
+		<Unit filename="src/GUI/explorer/ExplorerListCtrl.cpp" />
+		<Unit filename="src/GUI/explorer/ExplorerPanel.cpp" />
+		<Unit filename="src/GUI/explorer/GestionPeriph.cpp" />
+		<Unit filename="src/GUI/explorer/GestionPeriphCouperCopier.cpp" />
+		<Unit filename="src/GUI/explorer/GestionPeriphElementLecteurRacineFichier.cpp" />
+		<Unit filename="src/GUI/explorer/GestionPeriphMoitiePage.cpp" />
+		<Unit filename="src/GUI/explorer/GestionPeriphTableau.cpp" />
+		<Unit filename="src/GUI/graph/MusiqueGraph.cpp" />
+		<Unit filename="src/GUI/musiclist/PlayList.cpp" />
+		<Unit filename="src/GUI/musiclist/PlayListTableau.cpp" />
+		<Unit filename="src/GUI/settings/PreferenceCouleur.cpp" />
+		<Unit filename="src/GUI/settings/PreferenceDefaut.cpp" />
+		<Unit filename="src/GUI/settings/PreferenceSon.cpp" />
+		<Unit filename="src/GUI/tools/ArrayFenetreDetachable.cpp" />
+		<Unit filename="src/GUI/tools/DropFichierImagePochetteMusique.cpp" />
+		<Unit filename="src/GUI/tools/ImageText.cpp" />
+		<Unit filename="src/GUI/widgets/BoutonFenetreDetachable.cpp" />
+		<Unit filename="src/GUI/widgets/Fenetre.cpp" />
+		<Unit filename="src/GUI/widgets/FenetreDetachable.cpp" />
+		<Unit filename="src/GUI/widgets/GenericTreePanel.cpp" />
+		<Unit filename="src/GUI/widgets/ImagePochetteMusique.cpp" />
+		<Unit filename="src/GUI/widgets/SliderSon.cpp" />
 		<Unit filename="src/application/Application.cpp" />
 		<Unit filename="src/db/BDD.cpp" />
 		<Unit filename="src/db/BDDRequete.cpp" />
@@ -233,32 +259,6 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/explorer/state/DriveManagerState.cpp" />
 		<Unit filename="src/explorer/state/FileDriveManagerState.cpp" />
 		<Unit filename="src/explorer/state/PlaylistDriveManagerState.cpp" />
-		<Unit filename="src/gui/dialogs/DialogEnregistreM3U.cpp" />
-		<Unit filename="src/gui/dialogs/DialogTagMP3.cpp" />
-		<Unit filename="src/gui/dialogs/DialogTagMP3Info.cpp" />
-		<Unit filename="src/gui/explorer/DriveManagersPanel.cpp" />
-		<Unit filename="src/gui/explorer/ExplorerListCtrl.cpp" />
-		<Unit filename="src/gui/explorer/ExplorerPanel.cpp" />
-		<Unit filename="src/gui/explorer/GestionPeriph.cpp" />
-		<Unit filename="src/gui/explorer/GestionPeriphCouperCopier.cpp" />
-		<Unit filename="src/gui/explorer/GestionPeriphElementLecteurRacineFichier.cpp" />
-		<Unit filename="src/gui/explorer/GestionPeriphMoitiePage.cpp" />
-		<Unit filename="src/gui/explorer/GestionPeriphTableau.cpp" />
-		<Unit filename="src/gui/graph/MusiqueGraph.cpp" />
-		<Unit filename="src/gui/musiclist/PlayList.cpp" />
-		<Unit filename="src/gui/musiclist/PlayListTableau.cpp" />
-		<Unit filename="src/gui/settings/PreferenceCouleur.cpp" />
-		<Unit filename="src/gui/settings/PreferenceDefaut.cpp" />
-		<Unit filename="src/gui/settings/PreferenceSon.cpp" />
-		<Unit filename="src/gui/tools/ArrayFenetreDetachable.cpp" />
-		<Unit filename="src/gui/tools/DropFichierImagePochetteMusique.cpp" />
-		<Unit filename="src/gui/tools/ImageText.cpp" />
-		<Unit filename="src/gui/widgets/BoutonFenetreDetachable.cpp" />
-		<Unit filename="src/gui/widgets/Fenetre.cpp" />
-		<Unit filename="src/gui/widgets/FenetreDetachable.cpp" />
-		<Unit filename="src/gui/widgets/GenericTreePanel.cpp" />
-		<Unit filename="src/gui/widgets/ImagePochetteMusique.cpp" />
-		<Unit filename="src/gui/widgets/SliderSon.cpp" />
 		<Unit filename="src/music/ChansonNomPos.cpp" />
 		<Unit filename="src/music/Duree.cpp" />
 		<Unit filename="src/music/Music.cpp" />
@@ -320,7 +320,7 @@ IMPORTANT, A FAIRE !!!
 				<general use_at_in_tags="1" />
 			</DoxyBlocks>
 			<AutoVersioning>
-				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
+				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="1000" />
 				<Settings autoincrement="1" date_declarations="1" use_define="0" update_manifest="1" do_auto_increment="1" ask_to_increment="0" language="C++" svn="0" svn_directory="" header_path="include/version.h" />
 				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
 				<Code header_guard="VERSION_H" namespace="AutoVersion" prefix="" />

@@ -10,6 +10,8 @@
 #include "MusicList.h"
 #include "../predicates/findPosition.h"
 
+using namespace std;
+
 class MusicList;
 
 extern const wxEventType wxEVT_FUX_MUSICMANAGER_NO_FILE;
@@ -17,13 +19,13 @@ extern const wxEventType wxEVT_FUX_MUSICMANAGER_NO_FILE;
 class MusicManager
 {
     public:
-        static MusicManager* get();
+        static MusicManager& get();
 
         bool isRepete();
         bool isRandom();
         Music *getMusic();
-        MusicList *getMusicList();
-        MusicPlayer *getMusicPlayer();
+        vector<Music*>& getMusics();
+        MusicPlayer& getMusicPlayer();
 
         size_t getCurrentMusicPosition();
 
@@ -36,15 +38,16 @@ class MusicManager
         bool playPreviousOrRandomMusic();
         bool playAMusic();
         bool playMusicAt(long position);
-        bool playMusic(wxString& name/*, long position*/);
+        bool playMusicAtInShownCollection(long position);
+        bool playMusic(const wxString& name/*, long position*/);
         bool playMusicThenParse(wxString filename);
         bool playSameMusic();
 
         void moveIntTitlesAt(wxArrayString* titles, long position, bool update = true, bool autoDelete = true);
         void placeStringTitlesAt(wxArrayString* titles, size_t position, bool update = true);
 
-        ChansonNomPos deleteCurrentTitle();
-        void deleteTitleAt(long position);
+        void deleteCurrentTitle();
+        void deleteTitleAt(size_t position);
         void deleteTitles(wxArrayString *titles, bool update = false);
 
         void parse();
@@ -59,10 +62,16 @@ class MusicManager
         bool empty() const;
         size_t size() const;
 
+        wxString getSearchedWord() const;
+        void setSearchWord(const wxString& searchedWord);
+        bool hasEfficientSearchedWord() const;
+
+
     protected:
         void initialize();
         bool playRandomMusic();
         void sendMusicNoFileEvent();
+        void launchSearching();
 
     private:
         MusicManager();
@@ -74,6 +83,8 @@ class MusicManager
         MusicPlayer* m_musicPlayer;
         Music* m_music;
         size_t m_musicPosition;
+        wxString m_searchedWord;
+        vector<Music*> m_searchedMusicCollection;
 };
 
 #endif // MUSICMANAGER_H

@@ -18,9 +18,8 @@ using namespace TagLib;
 /**
  * Default constructor
  */
-Music::Music()
+Music::Music() : Music::Music(wxEmptyString)
 {
-    Initialize();
 }
 
 /**
@@ -29,17 +28,17 @@ Music::Music()
  */
 Music::Music(wxString filename) :
     m_name(wxEmptyString),
-    m_artists(wxEmptyString)
-    m_album(wxEmptyString);
-    m_title(wxEmptyString);
-    m_path(wxEmptyString);
-    m_genres(wxEmptyString);
-    m_extension(wxEmptyString);
-    m_year(0);
-    m_duration(0);
-    m_debit(0);
-    m_size(0);
-    m_recordSleeve(NULL);
+    m_artists(wxEmptyString),
+    m_album(wxEmptyString),
+    m_title(wxEmptyString),
+    m_path(wxEmptyString),
+    m_genres(wxEmptyString),
+    m_extension(wxEmptyString),
+    m_year(0),
+    m_duration(0),
+    m_debit(0),
+    m_size(0),
+    m_recordSleeve(NULL)
 {
     FillFields(filename);
 }
@@ -62,8 +61,8 @@ void Music::FillFields(wxString filename)
 {
     TagLib::FileRef fileTAG;
 
-    /*if (filename.IsEmpty() || !wxFileExists(filename))
-        return;*/
+    if (filename.IsEmpty() || !wxFileExists(filename))
+        return;
 
     SetFileName(filename);
     SetName(filename.AfterLast(wxFileName::GetPathSeparator()));
@@ -263,9 +262,9 @@ void Music::SetSize(int size)
  * @return the name of the file
  *
  */
-wxString& Music::GetName()
+wxString Music::GetName() const
 {
-    return this->m_name;
+    return m_name;
 }
 
 /** @brief Gets the artists
@@ -273,7 +272,7 @@ wxString& Music::GetName()
  * @return the artists
  *
  */
-wxString& Music::GetArtists()
+wxString Music::GetArtists() const
 {
     return m_artists;
 }
@@ -283,7 +282,7 @@ wxString& Music::GetArtists()
  * @return the album
  *
  */
-wxString& Music::GetAlbum()
+wxString Music::GetAlbum() const
 {
     return m_album;
 }
@@ -293,7 +292,7 @@ wxString& Music::GetAlbum()
  * @return the title
  *
  */
-wxString& Music::GetTitle()
+wxString Music::GetTitle() const
 {
     return m_title;
 }
@@ -303,7 +302,7 @@ wxString& Music::GetTitle()
  * @return the path
  *
  */
-wxString& Music::GetPath()
+wxString Music::GetPath() const
 {
     return m_path;
 }
@@ -313,7 +312,7 @@ wxString& Music::GetPath()
  * @return the genres
  *
  */
-wxString& Music::GetGenres()
+wxString Music::GetGenres() const
 {
     return m_genres;
 }
@@ -323,7 +322,7 @@ wxString& Music::GetGenres()
  * @return the extension
  *
  */
-wxString& Music::GetExtension()
+wxString Music::GetExtension() const
 {
     return m_extension;
 }
@@ -378,29 +377,39 @@ int Music::GetSize() const
     return m_size;
 }
 
+bool Music::HasRecordSleeve() const
+{
+    return NULL != GetRecordSleeve();
+}
+
 /** @brief Gets the sleeve
  * Gets the record sleeve (image)
  * @return the sleeve
  *
- */   
-wxImage* Music::GetRecordSleeve()
+ */
+wxImage* Music::GetRecordSleeve() const
 {
     return m_recordSleeve;
 }
 
 /** @brief Equality test
  * Tests the equality between this instance and the parameter. Equality based on filenames.
- * @param music anot
- * @return bool
+ * @param music an instance
+ * @return true if same
  *
- */    
-bool Music::equalsFilename(const IMusic *music)
+ */
+bool Music::EqualsFilename(const IMusic *music) const
 {
     if (NULL == music)
         return false;
     return this->GetFileName().IsSameAs(music->GetFileName());
 }
 
+/** @brief Gets the duration under dd:dd format
+ * Gets the duration under dd:dd format. 0 inserted if necessary
+ * @return a dd:dd string
+ *
+ */
 wxString Music::GetStringDuration()
 {
     wxString str;
@@ -412,11 +421,32 @@ wxString Music::GetStringDuration()
     return str;
 }
 
+/** @brief Gets the year under string format
+ * Gets the year under string format
+ * @return the year under string format
+ *
+ */
 wxString Music::GetStringYear()
 {
     wxString str = wxString::Format(_("%d"), GetYear());
     return str;
 }
 
+bool Music::IsMatching(const wxString& word)
+{
+    return !(
+                      wxNOT_FOUND == GetFileName()      .Lower().Find(word)
+                 &&   wxNOT_FOUND == GetArtists()       .Lower().Find(word)
+                 &&   wxNOT_FOUND == GetAlbum()         .Lower().Find(word)
+                 &&   wxNOT_FOUND == GetTitle()         .Lower().Find(word)
+                 &&   wxNOT_FOUND == GetGenres()        .Lower().Find(word)
+                 &&   wxNOT_FOUND == GetStringDuration().Lower().Find(word)
+                 &&   wxNOT_FOUND == GetStringYear()    .Lower().Find(word)
+             );
+}
 
+void Music::ShrinkData()
+{
+
+}
 

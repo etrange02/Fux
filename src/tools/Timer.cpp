@@ -33,8 +33,8 @@ TimerGraph::~TimerGraph()
  */
 void TimerGraph::Notify()
 {
-    if (MusicManager::get()->getMusicPlayer()->isEnding())
-        MusicManager::get()->playAMusic();
+    if (MusicManager::get().getMusicPlayer().isEnding())
+        MusicManager::get().playAMusic();
     if (MusiqueGraph::Get()->IsShownOnScreen())
         MusiqueGraph::Get()->OnIdle();
 }

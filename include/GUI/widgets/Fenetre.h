@@ -76,6 +76,7 @@ class FuXFenetre: public wxFrame
     void readPreferencesOldWay(bool loadDefaultMusic, wxTextFile& prefFile);
     void readPreferencesNewWay(bool loadDefaultMusic, const wxString& fileName);
 
+    void changePlayPauseImageStatus();
     void drawPlayImageStatus();
     void drawPauseImageStatus();
     void playButtonPressed();

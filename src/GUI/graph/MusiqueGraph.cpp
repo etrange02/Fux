@@ -111,15 +111,15 @@ void MusiqueGraph::OnPaint(wxPaintEvent&)
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glClearColor(m_fond.GetRed()/255.0, m_fond.GetGreen()/255.0, m_fond.GetBlue()/255.0, 1);
 
-    if (!MusicManager::get()->empty())
+    if (!MusicManager::get().empty())
     {
         register unsigned int i = 0;
-        if (MusicManager::get()->getMusicPlayer()->isPlaying())
+        if (MusicManager::get().getMusicPlayer().isPlaying())
         {
             register unsigned int spec = 0, retard = 0;
             Couleur couleur;
 
-            MusicManager::get()->getMusicPlayer()->getSpectrum(spectrum, m_largeur_tab);
+            MusicManager::get().getMusicPlayer().getSpectrum(spectrum, m_largeur_tab);
             glBegin(GL_LINES);
             for (i = 0; i < m_largeur_tab-1; i++)
             {
@@ -196,7 +196,7 @@ void MusiqueGraph::OnPaint(wxPaintEvent&)
         }
 
         // Un test à faire sur l'état de Musique
-        int largeur = MusicManager::get()->getMusicPlayer()->getCurrentTime()->GetMSecondeTot()*m_sizer_w/MusicManager::get()->getMusicPlayer()->getTotalTime()->GetMSecondeTot();
+        int largeur = MusicManager::get().getMusicPlayer().getCurrentTime()->GetMSecondeTot()*m_sizer_w/MusicManager::get().getMusicPlayer().getTotalTime()->GetMSecondeTot();
         glBegin(GL_QUADS);
             glColor4ub(m_barre.GetRed(), m_barre.GetGreen(), m_barre.GetBlue(), 255);
             glVertex2i(0, 0);
@@ -210,11 +210,11 @@ void MusiqueGraph::OnPaint(wxPaintEvent&)
 
         if (ScreenToClient(wxGetMousePosition()).y >= m_sizer_h-19 && ScreenToClient(wxGetMousePosition()).x >= 0 && ScreenToClient(wxGetMousePosition()).x <= m_sizer_w+30)
         {
-            int point = ScreenToClient(wxGetMousePosition()).x, tot = (point*MusicManager::get()->getMusicPlayer()->getTotalTime()->GetMSecondeTot())/(1000*m_sizer_w);
-            wxString duree = wxString::Format(_T("%d:%2d/%d:%2d"), MusicManager::get()->getMusicPlayer()->getCurrentTime()->GetMinute(),
-                                                                    MusicManager::get()->getMusicPlayer()->getCurrentTime()->GetSeconde(),
-                                                                    MusicManager::get()->getMusicPlayer()->getTotalTime()->GetMinute(),
-                                                                    MusicManager::get()->getMusicPlayer()->getTotalTime()->GetSeconde());
+            int point = ScreenToClient(wxGetMousePosition()).x, tot = (point*MusicManager::get().getMusicPlayer().getTotalTime()->GetMSecondeTot())/(1000*m_sizer_w);
+            wxString duree = wxString::Format(_T("%d:%2d/%d:%2d"), MusicManager::get().getMusicPlayer().getCurrentTime()->GetMinute(),
+                                                                    MusicManager::get().getMusicPlayer().getCurrentTime()->GetSeconde(),
+                                                                    MusicManager::get().getMusicPlayer().getTotalTime()->GetMinute(),
+                                                                    MusicManager::get().getMusicPlayer().getTotalTime()->GetSeconde());
             wxString tps = wxString::Format(_T("%d:%2d"), tot/60, tot%60);
             for (i = 0; i<duree.length(); i++)
                 if (duree[i] == ' ')
@@ -365,8 +365,8 @@ void MusiqueGraph::PlacerChanson(wxMouseEvent &event)
 
     if (position.y > m_sizer_h -20)
     {
-        int msposition = (position.x)*(MusicManager::get()->getMusicPlayer()->getTotalTime()->GetMSecondeTot())/(m_sizer_w);
-        MusicManager::get()->getMusicPlayer()->setPosition(msposition);
+        int msposition = (position.x)*(MusicManager::get().getMusicPlayer().getTotalTime()->GetMSecondeTot())/(m_sizer_w);
+        MusicManager::get().getMusicPlayer().setPosition(msposition);
     }
 }
 
@@ -400,25 +400,25 @@ void MusiqueGraph::OnToucheDown(wxKeyEvent &event)
 {
     if (event.GetKeyCode() == 'P')
     {
-        if (MusicManager::get()->getMusicPlayer()->isPlaying())
-            MusicManager::get()->getMusicPlayer()->setPause(true);
-        else if (MusicManager::get()->getMusicPlayer()->isPaused())
-            MusicManager::get()->getMusicPlayer()->setPause(false);
+        if (MusicManager::get().getMusicPlayer().isPlaying())
+            MusicManager::get().getMusicPlayer().setPause(true);
+        else if (MusicManager::get().getMusicPlayer().isPaused())
+            MusicManager::get().getMusicPlayer().setPause(false);
         else
-            MusicManager::get()->playSameMusic();
+            MusicManager::get().playSameMusic();
     }
     else if (event.GetKeyCode() == 'S')
-        MusicManager::get()->getMusicPlayer()->stop();
+        MusicManager::get().getMusicPlayer().stop();
     else if (event.GetKeyCode() == 'A')
-        MusicManager::get()->setRandom(!MusicManager::get()->isRandom());
+        MusicManager::get().setRandom(!MusicManager::get().isRandom());
     else if (event.GetKeyCode() == '+' || event.GetKeyCode() == WXK_ADD || event.GetKeyCode() == WXK_NUMPAD_ADD)
         SliderSon::Get()->SonUp();
     else if (event.GetKeyCode() == '-' || event.GetKeyCode() == WXK_SUBTRACT || event.GetKeyCode() == WXK_NUMPAD_SUBTRACT || event.GetKeyCode() == '6')
         SliderSon::Get()->SonDown();
     else if (event.GetKeyCode() == WXK_RIGHT)
-        MusicManager::get()->playNextOrRandomMusic();
+        MusicManager::get().playNextOrRandomMusic();
     else if (event.GetKeyCode() == WXK_LEFT)
-        MusicManager::get()->playPreviousOrRandomMusic();
+        MusicManager::get().playPreviousOrRandomMusic();
     else if (event.GetKeyCode() == WXK_DELETE)
     {
         wxCommandEvent evt(wxEVT_MUSIQUE_SUPPRESSION, GetId());
@@ -434,8 +434,8 @@ void MusiqueGraph::OnToucheDown(wxKeyEvent &event)
  */
 void MusiqueGraph::TitreChange()
 {
-    if (MusicManager::get()->getMusicPlayer()->hasLoadedMusic())
-        m_imageText->Creer(MusicManager::get()->getMusic()->GetName(), m_largeur_tab, m_sizer_w);
+    if (MusicManager::get().getMusicPlayer().hasLoadedMusic())
+        m_imageText->Creer(MusicManager::get().getMusic()->GetName(), m_largeur_tab, m_sizer_w);
     else
         m_imageText->Creer(_T(""), m_largeur_tab, m_sizer_w);
 }
@@ -448,9 +448,9 @@ void MusiqueGraph::MouseEvents(wxMouseEvent &event)
     if (event.ControlDown() && event.GetWheelRotation() != 0)
     {
         if (event.GetWheelRotation() < 0)
-            MusicManager::get()->playNextMusic();
+            MusicManager::get().playNextMusic();
         else
-            MusicManager::get()->playPreviousMusic();
+            MusicManager::get().playPreviousMusic();
     }
     else if (event.AltDown() && event.GetWheelRotation() != 0)
     {

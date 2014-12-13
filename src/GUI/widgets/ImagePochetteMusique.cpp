@@ -66,14 +66,14 @@ bool ImagePochetteMusique::AfficheImage(bool affiche)
  * Retourne l'image
  * @return l'image
  */
-wxImage ImagePochetteMusique::GetImage()
+wxImage& ImagePochetteMusique::GetImage()
 {    return m_image;}
 
 /**
  * Modifie l'image courante sans modifier l'affichage
  * @param image la nouvelle image
  */
-void ImagePochetteMusique::SetImage(wxImage image)
+void ImagePochetteMusique::SetImage(wxImage& image)
 {
     m_image = image;
 }

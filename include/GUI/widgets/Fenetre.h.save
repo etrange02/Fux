@@ -76,6 +76,7 @@ class FuXFenetre: public wxFrame
     void readPreferencesOldWay(bool loadDefaultMusic, wxTextFile& prefFile);
     void readPreferencesNewWay(bool loadDefaultMusic, const wxString& fileName);
 
+    void changePlayImageStatus()
     void drawPlayImageStatus();
     void drawPauseImageStatus();
     void playButtonPressed();
@@ -86,7 +87,6 @@ class FuXFenetre: public wxFrame
   private :
 
     /// Initialization methods ///
-    void initialize(int argc, wxChar **argv);
     void panelCreation();
     void panelAssociation();
     void MenuBarCreation();

@@ -16,8 +16,8 @@ class ImagePochetteMusique : public wxStaticBitmap
         ImagePochetteMusique(wxWindow*, wxWindowID, wxBitmap, bool);
         ~ImagePochetteMusique();
         bool AfficheImage(bool);
-        wxImage GetImage();
-        void SetImage(wxImage);
+        wxImage& GetImage();
+        void SetImage(wxImage&);
         void EvtSouris(wxMouseEvent&);
         void LectureImageEvent(wxString);
         bool IsModified();
