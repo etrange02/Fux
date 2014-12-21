@@ -197,6 +197,8 @@ void PlayList::OnAfficheDetails(wxListEvent &event)
     std::vector<Music*>::iterator iter = MusicManager::get().getMusics().begin() + event.GetIndex();
     Music* music = *iter;
 
+    fichierTAG = music->GetFileName();
+
     RemplirPanneauTAG(*music);
     if (music->HasRecordSleeve())
     {

@@ -14,16 +14,22 @@ const wxEventType wxEVT_FUX_MUSICMANAGER_NO_FILE = wxNewEventType();
 
 /** @brief Default constructor
  */
-MusicManager::MusicManager()
+MusicManager::MusicManager() :
+    m_repete(false),
+    m_random(false),
+    m_musicPosition(0),
+    m_parent(NULL),
+    m_music(NULL),
+    m_musicFileThreadManager()
 {
-    initialize();
+    srand(time(NULL));
+    m_musicList = new MusicList(m_musicFileThreadManager);
 }
 
 /** @brief Destructor
  */
 MusicManager::~MusicManager()
 {
-    delete m_musicPlayer;
     delete m_musicList;
 }
 
@@ -37,23 +43,6 @@ MusicManager& MusicManager::get()
     if (NULL == s_musicManager_instance)
         s_musicManager_instance = new MusicManager();
     return *s_musicManager_instance;
-}
-
-/** @brief Initialize members
- * Initialize members
- * @return void
- *
- */
-void MusicManager::initialize()
-{
-    m_repete = false;
-    m_random = false;
-    m_musicPosition = 0;
-    m_parent = NULL;
-    srand(time(NULL));
-    m_musicList = new MusicList();
-    m_musicPlayer = new MusicPlayer();
-    m_music = NULL;
 }
 
 /** @brief Repete mode
@@ -118,7 +107,7 @@ std::vector<Music*>& MusicManager::getMusics()
  */
 MusicPlayer& MusicManager::getMusicPlayer()
 {
-    return *m_musicPlayer;
+    return m_musicPlayer;
 }
 
 /** @brief Returns the current playing music
@@ -208,8 +197,8 @@ bool MusicManager::playMusicAt(long position)
 {
     if (empty())
     {
-        m_musicPlayer->stop();
-        m_musicPlayer->release();
+        m_musicPlayer.stop();
+        m_musicPlayer.release();
         m_musicPosition = 0;
         sendMusicNoFileEvent();
         return false;
@@ -219,7 +208,7 @@ bool MusicManager::playMusicAt(long position)
 
     m_musicPosition = position;
     m_music = m_musicList->getCollection().at(position);
-    m_musicPlayer->play(m_music->GetFileName());
+    m_musicPlayer.play(m_music->GetFileName());
     return true;
 }
 
@@ -299,8 +288,7 @@ bool MusicManager::playMusic(const wxString& name)
  */
 bool MusicManager::playMusicThenParse(wxString filename)
 {
-    m_musicPlayer->play(filename);
-    return true;
+    m_musicPlayer.play(filename);
     parse();
     m_musicPosition = m_musicList->getPositionInList(filename);
     m_music = m_musicList->getCollection().at(m_musicPosition);
@@ -507,7 +495,7 @@ void MusicManager::setParent(wxWindow* parent)
 {
     m_parent = parent;
     m_musicList->setParent(m_parent);
-    m_musicPlayer->setParent(m_parent);
+    m_musicPlayer.setParent(m_parent);
 }
 
 wxWindow* MusicManager::getParent() const
@@ -564,7 +552,7 @@ wxString MusicManager::getSearchedWord() const
 
 void MusicManager::setSearchWord(const wxString& searchedWord)
 {
-    m_searchedWord = searchedWord;
+    m_searchedWord = searchedWord.Lower();
     launchSearching();
 }
 
@@ -573,7 +561,7 @@ void MusicManager::launchSearching()
     m_searchedMusicCollection.clear();
     if (hasEfficientSearchedWord())
     {
-        for (vector<Music*>::iterator iter = m_musicList->getCollection().begin(); iter != m_musicList->getCollection().end(); ++iter)
+        for (std::vector<Music*>::iterator iter = m_musicList->getCollection().begin(); iter != m_musicList->getCollection().end(); ++iter)
         {
             if ((*iter)->IsMatching(m_searchedWord))
                 m_searchedMusicCollection.push_back(*iter);

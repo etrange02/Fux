@@ -2,18 +2,7 @@
 #define MUSIC_H_INCLUDED
 
 #include <wx/wx.h>
-#include <wx/stdpaths.h>
-#include <wx/filename.h>
-#include <wx/dir.h>
-#include <wx/mstream.h>
 #include <wx/image.h>
-// TagLib
-#include <tag.h>
-#include <fileref.h>
-#include <taglib.h>
-#include <mpegfile.h>
-#include <id3v2tag.h>
-#include <attachedpictureframe.h>
 
 #include "IMusic.h"
 
@@ -58,10 +47,7 @@ class Music : public IMusic
         bool EqualsFilename(const IMusic *music) const;
         bool IsMatching(const wxString& word);
 
-    protected:
-        void FillFields(wxString filename);
         void ShrinkData();
-        void ImageExtracting(wxString filename);
 
     private:
         wxString m_name;

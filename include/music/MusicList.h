@@ -9,6 +9,7 @@
 #include "../Define.h"
 #include "Music.h"
 #include "ChansonNomPos.h"
+#include "MusicFileThreadManager.h"
 #include "../tools/dir_traverser/ISearchTraversable.h"
 #include "../tools/dir_traverser/Search.h"
 #include "../settings/Parametre.h"
@@ -18,7 +19,7 @@ extern const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE;
 class MusicList : public ISearchTraversable
 {
     public:
-        MusicList();
+        MusicList(MusicFileThreadManager& musicFileThreadManager);
         virtual ~MusicList();
 
         std::vector<Music*>& getCollection() const;
@@ -56,7 +57,7 @@ class MusicList : public ISearchTraversable
 
     private:
         std::vector<Music*> *m_musicList;
-
+        MusicFileThreadManager m_musicFileThreadManager;
         wxWindow *m_parent;
 };
 

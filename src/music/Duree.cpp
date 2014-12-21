@@ -30,6 +30,9 @@ Duree& Duree::operator=(const Duree& rhs)
 {
     if (this == &rhs) return *this; // handle self assignment
     //assignment operator
+    m_minute = rhs.m_minute;
+    m_seconde = rhs.m_seconde;
+    m_msecondeTot = rhs.m_msecondeTot;
     return *this;
 }
 

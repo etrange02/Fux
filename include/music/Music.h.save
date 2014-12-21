@@ -7,13 +7,6 @@
 #include <wx/dir.h>
 #include <wx/mstream.h>
 #include <wx/image.h>
-// TagLib
-#include <tag.h>
-#include <fileref.h>
-#include <taglib.h>
-#include <mpegfile.h>
-#include <id3v2tag.h>
-#include <attachedpictureframe.h>
 
 #include "IMusic.h"
 
@@ -59,10 +52,6 @@ class Music : public IMusic
         bool IsMatching(const wxString& word);
 
         void ShrinkData();
-
-    protected:
-        void FillFields(wxString filename);
-        void ImageExtracting(wxString filename);
 
     private:
         wxString m_name;

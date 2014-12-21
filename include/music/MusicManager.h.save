@@ -5,14 +5,13 @@
 #include <ctime>
 #include <algorithm>
 //#include "../Define.h"
-#include "IMusic.h"
+//#include "IMusic.h"
 #include "MusicPlayer.h"
 #include "MusicList.h"
+//#include "MusicFileThreadManager.h"
 #include "../predicates/findPosition.h"
 
-using namespace std;
-
-class MusicList;
+//class MusicList;
 
 extern const wxEventType wxEVT_FUX_MUSICMANAGER_NO_FILE;
 
@@ -24,7 +23,7 @@ class MusicManager
         bool isRepete();
         bool isRandom();
         Music *getMusic();
-        vector<Music*>& getMusics();
+        std::vector<Music*>& getMusics();
         MusicPlayer& getMusicPlayer();
 
         size_t getCurrentMusicPosition();
@@ -39,14 +38,14 @@ class MusicManager
         bool playAMusic();
         bool playMusicAt(long position);
         bool playMusicAtInShownCollection(long position);
-        bool playMusic(wxString& name/*, long position*/);
+        bool playMusic(const wxString& name/*, long position*/);
         bool playMusicThenParse(wxString filename);
         bool playSameMusic();
 
         void moveIntTitlesAt(wxArrayString* titles, long position, bool update = true, bool autoDelete = true);
         void placeStringTitlesAt(wxArrayString* titles, size_t position, bool update = true);
 
-        ChansonNomPos deleteCurrentTitle();
+        void deleteCurrentTitle();
         void deleteTitleAt(size_t position);
         void deleteTitles(wxArrayString *titles, bool update = false);
 
@@ -62,13 +61,12 @@ class MusicManager
         bool empty() const;
         size_t size() const;
 
-        wxString& getSearchedWord();
+        wxString getSearchedWord() const;
         void setSearchWord(const wxString& searchedWord);
-        bool
+        bool hasEfficientSearchedWord() const;
 
 
     protected:
-        void initialize();
         bool playRandomMusic();
         void sendMusicNoFileEvent();
         void launchSearching();
@@ -78,13 +76,15 @@ class MusicManager
         virtual ~MusicManager();
 
         wxWindow* m_parent;
-        bool m_repete, m_random;
+        bool m_repete;
+        bool m_random;
+        MusicPlayer m_musicPlayer;
+        MusicFileThreadManager m_musicFileThreadManager;
         MusicList* m_musicList;
-        MusicPlayer* m_musicPlayer;
         Music* m_music;
         size_t m_musicPosition;
         wxString m_searchedWord;
-        vector<Music*> m_searchedMusicCollection;
+        std::vector<Music*> m_searchedMusicCollection;
 };
 
 #endif // MUSICMANAGER_H

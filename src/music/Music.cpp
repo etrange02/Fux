@@ -8,8 +8,6 @@
  **************************************************************/
 #include "../../include/music/Music.h"
 
-using namespace TagLib;
-
 /**
  * @class Music
  * @brief Handles music properties (file and sound)
@@ -27,6 +25,7 @@ Music::Music() : Music::Music(wxEmptyString)
  * @param filename a file name
  */
 Music::Music(wxString filename) :
+    m_filename(filename),
     m_name(wxEmptyString),
     m_artists(wxEmptyString),
     m_album(wxEmptyString),
@@ -40,7 +39,6 @@ Music::Music(wxString filename) :
     m_size(0),
     m_recordSleeve(NULL)
 {
-    FillFields(filename);
 }
 
 /**
@@ -49,69 +47,6 @@ Music::Music(wxString filename) :
 Music::~Music()
 {
     delete m_recordSleeve;
-}
-
-/** @brief Fill music data
- * Fill music data thanks to filename
- * @param filename a music filename
- * @return void
- *
- */
-void Music::FillFields(wxString filename)
-{
-    if (filename.IsEmpty() || !wxFileExists(filename))
-        return;
-
-    SetFileName(filename);
-    SetName(filename.AfterLast(wxFileName::GetPathSeparator()));
-    SetPath(filename.BeforeLast(wxFileName::GetPathSeparator()));
-    SetExtension(filename.AfterLast('.'));
-
-    TagLib::FileRef fileTAG = TagLib::FileRef(TagLib::FileName(filename.fn_str()));
-
-    SetArtists(wxString(fileTAG.tag()->artist().toCString(true), wxConvUTF8));
-    SetAlbum(wxString(fileTAG.tag()->album().toCString(true), wxConvUTF8));
-    SetTitle(wxString(fileTAG.tag()->title().toCString(true), wxConvUTF8));
-    SetGenres(wxString(fileTAG.tag()->genre().toCString(true), wxConvUTF8));
-    SetYear(fileTAG.tag()->year());
-    SetDuration(fileTAG.audioProperties()->length());
-    SetDebit(fileTAG.audioProperties()->bitrate());
-    SetSize(fileTAG.file()->length());
-    ImageExtracting(filename);
-    //.....
-
-    ShrinkData();
-}
-
-/** @brief Fill sleeves (images)
- * Fill images associated with the music file
- * @param filename a music filename
- * @return void
- *
- */
-void Music::ImageExtracting(wxString filename)
-{
-    TagLib::MPEG::File f(TagLib::FileName(filename.fn_str()));
-    if(f.ID3v2Tag())
-    {
-        TagLib::ID3v2::FrameList l = f.ID3v2Tag()->frameList("APIC");
-        if (!l.isEmpty())
-        {
-            TagLib::ID3v2::AttachedPictureFrame *p = static_cast<TagLib::ID3v2::AttachedPictureFrame *>(l.front());
-            int imgSize = p->picture().size();
-
-            if (p != NULL)
-            {
-                wxMemoryOutputStream imgStreamOut;
-                imgStreamOut.Write(p->picture().data(), imgSize);
-                wxMemoryInputStream stream(imgStreamOut);
-                wxString typeImage(p->mimeType().toCString(true), wxConvLocal);
-
-                if (typeImage.IsSameAs(_T("image/jpeg")) || typeImage.IsSameAs(_T("image/jpg")))
-                    SetRecordSleeve(new wxImage(stream, _T("image/jpeg")));
-            }
-        }
-    }
 }
 
 /** @brief Modifies the name

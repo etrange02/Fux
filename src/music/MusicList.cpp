@@ -7,15 +7,18 @@
  * License:
  **************************************************************/
 #include "../../include/music/MusicList.h"
+#include "Factory.h"
 
 const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE = wxNewEventType();
 
 
 /** @brief Default constructor
  */
-MusicList::MusicList() : m_parent(NULL)
+MusicList::MusicList(MusicFileThreadManager& musicFileThreadManager) :
+    m_parent(NULL),
+    m_musicFileThreadManager(musicFileThreadManager)
 {
-    initialize();
+    m_musicList = new std::vector<Music*>;
 }
 
 /** @brief Default destructor
@@ -23,16 +26,6 @@ MusicList::MusicList() : m_parent(NULL)
 MusicList::~MusicList()
 {
     delete m_musicList;
-}
-
-/** @brief Initializes members data
- * Initializes members data
- * @return void
- *
- */
-void MusicList::initialize()
-{
-    m_musicList = new std::vector<Music*>();
 }
 
 /** @brief Gets the music list
@@ -168,7 +161,10 @@ void MusicList::addUnknownKindLine(wxString path)
  */
 void MusicList::addFileLine(wxString path)
 {
-    m_musicList->push_back(new Music(path));
+    Music *music = Factory::createMusic(path);
+    m_musicList->push_back(music);
+    m_musicFileThreadManager.addMusicFile(Factory::createMusicFileReader(*music));
+    m_musicFileThreadManager.start();
 }
 
 /** @brief Parse the directory
@@ -388,7 +384,12 @@ void MusicList::insertLines(wxArrayString* filenameArray, long position)
     for (wxArrayString::iterator iter = filenameArray->begin(); iter != filenameArray->end(); ++iter)
     {
         if (Parametre::Get()->islisable(iter->AfterLast('.').Lower()))
-            tmpArray->push_back(new Music(*iter));
+        {
+            Music *music = Factory::createMusic(*iter);
+            tmpArray->push_back(music);
+            m_musicFileThreadManager.addMusicFile(Factory::createMusicFileReader(*music));
+            m_musicFileThreadManager.start();
+        }
     }
 
     std::vector<Music*>::iterator musicIterator = m_musicList->begin() + insertionLine;

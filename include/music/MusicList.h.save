@@ -9,6 +9,7 @@
 #include "../Define.h"
 #include "Music.h"
 #include "ChansonNomPos.h"
+#include "MusicFileThreadManager.h"
 #include "../tools/dir_traverser/ISearchTraversable.h"
 #include "../tools/dir_traverser/Search.h"
 #include "../settings/Parametre.h"
@@ -18,13 +19,13 @@ extern const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE;
 class MusicList : public ISearchTraversable
 {
     public:
-        MusicList();
+        MusicList(MusicFileThreadManager& musicFileThreadManager);
         virtual ~MusicList();
 
-        std::vector<Music*> *getMusicList();
+        std::vector<Music*>& getCollection() const;
 
-        bool empty();
-        size_t size(); const
+        bool empty() const;
+        size_t size() const;
 
         void parseDirectory(wxString dirname, bool recursive);
         void clear();
@@ -35,8 +36,8 @@ class MusicList : public ISearchTraversable
         void importFileContent(wxString filename);
 
         wxString getNameAtPosition(long position);
-        long getPositionInList(wxString filename, long position = -1);
-        long getPositionInList(Music* music);
+        long getPositionInList(const wxString& filename, long position = -1);
+        long getPositionInList(const Music* music);
         void removeLine(ChansonNomPos& title);
         void removeLine(size_t position);
         void removeLines(wxArrayString *filenameArray);
@@ -45,20 +46,18 @@ class MusicList : public ISearchTraversable
         void insertLines(wxArrayString *filenameArray, long position);
 
         void setParent(wxWindow *parent);
-        wxWindow *getParent();
-
-        void copyFileNamesInto(wxTextFile &file);
+        wxWindow *getParent() const;
+        void sendMusicListUpdatedEvent();
 
 
     protected:
         void initialize();
         void parseDirectoryRecursively(wxString dirname);
         void parseDirectoryWithoutRecurs(wxString dirname);
-        void sendMusicListUpdatedEvent();
 
     private:
-        std::vector<Music*> *m_musicList;
-
+        std::vector<Music*> m_musicList;
+        MusicFileThreadManager m_musicFileThreadManager;
         wxWindow *m_parent;
 };
 

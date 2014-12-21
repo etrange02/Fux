@@ -5,12 +5,11 @@
 #include <ctime>
 #include <algorithm>
 //#include "../Define.h"
-#include "IMusic.h"
+//#include "IMusic.h"
 #include "MusicPlayer.h"
 #include "MusicList.h"
+//#include "MusicFileThreadManager.h"
 #include "../predicates/findPosition.h"
-
-using namespace std;
 
 class MusicList;
 
@@ -24,7 +23,7 @@ class MusicManager
         bool isRepete();
         bool isRandom();
         Music *getMusic();
-        vector<Music*>& getMusics();
+        std::vector<Music*>& getMusics();
         MusicPlayer& getMusicPlayer();
 
         size_t getCurrentMusicPosition();
@@ -68,7 +67,6 @@ class MusicManager
 
 
     protected:
-        void initialize();
         bool playRandomMusic();
         void sendMusicNoFileEvent();
         void launchSearching();
@@ -78,13 +76,15 @@ class MusicManager
         virtual ~MusicManager();
 
         wxWindow* m_parent;
-        bool m_repete, m_random;
+        bool m_repete;
+        bool m_random;
+        MusicPlayer m_musicPlayer;
+        MusicFileThreadManager m_musicFileThreadManager;
         MusicList* m_musicList;
-        MusicPlayer* m_musicPlayer;
         Music* m_music;
         size_t m_musicPosition;
         wxString m_searchedWord;
-        vector<Music*> m_searchedMusicCollection;
+        std::vector<Music*> m_searchedMusicCollection;
 };
 
 #endif // MUSICMANAGER_H
