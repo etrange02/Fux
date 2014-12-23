@@ -900,7 +900,7 @@ void FuXFenetre::playButtonPressed()
     {
         MusicManager::get().getMusicPlayer().setPause(true);
     }
-    else if (MusicManager::get().getMusics().empty())//Pas de fichier chargé
+    else if (MusicManager::get().empty())//Pas de fichier chargé
         openDialogToPlayMusic();
     else if (MusicManager::get().getMusicPlayer().isPaused())//En pause
     {
@@ -922,7 +922,12 @@ void FuXFenetre::openDialogToPlayMusic()
         navig.GetPaths(musNav);
 
         if (musNav.GetCount() == 1)
-            MusicManager::get().parse(musNav.Item(0));
+        {
+            if (MusicManager::get().empty())
+                MusicManager::get().playMusicThenParse(musNav.Item(0));
+            else
+                MusicManager::get().parse(musNav.Item(0));
+        }
         else if (musNav.GetCount() >= 2)
             MusicManager::get().parse(&musNav, false);
 

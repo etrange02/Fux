@@ -13,7 +13,7 @@ class Factory
         static Music* createMusic();
         static Music* createMusic(wxString& filename);
         static MusicFile* createMusicFileReader(Music& music);
-        static MusicFile* createMusicFileWriter(const Music& inMusic, Music& outMusic);
+        static MusicFile* createMusicFileWriter(const Music* inMusic, Music& outMusic);
 };
 
 #endif // FACTORY_H

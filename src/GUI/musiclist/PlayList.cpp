@@ -222,22 +222,7 @@ void PlayList::OnAppliquerTAG(wxCommandEvent &WXUNUSED(event))
     if (!m_ObjetTAG.isNull() && !Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
     {
         wxString tempo = fichierTAG;
-        wxString art = m_BoiteArtiste->GetValue();
-        for (unsigned int j = 0; j < art.length(); j++)
-        {
-            if (art[j] == '/')
-                art[j] = ';';
-        }
-        m_ObjetTAG.tag()->setArtist(TagLib::String(art.fn_str()));//Artiste
-        m_ObjetTAG.tag()->setAlbum(TagLib::String(m_BoiteAlbum->GetValue().fn_str()));//Album
-        m_ObjetTAG.tag()->setTitle(TagLib::String(m_BoiteTitre->GetValue().fn_str()));//Titre
-        m_ObjetTAG.tag()->setYear(m_BoiteAnnee->GetValue());//Année
-        if (m_BoiteGenre->GetValue().IsSameAs(_T("Other")) || m_BoiteGenre->GetValue().IsSameAs(_T("Inconnu")))
-            m_ObjetTAG.tag()->setGenre("");//Genre
-        else
-            m_ObjetTAG.tag()->setGenre(TagLib::String(m_BoiteGenre->GetValue().fn_str()));//Genre
         m_ObjetTAG.save();
-        m_ObjetTAG = TagLib::FileRef(_T(""));
 
         int i = tempo.Find(wxFileName::GetPathSeparator(), true);
         tempo = tempo.Left(i);
@@ -328,55 +313,15 @@ void PlayList::EvtViderPanneauTAG(wxCommandEvent &WXUNUSED(event))
 /**
  * Évènement - Appelé lors du changement de la pochette du titre. L'enregistrement dans le fichier se fait automatiquement
  */
+// TODO (David): Complete image modification
 void PlayList::EvtImage(wxCommandEvent &event)
 {
     if (fichierTAG.IsEmpty())
         return;
 
-    /*if (!Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
-    {
-        m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
-        if (!m_ObjetTAG.isNull())
-        {
-            if (m_ObjetTAG.file()->isValid())
-            {
-                TagLib::MPEG::File f(TagLib::FileName(fichierTAG.fn_str()));
-                if (f.ID3v2Tag())
-                {
-                    ID3v2::Tag *tagv2 = f.ID3v2Tag(true);
-                    if(tagv2)
-                    {
-                        TagLib::ID3v2::AttachedPictureFrame *pict;
-                        TagLib::ID3v2::FrameList FrameList = tagv2->frameListMap()["APIC"];
-                        for( std::list<TagLib::ID3v2::Frame*>::iterator iter = FrameList.begin(); iter != FrameList.end(); ++iter )
-                        {
-                            pict = static_cast<TagLib::ID3v2::AttachedPictureFrame *>( *iter );
-                            tagv2->removeFrame(pict, true);
-                        }
-
-                        TagLib::ID3v2::AttachedPictureFrame *p = new TagLib::ID3v2::AttachedPictureFrame;
-                        p->setMimeType(_T("image/jpeg"));
-                        p->setType(TagLib::ID3v2::AttachedPictureFrame::FrontCover);
-                        wxMemoryOutputStream imgStreamOut;
-                        wxImage pochette(event.GetString());
-                        if(pochette.SaveFile(imgStreamOut, wxBITMAP_TYPE_JPEG))
-                        {
-                            ByteVector ImgData((TagLib::uint)imgStreamOut.GetSize());
-                            imgStreamOut.CopyTo(ImgData.data(), imgStreamOut.GetSize());
-                            p->setPicture(ImgData);
-                            tagv2->addFrame(p);
-                            if (f.save())
-                                m_pochette->AfficheImage(true);
-                        }
-                    }
-                }
-            }
-        }
-        m_ObjetTAG = TagLib::FileRef("");
-    }
-    else
-        wxLogMessage(_("Il est impossible de modifer les pochettes d'album lorsque\nle fichier est en cours de lecture."));
-        */
+    /////////////////
+    // save modified data into music file
+    /////////////////
 }
 
 /**

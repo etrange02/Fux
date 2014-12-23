@@ -21,7 +21,7 @@ class MusicFileWriter : public MusicFile
 {
     public:
         /** Default constructor */
-        MusicFileWriter(const Music& src, Music& dst);
+        MusicFileWriter(const Music* src, Music& dst);
         /** Default destructor */
         virtual ~MusicFileWriter();
 
@@ -32,7 +32,7 @@ class MusicFileWriter : public MusicFile
         void fillData();
         void saveImage();
 
-        const Music& m_musicSrc; //!< Member variable "m_musicIn"
+        const Music* m_musicSrc; //!< Member variable "m_musicIn"
         Music& m_musicDst; //!< Member variable "m_musicOut"
 };
 

@@ -23,7 +23,7 @@ MusicFile* Factory::createMusicFileReader(Music& music)
     return new MusicFileReader(music);
 }
 
-MusicFile* Factory::createMusicFileWriter(const Music& inMusic, Music& outMusic)
+MusicFile* Factory::createMusicFileWriter(const Music* inMusic, Music& outMusic)
 {
     return new MusicFileWriter(inMusic, outMusic);
 }

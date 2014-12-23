@@ -1969,7 +1969,7 @@
 	"MusicFileReader.h"
 	"MusicFileWriter.h"
 
-1419162339 c:\workspace\projects\fux\include\tools\stl\threadsafequeue.h
+1419166685 c:\workspace\projects\fux\include\tools\stl\threadsafequeue.h
 	<queue>
 
 1419101513 c:\workspace\projects\fux\include\music\musicfile.h
@@ -2138,7 +2138,7 @@
 	"id3v2header.h"
 	"taglib_export.h"
 
-1419166288 c:\workspace\projects\fux\include\music\musicfilewriter.h
+1419196955 c:\workspace\projects\fux\include\music\musicfilewriter.h
 	<wx/wx.h>
 	<wx/stdpaths.h>
 	<wx/filename.h>
@@ -2818,7 +2818,7 @@
 1418256250 source:c:\workspace\projects\fux\src\gui\graph\musiquegraph.cpp
 	"../../../include/gui/graph/MusiqueGraph.h"
 
-1418599374 source:c:\workspace\projects\fux\src\gui\musiclist\playlist.cpp
+1419199500 source:c:\workspace\projects\fux\src\gui\musiclist\playlist.cpp
 	"../../../include/gui/musiclist/PlayList.h"
 
 1418488737 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
@@ -2845,7 +2845,7 @@
 1416433636 source:c:\workspace\projects\fux\src\gui\widgets\boutonfenetredetachable.cpp
 	"../../../include/gui/widgets/BoutonFenetreDetachable.h"
 
-1418426809 source:c:\workspace\projects\fux\src\gui\widgets\fenetre.cpp
+1419200181 source:c:\workspace\projects\fux\src\gui\widgets\fenetre.cpp
 	"wx/wxprec.h"
 	"../../../include/gui/widgets/Fenetre.h"
 
@@ -2867,10 +2867,10 @@
 1418855189 source:c:\workspace\projects\fux\src\music\duree.cpp
 	"../../include/music/Duree.h"
 
-1419165571 source:c:\workspace\projects\fux\src\music\factory.cpp
+1419197044 source:c:\workspace\projects\fux\src\music\factory.cpp
 	"Factory.h"
 
-1419165548 c:\workspace\projects\fux\include\music\factory.h
+1419197052 c:\workspace\projects\fux\include\music\factory.h
 	<wx/wx.h>
 	"Music.h"
 	"MusicFile.h"
@@ -2889,7 +2889,7 @@
 1419162619 source:c:\workspace\projects\fux\src\music\musicfilethreadmanager.cpp
 	"MusicFileThreadManager.h"
 
-1419102200 source:c:\workspace\projects\fux\src\music\musicfilewriter.cpp
+1419199517 source:c:\workspace\projects\fux\src\music\musicfilewriter.cpp
 	"MusicFileWriter.h"
 
 1419165692 source:c:\workspace\projects\fux\src\music\musiclist.cpp
