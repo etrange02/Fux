@@ -19,11 +19,10 @@ MusicManager::MusicManager() :
     m_random(false),
     m_musicPosition(0),
     m_parent(NULL),
-    m_music(NULL),
-    m_musicFileThreadManager()
+    m_music(NULL)
 {
     srand(time(NULL));
-    m_musicList = new MusicList(m_musicFileThreadManager);
+    m_musicList = new MusicList();
 }
 
 /** @brief Destructor

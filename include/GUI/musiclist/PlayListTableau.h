@@ -50,6 +50,14 @@ class PlayListTableau : public wxListCtrl
         void SuppressionLigne();
 
     protected:
+        /** Adds a line at the end of the list */
+        void addLine(Music& music);
+        /** Adds a line at the specific position */
+        void addLine(Music& music, const int position);
+        /** Modifies a line in the list */
+        void modifyLine(Music& music, const int position);
+
+    private:
         bool m_couper;
         wxMenu *m_menu;
         wxArrayString m_tableauCouper;

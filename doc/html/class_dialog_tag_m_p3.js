@@ -19,9 +19,5 @@ var class_dialog_tag_m_p3 =
     [ "SetDuree", "class_dialog_tag_m_p3.html#a879fc857725b4ce5685f875c77934f79", null ],
     [ "SetGenre", "class_dialog_tag_m_p3.html#a8e303ce82c5ea43cb2c399123818ce61", null ],
     [ "SetTaille", "class_dialog_tag_m_p3.html#a2f8641b1db0ce372065f58bc47a2c5eb", null ],
-    [ "SetTitre", "class_dialog_tag_m_p3.html#a5a81c65d44ff013ff86d196d96b5166b", null ],
-    [ "m_commentaires", "class_dialog_tag_m_p3.html#a75bde757a66ccb1401b12083715d8be2", null ],
-    [ "m_image", "class_dialog_tag_m_p3.html#a87824106a94b862b356da727ceb20d9c", null ],
-    [ "m_notebook", "class_dialog_tag_m_p3.html#a19b9ce411c2259f187c18a0d89d26131", null ],
-    [ "m_pageInfo", "class_dialog_tag_m_p3.html#a1cf9e392722709aafa4a8ff7b64d6b6b", null ]
+    [ "SetTitre", "class_dialog_tag_m_p3.html#a5a81c65d44ff013ff86d196d96b5166b", null ]
 ];

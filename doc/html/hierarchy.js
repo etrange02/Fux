@@ -23,6 +23,8 @@ var hierarchy =
     [ "ExplorerDriveManagersData", "class_explorer_drive_managers_data.html", null ],
     [ "ExplorerManager", "class_explorer_manager.html", null ],
     [ "ExplorerManagerData", "class_explorer_manager_data.html", null ],
+    [ "fux::thread::Factory", "classfux_1_1thread_1_1_factory.html", null ],
+    [ "fux::music::Factory", "classfux_1_1music_1_1_factory.html", null ],
     [ "FichierLog", "class_fichier_log.html", null ],
     [ "findPosition", "classfind_position.html", null ],
     [ "ImageText", "class_image_text.html", null ],
@@ -30,12 +32,24 @@ var hierarchy =
       [ "Music", "class_music.html", null ]
     ] ],
     [ "IMusicPlayer", "class_i_music_player.html", null ],
+    [ "fux::thread::IRunnable", "classfux_1_1thread_1_1_i_runnable.html", [
+      [ "MusicFileReaderThread", "class_music_file_reader_thread.html", null ]
+    ] ],
     [ "ISearchTraversable", "class_i_search_traversable.html", [
       [ "MusicList", "class_music_list.html", null ]
+    ] ],
+    [ "fux::thread::IThreadManager", "classfux_1_1thread_1_1_i_thread_manager.html", [
+      [ "fux::thread::ThreadManager", "classfux_1_1thread_1_1_thread_manager.html", null ]
+    ] ],
+    [ "MusicFile", "class_music_file.html", [
+      [ "MusicFileReader", "class_music_file_reader.html", null ],
+      [ "MusicFileWriter", "class_music_file_writer.html", null ]
     ] ],
     [ "MusicManager", "class_music_manager.html", null ],
     [ "MusicPlayer", "class_music_player.html", null ],
     [ "Parametre", "class_parametre.html", null ],
+    [ "std::ThreadSafeQueue< T, _Sequence >", "classstd_1_1_thread_safe_queue.html", null ],
+    [ "std::ThreadSafeQueue< fux::thread::IRunnable * >", "classstd_1_1_thread_safe_queue.html", null ],
     [ "wxApp", null, [
       [ "wxFuXApp", "classwx_fu_x_app.html", null ]
     ] ],
@@ -109,6 +123,7 @@ var hierarchy =
     ] ],
     [ "wxThread", null, [
       [ "BDDThread", "class_b_d_d_thread.html", null ],
+      [ "fux::thread::ThreadProcess", "classfux_1_1thread_1_1_thread_process.html", null ],
       [ "ThreadFichierFichier", "class_thread_fichier_fichier.html", null ]
     ] ],
     [ "wxTimer", null, [

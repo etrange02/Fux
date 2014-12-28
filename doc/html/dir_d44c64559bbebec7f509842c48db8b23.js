@@ -4,7 +4,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "constants", "dir_88daf05616196eb210c6c538937e567d.html", "dir_88daf05616196eb210c6c538937e567d" ],
     [ "db", "dir_b9635e7b6d5f225ac0f930b21f213d87.html", "dir_b9635e7b6d5f225ac0f930b21f213d87" ],
     [ "explorer", "dir_3e12035cddfeaa64c71eb203d54d0f88.html", "dir_3e12035cddfeaa64c71eb203d54d0f88" ],
-    [ "gui", "dir_48c1f94cd2ae07e13fa9a9f16a1d541c.html", "dir_48c1f94cd2ae07e13fa9a9f16a1d541c" ],
+    [ "GUI", "dir_f938830485ea5fc932d9051b851477f4.html", "dir_f938830485ea5fc932d9051b851477f4" ],
     [ "music", "dir_bef5442c0c96b47669dde4af199f024d.html", "dir_bef5442c0c96b47669dde4af199f024d" ],
     [ "network", "dir_dafb25a37831a87d2e2e8b780f24e872.html", "dir_dafb25a37831a87d2e2e8b780f24e872" ],
     [ "predicates", "dir_e1ea4397d79b499f5c8ec49a7873dff7.html", "dir_e1ea4397d79b499f5c8ec49a7873dff7" ],

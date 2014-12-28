@@ -8,7 +8,7 @@
 //#include "IMusic.h"
 #include "MusicPlayer.h"
 #include "MusicList.h"
-//#include "MusicFileThreadManager.h"
+#include "../tools/thread/ThreadManager.h"
 #include "../predicates/findPosition.h"
 
 class MusicList;
@@ -79,7 +79,6 @@ class MusicManager
         bool m_repete;
         bool m_random;
         MusicPlayer m_musicPlayer;
-        MusicFileThreadManager m_musicFileThreadManager;
         MusicList* m_musicList;
         Music* m_music;
         size_t m_musicPosition;

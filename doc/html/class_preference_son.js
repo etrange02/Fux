@@ -1,6 +1,5 @@
 var class_preference_son =
 [
-    [ "PreferenceSon", "class_preference_son.html#a8142b97249f6cb46088012abfd0a33d9", null ],
     [ "~PreferenceSon", "class_preference_son.html#a6e64f9a030b0c27ffa4ef1ae05496780", null ],
     [ "EvtMenuRenommer", "class_preference_son.html#aba2254e40628ea6df4636275a43832bf", null ],
     [ "EvtMenuSupprimer", "class_preference_son.html#a83c6d0c96f364d1f38e46567be8f9d52", null ],
@@ -16,15 +15,5 @@ var class_preference_son =
     [ "ModifierFiltre", "class_preference_son.html#a9803e3959c388ede6922dc7157855534", null ],
     [ "ModifierFiltre", "class_preference_son.html#a83225bc24b3e91a84d07436e783e8a98", null ],
     [ "OuvrirFiltre", "class_preference_son.html#a7b38f22d545e6ba1e6b9b53aa3dce9a2", null ],
-    [ "SetValeurMusique", "class_preference_son.html#a1e467f2a6452d53b62ecceaa40090089", null ],
-    [ "m_gridSizerCurr", "class_preference_son.html#ad3d1804a52414a6285e86c3c90b07ed0", null ],
-    [ "m_gridSizerNew", "class_preference_son.html#af1aaf9f8af484421f2a524d13710fec2", null ],
-    [ "m_menu", "class_preference_son.html#ac2b00f32d25e24144c30017c88fed5f3", null ],
-    [ "m_sizerCurrentSet", "class_preference_son.html#a875253afd2aa999a09a2d10308bf1401", null ],
-    [ "m_sizerNewSet", "class_preference_son.html#ab818662b26328d53864800682babca64", null ],
-    [ "m_spinVolume", "class_preference_son.html#ad89092e1cfe5f1999e44507410f56f39", null ],
-    [ "m_spinVolumePC", "class_preference_son.html#afefbfab98d875f882fcc4bab4cb108cb", null ],
-    [ "m_textNomSet", "class_preference_son.html#a832cca84570056279a68a97045821506", null ],
-    [ "m_textVolumeCurr", "class_preference_son.html#a99054655239c67329d690ba30cecbd9a", null ],
-    [ "m_textVolumePCCurr", "class_preference_son.html#afd9b99bfe65606698e67311f8112203d", null ]
+    [ "SetValeurMusique", "class_preference_son.html#a1e467f2a6452d53b62ecceaa40090089", null ]
 ];

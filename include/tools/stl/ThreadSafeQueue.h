@@ -2,6 +2,8 @@
 #define THREADSAFEQUEUE_H
 
 #include <queue>
+#include <wx/wx.h>
+#include <wx/thread.h>
 
 namespace std
 {
@@ -44,33 +46,47 @@ namespace std
             }
 
             /**  Returns the number of elements in the %queue.  */
-            size_type size() const
-            { return m_internalQueue.size(); }
+            size_type size()
+            {
+                wxMutexLocker lock(m_mutex);
+                return m_internalQueue.size();
+            }
 
             void push(const value_type& value)
-            { m_internalQueue.push(value); }
+            {
+                wxMutexLocker lock(m_mutex);
+                m_internalQueue.push(value);
+            }
 
             void pop()
-            { m_internalQueue.pop(); }
+            {
+                wxMutexLocker lock(m_mutex);
+                m_internalQueue.pop();
+            }
 
-            bool empty() const
-            { return m_internalQueue.empty(); }
+            bool empty()
+            {
+                wxMutexLocker lock(m_mutex);
+                return m_internalQueue.empty();
+            }
 
             value_type& pop_front()
             {
+                wxMutexLocker lock(m_mutex);
                 value_type& val = front();
                 pop();
                 return val;
             }
 
             reference front()
-            { return m_internalQueue.front(); }
-
-            const_reference front() const
-            { return m_internalQueue.front(); }
+            {
+                wxMutexLocker lock(m_mutex);
+                return m_internalQueue.front();
+            }
 
         private:
             std::queue<T> m_internalQueue;
+            wxMutex m_mutex;
     };
 }
 

@@ -1,14 +1,12 @@
 var class_play_list_tableau =
 [
     [ "PlayListTableau", "class_play_list_tableau.html#a486a32be7a8bbf1d3dc19781fba94919", null ],
-    [ "~PlayListTableau", "class_play_list_tableau.html#add6ca77e6b5123e5797264b4c8cd23fc", null ],
+    [ "addLine", "class_play_list_tableau.html#a09f0c114521046e75a8f30059c1c7760", null ],
+    [ "addLine", "class_play_list_tableau.html#ae7c65c3792d645a628af75d556f27278", null ],
     [ "AfficheMenu", "class_play_list_tableau.html#a9cca151e5f31b4e1cabdf61950175326", null ],
     [ "ChangementChanson", "class_play_list_tableau.html#a9b8bffd69387d0649cb4af13b9c46d70", null ],
     [ "ChansonActive", "class_play_list_tableau.html#a9b1f1f3cbd8eac3550b5a75dbb34f94d", null ],
-    [ "GetDuree", "class_play_list_tableau.html#a19c156dca165e8474c3ea5dba73e7338", null ],
-    [ "GetPositionChansonLecture", "class_play_list_tableau.html#a72c2e0a44cd43202040d55603534f96f", null ],
     [ "Glisser", "class_play_list_tableau.html#a8476e9a4839aed812a159e2fc2829687", null ],
-    [ "IsResearchRunning", "class_play_list_tableau.html#ae51a4e6477c4935cacd5a19bc4979fe7", null ],
     [ "MAJ", "class_play_list_tableau.html#a43dc67b763c691e534410ef502f9f897", null ],
     [ "menuColler", "class_play_list_tableau.html#a46e1e54943b4e647db929e70385ccc73", null ],
     [ "menuCouper", "class_play_list_tableau.html#a93b0018070983a2f053caad7f3b3206f", null ],
@@ -16,19 +14,9 @@ var class_play_list_tableau =
     [ "menuLecture", "class_play_list_tableau.html#a76b840ae44f76ce6f52c8864de11e985", null ],
     [ "menuPause", "class_play_list_tableau.html#ac48557d8a743e0e17c5017060b1d8622", null ],
     [ "menuSupprimer", "class_play_list_tableau.html#a5b6794f03fb79f351375b934e6656a8e", null ],
+    [ "modifyLine", "class_play_list_tableau.html#ac2b7513b09332cfb4519de61ca29ce74", null ],
     [ "MouseEvents", "class_play_list_tableau.html#afd8c60fbe8c66b323e0e5da9f979564e", null ],
     [ "OnKey", "class_play_list_tableau.html#ac9cedb895d0a0ad1176754c17a1b26f5", null ],
-    [ "PreciseResearch", "class_play_list_tableau.html#a4a3fdd0a60cec1aa2904835f45d0d816", null ],
-    [ "StopResearch", "class_play_list_tableau.html#abb6ba42932647ee1f9a0dbd1d73cb890", null ],
     [ "SuppressionLigne", "class_play_list_tableau.html#ab1b3b28168597b8afc7fd1d2939ffb74", null ],
-    [ "supprimerNomLigne", "class_play_list_tableau.html#a0a7b92535a50bfcd89ed1a9c589541b4", null ],
-    [ "WidelyResearch", "class_play_list_tableau.html#acbe41701dcd116c8e1ce5a326a433807", null ],
-    [ "m_couper", "class_play_list_tableau.html#a9e789d853ece3e27a8d5b8f07852ee1a", null ],
-    [ "m_menu", "class_play_list_tableau.html#a21c67ef1c6515308487d9d5a2cd1efa8", null ],
-    [ "m_ocurrenceLigne", "class_play_list_tableau.html#aaaaab619afb4758bd52229a66463b28c", null ],
-    [ "m_positionChanson", "class_play_list_tableau.html#a16745f21d4a60da4b4ecffc6a3b72770", null ],
-    [ "m_searchedWord", "class_play_list_tableau.html#ade8cd8926dd129c702642594b10cd865", null ],
-    [ "m_searchInProgress", "class_play_list_tableau.html#a0570ebdbb2b10a5ddf64f437609a8ff3", null ],
-    [ "m_tableauCouper", "class_play_list_tableau.html#a0e4070016a3ed04aaa13d3a67bde4a4e", null ],
-    [ "m_yMenu", "class_play_list_tableau.html#a741ac9a46dd1c733b4d0cd21eeed7424", null ]
+    [ "supprimerNomLigne", "class_play_list_tableau.html#a0a7b92535a50bfcd89ed1a9c589541b4", null ]
 ];

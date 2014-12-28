@@ -5,11 +5,6 @@
 class MusicFile
 {
     public:
-        /** Default constructor */
-        MusicFile();
-        /** Default destructor */
-        virtual ~MusicFile();
-
         virtual void process() = 0;
 };
 

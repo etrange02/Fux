@@ -42,26 +42,26 @@ PlayListTableau::PlayListTableau(wxWindow *Parent) : wxListCtrl(Parent, ID_PAGE_
     FichierLog::Get()->Ajouter(_T("PlayListTableau::PlayListTableau - Création"));
     #endif
 
-    InsertColumn(0,_("Nom"),wxLIST_FORMAT_CENTER, 280);
-    InsertColumn(1,_("Artiste"),wxLIST_FORMAT_LEFT, 150);
-    InsertColumn(2,_("Album"),wxLIST_FORMAT_LEFT, 150);
-    InsertColumn(3,_("Titre"),wxLIST_FORMAT_LEFT, 150);
-    InsertColumn(4,_("Durée"),wxLIST_FORMAT_LEFT, 50);
-    InsertColumn(5,_("Année"),wxLIST_FORMAT_LEFT, 50);
-    InsertColumn(6,_("Emplacement"),wxLIST_FORMAT_LEFT, 280);
-    InsertColumn(7,_("Genre"),wxLIST_FORMAT_LEFT, 80);
-    InsertColumn(8,_("Ext."),wxLIST_FORMAT_LEFT, 50);
+    InsertColumn(0, _("Nom"),         wxLIST_FORMAT_CENTER,  280);
+    InsertColumn(1, _("Artiste"),     wxLIST_FORMAT_LEFT,    150);
+    InsertColumn(2, _("Album"),       wxLIST_FORMAT_LEFT,    150);
+    InsertColumn(3, _("Titre"),       wxLIST_FORMAT_LEFT,    150);
+    InsertColumn(4, _("Durée"),       wxLIST_FORMAT_LEFT,    50);
+    InsertColumn(5, _("Année"),       wxLIST_FORMAT_LEFT,    50);
+    InsertColumn(6, _("Emplacement"), wxLIST_FORMAT_LEFT,    280);
+    InsertColumn(7, _("Genre"),       wxLIST_FORMAT_LEFT,    80);
+    InsertColumn(8, _("Ext."),        wxLIST_FORMAT_LEFT,    50);
 
     SetDropTarget(new DnDCible(this));
     //DragAcceptFiles(true);
 
     m_menu = new wxMenu;
-    m_menu->Append(ID_PAGE_PLAYLIST_MENU_LECTURE, _("Lire"));
-    m_menu->Append(ID_PAGE_PLAYLIST_MENU_PAUSE, _("Pause"));
+    m_menu->Append(ID_PAGE_PLAYLIST_MENU_LECTURE,   _("Lire"));
+    m_menu->Append(ID_PAGE_PLAYLIST_MENU_PAUSE,     _("Pause"));
     m_menu->Append(ID_PAGE_PLAYLIST_MENU_SUPPRIMER, _("Effacer"));
-    m_menu->Append(ID_PAGE_PLAYLIST_MENU_COUPER, _("Déplacer"));
-    m_menu->Append(ID_PAGE_PLAYLIST_MENU_COLLER, _("Déposer"));
-    m_menu->Append(ID_PAGE_PLAYLIST_MENU_DETAILS, _("Détails"));
+    m_menu->Append(ID_PAGE_PLAYLIST_MENU_COUPER,    _("Déplacer"));
+    m_menu->Append(ID_PAGE_PLAYLIST_MENU_COLLER,    _("Déposer"));
+    m_menu->Append(ID_PAGE_PLAYLIST_MENU_DETAILS,   _("Détails"));
     m_couper = false;
 }
 
@@ -106,25 +106,12 @@ void PlayListTableau::MAJ()
     FichierLog::Get()->Ajouter(_T("PlayListTableau::MAJ - Début du for"));
     #endif
 
-    Music *music = NULL;
-
     SetDoubleBuffered(true);
-    for (std::vector<Music*>::iterator iter = MusicManager::get().getMusics().begin(); iter != MusicManager::get().getMusics().end(); ++iter)
+    for (std::vector<Music*>::const_iterator iter = MusicManager::get().getMusics().begin(); iter != MusicManager::get().getMusics().end(); ++iter)
     {
-        music = *iter;
-
 //        BDDRequete *req = new BDDRequete(this);
 
-        pos = GetItemCount();
-        pos = InsertItem(pos, music->GetName());//Nom du fichier
-        SetItem(pos, 1, music->GetArtists());//Artiste
-        SetItem(pos, 2, music->GetAlbum());//Album
-        SetItem(pos, 3, music->GetTitle());//Titre
-        SetItem(pos, 4, music->GetStringDuration());//Durée
-        SetItem(pos, 5, music->GetYear() == 0 ? _T("?") : music->GetStringYear());//Année
-        SetItem(pos, 6, music->GetPath());//Emplacement
-        SetItem(pos, 7, music->GetGenres());//Genre
-        SetItem(pos, 8, music->GetExtension());//Extension
+        addLine(**iter);
 
 //        req->AjouterChanson(music->GetFileName(), music->GetYear() == 0 ? _T("") : music->GetStringYear(), music->GetGenres());
 //        req->AjouterArtiste(music->GetArtists());
@@ -157,6 +144,50 @@ void PlayListTableau::MAJ()
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("PlayListTableau::MAJ - Fin"));
     #endif
+}
+
+/** @brief Adds a line at the end of the list
+ *
+ * @param music a music data
+ * @return void
+ *
+ */
+void PlayListTableau::addLine(Music& music)
+{
+    addLine(music, GetItemCount());
+}
+
+/** @brief Adds a line at the specific position
+ *
+ * @param music a music data
+ * @param position position to place the line
+ * @return void
+ *
+ */
+void PlayListTableau::addLine(Music& music, const int position)
+{
+    int pos = InsertItem(position, wxEmptyString);
+    modifyLine(music, pos);
+}
+
+/** @brief Modifies a line in the list
+ *
+ * @param music a music data
+ * @param position line to modify
+ * @return void
+ *
+ */
+void PlayListTableau::modifyLine(Music& music, const int position)
+{
+    SetItem(position, 0, music.GetName());//Nom du fichier
+    SetItem(position, 1, music.GetArtists());//Artiste
+    SetItem(position, 2, music.GetAlbum());//Album
+    SetItem(position, 3, music.GetTitle());//Titre
+    SetItem(position, 4, music.GetStringDuration());//Durée
+    SetItem(position, 5, music.GetYear() == 0 ? _T("?") : music.GetStringYear());//Année
+    SetItem(position, 6, music.GetPath());//Emplacement
+    SetItem(position, 7, music.GetGenres());//Genre
+    SetItem(position, 8, music.GetExtension());//Extension
 }
 
 /**

@@ -6,7 +6,9 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "Factory.h"
+#include "../../include/music/Factory.h"
+
+using namespace fux::music;
 
 Music* Factory::createMusic()
 {
@@ -23,7 +25,13 @@ MusicFile* Factory::createMusicFileReader(Music& music)
     return new MusicFileReader(music);
 }
 
+MusicFileReaderThread* Factory::createMusicFileReaderThread(Music& music)
+{
+    return new MusicFileReaderThread(new MusicFileReader(music));
+}
+
 MusicFile* Factory::createMusicFileWriter(const Music* inMusic, Music& outMusic)
 {
     return new MusicFileWriter(inMusic, outMusic);
 }
+

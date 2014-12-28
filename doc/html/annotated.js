@@ -1,13 +1,28 @@
 var annotated =
 [
+    [ "fux", null, [
+      [ "music", null, [
+        [ "Factory", "classfux_1_1music_1_1_factory.html", null ]
+      ] ],
+      [ "thread", null, [
+        [ "Factory", "classfux_1_1thread_1_1_factory.html", null ],
+        [ "IRunnable", "classfux_1_1thread_1_1_i_runnable.html", "classfux_1_1thread_1_1_i_runnable" ],
+        [ "IThreadManager", "classfux_1_1thread_1_1_i_thread_manager.html", null ],
+        [ "ThreadManager", "classfux_1_1thread_1_1_thread_manager.html", "classfux_1_1thread_1_1_thread_manager" ],
+        [ "ThreadProcess", "classfux_1_1thread_1_1_thread_process.html", "classfux_1_1thread_1_1_thread_process" ]
+      ] ]
+    ] ],
+    [ "std", null, [
+      [ "ThreadSafeQueue", "classstd_1_1_thread_safe_queue.html", "classstd_1_1_thread_safe_queue" ]
+    ] ],
     [ "ArrayFenetreDetachable", "class_array_fenetre_detachable.html", "class_array_fenetre_detachable" ],
     [ "BDD", "class_b_d_d.html", "class_b_d_d" ],
-    [ "BDDRequete", "class_b_d_d_requete.html", "class_b_d_d_requete" ],
+    [ "BDDRequete", "class_b_d_d_requete.html", null ],
     [ "BDDThread", "class_b_d_d_thread.html", "class_b_d_d_thread" ],
-    [ "BDDThreadEvent", "class_b_d_d_thread_event.html", "class_b_d_d_thread_event" ],
+    [ "BDDThreadEvent", "class_b_d_d_thread_event.html", null ],
     [ "BoutonFenetreDetachable", "class_bouton_fenetre_detachable.html", "class_bouton_fenetre_detachable" ],
     [ "ChansonNomPos", "class_chanson_nom_pos.html", "class_chanson_nom_pos" ],
-    [ "ComparaisonRequete", "class_comparaison_requete.html", "class_comparaison_requete" ],
+    [ "ComparaisonRequete", "class_comparaison_requete.html", null ],
     [ "Couleur", "class_couleur.html", "class_couleur" ],
     [ "CouperCopierColler", "class_couper_copier_coller.html", "class_couper_copier_coller" ],
     [ "DefaultDriveManagerState", "class_default_drive_manager_state.html", "class_default_drive_manager_state" ],
@@ -23,7 +38,7 @@ var annotated =
     [ "Duree", "class_duree.html", "class_duree" ],
     [ "ElementLecteurRacineFichier", "class_element_lecteur_racine_fichier.html", "class_element_lecteur_racine_fichier" ],
     [ "ElementThreadFichier", "class_element_thread_fichier.html", "class_element_thread_fichier" ],
-    [ "ExplorerDriveManagers", "class_explorer_drive_managers.html", "class_explorer_drive_managers" ],
+    [ "ExplorerDriveManagers", "class_explorer_drive_managers.html", null ],
     [ "ExplorerDriveManagersData", "class_explorer_drive_managers_data.html", "class_explorer_drive_managers_data" ],
     [ "ExplorerListCtrl", "class_explorer_list_ctrl.html", "class_explorer_list_ctrl" ],
     [ "ExplorerManager", "class_explorer_manager.html", "class_explorer_manager" ],
@@ -38,11 +53,15 @@ var annotated =
     [ "GestPeriph", "class_gest_periph.html", "class_gest_periph" ],
     [ "ImagePochetteMusique", "class_image_pochette_musique.html", "class_image_pochette_musique" ],
     [ "ImageText", "class_image_text.html", "class_image_text" ],
-    [ "IMusic", "class_i_music.html", "class_i_music" ],
-    [ "IMusicPlayer", "class_i_music_player.html", "class_i_music_player" ],
-    [ "ISearchTraversable", "class_i_search_traversable.html", "class_i_search_traversable" ],
+    [ "IMusic", "class_i_music.html", null ],
+    [ "IMusicPlayer", "class_i_music_player.html", null ],
+    [ "ISearchTraversable", "class_i_search_traversable.html", null ],
     [ "ListeGestionPeriph", "class_liste_gestion_periph.html", "class_liste_gestion_periph" ],
     [ "Music", "class_music.html", "class_music" ],
+    [ "MusicFile", "class_music_file.html", null ],
+    [ "MusicFileReader", "class_music_file_reader.html", "class_music_file_reader" ],
+    [ "MusicFileReaderThread", "class_music_file_reader_thread.html", "class_music_file_reader_thread" ],
+    [ "MusicFileWriter", "class_music_file_writer.html", "class_music_file_writer" ],
     [ "MusicList", "class_music_list.html", "class_music_list" ],
     [ "MusicManager", "class_music_manager.html", "class_music_manager" ],
     [ "MusicPlayer", "class_music_player.html", "class_music_player" ],

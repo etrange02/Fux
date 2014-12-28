@@ -7,16 +7,16 @@
  * License:
  **************************************************************/
 #include "../../include/music/MusicList.h"
-#include "Factory.h"
+
+using namespace fux::music;
 
 const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE = wxNewEventType();
 
 
 /** @brief Default constructor
  */
-MusicList::MusicList(MusicFileThreadManager& musicFileThreadManager) :
-    m_parent(NULL),
-    m_musicFileThreadManager(musicFileThreadManager)
+MusicList::MusicList() :
+    m_parent(NULL)
 {
     m_musicList = new std::vector<Music*>;
 }
@@ -163,8 +163,7 @@ void MusicList::addFileLine(wxString path)
 {
     Music *music = Factory::createMusic(path);
     m_musicList->push_back(music);
-    m_musicFileThreadManager.addMusicFile(Factory::createMusicFileReader(*music));
-    m_musicFileThreadManager.start();
+    fux::thread::ThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(*music));
 }
 
 /** @brief Parse the directory
@@ -387,8 +386,7 @@ void MusicList::insertLines(wxArrayString* filenameArray, long position)
         {
             Music *music = Factory::createMusic(*iter);
             tmpArray->push_back(music);
-            m_musicFileThreadManager.addMusicFile(Factory::createMusicFileReader(*music));
-            m_musicFileThreadManager.start();
+            fux::thread::ThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(*music));
         }
     }
 

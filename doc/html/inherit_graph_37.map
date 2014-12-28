@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_parametre.html" title="La classe Paramètre contient toutes les informations sur l&#39;emplacement des différents fichiers et dos..." alt="" coords="5,5,88,32"/>
+<area shape="rect" id="node1" href="$class_music_file.html" title="MusicFile" alt="" coords="5,31,84,57"/>
+<area shape="rect" id="node2" href="$class_music_file_reader.html" title="MusicFileReader" alt="" coords="132,5,251,32"/>
+<area shape="rect" id="node3" href="$class_music_file_writer.html" title="MusicFileWriter" alt="" coords="135,56,248,83"/>
 </map>
