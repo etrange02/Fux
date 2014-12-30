@@ -48,6 +48,7 @@ IMPORTANT, A FAIRE !!!
 					<Add directory="include/preddicates" />
 					<Add directory="include" />
 					<Add directory="include/tools/stl" />
+					<Add directory="include/tools/thread" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -73,6 +74,7 @@ IMPORTANT, A FAIRE !!!
 					<Add directory="include/preddicates" />
 					<Add directory="include" />
 					<Add directory="include/tools/stl" />
+					<Add directory="include/tools/thread" />
 				</Compiler>
 			</Target>
 			<Environment>
@@ -201,7 +203,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/music/Music.h" />
 		<Unit filename="include/music/MusicFile.h" />
 		<Unit filename="include/music/MusicFileReader.h" />
-		<Unit filename="include/music/MusicFileThreadManager.h" />
+		<Unit filename="include/music/MusicFileReaderThread.h" />
 		<Unit filename="include/music/MusicFileWriter.h" />
 		<Unit filename="include/music/MusicList.h" />
 		<Unit filename="include/music/MusicManager.h" />
@@ -228,6 +230,11 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/tools/dnd/DnDListeFichier.h" />
 		<Unit filename="include/tools/dnd/MusicPlayListDnDBufferData.h" />
 		<Unit filename="include/tools/stl/ThreadSafeQueue.h" />
+		<Unit filename="include/tools/thread/Factory.h" />
+		<Unit filename="include/tools/thread/IRunnable.h" />
+		<Unit filename="include/tools/thread/IThreadManager.h" />
+		<Unit filename="include/tools/thread/ThreadManager.h" />
+		<Unit filename="include/tools/thread/ThreadProcess.h" />
 		<Unit filename="include/version.h" />
 		<Unit filename="src/GUI/dialogs/DialogEnregistreM3U.cpp" />
 		<Unit filename="src/GUI/dialogs/DialogTagMP3.cpp" />
@@ -273,9 +280,8 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/music/Duree.cpp" />
 		<Unit filename="src/music/Factory.cpp" />
 		<Unit filename="src/music/Music.cpp" />
-		<Unit filename="src/music/MusicFile.cpp" />
 		<Unit filename="src/music/MusicFileReader.cpp" />
-		<Unit filename="src/music/MusicFileThreadManager.cpp" />
+		<Unit filename="src/music/MusicFileReaderThread.cpp" />
 		<Unit filename="src/music/MusicFileWriter.cpp" />
 		<Unit filename="src/music/MusicList.cpp" />
 		<Unit filename="src/music/MusicManager.cpp" />
@@ -321,6 +327,9 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/tools/dnd/DnDCible.cpp" />
 		<Unit filename="src/tools/dnd/DnDListeFichier.cpp" />
 		<Unit filename="src/tools/dnd/MusicPlayListDnDBufferData.cpp" />
+		<Unit filename="src/tools/thread/Factory.cpp" />
+		<Unit filename="src/tools/thread/ThreadManager.cpp" />
+		<Unit filename="src/tools/thread/ThreadProcess.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars set="default" />

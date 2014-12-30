@@ -10,26 +10,56 @@
 
 using namespace fux::music;
 
+/** @brief Creates an empty Music instance
+ *
+ * @return Music*
+ *
+ */
 Music* Factory::createMusic()
 {
     return new Music;
 }
 
+/** @brief Creates a music instance
+ *
+ * @param filename the file name of the music file
+ * @return Music*
+ *
+ */
 Music* Factory::createMusic(wxString& filename)
 {
     return new Music(filename);
 }
 
+/** @brief Creates a MusicFile for reading TAG value in music file
+ *
+ * @param music a music
+ * @return MusicFile*
+ *
+ */
 MusicFile* Factory::createMusicFileReader(Music& music)
 {
     return new MusicFileReader(music);
 }
 
+/** @brief Creates an envelop to thread reading
+ *
+ * @param music Music&
+ * @return MusicFileReaderThread*
+ * @see Factory::createMusicFileReader
+ */
 MusicFileReaderThread* Factory::createMusicFileReaderThread(Music& music)
 {
     return new MusicFileReaderThread(new MusicFileReader(music));
 }
 
+/** @brief Creates a MusicFile for writing TAG value in music file.
+ * Can rename file if needed.
+ * @param inMusic source
+ * @param outMusic target
+ * @return MusicFile*
+ *
+ */
 MusicFile* Factory::createMusicFileWriter(const Music* inMusic, Music& outMusic)
 {
     return new MusicFileWriter(inMusic, outMusic);

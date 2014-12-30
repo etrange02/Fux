@@ -8,6 +8,11 @@
 #include "MusicFileWriter.h"
 #include "MusicFileReaderThread.h"
 
+/** @brief Music Factory
+ *
+ * @class fux::music::Factory
+ */
+
 namespace fux
 {
     namespace music

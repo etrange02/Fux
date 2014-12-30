@@ -5,7 +5,7 @@
 #include "IThreadManager.h"
 
 /** @brief Thread Factory
- * Thread Factory
+ *
  * @class fux::thread::Factory
  */
 

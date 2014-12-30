@@ -1914,17 +1914,14 @@
 
 1416433635 c:\workspace\projects\fux\include\classes.h
 
-1419117353 c:\workspace\projects\fux\include\music\musicmanager.h
+1419728159 c:\workspace\projects\fux\include\music\musicmanager.h
 	<wx/wx.h>
 	<ctime>
 	<algorithm>
 	"MusicPlayer.h"
 	"MusicList.h"
+	"../tools/thread/ThreadManager.h"
 	"../predicates/findPosition.h"
-
-1418851609 c:\workspace\projects\fux\include\music\imusic.h
-	<wx/wx.h>
-	<wx/image.h>
 
 1416433635 c:\workspace\projects\fux\include\music\musicplayer.h
 	<wx/wx.h>
@@ -1933,46 +1930,45 @@
 
 1416433635 c:\workspace\projects\fux\include\music\duree.h
 
-1419117684 c:\workspace\projects\fux\include\music\musiclist.h
+1419728575 c:\workspace\projects\fux\include\music\musiclist.h
 	<wx/wx.h>
 	<vector>
 	<wx/dir.h>
 	"../Define.h"
 	"Music.h"
 	"ChansonNomPos.h"
-	"MusicFileThreadManager.h"
+	"Factory.h"
 	"../tools/dir_traverser/ISearchTraversable.h"
 	"../tools/dir_traverser/Search.h"
 	"../settings/Parametre.h"
+	"../tools/thread/ThreadManager.h"
 
-1419103215 c:\workspace\projects\fux\include\music\music.h
+1419374737 c:\workspace\projects\fux\include\music\music.h
 	<wx/wx.h>
 	<wx/image.h>
 	"IMusic.h"
 
+1418851609 c:\workspace\projects\fux\include\music\imusic.h
+	<wx/wx.h>
+	<wx/image.h>
+
 1416433635 c:\workspace\projects\fux\include\music\chansonnompos.h
 	"wx/wx.h"
 
-1416433635 c:\workspace\projects\fux\include\tools\dir_traverser\isearchtraversable.h
-
-1416433635 c:\workspace\projects\fux\include\tools\dir_traverser\search.h
-	"../../Define.h"
+1419440329 c:\workspace\projects\fux\include\music\musicfilethreadmanager.h
 	<wx/wx.h>
-	<wx/dir.h>
-	"../../settings/Parametre.h"
-	"ISearchTraversable.h"
-
-1419162582 c:\workspace\projects\fux\include\music\musicfilethreadmanager.h
-	<wx/wx.h>
+	<wx/thread.h>
 	"ThreadSafeQueue.h"
 	"MusicFile.h"
 	"MusicFileReader.h"
 	"MusicFileWriter.h"
 
-1419166685 c:\workspace\projects\fux\include\tools\stl\threadsafequeue.h
+1419439594 c:\workspace\projects\fux\include\tools\stl\threadsafequeue.h
 	<queue>
+	<wx/wx.h>
+	<wx/thread.h>
 
-1419101513 c:\workspace\projects\fux\include\music\musicfile.h
+1419727807 c:\workspace\projects\fux\include\music\musicfile.h
 
 1419164311 c:\workspace\projects\fux\include\music\musicfilereader.h
 	<wx/wx.h>
@@ -2152,6 +2148,15 @@
 	<mpegfile.h>
 	<id3v2tag.h>
 	<attachedpictureframe.h>
+
+1416433635 c:\workspace\projects\fux\include\tools\dir_traverser\isearchtraversable.h
+
+1416433635 c:\workspace\projects\fux\include\tools\dir_traverser\search.h
+	"../../Define.h"
+	<wx/wx.h>
+	<wx/dir.h>
+	"../../settings/Parametre.h"
+	"ISearchTraversable.h"
 
 1416433635 c:\workspace\projects\fux\include\predicates\findposition.h
 	"../music/IMusic.h"
@@ -2350,7 +2355,7 @@
 1211172694 c:\workspace\libraries\wx2812gl\include\wx\generic\srchctlg.h
 	"wx/bitmap.h"
 
-1418488832 c:\workspace\projects\fux\include\gui\musiclist\playlisttableau.h
+1419800330 c:\workspace\projects\fux\include\gui\musiclist\playlisttableau.h
 	"../../Define.h"
 	<wx/wx.h>
 	<wx/stdpaths.h>
@@ -2818,10 +2823,10 @@
 1418256250 source:c:\workspace\projects\fux\src\gui\graph\musiquegraph.cpp
 	"../../../include/gui/graph/MusiqueGraph.h"
 
-1419199500 source:c:\workspace\projects\fux\src\gui\musiclist\playlist.cpp
+1419292526 source:c:\workspace\projects\fux\src\gui\musiclist\playlist.cpp
 	"../../../include/gui/musiclist/PlayList.h"
 
-1418488737 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
+1419800948 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
 	"../../../include/gui/musiclist/PlayList.h"
 
 1416433636 source:c:\workspace\projects\fux\src\gui\settings\preferencecouleur.cpp
@@ -2867,15 +2872,16 @@
 1418855189 source:c:\workspace\projects\fux\src\music\duree.cpp
 	"../../include/music/Duree.h"
 
-1419197044 source:c:\workspace\projects\fux\src\music\factory.cpp
-	"Factory.h"
+1419941504 source:c:\workspace\projects\fux\src\music\factory.cpp
+	"../../include/music/Factory.h"
 
-1419197052 c:\workspace\projects\fux\include\music\factory.h
+1419941617 c:\workspace\projects\fux\include\music\factory.h
 	<wx/wx.h>
 	"Music.h"
 	"MusicFile.h"
 	"MusicFileReader.h"
 	"MusicFileWriter.h"
+	"MusicFileReaderThread.h"
 
 1419102267 source:c:\workspace\projects\fux\src\music\music.cpp
 	"../../include/music/Music.h"
@@ -2886,15 +2892,17 @@
 1419164450 source:c:\workspace\projects\fux\src\music\musicfilereader.cpp
 	"MusicFileReader.h"
 
-1419162619 source:c:\workspace\projects\fux\src\music\musicfilethreadmanager.cpp
+1419441967 source:c:\workspace\projects\fux\src\music\musicfilethreadmanager.cpp
 	"MusicFileThreadManager.h"
 
 1419199517 source:c:\workspace\projects\fux\src\music\musicfilewriter.cpp
 	"MusicFileWriter.h"
 
-1419165692 source:c:\workspace\projects\fux\src\music\musiclist.cpp
+1419728651 source:c:\workspace\projects\fux\src\music\musiclist.cpp
 	"../../include/music/MusicList.h"
-	"Factory.h"
+
+1419728671 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
+	"../../include/music/MusicManager.h"
 
 1418512172 source:c:\workspace\projects\fux\src\music\musicplayer.cpp
 	"../../include/music/MusicPlayer.h"
@@ -2992,6 +3000,48 @@
 	<wx/timer.h>
 	"../../include/tools/Timer.h"
 
-1419118311 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
-	"../../include/music/MusicManager.h"
+1419776487 source:c:\workspace\projects\fux\src\tools\thread\threadmanager.cpp
+	"../../../include/tools/thread/ThreadManager.h"
+	<algorithm>
+
+1419773955 c:\workspace\projects\fux\include\tools\thread\threadmanager.h
+	<vector>
+	"IThreadManager.h"
+	"ThreadSafeQueue.h"
+	"ThreadProcess.h"
+	"Factory.h"
+
+1419718946 source:c:\workspace\projects\fux\src\tools\thread\irunnable.cpp
+	"IRunnable.h"
+
+1419772199 c:\workspace\projects\fux\include\tools\thread\irunnable.h
+
+1419773084 c:\workspace\projects\fux\include\tools\thread\threadprocess.h
+	<wx/wx.h>
+	<wx/thread.h>
+	"IThreadManager.h"
+	"IRunnable.h"
+
+1419773007 source:c:\workspace\projects\fux\src\tools\thread\threadprocess.cpp
+	"../../../include/tools/thread/ThreadProcess.h"
+
+1419719724 source:c:\workspace\projects\fux\src\tools\thread\ithreadmanager.cpp
+	"IThreadManager.h"
+
+1419772284 c:\workspace\projects\fux\include\tools\thread\ithreadmanager.h
+	"ThreadProcess.h"
+
+1419773140 source:c:\workspace\projects\fux\src\tools\thread\factory.cpp
+	"../../../include/tools/thread/Factory.h"
+
+1419941599 c:\workspace\projects\fux\include\tools\thread\factory.h
+	"ThreadProcess.h"
+	"IThreadManager.h"
+
+1419940727 c:\workspace\projects\fux\include\music\musicfilereaderthread.h
+	"IRunnable.h"
+	"MusicFileReader.h"
+
+1419772644 source:c:\workspace\projects\fux\src\music\musicfilereaderthread.cpp
+	"MusicFileReaderThread.h"
 

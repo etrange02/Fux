@@ -14,6 +14,7 @@ class MusicFileReaderThread : public fux::thread::IRunnable
         /** Default destructor */
         virtual ~MusicFileReaderThread();
 
+        /** Overload */
         virtual void process();
 
     protected:
