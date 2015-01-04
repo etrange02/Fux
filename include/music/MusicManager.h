@@ -14,6 +14,7 @@
 class MusicList;
 
 extern const wxEventType wxEVT_FUX_MUSICMANAGER_NO_FILE;
+extern const wxEventType wxEVT_FUX_MUSICMANAGER_SEARCH_DONE;
 
 class MusicManager
 {
@@ -23,7 +24,8 @@ class MusicManager
         bool isRepete();
         bool isRandom();
         Music *getMusic();
-        std::vector<Music*>& getMusics();
+        std::vector<Music*>& getAllMusics();
+        std::vector<Music*>& getSearchedOrAllMusics();
         MusicPlayer& getMusicPlayer();
 
         size_t getCurrentMusicPosition();
@@ -47,11 +49,11 @@ class MusicManager
 
         void deleteCurrentTitle();
         void deleteTitleAt(size_t position);
-        void deleteTitles(wxArrayString *titles, bool update = false);
+        void deleteTitles(wxArrayString& titles, bool update = false);
 
         void parse();
-        void parse(wxArrayString* filenames, bool update = true);
-        void parse(wxString filename);
+        void parse(const wxString& filename);
+        void parse(wxArrayString& filenames, bool update = true);
 
         void setParent(wxWindow* parent);
         wxWindow* getParent() const;
@@ -69,6 +71,7 @@ class MusicManager
     protected:
         bool playRandomMusic();
         void sendMusicNoFileEvent();
+        void sendSearchEndingEvent();
         void launchSearching();
 
     private:

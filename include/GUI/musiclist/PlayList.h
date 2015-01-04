@@ -13,12 +13,6 @@
 #include <wx/progdlg.h>
 #include <wx/mstream.h>
 #include <wx/srchctrl.h>
-#include <tag.h>
-#include <fileref.h>
-#include <taglib.h>
-#include <mpegfile.h>
-#include <id3v2tag.h>
-#include <attachedpictureframe.h>
 //#include "../../music/Musique.h"
 #include "../../music/MusicManager.h"
 #include "PlayListTableau.h"
@@ -37,7 +31,7 @@ class PlayList : public wxPanel
 
         PlayListTableau* GetPlayListTableau();
 
-        void Initialize(wxWindow *Parent, bool MAJListe = false);
+        void Initialize(wxWindow *Parent);
         void EnregistrerM3U(wxCommandEvent &WXUNUSED(event));
         void OnPanneau(wxCollapsiblePaneEvent &WXUNUSED(event));
         void OnAfficheDetails(wxListEvent&);
@@ -46,16 +40,17 @@ class PlayList : public wxPanel
         void FenetreDetails(wxCommandEvent &WXUNUSED(event));
 
         void ViderPanneauTAG();
-        void RemplirPanneauTAG(wxString chaine);
-        void RemplirPanneauTAG(Music& music);
+        void RemplirPanneauTAG(int musicPosition);
         void EvtViderPanneauTAG(wxCommandEvent &WXUNUSED(event));
         void EvtImage(wxCommandEvent&);
         void MouseEvents(wxMouseEvent&);
 
         void RechercheListeLecture(wxCommandEvent&);
 
+    private:
+        void RemplirPanneauTAG(Music& music);
+
     protected:
-        wxString fichierTAG;
         wxSizer *sizer, *m_sizerBouton, *m_sizerRep;
         wxFlexGridSizer *m_sizerPann;
         wxButton *m_BoutonSauver, *m_BoutonAnnuler, *m_BoutonEnregistrerM3U;
@@ -66,7 +61,6 @@ class PlayList : public wxPanel
 
         ImagePochetteMusique *m_pochette;
         PlayListTableau *m_liste;
-        TagLib::FileRef m_ObjetTAG;
 
     DECLARE_EVENT_TABLE()
 };

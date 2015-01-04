@@ -1,9 +1,9 @@
 /***************************************************************
  * Name:      PreferenceSon.cpp
  * Purpose:   Code for Fu(X) 2.0
- * Author:    David Lecoconnier (etrange02@aol.com)
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2009-12-14
- * Copyright: David Lecoconnier (http://www.fuxplay.com)
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
 #include "../../../include/gui/settings/PreferenceSon.h"
@@ -350,7 +350,7 @@ bool PreferenceSon::ModifierFiltre(wxString nom, wxString vol, wxString volPC, w
         }
     }*/
 
-    if (oldNom)
+    if (!oldNom.IsEmpty())
         wxRemoveFile(Parametre::Get()->getCheminSon(oldNom));
     wxXmlNode *rootNode = new wxXmlNode(wxXML_ELEMENT_NODE, _T("sound"));
     wxXmlNode *childNode = NULL;

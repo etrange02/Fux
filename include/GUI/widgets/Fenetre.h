@@ -58,6 +58,7 @@ class FuXFenetre: public wxFrame
     void EventQuit(wxCommandEvent &event);
     void EventSavePlayList(wxCommandEvent&);
     void EventUpdatePlayLists(wxCommandEvent &WXUNUSED(event));
+    void onEventUpdatePlaylistSearchDone(wxCommandEvent &WXUNUSED(event));
     void MenuAbout(wxCommandEvent &WXUNUSED(event));
     void MenuSiteWeb(wxCommandEvent &WXUNUSED(event));
     void MenuAide(wxCommandEvent &WXUNUSED(event));
@@ -83,6 +84,8 @@ class FuXFenetre: public wxFrame
     void openDialogToPlayMusic();
     void openDialogToSelectPlayListFile();
     void deleteCurrentPlayingTitle();
+
+    void onUpdateLine(wxCommandEvent& event);
 
   private :
 
@@ -114,7 +117,6 @@ class FuXFenetre: public wxFrame
     TCPServeur *m_serveur;
 
     int m_FenetreActuel, m_nouvelleFenetre;
-    bool m_MAJliste;
 
     DECLARE_EVENT_TABLE()
 };

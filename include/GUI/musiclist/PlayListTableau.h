@@ -46,14 +46,18 @@ class PlayListTableau : public wxListCtrl
         void menuCouper(wxCommandEvent &WXUNUSED(event));
         void menuColler(wxCommandEvent &WXUNUSED(event));
         void menuDetails(wxCommandEvent &WXUNUSED(event));
+        /** Event - Adds a music line in the list */
+        void onUpdateLine(wxCommandEvent& event);
 
         void SuppressionLigne();
 
     protected:
         /** Adds a line at the end of the list */
         void addLine(Music& music);
-        /** Adds a line at the specific position */
+        /** Adds a line at the specified position */
         void addLine(Music& music, const int position);
+        /** Adds a line at the specified position */
+        void addLineThread(Music& music, const int position);
         /** Modifies a line in the list */
         void modifyLine(Music& music, const int position);
 

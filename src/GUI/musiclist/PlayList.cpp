@@ -1,19 +1,17 @@
 /***************************************************************
  * Name:      PlayList.cpp
  * Purpose:   Code for Fu(X) 2.0
- * Author:    David Lecoconnier (etrange02@aol.com)
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2009-12-17
- * Copyright: David Lecoconnier (http://www.fuxplay.com)
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
 #include "../../../include/gui/musiclist/PlayList.h"
 
 /**
  * @class PlayList
- * @brief Page contenant la liste de lecture et une description dÃ©taillÃ©e des titres
+ * @brief Page contenant la liste de lecture et une description détaillée des titres
  */
-
-using namespace TagLib;
 
 BEGIN_EVENT_TABLE(PlayList, wxPanel)
     EVT_BUTTON(ID_PAGE_PLAYLIST_BOUTON_ENREGISTRE_M3U, PlayList::EnregistrerM3U)
@@ -51,18 +49,17 @@ PlayList::~PlayList()
 }
 
 /**
- * Retourne l'instance de la liste que gÃ¨re la page
- * @return le liste gÃ©rÃ©e par la page
+ * Retourne l'instance de la liste que gère la page
+ * @return le liste gérée par la page
  */
 PlayListTableau* PlayList::GetPlayListTableau()
 {    return m_liste;}
 
 /**
- * CrÃ©e les composants graphiques de la page
- * @param Parent un pointeur sur la fenÃªtre parente
- * @param MAJListe si vrai, la liste est mis Ã  jour
+ * Crée les composants graphiques de la page
+ * @param Parent un pointeur sur la fenêtre parente
  */
-void PlayList::Initialize(wxWindow *Parent, bool MAJListe)
+void PlayList::Initialize(wxWindow *Parent)
 {
     Create(Parent);
     sizer = new wxBoxSizer(wxVERTICAL);
@@ -78,7 +75,7 @@ void PlayList::Initialize(wxWindow *Parent, bool MAJListe)
 
     m_liste = new PlayListTableau(this);
 
-    m_panneauRepliable = new wxCollapsiblePane(this, ID_PAGE_PLAYLIST_PANNEAUREPLIABLE, _("DÃ©tails"), wxDefaultPosition, wxDefaultSize, wxCP_NO_TLW_RESIZE | wxALWAYS_SHOW_SB);
+    m_panneauRepliable = new wxCollapsiblePane(this, ID_PAGE_PLAYLIST_PANNEAUREPLIABLE, _("Détails"), wxDefaultPosition, wxDefaultSize, wxCP_NO_TLW_RESIZE | wxALWAYS_SHOW_SB);
     m_sizerRep = new wxBoxSizer(wxHORIZONTAL);
     m_sizerPann = new wxFlexGridSizer(3, 4, 1, 1);
     m_sizerBouton = new wxBoxSizer(wxVERTICAL);
@@ -117,7 +114,7 @@ void PlayList::Initialize(wxWindow *Parent, bool MAJListe)
     m_BoiteAlbum = new wxTextCtrl(win, wxID_ANY, _T(""));
     m_sizerPann->Add(m_BoiteAlbum, 1, wxGROW | wxALL | wxEXPAND, 5);
 
-    m_sizerPann->Add(new wxStaticText(win, wxID_ANY, _("AnnÃ©e")), 1, wxGROW | wxALL, 5);
+    m_sizerPann->Add(new wxStaticText(win, wxID_ANY, _("Année")), 1, wxGROW | wxALL, 5);
     m_BoiteAnnee = new wxSpinCtrl(win, wxID_ANY, _T(""));
     m_BoiteAnnee->SetRange(0, 3000);
     m_sizerPann->Add(m_BoiteAnnee, 1, wxGROW | wxALL | wxEXPAND, 5);
@@ -133,13 +130,10 @@ void PlayList::Initialize(wxWindow *Parent, bool MAJListe)
     sizer->Add(m_liste, 1, wxALL | wxEXPAND, 5);
     sizer->Add(m_panneauRepliable, 0, wxGROW | wxDOWN | wxLEFT | wxRIGHT, 5);
     sizer->Layout();
-
-    if (MAJListe)
-        m_liste->MAJ();
 }
 
 /**
- * Ã‰vÃ¨nement - Affiche une boÃ®te de dialogue pour enregistrer la liste de lecture dans un fichier .m3u
+ * Évènement - Affiche une boîte de dialogue pour enregistrer la liste de lecture dans un fichier .m3u
  */
 void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
 {
@@ -154,7 +148,7 @@ void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
 
         if (wxFileExists(fen->GetChemin()))
         {
-            wxMessageDialog assertDialog(NULL, _("Fichier dÃ©jÃ  existant. Souhaitez-vous le remplacer ?"), _("Fichier dÃ©jÃ  existant"), wxYES_NO|wxICON_QUESTION|wxCENTRE|wxYES_DEFAULT);
+            wxMessageDialog assertDialog(NULL, _("Fichier déjà existant. Souhaitez-vous le remplacer ?"), _("Fichier déjà existant"), wxYES_NO|wxICON_QUESTION|wxCENTRE|wxYES_DEFAULT);
             if (assertDialog.ShowModal() != wxID_YES)
                 modif = false;
         }
@@ -164,7 +158,7 @@ void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
         {
             if (!MusicManager::get().saveMusicListIntoFile(fen->GetChemin()))
             {
-                wxLogError(_("Erreur dans le nom.\nVÃ©rifiez que vous utilisez des caractÃ¨res autorisÃ©s."), _("Erreur"));
+                wxLogError(_("Erreur dans le nom.\nVérifiez que vous utilisez des caractères autorisés."), _("Erreur"));
                 return;
             }
             else
@@ -173,7 +167,7 @@ void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
                 {
                     if (!CreationRaccourci(fen->GetCheminRaccourci(), fen->GetChemin()))
                     {
-                        wxLogMessage(_("Echec de la crÃ©ation du raccourci."));
+                        wxLogMessage(_("Echec de la création du raccourci."));
                     }
                 }
             }
@@ -184,7 +178,7 @@ void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Ã‰vÃ¨nement - Lors de l'ouverture/fermeture du panneau, redimensionne le sizer de la page
+ * Évènement - Lors de l'ouverture/fermeture du panneau, redimensionne le sizer de la page
  */
 void PlayList::OnPanneau(wxCollapsiblePaneEvent &WXUNUSED(event))
 {    sizer->Layout();}
@@ -194,30 +188,15 @@ void PlayList::OnPanneau(wxCollapsiblePaneEvent &WXUNUSED(event))
  */
 void PlayList::OnAfficheDetails(wxListEvent &event)
 {
-    std::vector<Music*>::iterator iter = MusicManager::get().getMusics().begin() + event.GetIndex();
-    Music* music = *iter;
-
-    fichierTAG = music->GetFileName();
-
-    RemplirPanneauTAG(*music);
-    if (music->HasRecordSleeve())
-    {
-        m_pochette->SetImage(*music->GetRecordSleeve());
-        m_pochette->AfficheImage(true);
-    }
-    else
-        m_pochette->AfficheImage(false);
-    m_sizerRep->Layout();
+    RemplirPanneauTAG(event.GetIndex());
 }
 
 /**
- * Ã‰vÃ¨nement - Applique les les modifications des TAGs au fichier sÃ©lectionnÃ©
+ * Évènement - Applique les les modifications des TAGs au fichier sélectionné
  */
 void PlayList::OnAppliquerTAG(wxCommandEvent &WXUNUSED(event))
 {
-    if (fichierTAG.IsEmpty())
-        return;
-
+    // TODO (David): Write the music writer
     /*m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
     if (!m_ObjetTAG.isNull() && !Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
     {
@@ -232,7 +211,7 @@ void PlayList::OnAppliquerTAG(wxCommandEvent &WXUNUSED(event))
             if (wxRenameFile(fichierTAG, tempo, true))
                 FichierListe::Get()->EchangeNom(fichierTAG, tempo);
             else
-                wxMessageBox(_("Erreur dans le nom.\nVÃ©rifiez que vous utilisez des caractÃ¨res autorisÃ©s."), _("Erreur"));
+                wxMessageBox(_("Erreur dans le nom.\nVérifiez que vous utilisez des caractères autorisés."), _("Erreur"));
         }
         m_liste->MAJ();
         //m_liste->SetItemState(ligneSel, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED);/////////////////////
@@ -240,23 +219,25 @@ void PlayList::OnAppliquerTAG(wxCommandEvent &WXUNUSED(event))
     else if (Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
         wxMessageBox(_("Vous ne pouvez pas modifier un fichier lorsque celui-ci est en cours de lecture."), _("Erreur !"));
     else
-        wxMessageBox(_("SÃ©lectionnez un fichier"), _("Erreur !"));
+        wxMessageBox(_("Sélectionnez un fichier"), _("Erreur !"));
         */
 }
 
 /**
- * Ã‰vÃ¨nement - Remet les TAGs Ã  leur valeur d'origine ie ceux dans le fichier
+ * Évènement - Remet les TAGs à leur valeur d'origine ie ceux dans le fichier
  */
 void PlayList::OnAnnulerTAG(wxCommandEvent &WXUNUSED(event))
 {
-    m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
-    if (!m_ObjetTAG.isNull())
-        RemplirPanneauTAG(fichierTAG);
+    long itemPosition = m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
+    if (0 > itemPosition) // ==> -1
+    {
+        ViderPanneauTAG();
+    }
     else
-        wxMessageBox(_("SÃ©lectionnez un fichier"), _("Erreur !"));
-    m_ObjetTAG = TagLib::FileRef("");
+    {
+        RemplirPanneauTAG(itemPosition);
+    }
 
-    //OnAfficheDetails();
 }
 
 /**
@@ -268,26 +249,20 @@ void PlayList::ViderPanneauTAG()
     m_BoiteArtiste->ChangeValue(wxEmptyString);//Artiste
     m_BoiteAlbum->ChangeValue(wxEmptyString);//Album
     m_BoiteTitre->ChangeValue(wxEmptyString);//Titre
-    m_BoiteAnnee->SetValue(0);//AnnÃ©e
+    m_BoiteAnnee->SetValue(0);//Année
     m_BoiteGenre->ChangeValue(wxEmptyString);//Genre
+    m_pochette->AfficheImage(false);
 }
 
 /**
- * Rempli les champs Ã  partir d'un fichier
- * @param chaine le nom complet du fichier
+ * Fill fields with music data
+ * @param musicPosition a music position
  */
-void PlayList::RemplirPanneauTAG(wxString chaine)
+void PlayList::RemplirPanneauTAG(int musicPosition)
 {
-    m_ObjetTAG = TagLib::FileRef(TagLib::FileName(chaine.fn_str()));
-    int i = chaine.Find(wxFileName::GetPathSeparator(), true);
-
-    m_BoiteNom->ChangeValue(chaine.Right(chaine.Length()-i-1));//Nom du fichier
-    m_BoiteArtiste->ChangeValue(wxString(m_ObjetTAG.tag()->artist().toCString(), wxConvLocal));//Artiste
-    m_BoiteAlbum->ChangeValue(wxString(m_ObjetTAG.tag()->album().toCString(), wxConvLocal));//Album
-    m_BoiteTitre->ChangeValue(wxString(m_ObjetTAG.tag()->title().toCString(), wxConvLocal));//Titre
-    m_BoiteAnnee->SetValue(m_ObjetTAG.tag()->year());
-    m_BoiteGenre->ChangeValue(wxString(m_ObjetTAG.tag()->genre().toCString(), wxConvLocal));//Genre
-    m_ObjetTAG = TagLib::FileRef("");
+    std::vector<Music*>::iterator iter = MusicManager::get().getSearchedOrAllMusics().begin() + musicPosition;
+    RemplirPanneauTAG(**iter);
+    m_sizerRep->Layout();
 }
 
 /**
@@ -302,33 +277,41 @@ void PlayList::RemplirPanneauTAG(Music& music)
     m_BoiteTitre->ChangeValue(music.GetTitle());//Titre
     m_BoiteAnnee->SetValue(music.GetStringYear());
     m_BoiteGenre->ChangeValue(music.GetGenres());//Genre
+
+    if (music.HasRecordSleeve())
+    {
+        m_pochette->SetImage(*music.GetRecordSleeve());
+        m_pochette->AfficheImage(true);
+    }
+    else
+        m_pochette->AfficheImage(false);
 }
 
 /**
- * Ã‰vÃ¨nement - Efface tous les champs
+ * Évènement - Efface tous les champs
  */
 void PlayList::EvtViderPanneauTAG(wxCommandEvent &WXUNUSED(event))
-{    ViderPanneauTAG();}
+{
+    ViderPanneauTAG();
+}
 
 /**
- * Ã‰vÃ¨nement - AppelÃ© lors du changement de la pochette du titre. L'enregistrement dans le fichier se fait automatiquement
+ * Évènement - Appelé lors du changement de la pochette du titre. L'enregistrement dans le fichier se fait automatiquement
  */
 // TODO (David): Complete image modification
 void PlayList::EvtImage(wxCommandEvent &event)
 {
-    if (fichierTAG.IsEmpty())
-        return;
-
     /////////////////
     // save modified data into music file
     /////////////////
 }
 
 /**
- * Ã‰vÃ¨nement - Affiche une fenÃªtre dÃ©taillant les propriÃ©tÃ©s du titre
+ * Évènement - Affiche une fenêtre détaillant les propriétés du titre
  */
 void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
 {
+    // TODO (David): Show details window
     /*DialogTagMP3 *fen = new DialogTagMP3(this, -1, _T(""));
 
     m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
@@ -390,7 +373,7 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
                     m_ObjetTAG.tag()->setArtist(TagLib::String(art.fn_str()));//Artiste
                     m_ObjetTAG.tag()->setAlbum(TagLib::String(fen->GetAlbum().fn_str()));//Album
                     m_ObjetTAG.tag()->setTitle(TagLib::String(fen->GetTitre().fn_str()));//Titre
-                    m_ObjetTAG.tag()->setYear(fen->GetAnnee());//AnnÃ©e
+                    m_ObjetTAG.tag()->setYear(fen->GetAnnee());//Année
                     if (fen->GetGenre().IsSameAs(_T("Other")) || fen->GetGenre().IsSameAs(_T("Inconnu")))
                         m_ObjetTAG.tag()->setGenre("");//Genre
                     else
@@ -407,7 +390,7 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
                         if (wxRenameFile(fichierTAG, tempo, true))
                             FichierListe::Get()->EchangeNom(fichierTAG, tempo);
                         else
-                            wxMessageBox(_("Erreur dans le nom.\nVÃ©rifiez que vous utilisez des caractÃ¨res autorisÃ©s."), _("Erreur"));
+                            wxMessageBox(_("Erreur dans le nom.\nVérifiez que vous utilisez des caractères autorisés."), _("Erreur"));
                     }
 
                     TagLib::MPEG::File f(TagLib::FileName(fichierTAG.fn_str()));
@@ -452,14 +435,14 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
                 else if (Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
                     wxMessageBox(_("Vous ne pouvez pas modifier un fichier lorsque celui-ci est en cours de lecture."), _("Erreur !"));
                 else
-                    wxMessageBox(_("SÃ©lectionnez un fichier"), _("Erreur !"));
+                    wxMessageBox(_("Sélectionnez un fichier"), _("Erreur !"));
             }
         }
     }
     else
     {
         m_ObjetTAG = TagLib::FileRef("");
-        wxMessageBox(_("SÃ©lectionnez un fichier"), _("Erreur !"));
+        wxMessageBox(_("Sélectionnez un fichier"), _("Erreur !"));
     }
 
     delete fen;
@@ -467,7 +450,7 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Ã‰vÃ¨nement Souris -
+ * Évènement Souris -
  */
 void PlayList::MouseEvents(wxMouseEvent &event)
 {

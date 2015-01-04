@@ -1,7 +1,7 @@
 /***************************************************************
  * Name:      ThreadManager.cpp
  * Purpose:   Code for Fu(X) 2.0
- * Author:    David Lecoconnier (etrange02@aol.com)
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2014-12-27
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
@@ -61,7 +61,6 @@ ThreadManager& ThreadManager::get()
  */
 void ThreadManager::initialize()
 {
-    wxLogMessage(wxString::Format(_("%d cores"), wxThread::GetCPUCount()));
     int CPUCount = std::max(wxThread::GetCPUCount()-1, 1);
 
     ThreadProcess *tp = NULL;
@@ -149,7 +148,6 @@ void ThreadManager::activateAWorker()
     ThreadProcess* tp = getAvailableWorker();
     if (NULL != tp)
     {
-        wxLogMessage(_("found"));
         tp->semaphorePost();
     }
 }

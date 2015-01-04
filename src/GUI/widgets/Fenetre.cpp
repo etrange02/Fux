@@ -1,9 +1,9 @@
 /***************************************************************
  * Name:      Fenetre.cpp
  * Purpose:   Code for Fu(X) 2.0
- * Author:    David Lecoconnier (etrange02@aol.com)
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2009-07-24
- * Copyright: David Lecoconnier (http://www.fuxplay.com)
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
 #include "wx/wxprec.h"
@@ -48,16 +48,16 @@ BEGIN_EVENT_TABLE(FuXFenetre, wxFrame)
     EVT_BUTTON(ID_APP_AFF_PLAYIST, FuXFenetre::AfficheListeDeLecture)
     EVT_BUTTON(ID_APP_AFF_MODULE_IPOD, FuXFenetre::AfficheGestPeriph)
     EVT_COMMAND_SCROLL(ID_APP_SLIDER_SON, FuXFenetre::EventUpdateMusicVolume)
-    //EVT_MUSIQUE_CHANGE(wxID_ANY, FuXFenetre::EventMusicChanged)
-    EVT_FUX_MUSICPLAYER_CHANGE_TITLE(wxID_ANY, FuXFenetre::EventMusicChanged)
-    //EVT_MUSIQUE_MAJ(wxID_ANY, FuXFenetre::EventUpdatePlayLists)
-    EVT_FUX_MUSICLIST_LIST_UPDATE(wxID_ANY, FuXFenetre::EventUpdatePlayLists)
-    //EVT_MUSIQUE_LECTURE(wxID_ANY, FuXFenetre::EventSwitchButtonImage)
-    EVT_FUX_MUSICPLAYER_CHANGE_STATUS(wxID_ANY, FuXFenetre::EventSwitchButtonImage)
+
+    EVT_FUX_MUSICPLAYER_CHANGE_TITLE(FuXFenetre::EventMusicChanged)
+    EVT_FUX_MUSICPLAYER_CHANGE_STATUS(FuXFenetre::EventSwitchButtonImage)
+    EVT_FUX_MUSICPLAYER_UPDATE_GRAPH(FuXFenetre::OnTitreChange)
+    EVT_FUX_MUSICLIST_LIST_UPDATE(FuXFenetre::EventUpdatePlayLists)
+    EVT_FUX_MUSICMANAGER_NO_FILE(FuXFenetre::EventNoMusic)
+    EVT_FUX_MUSICMANAGER_SEARCH_DONE(FuXFenetre::onEventUpdatePlaylistSearchDone)
+    EVT_FUX_MUSICFILE_READER_THREAD(FuXFenetre::onUpdateLine)
+
     EVT_SERVEUR(wxID_ANY, FuXFenetre::EvtServeurAjout)
-    //EVT_MUSIQUE_GRAPH(wxID_ANY, FuXFenetre::OnTitreChange)
-    EVT_FUX_MUSICPLAYER_UPDATE_GRAPH(wxID_ANY, FuXFenetre::OnTitreChange)
-    EVT_FUX_MUSICMANAGER_NO_FILE(wxID_ANY, FuXFenetre::EventNoMusic)
 
     EVT_MUSIQUE_SUPPRESSION(wxID_ANY, FuXFenetre::EventDeleteCurrentPlayingTitle)
     EVT_CHAR_HOOK(FuXFenetre::OnKeyDownRaccourci)
@@ -70,7 +70,7 @@ static wxMutex *s_mutexProtectionDemarrage = new wxMutex;
 /**
  * Constructeur
  * @param argc Entier indiquant la taille du tableau
- * @param argv Tableau de caractÃ¨res
+ * @param argv Tableau de caractères
  */
 FuXFenetre::FuXFenetre(int argc, wxChar **argv) : wxFrame(NULL, wxID_ANY, _T("Fu(X) 2.0"))
 {
@@ -80,7 +80,6 @@ FuXFenetre::FuXFenetre(int argc, wxChar **argv) : wxFrame(NULL, wxID_ANY, _T("Fu
     sizerPrincipalH = new wxBoxSizer(wxHORIZONTAL);
     sizerGaucheV = new wxBoxSizer(wxVERTICAL);
     sizerPrincipalH->Add(sizerGaucheV, 0, wxALL | wxEXPAND, 0);
-    m_MAJliste = false;
 
     MenuBarCreation();
     LeftSizerCreation();
@@ -104,27 +103,20 @@ FuXFenetre::FuXFenetre(int argc, wxChar **argv) : wxFrame(NULL, wxID_ANY, _T("Fu
             {
                 if (test.GetLineCount() > 1)
                 {
-                    //Musique::Get()->Lecture(test.GetLine(1));
                     MusicManager::get().parse(fichierMem.GetFullPath());
-                    m_MAJliste = true;
                 }
-                else wxLogMessage(_("Impossible de charger le fichier, celui-ci est vierge !"));
+                else
+                    wxLogMessage(_("Impossible de charger le fichier, celui-ci est vierge !"));
                 test.Close();
             }
         }
         else if (Parametre::Get()->islisable(fichierMem.GetExt().Lower()))
         {
-            /*Musique::Get()->Lecture(fichierMem.GetFullPath());
-            Musique::Get()->Listage();*/
             MusicManager::get().playMusicThenParse(fichierMem.GetFullPath());
-            m_MAJliste = true;
         }
     }
 
     SetIcon(wxIcon(Parametre::Get()->getRepertoireExecutableLib(_T("play.ico")), wxBITMAP_TYPE_ICO));
-
-    if (m_MAJliste)
-        m_playList->GetPlayListTableau()->MAJ();
 
     SwitchWindow();
     m_serveur = new TCPServeur(this);
@@ -145,7 +137,7 @@ FuXFenetre::FuXFenetre(int argc, wxChar **argv) : wxFrame(NULL, wxID_ANY, _T("Fu
 FuXFenetre::~FuXFenetre()
 {
     #if DEBUG
-    FichierLog::Get()->Ajouter(_T("FuXFenetre::~FuXFenetre - dÃ©but"));
+    FichierLog::Get()->Ajouter("FuXFenetre::~FuXFenetre - début");
     #endif
     m_fenetresDetachables->Vider();
     delete m_fenetresDetachables;
@@ -170,19 +162,18 @@ FuXFenetre::~FuXFenetre()
 
 
 /**
- * Initialise les instances des classes nÃ©cessaire au lancement de Fu(X)
+ * Initialise les instances des classes nécessaire au lancement de Fu(X)
  */
 void FuXFenetre::panelCreation()
 {
     #if DEBUG
-    FichierLog::Get()->Ajouter(_T("DÃ©but de FuXFenetre::Initialisation"));
+    FichierLog::Get()->Ajouter("Début de FuXFenetre::Initialisation");
     #endif
 
     int args[] = {WX_GL_RGBA, WX_GL_DOUBLEBUFFER, WX_GL_DEPTH_SIZE, 16, 0};
     MusicManager::get().setParent(this);
     m_musiqueGraph = new MusiqueGraph(this, args);
     m_playList = new PlayList;
-    //FichierListe::Get();
     BDDThread::Get();
 
 
@@ -193,12 +184,12 @@ void FuXFenetre::panelCreation()
 }
 
 /**
- * Attache les panels Ã  la fenÃªtre principal
+ * Attache les panels à la fenêtre principal
  */
 void FuXFenetre::panelAssociation()
 {
     #if DEBUG
-    FichierLog::Get()->Ajouter(_T("FuXFenetre::CreerPages() - CrÃ©ation des onglets et des pages manquantes"));
+    FichierLog::Get()->Ajouter("FuXFenetre::CreerPages() - Création des onglets et des pages manquantes");
     #endif
 
     sizerDroitPrincipal = new wxBoxSizer(wxVERTICAL);
@@ -220,13 +211,13 @@ void FuXFenetre::panelAssociation()
 
     m_notebookPreference->AddPage(m_pageCouleur, _("Couleur"));
     m_notebookPreference->AddPage(m_pageSon, _("Son"));
-    m_notebookPreference->AddPage(m_pageDefaut, _("DÃ©faut"));
+    m_notebookPreference->AddPage(m_pageDefaut, _("Défaut"));
 
     sizerDroitPreference->Add(m_notebookPreference, 1, wxEXPAND, 0);
     sizerDroitPreference->Show(m_notebookPreference);
     sizerDroitPreference->Layout();
     #if DEBUG
-    FichierLog::Get()->Ajouter(_T("FuXFenetre::CreerPages() - PrÃ©fÃ©rences"));
+    FichierLog::Get()->Ajouter("FuXFenetre::CreerPages() - Préférences");
     #endif
     //////////////////////////////////////////////////////////////
     sizerDroitExtracteur = new wxBoxSizer(wxVERTICAL);
@@ -240,7 +231,7 @@ void FuXFenetre::panelAssociation()
     #endif
     /////////////////////////////////////////////////////////////
     sizerDroitPlayist = new wxBoxSizer(wxVERTICAL);
-    m_playList->Initialize(this, m_MAJliste);
+    m_playList->Initialize(this);
 
     //m_grille = new PlayListGrille(this);
     sizerDroitPlayist->Add(m_playList, 1, wxALL | wxEXPAND, 0);
@@ -303,7 +294,7 @@ void FuXFenetre::MenuBarCreation()
     menuFichier->Enable(ID_APP_BAR_CHARGER_MATIN, false);
     menuFichier->AppendSeparator();
     menuFichier->Append(ID_APP_BAR_CREER_PLAYLIST, _("Enregistrer la liste de lecture\tCtrl-S"));//"));//
-    menuFichier->Append(ID_APP_BAR_CREER_MATIN, _("CrÃ©er un fichier matin"));
+    menuFichier->Append(ID_APP_BAR_CREER_MATIN, "Créer un fichier matin");
     menuFichier->Enable(ID_APP_BAR_CREER_MATIN, false);
     menuFichier->AppendSeparator();
     menuFichier->Append(ID_APP_BAR_QUITTER, _("Quitter Fu(X)\tCtrl-Q"));//"));//
@@ -311,7 +302,7 @@ void FuXFenetre::MenuBarCreation()
     menuPreferences = new wxMenu;
     menuPreferences->Append(ID_APP_BAR_COULEUR_PREFERENCE, _("Couleur"));
     menuPreferences->Append(ID_APP_BAR_SON_PREFERENCE, _("Son"));
-    menuPreferences->Append(ID_APP_BAR_DEFAUT_PREFERENCE, _("DÃ©faut"));
+    menuPreferences->Append(ID_APP_BAR_DEFAUT_PREFERENCE, _("Défaut"));
 
     menuExtraction = new wxMenu;
     menuExtraction->Append(ID_APP_BAR_EXTRACTION, _("Extration de CD"));
@@ -331,24 +322,24 @@ void FuXFenetre::MenuBarCreation()
     menuControle->Append(ID_APP_BAR_STOP, _("Stop"));
     menuControle->AppendSeparator();
     menuControle->Append(ID_APP_BAR_SUIVANT, _("Suivant\tCtrl-RIGHT"));//"));//
-    menuControle->Append(ID_APP_BAR_PRECEDENT, _("PrÃ©cÃ©dent\tCtrl-LEFT"));//"));//
-    menuControle->AppendCheckItem(ID_APP_BAR_REPETE, _("RÃ©pÃ©tition"));
-    menuControle->AppendCheckItem(ID_APP_BAR_ALEATOIRE, _("AlÃ©atoire"));//\tCtrl-A
+    menuControle->Append(ID_APP_BAR_PRECEDENT, _("Précédent\tCtrl-LEFT"));//"));//
+    menuControle->AppendCheckItem(ID_APP_BAR_REPETE, _("Répétition"));
+    menuControle->AppendCheckItem(ID_APP_BAR_ALEATOIRE, _("Aléatoire"));//\tCtrl-A
     menuControle->AppendSeparator();
     menuControle->Append(ID_APP_BAR_SUPPRIMER, _("Retirer de la liste de lecture\tCtrl-DELETE"));
 
     menuBarre = new wxMenuBar();
     menuBarre->Append(menuFichier, _("Fichier"));
-    menuBarre->Append(menuPreferences, _("PrÃ©fÃ©rences"));
+    menuBarre->Append(menuPreferences, _("Préférences"));
     menuBarre->Append(menuExtraction, _("Outils"));
     menuBarre->Append(menuAide, _("?"));
-    menuBarre->Append(menuControle, _("ContrÃ´les"));
+    menuBarre->Append(menuControle, _("Contrôles"));
 
     SetMenuBar(menuBarre);
 }
 
 /**
- * Construit la partie gauche de la fenÃªtre : les 4 raccourcis et les 5 boutons donnant accÃ¨s aux pages
+ * Construit la partie gauche de la fenêtre : les 4 raccourcis et les 5 boutons donnant accès aux pages
  */
 void FuXFenetre::LeftSizerCreation()
 {
@@ -386,10 +377,10 @@ void FuXFenetre::LeftSizerCreation()
     FichierLog::Get()->Ajouter(_T("FuXFenetre::LeftSizerCreation - Fin application des images"));
     #endif
 
-    sizerBoutonImg->Add(boutonImage0, 0, wxALL, 0);
+    sizerBoutonImg->Add(boutonImage0,    0, wxALL, 0);
     sizerBoutonImg->Add(m_boutonImageLP, 0, wxALL, 0);
-    sizerBoutonImg->Add(boutonImage2, 0, wxALL, 0);
-    sizerBoutonImg->Add(boutonImage3, 0, wxALL, 0);
+    sizerBoutonImg->Add(boutonImage2,    0, wxALL, 0);
+    sizerBoutonImg->Add(boutonImage3,    0, wxALL, 0);
 
 
     //wxButton *BoutonG_EcranPrincipal = new wxButton(this, ID_APP_AFF_PRINCIPAL, _("Ecran principal"), wxDefaultPosition, wxSize(140, 38));
@@ -404,7 +395,7 @@ void FuXFenetre::LeftSizerCreation()
     wxButton *BoutonG_ModuleIPod = new BoutonFenetreDetachable(this, ID_APP_AFF_MODULE_IPOD, _("Exploration"), wxSize(140, 38), GESTIONPERIPH);
     sizerGaucheV->Add(BoutonG_ModuleIPod, 0, wxBOTTOM | wxRIGHT | wxLEFT, 5);
 
-    wxButton *BoutonG_Preferences = new wxButton(this, ID_APP_AFF_PREFERENCE, _("PrÃ©fÃ©rences"), wxDefaultPosition, wxSize(140, 38));
+    wxButton *BoutonG_Preferences = new wxButton(this, ID_APP_AFF_PREFERENCE, _("Préférences"), wxDefaultPosition, wxSize(140, 38));
     sizerGaucheV->Add(BoutonG_Preferences, 0, wxBOTTOM | wxRIGHT | wxLEFT, 5);
 
     wxButton *BoutonG_ExtracteurMP3 = new wxButton(this, ID_APP_AFF_EXTRACTEUR, _("Encodage"), wxDefaultPosition, wxSize(140, 38));
@@ -419,7 +410,7 @@ void FuXFenetre::LeftSizerCreation()
 /// Event methods ///
 // button left panel event //
 /**
- * OpÃ¨re un basculement sur la page contenant le graphe (page principal)
+ * Opère un basculement sur la page contenant le graphe (page principal)
  */
 void FuXFenetre::AffichePrincipal(wxCommandEvent &WXUNUSED(event))
 {
@@ -428,7 +419,7 @@ void FuXFenetre::AffichePrincipal(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * OpÃ¨re un basculement sur la page contenant les prÃ©fÃ©rences
+ * Opère un basculement sur la page contenant les préférences
  */
 void FuXFenetre::AffichePreference(wxCommandEvent &WXUNUSED(event))
 {
@@ -437,7 +428,7 @@ void FuXFenetre::AffichePreference(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * OpÃ¨re un basculement sur la page contenant la gestion de CDs
+ * Opère un basculement sur la page contenant la gestion de CDs
  */
 void FuXFenetre::AfficheEncodage(wxCommandEvent &WXUNUSED(event))
 {
@@ -446,7 +437,7 @@ void FuXFenetre::AfficheEncodage(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * OpÃ¨re un basculement sur la page affichant la liste complÃ¨te des titres mis en mÃ©moire
+ * Opère un basculement sur la page affichant la liste complète des titres mis en mémoire
  */
 void FuXFenetre::AfficheListeDeLecture(wxCommandEvent &WXUNUSED(event))
 {
@@ -455,7 +446,7 @@ void FuXFenetre::AfficheListeDeLecture(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * OpÃ¨re un basculement sur la page permettant une exploration de l'ordinateur
+ * Opère un basculement sur la page permettant une exploration de l'ordinateur
  */
 void FuXFenetre::AfficheGestPeriph(wxCommandEvent &WXUNUSED(event))
 {
@@ -464,7 +455,7 @@ void FuXFenetre::AfficheGestPeriph(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Bascule sur la page des PrÃ©fÃ©rences, onglet Couleur
+ * Bascule sur la page des Préférences, onglet Couleur
  */
 void FuXFenetre::AfficherPreferenceCouleur(wxCommandEvent &WXUNUSED(event))
 {
@@ -474,7 +465,7 @@ void FuXFenetre::AfficherPreferenceCouleur(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Bascule sur la page des PrÃ©fÃ©rences, onglet DÃ©faut
+ * Bascule sur la page des Préférences, onglet Défaut
  */
 void FuXFenetre::AfficherPreferenceDefaut(wxCommandEvent &WXUNUSED(event))
 {
@@ -484,7 +475,7 @@ void FuXFenetre::AfficherPreferenceDefaut(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Bascule sur la page des PrÃ©fÃ©rences, onglet Son
+ * Bascule sur la page des Préférences, onglet Son
  */
 void FuXFenetre::AfficherPreferenceSon(wxCommandEvent &WXUNUSED(event))
 {
@@ -494,7 +485,7 @@ void FuXFenetre::AfficherPreferenceSon(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Ã‰vÃ¨nement - Permet la sÃ©paration des pages dans diffÃ©rentes fenÃªtres
+ * Évènement - Permet la séparation des pages dans différentes fenêtres
  * @param event
  */
 void FuXFenetre::SeparationPanel(wxCommandEvent &event)
@@ -550,7 +541,7 @@ void FuXFenetre::SeparationPanel(wxCommandEvent &event)
 }
 
 /**
- * Ã‰vÃ¨nement - Permet la rÃ©intÃ©gration des pages dans la fenÃªtre principale
+ * Évènement - Permet la réintégration des pages dans la fenêtre principale
  * @param event
  */
 void FuXFenetre::ReunionPanel(wxCommandEvent &event)
@@ -636,7 +627,7 @@ void FuXFenetre::EventMenuBarPlay(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Relance la lecture si un titre est chargÃ©, ouvre une fenÃªtre de sÃ©lection sinon
+ * Relance la lecture si un titre est chargé, ouvre une fenêtre de sélection sinon
  */
 void FuXFenetre::EventPlayButtonPressed(wxCommandEvent &WXUNUSED(event))
 {
@@ -648,7 +639,7 @@ void FuXFenetre::EventPlayButtonPressed(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * ArrÃªte la chanson
+ * Arrête la chanson
  */
 void FuXFenetre::EventMusicStop(wxCommandEvent &WXUNUSED(event))
 {
@@ -672,7 +663,7 @@ void FuXFenetre::EventMusicNext(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Passe au titre prÃ©cÃ©dent
+ * Passe au titre précédent
  */
 void FuXFenetre::EventMusicPrevious(wxCommandEvent &WXUNUSED(event))
 {
@@ -684,7 +675,7 @@ void FuXFenetre::EventMusicPrevious(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Active/DÃ©sactive la rÃ©pÃ©tition
+ * Active/Désactive la répétition
  */
 void FuXFenetre::EventMusicRepete(wxCommandEvent &WXUNUSED(event))
 {
@@ -692,7 +683,7 @@ void FuXFenetre::EventMusicRepete(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Active/DÃ©sactive la lecture alÃ©atoire
+ * Active/Désactive la lecture aléatoire
  */
 void FuXFenetre::EventMusicRandomize(wxCommandEvent &WXUNUSED(event))
 {
@@ -700,7 +691,7 @@ void FuXFenetre::EventMusicRandomize(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Ouvre une fenÃªtre pour choisir le ou les titres de musique Ã  lire. Ajoute le(s) titre(s) Ã  liste si celle-ci n'est pas vide
+ * Ouvre une fenêtre pour choisir le ou les titres de musique à lire. Ajoute le(s) titre(s) à liste si celle-ci n'est pas vide
  */
 void FuXFenetre::EventOpenDialogToPlayMusic(wxCommandEvent &WXUNUSED(event))
 {
@@ -711,7 +702,7 @@ void FuXFenetre::EventOpenDialogToPlayMusic(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Ouvre une fenÃªtre afin de choisir une liste de lecture enregistrÃ©e
+ * Ouvre une fenêtre afin de choisir une liste de lecture enregistrée
  */
 void FuXFenetre::EventOpenDialogToSelectPlayListFile(wxCommandEvent &WXUNUSED(event))
 {
@@ -734,7 +725,7 @@ void FuXFenetre::EventDeleteCurrentPlayingTitle(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Provoque les changements nÃ©cessaires afin de s'adapter Ã  la nouvelle situation : changement de titre ou suppression de tous les titres
+ * Provoque les changements nécessaires afin de s'adapter à la nouvelle situation : changement de titre ou suppression de tous les titres
  */
 void FuXFenetre::EventMusicChanged(wxCommandEvent &WXUNUSED(event))
 {
@@ -746,16 +737,16 @@ void FuXFenetre::EventMusicChanged(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Provoque une mise Ã  jour de la liste de lecture affichÃ©e Ã  l'utilisateur
+ * Provoque une mise à jour de la liste de lecture affichée à l'utilisateur
  */
 void FuXFenetre::EventUpdatePlayLists(wxCommandEvent &WXUNUSED(event))
 {
-    m_playList->GetPlayListTableau()->MAJ();
+//    m_playList->GetPlayListTableau()->MAJ();
     GestPeriph::Get()->MAJPlaylist();
 }
 
 /**
- * Affiche une fenÃªtre permettant l'enregistrement de la liste de lecture
+ * Affiche une fenêtre permettant l'enregistrement de la liste de lecture
  */
 void FuXFenetre::EventSavePlayList(wxCommandEvent &event)
 {
@@ -767,48 +758,53 @@ void FuXFenetre::EventSavePlayList(wxCommandEvent &event)
  */
 void FuXFenetre::MenuAbout(wxCommandEvent &WXUNUSED(event))
 {
-    wxString message(_T("Nom : Fu(X) 2.0\tVersion : a5\tDate : ") + wxString(_T(__DATE__)) + _T("\n\nAuteur : David Lecoconnier (etrange02@aol.com)\n\nInterface rÃ©alisÃ©e avec wxWidgets 2.8.12\n\n\n") +
-                        _T("Copyright Â© 2009-2014 David Lecoconnier, tous droits rÃ©servÃ©s\n\nFMOD Sound System, copyright Â© Firelight Technologies Pty, Ltd., 1994-2007\n"));
+    wxString message("Nom : Fu(X) 2.0\tVersion : a5\tDate : ");
+    message.Append(__DATE__);
+    message.Append("\n\n");
+    message.Append("Auteur : David Lecoconnier (david.lecoconnier@free.fr");
+    message.Append("\n\n");
+    message.Append("Interface réalisée avec wxWidgets 3.0.2");
+    message.Append("\n\n\n");
+    message.Append("Copyright © 2009-2014 David Lecoconnier, tous droits réservés");
+    message.Append("\n\n");
+    message.Append("FMOD Sound System, copyright © Firelight Technologies Pty, Ltd., 1994-2007");
+    message.Append("\n");
     wxMessageBox(message, _("A propos"), wxOK | wxICON_INFORMATION, this);
 }
 
 /**
- * Affiche le site de l'application Ã  travers le navigateur internet
+ * Affiche le site de l'application à travers le navigateur internet
  */
 void FuXFenetre::MenuSiteWeb(wxCommandEvent &WXUNUSED(event))
-{    wxLaunchDefaultBrowser(_T("http://fuxplay.com/"));}
+{
+    wxLaunchDefaultBrowser(_T("http://getfux.fr/"));
+}
 
 /**
- * Affiche la page d'aide Ã  travers le navigateur internet
+ * Affiche la page d'aide à travers le navigateur internet
  */
 void FuXFenetre::MenuAide(wxCommandEvent &WXUNUSED(event))
-{    wxLaunchDefaultBrowser(_T("http://fuxplay.com/aide.php"));}
+{
+    wxLaunchDefaultBrowser(_T("http://getfux.fr/aide.php"));
+}
 
 
 // Internal management event //
 
 /**
- * Modifie l'image du bouton lecture/pause en fonction de l'Ã©tat du systÃ¨me
+ * Modifie l'image du bouton lecture/pause en fonction de l'état du système
  */
 void FuXFenetre::EventSwitchButtonImage(wxCommandEvent &event)
 {
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::BoutonChangeImage - bascule image Lecture/Pause"));
     #endif
-//    if (event.GetInt() == 1)
-//    {
-//        drawPlayImageStatus();
-//    }
-//    else
-//    {
-//        drawPauseImageStatus();
-//    }
     changePlayPauseImageStatus();
     SwitchWindow();
 }
 
 /**
- * Ã‰vÃ¨nement provenant du serveur de l'application : un titre ajoutÃ©
+ * Évènement provenant du serveur de l'application : un titre ajouté
  */
 void FuXFenetre::EvtServeurAjout(wxCommandEvent &event)
 {
@@ -818,14 +814,14 @@ void FuXFenetre::EvtServeurAjout(wxCommandEvent &event)
     wxArrayString *a = m_serveur->GetConnexionTableau(event.GetInt());
 
     //bool lire = Musique::Get()->IsContainingMus();
-    MusicManager::get().parse(a, true);
+    MusicManager::get().parse(*a, true);
     /*if (lire && !a->Item(i).Lower().EndsWith(_T(".m3u")))
         Musique::Get()->ChangementChanson(-1, a->Item(0));*/
     m_serveur->Deconnecter(event.GetInt());
 }
 
 /**
- * Informe le panel du graphe que le titre de la chanson a Ã©tÃ© modifiÃ©.
+ * Informe le panel du graphe que le titre de la chanson a été modifié.
  */
 void FuXFenetre::OnTitreChange(wxCommandEvent &WXUNUSED(event))
 {
@@ -836,8 +832,8 @@ void FuXFenetre::OnTitreChange(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Ã‰vÃ¨nements clavier - Utilisation des raccourcis gÃ©nÃ©raux (titre suivant, volume, ...)
- * @param event l'Ã©vÃ©nement Ã  analyser
+ * Évènements clavier - Utilisation des raccourcis généraux (titre suivant, volume, ...)
+ * @param event l'événement à analyser
  */
 void FuXFenetre::OnKeyDownRaccourci(wxKeyEvent &event)
 {
@@ -900,13 +896,13 @@ void FuXFenetre::playButtonPressed()
     {
         MusicManager::get().getMusicPlayer().setPause(true);
     }
-    else if (MusicManager::get().empty())//Pas de fichier chargÃ©
+    else if (MusicManager::get().empty())//Pas de fichier chargé
         openDialogToPlayMusic();
     else if (MusicManager::get().getMusicPlayer().isPaused())//En pause
     {
         MusicManager::get().getMusicPlayer().setPause(false);
     }
-    else//Musique stoppÃ©e
+    else//Musique stoppée
     {
         MusicManager::get().playSameMusic();
     }
@@ -921,19 +917,14 @@ void FuXFenetre::openDialogToPlayMusic()
         wxArrayString musNav;
         navig.GetPaths(musNav);
 
-        if (musNav.GetCount() == 1)
+        if (musNav.GetCount() == 1 && MusicManager::get().empty())
         {
-            if (MusicManager::get().empty())
-                MusicManager::get().playMusicThenParse(musNav.Item(0));
-            else
-                MusicManager::get().parse(musNav.Item(0));
+            MusicManager::get().playMusicThenParse(musNav.Item(0));
         }
-        else if (musNav.GetCount() >= 2)
-            MusicManager::get().parse(&musNav, false);
+        else
+            MusicManager::get().parse(musNav, false);
 
         musNav.Clear();
-        m_playList->GetPlayListTableau()->MAJ();
-        GestPeriph::Get()->MAJPlaylist();
     }
 }
 
@@ -960,9 +951,7 @@ void FuXFenetre::openDialogToSelectPlayListFile()
                     //Musique::Get()->Lecture(Musique::Get()->GetFichier()->GetNomPosition(0));
                 }
                 else*/
-                    MusicManager::get().parse(chemin);
-                m_playList->GetPlayListTableau()->MAJ();
-                GestPeriph::Get()->MAJPlaylist();
+                MusicManager::get().parse(chemin);
             }
             else
             {
@@ -975,11 +964,10 @@ void FuXFenetre::openDialogToSelectPlayListFile()
 void FuXFenetre::deleteCurrentPlayingTitle()
 {
     MusicManager::get().deleteCurrentTitle();
-    GestPeriph::Get()->MAJPlaylist();
 }
 
 /**
- * Ã‰change la page actuelle contre une autre page (effectue l'opÃ©ration)
+ * Échange la page actuelle contre une autre page (effectue l'opération)
  */
 void FuXFenetre::SwitchWindow()/////////////////
 {
@@ -1102,19 +1090,15 @@ void FuXFenetre::readPreferencesNewWay(bool loadDefaultMusic, const wxString& fi
             {
                 if (test.GetLineCount() > 1)
                 {
-                    //Musique::Get()->Lecture(test.GetLine(1));
                     MusicManager::get().parse(cheminM3U);
-                    //Musique::Get()->Lecture(FichierListe::Get()->GetNomPosition(0));
-                    m_MAJliste = true;
                 }
                 else wxLogMessage(_("Impossible d'ouvrir le fichier, celui-ci est vierge !"));
-                test.Close();
+                    test.Close();
             }
         }
         else if (nodeReprise->GetAttribute(_("type"), wxEmptyString) == _T("MP3"))
         {
             MusicManager::get().playMusicThenParse(nodeReprise->GetNodeContent());
-            m_MAJliste = MusicManager::get().getMusicPlayer().isPlaying();
         }
     }
 }
@@ -1146,8 +1130,6 @@ void FuXFenetre::readPreferencesOldWay(bool loadDefaultMusic, wxTextFile& prefFi
                 if (test.GetLineCount() > 1)
                 {
                     MusicManager::get().parse(cheminM3U);
-                    //MusicManager::get().playMusic(MusicManager::get().getMusicList()->getNameAtPosition(0));
-                    m_MAJliste = true;
                 }
                 else wxLogMessage(_("Impossible d'ouvrir le fichier, celui-ci est vierge !"));
                 test.Close();
@@ -1156,14 +1138,13 @@ void FuXFenetre::readPreferencesOldWay(bool loadDefaultMusic, wxTextFile& prefFi
         else if (prefFile.GetLine(3).IsSameAs(_T("Reprise= MP3")))
         {
             MusicManager::get().playMusicThenParse(prefFile.GetLine(4).AfterFirst(' '));
-            m_MAJliste = true;
         }
     }
 }
 
 /**
- * Lit les prÃ©fÃ©rences se trouvant dans le fichier de configuration si celui-ci existe
- * @param loadDefaultMusic Si vrai, l'application cherche Ã  lancer le fichier enregistrÃ© comme devant Ãªtre lancÃ© Ã  l'ouverture de l'application
+ * Lit les préférences se trouvant dans le fichier de configuration si celui-ci existe
+ * @param loadDefaultMusic Si vrai, l'application cherche à lancer le fichier enregistré comme devant être lancé à l'ouverture de l'application
  */
 void FuXFenetre::readPreferences(bool loadDefaultMusic)
 {
@@ -1187,5 +1168,15 @@ void FuXFenetre::readPreferences(bool loadDefaultMusic)
         fichierPref.Close();
         readPreferencesNewWay(loadDefaultMusic, cheminFichier);
     }
+}
+
+void FuXFenetre::onUpdateLine(wxCommandEvent& event)
+{
+    m_playList->GetPlayListTableau()->onUpdateLine(event);
+}
+
+void FuXFenetre::onEventUpdatePlaylistSearchDone(wxCommandEvent &WXUNUSED(event))
+{
+    m_playList->GetPlayListTableau()->MAJ();
 }
 

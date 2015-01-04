@@ -1,7 +1,7 @@
 /***************************************************************
  * Name:      MusicFileReader.cpp
  * Purpose:   Code for Fu(X) 2.0
- * Author:    David Lecoconnier (etrange02@aol.com)
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2014-12-17
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
@@ -13,6 +13,7 @@ using namespace TagLib;
 MusicFileReader::MusicFileReader(Music& music) :
     m_music(music)
 {
+    m_music.SetName(m_music.GetFileName().AfterLast(wxFileName::GetPathSeparator()));
 }
 
 MusicFileReader::~MusicFileReader()
@@ -37,7 +38,6 @@ void MusicFileReader::process()
  */
 void MusicFileReader::FillFields()
 {
-    m_music.SetName(m_music.GetFileName().AfterLast(wxFileName::GetPathSeparator()));
     m_music.SetPath(m_music.GetFileName().BeforeLast(wxFileName::GetPathSeparator()));
     m_music.SetExtension(m_music.GetFileName().AfterLast('.'));
 
@@ -67,12 +67,11 @@ void MusicFileReader::ImageExtracting()
         if (!l.isEmpty())
         {
             TagLib::ID3v2::AttachedPictureFrame *p = static_cast<TagLib::ID3v2::AttachedPictureFrame *>(l.front());
-            int imgSize = p->picture().size();
 
-            if (p != NULL)
+            if (p != NULL && !p->picture().isEmpty())
             {
                 wxMemoryOutputStream imgStreamOut;
-                imgStreamOut.Write(p->picture().data(), imgSize);
+                imgStreamOut.Write(p->picture().data(), p->picture().size());
                 wxMemoryInputStream stream(imgStreamOut);
                 wxString typeImage(p->mimeType().toCString(true), wxConvLocal);
 

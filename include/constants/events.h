@@ -87,28 +87,38 @@
     (wxObject *) NULL ),
 */
 
-#define EVT_FUX_MUSICLIST_LIST_UPDATE(id, fn)\
-    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICLIST_LIST_UPDATE, id, wxID_ANY,\
+#define EVT_FUX_MUSICLIST_LIST_UPDATE(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICLIST_LIST_UPDATE, wxID_ANY, wxID_ANY,\
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
     (wxObject *) NULL ),
 
-#define EVT_FUX_MUSICPLAYER_CHANGE_TITLE(id, fn)\
-    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICPLAYER_CHANGE_TITLE, id, wxID_ANY,\
+#define EVT_FUX_MUSICPLAYER_CHANGE_TITLE(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICPLAYER_CHANGE_TITLE, wxID_ANY, wxID_ANY,\
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
     (wxObject *) NULL ),
 
-#define EVT_FUX_MUSICMANAGER_NO_FILE(id, fn)\
-    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICMANAGER_NO_FILE, id, wxID_ANY,\
+#define EVT_FUX_MUSICPLAYER_UPDATE_GRAPH(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICPLAYER_UPDATE_GRAPH, wxID_ANY, wxID_ANY,\
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
     (wxObject *) NULL ),
 
-#define EVT_FUX_MUSICPLAYER_UPDATE_GRAPH(id, fn)\
-    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICPLAYER_UPDATE_GRAPH, id, wxID_ANY,\
+#define EVT_FUX_MUSICPLAYER_CHANGE_STATUS(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICPLAYER_CHANGE_STATUS, wxID_ANY, wxID_ANY,\
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
     (wxObject *) NULL ),
 
-#define EVT_FUX_MUSICPLAYER_CHANGE_STATUS(id, fn)\
-    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICPLAYER_CHANGE_STATUS, id, wxID_ANY,\
+#define EVT_FUX_MUSICMANAGER_NO_FILE(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICMANAGER_NO_FILE, wxID_ANY, wxID_ANY,\
+    (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
+    (wxObject *) NULL ),
+
+#define EVT_FUX_MUSICMANAGER_SEARCH_DONE(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICMANAGER_SEARCH_DONE, wxID_ANY, wxID_ANY,\
+    (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
+    (wxObject *) NULL ),
+
+#define EVT_FUX_MUSICFILE_READER_THREAD(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICFILE_READER_THREAD, wxID_ANY, wxID_ANY,\
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
     (wxObject *) NULL ),
 

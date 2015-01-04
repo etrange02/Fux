@@ -1,16 +1,16 @@
 /***************************************************************
  * Name:      PreferenceDefaut.cpp
  * Purpose:   Code for Fu(X) 2.0
- * Author:    David Lecoconnier (etrange02@aol.com)
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2010-02-09
- * Copyright: David Lecoconnier (http://www.fuxplay.com)
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
 #include "../../../include/gui/settings/PreferenceDefaut.h"
 
 /**
  * @class PreferenceDefaut
- * @brief GÃ¨re l'application des filtres (couleur et sonore), et le comportement par dÃ©faut de l'application
+ * @brief Gère l'application des filtres (couleur et sonore), et le comportement par défaut de l'application
  */
 
 BEGIN_EVENT_TABLE(PreferenceDefaut, wxScrolledWindow)
@@ -19,11 +19,11 @@ BEGIN_EVENT_TABLE(PreferenceDefaut, wxScrolledWindow)
     EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_SON, PreferenceDefaut::Defaut_CheckBoxSon)
     EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_REPRISE, PreferenceDefaut::Defaut_CheckBoxReprise)
     EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_TAG, PreferenceDefaut::Defaut_CheckBoxTAG)// TAG
-    EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_DEFAUT_BDR, PreferenceDefaut::Defaut_CheckBoxDefautBDR)// application par dÃ©faut
-    EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_RECHERCHE, PreferenceDefaut::AutoSave)// application par dÃ©faut
+    EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_DEFAUT_BDR, PreferenceDefaut::Defaut_CheckBoxDefautBDR)// application par défaut
+    EVT_CHECKBOX(ID_APP_PREF_DEFAUT_BOX_RECHERCHE, PreferenceDefaut::AutoSave)// application par défaut
     EVT_BUTTON(ID_APP_PREF_DEFAUT_RECHERCHE, PreferenceDefaut::Defaut_Bouton_Recherche)
     EVT_BUTTON(ID_APP_PREF_DEFAUT_PORTABLE, PreferenceDefaut::Defaut_Bouton_Portable)
-    EVT_BUTTON(ID_APP_PREF_DEFAUT_CHEMIN_RECHERCHE_DEFAUT, PreferenceDefaut::Defaut_Bouton_CheminDefaut)//RÃ©pertoire Ã  afficher lors du dÃ©but d'une recherche
+    EVT_BUTTON(ID_APP_PREF_DEFAUT_CHEMIN_RECHERCHE_DEFAUT, PreferenceDefaut::Defaut_Bouton_CheminDefaut)//Répertoire à afficher lors du début d'une recherche
     EVT_CHOICE(ID_APP_PREF_DEFAUT_LISTE_COULEUR, PreferenceDefaut::AutoSave)
     EVT_CHOICE(ID_APP_PREF_DEFAUT_LISTE_SON, PreferenceDefaut::AutoSave)
     EVT_CHOICE(ID_APP_PREF_DEFAUT_LISTE_M3U, PreferenceDefaut::AutoSave)
@@ -33,8 +33,8 @@ END_EVENT_TABLE()
 
 /**
  * Constructeur
- * @param Parent un pointeur vers la fenÃªtre parente
- * @param Id l'identifiant de la fenÃªtre
+ * @param Parent un pointeur vers la fenêtre parente
+ * @param Id l'identifiant de la fenêtre
  */
 PreferenceDefaut::PreferenceDefaut(wxWindow *Parent, wxWindowID Id)
 {
@@ -44,8 +44,8 @@ PreferenceDefaut::PreferenceDefaut(wxWindow *Parent, wxWindowID Id)
 
 /**
  * Constructeur
- * @param Parent un pointeur vers la fenÃªtre parente
- * @param Id l'identifiant de la fenÃªtre
+ * @param Parent un pointeur vers la fenêtre parente
+ * @param Id l'identifiant de la fenêtre
  * @param pageCouleur
  * @param pageSon
  */
@@ -65,9 +65,9 @@ PreferenceDefaut::~PreferenceDefaut()
 }
 
 /**
- * CrÃ©e les diffÃ©rents composants graphiques du panel
- * @param Parent un pointeur vers la fenÃªtre parente
- * @param Id l'identifiant de la fenÃªtre
+ * Crée les différents composants graphiques du panel
+ * @param Parent un pointeur vers la fenêtre parente
+ * @param Id l'identifiant de la fenêtre
  */
 void PreferenceDefaut::Creer(wxWindow *Parent, wxWindowID Id)
 {
@@ -86,16 +86,16 @@ void PreferenceDefaut::Creer(wxWindow *Parent, wxWindowID Id)
     m_checkBox[COULEUR].Create(this, ID_APP_PREF_DEFAUT_BOX_COULEUR, _("Couleur"));
     m_checkBox[SON].Create(this, ID_APP_PREF_DEFAUT_BOX_SON, _("Son"));
     m_checkBox[REPRISE].Create(this, ID_APP_PREF_DEFAUT_BOX_REPRISE, _("Reprise"));
-    m_checkBox[SOUSDOSSIER].Create(this, ID_APP_PREF_DEFAUT_BOX_RECHERCHE, _("Inclure les fichiers des sous-dossiers lors d'une opÃ©ration"));
+    m_checkBox[SOUSDOSSIER].Create(this, ID_APP_PREF_DEFAUT_BOX_RECHERCHE, _("Inclure les fichiers des sous-dossiers lors d'une opération"));
     m_checkBox[TAG].Create(this, ID_APP_PREF_DEFAUT_BOX_TAG, _("Afficher les noms en fonction des TAGs"));
-    m_checkBox[DEFAUT].Create(this, ID_APP_PREF_DEFAUT_BOX_DEFAUT_BDR, _("Application par dÃ©faut"));
+    m_checkBox[DEFAUT].Create(this, ID_APP_PREF_DEFAUT_BOX_DEFAUT_BDR, _("Application par défaut"));
 
     m_checkBox[COULEUR].SetToolTip(_("Appliquer un filtre couleur sur le graphe."));
-    m_checkBox[SON].SetToolTip(_("Appliquer un filtre son Ã  l'Ã©coute."));
+    m_checkBox[SON].SetToolTip(_("Appliquer un filtre son à l'écoute."));
     m_checkBox[REPRISE].SetToolTip(_("Lancer automatiquement un fichier lors du lancement de Fu(X)."));
-    m_checkBox[SOUSDOSSIER].SetToolTip(_("Fu(X) recherchera dans toute l'arborescence du dossier les fichiers lors d'une opÃ©ration de lecture par exemple."));
-    m_checkBox[TAG].SetToolTip(_("Le titre de la chanson se fait Ã  partir des donnÃ©es enregistrÃ©es dans le fichier musical et non Ã  partir du nom de celui-ci."));
-    m_checkBox[DEFAUT].SetToolTip(_("Faire de Fu(X) le programme par dÃ©faut pour les mp3, m3u.\nNe pas utiliser si vous avez fait une installation classique."));
+    m_checkBox[SOUSDOSSIER].SetToolTip(_("Fu(X) recherchera dans toute l'arborescence du dossier les fichiers lors d'une opération de lecture par exemple."));
+    m_checkBox[TAG].SetToolTip(_("Le titre de la chanson se fait à partir des données enregistrées dans le fichier musical et non à partir du nom de celui-ci."));
+    m_checkBox[DEFAUT].SetToolTip(_("Faire de Fu(X) le programme par défaut pour les mp3, m3u.\nNe pas utiliser si vous avez fait une installation classique."));
 
     m_listeCouleur = new wxChoice(this, ID_APP_PREF_DEFAUT_LISTE_COULEUR, wxDefaultPosition, wxSize(200, 21));
     m_listeSon = new wxChoice(this, ID_APP_PREF_DEFAUT_LISTE_SON, wxDefaultPosition, wxSize(200, 21));
@@ -106,7 +106,7 @@ void PreferenceDefaut::Creer(wxWindow *Parent, wxWindowID Id)
     m_sizerUseF->Add(&m_checkBox[SON], 0, wxALL, 0);
     m_sizerUseF->Add(m_listeSon, 0, wxALL, 0);
 
-    m_sizerAvancee = new wxStaticBoxSizer(wxVERTICAL, this, _("AvancÃ©e"));
+    m_sizerAvancee = new wxStaticBoxSizer(wxVERTICAL, this, _("Avancée"));
     m_sizer1V->Add(m_sizerAvancee, 0, wxALL, 5);
 
     m_boutonPortable = new wxButton(this, ID_APP_PREF_DEFAUT_PORTABLE, _("Portable"));//, wxDefaultPosition, wxSize(30, 21));
@@ -127,7 +127,7 @@ void PreferenceDefaut::Creer(wxWindow *Parent, wxWindowID Id)
     m_boiteCheminChansonRep = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(200, 21), wxTE_READONLY);
     m_boutonRecherche = new wxButton(this, ID_APP_PREF_DEFAUT_RECHERCHE, _T("..."), wxDefaultPosition, wxSize(30, 21));
 
-    wxStaticText *textDossier = new wxStaticText(this, wxID_ANY, _("Dossier par dÃ©faut"));//dossier de recherche par dÃ©faut, Ã  ouvrir en premier
+    wxStaticText *textDossier = new wxStaticText(this, wxID_ANY, _("Dossier par défaut"));//dossier de recherche par défaut, à ouvrir en premier
     m_boiteCheminDefautRech = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(220, 21), wxTE_READONLY);
     m_boutonCheminDefautRecherche = new wxButton(this, ID_APP_PREF_DEFAUT_CHEMIN_RECHERCHE_DEFAUT, _T("..."), wxDefaultPosition, wxSize(30, 21));
 
@@ -162,9 +162,9 @@ void PreferenceDefaut::Creer(wxWindow *Parent, wxWindowID Id)
 }
 
 /**
- * Construit une liste de fichier .m3u Ã  partir des fichiers prÃ©sents dans l'arborescence de Fu(X)
- * @param liste une liste Ã  remplir
- * @return le nombre d'Ã©lÃ©ments dans la liste
+ * Construit une liste de fichier .m3u à partir des fichiers présents dans l'arborescence de Fu(X)
+ * @param liste une liste à remplir
+ * @return le nombre d'éléments dans la liste
  */
 int PreferenceDefaut::CreerListe(wxChoice *liste)
 {
@@ -187,7 +187,7 @@ int PreferenceDefaut::CreerListe(wxChoice *liste)
 }
 
 /**
- * Ã‰vÃ¨nement - Ouvre une fenÃªtre de navigation pour sÃ©lectionner un .mp3 (Il sera lu au lancement de Fu(X))
+ * Évènement - Ouvre une fenêtre de navigation pour sélectionner un .mp3 (Il sera lu au lancement de Fu(X))
  */
 void PreferenceDefaut::Defaut_Bouton_Recherche(wxCommandEvent &WXUNUSED(event))
 {
@@ -201,12 +201,12 @@ void PreferenceDefaut::Defaut_Bouton_Recherche(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Ã‰vÃ¨nement - Ouvre une fenÃªtre de navigation pour sÃ©lectionner le dossier Ã  ouvrir par dÃ©faut
+ * Évènement - Ouvre une fenêtre de navigation pour sélectionner le dossier à ouvrir par défaut
  */
 void PreferenceDefaut::Defaut_Bouton_DossierDefaut(wxCommandEvent &WXUNUSED(event))
 {
     int ouvert;
-    wxDirDialog navig(this, _("Choisissez le rÃ©pertoire par dÃ©faut"), m_boiteCheminDefautRech->GetValue(), wxDD_DEFAULT_STYLE|wxDD_DIR_MUST_EXIST);
+    wxDirDialog navig(this, _("Choisissez le répertoire par défaut"), m_boiteCheminDefautRech->GetValue(), wxDD_DEFAULT_STYLE|wxDD_DIR_MUST_EXIST);
 
     ouvert = navig.ShowModal();
 
@@ -215,7 +215,7 @@ void PreferenceDefaut::Defaut_Bouton_DossierDefaut(wxCommandEvent &WXUNUSED(even
 }
 
 /**
- * Ã‰vÃ¨nement - Met Ã  jour toutes les listes de la page
+ * Évènement - Met à jour toutes les listes de la page
  */
 void PreferenceDefaut::Evt_MAJListe(wxCommandEvent &WXUNUSED(event))
 {
@@ -223,7 +223,7 @@ void PreferenceDefaut::Evt_MAJListe(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Met Ã  jour toutes les listes de la page
+ * Met à jour toutes les listes de la page
  */
 void PreferenceDefaut::MAJListe(bool save)
 {
@@ -250,7 +250,7 @@ void PreferenceDefaut::MAJListe(bool save)
 }
 
 /**
- * Ã‰vÃ¨nement - Active/DÃ©sactive les listes en fonction du type (MP3 ou M3U) choisi.
+ * Évènement - Active/Désactive les listes en fonction du type (MP3 ou M3U) choisi.
  */
 void PreferenceDefaut::Defaut_RadioMP3_M3U(wxCommandEvent &event)
 {
@@ -271,7 +271,7 @@ void PreferenceDefaut::Defaut_RadioMP3_M3U(wxCommandEvent &event)
 }
 
 /**
- * Ã‰vÃ¨nement - Active/DÃ©sactive la liste des filtres couleurs
+ * Évènement - Active/Désactive la liste des filtres couleurs
  */
 void PreferenceDefaut::Defaut_CheckBoxCouleur(wxCommandEvent &event)
 {
@@ -280,7 +280,7 @@ void PreferenceDefaut::Defaut_CheckBoxCouleur(wxCommandEvent &event)
 }
 
 /**
- * Ã‰vÃ¨nement - Active/DÃ©sactive la liste des filtres sons
+ * Évènement - Active/Désactive la liste des filtres sons
  */
 void PreferenceDefaut::Defaut_CheckBoxSon(wxCommandEvent &event)
 {
@@ -289,7 +289,7 @@ void PreferenceDefaut::Defaut_CheckBoxSon(wxCommandEvent &event)
 }
 
 /**
- * Ã‰vÃ¨nement - Active/DÃ©sactive les listes permettant une lecture de musique sans donner de paramÃ¨tre Ã  l'application
+ * Évènement - Active/Désactive les listes permettant une lecture de musique sans donner de paramètre à l'application
  */
 void PreferenceDefaut::Defaut_CheckBoxReprise(wxCommandEvent &event)
 {
@@ -320,16 +320,16 @@ void PreferenceDefaut::Defaut_CheckBoxReprise(wxCommandEvent &event)
 }
 
 /**
- * Ã‰vÃ¨nement/Non implÃ©mentÃ© - Modifie le mode d'affichage des titres : titre du fichier ou donnÃ©es incorporÃ©es (TAG)
+ * Évènement/Non implémenté - Modifie le mode d'affichage des titres : titre du fichier ou données incorporées (TAG)
  */
 void PreferenceDefaut::Defaut_CheckBoxTAG(wxCommandEvent &WXUNUSED(event))
 {
-    wxLogMessage(_("Non implÃ©mentÃ© - Tag"));
+    wxLogMessage(_("Non implémenté - Tag"));
     //AutoSave();
 }
 
 /**
- * Ã‰vÃ¨nement - Lance la crÃ©ation de l'arborescence contenant les fichiers de configuration dans le rÃ©pertoire d'installation de Fu(X)
+ * Évènement - Lance la création de l'arborescence contenant les fichiers de configuration dans le répertoire d'installation de Fu(X)
  */
 void PreferenceDefaut::Defaut_Bouton_Portable(wxCommandEvent &WXUNUSED(event))
 {
@@ -337,25 +337,25 @@ void PreferenceDefaut::Defaut_Bouton_Portable(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Ã‰vÃ¨nement/Non implÃ©mentÃ© - Modifie la Base de Registre (BDR de Windows) pour mettre Fu(X) en application par dÃ©faut
+ * Évènement/Non implémenté - Modifie la Base de Registre (BDR de Windows) pour mettre Fu(X) en application par défaut
  */
 void PreferenceDefaut::Defaut_CheckBoxDefautBDR(wxCommandEvent &WXUNUSED(event))
 {
-    wxLogMessage(_("Non implÃ©mentÃ© - Application par dÃ©faut"));
+    wxLogMessage(_("Non implémenté - Application par défaut"));
     //AutoSave();
 }
 
 /**
- * Ã‰vÃ¨nement/Non implÃ©mentÃ© - Lance l'ouverture d'une fenÃªtre pour sÃ©lectionner le rÃ©pertoire devant Ãªtre ouvert lors d'une recherche
+ * Évènement/Non implémenté - Lance l'ouverture d'une fenêtre pour sélectionner le répertoire devant être ouvert lors d'une recherche
  */
 void PreferenceDefaut::Defaut_Bouton_CheminDefaut(wxCommandEvent &WXUNUSED(event))
 {
-    wxLogMessage(_("Non implÃ©mentÃ© - RÃ©pertoire par dÃ©faut"));
+    wxLogMessage(_("Non implémenté - Répertoire par défaut"));
     //AutoSave();
 }
 
 /**
- * Applique Ã  la fenÃªtre les paramÃ¨tres contenus dans le fichier de configuration enregistrÃ©
+ * Applique à la fenêtre les paramètres contenus dans le fichier de configuration enregistré
  */
 void PreferenceDefaut::OuvertureFichier()
 {
@@ -455,8 +455,8 @@ void PreferenceDefaut::OuvertureFichier()
 }
 
 /**
- * Enregistre les prÃ©fÃ©rences dans un fichier
- * @return vrai si rÃ©ussite
+ * Enregistre les préférences dans un fichier
+ * @return vrai si réussite
  */
 bool PreferenceDefaut::AutoSave()
 {
@@ -572,7 +572,7 @@ void PreferenceDefaut::AutoSave(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Associe des pages de prÃ©fÃ©rences Ã  celle-ci
+ * Associe des pages de préférences à celle-ci
  * @param pageCouleur
  * @param pageSon
  */

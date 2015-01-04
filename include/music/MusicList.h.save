@@ -9,17 +9,18 @@
 #include "../Define.h"
 #include "Music.h"
 #include "ChansonNomPos.h"
-#include "MusicFileThreadManager.h"
+#include "Factory.h"
 #include "../tools/dir_traverser/ISearchTraversable.h"
 #include "../tools/dir_traverser/Search.h"
 #include "../settings/Parametre.h"
+#include "../tools/thread/ThreadManager.h"
 
 extern const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE;
 
 class MusicList : public ISearchTraversable
 {
     public:
-        MusicList(MusicFileThreadManager& musicFileThreadManager);
+        MusicList();
         virtual ~MusicList();
 
         std::vector<Music*>& getCollection() const;
@@ -29,7 +30,7 @@ class MusicList : public ISearchTraversable
 
         void parseDirectory(wxString dirname, bool recursive);
         void clear();
-        void addLines(wxArrayString *pathArray);
+        void addLines(wxArrayString& pathArray);
         virtual void addUnknownKindLine(wxString path);
         virtual void addFileLine(wxString path);
         virtual void addDirLine(wxString path);
@@ -40,7 +41,7 @@ class MusicList : public ISearchTraversable
         long getPositionInList(const Music* music);
         void removeLine(ChansonNomPos& title);
         void removeLine(size_t position);
-        void removeLines(wxArrayString *filenameArray);
+        void removeLines(wxArrayString& filenameArray);
         void exchangeLine(wxString filename1, wxString filename2);
         //void moveLines
         void insertLines(wxArrayString *filenameArray, long position);
@@ -48,6 +49,9 @@ class MusicList : public ISearchTraversable
         void setParent(wxWindow *parent);
         wxWindow *getParent() const;
         void sendMusicListUpdatedEvent();
+        
+        bool sendEventWhenAdding() const;
+        void setSendEventWhenAdding();
 
 
     protected:
@@ -56,9 +60,9 @@ class MusicList : public ISearchTraversable
         void parseDirectoryWithoutRecurs(wxString dirname);
 
     private:
-        std::vector<Music*> m_musicList;
-        MusicFileThreadManager m_musicFileThreadManager;
+        std::vector<Music*> *m_musicList;
         wxWindow *m_parent;
+        bool sendEventWhenAdding;
 };
 
 #endif // MUSICLIST_H_INCLUDED

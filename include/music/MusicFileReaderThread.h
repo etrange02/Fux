@@ -1,8 +1,12 @@
 #ifndef MUSICFILEREADERTHREAD_H
 #define MUSICFILEREADERTHREAD_H
 
+#include <wx/wx.h>
+#include <wx/event.h>
 #include "IRunnable.h"
 #include "MusicFileReader.h"
+
+extern const wxEventType wxEVT_FUX_MUSICFILE_READER_THREAD;
 
 /** @brief Delegate for thread processing
  */
@@ -10,7 +14,7 @@ class MusicFileReaderThread : public fux::thread::IRunnable
 {
     public:
         /** Default constructor */
-        MusicFileReaderThread(MusicFileReader* musicFileReader);
+        MusicFileReaderThread(MusicFileReader* musicFileReader, wxWindow* parent, int position);
         /** Default destructor */
         virtual ~MusicFileReaderThread();
 
@@ -19,7 +23,11 @@ class MusicFileReaderThread : public fux::thread::IRunnable
 
     protected:
     private:
+        void sendUpdatedLineEvent();
+
         MusicFileReader* m_musicFileReader;
+        wxWindow* m_parent;
+        int m_position;
 };
 
 #endif // MUSICFILEREADERTHREAD_H

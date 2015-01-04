@@ -1,16 +1,16 @@
 /***************************************************************
  * Name:      GestionPeriphMoitiePage.cpp
  * Purpose:   Code for Fu(X) 2.0
- * Author:    David Lecoconnier (etrange02@aol.com)
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2010-09-08
- * Copyright: David Lecoconnier (http://www.fuxplay.com)
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
 #include "../../../include/gui/explorer/GestionPeriphMoitiePage.h"
 
 /**
  * @class PageGestionPeriph
- * @brief Interface graphique permettant un dÃ©placement dans l'arborescence des fichiers.
+ * @brief Interface graphique permettant un déplacement dans l'arborescence des fichiers.
  */
 
 BEGIN_EVENT_TABLE(PageGestionPeriph, wxPanel)
@@ -18,8 +18,8 @@ END_EVENT_TABLE()
 
 /**
  * Constructeur
- * @param Parent la fenÃªtre parente
- * @param id l'identifiant de la fenÃªtre parente
+ * @param Parent la fenêtre parente
+ * @param id l'identifiant de la fenêtre parente
  */
 PageGestionPeriph::PageGestionPeriph(wxWindow *Parent, wxWindowID id) : wxPanel(Parent, id)
 {
@@ -36,7 +36,7 @@ PageGestionPeriph::PageGestionPeriph(wxWindow *Parent, wxWindowID id) : wxPanel(
         idChampTexte = ID_PAGE_PERIHERIQUE_TEXTE_G;
         idCheckBox = ID_PAGE_PERIHERIQUE_CHECKBOX_CACHE_G;
         m_navigDef = _("Navig gauche");
-        m_texteDef = _("Navigation gauche : Fu(X) toujours en dÃ©veloppement");
+        m_texteDef = _("Navigation gauche : Fu(X) toujours en développement");
     }
     else
     {
@@ -52,14 +52,14 @@ PageGestionPeriph::PageGestionPeriph(wxWindow *Parent, wxWindowID id) : wxPanel(
     m_boutonPrecedent = new wxButton(this, idBoutonPrec, _T("<"), wxDefaultPosition, wxDefaultSize, wxBU_EXACTFIT);
     m_text = new wxTextCtrl(this, idChampTexte, m_texteDef, wxDefaultPosition, wxDefaultSize, wxTE_READONLY);
     m_boutonRecharge = new wxButton(this, idBoutonReset, _T("?"), wxDefaultPosition, wxDefaultSize, wxBU_EXACTFIT);
-    m_checkBoxCache = new wxCheckBox(this, idCheckBox, _("Fichiers cachÃ©s"));
+    m_checkBoxCache = new wxCheckBox(this, idCheckBox, _("Fichiers cachés"));
     m_checkBoxFiltre = new wxCheckBox(this, idCheckBox, _("Filtrer"));
     m_checkBoxFiltre->SetValue(true);
     m_liste = new ListeGestionPeriph(this, idListe);
 
-    m_boutonPrecedent->SetToolTip(_("Aller au dossier prÃ©cÃ©dent"));
+    m_boutonPrecedent->SetToolTip(_("Aller au dossier précédent"));
     m_boutonRecharge->SetToolTip(_("Actualiser"));
-    m_checkBoxCache->SetToolTip(_("Afficher les fichiers cachÃ©s"));
+    m_checkBoxCache->SetToolTip(_("Afficher les fichiers cachés"));
     m_checkBoxFiltre->SetToolTip(_("Afficher uniquement les fichiers que Fu(X) peut lire"));
 
     m_sizer1V = new wxStaticBoxSizer(wxVERTICAL, this, m_navigDef);
@@ -93,16 +93,16 @@ PageGestionPeriph::~PageGestionPeriph()
 {}
 
 /**
- * Associe cette instance avec sa "jumelle". Ce jumelage permet une interaction entre entre les deux instances : glisser-dÃ©poser, copier-coller
+ * Associe cette instance avec sa "jumelle". Ce jumelage permet une interaction entre entre les deux instances : glisser-déposer, copier-coller
  * @param page l'instance de l'autre page
  */
 void PageGestionPeriph::SetPageParallele(PageGestionPeriph *page)
 {    m_pageParallele = page;}
 
 /**
- * Affiche Ã  l'Ã©cran le contenu de l'entitÃ© se trouvant Ã  l'adresse <i>chemin</i>
- * @param chemin adresse de l'entitÃ©
- * @param objet la nature de l'entitÃ© : dossier, fichier m3u ou playlist
+ * Affiche à l'écran le contenu de l'entité se trouvant à l'adresse <i>chemin</i>
+ * @param chemin adresse de l'entité
+ * @param objet la nature de l'entité : dossier, fichier m3u ou playlist
  * @param activeLigne si vrai, la vue sera active
  */
 void PageGestionPeriph::SetFichierDossier(wxString chemin, int objet, bool activeLigne)
@@ -154,7 +154,7 @@ void PageGestionPeriph::SetFichierDossier(wxString chemin, int objet, bool activ
 }
 
 /**
- * Retourne le type de l'entitÃ© qui est actuellement affichÃ©
+ * Retourne le type de l'entité qui est actuellement affiché
  * @return le type
  * @see PageGestionPeriph::SetFichierDossier
  */
@@ -162,15 +162,15 @@ int PageGestionPeriph::GetEtat()
 {    return m_liste->GetEtat();}
 
 /**
- * Retourne le chemin dont le contenu est affichÃ©
+ * Retourne le chemin dont le contenu est affiché
  * @return le chemin
  */
 wxString PageGestionPeriph::GetChemin()
 {    return m_chemin;}
 
-////////////////Ã‰vÃ¨nements
+////////////////Évènements
 /**
- * Ã‰vÃ¨nement - Double clic sur un Ã©lÃ©ment
+ * Évènement - Double clic sur un élément
  */
 void PageGestionPeriph::OuvrirDossierSuivant(wxCommandEvent &WXUNUSED(event))
 {
@@ -183,7 +183,7 @@ void PageGestionPeriph::OuvrirDossierSuivant(wxCommandEvent &WXUNUSED(event))
     else if (wxFileExists(nouveauDossier) && Parametre::Get()->islisable(nouveauDossier.AfterLast('.').Lower()) && m_liste->GetEtat() == DOSSIER)
     {
         wxArrayString *tableau = GetDossierLigneSelection();
-        MusicManager::get().parse(tableau, true);
+        MusicManager::get().parse(*tableau, true);
         MusicManager::get().playMusic(tableau->Item(0));
         delete tableau;
     }
@@ -192,22 +192,22 @@ void PageGestionPeriph::OuvrirDossierSuivant(wxCommandEvent &WXUNUSED(event))
     else if (m_liste->GetEtat() == M3U)
     {
         wxArrayString *tableau = GetFichierLigneSelection();
-        MusicManager::get().parse(tableau, true);
+        MusicManager::get().parse(*tableau, true);
         MusicManager::get().playMusic(tableau->Item(0));
         delete tableau;
     }
 }
 
 /**
- * Ã‰vÃ¨nement - Clic sur le bouton prÃ©cÃ©dent
+ * Évènement - Clic sur le bouton précédent
  * @see PageGestionPeriph::OuvrirDossierPrec
  */
 void PageGestionPeriph::OuvrirDossierPrecedent(wxCommandEvent &WXUNUSED(event))
 {   OuvrirDossierPrec();}
 
 /**
- * Remonte d'un cran dans la hiÃ©rarchie des dossiers.
- *Si l'on Ã©tait dans le rÃ©pertoire racine, affiche une page blanche
+ * Remonte d'un cran dans la hiérarchie des dossiers.
+ *Si l'on était dans le répertoire racine, affiche une page blanche
  */
 void PageGestionPeriph::OuvrirDossierPrec()
 {
@@ -238,13 +238,13 @@ void PageGestionPeriph::OuvrirDossierPrec()
 }
 
 /**
- * Ã‰vÃ¨nement - Clic sur le bouton recharger
+ * Évènement - Clic sur le bouton recharger
  */
 void PageGestionPeriph::RechargerE(wxCommandEvent &WXUNUSED(event))
 {    Recharger();}
 
 /**
- * Ã‰vÃ¨nement clavier - affiche le menu, couper-copier-coller, supprimer
+ * Évènement clavier - affiche le menu, couper-copier-coller, supprimer
  */
 void PageGestionPeriph::OnKey(wxKeyEvent &event)
 {
@@ -277,7 +277,7 @@ void PageGestionPeriph::OnKey(wxKeyEvent &event)
 }
 
 /**
- * Ã‰vÃ¨nement menu
+ * Évènement menu
  */
 void PageGestionPeriph::OnMenu(wxCommandEvent &event)
 {
@@ -311,7 +311,7 @@ void PageGestionPeriph::OnMenu(wxCommandEvent &event)
             MenuLire();
             break;
     }
-    //wxLogWarning("CÃ´tÃ© %s", (GetId() == ID_PAGE_PERIHERIQUE_GAUCHE) ? "gauche" : "droit");
+    //wxLogWarning("Côté %s", (GetId() == ID_PAGE_PERIHERIQUE_GAUCHE) ? "gauche" : "droit");
 }
 
 ////////////////Manipulation
@@ -390,7 +390,7 @@ void PageGestionPeriph::Suppression()
 }
 
 /**
- * Provoque la recopie des lignes actives dans l'autre liste. Dossier Ã  Dossier et Fichier Ã  Fichier
+ * Provoque la recopie des lignes actives dans l'autre liste. Dossier à Dossier et Fichier à Fichier
  */
 void PageGestionPeriph::Copie()
 {
@@ -401,7 +401,7 @@ void PageGestionPeriph::Copie()
 }
 
 /**
- * Transfert en fonction de la nature des donnÃ©es dans l'autre liste en fonction de la nature de celle-ci. Ce peut-Ãªtre un dÃ©placement ou une copie
+ * Transfert en fonction de la nature des données dans l'autre liste en fonction de la nature de celle-ci. Ce peut-être un déplacement ou une copie
  */
 void PageGestionPeriph::Deplace()
 {
@@ -414,8 +414,8 @@ void PageGestionPeriph::Deplace()
 }
 
 /**
- * Retourne un tableau contenant la sÃ©lection faite dans un fichier
- * @return le tableau de caractÃ¨res
+ * Retourne un tableau contenant la sélection faite dans un fichier
+ * @return le tableau de caractères
  * @see PageGestionPeriph::GetFichierLigneSelectionInt
  */
 wxArrayString* PageGestionPeriph::GetFichierLigneSelection()
@@ -444,7 +444,7 @@ wxArrayString* PageGestionPeriph::GetFichierLigneSelection()
 }
 
 /**
- * Retourne un tableau contenant la sÃ©lection faite dans un fichier. Tableau de nombre.
+ * Retourne un tableau contenant la sélection faite dans un fichier. Tableau de nombre.
  * @return le tableau de nombres (sous forme de texte)
  * @see GetFichierLigneSelection
  */
@@ -474,8 +474,8 @@ wxArrayString* PageGestionPeriph::GetFichierLigneSelectionInt()
 }
 
 /**
- * Retourne un tableau contenant la sÃ©lection faite dans un dossier.
- * @return le tableau de caractÃ¨res
+ * Retourne un tableau contenant la sélection faite dans un dossier.
+ * @return le tableau de caractères
  */
 wxArrayString* PageGestionPeriph::GetDossierLigneSelection()
 {
@@ -497,8 +497,8 @@ wxArrayString* PageGestionPeriph::GetDossierLigneSelection()
 
 ////////////////Fichier
 /**
- * Incorpore dans un fichier le contenu d'un tableau. Les lignes sont ajoutÃ©es Ã  la fin du fichier
- * @param tableau tableau de caractÃ¨res
+ * Incorpore dans un fichier le contenu d'un tableau. Les lignes sont ajoutées à la fin du fichier
+ * @param tableau tableau de caractères
  */
 void PageGestionPeriph::AjoutDansFichierLigne(wxArrayString *tableau)
 {
@@ -525,7 +525,7 @@ void PageGestionPeriph::AjoutDansFichierLigne(wxArrayString *tableau)
 //////////////// M3U -> Liste de lecture
     else if (m_liste->GetEtat() == PLAYLIST)
     {
-        MusicManager::get().parse(tableau, true);
+        MusicManager::get().parse(*tableau, true);
         return;
     }
 
@@ -534,8 +534,8 @@ void PageGestionPeriph::AjoutDansFichierLigne(wxArrayString *tableau)
 }
 
 /**
- * Supprime les lignes sÃ©lectionnÃ©es dans le fichier correspondant. Fichier M3U
- * @return vrai si rÃ©ussite, faux sinon
+ * Supprime les lignes sélectionnées dans le fichier correspondant. Fichier M3U
+ * @return vrai si réussite, faux sinon
  */
 bool PageGestionPeriph::SuppressionDansFichierLigneM3u()
 {
@@ -557,8 +557,8 @@ bool PageGestionPeriph::SuppressionDansFichierLigneM3u()
 }
 
 /**
- * Supprime les lignes sÃ©lectionnÃ©es dans la playlist
- * @return vrai si rÃ©ussite, faux sinon
+ * Supprime les lignes sélectionnées dans la playlist
+ * @return vrai si réussite, faux sinon
  */
 bool PageGestionPeriph::SuppressionDansFichierLignePlaylist()
 {
@@ -580,12 +580,12 @@ bool PageGestionPeriph::SuppressionDansFichierLignePlaylist()
     }
 
     fichier.Close();
-    MusicManager::get().deleteTitles(&tableau, true);
+    MusicManager::get().deleteTitles(tableau, true);
     return true;
 }
 
 /**
- * FICHIER - DÃ©place les lignes sÃ©lectionnÃ©es de la page parallÃ¨le dans cette page
+ * FICHIER - Déplace les lignes sélectionnées de la page parallèle dans cette page
  */
 void PageGestionPeriph::DeplaceDansFichierLigne()
 {
@@ -597,7 +597,7 @@ void PageGestionPeriph::DeplaceDansFichierLigne()
 }
 
 /**
- * FICHIER - Copie les lignes sÃ©lectionnÃ©es de la page parallÃ¨le dans cette page
+ * FICHIER - Copie les lignes sélectionnées de la page parallèle dans cette page
  */
 void PageGestionPeriph::CopieDansFichier()
 {
@@ -608,7 +608,7 @@ void PageGestionPeriph::CopieDansFichier()
 }
 
 /**
- * DOSSIER -> FICHIER - Copie les lignes sÃ©lectionnÃ©es de la page parallÃ¨le dans cette page
+ * DOSSIER -> FICHIER - Copie les lignes sélectionnées de la page parallèle dans cette page
  */
 void PageGestionPeriph::CopieDossierDansFichier()
 {
@@ -620,7 +620,7 @@ void PageGestionPeriph::CopieDossierDansFichier()
 
 ////////////////Dossier
 /**
- * DOSSIER - Copie les lignes sÃ©lectionnÃ©es de la page parallÃ¨le dans cette page
+ * DOSSIER - Copie les lignes sélectionnées de la page parallèle dans cette page
  */
 void PageGestionPeriph::CopieDansDossier()
 {
@@ -631,7 +631,7 @@ void PageGestionPeriph::CopieDansDossier()
 }
 
 /**
- * DOSSIER - DÃ©place les lignes sÃ©lectionnÃ©es de la page parallÃ¨le dans cette page
+ * DOSSIER - Déplace les lignes sélectionnées de la page parallèle dans cette page
  */
 void PageGestionPeriph::DeplaceDansDossier()
 {
@@ -642,7 +642,7 @@ void PageGestionPeriph::DeplaceDansDossier()
 }
 
 /**
- * DOSSIER - Supprime les lignes sÃ©lectionnÃ©es dans cette page
+ * DOSSIER - Supprime les lignes sélectionnées dans cette page
  */
 void PageGestionPeriph::SuppressionDansDossier()
 {
@@ -654,11 +654,11 @@ void PageGestionPeriph::SuppressionDansDossier()
 
 ////////////////Menu
 /**
- * Menu - Affiche une fenÃªtre pour la crÃ©ation de dossier
+ * Menu - Affiche une fenêtre pour la création de dossier
  */
 void PageGestionPeriph::MenuCreerDossier()
 {
-    wxTextEntryDialog boite(this, _("Nom du nouveau dossier"), _("CrÃ©ation de dossier"));
+    wxTextEntryDialog boite(this, _("Nom du nouveau dossier"), _("Création de dossier"));
 
     if (boite.ShowModal() == wxID_OK)
     {
@@ -667,11 +667,11 @@ void PageGestionPeriph::MenuCreerDossier()
 
         if (wxDirExists(nom))
         {
-            wxLogWarning(_("Dossier dÃ©jÃ  existant, opÃ©ration annulÃ©e"));
+            wxLogWarning(_("Dossier déjà existant, opération annulée"));
             return;
         }
         if (!wxMkdir(nom))
-            wxLogError(_("CrÃ©ation impossible"));
+            wxLogError(_("Création impossible"));
         else
         {
             SetFichierDossier(m_chemin, DOSSIER);
@@ -681,7 +681,7 @@ void PageGestionPeriph::MenuCreerDossier()
 }
 
 /**
- * Menu - Affiche une fenÃªtre pour la crÃ©ation d'un fichier M3U
+ * Menu - Affiche une fenêtre pour la création d'un fichier M3U
  */
 void PageGestionPeriph::MenuCreerM3U()
 {
@@ -697,7 +697,7 @@ void PageGestionPeriph::MenuCreerM3U()
         wxTextFile fichierEcr(fen.GetChemin());
         if (fichierEcr.Exists())
         {
-            wxMessageDialog boite2(NULL, _("Fichier dÃ©jÃ  existant. Souhaitez-vous le remplacer ?"), _("Fichier dÃ©jÃ  existant"), wxYES_NO|wxICON_QUESTION|wxCENTRE|wxYES_DEFAULT);
+            wxMessageDialog boite2(NULL, _("Fichier déjà existant. Souhaitez-vous le remplacer ?"), _("Fichier déjà existant"), wxYES_NO|wxICON_QUESTION|wxCENTRE|wxYES_DEFAULT);
             if (boite2.ShowModal() != wxID_YES)
                 modif = false;
             else
@@ -710,7 +710,7 @@ void PageGestionPeriph::MenuCreerM3U()
         {
             if (!fichierEcr.Create())
             {
-                wxLogError(_("Erreur dans le nom.\nVÃ©rifiez que vous utilisez des caractÃ¨res autorisÃ©s."), _("Erreur"));
+                wxLogError(_("Erreur dans le nom.\nVérifiez que vous utilisez des caractères autorisés."), _("Erreur"));
                 return;
             }
         }
@@ -743,7 +743,7 @@ void PageGestionPeriph::MenuCreerM3U()
             {
                 if (!CreationRaccourci(fen.GetCheminRaccourci(), fen.GetChemin()))
                 {
-                    wxLogMessage(_("Echec de la crÃ©ation du raccourci."));
+                    wxLogMessage(_("Echec de la création du raccourci."));
                 }
             }
 
@@ -751,7 +751,7 @@ void PageGestionPeriph::MenuCreerM3U()
             chaine.Add(_("Non"));
             chaine.Add(_("A gauche"));
             chaine.Add(_("A droite"));
-            wxSingleChoiceDialog boite3(NULL, _("Souhaitez-vous afficher le contenu du fichier ?"), _("CrÃ©ation M3U"), chaine);
+            wxSingleChoiceDialog boite3(NULL, _("Souhaitez-vous afficher le contenu du fichier ?"), _("Création M3U"), chaine);
             if (boite3.ShowModal() == wxID_OK)
             {
                 int choix = boite3.GetSelection();
@@ -772,7 +772,7 @@ void PageGestionPeriph::MenuCreerM3U()
 }
 
 /**
- * Menu - Provoque la suppression des lignes sÃ©lectionnÃ©es
+ * Menu - Provoque la suppression des lignes sélectionnées
  */
 void PageGestionPeriph::MenuSuprimer()
 {
@@ -784,7 +784,7 @@ void PageGestionPeriph::MenuSuprimer()
 }
 
 /**
- * Menu - Affiche une fenÃªtre permettant de renommer un dossier ou un fichier
+ * Menu - Affiche une fenêtre permettant de renommer un dossier ou un fichier
  */
 void PageGestionPeriph::MenuRenommer()//Uniquement dans un dossier
 {
@@ -810,7 +810,7 @@ void PageGestionPeriph::MenuRenommer()//Uniquement dans un dossier
         {
             if (wxDirExists(nom))
             {
-                wxLogWarning(_("Ce nom est dÃ©jÃ  pris !"));
+                wxLogWarning(_("Ce nom est déjà pris !"));
                 return;
             }
             if (wxRename(nomF, nom))
@@ -827,7 +827,7 @@ void PageGestionPeriph::MenuRenommer()//Uniquement dans un dossier
             bool modif = true;
             if (wxFileExists(nom))
             {
-                wxMessageDialog boite2(this, _("Fichier dÃ©jÃ  existant. Souhaitez-vous le remplacer ?"), _("Fichier dÃ©jÃ  existant"), wxYES_NO|wxICON_QUESTION|wxCENTRE|wxYES_DEFAULT);
+                wxMessageDialog boite2(this, _("Fichier déjà existant. Souhaitez-vous le remplacer ?"), _("Fichier déjà existant"), wxYES_NO|wxICON_QUESTION|wxCENTRE|wxYES_DEFAULT);
                 if (boite2.ShowModal() != wxID_YES)
                 {
                     modif = false;
@@ -847,7 +847,7 @@ void PageGestionPeriph::MenuRenommer()//Uniquement dans un dossier
 }
 
 /**
- * Menu - OpÃ©rations Couper-Copier-Coller - Met en mÃ©moire les lignes sÃ©lectionnÃ©es pour un dÃ©placement
+ * Menu - Opérations Couper-Copier-Coller - Met en mémoire les lignes sélectionnées pour un déplacement
  */
 void PageGestionPeriph::MenuCouper()
 {
@@ -875,7 +875,7 @@ void PageGestionPeriph::MenuCouper()
 }
 
 /**
- * Menu - OpÃ©rations Couper-Copier-Coller - Met en mÃ©moire les lignes sÃ©lectionnÃ©es pour une copie
+ * Menu - Opérations Couper-Copier-Coller - Met en mémoire les lignes sélectionnées pour une copie
  */
 void PageGestionPeriph::MenuCopier()
 {
@@ -903,7 +903,7 @@ void PageGestionPeriph::MenuCopier()
 }
 
 /**
- * Menu - OpÃ©rations Couper-Copier-Coller - DÃ©place les lignes prÃ©cÃ©demment coupÃ©es/copiÃ©es dans le rÃ©pertoire/fichier courant
+ * Menu - Opérations Couper-Copier-Coller - Déplace les lignes précédemment coupées/copiées dans le répertoire/fichier courant
  */
 void PageGestionPeriph::MenuColler()
 {
@@ -924,7 +924,7 @@ void PageGestionPeriph::MenuColler()
 }
 
 /**
- * Menu - Provoque la lecture de la chanson sÃ©lectionnÃ©e. Si la liste courante n'est pas positionnÃ©e sur la playlist, le titre sÃ©lectionnÃ© est ajoutÃ© Ã  la playlist
+ * Menu - Provoque la lecture de la chanson sélectionnée. Si la liste courante n'est pas positionnée sur la playlist, le titre sélectionné est ajouté à la playlist
  */
 void PageGestionPeriph::MenuLire()
 {
@@ -933,7 +933,7 @@ void PageGestionPeriph::MenuLire()
     else if (m_liste->GetEtat() == M3U)
     {
         wxArrayString *tableau = GetFichierLigneSelection();
-        MusicManager::get().parse(tableau, true);
+        MusicManager::get().parse(*tableau, true);
         MusicManager::get().playMusic(tableau->Item(0));
         delete tableau;
     }
@@ -950,7 +950,7 @@ void PageGestionPeriph::MenuLire()
         }
         if (!tableau->IsEmpty())
         {
-            MusicManager::get().parse(tableau, true);
+            MusicManager::get().parse(*tableau, true);
             MusicManager::get().playMusic(tableau->Item(0));
         }
         delete tableau;
@@ -958,33 +958,33 @@ void PageGestionPeriph::MenuLire()
 }
 
 /**
- * Menu - Affiche une fenÃªtre permettant la crÃ©ation d'un raccourci d'un fichier ou dossier
+ * Menu - Affiche une fenêtre permettant la création d'un raccourci d'un fichier ou dossier
  */
 void PageGestionPeriph::MenuRaccourci()
 {
     int ouvert;
-    wxDirDialog navig(this, _("Dans quel rÃ©pertoire voulez-vous crÃ©er un raccourci de l'Ã©lÃ©ment sÃ©lectionnÃ© ?"));//, wxEmptyString);
+    wxDirDialog navig(this, _("Dans quel répertoire voulez-vous créer un raccourci de l'élément sélectionné ?"));//, wxEmptyString);
     ouvert = navig.ShowModal();
 
     if (ouvert == wxID_OK)
     {
         if (!CreationRaccourci(navig.GetPath() + wxFileName::GetPathSeparator() + m_liste->GetItemText(m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED)).BeforeLast('.') + _(" (raccourci).lnk"), m_chemin + wxFileName::GetPathSeparator() + m_liste->GetItemText(m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED))))
         {
-            wxLogMessage(_("Echec de la crÃ©ation du raccourci."));
+            wxLogMessage(_("Echec de la création du raccourci."));
         }
     }
 }
 
 ////////////////Dnd
 /**
- * Drag & Drop - Initialise une opÃ©ration de DnD
+ * Drag & Drop - Initialise une opération de DnD
  */
 void PageGestionPeriph::Glisser(wxCommandEvent &WXUNUSED(event))
 {
     if (m_liste->GetEtat() == VIDE)
         return;
     m_dragging = true;
-    //wxLogMessage("Dnd capturÃ© " + m_navigDef);
+    //wxLogMessage("Dnd capturé " + m_navigDef);
     DnDListeFichier *transfile = new DnDListeFichier();
     if (m_liste->GetEtat() == M3U || m_liste->GetEtat() == PLAYLIST)
         transfile->AddStringArray(GetFichierLigneSelectionInt());
@@ -999,17 +999,17 @@ void PageGestionPeriph::Glisser(wxCommandEvent &WXUNUSED(event))
     }
 
     MusicPlayListDnDBufferData UploadData(transfile);//Conversion tableau dans buffer
-    wxDropSource source(UploadData, this);//met le buffer en dÃ©placement
-    source.DoDragDrop(wxDrag_DefaultMove);//DÃ©place !
+    wxDropSource source(UploadData, this);//met le buffer en déplacement
+    source.DoDragDrop(wxDrag_DefaultMove);//Déplace !
 
     delete transfile;
     m_dragging = false;
 }
 
 /**
- * Drag & Drop - GÃ¨re la modification des donnÃ©es suite Ã  l'appel de DnD
- * @param tableau tableau de caractÃ¨res
- * @param pos position/indice ou doit s'effectuer l'opÃ©ration
+ * Drag & Drop - Gère la modification des données suite à l'appel de DnD
+ * @param tableau tableau de caractères
+ * @param pos position/indice ou doit s'effectuer l'opération
  */
 void PageGestionPeriph::GlisserTraitement(wxArrayString *tableau, long pos)
 {
@@ -1024,7 +1024,7 @@ void PageGestionPeriph::GlisserTraitement(wxArrayString *tableau, long pos)
 
                 if (wxDirExists(nom))
                 {
-                    tableau->Remove(nom);//Retirer le rÃ©pertoire de la sÃ©lection si celui-ci y est
+                    tableau->Remove(nom);//Retirer le répertoire de la sélection si celui-ci y est
                     CouperCopierColler::Get()->SetArrayString(tableau, COUPER, DOSSIER);
                     CouperCopierColler::Get()->SetDestination(nom, DOSSIER);
                 }
@@ -1055,7 +1055,7 @@ void PageGestionPeriph::GlisserTraitement(wxArrayString *tableau, long pos)
 
                 if (wxDirExists(nom))
                 {
-                    tableau->Remove(nom);//Retirer le rÃ©pertoire de la sÃ©lection si celui-ci y est
+                    tableau->Remove(nom);//Retirer le répertoire de la sélection si celui-ci y est
                     CouperCopierColler::Get()->SetArrayString(tableau, COUPER, DOSSIER);
                     CouperCopierColler::Get()->SetDestination(nom, DOSSIER);
                 }
@@ -1096,17 +1096,17 @@ void PageGestionPeriph::GlisserTraitement(wxArrayString *tableau, long pos)
 }
 
 /**
- * Indique si une opÃ©ration de dÃ©placement est en cours
- * @return vrai si une opÃ©ration de dÃ©placement est en cours
+ * Indique si une opération de déplacement est en cours
+ * @return vrai si une opération de déplacement est en cours
  */
 bool PageGestionPeriph::isDragging()
 {    return m_dragging;}
 
 /**
- * Modifie l'ordre des lignes d'un m3u Ã  partir du numÃ©ro des lignes. Ce peut Ãªtre un dÃ©placement ou une copie selon <b>supprime</b>
- * @param ligne un tableau d'indice des lignes Ã  dÃ©placer
- * @param pos l'indice de ligne oÃ¹ doit Ãªtre faite l'opÃ©ration
- * @param supprime si vrai les lignes sÃ©lectionnÃ©es sont supprimÃ© de leur position d'origine
+ * Modifie l'ordre des lignes d'un m3u à partir du numéro des lignes. Ce peut être un déplacement ou une copie selon <b>supprime</b>
+ * @param ligne un tableau d'indice des lignes à déplacer
+ * @param pos l'indice de ligne où doit être faite l'opération
+ * @param supprime si vrai les lignes sélectionnées sont supprimé de leur position d'origine
  */
 void PageGestionPeriph::PlacerLigneInt(wxArrayString *ligne, long pos, bool supprime)
 {
@@ -1159,9 +1159,9 @@ void PageGestionPeriph::PlacerLigneInt(wxArrayString *ligne, long pos, bool supp
 }
 
 /**
- * Place le contenu du tableau <b>ligne</b> Ã  la position <b>pos</b> dans le fichier courant
- * @param ligne un tabeau de caractÃ¨res
- * @param pos l'indice de ligne oÃ¹ doit Ãªtre ajoutÃ© du texte
+ * Place le contenu du tableau <b>ligne</b> à la position <b>pos</b> dans le fichier courant
+ * @param ligne un tabeau de caractères
+ * @param pos l'indice de ligne où doit être ajouté du texte
  */
 void PageGestionPeriph::PlacerLigneString(wxArrayString *ligne, long pos)
 {
@@ -1189,8 +1189,8 @@ void PageGestionPeriph::PlacerLigneString(wxArrayString *ligne, long pos)
 }
 
 /**
- * Conversion numÃ©ro de ligne Ã  chaÃ®ne de caractÃ¨res. Le tableau contient des indices de lignes qui seront Ã©changÃ©s par le texte correspondant
- * @param tableau le tableau Ã  modifier
+ * Conversion numéro de ligne à chaîne de caractères. Le tableau contient des indices de lignes qui seront échangés par le texte correspondant
+ * @param tableau le tableau à modifier
  * @param source le fichier permettant de faire la correspondance
  */
 void PageGestionPeriph::ArrayIntToString(wxArrayString* tableau, wxString source)

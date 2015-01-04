@@ -1,7 +1,7 @@
 /***************************************************************
  * Name:      ThreadProcess.cpp
  * Purpose:   Code for Fu(X) 2.0
- * Author:    David Lecoconnier (etrange02@aol.com)
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2014-12-27
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
@@ -81,9 +81,16 @@ wxThread::ExitCode ThreadProcess::Entry()
     {
         if (NULL != m_work)
         {
-            m_work->process();
-            delete m_work;
-            m_work = NULL;
+            try
+            {
+                m_work->process();
+                delete m_work;
+                m_work = NULL;
+            }
+            catch(...)
+            {
+                wxLogMessage("erreur");
+            }
         }
         m_threadManager->currentWorkFinished(*this);
         semaphoreWait();

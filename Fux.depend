@@ -1,158 +1,153 @@
 # depslib dependency file v1.0
-1416433636 source:c:\workspace\projects\fux\src\application\application.cpp
+1420201180 source:c:\workspace\projects\fux\src\application\application.cpp
 	"wx/wxprec.h"
 	"wx/wx.h"
 	"../../include/application/Application.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\wxprec.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\wxprec.h
 	"wx/defs.h"
-	"wx/wxchar.h"
+	"wx/chartype.h"
 	"wx/msw/wrapwin.h"
+	"wx/msw/private.h"
 	"wx/msw/wrapcctl.h"
 	"wx/msw/wrapcdlg.h"
-	"wx/msw/private.h"
 	"wx/msw/missing.h"
-	<PalmOS.h>
 	"wx/os2/private.h"
-	"wx/mgl/private.h"
 	"wx/wx.h"
 
-1298304568 c:\workspace\libraries\wx2812gl\include\wx\defs.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\defs.h
 	"wx/platform.h"
-	"wx/features.h"
 	"wx/version.h"
 	"wx/dlimpexp.h"
-	"wx/debug.h"
 	<stddef.h>
+	"wx/debug.h"
 	<sys/types.h>
+	<sys/types.h>
+	"wx/windowid.h"
 	<unistd.h>
 	"wx/msw/winundef.h"
+	"wx/features.h"
 
-1266312094 c:\workspace\libraries\wx2812gl\include\wx\platform.h
-	<stddef.h>
-	<AvailabilityMacros.h>
+1412500750 c:\workspace\libraries\wx302gl\include\wx\platform.h
 	<unistd.h>
-	"wx/mac/carbon/config_xcode.h"
+	<TargetConditionals.h>
+	<AvailabilityMacros.h>
+	"wx/osx/config_xcode.h"
+	"wx/android/config_android.h"
+	"wx/compiler.h"
 	"wx/setup.h"
-	"wx/chkconf.h"
 	"wx/msw/wince/libraries.h"
 	"wx/msw/libraries.h"
 	"wx/msw/gccpriv.h"
+	<TargetConditionals.h>
 	<AvailabilityMacros.h>
+	"wx/chkconf.h"
 
-1416433873 c:\workspace\libraries\wx2812gl\lib\gcc_lib\mswu\wx\setup.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\android\config_android.h
 
-1187328494 c:\workspace\libraries\wx2812gl\include\wx\chkconf.h
-	"wx/palmos/chkconf.h"
-	"wx/msw/wince/chkconf.h"
-	"wx/msw/chkconf.h"
-	"wx/mac/chkconf.h"
-	"wx/os2/chkconf.h"
-	"wx/mgl/chkconf.h"
-	"wx/dfb/chkconf.h"
-	"wx/motif/chkconf.h"
-	"wx/x11/chkconf.h"
-	"wx/univ/chkconf.h"
+1412500748 c:\workspace\libraries\wx302gl\include\wx\compiler.h
 
-1234515644 c:\workspace\libraries\wx2812gl\include\wx\msw\wince\chkconf.h
+1420230015 c:\workspace\libraries\wx302gl\lib\gcc_lib\mswu\wx\setup.h
 
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\chkconf.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\wince\libraries.h
 
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\chkconf.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\libraries.h
 
-1186404048 c:\workspace\libraries\wx2812gl\include\wx\msw\wince\libraries.h
-
-1186404050 c:\workspace\libraries\wx2812gl\include\wx\msw\libraries.h
-
-1186404050 c:\workspace\libraries\wx2812gl\include\wx\msw\gccpriv.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\gccpriv.h
 	<_mingw.h>
 	<w32api.h>
 
-1186404090 c:\workspace\libraries\wx2812gl\include\wx\features.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\chkconf.h
+	"wx/msw/wince/chkconf.h"
+	"wx/msw/chkconf.h"
+	"wx/gtk/chkconf.h"
+	"wx/gtk/chkconf.h"
+	"wx/cocoa/chkconf.h"
+	"wx/osx/chkconf.h"
+	"wx/os2/chkconf.h"
+	"wx/dfb/chkconf.h"
+	"wx/motif/chkconf.h"
+	"wx/x11/chkconf.h"
+	"wx/android/chkconf.h"
+	"wx/unix/chkconf.h"
+	"wx/univ/chkconf.h"
 
-1298304568 c:\workspace\libraries\wx2812gl\include\wx\version.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\wince\chkconf.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\chkconf.h
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\android\chkconf.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\unix\chkconf.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\chkconf.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\version.h
 	"wx/cpp.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\cpp.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\cpp.h
+	"wx/compiler.h"
 
-1194610580 c:\workspace\libraries\wx2812gl\include\wx\dlimpexp.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\dlimpexp.h
 
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\debug.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\debug.h
 	<assert.h>
 	<limits.h>
-	"wx/wxchar.h"
-
-1298304568 c:\workspace\libraries\wx2812gl\include\wx\wxchar.h
-	"wx/platform.h"
+	"wx/chartype.h"
+	"wx/cpp.h"
 	"wx/dlimpexp.h"
-	<stdio.h>
-	<stdarg.h>
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\chartype.h
+	"wx/platform.h"
 	<sys/types.h>
 	<wchar.h>
 	<wcstr.h>
 	<stdlib.h>
 	<widec.h>
 	<ctype.h>
-	<memory.h>
-	<stddef.h>
 	<stddef.h>
 	<string.h>
 	<ctype.h>
 	<tchar.h>
 	<ctype.h>
-	<ctype.h>
-	<stdio.h>
-	<wctype.h>
-	<stdio.h>
-	<stdio.h>
-	<ctype.h>
-	<string.h>
-	<stdio.h>
-	<time.h>
-	<time.h>
-	<string.h>
 
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\winundef.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\windowid.h
 
-1213608684 c:\workspace\libraries\wx2812gl\include\wx\msw\wrapwin.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\winundef.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\features.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\wrapwin.h
 	"wx/platform.h"
+	<winsock2.h>
 	<windows.h>
 	"wx/msw/winundef.h"
 
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\wrapcctl.h
-	"wx/msw/wrapwin.h"
-	<commctrl.h>
-	"wx/msw/missing.h"
-
-1188470304 c:\workspace\libraries\wx2812gl\include\wx\msw\missing.h
-	<windows.h>
-	"wx/msw/winundef.h"
-	"wx/msw/wince/missing.h"
-
-1186404048 c:\workspace\libraries\wx2812gl\include\wx\msw\wince\missing.h
-	"wx/msw/private.h"
-	"shellapi.h"
-
-1264667160 c:\workspace\libraries\wx2812gl\include\wx\msw\private.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\private.h
 	"wx/msw/wrapwin.h"
 	"wx/msw/microwin.h"
 	"wx/log.h"
+	"wx/window.h"
 	"wx/gdicmn.h"
 	"wx/colour.h"
 
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\microwin.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\microwin.h
 
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\log.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\log.h
 	"wx/defs.h"
+	"wx/cpp.h"
 	"wx/string.h"
+	"wx/strvararg.h"
 	"wx/arrstr.h"
 	<time.h>
 	"wx/dynarray.h"
+	"wx/hashmap.h"
+	"wx/thread.h"
 	"wx/iosfwrap.h"
 	"wx/generic/logg.h"
 	"wx/cocoa/log.h"
 
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\string.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\string.h
 	"wx/defs.h"
 	<ctype.h>
 	<stdio.h>
@@ -164,56 +159,364 @@
 	<stdarg.h>
 	<limits.h>
 	<stdlib.h>
-	<strings.h>
-	<StringMgr.h>
-	"wx/wxchar.h"
+	"wx/wxcrtbase.h"
+	"wx/strvararg.h"
 	"wx/buffer.h"
 	"wx/strconv.h"
-	"wx/beforestd.h"
-	<string>
-	"wx/afterstd.h"
-	"wx/arrstr.h"
+	"wx/stringimpl.h"
+	"wx/stringops.h"
+	"wx/unichar.h"
+	"wx/tls.h"
 	"wx/iosfwrap.h"
+	"wx/crt.h"
 
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\buffer.h
-	"wx/wxchar.h"
-	<stdlib.h>
+1412500750 c:\workspace\libraries\wx302gl\include\wx\wxcrtbase.h
+	"wx/chartype.h"
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	<wctype.h>
+	<time.h>
+	<io.h>
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\strconv.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\strvararg.h
+	"wx/platform.h"
+	"wx/cpp.h"
+	"wx/chartype.h"
+	"wx/strconv.h"
+	"wx/buffer.h"
+	"wx/unichar.h"
+	<type_traits>
+	<type_traits>
+	<tr1/type_traits>
+	"wx/stringimpl.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\strconv.h
 	"wx/defs.h"
-	"wx/wxchar.h"
+	"wx/chartype.h"
 	"wx/buffer.h"
 	"typeinfo.h"
 	<stdlib.h>
 	"wx/fontenc.h"
 
-1186404094 c:\workspace\libraries\wx2812gl\include\wx\fontenc.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\buffer.h
+	"wx/chartype.h"
+	"wx/wxcrtbase.h"
+	<stdlib.h>
 
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\beforestd.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\typeinfo.h
+	"wx/defs.h"
+	<typeinfo>
+	<string.h>
 
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\afterstd.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\fontenc.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\unichar.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/stringimpl.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\stringimpl.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/wxcrtbase.h"
+	<stdlib.h>
+	"wx/beforestd.h"
+	<string>
+	"wx/afterstd.h"
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\beforestd.h
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\afterstd.h
 	"wx/msw/winundef.h"
 
-1264667164 c:\workspace\libraries\wx2812gl\include\wx\arrstr.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\stringops.h
+	"wx/chartype.h"
+	"wx/stringimpl.h"
+	"wx/unichar.h"
+	"wx/buffer.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\tls.h
+	"wx/defs.h"
+	"wx/msw/tls.h"
+	"wx/os2/tls.h"
+	"wx/unix/tls.h"
+	<stdlib.h>
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\tls.h
+	"wx/msw/wrapwin.h"
+	"wx/thread.h"
+	"wx/vector.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\thread.h
+	"wx/defs.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\vector.h
+	"wx/defs.h"
+	<vector>
+	<algorithm>
+	"wx/scopeguard.h"
+	"wx/meta/movable.h"
+	"wx/meta/if.h"
+	"wx/beforestd.h"
+	<new>
+	"wx/afterstd.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\scopeguard.h
+	"wx/defs.h"
+	"wx/except.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\except.h
+	"wx/defs.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\meta\movable.h
+	"wx/meta/pod.h"
+	"wx/string.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\meta\pod.h
+	"wx/defs.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\meta\if.h
+	"wx/defs.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\unix\tls.h
+	<pthread.h>
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\iosfwrap.h
+	<iostream.h>
+	<iosfwd>
+	"wx/msw/winundef.h"
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\crt.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/wxcrt.h"
+	"wx/wxcrtvararg.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\wxcrt.h
+	"wx/wxcrtbase.h"
+	"wx/string.h"
+	<string.h>
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\wxcrtvararg.h
+	"wx/wxcrt.h"
+	"wx/strvararg.h"
+	"wx/string.h"
+	<stdarg.h>
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\arrstr.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/dynarray.h"
+	"wx/beforestd.h"
+	<iterator>
+	"wx/afterstd.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\dynarray.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\dynarray.h
 	"wx/defs.h"
 	"wx/beforestd.h"
 	<vector>
 	<algorithm>
 	"wx/afterstd.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\iosfwrap.h
-	<iostream.h>
-	<iosfwd>
-	"wx/msw/winundef.h"
+1412500750 c:\workspace\libraries\wx302gl\include\wx\hashmap.h
+	"wx/string.h"
+	"wx/wxcrt.h"
+	<unordered_map>
+	<tr1/unordered_map>
+	<ext/hash_map>
+	<hash_map>
+	<stddef.h>
 
-1186404086 c:\workspace\libraries\wx2812gl\include\wx\generic\logg.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\logg.h
 
-1194610580 c:\workspace\libraries\wx2812gl\include\wx\gdicmn.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\window.h
+	"wx/event.h"
+	"wx/list.h"
+	"wx/cursor.h"
+	"wx/font.h"
+	"wx/colour.h"
+	"wx/region.h"
+	"wx/utils.h"
+	"wx/intl.h"
+	"wx/validate.h"
+	"wx/palette.h"
+	"wx/accel.h"
+	"wx/access.h"
+	"wx/msw/window.h"
+	"wx/motif/window.h"
+	"wx/gtk/window.h"
+	"wx/gtk1/window.h"
+	"wx/x11/window.h"
+	"wx/dfb/window.h"
+	"wx/osx/window.h"
+	"wx/cocoa/window.h"
+	"wx/os2/window.h"
+	"wx/univ/window.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\event.h
+	"wx/defs.h"
+	"wx/cpp.h"
+	"wx/object.h"
+	"wx/clntdata.h"
+	"wx/gdicmn.h"
+	"wx/cursor.h"
+	"wx/mousestate.h"
+	"wx/dynarray.h"
+	"wx/thread.h"
+	"wx/tracker.h"
+	"wx/typeinfo.h"
+	"wx/any.h"
+	"wx/meta/convertible.h"
+	"wx/meta/removeref.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\object.h
+	"wx/memory.h"
+	"wx/xti.h"
+	"wx/rtti.h"
+	"wx/xti2.h"
+	"wx/msw/msvcrt.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\memory.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/msgout.h"
+	<stddef.h>
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msgout.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/strvararg.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\xti.h
+	"wx/defs.h"
+	"wx/xtitypes.h"
+	"wx/xtihandler.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\xtitypes.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/hashmap.h"
+	"wx/arrstr.h"
+	"wx/flags.h"
+	"wx/intl.h"
+	"wx/log.h"
+	<typeinfo>
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\flags.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\intl.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/translation.h"
+	"wx/fontenc.h"
+	"wx/language.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\translation.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/buffer.h"
+	"wx/language.h"
+	"wx/hashmap.h"
+	"wx/strconv.h"
+	"wx/scopedptr.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\language.h
+	"wx/defs.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\scopedptr.h
+	"wx/defs.h"
+	"wx/checkeddelete.h"
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\checkeddelete.h
+	"wx/cpp.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\xtihandler.h
+	"wx/defs.h"
+	"wx/xti.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\rtti.h
+	"wx/memory.h"
+	"wx/flags.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\xti2.h
+	"wx/xtiprop.h"
+	"wx/xtictor.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\xtiprop.h
+	"wx/defs.h"
+	"wx/xti.h"
+	"wx/any.h"
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\any.h
+	"wx/defs.h"
+	<new>
+	"wx/string.h"
+	"wx/meta/if.h"
+	"wx/typeinfo.h"
+	"wx/list.h"
+	"wx/datetime.h"
+	"wx/variant.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\list.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/string.h"
+	"wx/vector.h"
+	"wx/beforestd.h"
+	<algorithm>
+	<iterator>
+	<list>
+	"wx/afterstd.h"
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\datetime.h
+	"wx/defs.h"
+	"wx/msw/wince/time.h"
+	<time.h>
+	<limits.h>
+	"wx/longlong.h"
+	"wx/anystr.h"
+	"wx/dynarray.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\wince\time.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\longlong.h
+	"wx/defs.h"
+	"wx/string.h"
+	<limits.h>
+	"wx/iosfwrap.h"
+	<limits>
+	"wx/strvararg.h"
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\anystr.h
+	"wx/string.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\variant.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/string.h"
+	"wx/arrstr.h"
+	"wx/list.h"
+	"wx/cpp.h"
+	"wx/longlong.h"
+	"wx/datetime.h"
+	"wx/iosfwrap.h"
+	"wx/any.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\xtictor.h
+	"wx/defs.h"
+	"wx/xti.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\msvcrt.h
+	<stdlib.h>
+	<crtdbg.h>
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\clntdata.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/hashmap.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\gdicmn.h
 	"wx/defs.h"
 	"wx/list.h"
 	"wx/string.h"
@@ -221,142 +524,314 @@
 	"wx/hashmap.h"
 	"wx/math.h"
 
-1264667164 c:\workspace\libraries\wx2812gl\include\wx\list.h
-	"wx/defs.h"
-	"wx/object.h"
-	"wx/string.h"
-	"wx/beforestd.h"
-	<algorithm>
-	<iterator>
-	<list>
-	"wx/afterstd.h"
-
-1264667164 c:\workspace\libraries\wx2812gl\include\wx\object.h
-	"wx/memory.h"
-	"wx/xti.h"
-	"wx/msw/msvcrt.h"
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\memory.h
-	"wx/defs.h"
-	"wx/string.h"
-	"wx/msgout.h"
-	<stddef.h>
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\msgout.h
-	"wx/defs.h"
-	"wx/wxchar.h"
-
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\xti.h
-	"wx/defs.h"
-	"wx/memory.h"
-	"wx/flags.h"
-	"wx/string.h"
-	"wx/arrstr.h"
-	"wx/hashmap.h"
-	"wx/log.h"
-	"wx/intl.h"
-	<typeinfo>
-	"wx/dynarray.h"
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\flags.h
-
-1234515646 c:\workspace\libraries\wx2812gl\include\wx\hashmap.h
-	"wx/string.h"
-	<unordered_map>
-	<tr1/unordered_map>
-	<ext/hash_map>
-	<hash_map>
-	<stddef.h>
-
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\intl.h
-	"wx/defs.h"
-	"wx/string.h"
-	"wx/fontenc.h"
-
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\msvcrt.h
-	<stdlib.h>
-	<crtdbg.h>
-
-1264667164 c:\workspace\libraries\wx2812gl\include\wx\math.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\math.h
 	"wx/defs.h"
 	<math.h>
+	<cmath>
 	<float.h>
+	<ieeefp.h>
 
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\colour.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\cursor.h
+	"wx/defs.h"
+	"wx/msw/cursor.h"
+	"wx/motif/cursor.h"
+	"wx/gtk/cursor.h"
+	"wx/gtk1/cursor.h"
+	"wx/x11/cursor.h"
+	"wx/dfb/cursor.h"
+	"wx/osx/cursor.h"
+	"wx/cocoa/cursor.h"
+	"wx/os2/cursor.h"
+	"wx/utils.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\cursor.h
+	"wx/msw/gdiimage.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\gdiimage.h
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+	"wx/list.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\gdiobj.h
+	"wx/object.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\utils.h
+	"wx/object.h"
+	"wx/list.h"
+	"wx/filefn.h"
+	"wx/hashmap.h"
+	"wx/versioninfo.h"
+	"wx/meta/implicitconversion.h"
+	"wx/gdicmn.h"
+	"wx/mousestate.h"
+	"wx/longlong.h"
+	"wx/platinfo.h"
+	<direct.h>
+	<dirent.h>
+	<unistd.h>
+	<stdio.h>
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\filefn.h
+	"wx/list.h"
+	"wx/arrstr.h"
+	"wx/msw/wince/time.h"
+	"wx/msw/private.h"
+	<time.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<process.h>
+	"wx/os2/private.h"
+	<direct.h>
+	<io.h>
+	<unistd.h>
+	<unistd.h>
+	<dirent.h>
+	<direct.h>
+	<dos.h>
+	<io.h>
+	<direct.h>
+	<dos.h>
+	<io.h>
+	<io.h>
+	<unistd.h>
+	<dir.h>
+	<fcntl.h>
+	<sys/types.h>
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\versioninfo.h
+	"wx/string.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\meta\implicitconversion.h
+	"wx/defs.h"
+	"wx/meta/if.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\mousestate.h
+	"wx/gdicmn.h"
+	"wx/kbdstate.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\kbdstate.h
+	"wx/defs.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\platinfo.h
+	"wx/string.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\tracker.h
+	"wx/defs.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\meta\convertible.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\meta\removeref.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\font.h
+	"wx/defs.h"
+	"wx/fontenc.h"
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+	"wx/msw/font.h"
+	"wx/motif/font.h"
+	"wx/gtk/font.h"
+	"wx/gtk1/font.h"
+	"wx/x11/font.h"
+	"wx/dfb/font.h"
+	"wx/osx/font.h"
+	"wx/cocoa/font.h"
+	"wx/os2/font.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\font.h
+	"wx/gdicmn.h"
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\colour.h
 	"wx/defs.h"
 	"wx/gdiobj.h"
 	"wx/variant.h"
-	"wx/generic/colour.h"
 	"wx/msw/colour.h"
 	"wx/motif/colour.h"
 	"wx/gtk/colour.h"
 	"wx/gtk1/colour.h"
 	"wx/generic/colour.h"
-	"wx/generic/colour.h"
 	"wx/x11/colour.h"
-	"wx/mac/colour.h"
+	"wx/osx/colour.h"
 	"wx/cocoa/colour.h"
 	"wx/os2/colour.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\gdiobj.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\colour.h
 	"wx/object.h"
 
-1186404090 c:\workspace\libraries\wx2812gl\include\wx\variant.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\colour.h
+	"wx/object.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\region.h
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+	"wx/msw/region.h"
+	"wx/gtk/region.h"
+	"wx/gtk1/region.h"
+	"wx/x11/region.h"
+	"wx/dfb/region.h"
+	"wx/osx/region.h"
+	"wx/cocoa/region.h"
+	"wx/os2/region.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\region.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\validate.h
+	"wx/defs.h"
+	"wx/event.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\palette.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/gdiobj.h"
+	"wx/msw/palette.h"
+	"wx/x11/palette.h"
+	"wx/generic/paletteg.h"
+	"wx/osx/palette.h"
+	"wx/os2/palette.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\palette.h
+	"wx/gdiobj.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\paletteg.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\accel.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/generic/accel.h"
+	"wx/msw/accel.h"
+	"wx/motif/accel.h"
+	"wx/gtk/accel.h"
+	"wx/gtk1/accel.h"
+	"wx/osx/accel.h"
+	"wx/generic/accel.h"
+	"wx/os2/accel.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\accel.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\accel.h
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\access.h
+	"wx/defs.h"
+	"wx/variant.h"
+	"wx/msw/ole/access.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\ole\access.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\window.h
+	"wx/settings.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\settings.h
+	"wx/colour.h"
+	"wx/font.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\window.h
+	"wx/bitmap.h"
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\bitmap.h
+	"wx/string.h"
+	"wx/gdicmn.h"
+	"wx/colour.h"
+	"wx/image.h"
+	"wx/variant.h"
+	"wx/msw/bitmap.h"
+	"wx/x11/bitmap.h"
+	"wx/gtk/bitmap.h"
+	"wx/gtk1/bitmap.h"
+	"wx/x11/bitmap.h"
+	"wx/dfb/bitmap.h"
+	"wx/osx/bitmap.h"
+	"wx/cocoa/bitmap.h"
+	"wx/os2/bitmap.h"
+	"wx/generic/mask.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\image.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/string.h"
+	"wx/gdicmn.h"
+	"wx/hashmap.h"
 	"wx/arrstr.h"
-	"wx/list.h"
-	"wx/cpp.h"
-	"wx/datetime.h"
-	"wx/db.h"
-	"wx/iosfwrap.h"
+	"wx/stream.h"
+	"wx/variant.h"
+	"wx/imagbmp.h"
+	"wx/imagpng.h"
+	"wx/imaggif.h"
+	"wx/imagpcx.h"
+	"wx/imagjpeg.h"
+	"wx/imagtga.h"
+	"wx/imagtiff.h"
+	"wx/imagpnm.h"
+	"wx/imagxpm.h"
+	"wx/imagiff.h"
 
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\datetime.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\stream.h
 	"wx/defs.h"
-	<time.h>
-	"wx/msw/wince/time.h"
-	<limits.h>
-	"wx/longlong.h"
-	"wx/dynarray.h"
-
-1186404048 c:\workspace\libraries\wx2812gl\include\wx\msw\wince\time.h
-
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\longlong.h
-	"wx/defs.h"
+	<stdio.h>
+	"wx/object.h"
 	"wx/string.h"
-	<limits.h>
-	"wx/iosfwrap.h"
+	"wx/filefn.h"
 
-1234515646 c:\workspace\libraries\wx2812gl\include\wx\db.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\imagbmp.h
+	"wx/image.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\imagpng.h
 	"wx/defs.h"
-	"wx/string.h"
-	<afxwin.h>
+	"wx/image.h"
+	"wx/versioninfo.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\imaggif.h
+	"wx/image.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\imagpcx.h
+	"wx/image.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\imagjpeg.h
+	"wx/defs.h"
+	"wx/image.h"
+	"wx/versioninfo.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\imagtga.h
+	"wx/image.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\imagtiff.h
+	"wx/defs.h"
+	"wx/image.h"
+	"wx/versioninfo.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\imagpnm.h
+	"wx/image.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\imagxpm.h
+	"wx/image.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\imagiff.h
+	"wx/image.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\bitmap.h
+	"wx/msw/gdiimage.h"
+	"wx/math.h"
+	"wx/palette.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\mask.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\wrapcctl.h
 	"wx/msw/wrapwin.h"
-	"sql.h"
-	"sqlext.h"
-	"odbcinst.h"
-	"wx/msw/wrapwin.h"
-	"wx/isql.h"
-	"wx/isqlext.h"
-	<sql.h>
-	<sqlext.h>
-	<sql.h>
-	<sqlext.h>
-	"wx/object.h"
+	<commctrl.h>
+	"wx/msw/missing.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\isql.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\missing.h
+	<windows.h>
+	"wx/msw/winundef.h"
+	"wx/msw/wince/missing.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\isqlext.h
-	"wx/isql.h"
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\wince\missing.h
+	"wx/msw/private.h"
+	"shellapi.h"
 
-1186404086 c:\workspace\libraries\wx2812gl\include\wx\generic\colour.h
-	"wx/object.h"
-
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\colour.h
-	"wx/object.h"
-
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\wrapcdlg.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\wrapcdlg.h
 	"wx/defs.h"
 	"wx/msw/wrapwin.h"
 	"wx/msw/private.h"
@@ -364,7 +839,7 @@
 	<commdlg.h>
 	"wx/msw/winundef.h"
 
-1186404094 c:\workspace\libraries\wx2812gl\include\wx\wx.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\wx.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/dynarray.h"
@@ -382,7 +857,10 @@
 	"wx/memory.h"
 	"wx/math.h"
 	"wx/stopwatch.h"
+	"wx/timer.h"
 	"wx/module.h"
+	"wx/wxcrt.h"
+	"wx/wxcrtvararg.h"
 	"wx/window.h"
 	"wx/containr.h"
 	"wx/panel.h"
@@ -409,10 +887,8 @@
 	"wx/icon.h"
 	"wx/cursor.h"
 	"wx/dialog.h"
-	"wx/timer.h"
 	"wx/settings.h"
 	"wx/msgdlg.h"
-	"wx/cmndata.h"
 	"wx/dataobj.h"
 	"wx/control.h"
 	"wx/ctrlsub.h"
@@ -436,441 +912,269 @@
 	"wx/combobox.h"
 	"wx/layout.h"
 	"wx/sizer.h"
-	"wx/mdi.h"
 	"wx/statusbr.h"
 	"wx/choicdlg.h"
 	"wx/textdlg.h"
 	"wx/filedlg.h"
+	"wx/mdi.h"
 	"wx/validate.h"
 	"wx/valtext.h"
 
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\hash.h
-	"wx/defs.h"
-	"wx/object.h"
-	"wx/list.h"
-	"wx/dynarray.h"
-
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\event.h
-	"wx/defs.h"
-	"wx/cpp.h"
-	"wx/object.h"
-	"wx/clntdata.h"
-	"wx/gdicmn.h"
-	"wx/cursor.h"
-	"wx/thread.h"
-	"wx/dynarray.h"
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\clntdata.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\hash.h
 	"wx/defs.h"
 	"wx/string.h"
-	"wx/hashmap.h"
-	"wx/vector.h"
-
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\vector.h
-	"wx/defs.h"
-
-1186404090 c:\workspace\libraries\wx2812gl\include\wx\cursor.h
-	"wx/defs.h"
-	"wx/palmos/cursor.h"
-	"wx/msw/cursor.h"
-	"wx/motif/cursor.h"
-	"wx/gtk/cursor.h"
-	"wx/gtk1/cursor.h"
-	"wx/x11/cursor.h"
-	"wx/mgl/cursor.h"
-	"wx/dfb/cursor.h"
-	"wx/mac/cursor.h"
-	"wx/cocoa/cursor.h"
-	"wx/os2/cursor.h"
-	"wx/utils.h"
-
-1195455330 c:\workspace\libraries\wx2812gl\include\wx\msw\cursor.h
-	"wx/msw/gdiimage.h"
-
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\gdiimage.h
-	"wx/gdiobj.h"
-	"wx/gdicmn.h"
-	"wx/list.h"
-
-1264667164 c:\workspace\libraries\wx2812gl\include\wx\utils.h
 	"wx/object.h"
-	"wx/list.h"
-	"wx/filefn.h"
-	"wx/gdicmn.h"
-	"wx/longlong.h"
-	"wx/platinfo.h"
-	<direct.h>
-	<dirent.h>
-	<unistd.h>
-	<stdio.h>
 
-1266312094 c:\workspace\libraries\wx2812gl\include\wx\filefn.h
-	"wx/list.h"
-	"wx/arrstr.h"
-	"wx/msw/wince/time.h"
-	"wx/msw/private.h"
-	<time.h>
-	<sys/types.h>
-	<sys/stat.h>
-	<sys/types.h>
-	<utime.h>
-	<sys/stat.h>
-	<unistd.h>
-	<stat.h>
-	<unistd.h>
-	<unix.h>
-	<process.h>
-	"wx/os2/private.h"
-	<direct.h>
-	<io.h>
-	<unistd.h>
-	<unistd.h>
-	<dirent.h>
-	<direct.h>
-	<dos.h>
-	<io.h>
-	<direct.h>
-	<dos.h>
-	<io.h>
-	<io.h>
-	<unistd.h>
-	<dir.h>
-	<dir.h>
-	<unix.h>
-	<fcntl.h>
-	<sys/types.h>
-
-1186404090 c:\workspace\libraries\wx2812gl\include\wx\platinfo.h
-	"wx/string.h"
-
-1298304568 c:\workspace\libraries\wx2812gl\include\wx\thread.h
-	"wx/defs.h"
-
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\app.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\app.h
 	"wx/event.h"
+	"wx/eventfilter.h"
 	"wx/build.h"
+	"wx/cmdargs.h"
 	"wx/init.h"
 	"wx/intl.h"
-	"wx/palmos/app.h"
+	"wx/log.h"
+	"wx/unix/app.h"
 	"wx/msw/app.h"
 	"wx/motif/app.h"
-	"wx/mgl/app.h"
 	"wx/dfb/app.h"
 	"wx/gtk/app.h"
 	"wx/gtk1/app.h"
 	"wx/x11/app.h"
-	"wx/mac/app.h"
+	"wx/osx/app.h"
 	"wx/cocoa/app.h"
 	"wx/os2/app.h"
 	"wx/univ/theme.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\build.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\eventfilter.h
+	"wx/defs.h"
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\build.h
 	"wx/version.h"
 
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\init.h
-	"wx/defs.h"
-	"wx/wxchar.h"
+1412500748 c:\workspace\libraries\wx302gl\include\wx\cmdargs.h
+	"wx/arrstr.h"
 
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\app.h
-	"wx/event.h"
-	"wx/icon.h"
+1412500750 c:\workspace\libraries\wx302gl\include\wx\init.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/msw/init.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\init.h
 	"wx/msw/wrapwin.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\icon.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\unix\app.h
+	<signal.h>
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\app.h
+	"wx/event.h"
+	"wx/icon.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\icon.h
 	"wx/iconloc.h"
-	"wx/generic/icon.h"
 	"wx/msw/icon.h"
 	"wx/motif/icon.h"
 	"wx/generic/icon.h"
 	"wx/generic/icon.h"
 	"wx/generic/icon.h"
 	"wx/generic/icon.h"
+	"wx/osx/icon.h"
 	"wx/generic/icon.h"
-	"wx/mac/icon.h"
 	"wx/cocoa/icon.h"
 	"wx/os2/icon.h"
 	"wx/variant.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\iconloc.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\iconloc.h
 	"wx/string.h"
 
-1186404086 c:\workspace\libraries\wx2812gl\include\wx\generic\icon.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\icon.h
+	"wx/msw/gdiimage.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\icon.h
 	"wx/bitmap.h"
 
-1194610580 c:\workspace\libraries\wx2812gl\include\wx\bitmap.h
-	"wx/string.h"
-	"wx/gdicmn.h"
-	"wx/colour.h"
-	"wx/variant.h"
-	"wx/palmos/bitmap.h"
-	"wx/msw/bitmap.h"
-	"wx/x11/bitmap.h"
-	"wx/gtk/bitmap.h"
-	"wx/gtk1/bitmap.h"
-	"wx/x11/bitmap.h"
-	"wx/mgl/bitmap.h"
-	"wx/dfb/bitmap.h"
-	"wx/mac/bitmap.h"
-	"wx/cocoa/bitmap.h"
-	"wx/os2/bitmap.h"
-	"wx/generic/mask.h"
-
-1194610574 c:\workspace\libraries\wx2812gl\include\wx\msw\bitmap.h
-	"wx/msw/gdiimage.h"
-	"wx/palette.h"
-
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\palette.h
-	"wx/defs.h"
-	"wx/object.h"
-	"wx/gdiobj.h"
-	"wx/palmos/palette.h"
-	"wx/msw/palette.h"
-	"wx/motif/palette.h"
-	"wx/generic/paletteg.h"
-	"wx/x11/palette.h"
-	"wx/mgl/palette.h"
-	"wx/mac/palette.h"
-	"wx/os2/palette.h"
-
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\palette.h
-	"wx/gdiobj.h"
-
-1186404086 c:\workspace\libraries\wx2812gl\include\wx\generic\paletteg.h
-	"wx/defs.h"
-	"wx/object.h"
-	"wx/gdiobj.h"
-	"wx/gdicmn.h"
-
-1186404086 c:\workspace\libraries\wx2812gl\include\wx\generic\mask.h
-
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\icon.h
-	"wx/msw/gdiimage.h"
-
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\theme.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\theme.h
 	"wx/string.h"
 
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\stream.h
-	"wx/defs.h"
-	<stdio.h>
-	"wx/object.h"
-	"wx/string.h"
-	"wx/filefn.h"
-
-1264667164 c:\workspace\libraries\wx2812gl\include\wx\stopwatch.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\stopwatch.h
 	"wx/defs.h"
 	"wx/longlong.h"
+	"wx/time.h"
 
-1264667164 c:\workspace\libraries\wx2812gl\include\wx\module.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\time.h
+	"wx/longlong.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\timer.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/longlong.h"
+	"wx/event.h"
+	"wx/stopwatch.h"
+	"wx/utils.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\module.h
 	"wx/object.h"
 	"wx/list.h"
+	"wx/arrstr.h"
 	"wx/dynarray.h"
 
-1234515648 c:\workspace\libraries\wx2812gl\include\wx\window.h
-	"wx/event.h"
-	"wx/list.h"
-	"wx/cursor.h"
-	"wx/font.h"
-	"wx/colour.h"
-	"wx/region.h"
-	"wx/utils.h"
-	"wx/intl.h"
-	"wx/validate.h"
-	"wx/palette.h"
-	"wx/accel.h"
-	"wx/access.h"
-	"wx/palmos/window.h"
-	"wx/msw/window.h"
-	"wx/motif/window.h"
-	"wx/gtk/window.h"
-	"wx/gtk1/window.h"
-	"wx/x11/window.h"
-	"wx/mgl/window.h"
-	"wx/dfb/window.h"
-	"wx/mac/window.h"
-	"wx/cocoa/window.h"
-	"wx/os2/window.h"
-	"wx/univ/window.h"
-
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\font.h
-	"wx/defs.h"
-	"wx/fontenc.h"
-	"wx/gdiobj.h"
-	"wx/palmos/font.h"
-	"wx/msw/font.h"
-	"wx/motif/font.h"
-	"wx/gtk/font.h"
-	"wx/gtk1/font.h"
-	"wx/x11/font.h"
-	"wx/mgl/font.h"
-	"wx/dfb/font.h"
-	"wx/mac/font.h"
-	"wx/cocoa/font.h"
-	"wx/os2/font.h"
-
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\font.h
-	"wx/gdicmn.h"
-
-1194610578 c:\workspace\libraries\wx2812gl\include\wx\region.h
-	"wx/gdiobj.h"
-	"wx/gdicmn.h"
-	"wx/palmos/region.h"
-	"wx/msw/region.h"
-	"wx/gtk/region.h"
-	"wx/gtk1/region.h"
-	"wx/x11/region.h"
-	"wx/mgl/region.h"
-	"wx/dfb/region.h"
-	"wx/mac/region.h"
-	"wx/cocoa/region.h"
-	"wx/os2/region.h"
-
-1264667160 c:\workspace\libraries\wx2812gl\include\wx\msw\region.h
-
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\validate.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\containr.h
 	"wx/defs.h"
 	"wx/event.h"
 
-1298304568 c:\workspace\libraries\wx2812gl\include\wx\accel.h
-	"wx/defs.h"
-	"wx/object.h"
-	"wx/generic/accel.h"
-	"wx/msw/accel.h"
-	"wx/motif/accel.h"
-	"wx/gtk/accel.h"
-	"wx/gtk1/accel.h"
-	"wx/mac/accel.h"
-	"wx/generic/accel.h"
-	"wx/os2/accel.h"
-
-1186404086 c:\workspace\libraries\wx2812gl\include\wx\generic\accel.h
-
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\accel.h
-
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\access.h
-	"wx/defs.h"
-	"wx/variant.h"
-	"wx/msw/ole/access.h"
-
-1186404042 c:\workspace\libraries\wx2812gl\include\wx\msw\ole\access.h
-
-1213608684 c:\workspace\libraries\wx2812gl\include\wx\msw\window.h
-	"wx/hash.h"
-
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\window.h
-	"wx/bitmap.h"
-
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\containr.h
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\panel.h
-	"wx/generic/panelg.h"
-
-1194610578 c:\workspace\libraries\wx2812gl\include\wx\generic\panelg.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\panel.h
 	"wx/window.h"
 	"wx/containr.h"
+	"wx/univ/panel.h"
+	"wx/msw/panel.h"
+	"wx/generic/panelg.h"
 
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\toplevel.h
-	"wx/window.h"
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\panel.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\panel.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\panelg.h
+	"wx/bitmap.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\toplevel.h
+	"wx/nonownedwnd.h"
 	"wx/iconbndl.h"
-	"wx/palmos/toplevel.h"
+	"wx/weakref.h"
 	"wx/msw/toplevel.h"
 	"wx/gtk/toplevel.h"
 	"wx/gtk1/toplevel.h"
 	"wx/x11/toplevel.h"
-	"wx/mgl/toplevel.h"
 	"wx/dfb/toplevel.h"
-	"wx/mac/toplevel.h"
+	"wx/osx/toplevel.h"
 	"wx/cocoa/toplevel.h"
 	"wx/os2/toplevel.h"
 	"wx/motif/toplevel.h"
 	"wx/univ/toplevel.h"
 
-1194610580 c:\workspace\libraries\wx2812gl\include\wx\iconbndl.h
-	"wx/dynarray.h"
+1412500750 c:\workspace\libraries\wx302gl\include\wx\nonownedwnd.h
+	"wx/window.h"
+	"wx/dfb/nonownedwnd.h"
+	"wx/gtk/nonownedwnd.h"
+	"wx/osx/nonownedwnd.h"
+	"wx/msw/nonownedwnd.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\nonownedwnd.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\iconbndl.h
+	"wx/gdiobj.h"
 	"wx/gdicmn.h"
+	"wx/icon.h"
+	"wx/dynarray.h"
 
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\toplevel.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\weakref.h
+	"wx/tracker.h"
+	"wx/meta/convertible.h"
+	"wx/meta/int2type.h"
 
-1264667156 c:\workspace\libraries\wx2812gl\include\wx\univ\toplevel.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\meta\int2type.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\toplevel.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\toplevel.h
 	"wx/univ/inpcons.h"
 	"wx/univ/inphand.h"
 	"wx/icon.h"
 
-1264667158 c:\workspace\libraries\wx2812gl\include\wx\univ\inpcons.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\inpcons.h
 	"wx/object.h"
 	"wx/event.h"
 
-1264667158 c:\workspace\libraries\wx2812gl\include\wx\univ\inphand.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\inphand.h
 	"wx/univ/inpcons.h"
 
-1195455332 c:\workspace\libraries\wx2812gl\include\wx\frame.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\frame.h
 	"wx/toplevel.h"
+	"wx/statusbr.h"
 	"wx/univ/frame.h"
-	"wx/palmos/frame.h"
 	"wx/msw/frame.h"
 	"wx/gtk/frame.h"
 	"wx/gtk1/frame.h"
 	"wx/motif/frame.h"
-	"wx/mac/frame.h"
+	"wx/osx/frame.h"
 	"wx/cocoa/frame.h"
 	"wx/os2/frame.h"
 
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\frame.h
-
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\frame.h
-
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\image.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\statusbr.h
 	"wx/defs.h"
+	"wx/control.h"
+	"wx/list.h"
+	"wx/dynarray.h"
+	"wx/univ/statusbr.h"
+	"wx/msw/statusbar.h"
+	"wx/generic/statusbr.h"
+	"wx/osx/statusbr.h"
+	"wx/generic/statusbr.h"
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\control.h
+	"wx/defs.h"
+	"wx/window.h"
+	"wx/univ/control.h"
+	"wx/msw/control.h"
+	"wx/motif/control.h"
+	"wx/gtk/control.h"
+	"wx/gtk1/control.h"
+	"wx/osx/control.h"
+	"wx/cocoa/control.h"
+	"wx/os2/control.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\control.h
+	"wx/univ/inphand.h"
+	"wx/univ/inpcons.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\control.h
+	"wx/dynarray.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\statusbr.h
+	"wx/univ/inpcons.h"
+	"wx/arrstr.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\statusbar.h
+	"wx/vector.h"
+	"wx/tooltip.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\tooltip.h
+	"wx/defs.h"
+	"wx/msw/tooltip.h"
+	"wx/gtk/tooltip.h"
+	"wx/gtk1/tooltip.h"
+	"wx/osx/tooltip.h"
+	"wx/cocoa/tooltip.h"
+	"wx/os2/tooltip.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\tooltip.h
 	"wx/object.h"
-	"wx/string.h"
 	"wx/gdicmn.h"
-	"wx/hashmap.h"
-	"wx/stream.h"
-	"wx/variant.h"
-	"wx/imagbmp.h"
-	"wx/imagpng.h"
-	"wx/imaggif.h"
-	"wx/imagpcx.h"
-	"wx/imagjpeg.h"
-	"wx/imagtga.h"
-	"wx/imagtiff.h"
-	"wx/imagpnm.h"
-	"wx/imagxpm.h"
-	"wx/imagiff.h"
 
-1264667164 c:\workspace\libraries\wx2812gl\include\wx\imagbmp.h
-	"wx/image.h"
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\imagpng.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\statusbr.h
 	"wx/defs.h"
-	"wx/image.h"
+	"wx/pen.h"
+	"wx/arrstr.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\imaggif.h
-	"wx/image.h"
+1412500750 c:\workspace\libraries\wx302gl\include\wx\pen.h
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+	"wx/msw/pen.h"
+	"wx/x11/pen.h"
+	"wx/gtk/pen.h"
+	"wx/gtk1/pen.h"
+	"wx/dfb/pen.h"
+	"wx/osx/pen.h"
+	"wx/cocoa/pen.h"
+	"wx/os2/pen.h"
 
-1186404094 c:\workspace\libraries\wx2812gl\include\wx\imagpcx.h
-	"wx/image.h"
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\pen.h
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\imagjpeg.h
-	"wx/defs.h"
-	"wx/image.h"
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\frame.h
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\imagtga.h
-	"wx/image.h"
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\frame.h
 
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\imagtiff.h
-	"wx/defs.h"
-	"wx/image.h"
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\imagpnm.h
-	"wx/image.h"
-
-1186404090 c:\workspace\libraries\wx2812gl\include\wx\imagxpm.h
-	"wx/image.h"
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\imagiff.h
-	"wx/image.h"
-
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\dc.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\dc.h
 	"wx/object.h"
 	"wx/intl.h"
 	"wx/cursor.h"
@@ -880,305 +1184,189 @@
 	"wx/brush.h"
 	"wx/pen.h"
 	"wx/palette.h"
-	"wx/list.h"
 	"wx/dynarray.h"
 	"wx/math.h"
-	"wx/palmos/dc.h"
-	"wx/msw/dc.h"
-	"wx/motif/dc.h"
-	"wx/gtk/dc.h"
-	"wx/gtk1/dc.h"
-	"wx/x11/dc.h"
-	"wx/mgl/dc.h"
-	"wx/dfb/dc.h"
-	"wx/mac/dc.h"
-	"wx/cocoa/dc.h"
-	"wx/os2/dc.h"
-	"wx/dcgraph.h"
+	"wx/image.h"
+	"wx/region.h"
+	"wx/affinematrix2d.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\brush.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\brush.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/gdiobj.h"
-	"wx/palmos/brush.h"
+	"wx/gdicmn.h"
 	"wx/msw/brush.h"
 	"wx/x11/brush.h"
 	"wx/gtk/brush.h"
 	"wx/gtk1/brush.h"
-	"wx/mgl/brush.h"
 	"wx/dfb/brush.h"
-	"wx/mac/brush.h"
+	"wx/osx/brush.h"
 	"wx/cocoa/brush.h"
 	"wx/os2/brush.h"
 
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\brush.h
-	"wx/gdicmn.h"
-	"wx/gdiobj.h"
-	"wx/bitmap.h"
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\brush.h
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\pen.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\affinematrix2d.h
 	"wx/defs.h"
-	"wx/palmos/pen.h"
-	"wx/msw/pen.h"
-	"wx/x11/pen.h"
-	"wx/gtk/pen.h"
-	"wx/gtk1/pen.h"
-	"wx/mgl/pen.h"
-	"wx/dfb/pen.h"
-	"wx/mac/pen.h"
-	"wx/cocoa/pen.h"
-	"wx/os2/pen.h"
+	"wx/affinematrix2dbase.h"
 
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\pen.h
-	"wx/gdiobj.h"
-	"wx/bitmap.h"
-	"wx/colour.h"
-
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\dc.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\affinematrix2dbase.h
 	"wx/defs.h"
-
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\dcgraph.h
 	"wx/geometry.h"
-	"wx/dynarray.h"
-	"wx/graphics.h"
 
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\geometry.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\geometry.h
 	"wx/defs.h"
 	"wx/utils.h"
 	"wx/gdicmn.h"
 	"wx/math.h"
 
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\graphics.h
-	"wx/defs.h"
-	"wx/geometry.h"
-	"wx/dynarray.h"
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\dcclient.h
-	"wx/defs.h"
-	"wx/palmos/dcclient.h"
-	"wx/msw/dcclient.h"
-	"wx/motif/dcclient.h"
-	"wx/gtk/dcclient.h"
-	"wx/gtk1/dcclient.h"
-	"wx/x11/dcclient.h"
-	"wx/mgl/dcclient.h"
-	"wx/dfb/dcclient.h"
-	"wx/mac/dcclient.h"
-	"wx/cocoa/dcclient.h"
-	"wx/os2/dcclient.h"
-
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\dcclient.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\dcclient.h
 	"wx/dc.h"
-	"wx/dynarray.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\dcmemory.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\dcmemory.h
+	"wx/dc.h"
 	"wx/bitmap.h"
-	"wx/palmos/dcmemory.h"
-	"wx/msw/dcmemory.h"
-	"wx/motif/dcmemory.h"
-	"wx/gtk/dcmemory.h"
-	"wx/gtk1/dcmemory.h"
-	"wx/x11/dcmemory.h"
-	"wx/mgl/dcmemory.h"
-	"wx/dfb/dcmemory.h"
-	"wx/mac/dcmemory.h"
-	"wx/cocoa/dcmemory.h"
-	"wx/os2/dcmemory.h"
 
-1188276674 c:\workspace\libraries\wx2812gl\include\wx\msw\dcmemory.h
-	"wx/dcclient.h"
-
-1186404094 c:\workspace\libraries\wx2812gl\include\wx\dcprint.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\dcprint.h
 	"wx/defs.h"
-	"wx/palmos/dcprint.h"
-	"wx/msw/dcprint.h"
-	"wx/os2/dcprint.h"
-	"wx/mac/dcprint.h"
-
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\dcprint.h
-	"wx/dc.h"
-	"wx/cmndata.h"
-
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\cmndata.h
-	"wx/window.h"
-	"wx/font.h"
-	"wx/encinfo.h"
-	"wx/colour.h"
-	"wx/gdicmn.h"
-	"wx/stream.h"
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\encinfo.h
-	"wx/string.h"
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\dcscreen.h
-	"wx/defs.h"
-	"wx/palmos/dcscreen.h"
-	"wx/msw/dcscreen.h"
-	"wx/motif/dcscreen.h"
-	"wx/gtk/dcscreen.h"
-	"wx/gtk1/dcscreen.h"
-	"wx/x11/dcscreen.h"
-	"wx/mgl/dcscreen.h"
-	"wx/dfb/dcscreen.h"
-	"wx/mac/dcscreen.h"
-	"wx/cocoa/dcscreen.h"
-	"wx/os2/dcscreen.h"
-
-1186404050 c:\workspace\libraries\wx2812gl\include\wx\msw\dcscreen.h
 	"wx/dc.h"
 
-1194610578 c:\workspace\libraries\wx2812gl\include\wx\button.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\dcscreen.h
 	"wx/defs.h"
-	"wx/control.h"
+	"wx/dc.h"
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\button.h
+	"wx/defs.h"
+	"wx/anybutton.h"
 	"wx/univ/button.h"
 	"wx/msw/button.h"
 	"wx/motif/button.h"
 	"wx/gtk/button.h"
 	"wx/gtk1/button.h"
-	"wx/mac/button.h"
+	"wx/osx/button.h"
 	"wx/cocoa/button.h"
 	"wx/os2/button.h"
-	"wx/palmos/button.h"
 
-1186404090 c:\workspace\libraries\wx2812gl\include\wx\control.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\anybutton.h
 	"wx/defs.h"
-	"wx/window.h"
-	"wx/univ/control.h"
-	"wx/palmos/control.h"
-	"wx/msw/control.h"
-	"wx/motif/control.h"
-	"wx/gtk/control.h"
-	"wx/gtk1/control.h"
-	"wx/mac/control.h"
-	"wx/cocoa/control.h"
-	"wx/os2/control.h"
+	"wx/bitmap.h"
+	"wx/control.h"
+	"wx/univ/anybutton.h"
+	"wx/msw/anybutton.h"
+	"wx/gtk/anybutton.h"
+	"wx/osx/anybutton.h"
 
-1264667158 c:\workspace\libraries\wx2812gl\include\wx\univ\control.h
-	"wx/univ/inphand.h"
-	"wx/univ/inpcons.h"
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\anybutton.h
 
-1186404050 c:\workspace\libraries\wx2812gl\include\wx\msw\control.h
-	"wx/dynarray.h"
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\anybutton.h
 
-1264667158 c:\workspace\libraries\wx2812gl\include\wx\univ\button.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\button.h
 	"wx/bitmap.h"
 
-1186404050 c:\workspace\libraries\wx2812gl\include\wx\msw\button.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\button.h
 
-1194610578 c:\workspace\libraries\wx2812gl\include\wx\menuitem.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\menuitem.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/univ/menuitem.h"
-	"wx/palmos/menuitem.h"
 	"wx/msw/menuitem.h"
 	"wx/motif/menuitem.h"
 	"wx/gtk/menuitem.h"
 	"wx/gtk1/menuitem.h"
-	"wx/mac/menuitem.h"
+	"wx/osx/menuitem.h"
 	"wx/cocoa/menuitem.h"
 	"wx/os2/menuitem.h"
 
-1264667158 c:\workspace\libraries\wx2812gl\include\wx\univ\menuitem.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\menuitem.h
 
-1187155110 c:\workspace\libraries\wx2812gl\include\wx\msw\menuitem.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\menuitem.h
 	"wx/ownerdrw.h"
-
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\ownerdrw.h
-	"wx/defs.h"
 	"wx/bitmap.h"
-	"wx/colour.h"
-	"wx/font.h"
 
-1194610580 c:\workspace\libraries\wx2812gl\include\wx\menu.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\ownerdrw.h
+	"wx/defs.h"
+	"wx/font.h"
+	"wx/colour.h"
+	"wx/msw/ownerdrw.h"
+	"wx/os2/ownerdrw.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\ownerdrw.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\menu.h
 	"wx/defs.h"
 	"wx/list.h"
 	"wx/window.h"
 	"wx/menuitem.h"
 	"wx/univ/menu.h"
-	"wx/palmos/menu.h"
 	"wx/msw/menu.h"
 	"wx/motif/menu.h"
 	"wx/gtk/menu.h"
 	"wx/gtk1/menu.h"
-	"wx/mac/menu.h"
+	"wx/osx/menu.h"
 	"wx/cocoa/menu.h"
 	"wx/os2/menu.h"
 
-1187155104 c:\workspace\libraries\wx2812gl\include\wx\univ\menu.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\menu.h
 	"wx/accel.h"
 	"wx/dynarray.h"
 
-1194610574 c:\workspace\libraries\wx2812gl\include\wx\msw\menu.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\menu.h
 	"wx/accel.h"
 	"wx/dynarray.h"
 	"wx/arrstr.h"
 
-1195455332 c:\workspace\libraries\wx2812gl\include\wx\dialog.h
-	"wx/defs.h"
-	"wx/containr.h"
+1412500748 c:\workspace\libraries\wx302gl\include\wx\dialog.h
 	"wx/toplevel.h"
+	"wx/containr.h"
+	"wx/sharedptr.h"
 	"wx/univ/dialog.h"
-	"wx/palmos/dialog.h"
 	"wx/msw/dialog.h"
 	"wx/motif/dialog.h"
 	"wx/gtk/dialog.h"
 	"wx/gtk1/dialog.h"
-	"wx/mac/dialog.h"
+	"wx/osx/dialog.h"
 	"wx/cocoa/dialog.h"
 	"wx/os2/dialog.h"
 
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\dialog.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\sharedptr.h
+	"wx/defs.h"
+	"wx/atomic.h"
 
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\dialog.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\atomic.h
+	"wx/defs.h"
+	"wx/msw/wrapwin.h"
+	"libkern/OSAtomic.h"
+	<atomic.h>
+	"wx/thread.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\dialog.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\dialog.h
 	"wx/panel.h"
 
-1186404094 c:\workspace\libraries\wx2812gl\include\wx\timer.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msgdlg.h
 	"wx/defs.h"
-	"wx/object.h"
-	"wx/longlong.h"
-	"wx/event.h"
-	"wx/stopwatch.h"
-	"wx/window.h"
-	"wx/msw/timer.h"
-	"wx/motif/timer.h"
-	"wx/gtk/timer.h"
-	"wx/gtk1/timer.h"
-	"wx/generic/timer.h"
-	"wx/cocoa/timer.h"
-	"wx/mac/timer.h"
-	"wx/os2/timer.h"
-
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\timer.h
-
-1186404086 c:\workspace\libraries\wx2812gl\include\wx\generic\timer.h
-
-1299055190 c:\workspace\libraries\wx2812gl\include\wx\settings.h
-	"wx/colour.h"
-	"wx/font.h"
-
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\msgdlg.h
-	"wx/defs.h"
+	"wx/dialog.h"
+	"wx/stockitem.h"
 	"wx/generic/msgdlgg.h"
-	"wx/generic/msgdlgg.h"
-	"wx/palmos/msgdlg.h"
+	"wx/cocoa/msgdlg.h"
 	"wx/msw/msgdlg.h"
 	"wx/motif/msgdlg.h"
 	"wx/gtk/msgdlg.h"
-	"wx/generic/msgdlgg.h"
-	"wx/generic/msgdlgg.h"
-	"wx/mac/msgdlg.h"
-	"wx/cocoa/msgdlg.h"
+	"wx/osx/msgdlg.h"
 	"wx/os2/msgdlg.h"
 
-1195455332 c:\workspace\libraries\wx2812gl\include\wx\generic\msgdlgg.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\stockitem.h
 	"wx/defs.h"
-	"wx/dialog.h"
+	"wx/chartype.h"
+	"wx/string.h"
+	"wx/accel.h"
 
-1186404050 c:\workspace\libraries\wx2812gl\include\wx\msw\msgdlg.h
-	"wx/defs.h"
-	"wx/dialog.h"
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\msgdlgg.h
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\dataobj.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\msgdlg.h
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\dataobj.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/bitmap.h"
@@ -1189,7 +1377,7 @@
 	"wx/gtk/dataform.h"
 	"wx/gtk1/dataform.h"
 	"wx/x11/dataform.h"
-	"wx/mac/dataform.h"
+	"wx/osx/dataform.h"
 	"wx/cocoa/dataform.h"
 	"wx/os2/dataform.h"
 	"wx/msw/ole/dataobj.h"
@@ -1197,7 +1385,7 @@
 	"wx/x11/dataobj.h"
 	"wx/gtk/dataobj.h"
 	"wx/gtk1/dataobj.h"
-	"wx/mac/dataobj.h"
+	"wx/osx/dataobj.h"
 	"wx/cocoa/dataobj.h"
 	"wx/os2/dataobj.h"
 	"wx/msw/ole/dataobj2.h"
@@ -1205,41 +1393,45 @@
 	"wx/gtk1/dataobj2.h"
 	"wx/x11/dataobj2.h"
 	"wx/motif/dataobj2.h"
-	"wx/mac/dataobj2.h"
+	"wx/osx/dataobj2.h"
 	"wx/cocoa/dataobj2.h"
 	"wx/os2/dataobj2.h"
 
-1186404042 c:\workspace\libraries\wx2812gl\include\wx\msw\ole\dataform.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\ole\dataform.h
 
-1186404042 c:\workspace\libraries\wx2812gl\include\wx\msw\ole\dataobj.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\ole\dataobj.h
 
-1186404042 c:\workspace\libraries\wx2812gl\include\wx\msw\ole\dataobj2.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\ole\dataobj2.h
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\ctrlsub.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\ctrlsub.h
 	"wx/defs.h"
+	"wx/arrstr.h"
 	"wx/control.h"
+	"wx/msw/ctrlsub.h"
+	"wx/motif/ctrlsub.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\bmpbuttn.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\ctrlsub.h
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\bmpbuttn.h
 	"wx/defs.h"
-	"wx/bitmap.h"
 	"wx/button.h"
 	"wx/univ/bmpbuttn.h"
 	"wx/msw/bmpbuttn.h"
 	"wx/motif/bmpbuttn.h"
 	"wx/gtk/bmpbuttn.h"
 	"wx/gtk1/bmpbuttn.h"
-	"wx/mac/bmpbuttn.h"
+	"wx/osx/bmpbuttn.h"
 	"wx/cocoa/bmpbuttn.h"
 	"wx/os2/bmpbuttn.h"
 
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\bmpbuttn.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\bmpbuttn.h
 
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\bmpbuttn.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\bmpbuttn.h
 	"wx/button.h"
 	"wx/bitmap.h"
 	"wx/brush.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\checkbox.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\checkbox.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/univ/checkbox.h"
@@ -1247,17 +1439,17 @@
 	"wx/motif/checkbox.h"
 	"wx/gtk/checkbox.h"
 	"wx/gtk1/checkbox.h"
-	"wx/mac/checkbox.h"
+	"wx/osx/checkbox.h"
 	"wx/cocoa/checkbox.h"
 	"wx/os2/checkbox.h"
-	"wx/palmos/checkbox.h"
 
-1264667158 c:\workspace\libraries\wx2812gl\include\wx\univ\checkbox.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\checkbox.h
 	"wx/button.h"
 
-1186404050 c:\workspace\libraries\wx2812gl\include\wx\msw\checkbox.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\checkbox.h
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\checklst.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\checklst.h
+	"wx/defs.h"
 	"wx/listbox.h"
 	"wx/univ/checklst.h"
 	"wx/msw/wince/checklst.h"
@@ -1265,11 +1457,11 @@
 	"wx/motif/checklst.h"
 	"wx/gtk/checklst.h"
 	"wx/gtk1/checklst.h"
-	"wx/mac/checklst.h"
+	"wx/osx/checklst.h"
 	"wx/cocoa/checklst.h"
 	"wx/os2/checklst.h"
 
-1194610580 c:\workspace\libraries\wx2812gl\include\wx\listbox.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\listbox.h
 	"wx/defs.h"
 	"wx/ctrlsub.h"
 	"wx/univ/listbox.h"
@@ -1277,30 +1469,33 @@
 	"wx/motif/listbox.h"
 	"wx/gtk/listbox.h"
 	"wx/gtk1/listbox.h"
-	"wx/mac/listbox.h"
+	"wx/osx/listbox.h"
 	"wx/os2/listbox.h"
 	"wx/cocoa/listbox.h"
 
-1264667158 c:\workspace\libraries\wx2812gl\include\wx\univ\listbox.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\listbox.h
 	"wx/scrolwin.h"
 	"wx/dynarray.h"
 	"wx/arrstr.h"
 
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\scrolwin.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\scrolwin.h
 	"wx/panel.h"
 	"wx/gtk/scrolwin.h"
 	"wx/gtk1/scrolwin.h"
+	"wx/generic/scrolwin.h"
 
-1298304566 c:\workspace\libraries\wx2812gl\include\wx\msw\listbox.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\scrolwin.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\listbox.h
 	"wx/dynarray.h"
 
-1264667158 c:\workspace\libraries\wx2812gl\include\wx\univ\checklst.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\checklst.h
 
-1186404048 c:\workspace\libraries\wx2812gl\include\wx\msw\wince\checklst.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\wince\checklst.h
 
-1194610574 c:\workspace\libraries\wx2812gl\include\wx\msw\checklst.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\checklst.h
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\choice.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\choice.h
 	"wx/defs.h"
 	"wx/ctrlsub.h"
 	"wx/univ/choice.h"
@@ -1309,29 +1504,31 @@
 	"wx/motif/choice.h"
 	"wx/gtk/choice.h"
 	"wx/gtk1/choice.h"
-	"wx/mac/choice.h"
+	"wx/osx/choice.h"
 	"wx/cocoa/choice.h"
 	"wx/os2/choice.h"
 
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\choice.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\choice.h
 	"wx/combobox.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\combobox.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\combobox.h
 	"wx/defs.h"
 	"wx/textctrl.h"
 	"wx/ctrlsub.h"
+	"wx/textentry.h"
 	"wx/univ/combobox.h"
 	"wx/msw/combobox.h"
 	"wx/motif/combobox.h"
 	"wx/gtk/combobox.h"
 	"wx/gtk1/combobox.h"
-	"wx/mac/combobox.h"
+	"wx/osx/combobox.h"
 	"wx/cocoa/combobox.h"
 	"wx/os2/combobox.h"
 
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\textctrl.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\textctrl.h
 	"wx/defs.h"
 	"wx/control.h"
+	"wx/textentry.h"
 	"wx/dynarray.h"
 	"wx/gdicmn.h"
 	"wx/ioswrap.h"
@@ -1342,57 +1539,78 @@
 	"wx/motif/textctrl.h"
 	"wx/gtk/textctrl.h"
 	"wx/gtk1/textctrl.h"
-	"wx/mac/textctrl.h"
+	"wx/osx/textctrl.h"
 	"wx/cocoa/textctrl.h"
 	"wx/os2/textctrl.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\ioswrap.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\textentry.h
+	"wx/filefn.h"
+	"wx/gdicmn.h"
+	"wx/gtk/textentry.h"
+	"wx/osx/textentry.h"
+	"wx/msw/textentry.h"
+	"wx/motif/textentry.h"
+	"wx/os2/textentry.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\textentry.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\ioswrap.h
+	"wx/beforestd.h"
 	<iostream.h>
 	<iostream>
+	"wx/afterstd.h"
 	"wx/msw/winundef.h"
 
-1264667158 c:\workspace\libraries\wx2812gl\include\wx\univ\textctrl.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\textctrl.h
 	"wx/scrolwin.h"
 	"wx/univ/inphand.h"
 
-1186404048 c:\workspace\libraries\wx2812gl\include\wx\msw\wince\textctrlce.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\wince\textctrlce.h
 	"wx/dynarray.h"
 
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\textctrl.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\textctrl.h
 
-1264667158 c:\workspace\libraries\wx2812gl\include\wx\univ\combobox.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\combobox.h
 	"wx/combo.h"
 
-1298304568 c:\workspace\libraries\wx2812gl\include\wx\combo.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\combo.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/renderer.h"
 	"wx/bitmap.h"
+	"wx/textentry.h"
 	"wx/msw/combo.h"
 	"wx/generic/combo.h"
 
-1211430490 c:\workspace\libraries\wx2812gl\include\wx\renderer.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\renderer.h
 	"wx/gdicmn.h"
 	"wx/colour.h"
 	"wx/font.h"
 	"wx/bitmap.h"
 	"wx/string.h"
 
-1186404050 c:\workspace\libraries\wx2812gl\include\wx\msw\combo.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\combo.h
 	"wx/timer.h"
 
-1264667164 c:\workspace\libraries\wx2812gl\include\wx\generic\combo.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\combo.h
+	"wx/dcbuffer.h"
 
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\combobox.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\dcbuffer.h
+	"wx/dcmemory.h"
+	"wx/dcclient.h"
+	"wx/window.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\combobox.h
 	"wx/choice.h"
+	"wx/textentry.h"
 
-1186404048 c:\workspace\libraries\wx2812gl\include\wx\msw\wince\choicece.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\wince\choicece.h
 	"wx/defs.h"
 	"wx/dynarray.h"
 
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\choice.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\choice.h
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\scrolbar.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\scrolbar.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/univ/scrolbar.h"
@@ -1400,19 +1618,19 @@
 	"wx/motif/scrolbar.h"
 	"wx/gtk/scrolbar.h"
 	"wx/gtk1/scrolbar.h"
-	"wx/mac/scrolbar.h"
+	"wx/osx/scrolbar.h"
 	"wx/cocoa/scrolbar.h"
 	"wx/os2/scrolbar.h"
 
-1264667158 c:\workspace\libraries\wx2812gl\include\wx\univ\scrolbar.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\scrolbar.h
 	"wx/univ/scrarrow.h"
 	"wx/renderer.h"
 
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\scrarrow.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\scrarrow.h
 
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\scrolbar.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\scrolbar.h
 
-1186404090 c:\workspace\libraries\wx2812gl\include\wx\stattext.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\stattext.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/univ/stattext.h"
@@ -1420,16 +1638,19 @@
 	"wx/motif/stattext.h"
 	"wx/gtk/stattext.h"
 	"wx/gtk1/stattext.h"
-	"wx/mac/stattext.h"
+	"wx/osx/stattext.h"
 	"wx/cocoa/stattext.h"
 	"wx/os2/stattext.h"
-	"wx/palmos/stattext.h"
 
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\stattext.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\stattext.h
+	"wx/generic/stattextg.h"
 
-1186404050 c:\workspace\libraries\wx2812gl\include\wx\msw\stattext.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\stattextg.h
+	"wx/stattext.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\statbmp.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\stattext.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\statbmp.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/bitmap.h"
@@ -1439,35 +1660,37 @@
 	"wx/motif/statbmp.h"
 	"wx/gtk/statbmp.h"
 	"wx/gtk1/statbmp.h"
-	"wx/mac/statbmp.h"
+	"wx/osx/statbmp.h"
 	"wx/cocoa/statbmp.h"
 	"wx/os2/statbmp.h"
 
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\statbmp.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\statbmp.h
 	"wx/bitmap.h"
 
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\statbmp.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\statbmp.h
 	"wx/control.h"
 	"wx/icon.h"
 	"wx/bitmap.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\statbox.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\statbox.h
 	"wx/defs.h"
 	"wx/control.h"
+	"wx/containr.h"
 	"wx/univ/statbox.h"
 	"wx/msw/statbox.h"
 	"wx/motif/statbox.h"
 	"wx/gtk/statbox.h"
 	"wx/gtk1/statbox.h"
-	"wx/mac/statbox.h"
+	"wx/osx/statbox.h"
 	"wx/cocoa/statbox.h"
 	"wx/os2/statbox.h"
 
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\statbox.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\statbox.h
 
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\statbox.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\statbox.h
 
-1220334944 c:\workspace\libraries\wx2812gl\include\wx\radiobox.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\radiobox.h
+	"wx/defs.h"
 	"wx/ctrlsub.h"
 	"wx/dynarray.h"
 	"wx/univ/radiobox.h"
@@ -1475,19 +1698,18 @@
 	"wx/motif/radiobox.h"
 	"wx/gtk/radiobox.h"
 	"wx/gtk1/radiobox.h"
-	"wx/mac/radiobox.h"
+	"wx/osx/radiobox.h"
 	"wx/cocoa/radiobox.h"
 	"wx/os2/radiobox.h"
-	"wx/palmos/radiobox.h"
 
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\radiobox.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\radiobox.h
 	"wx/statbox.h"
 	"wx/dynarray.h"
 
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\radiobox.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\radiobox.h
 	"wx/statbox.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\radiobut.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\radiobut.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/univ/radiobut.h"
@@ -1495,54 +1717,52 @@
 	"wx/motif/radiobut.h"
 	"wx/gtk/radiobut.h"
 	"wx/gtk1/radiobut.h"
-	"wx/mac/radiobut.h"
+	"wx/osx/radiobut.h"
 	"wx/cocoa/radiobut.h"
 	"wx/os2/radiobut.h"
-	"wx/palmos/radiobut.h"
 
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\radiobut.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\radiobut.h
 	"wx/checkbox.h"
 
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\radiobut.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\radiobut.h
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\slider.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\slider.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/univ/slider.h"
-	"wx/msw/slider95.h"
+	"wx/msw/slider.h"
 	"wx/motif/slider.h"
 	"wx/gtk/slider.h"
 	"wx/gtk1/slider.h"
-	"wx/mac/slider.h"
+	"wx/osx/slider.h"
 	"wx/cocoa/slider.h"
 	"wx/os2/slider.h"
-	"wx/palmos/slider.h"
 
-1264667158 c:\workspace\libraries\wx2812gl\include\wx\univ\slider.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\slider.h
 	"wx/univ/scrthumb.h"
 
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\scrthumb.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\scrthumb.h
 	"wx/timer.h"
 
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\slider95.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\slider.h
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\gauge.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\gauge.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/univ/gauge.h"
-	"wx/msw/gauge95.h"
+	"wx/msw/gauge.h"
 	"wx/motif/gauge.h"
 	"wx/gtk/gauge.h"
 	"wx/gtk1/gauge.h"
-	"wx/mac/gauge.h"
+	"wx/osx/gauge.h"
 	"wx/cocoa/gauge.h"
 	"wx/os2/gauge.h"
 
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\gauge.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\gauge.h
 
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\gauge95.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\gauge.h
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\dirdlg.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\dirdlg.h
 	"wx/dialog.h"
 	"wx/generic/dirdlgg.h"
 	"wx/generic/dirdlgg.h"
@@ -1550,172 +1770,86 @@
 	"wx/msw/dirdlg.h"
 	"wx/gtk/dirdlg.h"
 	"wx/generic/dirdlgg.h"
-	"wx/mac/dirdlg.h"
+	"wx/osx/dirdlg.h"
 	"wx/cocoa/dirdlg.h"
 	"wx/generic/dirdlgg.h"
 
-1186404086 c:\workspace\libraries\wx2812gl\include\wx\generic\dirdlgg.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\dirdlgg.h
 	"wx/dialog.h"
 
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\dirdlg.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\dirdlg.h
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\toolbar.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\toolbar.h
 	"wx/defs.h"
 	"wx/tbarbase.h"
 	"wx/univ/toolbar.h"
-	"wx/palmos/toolbar.h"
-	"wx/msw/tbar95.h"
+	"wx/msw/toolbar.h"
 	"wx/msw/wince/tbarwce.h"
 	"wx/motif/toolbar.h"
-	"wx/gtk/tbargtk.h"
-	"wx/gtk1/tbargtk.h"
-	"wx/mac/toolbar.h"
+	"wx/gtk/toolbar.h"
+	"wx/gtk1/toolbar.h"
+	"wx/osx/toolbar.h"
 	"wx/cocoa/toolbar.h"
 	"wx/os2/toolbar.h"
 
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\tbarbase.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\tbarbase.h
 	"wx/defs.h"
 	"wx/bitmap.h"
 	"wx/list.h"
 	"wx/control.h"
 
-1264667156 c:\workspace\libraries\wx2812gl\include\wx\univ\toolbar.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\toolbar.h
 	"wx/button.h"
 
-1234515644 c:\workspace\libraries\wx2812gl\include\wx\msw\tbar95.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\toolbar.h
 	"wx/dynarray.h"
 	"wx/imaglist.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\imaglist.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\imaglist.h
+	"wx/defs.h"
 	"wx/generic/imaglist.h"
 	"wx/msw/imaglist.h"
-	"wx/mac/imaglist.h"
+	"wx/osx/imaglist.h"
 
-1186404086 c:\workspace\libraries\wx2812gl\include\wx\generic\imaglist.h
-	"wx/defs.h"
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\imaglist.h
 	"wx/list.h"
-	"wx/icon.h"
 
-1186404050 c:\workspace\libraries\wx2812gl\include\wx\msw\imaglist.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\imaglist.h
 	"wx/bitmap.h"
 
-1186404048 c:\workspace\libraries\wx2812gl\include\wx\msw\wince\tbarwce.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\wince\tbarwce.h
 	"wx/dynarray.h"
-	"wx/msw/tbar95.h"
+	"wx/msw/toolbar.h"
 
-1194610578 c:\workspace\libraries\wx2812gl\include\wx\layout.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\layout.h
 	"wx/object.h"
 
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\sizer.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\sizer.h
 	"wx/defs.h"
 	"wx/window.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\mdi.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\choicdlg.h
 	"wx/defs.h"
-	"wx/generic/mdig.h"
-	"wx/msw/mdi.h"
-	"wx/motif/mdi.h"
-	"wx/gtk/mdi.h"
-	"wx/gtk1/mdi.h"
-	"wx/mac/mdi.h"
-	"wx/cocoa/mdi.h"
-	"wx/generic/mdig.h"
-
-1186404086 c:\workspace\libraries\wx2812gl\include\wx\generic\mdig.h
-	"wx/frame.h"
-	"wx/panel.h"
-	"wx/notebook.h"
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\notebook.h
-	"wx/defs.h"
-	"wx/bookctrl.h"
-	"wx/univ/notebook.h"
-	"wx/msw/notebook.h"
-	"wx/generic/notebook.h"
-	"wx/gtk/notebook.h"
-	"wx/gtk1/notebook.h"
-	"wx/mac/notebook.h"
-	"wx/cocoa/notebook.h"
-	"wx/os2/notebook.h"
-
-1194610580 c:\workspace\libraries\wx2812gl\include\wx\bookctrl.h
-	"wx/defs.h"
-	"wx/control.h"
-	"wx/dynarray.h"
-	"wx/notebook.h"
-	"wx/choicebk.h"
-
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\choicebk.h
-	"wx/defs.h"
-	"wx/bookctrl.h"
-	"wx/choice.h"
-
-1264667158 c:\workspace\libraries\wx2812gl\include\wx\univ\notebook.h
-	"wx/arrstr.h"
-
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\notebook.h
-	"wx/control.h"
-
-1186404086 c:\workspace\libraries\wx2812gl\include\wx\generic\notebook.h
-	"wx/event.h"
-	"wx/control.h"
-
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\mdi.h
-	"wx/frame.h"
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\statusbr.h
-	"wx/defs.h"
-	"wx/window.h"
-	"wx/list.h"
-	"wx/dynarray.h"
-	"wx/univ/statusbr.h"
-	"wx/palmos/statusbr.h"
-	"wx/msw/statbr95.h"
-	"wx/generic/statusbr.h"
-	"wx/mac/statusbr.h"
-	"wx/generic/statusbr.h"
-
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\statusbr.h
-	"wx/univ/inpcons.h"
-	"wx/arrstr.h"
-
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\statbr95.h
-
-1186404086 c:\workspace\libraries\wx2812gl\include\wx\generic\statusbr.h
-	"wx/defs.h"
-	"wx/pen.h"
-	"wx/arrstr.h"
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\choicdlg.h
 	"wx/generic/choicdgg.h"
 
-1194610578 c:\workspace\libraries\wx2812gl\include\wx\generic\choicdgg.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\choicdgg.h
 	"wx/dynarray.h"
 	"wx/dialog.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\textdlg.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\textdlg.h
 	"wx/generic/textdlgg.h"
-	"wx/numdlg.h"
 
-1194610578 c:\workspace\libraries\wx2812gl\include\wx\generic\textdlgg.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\textdlgg.h
 	"wx/defs.h"
 	"wx/dialog.h"
 	"wx/valtext.h"
-
-1264667164 c:\workspace\libraries\wx2812gl\include\wx\valtext.h
-	"wx/defs.h"
 	"wx/textctrl.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\valtext.h
+	"wx/defs.h"
 	"wx/validate.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\numdlg.h
-	"wx/defs.h"
-	"wx/generic/numdlgg.h"
-
-1194610578 c:\workspace\libraries\wx2812gl\include\wx\generic\numdlgg.h
-	"wx/defs.h"
-	"wx/dialog.h"
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\filedlg.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\filedlg.h
 	"wx/defs.h"
 	"wx/dialog.h"
 	"wx/arrstr.h"
@@ -1723,38 +1857,98 @@
 	"wx/msw/filedlg.h"
 	"wx/motif/filedlg.h"
 	"wx/gtk/filedlg.h"
-	"wx/generic/filedlgg.h"
 	"wx/gtk1/filedlg.h"
-	"wx/mac/filedlg.h"
+	"wx/osx/filedlg.h"
 	"wx/cocoa/filedlg.h"
 	"wx/os2/filedlg.h"
 
-1186404086 c:\workspace\libraries\wx2812gl\include\wx\generic\filedlgg.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\filedlgg.h
 	"wx/listctrl.h"
 	"wx/datetime.h"
 	"wx/filefn.h"
+	"wx/artprov.h"
 	"wx/filedlg.h"
+	"wx/generic/filectrlg.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\listctrl.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\listctrl.h
 	"wx/defs.h"
 	"wx/listbase.h"
 	"wx/msw/listctrl.h"
-	"wx/mac/carbon/listctrl.h"
+	"wx/osx/listctrl.h"
 	"wx/generic/listctrl.h"
 
-1186404094 c:\workspace\libraries\wx2812gl\include\wx\listbase.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\listbase.h
 	"wx/colour.h"
 	"wx/font.h"
 	"wx/gdicmn.h"
 	"wx/event.h"
+	"wx/control.h"
 
-1220334942 c:\workspace\libraries\wx2812gl\include\wx\msw\listctrl.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\listctrl.h
+	"wx/textctrl.h"
+	"wx/dynarray.h"
+	"wx/vector.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\listctrl.h
+	"wx/containr.h"
+	"wx/scrolwin.h"
 	"wx/textctrl.h"
 
-1264667164 c:\workspace\libraries\wx2812gl\include\wx\generic\listctrl.h
-	"wx/textctrl.h"
+1412500748 c:\workspace\libraries\wx302gl\include\wx\artprov.h
+	"wx/string.h"
+	"wx/bitmap.h"
+	"wx/icon.h"
+	"wx/iconbndl.h"
 
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\filedlg.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\filectrlg.h
+	"wx/containr.h"
+	"wx/listctrl.h"
+	"wx/filectrl.h"
+	"wx/filename.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\filectrl.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/event.h"
+	"wx/gtk/filectrl.h"
+	"wx/generic/filectrlg.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\filename.h
+	"wx/arrstr.h"
+	"wx/filefn.h"
+	"wx/datetime.h"
+	"wx/intl.h"
+	"wx/longlong.h"
+	"wx/file.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\file.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/filefn.h"
+	"wx/convauto.h"
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\convauto.h
+	"wx/strconv.h"
+	"wx/fontenc.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\filedlg.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\mdi.h
+	"wx/defs.h"
+	"wx/frame.h"
+	"wx/menu.h"
+	"wx/generic/mdig.h"
+	"wx/msw/mdi.h"
+	"wx/gtk/mdi.h"
+	"wx/gtk1/mdi.h"
+	"wx/osx/mdi.h"
+	"wx/cocoa/mdi.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\mdig.h
+	"wx/panel.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\mdi.h
+	"wx/frame.h"
 
 1416433635 c:\workspace\projects\fux\include\application\application.h
 	<wx/wx.h>
@@ -1765,9 +1959,11 @@
 	"../network/TCPClient.h"
 	"../network/TCPConnexionEchangeInstanceLocalHost.h"
 
-1194610580 c:\workspace\libraries\wx2812gl\include\wx\snglinst.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\snglinst.h
+	"wx/app.h"
+	"wx/utils.h"
 
-1417769896 c:\workspace\projects\fux\include\gui\widgets\fenetre.h
+1420391702 c:\workspace\projects\fux\include\gui\widgets\fenetre.h
 	<wx/wx.h>
 	<wx/app.h>
 	<wx/notebook.h>
@@ -1790,65 +1986,103 @@
 	"../tools/ArrayFenetreDetachable.h"
 	"./BoutonFenetreDetachable.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\spinctrl.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\notebook.h
+	"wx/defs.h"
+	"wx/bookctrl.h"
+	"wx/univ/notebook.h"
+	"wx/msw/notebook.h"
+	"wx/generic/notebook.h"
+	"wx/gtk/notebook.h"
+	"wx/gtk1/notebook.h"
+	"wx/osx/notebook.h"
+	"wx/cocoa/notebook.h"
+	"wx/os2/notebook.h"
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\bookctrl.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/dynarray.h"
+	"wx/withimages.h"
+	"wx/notebook.h"
+	"wx/choicebk.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\withimages.h
+	"wx/defs.h"
+	"wx/icon.h"
+	"wx/imaglist.h"
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\choicebk.h
+	"wx/defs.h"
+	"wx/bookctrl.h"
+	"wx/choice.h"
+	"wx/containr.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\notebook.h
+	"wx/arrstr.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\notebook.h
+	"wx/control.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\notebook.h
+	"wx/event.h"
+	"wx/control.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\spinctrl.h
 	"wx/defs.h"
 	"wx/spinbutt.h"
-	"wx/generic/spinctlg.h"
 	"wx/msw/spinctrl.h"
 	"wx/os2/spinctrl.h"
 	"wx/gtk/spinctrl.h"
 	"wx/gtk1/spinctrl.h"
 	"wx/generic/spinctlg.h"
-	"wx/mac/spinctrl.h"
-	"wx/generic/spinctlg.h"
 
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\spinbutt.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\spinbutt.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/event.h"
+	"wx/range.h"
 	"wx/univ/spinbutt.h"
 	"wx/msw/spinbutt.h"
 	"wx/motif/spinbutt.h"
 	"wx/gtk/spinbutt.h"
 	"wx/gtk1/spinbutt.h"
-	"wx/mac/spinbutt.h"
+	"wx/osx/spinbutt.h"
 	"wx/cocoa/spinbutt.h"
 	"wx/os2/spinbutt.h"
 
-1264667158 c:\workspace\libraries\wx2812gl\include\wx\univ\spinbutt.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\range.h
+	"wx/defs.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\spinbutt.h
 	"wx/univ/scrarrow.h"
 
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\spinbutt.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\spinbutt.h
 	"wx/control.h"
 	"wx/event.h"
 
-1264667164 c:\workspace\libraries\wx2812gl\include\wx\generic\spinctlg.h
-	"wx/textctrl.h"
-
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\spinctrl.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\spinctrl.h
 	"wx/spinbutt.h"
 	"wx/dynarray.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\textfile.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\spinctlg.h
+	"wx/compositewin.h"
+	"wx/textctrl.h"
+
+1412500748 c:\workspace\libraries\wx302gl\include\wx\compositewin.h
+	"wx/window.h"
+	"wx/containr.h"
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\textfile.h
 	"wx/defs.h"
 	"wx/textbuf.h"
 	"wx/file.h"
 
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\textbuf.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\textbuf.h
 	"wx/defs.h"
 	"wx/arrstr.h"
 	"wx/convauto.h"
 	"wx/string.h"
 	"wx/dynarray.h"
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\convauto.h
-	"wx/strconv.h"
-
-1186404094 c:\workspace\libraries\wx2812gl\include\wx\file.h
-	"wx/defs.h"
-	"wx/string.h"
-	"wx/filefn.h"
-	"wx/strconv.h"
 
 1416433635 c:\workspace\projects\fux\include\settings\parametre.h
 	"../Define.h"
@@ -1862,7 +2096,7 @@
 	<wx/xml/xml.h>
 	"Couleur.h"
 
-1416433635 c:\workspace\projects\fux\include\define.h
+1420014359 c:\workspace\projects\fux\include\define.h
 	<wx/wx.h>
 	"constants/enums.h"
 	"constants/events.h"
@@ -1871,7 +2105,7 @@
 
 1416433635 c:\workspace\projects\fux\include\constants\enums.h
 
-1416433635 c:\workspace\projects\fux\include\constants\events.h
+1420389920 c:\workspace\projects\fux\include\constants\events.h
 
 1416433635 c:\workspace\projects\fux\include\constants\ids.h
 
@@ -1891,30 +2125,31 @@
 	"../../settings/Couleur.h"
 	"../../tools/FichierLog.h"
 
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\glcanvas.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\glcanvas.h
 	"wx/defs.h"
+	"wx/app.h"
+	"wx/palette.h"
+	"wx/window.h"
 	"wx/msw/glcanvas.h"
 	"wx/x11/glcanvas.h"
 	"wx/gtk/glcanvas.h"
 	"wx/gtk1/glcanvas.h"
-	"wx/x11/glcanvas.h"
-	"wx/mac/glcanvas.h"
+	"wx/osx/glcanvas.h"
 	"wx/cocoa/glcanvas.h"
-	"wx/app.h"
 
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\glcanvas.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\glcanvas.h
 	"wx/palette.h"
-	"wx/scrolwin.h"
 	"wx/msw/wrapwin.h"
 	<GL/gl.h>
 
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\dir.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\dir.h
 	"wx/longlong.h"
 	"wx/string.h"
+	"wx/filefn.h"
 
 1416433635 c:\workspace\projects\fux\include\classes.h
 
-1419728159 c:\workspace\projects\fux\include\music\musicmanager.h
+1420389995 c:\workspace\projects\fux\include\music\musicmanager.h
 	<wx/wx.h>
 	<ctime>
 	<algorithm>
@@ -1930,7 +2165,7 @@
 
 1416433635 c:\workspace\projects\fux\include\music\duree.h
 
-1419728575 c:\workspace\projects\fux\include\music\musiclist.h
+1420388883 c:\workspace\projects\fux\include\music\musiclist.h
 	<wx/wx.h>
 	<vector>
 	<wx/dir.h>
@@ -1955,22 +2190,17 @@
 1416433635 c:\workspace\projects\fux\include\music\chansonnompos.h
 	"wx/wx.h"
 
-1419440329 c:\workspace\projects\fux\include\music\musicfilethreadmanager.h
+1420202626 c:\workspace\projects\fux\include\music\factory.h
 	<wx/wx.h>
-	<wx/thread.h>
-	"ThreadSafeQueue.h"
+	"Music.h"
 	"MusicFile.h"
 	"MusicFileReader.h"
 	"MusicFileWriter.h"
-
-1419439594 c:\workspace\projects\fux\include\tools\stl\threadsafequeue.h
-	<queue>
-	<wx/wx.h>
-	<wx/thread.h>
+	"MusicFileReaderThread.h"
 
 1419727807 c:\workspace\projects\fux\include\music\musicfile.h
 
-1419164311 c:\workspace\projects\fux\include\music\musicfilereader.h
+1420201629 c:\workspace\projects\fux\include\music\musicfilereader.h
 	<wx/wx.h>
 	<wx/stdpaths.h>
 	<wx/filename.h>
@@ -1985,27 +2215,20 @@
 	<id3v2tag.h>
 	<attachedpictureframe.h>
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\stdpaths.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\stdpaths.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/filefn.h"
 	"wx/msw/stdpaths.h"
-	"wx/mac/corefoundation/stdpaths.h"
+	"wx/osx/core/stdpaths.h"
 	"wx/os2/stdpaths.h"
 	"wx/unix/stdpaths.h"
-	"wx/palmos/stdpaths.h"
 
-1186404050 c:\workspace\libraries\wx2812gl\include\wx\msw\stdpaths.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\stdpaths.h
 
-1186403996 c:\workspace\libraries\wx2812gl\include\wx\unix\stdpaths.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\unix\stdpaths.h
 
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\filename.h
-	"wx/arrstr.h"
-	"wx/filefn.h"
-	"wx/datetime.h"
-	"wx/intl.h"
-
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\mstream.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\mstream.h
 	"wx/defs.h"
 	"wx/stream.h"
 
@@ -2149,6 +2372,14 @@
 	<id3v2tag.h>
 	<attachedpictureframe.h>
 
+1420223271 c:\workspace\projects\fux\include\music\musicfilereaderthread.h
+	<wx/wx.h>
+	<wx/event.h>
+	"IRunnable.h"
+	"MusicFileReader.h"
+
+1419772199 c:\workspace\projects\fux\include\tools\thread\irunnable.h
+
 1416433635 c:\workspace\projects\fux\include\tools\dir_traverser\isearchtraversable.h
 
 1416433635 c:\workspace\projects\fux\include\tools\dir_traverser\search.h
@@ -2157,6 +2388,31 @@
 	<wx/dir.h>
 	"../../settings/Parametre.h"
 	"ISearchTraversable.h"
+
+1419773955 c:\workspace\projects\fux\include\tools\thread\threadmanager.h
+	<vector>
+	"IThreadManager.h"
+	"ThreadSafeQueue.h"
+	"ThreadProcess.h"
+	"Factory.h"
+
+1419772284 c:\workspace\projects\fux\include\tools\thread\ithreadmanager.h
+	"ThreadProcess.h"
+
+1419773084 c:\workspace\projects\fux\include\tools\thread\threadprocess.h
+	<wx/wx.h>
+	<wx/thread.h>
+	"IThreadManager.h"
+	"IRunnable.h"
+
+1419439594 c:\workspace\projects\fux\include\tools\stl\threadsafequeue.h
+	<queue>
+	<wx/wx.h>
+	<wx/thread.h>
+
+1419941599 c:\workspace\projects\fux\include\tools\thread\factory.h
+	"ThreadProcess.h"
+	"IThreadManager.h"
 
 1416433635 c:\workspace\projects\fux\include\predicates\findposition.h
 	"../music/IMusic.h"
@@ -2175,11 +2431,12 @@
 	<wx/wx.h>
 	<wx/xml/xml.h>
 
-1264667160 c:\workspace\libraries\wx2812gl\include\wx\xml\xml.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\xml\xml.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/object.h"
 	"wx/list.h"
+	"wx/versioninfo.h"
 
 1416433635 c:\workspace\projects\fux\include\tools\fichierlog.h
 	<wx/wx.h>
@@ -2206,13 +2463,12 @@
 	<wx/treectrl.h>
 	"../../Define.h"
 
-1194610580 c:\workspace\libraries\wx2812gl\include\wx\treectrl.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\treectrl.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/treebase.h"
 	"wx/textctrl.h"
 	"wx/generic/treectlg.h"
-	"wx/palmos/treectrl.h"
 	"wx/msw/treectrl.h"
 	"wx/generic/treectlg.h"
 	"wx/generic/treectlg.h"
@@ -2220,17 +2476,20 @@
 	"wx/generic/treectlg.h"
 	"wx/generic/treectlg.h"
 
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\treebase.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\treebase.h
 	"wx/defs.h"
 	"wx/window.h"
 	"wx/event.h"
 	"wx/dynarray.h"
+	"wx/itemid.h"
 
-1195455332 c:\workspace\libraries\wx2812gl\include\wx\generic\treectlg.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\itemid.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\treectlg.h
 	"wx/scrolwin.h"
 	"wx/pen.h"
 
-1194610574 c:\workspace\libraries\wx2812gl\include\wx\msw\treectrl.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\treectrl.h
 	"wx/textctrl.h"
 	"wx/dynarray.h"
 	"wx/treebase.h"
@@ -2268,7 +2527,7 @@
 	"../../Define.h"
 	"../../settings/Parametre.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\statline.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\statline.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/univ/statline.h"
@@ -2276,17 +2535,17 @@
 	"wx/gtk/statline.h"
 	"wx/gtk1/statline.h"
 	"wx/os2/statline.h"
-	"wx/mac/statline.h"
+	"wx/osx/statline.h"
 	"wx/cocoa/statline.h"
 	"wx/generic/statline.h"
 
-1186403994 c:\workspace\libraries\wx2812gl\include\wx\univ\statline.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\univ\statline.h
 
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\statline.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\statline.h
 
-1186404086 c:\workspace\libraries\wx2812gl\include\wx\generic\statline.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\statline.h
 
-1418423911 c:\workspace\projects\fux\include\gui\musiclist\playlist.h
+1420200191 c:\workspace\projects\fux\include\gui\musiclist\playlist.h
 	"../../Define.h"
 	<wx/wx.h>
 	<wx/stdpaths.h>
@@ -2299,12 +2558,6 @@
 	<wx/progdlg.h>
 	<wx/mstream.h>
 	<wx/srchctrl.h>
-	<tag.h>
-	<fileref.h>
-	<taglib.h>
-	<mpegfile.h>
-	<id3v2tag.h>
-	<attachedpictureframe.h>
 	"../../music/MusicManager.h"
 	"PlayListTableau.h"
 	"../dialogs/DialogEnregistreM3U.h"
@@ -2313,49 +2566,52 @@
 	"../../tools/OS_Win.h"
 	"../widgets/SliderSon.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\collpane.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\collpane.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/gtk/collpane.h"
 	"wx/generic/collpaneg.h"
 
-1195455332 c:\workspace\libraries\wx2812gl\include\wx\generic\collpaneg.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\collpaneg.h
+	"wx/containr.h"
 
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\gbsizer.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\gbsizer.h
 	"wx/sizer.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\tarstrm.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\tarstrm.h
 	"wx/defs.h"
 	"wx/archive.h"
 	"wx/hashmap.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\archive.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\archive.h
 	"wx/defs.h"
 	"wx/stream.h"
 	"wx/filename.h"
 	<iterator>
 	<utility>
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\progdlg.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\progdlg.h
 	"wx/defs.h"
-	"wx/palmos/progdlg.h"
 	"wx/generic/progdlgg.h"
+	"wx/msw/progdlg.h"
 
-1211172694 c:\workspace\libraries\wx2812gl\include\wx\generic\progdlgg.h
-	"wx/defs.h"
-	"wx/progdlg.h"
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\progdlgg.h
 	"wx/dialog.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\srchctrl.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\progdlg.h
+
+1412500750 c:\workspace\libraries\wx302gl\include\wx\srchctrl.h
 	"wx/defs.h"
 	"wx/textctrl.h"
-	"wx/mac/srchctrl.h"
+	"wx/compositewin.h"
+	"wx/containr.h"
+	"wx/osx/srchctrl.h"
 	"wx/generic/srchctlg.h"
 
-1211172694 c:\workspace\libraries\wx2812gl\include\wx\generic\srchctlg.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\srchctlg.h
 	"wx/bitmap.h"
 
-1419800330 c:\workspace\projects\fux\include\gui\musiclist\playlisttableau.h
+1420377420 c:\workspace\projects\fux\include\gui\musiclist\playlisttableau.h
 	"../../Define.h"
 	<wx/wx.h>
 	<wx/stdpaths.h>
@@ -2375,7 +2631,7 @@
 	"../../db/BDDRequete.h"
 	"../../db/BDDThread.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\dnd.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\dnd.h
 	"wx/defs.h"
 	"wx/dataobj.h"
 	"wx/cursor.h"
@@ -2385,12 +2641,12 @@
 	"wx/x11/dnd.h"
 	"wx/gtk/dnd.h"
 	"wx/gtk1/dnd.h"
-	"wx/mac/dnd.h"
+	"wx/osx/dnd.h"
 	"wx/os2/dnd.h"
 
-1194610574 c:\workspace\libraries\wx2812gl\include\wx\msw\ole\dropsrc.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\ole\dropsrc.h
 
-1186404042 c:\workspace\libraries\wx2812gl\include\wx\msw\ole\droptgt.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\ole\droptgt.h
 
 1416433635 c:\workspace\projects\fux\include\tools\dnd\dndcible.h
 	<wx/wx.h>
@@ -2509,11 +2765,12 @@
 	"GestionPeriphMoitiePage.h"
 	"GestionPeriphElementLecteurRacineFichier.h"
 
-1264667166 c:\workspace\libraries\wx2812gl\include\wx\mimetype.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\mimetype.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/dynarray.h"
 	"wx/arrstr.h"
+	<stdarg.h>
 
 1416433635 c:\workspace\projects\fux\include\gui\explorer\gestionperiphelementlecteurracinefichier.h
 	<wx/wx.h>
@@ -2546,7 +2803,7 @@
 	<wx/string.h>
 	"wx/wxsqlite3def.h"
 
-1234515646 c:\workspace\libraries\wx2812gl\include\wx\regex.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\regex.h
 	"wx/defs.h"
 	"wx/string.h"
 
@@ -2591,71 +2848,44 @@
 	"../Define.h"
 	"TCPConnexionEchangeInstanceLocalHost.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\ipc.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\ipc.h
 	"wx/dde.h"
 	"wx/sckipc.h"
 
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\dde.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\dde.h
 	"wx/list.h"
 	"wx/msw/dde.h"
 
-1211172690 c:\workspace\libraries\wx2812gl\include\wx\msw\dde.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\msw\dde.h
 	"wx/ipcbase.h"
 
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\ipcbase.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\ipcbase.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/string.h"
 
-1211172696 c:\workspace\libraries\wx2812gl\include\wx\sckipc.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\sckipc.h
 	"wx/defs.h"
 	"wx/ipcbase.h"
 	"wx/socket.h"
 	"wx/sckstrm.h"
 	"wx/datstrm.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\socket.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\socket.h
 	"wx/defs.h"
 	"wx/event.h"
 	"wx/sckaddr.h"
-	"wx/gsocket.h"
 	"wx/list.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\sckaddr.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\sckaddr.h
 	"wx/defs.h"
 	"wx/string.h"
-	"wx/gsocket.h"
-	<sys/socket.h>
-	<sys/un.h>
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\gsocket.h
-	"wx/defs.h"
-	"wx/dlimpexp.h"
-	<stddef.h>
-	<sys/types.h>
-	<stdlib.h>
-	"wx/msw/gsockmsw.h"
-	"wx/mac/gsockmac.h"
-	"wx/unix/gsockunx.h"
-
-1186404052 c:\workspace\libraries\wx2812gl\include\wx\msw\gsockmsw.h
-	"wx/setup.h"
-	"wx/gsocket.h"
-	"gsocket.h"
-	"wx/msw/wrapwin.h"
-	<sys/types.h>
-	<winsock.h>
-
-1186403996 c:\workspace\libraries\wx2812gl\include\wx\unix\gsockunx.h
-	"wx/setup.h"
-	"wx/gsocket.h"
-	"gsocket.h"
-
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\sckstrm.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\sckstrm.h
 	"wx/stream.h"
 	"wx/socket.h"
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\datstrm.h
+1412500748 c:\workspace\libraries\wx302gl\include\wx\datstrm.h
 	"wx/stream.h"
 	"wx/longlong.h"
 	"wx/convauto.h"
@@ -2687,17 +2917,17 @@
 	"../Define.h"
 	"TCPConnexionEchangeInstanceLocalHost.h"
 
-1416433636 source:c:\workspace\projects\fux\src\db\bdd.cpp
+1420201180 source:c:\workspace\projects\fux\src\db\bdd.cpp
 	"wx/wxprec.h"
 	"../../include/db/BDD.h"
 
-1416433636 source:c:\workspace\projects\fux\src\db\bddrequete.cpp
+1420201180 source:c:\workspace\projects\fux\src\db\bddrequete.cpp
 	"../../include/db/BDDRequete.h"
 
-1416433636 source:c:\workspace\projects\fux\src\db\bddthread.cpp
+1420201180 source:c:\workspace\projects\fux\src\db\bddthread.cpp
 	"../../include/db/BDDThread.h"
 
-1416433636 source:c:\workspace\projects\fux\src\db\bddthreadevent.cpp
+1420201180 source:c:\workspace\projects\fux\src\db\bddthreadevent.cpp
 	"../../include/db/BDDThreadEvent.h"
 
 1416433636 source:c:\workspace\projects\fux\src\explorer\explorerdrivemanagers.cpp
@@ -2780,13 +3010,13 @@
 1416433635 c:\workspace\projects\fux\include\explorer\state\playlistdrivemanagerstate.h
 	"DriveManagerState.h"
 
-1418427750 source:c:\workspace\projects\fux\src\gui\dialogs\dialogenregistrem3u.cpp
+1420201180 source:c:\workspace\projects\fux\src\gui\dialogs\dialogenregistrem3u.cpp
 	"../../../include/gui/dialogs/DialogEnregistreM3U.h"
 
-1416433636 source:c:\workspace\projects\fux\src\gui\dialogs\dialogtagmp3.cpp
+1420201180 source:c:\workspace\projects\fux\src\gui\dialogs\dialogtagmp3.cpp
 	"../../../include/gui/dialogs/DialogTagMP3.h"
 
-1416433636 source:c:\workspace\projects\fux\src\gui\dialogs\dialogtagmp3info.cpp
+1420201180 source:c:\workspace\projects\fux\src\gui\dialogs\dialogtagmp3info.cpp
 	"../../../include/gui/dialogs/DialogTagMP3Info.h"
 
 1416433636 source:c:\workspace\projects\fux\src\gui\explorer\drivemanagerspanel.cpp
@@ -2798,123 +3028,63 @@
 1416433636 source:c:\workspace\projects\fux\src\gui\explorer\explorerpanel.cpp
 	"../../../include/gui/explorer/ExplorerPanel.h"
 
-1416433636 source:c:\workspace\projects\fux\src\gui\explorer\gestionperiph.cpp
+1420201180 source:c:\workspace\projects\fux\src\gui\explorer\gestionperiph.cpp
 	"../../../include/gui/explorer/GestionPeriph.h"
 	<wx/volume.h>
 
-1186404092 c:\workspace\libraries\wx2812gl\include\wx\volume.h
+1412500750 c:\workspace\libraries\wx302gl\include\wx\volume.h
 	"wx/defs.h"
 	"wx/arrstr.h"
 	"wx/icon.h"
 	"wx/iconbndl.h"
 
-1418256130 source:c:\workspace\projects\fux\src\gui\explorer\gestionperiphcoupercopier.cpp
+1420201180 source:c:\workspace\projects\fux\src\gui\explorer\gestionperiphcoupercopier.cpp
 	"../../../include/gui/explorer/GestionPeriphCouperCopier.h"
 
-1416433636 source:c:\workspace\projects\fux\src\gui\explorer\gestionperiphelementlecteurracinefichier.cpp
+1420201180 source:c:\workspace\projects\fux\src\gui\explorer\gestionperiphelementlecteurracinefichier.cpp
 	"../../../include/gui/explorer/GestionPeriphElementLecteurRacineFichier.h"
 
-1418256213 source:c:\workspace\projects\fux\src\gui\explorer\gestionperiphmoitiepage.cpp
+1420392027 source:c:\workspace\projects\fux\src\gui\explorer\gestionperiphmoitiepage.cpp
 	"../../../include/gui/explorer/GestionPeriphMoitiePage.h"
 
-1416433636 source:c:\workspace\projects\fux\src\gui\explorer\gestionperiphtableau.cpp
+1420201180 source:c:\workspace\projects\fux\src\gui\explorer\gestionperiphtableau.cpp
 	"../../../include/gui/explorer/GestionPeriph.h"
 
-1418256250 source:c:\workspace\projects\fux\src\gui\graph\musiquegraph.cpp
+1420201180 source:c:\workspace\projects\fux\src\gui\graph\musiquegraph.cpp
 	"../../../include/gui/graph/MusiqueGraph.h"
 
-1419292526 source:c:\workspace\projects\fux\src\gui\musiclist\playlist.cpp
+1420391930 source:c:\workspace\projects\fux\src\gui\musiclist\playlist.cpp
 	"../../../include/gui/musiclist/PlayList.h"
 
-1419800948 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
+1420378921 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
 	"../../../include/gui/musiclist/PlayList.h"
 
-1416433636 source:c:\workspace\projects\fux\src\gui\settings\preferencecouleur.cpp
+1420392088 source:c:\workspace\projects\fux\src\gui\settings\preferencecouleur.cpp
 	"../../../include/gui/settings/PreferenceCouleur.h"
 
-1416433636 source:c:\workspace\projects\fux\src\gui\settings\preferencedefaut.cpp
+1420392027 source:c:\workspace\projects\fux\src\gui\settings\preferencedefaut.cpp
 	"../../../include/gui/settings/PreferenceDefaut.h"
 
-1416433636 source:c:\workspace\projects\fux\src\gui\settings\preferenceson.cpp
+1420238409 source:c:\workspace\projects\fux\src\gui\settings\preferenceson.cpp
 	"../../../include/gui/settings/PreferenceSon.h"
 
-1416433636 source:c:\workspace\projects\fux\src\gui\tools\arrayfenetredetachable.cpp
+1420201180 source:c:\workspace\projects\fux\src\gui\tools\arrayfenetredetachable.cpp
 	"../../../include/gui/tools/ArrayFenetreDetachable.h"
 
-1416433636 source:c:\workspace\projects\fux\src\gui\tools\dropfichierimagepochettemusique.cpp
+1420201180 source:c:\workspace\projects\fux\src\gui\tools\dropfichierimagepochettemusique.cpp
 	"../../../include/gui/tools/DropFichierImagePochetteMusique.h"
 
-1416433636 source:c:\workspace\projects\fux\src\gui\tools\imagetext.cpp
+1420201180 source:c:\workspace\projects\fux\src\gui\tools\imagetext.cpp
 	"../../../include/gui/tools/ImageText.h"
 
-1416433636 source:c:\workspace\projects\fux\src\gui\widgets\boutonfenetredetachable.cpp
+1420201180 source:c:\workspace\projects\fux\src\gui\widgets\boutonfenetredetachable.cpp
 	"../../../include/gui/widgets/BoutonFenetreDetachable.h"
-
-1419200181 source:c:\workspace\projects\fux\src\gui\widgets\fenetre.cpp
-	"wx/wxprec.h"
-	"../../../include/gui/widgets/Fenetre.h"
-
-1416433636 source:c:\workspace\projects\fux\src\gui\widgets\fenetredetachable.cpp
-	"../../../include/gui/widgets/FenetreDetachable.h"
-
-1416433636 source:c:\workspace\projects\fux\src\gui\widgets\generictreepanel.cpp
-	"../../../include/gui/widgets/GenericTreePanel.h"
-
-1418214183 source:c:\workspace\projects\fux\src\gui\widgets\imagepochettemusique.cpp
-	"../../../include/gui/widgets/ImagePochetteMusique.h"
-
-1416433636 source:c:\workspace\projects\fux\src\gui\widgets\sliderson.cpp
-	"../../../include/gui/widgets/SliderSon.h"
 
 1416433636 source:c:\workspace\projects\fux\src\music\chansonnompos.cpp
 	"../../include/music/ChansonNomPos.h"
 
-1418855189 source:c:\workspace\projects\fux\src\music\duree.cpp
-	"../../include/music/Duree.h"
-
-1419941504 source:c:\workspace\projects\fux\src\music\factory.cpp
-	"../../include/music/Factory.h"
-
-1419941617 c:\workspace\projects\fux\include\music\factory.h
-	<wx/wx.h>
-	"Music.h"
-	"MusicFile.h"
-	"MusicFileReader.h"
-	"MusicFileWriter.h"
-	"MusicFileReaderThread.h"
-
-1419102267 source:c:\workspace\projects\fux\src\music\music.cpp
-	"../../include/music/Music.h"
-
-1418853028 source:c:\workspace\projects\fux\src\music\musicfile.cpp
-	"MusicFile.h"
-
-1419164450 source:c:\workspace\projects\fux\src\music\musicfilereader.cpp
-	"MusicFileReader.h"
-
-1419441967 source:c:\workspace\projects\fux\src\music\musicfilethreadmanager.cpp
-	"MusicFileThreadManager.h"
-
-1419199517 source:c:\workspace\projects\fux\src\music\musicfilewriter.cpp
-	"MusicFileWriter.h"
-
-1419728651 source:c:\workspace\projects\fux\src\music\musiclist.cpp
-	"../../include/music/MusicList.h"
-
-1419728671 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
-	"../../include/music/MusicManager.h"
-
 1418512172 source:c:\workspace\projects\fux\src\music\musicplayer.cpp
 	"../../include/music/MusicPlayer.h"
-
-1416433636 source:c:\workspace\projects\fux\src\network\tcpclient.cpp
-	"../../include/network/TCPClient.h"
-
-1416433636 source:c:\workspace\projects\fux\src\network\tcpconnexionechangeinstancelocalhost.cpp
-	"../../include/network/TCPConnexionEchangeInstanceLocalHost.h"
-
-1416433636 source:c:\workspace\projects\fux\src\network\tcpserveur.cpp
-	"../../include/network/TCPServeur.h"
 
 1416433636 source:c:\workspace\projects\fux\src\predicates\findposition.cpp
 	"../../include/predicates/findPosition.h"
@@ -2933,25 +3103,74 @@
 
 1416433636 source:c:\workspace\projects\fux\src\ressources\suppr.c
 
-1416433636 source:c:\workspace\projects\fux\src\settings\couleur.cpp
+1420391691 source:c:\workspace\projects\fux\src\gui\widgets\fenetre.cpp
+	"wx/wxprec.h"
+	"../../../include/gui/widgets/Fenetre.h"
+
+1420201180 source:c:\workspace\projects\fux\src\gui\widgets\fenetredetachable.cpp
+	"../../../include/gui/widgets/FenetreDetachable.h"
+
+1420201180 source:c:\workspace\projects\fux\src\gui\widgets\generictreepanel.cpp
+	"../../../include/gui/widgets/GenericTreePanel.h"
+
+1420201180 source:c:\workspace\projects\fux\src\gui\widgets\imagepochettemusique.cpp
+	"../../../include/gui/widgets/ImagePochetteMusique.h"
+
+1420201180 source:c:\workspace\projects\fux\src\gui\widgets\sliderson.cpp
+	"../../../include/gui/widgets/SliderSon.h"
+
+1420201180 source:c:\workspace\projects\fux\src\music\duree.cpp
+	"../../include/music/Duree.h"
+
+1420202617 source:c:\workspace\projects\fux\src\music\factory.cpp
+	"../../include/music/Factory.h"
+
+1420201180 source:c:\workspace\projects\fux\src\music\music.cpp
+	"../../include/music/Music.h"
+
+1420380050 source:c:\workspace\projects\fux\src\music\musicfilereader.cpp
+	"MusicFileReader.h"
+
+1420376256 source:c:\workspace\projects\fux\src\music\musicfilereaderthread.cpp
+	"MusicFileReaderThread.h"
+
+1420238574 source:c:\workspace\projects\fux\src\music\musicfilewriter.cpp
+	"MusicFileWriter.h"
+
+1420389502 source:c:\workspace\projects\fux\src\music\musiclist.cpp
+	"../../include/music/MusicList.h"
+
+1420390438 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
+	"../../include/music/MusicManager.h"
+
+1420201180 source:c:\workspace\projects\fux\src\network\tcpclient.cpp
+	"../../include/network/TCPClient.h"
+
+1420201180 source:c:\workspace\projects\fux\src\network\tcpconnexionechangeinstancelocalhost.cpp
+	"../../include/network/TCPConnexionEchangeInstanceLocalHost.h"
+
+1420201180 source:c:\workspace\projects\fux\src\network\tcpserveur.cpp
+	"../../include/network/TCPServeur.h"
+
+1420201180 source:c:\workspace\projects\fux\src\settings\couleur.cpp
 	"../../include/settings/Couleur.h"
 
-1418256250 source:c:\workspace\projects\fux\src\settings\parametre.cpp
+1420201180 source:c:\workspace\projects\fux\src\settings\parametre.cpp
 	"../../include/settings/Parametre.h"
 
-1416433636 source:c:\workspace\projects\fux\src\tools\dir_traverser\search.cpp
+1420201180 source:c:\workspace\projects\fux\src\tools\dir_traverser\search.cpp
 	"../../../include/tools/dir_traverser/Search.h"
 
-1416433636 source:c:\workspace\projects\fux\src\tools\dir_traverser\traversercopiedossier.cpp
+1420201180 source:c:\workspace\projects\fux\src\tools\dir_traverser\traversercopiedossier.cpp
 	"../../../include/tools/dir_traverser/TraverserCopieDossier.h"
 
-1416433636 source:c:\workspace\projects\fux\src\tools\dir_traverser\traversercopiefichier.cpp
+1420201180 source:c:\workspace\projects\fux\src\tools\dir_traverser\traversercopiefichier.cpp
 	"../../../include/tools/dir_traverser/TraverserCopieFichier.h"
 
-1416433636 source:c:\workspace\projects\fux\src\tools\dir_traverser\traverserdeplacefichier.cpp
+1420201180 source:c:\workspace\projects\fux\src\tools\dir_traverser\traverserdeplacefichier.cpp
 	"../../../include/tools/dir_traverser/TraverserDeplaceFichier.h"
 
-1416433636 source:c:\workspace\projects\fux\src\tools\dir_traverser\traversersupprimedossier.cpp
+1420201180 source:c:\workspace\projects\fux\src\tools\dir_traverser\traversersupprimedossier.cpp
 	"../../../include/tools/dir_traverser/TraverserSupprimeDossier.h"
 
 1416433635 c:\workspace\projects\fux\include\tools\dir_traverser\traversersupprimedossier.h
@@ -2962,25 +3181,25 @@
 	<wx/textfile.h>
 	"../../tools/ThreadGestion.h"
 
-1416433636 source:c:\workspace\projects\fux\src\tools\dir_traverser\traversersupprimefichier.cpp
+1420201180 source:c:\workspace\projects\fux\src\tools\dir_traverser\traversersupprimefichier.cpp
 	"../../../include/tools/dir_traverser/TraverserSupprimeFichier.h"
 
-1418256213 source:c:\workspace\projects\fux\src\tools\dnd\dndcible.cpp
+1420201180 source:c:\workspace\projects\fux\src\tools\dnd\dndcible.cpp
 	"../../../include/tools/dnd/DnDCible.h"
 
-1416433636 source:c:\workspace\projects\fux\src\tools\dnd\dndlistefichier.cpp
+1420201180 source:c:\workspace\projects\fux\src\tools\dnd\dndlistefichier.cpp
 	"../../../include/tools/dnd/DnDListeFichier.h"
 
-1416433636 source:c:\workspace\projects\fux\src\tools\dnd\musicplaylistdndbufferdata.cpp
+1420201180 source:c:\workspace\projects\fux\src\tools\dnd\musicplaylistdndbufferdata.cpp
 	"../../../include/tools/dnd/MusicPlayListDnDBufferData.h"
 
-1416433636 source:c:\workspace\projects\fux\src\tools\elementthreadfichier.cpp
+1420201180 source:c:\workspace\projects\fux\src\tools\elementthreadfichier.cpp
 	"../../include/tools/ElementThreadFichier.h"
 
-1416433636 source:c:\workspace\projects\fux\src\tools\fichierlog.cpp
+1420201180 source:c:\workspace\projects\fux\src\tools\fichierlog.cpp
 	"../../include/tools/FichierLog.h"
 
-1416433636 source:c:\workspace\projects\fux\src\tools\os_win.cpp
+1420201180 source:c:\workspace\projects\fux\src\tools\os_win.cpp
 	"../../include/tools/OS_Win.h"
 	<stdlib.h>
 	<stdio.h>
@@ -2991,57 +3210,22 @@
 	<shellapi.h>
 	<unistd.h>
 
-1416433636 source:c:\workspace\projects\fux\src\tools\threadgestion.cpp
+1420201180 source:c:\workspace\projects\fux\src\tools\thread\factory.cpp
+	"../../../include/tools/thread/Factory.h"
+
+1420271502 source:c:\workspace\projects\fux\src\tools\thread\threadmanager.cpp
+	"../../../include/tools/thread/ThreadManager.h"
+	<algorithm>
+
+1420387661 source:c:\workspace\projects\fux\src\tools\thread\threadprocess.cpp
+	"../../../include/tools/thread/ThreadProcess.h"
+
+1420201180 source:c:\workspace\projects\fux\src\tools\threadgestion.cpp
 	"../../include/tools/ThreadGestion.h"
 
-1418256250 source:c:\workspace\projects\fux\src\tools\timer.cpp
+1420201180 source:c:\workspace\projects\fux\src\tools\timer.cpp
 	<wx/wx.h>
 	<wx/app.h>
 	<wx/timer.h>
 	"../../include/tools/Timer.h"
-
-1419776487 source:c:\workspace\projects\fux\src\tools\thread\threadmanager.cpp
-	"../../../include/tools/thread/ThreadManager.h"
-	<algorithm>
-
-1419773955 c:\workspace\projects\fux\include\tools\thread\threadmanager.h
-	<vector>
-	"IThreadManager.h"
-	"ThreadSafeQueue.h"
-	"ThreadProcess.h"
-	"Factory.h"
-
-1419718946 source:c:\workspace\projects\fux\src\tools\thread\irunnable.cpp
-	"IRunnable.h"
-
-1419772199 c:\workspace\projects\fux\include\tools\thread\irunnable.h
-
-1419773084 c:\workspace\projects\fux\include\tools\thread\threadprocess.h
-	<wx/wx.h>
-	<wx/thread.h>
-	"IThreadManager.h"
-	"IRunnable.h"
-
-1419773007 source:c:\workspace\projects\fux\src\tools\thread\threadprocess.cpp
-	"../../../include/tools/thread/ThreadProcess.h"
-
-1419719724 source:c:\workspace\projects\fux\src\tools\thread\ithreadmanager.cpp
-	"IThreadManager.h"
-
-1419772284 c:\workspace\projects\fux\include\tools\thread\ithreadmanager.h
-	"ThreadProcess.h"
-
-1419773140 source:c:\workspace\projects\fux\src\tools\thread\factory.cpp
-	"../../../include/tools/thread/Factory.h"
-
-1419941599 c:\workspace\projects\fux\include\tools\thread\factory.h
-	"ThreadProcess.h"
-	"IThreadManager.h"
-
-1419940727 c:\workspace\projects\fux\include\music\musicfilereaderthread.h
-	"IRunnable.h"
-	"MusicFileReader.h"
-
-1419772644 source:c:\workspace\projects\fux\src\music\musicfilereaderthread.cpp
-	"MusicFileReaderThread.h"
 

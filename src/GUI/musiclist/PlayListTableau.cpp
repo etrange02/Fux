@@ -1,9 +1,9 @@
 /***************************************************************
  * Name:      PlayListTableau.cpp
  * Purpose:   Code for Fu(X) 2.0
- * Author:    David Lecoconnier (etrange02@aol.com)
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2010-08-22
- * Copyright: David Lecoconnier (http://www.fuxplay.com)
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
 #include "../../../include/gui/musiclist/PlayList.h"
@@ -78,13 +78,11 @@ PlayListTableau::~PlayListTableau()
 void PlayListTableau::MAJ()
 {
     wxMutexLocker lock(*s_mutexMAJPlaylist);
-
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("PlayListTableau::MAJ - Début après les tests"));
     #endif
 
     wxString chaine, extrait;
-    int pos = 1;
 
     if (GetSelectedItemCount() > 0)
         extrait = GetItemText(GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED));
@@ -95,7 +93,7 @@ void PlayListTableau::MAJ()
 
     DeleteAllItems();
 
-    if (MusicManager::get().getMusics().empty())
+    if (MusicManager::get().getSearchedOrAllMusics().empty())
     {
         return;
     }
@@ -107,7 +105,7 @@ void PlayListTableau::MAJ()
     #endif
 
     SetDoubleBuffered(true);
-    for (std::vector<Music*>::const_iterator iter = MusicManager::get().getMusics().begin(); iter != MusicManager::get().getMusics().end(); ++iter)
+    for (std::vector<Music*>::iterator iter = MusicManager::get().getSearchedOrAllMusics().begin(); iter != MusicManager::get().getSearchedOrAllMusics().end(); ++iter)
     {
 //        BDDRequete *req = new BDDRequete(this);
 
@@ -157,7 +155,7 @@ void PlayListTableau::addLine(Music& music)
     addLine(music, GetItemCount());
 }
 
-/** @brief Adds a line at the specific position
+/** @brief Adds a line at the specified position
  *
  * @param music a music data
  * @param position position to place the line
@@ -168,6 +166,22 @@ void PlayListTableau::addLine(Music& music, const int position)
 {
     int pos = InsertItem(position, wxEmptyString);
     modifyLine(music, pos);
+}
+
+/** @brief Adds a line at the specified position.
+ * It creates intermediate lines if needed.
+ * @param music a music
+ * @param position position to insert
+ * @return void
+ *
+ */
+void PlayListTableau::addLineThread(Music& music, const int position)
+{
+    while (GetItemCount() < position+1)
+    {
+        InsertItem(GetItemCount(), wxEmptyString);
+    }
+    modifyLine(music, position);
 }
 
 /** @brief Modifies a line in the list
@@ -301,7 +315,7 @@ void PlayListTableau::ChangementChanson()
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("PlayListTableau::ChangementChanson(ChansonNomPos)"));
     #endif
-    if (MusicManager::get().getMusics().empty())
+    if (MusicManager::get().getSearchedOrAllMusics().empty())
         return;
 
     if (m_ocurrenceLigne.GetCount() > 0)
@@ -488,7 +502,6 @@ void PlayListTableau::menuColler(wxCommandEvent &WXUNUSED(event))
 {
     MusicManager::get().moveIntTitlesAt(&m_tableauCouper, m_yMenu, true);
     m_tableauCouper.Clear();
-    GestPeriph::Get()->MAJPlaylist();
     m_couper = false;
 }
 
@@ -557,10 +570,10 @@ void PlayListTableau::SuppressionLigne()
                 GetItem(item);
                 chemin << wxFileName::GetPathSeparator() << item.GetText();
 
-                tableau.Add(chemin);//
+                tableau.Add(chemin);
                 DeleteItem(j);
                 i++;
-                barProgre.Update(i);//Pulse();//
+                barProgre.Update(i);
 
                 for (size_t k = 0; k < m_ocurrenceLigne.GetCount(); k++)
                 {
@@ -569,7 +582,7 @@ void PlayListTableau::SuppressionLigne()
                 }
             }
             //SetDoubleBuffered(false);
-            MusicManager::get().deleteTitles(&tableau, false);
+            MusicManager::get().deleteTitles(tableau, false);
             tableau.Clear();
         }
 
@@ -588,5 +601,18 @@ void PlayListTableau::SuppressionLigne()
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("PlayListTableau::SuppressionLigne - Fin"));
     #endif
+}
+
+/** @brief Event - Adds a music line in the list
+ *
+ * @param event an event
+ * @return void
+ *
+ */
+void PlayListTableau::onUpdateLine(wxCommandEvent& event)
+{
+    const int position = event.GetInt();
+    std::vector<Music*>::iterator iter = MusicManager::get().getSearchedOrAllMusics().begin() + position;
+    addLineThread(**iter, position);
 }
 

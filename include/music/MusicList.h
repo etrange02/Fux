@@ -30,7 +30,7 @@ class MusicList : public ISearchTraversable
 
         void parseDirectory(wxString dirname, bool recursive);
         void clear();
-        void addLines(wxArrayString *pathArray);
+        void addLines(wxArrayString& pathArray);
         virtual void addUnknownKindLine(wxString path);
         virtual void addFileLine(wxString path);
         virtual void addDirLine(wxString path);
@@ -41,7 +41,7 @@ class MusicList : public ISearchTraversable
         long getPositionInList(const Music* music);
         void removeLine(ChansonNomPos& title);
         void removeLine(size_t position);
-        void removeLines(wxArrayString *filenameArray);
+        void removeLines(wxArrayString& filenameArray);
         void exchangeLine(wxString filename1, wxString filename2);
         //void moveLines
         void insertLines(wxArrayString *filenameArray, long position);
@@ -49,6 +49,9 @@ class MusicList : public ISearchTraversable
         void setParent(wxWindow *parent);
         wxWindow *getParent() const;
         void sendMusicListUpdatedEvent();
+
+        bool isSendEventWhenAdding() const;
+        void setSendEventWhenAdding(bool send);
 
 
     protected:
@@ -59,6 +62,7 @@ class MusicList : public ISearchTraversable
     private:
         std::vector<Music*> *m_musicList;
         wxWindow *m_parent;
+        bool m_sendEventWhenAdding;
 };
 
 #endif // MUSICLIST_H_INCLUDED

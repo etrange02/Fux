@@ -1,9 +1,9 @@
 /***************************************************************
  * Name:      MusicList.cpp
  * Purpose:   Code for Fu(X) 2.0
- * Author:    David Lecoconnier (etrange02@aol.com)
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2014-04-17
- * Copyright: David Lecoconnier (http://www.fuxplay.com)
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
 #include "../../include/music/MusicList.h"
@@ -16,7 +16,8 @@ const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE = wxNewEventType();
 /** @brief Default constructor
  */
 MusicList::MusicList() :
-    m_parent(NULL)
+    m_parent(NULL),
+    m_sendEventWhenAdding(true)
 {
     m_musicList = new std::vector<Music*>;
 }
@@ -122,9 +123,9 @@ void MusicList::clear()
  * @return void
  *
  */
-void MusicList::addLines(wxArrayString *pathArray)
+void MusicList::addLines(wxArrayString& pathArray)
 {
-    for ( wxArrayString::iterator iter = pathArray->begin(); iter != pathArray->end(); ++iter)
+    for ( wxArrayString::iterator iter = pathArray.begin(); iter != pathArray.end(); ++iter)
     {
         addUnknownKindLine(*iter);
     }
@@ -163,7 +164,8 @@ void MusicList::addFileLine(wxString path)
 {
     Music *music = Factory::createMusic(path);
     m_musicList->push_back(music);
-    fux::thread::ThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(*music));
+    wxWindow *parent = isSendEventWhenAdding() ? m_parent : NULL;
+    fux::thread::ThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(*music, parent, m_musicList->size()-1));
 }
 
 /** @brief Parse the directory
@@ -295,7 +297,7 @@ void MusicList::removeLine(ChansonNomPos& title)
 }
 
 /** @brief Removes the title at the given position
- * Removes the title at the given position
+ *
  * @param position the position to remove
  * @return void
  *
@@ -311,39 +313,26 @@ void MusicList::removeLine(size_t position)
 }
 
 /** @brief Removes from the current list each filename in filenameArray
- * Removes from the current list each filename in filenameArray
+ *
  * @param filenameArray A list of filenames
  * @return void
  *
  */
-void MusicList::removeLines(wxArrayString *filenameArray)
+void MusicList::removeLines(wxArrayString& filenameArray)
 {
-    size_t i = 0, maxArray = filenameArray->GetCount(), j = 0;
-    bool seen = true, cont = true;
-
-    while (j < maxArray && cont)
+    wxArrayString::iterator iterFilename = filenameArray.begin();
+    std::vector<Music*>::iterator iterMusic = getCollection().begin();
+    std::vector<Music*>::iterator iterMusicOld;
+    while (iterFilename != filenameArray.end() && iterMusic != getCollection().end())
     {
-        i = 0;
-        while (i < getCollection().size() && cont)
+        if ((*iterMusic)->GetFileName().IsSameAs(*iterFilename))
         {
-            if (getNameAtPosition(i).IsSameAs(filenameArray->Item(j)))
-            {
-                getCollection().erase(getCollection().begin() + i);
-                ++j;
-                --i;
-                seen = false;
-                if (j >= maxArray)
-                    cont = false;
-            }
-            ++i;
+            iterMusicOld = iterMusic;
+            --iterMusic;
+            getCollection().erase(iterMusicOld);
+            ++iterFilename;
         }
-        if (seen)
-        {
-            seen = false;
-            ++i;
-        }
-        else
-            seen = true;
+        ++iterMusic;
     }
 }
 
@@ -384,9 +373,7 @@ void MusicList::insertLines(wxArrayString* filenameArray, long position)
     {
         if (Parametre::Get()->islisable(iter->AfterLast('.').Lower()))
         {
-            Music *music = Factory::createMusic(*iter);
-            tmpArray->push_back(music);
-            fux::thread::ThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(*music));
+            addFileLine(*iter);
         }
     }
 
@@ -430,4 +417,13 @@ void MusicList::sendMusicListUpdatedEvent()
     getParent()->GetEventHandler()->AddPendingEvent(evt);
 }
 
+bool MusicList::isSendEventWhenAdding() const
+{
+    return m_sendEventWhenAdding;
+}
+
+void MusicList::setSendEventWhenAdding(bool send)
+{
+    m_sendEventWhenAdding = send;
+}
 

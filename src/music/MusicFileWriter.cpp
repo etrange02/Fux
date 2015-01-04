@@ -1,7 +1,7 @@
 /***************************************************************
  * Name:      MusicFileWriter.cpp
  * Purpose:   Code for Fu(X) 2.0
- * Author:    David Lecoconnier (etrange02@aol.com)
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2014-12-17
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
@@ -37,7 +37,7 @@ void MusicFileWriter::fillData()
         artists.Replace(_T("/"), _T(";"), true);
 
         fileRef.tag()->setAlbum (TagLib::String(m_musicSrc->GetAlbum() .fn_str()));
-        fileRef.tag()->setArtist(TagLib::String(artists));
+//        fileRef.tag()->setArtist(TagLib::String(artists));
         fileRef.tag()->setTitle (TagLib::String(m_musicSrc->GetTitle() .fn_str()));
         fileRef.tag()->setGenre (TagLib::String(m_musicSrc->GetGenres().fn_str()));
         fileRef.tag()->setYear  (               m_musicSrc->GetYear());

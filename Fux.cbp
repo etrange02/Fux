@@ -55,7 +55,7 @@ IMPORTANT, A FAIRE !!!
 				</Linker>
 			</Target>
 			<Target title="Debug">
-				<Option output="out/program_files/Fu(X)" prefix_auto="1" extension_auto="1" />
+				<Option output="out/program_files/Fu(X)_d" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="out/program_files" />
 				<Option object_output="obj/Debug/" />
 				<Option type="0" />
@@ -70,6 +70,7 @@ IMPORTANT, A FAIRE !!!
 					<Add option="-Wextra" />
 					<Add option="-Wall" />
 					<Add option="-g" />
+					<Add option="-DDEBUG" />
 					<Add directory="include/music" />
 					<Add directory="include/preddicates" />
 					<Add directory="include" />
@@ -88,9 +89,9 @@ IMPORTANT, A FAIRE !!!
 				<Variable name="WX_CFG" value="msw$(AURD)" />
 				<Variable name="WX_DIR" value="$(DIR_LIB)\wx" />
 				<Variable name="WX_GL_VER" value="GL" />
-				<Variable name="WX_VER1" value="2" />
-				<Variable name="WX_VER2" value="8" />
-				<Variable name="WX_VER3" value="12" />
+				<Variable name="WX_VER1" value="3" />
+				<Variable name="WX_VER2" value="0" />
+				<Variable name="WX_VER3" value="2" />
 			</Environment>
 		</Build>
 		<Compiler>

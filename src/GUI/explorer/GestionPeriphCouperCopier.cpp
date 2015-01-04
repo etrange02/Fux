@@ -1,9 +1,9 @@
 /***************************************************************
  * Name:      GestionPeriphCouperCopier.cpp
  * Purpose:   Code for Fu(X) 2.0
- * Author:    David Lecoconnier (etrange02@aol.com)
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2010-12-14
- * Copyright: David Lecoconnier (http://www.fuxplay.com)
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
 #include "../../../include/gui/explorer/GestionPeriphCouperCopier.h"
@@ -106,8 +106,7 @@ void CouperCopierColler::ModifEtatDonnee(bool reset)
         }
         else if (m_objetOrigine == PLAYLIST)
         {
-            MusicManager::get().deleteTitles(&m_tableau, true);
-            //Musique::Get()->SupprimerNom();
+            MusicManager::get().deleteTitles(m_tableau, true);
             reset = true;
         }
     }
@@ -176,8 +175,7 @@ bool CouperCopierColler::SetDestination(wxString destination, int type)
         if (m_tableau.IsEmpty())
             return false;
 
-        MusicManager::get().deleteTitles(&m_tableau, true);
-        //Musique::Get()->Listage(&m_tableau, true);
+        MusicManager::get().deleteTitles(m_tableau, true);
         fait = true;
         ModifEtatDonnee();
     }

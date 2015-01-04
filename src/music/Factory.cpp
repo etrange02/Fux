@@ -1,7 +1,7 @@
 /***************************************************************
  * Name:      Factory.cpp
  * Purpose:   Code for Fu(X) 2.0
- * Author:    David Lecoconnier (etrange02@aol.com)
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2014-12-17
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
@@ -48,9 +48,9 @@ MusicFile* Factory::createMusicFileReader(Music& music)
  * @return MusicFileReaderThread*
  * @see Factory::createMusicFileReader
  */
-MusicFileReaderThread* Factory::createMusicFileReaderThread(Music& music)
+MusicFileReaderThread* Factory::createMusicFileReaderThread(Music& music, wxWindow* parent, int position)
 {
-    return new MusicFileReaderThread(new MusicFileReader(music));
+    return new MusicFileReaderThread(new MusicFileReader(music), parent, position);
 }
 
 /** @brief Creates a MusicFile for writing TAG value in music file.
