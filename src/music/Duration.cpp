@@ -1,15 +1,17 @@
 /***************************************************************
- * Name:      Duree.cpp
+ * Name:      Duration.cpp
  * Purpose:   Code for Fu(X) 2.0
  * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2013-07-06
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../include/music/Duree.h"
+#include "../../include/music/Duration.h"
+
+/// TODO (David): Update class name
 
 /** Default constructor */
-Duree::Duree()
+Duration::Duration()
 {
     m_minute = 0;
     m_seconde = 0;
@@ -17,7 +19,7 @@ Duree::Duree()
 }
 
 /** Default destructor */
-Duree::~Duree()
+Duration::~Duration()
 {
     //dtor
 }
@@ -26,7 +28,7 @@ Duree::~Duree()
  *  \param rhs Object to assign from
  *  \return A reference to this
  */
-Duree& Duree::operator=(const Duree& rhs)
+Duration& Duration::operator=(const Duration& rhs)
 {
     if (this == &rhs) return *this; // handle self assignment
     //assignment operator
@@ -36,7 +38,7 @@ Duree& Duree::operator=(const Duree& rhs)
     return *this;
 }
 
-unsigned int Duree::GetMinute()
+unsigned int Duration::GetMinute()
 {
     return m_minute;
 }
@@ -44,7 +46,7 @@ unsigned int Duree::GetMinute()
 /** Set m_minute
  * \param val New value to set
  */
-void Duree::SetMinute(unsigned int val)
+void Duration::SetMinute(unsigned int val)
 {
     m_minute = val;
 }
@@ -52,7 +54,7 @@ void Duree::SetMinute(unsigned int val)
 /** Access m_seconde
  * \return The current value of m_seconde
  */
-unsigned int Duree::GetSeconde()
+unsigned int Duration::GetSeconde()
 {
     return m_seconde;
 }
@@ -60,7 +62,7 @@ unsigned int Duree::GetSeconde()
 /** Set m_seconde
  * \param val New value to set
  */
-void Duree::SetSeconde(unsigned int val)
+void Duration::SetSeconde(unsigned int val)
 {
     m_seconde = val;
 }
@@ -68,7 +70,7 @@ void Duree::SetSeconde(unsigned int val)
 /** Access m_msecondeTot
  * \return The current value of m_msecondeTot
  */
-unsigned int Duree::GetMSecondeTot()
+unsigned int Duration::GetMSecondeTot()
 {
     return m_msecondeTot;
 }
@@ -76,7 +78,7 @@ unsigned int Duree::GetMSecondeTot()
 /** Set m_msecondeTot
  * \param val New value to set
  */
-void Duree::SetMSecondeTot(unsigned int val)
+void Duration::SetMSecondeTot(unsigned int val)
 {
     m_msecondeTot = val;
     val/=1000;

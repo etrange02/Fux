@@ -92,13 +92,13 @@
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
     (wxObject *) NULL ),
 
-#define EVT_FUX_MUSICPLAYER_CHANGE_TITLE(fn)\
-    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICPLAYER_CHANGE_TITLE, wxID_ANY, wxID_ANY,\
+#define EVT_FUX_MUSICLIST_LIST_LIN(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICLIST_LIST_UPDATE, wxID_ANY, wxID_ANY,\
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
     (wxObject *) NULL ),
 
-#define EVT_FUX_MUSICMANAGER_NO_FILE(fn)\
-    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICMANAGER_NO_FILE, wxID_ANY, wxID_ANY,\
+#define EVT_FUX_MUSICPLAYER_CHANGE_TITLE(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICPLAYER_CHANGE_TITLE, wxID_ANY, wxID_ANY,\
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
     (wxObject *) NULL ),
 
@@ -111,9 +111,19 @@
     DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICPLAYER_CHANGE_STATUS, wxID_ANY, wxID_ANY,\
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
     (wxObject *) NULL ),
-    
-#define EVT_FUX_MUSICFILE_READER_THREAD(id, fn)\
-    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICPLAYER_CHANGE_STATUS, id, wxID_ANY,\
+
+#define EVT_FUX_MUSICMANAGER_NO_FILE(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICMANAGER_NO_FILE, wxID_ANY, wxID_ANY,\
+    (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
+    (wxObject *) NULL ),
+
+#define EVT_FUX_MUSICMANAGER_SEARCH_DONE(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICMANAGER_SEARCH_DONE, wxID_ANY, wxID_ANY,\
+    (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
+    (wxObject *) NULL ),
+
+#define EVT_FUX_MUSICFILE_READER_THREAD(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICFILE_READER_THREAD, wxID_ANY, wxID_ANY,\
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
     (wxObject *) NULL ),
 

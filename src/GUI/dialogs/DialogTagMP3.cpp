@@ -143,8 +143,8 @@ void DialogTagMP3::SetAnnee(int annee)
  * Modifie la durée affiché dans le champs durée
  * @param duree la durée de la chanson
  */
-void DialogTagMP3::SetDuree(wxString duree)
-{   m_pageInfo->SetDuree(duree);}
+void DialogTagMP3::SetDuration(wxString duree)
+{   m_pageInfo->SetDuration(duree);}
 
 /**
  * Modifie le débit affiché dans le champs Débit

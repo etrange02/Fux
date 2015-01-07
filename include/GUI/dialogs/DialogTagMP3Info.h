@@ -23,7 +23,7 @@ class DialogTagMP3Info : public wxPanel
         void SetArtiste(wxString artiste);
         void SetGenre(wxString genre);
         void SetAnnee(int annee);
-        void SetDuree(wxString duree);
+        void SetDuration(wxString duree);
         void SetDebit(int debit);
         void SetTaille(int taille);
         bool IsModified();

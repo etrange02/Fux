@@ -732,7 +732,7 @@ void FuXFenetre::EventMusicChanged(wxCommandEvent &WXUNUSED(event))
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::ChangementChanson"));
     #endif
-    m_playList->GetPlayListTableau()->ChangementChanson();
+    m_playList->GetPlayListTableau()->updateColors();
     changePlayPauseImageStatus();
 }
 

@@ -16,6 +16,7 @@
 #include "../tools/thread/ThreadManager.h"
 
 extern const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE;
+extern const wxEventType wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED;
 
 class MusicList : public ISearchTraversable
 {
@@ -39,7 +40,7 @@ class MusicList : public ISearchTraversable
         wxString getNameAtPosition(long position);
         long getPositionInList(const wxString& filename, long position = -1);
         long getPositionInList(const Music* music);
-        void removeLine(ChansonNomPos& title);
+//        void removeLine(ChansonNomPos& title);
         void removeLine(size_t position);
         void removeLines(wxArrayString& filenameArray);
         void exchangeLine(wxString filename1, wxString filename2);
@@ -49,9 +50,9 @@ class MusicList : public ISearchTraversable
         void setParent(wxWindow *parent);
         wxWindow *getParent() const;
         void sendMusicListUpdatedEvent();
-        
-        bool sendEventWhenAdding() const;
-        void setSendEventWhenAdding();
+
+        bool isSendEventWhenAdding() const;
+        void setSendEventWhenAdding(bool send);
 
 
     protected:
@@ -62,7 +63,7 @@ class MusicList : public ISearchTraversable
     private:
         std::vector<Music*> *m_musicList;
         wxWindow *m_parent;
-        bool sendEventWhenAdding;
+        bool m_sendEventWhenAdding;
 };
 
 #endif // MUSICLIST_H_INCLUDED

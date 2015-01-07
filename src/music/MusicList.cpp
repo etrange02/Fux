@@ -11,6 +11,8 @@
 using namespace fux::music;
 
 const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE = wxNewEventType();
+const wxEventType wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED = wxNewEventType();
+/// TODO (David): Complete wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED event
 
 
 /** @brief Default constructor
@@ -180,7 +182,7 @@ void MusicList::addDirLine(wxString path)
 }
 
 /** @brief Adds the content of the file into the list
- * Adds the content of the file into the list
+ *
  * @param filename a filename
  * @return void
  *
@@ -190,11 +192,10 @@ void MusicList::importFileContent(wxString filename)
     wxTextFile m3uFile(filename);
     m3uFile.Open();
 
-    if (m3uFile.GetLineCount() > 0 && !m3uFile.GetLine(0).IsSameAs(M3U_EXTENSION))
-        addFileLine(m3uFile.GetLine(0));
-
-    for (size_t i = 1; i < m3uFile.GetLineCount(); ++i)
-        addFileLine(m3uFile.GetLine(i));
+    for (wxString line = m3uFile.GetFirstLine(); !m3uFile.Eof(); line = m3uFile.GetNextLine() )
+    {
+        addUnknownKindLine(line);
+    }
 
     m3uFile.Close();
 }
@@ -280,20 +281,6 @@ long MusicList::getPositionInList(const Music* music)
             return index;
     }
     return -1;
-}
-
-/** @brief Removes the title from the list
- * Removes the title from the list. The position is prioritary
- * @param title a pair <string, position>
- * @return void
- *
- */
-void MusicList::removeLine(ChansonNomPos& title)
-{
-    long position = title.GetPos();
-    if (position <= -1)
-        position = getPositionInList(title.GetNom());
-    removeLine(position);
 }
 
 /** @brief Removes the title at the given position

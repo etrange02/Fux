@@ -127,8 +127,8 @@ void PlayList::Initialize(wxWindow *Parent)
     win->SetSizer(m_sizerRep);
 
     sizer->Add(sizerHorizRecherche, 0, wxUP | wxRIGHT | wxLEFT | wxEXPAND, 5);
-    sizer->Add(m_liste, 1, wxALL | wxEXPAND, 5);
-    sizer->Add(m_panneauRepliable, 0, wxGROW | wxDOWN | wxLEFT | wxRIGHT, 5);
+    sizer->Add(m_liste, 1, wxUP | wxDOWN | wxLEFT | wxEXPAND, 5);
+    sizer->Add(m_panneauRepliable, 0, wxGROW | wxDOWN | wxLEFT | wxRIGHT, 1);
     sizer->Layout();
 }
 
@@ -323,7 +323,7 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
         fen->SetTitre(wxString(m_ObjetTAG.tag()->title().toCString(true), wxConvUTF8));//Titre
         fen->SetAnnee(m_ObjetTAG.tag()->year());
         fen->SetGenre(wxString(m_ObjetTAG.tag()->genre().toCString(true), wxConvUTF8));//Genre
-        fen->SetDuree(m_liste->GetDuree(m_ObjetTAG.audioProperties()->length()));
+        fen->SetDuration(m_liste->GetDuration(m_ObjetTAG.audioProperties()->length()));
         fen->SetDebit(m_ObjetTAG.audioProperties()->bitrate());
         fen->SetCommentaire(wxString(m_ObjetTAG.tag()->comment().toCString(true), wxConvUTF8));
         fen->SetTaille(m_ObjetTAG.file()->length());

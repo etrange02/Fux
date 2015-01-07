@@ -1,17 +1,17 @@
-#ifndef DUREE_H
-#define DUREE_H
+#ifndef DURATION_H
+#define DURATION_H
 
 /**
- * @struct Duree
- * @brief Structure représentant le temps en minute, seconde, et la totalité en seconde
+ * @struct Duration
+ * @brief Abstraction of music time in minute, second and full time in second
  */
 
-class Duree
+class Duration
 {
     public:
-        Duree();
-        virtual ~Duree();
-        Duree& operator=(const Duree& other);
+        Duration();
+        virtual ~Duration();
+        Duration& operator=(const Duration& other);
         unsigned int GetMinute();
         void SetMinute(unsigned int val);
         unsigned int GetSeconde();

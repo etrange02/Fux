@@ -11,7 +11,6 @@
 #include <wx/dnd.h>
 #include <wx/mstream.h>
 #include <wx/renderer.h>
-#include "../../music/ChansonNomPos.h"
 #include "../../music/MusicManager.h"
 #include "../../tools/dnd/DnDCible.h"
 #include "../explorer/GestionPeriph.h"
@@ -30,14 +29,13 @@ class PlayListTableau : public wxListCtrl
         PlayListTableau(wxWindow *Parent);
         virtual ~PlayListTableau();
         void MAJ();
-        void supprimerNomLigne(ChansonNomPos);
-        wxString GetDuree(int);
+        void removeLine(const int position);
+        wxString GetDuration(int);
 
         void ChansonActive(wxListEvent&);
         void OnKey(wxKeyEvent&);
         void MouseEvents(wxMouseEvent&);
         void Glisser(wxListEvent &WXUNUSED(event));
-        void ChangementChanson();
         void AfficheMenu(wxMouseEvent &WXUNUSED(event));
 
         void menuLecture(wxCommandEvent &WXUNUSED(event));
@@ -48,6 +46,7 @@ class PlayListTableau : public wxListCtrl
         void menuDetails(wxCommandEvent &WXUNUSED(event));
         /** Event - Adds a music line in the list */
         void onUpdateLine(wxCommandEvent& event);
+        void updateColors();
 
         void SuppressionLigne();
 
@@ -60,6 +59,11 @@ class PlayListTableau : public wxListCtrl
         void addLineThread(Music& music, const int position);
         /** Modifies a line in the list */
         void modifyLine(Music& music, const int position);
+
+        void updateColor(const size_t position);
+        void updateColorNormalMode(const size_t position);
+        void updateColorSearchMode(const size_t position);
+        void setDefaultColor(const size_t position);
 
     private:
         bool m_couper;

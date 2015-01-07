@@ -8,7 +8,6 @@
 
 #include "../Define.h"
 #include "Music.h"
-#include "ChansonNomPos.h"
 #include "Factory.h"
 #include "../tools/dir_traverser/ISearchTraversable.h"
 #include "../tools/dir_traverser/Search.h"
@@ -16,6 +15,7 @@
 #include "../tools/thread/ThreadManager.h"
 
 extern const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE;
+extern const wxEventType wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED;
 
 class MusicList : public ISearchTraversable
 {
@@ -39,7 +39,6 @@ class MusicList : public ISearchTraversable
         wxString getNameAtPosition(long position);
         long getPositionInList(const wxString& filename, long position = -1);
         long getPositionInList(const Music* music);
-        void removeLine(ChansonNomPos& title);
         void removeLine(size_t position);
         void removeLines(wxArrayString& filenameArray);
         void exchangeLine(wxString filename1, wxString filename2);

@@ -6,7 +6,7 @@
 
 //#include "IMusicPlayer.h"
 //#include "Music.h"
-#include "Duree.h"
+#include "Duration.h"
 
 extern const wxEventType wxEVT_FUX_MUSICPLAYER_CHANGE_TITLE;
 extern const wxEventType wxEVT_FUX_MUSICPLAYER_UPDATE_GRAPH;
@@ -34,8 +34,8 @@ class MusicPlayer// : IMusicPlayer
 
         float getVolume();
         void getSpectrum(float* spectrum, int size);
-        Duree *getCurrentTime();
-        Duree *getTotalTime();
+        Duration *getCurrentTime();
+        Duration *getTotalTime();
         wxWindow *getParent();
         wxString& getFileName();
 
@@ -55,8 +55,8 @@ class MusicPlayer// : IMusicPlayer
         FMOD_SYSTEM *m_system;
         FMOD_SOUND *m_sound;
         FMOD_CHANNEL *m_channel;
-        Duree *m_currentTime;
-        Duree *m_totalTime;
+        Duration *m_currentTime;
+        Duration *m_totalTime;
 
         wxString m_filename;
         wxWindow *m_parent;

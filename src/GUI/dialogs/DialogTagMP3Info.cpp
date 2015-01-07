@@ -163,7 +163,7 @@ void DialogTagMP3Info::SetAnnee(int annee)
  * Modifie la durée affiché dans le champs durée
  * @param duree la durée de la chanson
  */
-void DialogTagMP3Info::SetDuree(wxString duree)
+void DialogTagMP3Info::SetDuration(wxString duree)
 {    m_duree->SetLabel(_("Durée - ") + duree);}
 
 /**

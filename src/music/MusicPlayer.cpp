@@ -40,8 +40,8 @@ void MusicPlayer::initialize()
     m_stopped = true;
     m_filename = wxEmptyString;
 
-    m_currentTime = new Duree();
-    m_totalTime = new Duree();
+    m_currentTime = new Duration();
+    m_totalTime = new Duration();
 }
 
 /** @brief Plays a title
@@ -186,12 +186,12 @@ bool MusicPlayer::isEnding()
     return false;
 }
 
-Duree* MusicPlayer::getCurrentTime()
+Duration* MusicPlayer::getCurrentTime()
 {
     return m_currentTime;
 }
 
-Duree* MusicPlayer::getTotalTime()
+Duration* MusicPlayer::getTotalTime()
 {
     return m_totalTime;
 }

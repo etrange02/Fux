@@ -92,6 +92,11 @@
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
     (wxObject *) NULL ),
 
+#define EVT_FUX_MUSICLIST_LIST_LINE_DELETED(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED, wxID_ANY, wxID_ANY,\
+    (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
+    (wxObject *) NULL ),
+
 #define EVT_FUX_MUSICPLAYER_CHANGE_TITLE(fn)\
     DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICPLAYER_CHANGE_TITLE, wxID_ANY, wxID_ANY,\
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
