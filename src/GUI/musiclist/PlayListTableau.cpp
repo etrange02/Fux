@@ -288,23 +288,7 @@ void PlayListTableau::removeLine(const int position)
     #if DEBUG
     FichierLog::Get()->Ajouter("PlayListTableau::removeLine(const int position)");
     #endif
-//    wxString extrait;
-//    int i = 0;
-//    while (i < GetItemCount())
-//    {
-//        extrait = GetItemText(i);
-//        if (titre.GetNom().EndsWith(extrait) && (i == titre.GetPos() || titre.GetPos() == -1))
-//        {
-//            DeleteItem(i);
-//            for (size_t k = 0; k < m_ocurrenceLigne.GetCount(); ++k)
-//            {
-//                if (m_ocurrenceLigne.Item(k) >= i)
-//                    m_ocurrenceLigne.Item(k)--;
-//            }
-//            return;
-//        }
-//        ++i;
-//    }
+
     DeleteItem(position);
     for (wxArrayInt::iterator iter = m_ocurrenceLigne.begin(); iter != m_ocurrenceLigne.end(); ++iter)
     {
@@ -325,16 +309,15 @@ void PlayListTableau::updateColors()
     if (MusicManager::get().getSearchedOrAllMusics().empty())
         return;
 
-    if (m_ocurrenceLigne.GetCount() > 0)
+    for (wxArrayInt::iterator iter = m_ocurrenceLigne.begin(); iter != m_ocurrenceLigne.end(); ++iter)
     {
-        for (size_t i = 0; i < m_ocurrenceLigne.GetCount(); i++)
+        if (*iter < GetItemCount())
         {
-            if (m_ocurrenceLigne.Item(i) < GetItemCount())
-            {
-                setDefaultColor(m_ocurrenceLigne.Item(i));
-            }
+            setDefaultColor(*iter);
         }
+
     }
+
     m_ocurrenceLigne.Empty();
     m_positionChanson = -1;
 
@@ -540,6 +523,9 @@ void PlayListTableau::menuDetails(wxCommandEvent &WXUNUSED(event))
 /**
  * Supprime les lignes sélectionnées de la liste de lecture
  */
+ /// TODO (David): Modifier le contenu pour transmettre un tableau de position (entier)
+ /// au MusicManager. Ne pas supprimer directement les lignes, le manager enverra un message pour.
+ /// mode normal/recherche !!!
 void PlayListTableau::SuppressionLigne()
 {
     wxMutexLocker lock(*s_mutexMAJPlaylist);
@@ -567,46 +553,28 @@ void PlayListTableau::SuppressionLigne()
         }
         else
         {
-            //SetDoubleBuffered(true);
             long i = 0, j = 0, max = GetSelectedItemCount();
 
             #if DEBUG
             FichierLog::Get()->Ajouter(_T("PlayListTableau::SuppressionLigne - ") + wxString::Format(_T("%ld lignes"), max));
             #endif
 
-            wxProgressDialog barProgre(_("Mise à jour"), _("Suppression en cours"), max);//
-            wxString chemin;
-            wxArrayString tableau;
-            wxListItem item;
+            wxProgressDialog barProgre(_("Mise à jour"), _("Suppression en cours"), max);
 
-            tableau.Alloc(max);
             while (i < max)
             {
                 j = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
-                item.SetId(j);
-                item.SetColumn(6);
-                item.SetMask(wxLIST_MASK_TEXT);
-                GetItem(item);
-
-                chemin = item.GetText();
-                item.SetColumn(0);
-                GetItem(item);
-                chemin << wxFileName::GetPathSeparator() << item.GetText();
-
-                tableau.Add(chemin);
+                MusicManager::get().deleteTitleAt(j);
                 DeleteItem(j);
                 i++;
                 barProgre.Update(i);
 
-                for (size_t k = 0; k < m_ocurrenceLigne.GetCount(); k++)
+                for (size_t k = 0; k < m_ocurrenceLigne.GetCount(); ++k)
                 {
                     if (m_ocurrenceLigne.Item(k) >= j)
-                        m_ocurrenceLigne.Item(k)--;
+                        --m_ocurrenceLigne.Item(k);
                 }
             }
-            //SetDoubleBuffered(false);
-            MusicManager::get().deleteTitles(tableau, false);
-            tableau.Clear();
         }
 
         if (GetItemCount() == 0)
@@ -634,8 +602,9 @@ void PlayListTableau::SuppressionLigne()
  */
 void PlayListTableau::onUpdateLine(wxCommandEvent& event)
 {
-    const int position = event.GetInt();
-    std::vector<Music*>::iterator iter = MusicManager::get().getSearchedOrAllMusics().begin() + position;
+    Music* music = (Music*) (event.GetClientData());
+    std::vector<Music*>::iterator iter = std::find(MusicManager::get().getSearchedOrAllMusics().begin(), MusicManager::get().getSearchedOrAllMusics().end(), music);
+    const int position = std::distance(MusicManager::get().getSearchedOrAllMusics().begin(), iter);
     addLineThread(**iter, position);
     updateColor(position);
 }

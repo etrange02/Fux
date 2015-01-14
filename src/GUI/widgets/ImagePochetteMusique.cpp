@@ -47,8 +47,13 @@ ImagePochetteMusique::~ImagePochetteMusique()
  */
 bool ImagePochetteMusique::AfficheImage(bool affiche)
 {
-    int largeur = 0, hauteur = 0;
+    int largeur = 0;
+    int hauteur = 0;
     GetSize(&largeur, &hauteur);
+
+    largeur = std::max(largeur, 0);
+    hauteur = std::max(hauteur, 0);
+
     if (affiche && m_image.IsOk())
     {
         SetBitmap(wxBitmap(m_image.Scale(largeur, hauteur)));

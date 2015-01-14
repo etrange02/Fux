@@ -27,6 +27,8 @@ class MusicFileReader : public MusicFile
 
         virtual void process();
 
+        Music* getMusic();
+
     protected:
         void FillFields();
         void ImageExtracting();

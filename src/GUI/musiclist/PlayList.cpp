@@ -81,7 +81,8 @@ void PlayList::Initialize(wxWindow *Parent)
     m_sizerBouton = new wxBoxSizer(wxVERTICAL);
 
     wxWindow *win = m_panneauRepliable->GetPane();
-    m_pochette = new ImagePochetteMusique(win, ID_PAGE_PLAYLIST_POCHETTE, wxBitmap(POCHETTE_COTE, POCHETTE_COTE), true);
+    m_defaultRecordSleeve = wxImage(POCHETTE_COTE, POCHETTE_COTE);
+    m_pochette = new ImagePochetteMusique(win, ID_PAGE_PLAYLIST_POCHETTE, m_defaultRecordSleeve, true);
     m_pochette->SetSize(wxSize(POCHETTE_COTE, POCHETTE_COTE));
     m_pochette->AfficheImage(true);
     m_sizerRep->Add(m_pochette, 0, wxALL, 5);
@@ -284,7 +285,10 @@ void PlayList::RemplirPanneauTAG(Music& music)
         m_pochette->AfficheImage(true);
     }
     else
-        m_pochette->AfficheImage(false);
+    {
+        m_pochette->SetImage(m_defaultRecordSleeve);
+        m_pochette->AfficheImage(true);
+    }
 }
 
 /**

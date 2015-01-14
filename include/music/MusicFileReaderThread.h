@@ -14,7 +14,7 @@ class MusicFileReaderThread : public fux::thread::IRunnable
 {
     public:
         /** Default constructor */
-        MusicFileReaderThread(MusicFileReader* musicFileReader, wxWindow* parent, int position);
+        MusicFileReaderThread(MusicFileReader* musicFileReader, wxWindow* parent);
         /** Default destructor */
         virtual ~MusicFileReaderThread();
 
@@ -27,7 +27,6 @@ class MusicFileReaderThread : public fux::thread::IRunnable
 
         MusicFileReader* m_musicFileReader;
         wxWindow* m_parent;
-        int m_position;
 };
 
 #endif // MUSICFILEREADERTHREAD_H

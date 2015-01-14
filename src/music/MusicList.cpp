@@ -167,7 +167,7 @@ void MusicList::addFileLine(wxString path)
     Music *music = Factory::createMusic(path);
     m_musicList->push_back(music);
     wxWindow *parent = isSendEventWhenAdding() ? m_parent : NULL;
-    fux::thread::ThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(*music, parent, m_musicList->size()-1));
+    fux::thread::ThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(*music, parent));
 }
 
 /** @brief Parse the directory
@@ -295,7 +295,8 @@ void MusicList::removeLine(size_t position)
     {
         std::vector<Music*>::iterator it = getCollection().begin() + position;
         getCollection().erase(it);
-        sendMusicListUpdatedEvent();
+        sendMusicListLineDeleted(position);
+        //sendMusicListUpdatedEvent();
     }
 }
 
@@ -317,6 +318,7 @@ void MusicList::removeLines(wxArrayString& filenameArray)
             iterMusicOld = iterMusic;
             --iterMusic;
             getCollection().erase(iterMusicOld);
+            // removeLine ??
             ++iterFilename;
         }
         ++iterMusic;
@@ -330,12 +332,14 @@ void MusicList::removeLines(wxArrayString& filenameArray)
  * @return void
  *
  */
+/// TODO (David): Mauvaise idée, utiliser les positions sera plus efficaces, et remplissage de avec un filereader
 void MusicList::exchangeLine(wxString filename1, wxString filename2)
 {
     int lineToChange = getPositionInList(filename1);
     Music *music = getCollection().at(lineToChange);
     getCollection().assign(lineToChange, new Music(filename2));
     delete music;
+    sendMusicListUpdatedEvent();
 }
 
 /** @brief Insert filenames at a specific position
@@ -412,5 +416,14 @@ bool MusicList::isSendEventWhenAdding() const
 void MusicList::setSendEventWhenAdding(bool send)
 {
     m_sendEventWhenAdding = send;
+}
+
+void MusicList::sendMusicListLineDeleted(const int position)
+{
+    if (NULL == getParent())
+        return;
+    wxCommandEvent evt(wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED, wxID_ANY);
+    evt.SetInt(position);
+    getParent()->GetEventHandler()->AddPendingEvent(evt);
 }
 

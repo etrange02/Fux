@@ -15,10 +15,9 @@ const wxEventType wxEVT_FUX_MUSICFILE_READER_THREAD = wxNewEventType();
  * @param musicFileReader Delegate the work to
  *
  */
-MusicFileReaderThread::MusicFileReaderThread(MusicFileReader* musicFileReader, wxWindow* parent, int position) :
+MusicFileReaderThread::MusicFileReaderThread(MusicFileReader* musicFileReader, wxWindow* parent) :
     m_musicFileReader(musicFileReader),
-    m_parent(parent),
-    m_position(position)
+    m_parent(parent)
 {
 }
 
@@ -55,7 +54,7 @@ void MusicFileReaderThread::sendUpdatedLineEvent()
         return;
 
     wxCommandEvent evt(wxEVT_FUX_MUSICFILE_READER_THREAD);
-    evt.SetInt(m_position);
+    evt.SetClientData(m_musicFileReader->getMusic());
     wxQueueEvent(m_parent, evt.Clone());
 }
 

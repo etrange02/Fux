@@ -48,9 +48,9 @@ MusicFile* Factory::createMusicFileReader(Music& music)
  * @return MusicFileReaderThread*
  * @see Factory::createMusicFileReader
  */
-MusicFileReaderThread* Factory::createMusicFileReaderThread(Music& music, wxWindow* parent, int position)
+MusicFileReaderThread* Factory::createMusicFileReaderThread(Music& music, wxWindow* parent)
 {
-    return new MusicFileReaderThread(new MusicFileReader(music), parent, position);
+    return new MusicFileReaderThread(new MusicFileReader(music), parent);
 }
 
 /** @brief Creates a MusicFile for writing TAG value in music file.

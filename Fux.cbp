@@ -196,7 +196,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/explorer/state/FileDriveManagerState.h" />
 		<Unit filename="include/explorer/state/PlaylistDriveManagerState.h" />
 		<Unit filename="include/fuxHTMLindex.h" />
-		<Unit filename="include/music/Duree.h" />
+		<Unit filename="include/music/Duration.h" />
 		<Unit filename="include/music/Factory.h" />
 		<Unit filename="include/music/IMusic.h" />
 		<Unit filename="include/music/IMusicPlayer.h" />
@@ -276,7 +276,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/explorer/state/DriveManagerState.cpp" />
 		<Unit filename="src/explorer/state/FileDriveManagerState.cpp" />
 		<Unit filename="src/explorer/state/PlaylistDriveManagerState.cpp" />
-		<Unit filename="src/music/Duree.cpp" />
+		<Unit filename="src/music/Duration.cpp" />
 		<Unit filename="src/music/Factory.cpp" />
 		<Unit filename="src/music/Music.cpp" />
 		<Unit filename="src/music/MusicFileReader.cpp" />

@@ -82,3 +82,8 @@ void MusicFileReader::ImageExtracting()
     }
 }
 
+Music* MusicFileReader::getMusic()
+{
+    return &m_music;
+}
+

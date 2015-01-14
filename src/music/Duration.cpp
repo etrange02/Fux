@@ -8,8 +8,6 @@
  **************************************************************/
 #include "../../include/music/Duration.h"
 
-/// TODO (David): Update class name
-
 /** Default constructor */
 Duration::Duration()
 {

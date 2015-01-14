@@ -24,7 +24,7 @@ namespace fux
                 static Music* createMusic(wxString& filename);
                 static MusicFile* createMusicFileReader(Music& music);
                 static MusicFile* createMusicFileWriter(const Music* inMusic, Music& outMusic);
-                static MusicFileReaderThread* createMusicFileReaderThread(Music& music, wxWindow* parent, int position);
+                static MusicFileReaderThread* createMusicFileReaderThread(Music& music, wxWindow* parent);
         };
     }
 }

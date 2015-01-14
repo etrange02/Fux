@@ -58,6 +58,8 @@ class MusicList : public ISearchTraversable
         void parseDirectoryRecursively(wxString dirname);
         void parseDirectoryWithoutRecurs(wxString dirname);
 
+        void sendMusicListLineDeleted(const int position);
+
     private:
         std::vector<Music*> *m_musicList;
         wxWindow *m_parent;
