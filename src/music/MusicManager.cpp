@@ -417,6 +417,8 @@ void MusicManager::deleteTitleAt(size_t position)
         if (m_musicPosition > position)
             m_musicPosition--;
     }
+    if (empty())
+        sendMusicNoFileEvent();
 }
 
 /** @brief Delete titles from the music list

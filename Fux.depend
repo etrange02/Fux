@@ -2105,7 +2105,7 @@
 
 1416433635 c:\workspace\projects\fux\include\constants\enums.h
 
-1420389920 c:\workspace\projects\fux\include\constants\events.h
+1420581574 c:\workspace\projects\fux\include\constants\events.h
 
 1416433635 c:\workspace\projects\fux\include\constants\ids.h
 
@@ -2158,20 +2158,19 @@
 	"../tools/thread/ThreadManager.h"
 	"../predicates/findPosition.h"
 
-1416433635 c:\workspace\projects\fux\include\music\musicplayer.h
+1420617367 c:\workspace\projects\fux\include\music\musicplayer.h
 	<wx/wx.h>
 	<fmod.hpp>
-	"Duree.h"
+	"Duration.h"
 
 1416433635 c:\workspace\projects\fux\include\music\duree.h
 
-1420388883 c:\workspace\projects\fux\include\music\musiclist.h
+1420617672 c:\workspace\projects\fux\include\music\musiclist.h
 	<wx/wx.h>
 	<vector>
 	<wx/dir.h>
 	"../Define.h"
 	"Music.h"
-	"ChansonNomPos.h"
 	"Factory.h"
 	"../tools/dir_traverser/ISearchTraversable.h"
 	"../tools/dir_traverser/Search.h"
@@ -2190,7 +2189,7 @@
 1416433635 c:\workspace\projects\fux\include\music\chansonnompos.h
 	"wx/wx.h"
 
-1420202626 c:\workspace\projects\fux\include\music\factory.h
+1421186771 c:\workspace\projects\fux\include\music\factory.h
 	<wx/wx.h>
 	"Music.h"
 	"MusicFile.h"
@@ -2200,7 +2199,7 @@
 
 1419727807 c:\workspace\projects\fux\include\music\musicfile.h
 
-1420201629 c:\workspace\projects\fux\include\music\musicfilereader.h
+1421185933 c:\workspace\projects\fux\include\music\musicfilereader.h
 	<wx/wx.h>
 	<wx/stdpaths.h>
 	<wx/filename.h>
@@ -2372,7 +2371,7 @@
 	<id3v2tag.h>
 	<attachedpictureframe.h>
 
-1420223271 c:\workspace\projects\fux\include\music\musicfilereaderthread.h
+1421186686 c:\workspace\projects\fux\include\music\musicfilereaderthread.h
 	<wx/wx.h>
 	<wx/event.h>
 	"IRunnable.h"
@@ -2545,7 +2544,7 @@
 
 1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\statline.h
 
-1420200191 c:\workspace\projects\fux\include\gui\musiclist\playlist.h
+1421237593 c:\workspace\projects\fux\include\gui\musiclist\playlist.h
 	"../../Define.h"
 	<wx/wx.h>
 	<wx/stdpaths.h>
@@ -2611,7 +2610,7 @@
 1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\srchctlg.h
 	"wx/bitmap.h"
 
-1420377420 c:\workspace\projects\fux\include\gui\musiclist\playlisttableau.h
+1420617367 c:\workspace\projects\fux\include\gui\musiclist\playlisttableau.h
 	"../../Define.h"
 	<wx/wx.h>
 	<wx/stdpaths.h>
@@ -2622,7 +2621,6 @@
 	<wx/dnd.h>
 	<wx/mstream.h>
 	<wx/renderer.h>
-	"../../music/ChansonNomPos.h"
 	"../../music/MusicManager.h"
 	"../../tools/dnd/DnDCible.h"
 	"../explorer/GestionPeriph.h"
@@ -2813,7 +2811,7 @@
 	<wx/wx.h>
 	<wx/event.h>
 
-1416433635 c:\workspace\projects\fux\include\gui\dialogs\dialogtagmp3.h
+1420617367 c:\workspace\projects\fux\include\gui\dialogs\dialogtagmp3.h
 	<wx/wx.h>
 	<wx/notebook.h>
 	"../../Define.h"
@@ -2836,7 +2834,7 @@
 
 1416433635 c:\workspace\projects\fux\include\gui\tools\jaquetteclasses.h
 
-1416433635 c:\workspace\projects\fux\include\gui\dialogs\dialogtagmp3info.h
+1420617367 c:\workspace\projects\fux\include\gui\dialogs\dialogtagmp3info.h
 	<wx/wx.h>
 	<wx/filename.h>
 	<wx/spinctrl.h>
@@ -3013,10 +3011,10 @@
 1420201180 source:c:\workspace\projects\fux\src\gui\dialogs\dialogenregistrem3u.cpp
 	"../../../include/gui/dialogs/DialogEnregistreM3U.h"
 
-1420201180 source:c:\workspace\projects\fux\src\gui\dialogs\dialogtagmp3.cpp
+1420617367 source:c:\workspace\projects\fux\src\gui\dialogs\dialogtagmp3.cpp
 	"../../../include/gui/dialogs/DialogTagMP3.h"
 
-1420201180 source:c:\workspace\projects\fux\src\gui\dialogs\dialogtagmp3info.cpp
+1420617367 source:c:\workspace\projects\fux\src\gui\dialogs\dialogtagmp3info.cpp
 	"../../../include/gui/dialogs/DialogTagMP3Info.h"
 
 1416433636 source:c:\workspace\projects\fux\src\gui\explorer\drivemanagerspanel.cpp
@@ -3053,10 +3051,10 @@
 1420201180 source:c:\workspace\projects\fux\src\gui\graph\musiquegraph.cpp
 	"../../../include/gui/graph/MusiqueGraph.h"
 
-1420391930 source:c:\workspace\projects\fux\src\gui\musiclist\playlist.cpp
+1421237821 source:c:\workspace\projects\fux\src\gui\musiclist\playlist.cpp
 	"../../../include/gui/musiclist/PlayList.h"
 
-1420378921 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
+1421255404 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
 	"../../../include/gui/musiclist/PlayList.h"
 
 1420392088 source:c:\workspace\projects\fux\src\gui\settings\preferencecouleur.cpp
@@ -3083,7 +3081,7 @@
 1416433636 source:c:\workspace\projects\fux\src\music\chansonnompos.cpp
 	"../../include/music/ChansonNomPos.h"
 
-1418512172 source:c:\workspace\projects\fux\src\music\musicplayer.cpp
+1420617367 source:c:\workspace\projects\fux\src\music\musicplayer.cpp
 	"../../include/music/MusicPlayer.h"
 
 1416433636 source:c:\workspace\projects\fux\src\predicates\findposition.cpp
@@ -3103,44 +3101,44 @@
 
 1416433636 source:c:\workspace\projects\fux\src\ressources\suppr.c
 
-1420391691 source:c:\workspace\projects\fux\src\gui\widgets\fenetre.cpp
+1421259015 source:c:\workspace\projects\fux\src\gui\widgets\fenetre.cpp
 	"wx/wxprec.h"
 	"../../../include/gui/widgets/Fenetre.h"
 
-1420201180 source:c:\workspace\projects\fux\src\gui\widgets\fenetredetachable.cpp
+1420393027 source:c:\workspace\projects\fux\src\gui\widgets\fenetredetachable.cpp
 	"../../../include/gui/widgets/FenetreDetachable.h"
 
 1420201180 source:c:\workspace\projects\fux\src\gui\widgets\generictreepanel.cpp
 	"../../../include/gui/widgets/GenericTreePanel.h"
 
-1420201180 source:c:\workspace\projects\fux\src\gui\widgets\imagepochettemusique.cpp
+1421237959 source:c:\workspace\projects\fux\src\gui\widgets\imagepochettemusique.cpp
 	"../../../include/gui/widgets/ImagePochetteMusique.h"
 
 1420201180 source:c:\workspace\projects\fux\src\gui\widgets\sliderson.cpp
 	"../../../include/gui/widgets/SliderSon.h"
 
-1420201180 source:c:\workspace\projects\fux\src\music\duree.cpp
+1420582741 source:c:\workspace\projects\fux\src\music\duree.cpp
 	"../../include/music/Duree.h"
 
-1420202617 source:c:\workspace\projects\fux\src\music\factory.cpp
+1421186775 source:c:\workspace\projects\fux\src\music\factory.cpp
 	"../../include/music/Factory.h"
 
 1420201180 source:c:\workspace\projects\fux\src\music\music.cpp
 	"../../include/music/Music.h"
 
-1420380050 source:c:\workspace\projects\fux\src\music\musicfilereader.cpp
+1421185970 source:c:\workspace\projects\fux\src\music\musicfilereader.cpp
 	"MusicFileReader.h"
 
-1420376256 source:c:\workspace\projects\fux\src\music\musicfilereaderthread.cpp
+1421186665 source:c:\workspace\projects\fux\src\music\musicfilereaderthread.cpp
 	"MusicFileReaderThread.h"
 
 1420238574 source:c:\workspace\projects\fux\src\music\musicfilewriter.cpp
 	"MusicFileWriter.h"
 
-1420389502 source:c:\workspace\projects\fux\src\music\musiclist.cpp
+1421186881 source:c:\workspace\projects\fux\src\music\musiclist.cpp
 	"../../include/music/MusicList.h"
 
-1420390438 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
+1421255289 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
 	"../../include/music/MusicManager.h"
 
 1420201180 source:c:\workspace\projects\fux\src\network\tcpclient.cpp
@@ -3228,4 +3226,9 @@
 	<wx/app.h>
 	<wx/timer.h>
 	"../../include/tools/Timer.h"
+
+1420617367 c:\workspace\projects\fux\include\music\duration.h
+
+1420617535 source:c:\workspace\projects\fux\src\music\duration.cpp
+	"../../include/music/Duration.h"
 

@@ -543,17 +543,14 @@ void PlayListTableau::SuppressionLigne()
             #if DEBUG
             FichierLog::Get()->Ajouter(_T("PlayListTableau::SuppressionLigne - 1 ligne"));
             #endif
-            DeleteItem(position);
-            for (size_t k = 0; k < m_ocurrenceLigne.GetCount(); k++)
-            {
-                if (m_ocurrenceLigne.Item(k) >= position)
-                    m_ocurrenceLigne.Item(k)--;
-            }
+
             MusicManager::get().deleteTitleAt(position);
+            removeLine(position);
         }
         else
         {
-            long i = 0, j = 0, max = GetSelectedItemCount();
+            int i = 0;
+            const int max = GetSelectedItemCount();
 
             #if DEBUG
             FichierLog::Get()->Ajouter(_T("PlayListTableau::SuppressionLigne - ") + wxString::Format(_T("%ld lignes"), max));
@@ -563,17 +560,11 @@ void PlayListTableau::SuppressionLigne()
 
             while (i < max)
             {
-                j = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
-                MusicManager::get().deleteTitleAt(j);
-                DeleteItem(j);
-                i++;
+                position = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
+                MusicManager::get().deleteTitleAt(position);
+                removeLine(position);
+                ++i;
                 barProgre.Update(i);
-
-                for (size_t k = 0; k < m_ocurrenceLigne.GetCount(); ++k)
-                {
-                    if (m_ocurrenceLigne.Item(k) >= j)
-                        --m_ocurrenceLigne.Item(k);
-                }
             }
         }
 

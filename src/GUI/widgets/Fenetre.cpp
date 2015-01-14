@@ -761,7 +761,7 @@ void FuXFenetre::MenuAbout(wxCommandEvent &WXUNUSED(event))
     wxString message("Nom : Fu(X) 2.0\tVersion : a5\tDate : ");
     message.Append(__DATE__);
     message.Append("\n\n");
-    message.Append("Auteur : David Lecoconnier (david.lecoconnier@free.fr");
+    message.Append("Auteur : David Lecoconnier (david.lecoconnier@free.fr)");
     message.Append("\n\n");
     message.Append("Interface réalisée avec wxWidgets 3.0.2");
     message.Append("\n\n\n");
