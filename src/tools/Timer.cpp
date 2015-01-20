@@ -10,6 +10,7 @@
 #include <wx/app.h>
 #include <wx/timer.h>
 #include "../../include/tools/Timer.h"
+#include "MusicManagerSwitcher.h"
 
 /**
  * @class TimerGraph
@@ -33,8 +34,8 @@ TimerGraph::~TimerGraph()
  */
 void TimerGraph::Notify()
 {
-    if (MusicManager::get().getMusicPlayer().isEnding())
-        MusicManager::get().playAMusic();
+    if (MusicManagerSwitcher::get().getMusicPlayer().isEnding())
+        MusicManagerSwitcher::get().playAMusic();
     if (MusiqueGraph::Get()->IsShownOnScreen())
         MusiqueGraph::Get()->OnIdle();
 }

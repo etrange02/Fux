@@ -7,6 +7,7 @@
  * License:
  **************************************************************/
 #include "../../../include/gui/musiclist/PlayList.h"
+#include "MusicManagerSwitcher.h"
 
 /**
  * @class PlayListTableau
@@ -93,7 +94,7 @@ void PlayListTableau::MAJ()
 
     DeleteAllItems();
 
-    if (MusicManager::get().getSearchedOrAllMusics().empty())
+    if (MusicManagerSwitcher::getSearch().getMusics().empty())
     {
         return;
     }
@@ -105,7 +106,7 @@ void PlayListTableau::MAJ()
     #endif
 
     SetDoubleBuffered(true);
-    for (std::vector<Music*>::iterator iter = MusicManager::get().getSearchedOrAllMusics().begin(); iter != MusicManager::get().getSearchedOrAllMusics().end(); ++iter)
+    for (std::vector<Music*>::iterator iter = MusicManagerSwitcher::getSearch().getMusics().begin(); iter != MusicManagerSwitcher::getSearch().getMusics().end(); ++iter)
     {
 //        BDDRequete *req = new BDDRequete(this);
 
@@ -150,7 +151,7 @@ void PlayListTableau::MAJ()
  * @return void
  *
  */
-void PlayListTableau::addLine(Music& music)
+void PlayListTableau::addLine(IMusic& music)
 {
     addLine(music, GetItemCount());
 }
@@ -162,7 +163,7 @@ void PlayListTableau::addLine(Music& music)
  * @return void
  *
  */
-void PlayListTableau::addLine(Music& music, const int position)
+void PlayListTableau::addLine(IMusic& music, const int position)
 {
     int pos = InsertItem(position, wxEmptyString);
     modifyLine(music, pos);
@@ -175,7 +176,7 @@ void PlayListTableau::addLine(Music& music, const int position)
  * @return void
  *
  */
-void PlayListTableau::addLineThread(Music& music, const int position)
+void PlayListTableau::addLineThread(IMusic& music, const int position)
 {
     while (GetItemCount() < position+1)
     {
@@ -191,7 +192,7 @@ void PlayListTableau::addLineThread(Music& music, const int position)
  * @return void
  *
  */
-void PlayListTableau::modifyLine(Music& music, const int position)
+void PlayListTableau::modifyLine(IMusic& music, const int position)
 {
     SetItem(position, 0, music.GetName());//Nom du fichier
     SetItem(position, 1, music.GetArtists());//Artiste
@@ -209,7 +210,7 @@ void PlayListTableau::modifyLine(Music& music, const int position)
  */
 void PlayListTableau::ChansonActive(wxListEvent &event)
 {
-    MusicManager::get().playMusicAtInShownCollection(event.GetIndex());
+    MusicManagerSwitcher::getSearch().playMusicAt(event.GetIndex());
 }
 
 /**
@@ -242,9 +243,9 @@ void PlayListTableau::MouseEvents(wxMouseEvent &event)
     if (event.ControlDown() && event.GetWheelRotation() != 0)
     {
         if (event.GetWheelRotation() < 0)
-            MusicManager::get().playNextMusic();
+            MusicManagerSwitcher::getSearch().playNextMusic();
         else
-            MusicManager::get().playPreviousMusic();
+            MusicManagerSwitcher::getSearch().playPreviousMusic();
     }
     else if (event.AltDown() && event.GetWheelRotation() != 0)
     {
@@ -278,10 +279,9 @@ void PlayListTableau::MouseEvents(wxMouseEvent &event)
 }
 
 /**
- * Supprime le titre en cours de lecture de la liste affichée
- * @param titre la structure contenant le nom et la position du titre dans le fichier musique.liste (donc aussi dans le tableau)
+ * Remove a line from the control
+ * @param position line to remove
  */
-/// TODO (David): Connect an event
 void PlayListTableau::removeLine(const int position)
 {
     wxMutexLocker lock(*s_mutexMAJPlaylist);
@@ -306,7 +306,7 @@ void PlayListTableau::updateColors()
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("PlayListTableau::updateColors"));
     #endif
-    if (MusicManager::get().getSearchedOrAllMusics().empty())
+    if (MusicManagerSwitcher::getSearch().getMusics().empty())
         return;
 
     for (wxArrayInt::iterator iter = m_ocurrenceLigne.begin(); iter != m_ocurrenceLigne.end(); ++iter)
@@ -329,10 +329,10 @@ void PlayListTableau::updateColors()
 
 void PlayListTableau::updateColor(const size_t position)
 {
-    if (GetItemText(position).IsSameAs(MusicManager::get().getMusic()->GetName()))
+    if (GetItemText(position).IsSameAs(MusicManagerSwitcher::getSearch().getMusic()->GetName()))
     {
         m_ocurrenceLigne.Add(position);
-        if (MusicManager::get().getCurrentMusicPosition() == position && !MusicManager::get().hasEfficientSearchedWord())//La couleur orange perd son sens lorsqu'il y a une recherche locale
+        if (MusicManagerSwitcher::getSearch().getCurrentMusicPosition() == position && !MusicManagerSwitcher::getSearch().hasEfficientSearchedWord())//La couleur orange perd son sens lorsqu'il y a une recherche locale
             updateColorNormalMode(position);
         else
             updateColorSearchMode(position);
@@ -364,7 +364,7 @@ void PlayListTableau::setDefaultColor(const size_t position)
 void PlayListTableau::Glisser(wxListEvent &WXUNUSED(event))
 {
     wxMutexLocker locker(*s_mutexMAJPlaylist);
-    if (MusicManager::get().hasEfficientSearchedWord())
+    if (MusicManagerSwitcher::getSearch().hasEfficientSearchedWord())
         return;
 
     long item = -1;
@@ -412,7 +412,7 @@ void PlayListTableau::AfficheMenu(wxMouseEvent &WXUNUSED(event))
        ////////////////////// Musique::Get()->GetNomChanson().IsSameAs(GetItem(pos));/////////////////
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_LECTURE, false);
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_PAUSE, true);
-        if (MusicManager::get().getMusicPlayer().isPlaying())//En lecture
+        if (MusicManagerSwitcher::getSearch().getMusicPlayer().isPlaying())//En lecture
             m_menu->SetLabel(ID_PAGE_PLAYLIST_MENU_PAUSE, _("Pause"));
         else
             m_menu->SetLabel(ID_PAGE_PLAYLIST_MENU_PAUSE, _("Reprendre"));
@@ -421,7 +421,7 @@ void PlayListTableau::AfficheMenu(wxMouseEvent &WXUNUSED(event))
     {
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_LECTURE, true);
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_PAUSE, true);
-        if (MusicManager::get().getMusicPlayer().isPlaying())//En lecture
+        if (MusicManagerSwitcher::getSearch().getMusicPlayer().isPlaying())//En lecture
             m_menu->SetLabel(ID_PAGE_PLAYLIST_MENU_PAUSE, _("Pause"));
         else
             m_menu->SetLabel(ID_PAGE_PLAYLIST_MENU_PAUSE, _("Reprendre"));
@@ -433,7 +433,7 @@ void PlayListTableau::AfficheMenu(wxMouseEvent &WXUNUSED(event))
     }
 
 
-    if (m_couper && !MusicManager::get().hasEfficientSearchedWord())
+    if (m_couper && !MusicManagerSwitcher::getSearch().hasEfficientSearchedWord())
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_COLLER, true);
     else
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_COLLER, false);
@@ -446,8 +446,8 @@ void PlayListTableau::AfficheMenu(wxMouseEvent &WXUNUSED(event))
     }
     else
     {
-        m_menu->Enable(ID_PAGE_PLAYLIST_MENU_COUPER, !MusicManager::get().hasEfficientSearchedWord());// couper accessible si on est pas en recherche
-        m_menu->Enable(ID_PAGE_PLAYLIST_MENU_SUPPRIMER, !MusicManager::get().hasEfficientSearchedWord());// idem
+        m_menu->Enable(ID_PAGE_PLAYLIST_MENU_COUPER, !MusicManagerSwitcher::getSearch().hasEfficientSearchedWord());// couper accessible si on est pas en recherche
+        m_menu->Enable(ID_PAGE_PLAYLIST_MENU_SUPPRIMER, !MusicManagerSwitcher::getSearch().hasEfficientSearchedWord());// idem
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_DETAILS, true);
     }
 
@@ -462,7 +462,7 @@ void PlayListTableau::AfficheMenu(wxMouseEvent &WXUNUSED(event))
 void PlayListTableau::menuLecture(wxCommandEvent &WXUNUSED(event))
 {
     long pos = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_FOCUSED);
-    MusicManager::get().playMusicAtInShownCollection(pos);
+    MusicManagerSwitcher::getSearch().playMusicAt(pos);
 }
 
 /**
@@ -470,12 +470,12 @@ void PlayListTableau::menuLecture(wxCommandEvent &WXUNUSED(event))
  */
 void PlayListTableau::menuPause(wxCommandEvent &WXUNUSED(event))
 {
-    if (MusicManager::get().getMusicPlayer().isPlaying())
-        MusicManager::get().getMusicPlayer().setPause(true);
-    else if (MusicManager::get().getMusicPlayer().isPaused())
-        MusicManager::get().getMusicPlayer().setPause(false);
+    if (MusicManagerSwitcher::getSearch().getMusicPlayer().isPlaying())
+        MusicManagerSwitcher::getSearch().getMusicPlayer().setPause(true);
+    else if (MusicManagerSwitcher::getSearch().getMusicPlayer().isPaused())
+        MusicManagerSwitcher::getSearch().getMusicPlayer().setPause(false);
     else//Musique stoppée
-        MusicManager::get().playSameMusic();
+        MusicManagerSwitcher::getSearch().playSameMusic();
 }
 
 /**
@@ -506,7 +506,7 @@ void PlayListTableau::menuCouper(wxCommandEvent &WXUNUSED(event))
  */
 void PlayListTableau::menuColler(wxCommandEvent &WXUNUSED(event))
 {
-    MusicManager::get().moveIntTitlesAt(&m_tableauCouper, m_yMenu, true);
+    MusicManagerSwitcher::getSearch().moveIntTitlesAt(&m_tableauCouper, m_yMenu, true);
     m_tableauCouper.Clear();
     m_couper = false;
 }
@@ -526,6 +526,7 @@ void PlayListTableau::menuDetails(wxCommandEvent &WXUNUSED(event))
  /// TODO (David): Modifier le contenu pour transmettre un tableau de position (entier)
  /// au MusicManager. Ne pas supprimer directement les lignes, le manager enverra un message pour.
  /// mode normal/recherche !!!
+ /// Attention au multithread, lorsque l'on fait des ajouts de lignes au même moment. GUI monothread
 void PlayListTableau::SuppressionLigne()
 {
     wxMutexLocker lock(*s_mutexMAJPlaylist);
@@ -538,13 +539,13 @@ void PlayListTableau::SuppressionLigne()
     long position = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
     if (position != -1 && GetItemCount() > 0)
     {
-        if (GetSelectedItemCount() == 1 && !MusicManager::get().hasEfficientSearchedWord())
+        if (GetSelectedItemCount() == 1 && !MusicManagerSwitcher::getSearch().hasEfficientSearchedWord())
         {
             #if DEBUG
             FichierLog::Get()->Ajouter(_T("PlayListTableau::SuppressionLigne - 1 ligne"));
             #endif
 
-            MusicManager::get().deleteTitleAt(position);
+            MusicManagerSwitcher::getSearch().deleteTitleAt(position);
             removeLine(position);
         }
         else
@@ -561,7 +562,7 @@ void PlayListTableau::SuppressionLigne()
             while (i < max)
             {
                 position = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
-                MusicManager::get().deleteTitleAt(position);
+                MusicManagerSwitcher::getSearch().deleteTitleAt(position);
                 removeLine(position);
                 ++i;
                 barProgre.Update(i);
@@ -593,9 +594,13 @@ void PlayListTableau::SuppressionLigne()
  */
 void PlayListTableau::onUpdateLine(wxCommandEvent& event)
 {
-    Music* music = (Music*) (event.GetClientData());
-    std::vector<Music*>::iterator iter = std::find(MusicManager::get().getSearchedOrAllMusics().begin(), MusicManager::get().getSearchedOrAllMusics().end(), music);
-    const int position = std::distance(MusicManager::get().getSearchedOrAllMusics().begin(), iter);
+    IMusic* music = (IMusic*) (event.GetClientData());
+    std::vector<Music*>::iterator iter = std::find(MusicManagerSwitcher::getSearch().getMusics().begin(), MusicManagerSwitcher::getSearch().getMusics().end(), music);
+
+    if (iter == MusicManagerSwitcher::getSearch().getMusics().end())
+        return;
+
+    const int position = std::distance(MusicManagerSwitcher::getSearch().getMusics().begin(), iter);
     addLineThread(**iter, position);
     updateColor(position);
 }

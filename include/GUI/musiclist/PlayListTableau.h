@@ -52,13 +52,13 @@ class PlayListTableau : public wxListCtrl
 
     protected:
         /** Adds a line at the end of the list */
-        void addLine(Music& music);
+        void addLine(IMusic& music);
         /** Adds a line at the specified position */
-        void addLine(Music& music, const int position);
+        void addLine(IMusic& music, const int position);
         /** Adds a line at the specified position */
-        void addLineThread(Music& music, const int position);
+        void addLineThread(IMusic& music, const int position);
         /** Modifies a line in the list */
-        void modifyLine(Music& music, const int position);
+        void modifyLine(IMusic& music, const int position);
 
         void updateColor(const size_t position);
         void updateColorNormalMode(const size_t position);

@@ -73,6 +73,17 @@ void ThreadManager::initialize()
     }
 }
 
+/** @brief Deletes the instance
+ *
+ * @return void
+ *
+ */
+void ThreadManager::deleteInstance()
+{
+    delete s_threadManager;
+    s_threadManager = NULL;
+}
+
 /** @brief Clears work queue and workers
  *
  * @return void

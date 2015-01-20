@@ -7,6 +7,7 @@
  * License:
  **************************************************************/
 #include "../../../include/gui/musiclist/PlayList.h"
+#include "MusicManagerSwitcher.h"
 
 /**
  * @class PlayList
@@ -157,7 +158,7 @@ void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
             return;
         if (modif)
         {
-            if (!MusicManager::get().saveMusicListIntoFile(fen->GetChemin()))
+            if (!MusicManagerSwitcher::getSearch().saveMusicListIntoFile(fen->GetChemin()))
             {
                 wxLogError(_("Erreur dans le nom.\nVérifiez que vous utilisez des caractères autorisés."), _("Erreur"));
                 return;
@@ -261,7 +262,7 @@ void PlayList::ViderPanneauTAG()
  */
 void PlayList::RemplirPanneauTAG(int musicPosition)
 {
-    std::vector<Music*>::iterator iter = MusicManager::get().getSearchedOrAllMusics().begin() + musicPosition;
+    std::vector<Music*>::iterator iter = MusicManagerSwitcher::getSearch().getMusics().begin() + musicPosition;
     RemplirPanneauTAG(**iter);
     m_sizerRep->Layout();
 }
@@ -270,7 +271,7 @@ void PlayList::RemplirPanneauTAG(int musicPosition)
  * Fill fields with music data
  * @param music a music
  */
-void PlayList::RemplirPanneauTAG(Music& music)
+void PlayList::RemplirPanneauTAG(IMusic& music)
 {
     m_BoiteNom->ChangeValue(music.GetName());//Nom du fichier
     m_BoiteArtiste->ChangeValue(music.GetArtists());//Artiste
@@ -461,9 +462,9 @@ void PlayList::MouseEvents(wxMouseEvent &event)
     if (event.ControlDown() && event.GetWheelRotation() != 0)
     {
         if (event.GetWheelRotation() < 0)
-            MusicManager::get().playNextMusic();
+            MusicManagerSwitcher::getSearch().playNextMusic();
         else
-            MusicManager::get().playPreviousMusic();
+            MusicManagerSwitcher::getSearch().playPreviousMusic();
     }
     else if (event.AltDown() && event.GetWheelRotation() != 0)
     {
@@ -478,7 +479,7 @@ void PlayList::MouseEvents(wxMouseEvent &event)
 
 void PlayList::RechercheListeLecture(wxCommandEvent &WXUNUSED(event))
 {
-    MusicManager::get().setSearchWord(m_champsRecherche->GetValue());
+    MusicManagerSwitcher::getSearch().setSearchWord(m_champsRecherche->GetValue());
     m_liste->MAJ();
 }
 

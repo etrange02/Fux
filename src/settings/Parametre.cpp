@@ -7,6 +7,7 @@
  * License:
  **************************************************************/
 #include "../../include/settings/Parametre.h"
+#include "MusicManagerSwitcher.h"
 
 /**
  * @class Parametre
@@ -175,7 +176,7 @@ void Parametre::setVolume(wxString volume, wxString volumePC)
  */
 void Parametre::setVolume(int volume, int volumePC)
 {
-    MusicManager::get().getMusicPlayer().setVolume(volume);
+    MusicManagerSwitcher::get().getMusicPlayer().setVolume(volume);
     SliderSon::Get()->SetValue(volume);
 }
 

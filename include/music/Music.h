@@ -35,8 +35,6 @@ class Music : public IMusic
         wxString GetGenres() const;
         wxString GetExtension() const;
         wxString GetFileName() const;
-        wxString GetStringDuration();
-        wxString GetStringYear();
         int GetYear() const;
         int GetDuration() const;
         int GetDebit() const;
@@ -45,7 +43,6 @@ class Music : public IMusic
         wxImage *GetRecordSleeve() const;
 
         bool EqualsFilename(const IMusic *music) const;
-        bool IsMatching(const wxString& word);
 
         void ShrinkData();
 

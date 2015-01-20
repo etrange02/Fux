@@ -21,8 +21,10 @@ class IMusic
         virtual int GetSize()               const = 0;
         virtual bool HasRecordSleeve()      const = 0;
         virtual wxImage *GetRecordSleeve()  const = 0;
-        virtual wxString GetStringDuration()      = 0;
-        virtual wxString GetStringYear()          = 0;
+        virtual wxString GetStringDuration()         ;
+        virtual wxString GetStringYear()             ;
+
+        bool IsMatching(const wxString& word);
 
         virtual bool EqualsFilename(const IMusic *music) const = 0;
 };

@@ -7,6 +7,7 @@
  * License:
  **************************************************************/
 #include "../../../include/gui/explorer/GestionPeriphCouperCopier.h"
+#include "MusicManagerSwitcher.h"
 
 /**
  * @class CouperCopierColler
@@ -106,7 +107,7 @@ void CouperCopierColler::ModifEtatDonnee(bool reset)
         }
         else if (m_objetOrigine == PLAYLIST)
         {
-            MusicManager::get().deleteTitles(m_tableau, true);
+            MusicManagerSwitcher::get().deleteTitles(m_tableau, true);
             reset = true;
         }
     }
@@ -175,7 +176,7 @@ bool CouperCopierColler::SetDestination(wxString destination, int type)
         if (m_tableau.IsEmpty())
             return false;
 
-        MusicManager::get().deleteTitles(m_tableau, true);
+        MusicManagerSwitcher::get().deleteTitles(m_tableau, true);
         fait = true;
         ModifEtatDonnee();
     }

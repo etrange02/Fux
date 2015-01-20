@@ -7,6 +7,7 @@
  * License:
  **************************************************************/
 #include "../../../include/tools/dnd/DnDCible.h"
+#include "MusicManagerSwitcher.h"
 
 /**
  * @class DnDCible
@@ -57,9 +58,9 @@ wxDragResult DnDCible::OnData(wxCoord WXUNUSED(x), wxCoord y, wxDragResult WXUNU
     {
         if (TransFile->Item(0).IsNumber())
             //Musique::Get()->PlacerLigneInt(TransFile->arrayString(), GetPositionCoord(y), true);
-            MusicManager::get().moveIntTitlesAt(TransFile->arrayString(), GetPositionCoord(y), true, true);
+            MusicManagerSwitcher::get().moveIntTitlesAt(TransFile->arrayString(), GetPositionCoord(y), true, true);
         else
-            MusicManager::get().placeStringTitlesAt(TransFile->arrayString(), GetPositionCoord(y), true);
+            MusicManagerSwitcher::get().placeStringTitlesAt(TransFile->arrayString(), GetPositionCoord(y), true);
             //Musique::Get()->PlacerLigneString(TransFile->arrayString(), GetPositionCoord(y), true);//Les coordonnées commencent au coin sup gauche de la liste, dans les en-têtes
     }
     else

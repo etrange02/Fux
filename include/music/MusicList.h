@@ -38,7 +38,7 @@ class MusicList : public ISearchTraversable
 
         wxString getNameAtPosition(long position);
         long getPositionInList(const wxString& filename, long position = -1);
-        long getPositionInList(const Music* music);
+        long getPositionInList(const IMusic* music);
         void removeLine(size_t position);
         void removeLines(wxArrayString& filenameArray);
         void exchangeLine(wxString filename1, wxString filename2);

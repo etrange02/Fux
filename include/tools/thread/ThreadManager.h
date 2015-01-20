@@ -29,6 +29,9 @@ namespace fux
                 /** Called by workers when work is done */
                 virtual void currentWorkFinished(ThreadProcess& threadProcess);
 
+                /** Deletes the instance */
+                void deleteInstance();
+
             protected:
             private:
                 /** Default constructor */
@@ -49,6 +52,7 @@ namespace fux
                 /** Gets a sleeping worker */
                 ThreadProcess* getAvailableWorker();
 
+            private:
                 std::ThreadSafeQueue<IRunnable*> m_works; //!< Member variable "m_works"
                 std::vector<ThreadProcess*> m_workers;
                 wxMutex m_mutex;

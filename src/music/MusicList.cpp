@@ -15,6 +15,10 @@ const wxEventType wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED = wxNewEventType();
 /// TODO (David): Complete wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED event
 
 
+typedef std::vector<Music*> MusicCollection;
+typedef MusicCollection::iterator MusicIterator;
+
+
 /** @brief Default constructor
  */
 MusicList::MusicList() :
@@ -268,14 +272,14 @@ long MusicList::getPositionInList(const wxString& filename, long position)
  * @return a positive number if found, -1 otherwise
  *
  */
-long MusicList::getPositionInList(const Music* music)
+long MusicList::getPositionInList(const IMusic* music)
 {
     if (NULL == music)
         return -1;
 
     long index = 0;
 
-    for (std::vector<Music*>::iterator iter = getCollection().begin(); iter != getCollection().end(); ++iter, ++index)
+    for (MusicIterator iter = getCollection().begin(); iter != getCollection().end(); ++iter, ++index)
     {
         if (music == *iter)
             return index;
@@ -293,7 +297,7 @@ void MusicList::removeLine(size_t position)
 {
     if (!getCollection().empty() && getCollection().size() > position)
     {
-        std::vector<Music*>::iterator it = getCollection().begin() + position;
+        MusicIterator it = getCollection().begin() + position;
         getCollection().erase(it);
         sendMusicListLineDeleted(position);
         //sendMusicListUpdatedEvent();
@@ -309,8 +313,8 @@ void MusicList::removeLine(size_t position)
 void MusicList::removeLines(wxArrayString& filenameArray)
 {
     wxArrayString::iterator iterFilename = filenameArray.begin();
-    std::vector<Music*>::iterator iterMusic = getCollection().begin();
-    std::vector<Music*>::iterator iterMusicOld;
+    MusicIterator iterMusic = getCollection().begin();
+    MusicIterator iterMusicOld;
     while (iterFilename != filenameArray.end() && iterMusic != getCollection().end())
     {
         if ((*iterMusic)->GetFileName().IsSameAs(*iterFilename))
@@ -326,17 +330,18 @@ void MusicList::removeLines(wxArrayString& filenameArray)
 }
 
 /** @brief Exchange two lines
- * Exchange two lines
  * @param filename1 First line
  * @param filename2 Second line
  * @return void
  *
  */
-/// TODO (David): Mauvaise idée, utiliser les positions sera plus efficaces, et remplissage de avec un filereader
+/// TODO (David): Mauvaise idée, utiliser les positions sera plus efficaces, et remplissage avec un filereader
+/// TODO (David): Pas utilisé dans le code, à supprimer ?? L'idée de base devait être la mise à jour d'une ligne
+/// => on crée un nouvel objet avec les bonne valeurs, on le met à la place de l'ancien, on supprime l'ancien
 void MusicList::exchangeLine(wxString filename1, wxString filename2)
 {
     int lineToChange = getPositionInList(filename1);
-    Music *music = getCollection().at(lineToChange);
+    IMusic *music = getCollection().at(lineToChange);
     getCollection().assign(lineToChange, new Music(filename2));
     delete music;
     sendMusicListUpdatedEvent();
@@ -368,7 +373,7 @@ void MusicList::insertLines(wxArrayString* filenameArray, long position)
         }
     }
 
-    std::vector<Music*>::iterator musicIterator = m_musicList->begin() + insertionLine;
+    MusicIterator musicIterator = m_musicList->begin() + insertionLine;
     m_musicList->insert(musicIterator, tmpArray->begin(), tmpArray->end());
 
     delete tmpArray;
@@ -415,7 +420,7 @@ bool MusicList::isSendEventWhenAdding() const
 
 void MusicList::setSendEventWhenAdding(bool send)
 {
-    m_sendEventWhenAdding = send;
+    m_sendEventWhenAdding = true;//send;
 }
 
 void MusicList::sendMusicListLineDeleted(const int position)

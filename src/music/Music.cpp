@@ -340,46 +340,6 @@ bool Music::EqualsFilename(const IMusic *music) const
     return this->GetFileName().IsSameAs(music->GetFileName());
 }
 
-/** @brief Gets the duration under dd:dd format
- * Gets the duration under dd:dd format. 0 inserted if necessary
- * @return a dd:dd string
- *
- */
-wxString Music::GetStringDuration()
-{
-    wxString str;
-    str << GetDuration()/60 << _T(":");
-    if (GetDuration()%60 < 10)
-        str << _T("0") << GetDuration()%60;
-    else
-        str << GetDuration()%60;
-    return str;
-}
-
-/** @brief Gets the year under string format
- * Gets the year under string format
- * @return the year under string format
- *
- */
-wxString Music::GetStringYear()
-{
-    wxString str = wxString::Format(_("%d"), GetYear());
-    return str;
-}
-
-bool Music::IsMatching(const wxString& word)
-{
-    return !(
-                      wxNOT_FOUND == GetFileName()      .Lower().Find(word)
-                 &&   wxNOT_FOUND == GetArtists()       .Lower().Find(word)
-                 &&   wxNOT_FOUND == GetAlbum()         .Lower().Find(word)
-                 &&   wxNOT_FOUND == GetTitle()         .Lower().Find(word)
-                 &&   wxNOT_FOUND == GetGenres()        .Lower().Find(word)
-                 &&   wxNOT_FOUND == GetStringDuration().Lower().Find(word)
-                 &&   wxNOT_FOUND == GetStringYear()    .Lower().Find(word)
-             );
-}
-
 void Music::ShrinkData()
 {
     m_name.Shrink();
