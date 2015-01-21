@@ -58,9 +58,9 @@ wxDragResult DnDCible::OnData(wxCoord WXUNUSED(x), wxCoord y, wxDragResult WXUNU
     {
         if (TransFile->Item(0).IsNumber())
             //Musique::Get()->PlacerLigneInt(TransFile->arrayString(), GetPositionCoord(y), true);
-            MusicManagerSwitcher::get().moveIntTitlesAt(TransFile->arrayString(), GetPositionCoord(y), true, true);
+            MusicManagerSwitcher::get().moveIntTitlesAt(TransFile->arrayString(), GetPositionCoord(y)/*, true, true*/);
         else
-            MusicManagerSwitcher::get().placeStringTitlesAt(TransFile->arrayString(), GetPositionCoord(y), true);
+            MusicManagerSwitcher::get().placeStringTitlesAt(TransFile->arrayString(), GetPositionCoord(y)/*, true*/);
             //Musique::Get()->PlacerLigneString(TransFile->arrayString(), GetPositionCoord(y), true);//Les coordonnées commencent au coin sup gauche de la liste, dans les en-têtes
     }
     else

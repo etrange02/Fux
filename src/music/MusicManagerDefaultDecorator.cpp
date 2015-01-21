@@ -21,19 +21,24 @@ size_t MusicManagerDefaultDecorator::getCurrentMusicPosition()
     return getDelegate().getCurrentMusicPosition();
 }
 
-void MusicManagerDefaultDecorator::moveIntTitlesAt(wxArrayString* titles, long position, bool update, bool autoDelete)
+void MusicManagerDefaultDecorator::moveIntTitlesAt(wxArrayString* titles, long position)
 {
-    getDelegate().moveIntTitlesAt(titles, position, update, autoDelete);
+    getDelegate().moveIntTitlesAt(titles, position);
 }
 
-void MusicManagerDefaultDecorator::placeStringTitlesAt(wxArrayString* titles, size_t position, bool update)
+void MusicManagerDefaultDecorator::placeStringTitlesAt(wxArrayString* titles, size_t position)
 {
-    getDelegate().placeStringTitlesAt(titles, position, update);
+    getDelegate().placeStringTitlesAt(titles, position);
 }
 
 void MusicManagerDefaultDecorator::deleteTitleAt(size_t position)
 {
     getDelegate().deleteTitleAt(position);
+}
+
+bool MusicManagerDefaultDecorator::playMusicAt(long position)
+{
+    return getDelegate().playMusicAt(position);
 }
 
 

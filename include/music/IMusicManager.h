@@ -12,9 +12,10 @@ class IMusicManager
 
         virtual std::vector<Music*>& getMusics() = 0;
         /**/virtual size_t getCurrentMusicPosition() = 0;
-        /**/virtual void moveIntTitlesAt(wxArrayString* titles, long position, bool update = true, bool autoDelete = true) = 0;
-        /**/virtual void placeStringTitlesAt(wxArrayString* titles, size_t position, bool update = true) = 0;
+        /**/virtual void moveIntTitlesAt(wxArrayString* titles, long position) = 0;
+        /**/virtual void placeStringTitlesAt(wxArrayString* titles, size_t position) = 0;
         /**/virtual void deleteTitleAt(size_t position) = 0;
+        /**/virtual bool playMusicAt(long position) = 0;
 
         virtual bool isRepete() = 0;
         virtual bool isRandom() = 0;
@@ -29,9 +30,7 @@ class IMusicManager
         virtual bool playNextOrRandomMusic();
         virtual bool playPreviousOrRandomMusic() = 0;
         virtual bool playAMusic() = 0;
-        virtual bool playMusicAt(long position) = 0;
-        virtual bool playMusicAtInShownCollection(long position) = 0;
-        virtual bool playMusic(const wxString& name/*, long position*/) = 0;
+        virtual bool playMusic(const wxString& name) = 0;
         virtual bool playMusicThenParse(wxString filename) = 0;
         virtual bool playSameMusic() = 0;
 

@@ -27,12 +27,11 @@ class MusicManager
         size_t getCurrentMusicPosition();
         size_t getCurrentMusicPositionInSearch();
         bool playMusicAt(long position);
-        bool playMusicAtInShownCollection(long position);// to delete
         bool playMusicAtInSearch(long position);
-        void moveIntTitlesAt(wxArrayString* titles, long position, bool update = true, bool autoDelete = true);
-        void moveIntTitlesAtInSearch(wxArrayString* titles, long position, bool update = true, bool autoDelete = true);
-        void placeStringTitlesAt(wxArrayString* titles, size_t position, bool update = true);
-        void placeStringTitlesAtInSearch(wxArrayString* titles, size_t position, bool update = true);
+        void moveIntTitlesAt(wxArrayString* titles, long position);
+        void moveIntTitlesAtInSearch(wxArrayString* titles, long position);
+        void placeStringTitlesAt(wxArrayString* titles, size_t position);
+        void placeStringTitlesAtInSearch(wxArrayString* titles, size_t position);
         void deleteTitleAt(size_t position);
         void deleteTitleAtInSearch(size_t position);
         void deleteTitles(wxArrayString& titles, bool update = false);
@@ -50,7 +49,7 @@ class MusicManager
         bool playNextOrRandomMusic();
         bool playPreviousOrRandomMusic();
         bool playAMusic();
-        bool playMusic(const wxString& name/*, long position*/);
+        bool playMusic(const wxString& name);
         bool playMusicThenParse(wxString filename);
         bool playSameMusic();
 

@@ -506,7 +506,7 @@ void PlayListTableau::menuCouper(wxCommandEvent &WXUNUSED(event))
  */
 void PlayListTableau::menuColler(wxCommandEvent &WXUNUSED(event))
 {
-    MusicManagerSwitcher::getSearch().moveIntTitlesAt(&m_tableauCouper, m_yMenu, true);
+    MusicManagerSwitcher::getSearch().moveIntTitlesAt(&m_tableauCouper, m_yMenu/*, true*/);
     m_tableauCouper.Clear();
     m_couper = false;
 }

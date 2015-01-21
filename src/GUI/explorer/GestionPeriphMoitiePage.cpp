@@ -1038,7 +1038,7 @@ void PageGestionPeriph::GlisserTraitement(wxArrayString *tableau, long pos)
         }
         if (m_liste->GetEtat() == PLAYLIST)
         {
-            MusicManagerSwitcher::get().moveIntTitlesAt(tableau, pos, true, true);
+            MusicManagerSwitcher::get().moveIntTitlesAt(tableau, pos);/*, true, true*/
             //Recharger();
         }
     }
@@ -1082,15 +1082,15 @@ void PageGestionPeriph::GlisserTraitement(wxArrayString *tableau, long pos)
         else if(m_liste->GetEtat() == PLAYLIST)
         {
             if (m_pageParallele->GetEtat() == DOSSIER)//A modifier, interdiction formel d'ouvrir directement le fichier sans passer par Musique
-                MusicManagerSwitcher::get().placeStringTitlesAt(tableau, pos, true);
+                MusicManagerSwitcher::get().placeStringTitlesAt(tableau, pos/*, true*/);
             else if (m_pageParallele->GetEtat() == M3U)
             {
                 ArrayIntToString(tableau, m_pageParallele->GetChemin());
-                MusicManagerSwitcher::get().placeStringTitlesAt(tableau, pos, true);
+                MusicManagerSwitcher::get().placeStringTitlesAt(tableau, pos/*, true*/);
                 m_pageParallele->SuppressionDansFichierLigneM3u();
             }
             else if (m_pageParallele->GetEtat() == PLAYLIST)
-                MusicManagerSwitcher::get().moveIntTitlesAt(tableau, pos, true, true);
+                MusicManagerSwitcher::get().moveIntTitlesAt(tableau, pos/*, true, true*/);
             //Recharger();
         }
     }

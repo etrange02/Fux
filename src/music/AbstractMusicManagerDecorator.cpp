@@ -77,16 +77,6 @@ bool AbstractMusicManagerDecorator::playAMusic()
     return getDelegate().playAMusic();
 }
 
-bool AbstractMusicManagerDecorator::playMusicAt(long position)
-{
-    return getDelegate().playMusicAt(position);
-}
-
-bool AbstractMusicManagerDecorator::playMusicAtInShownCollection(long position)
-{
-    return getDelegate().playMusicAtInShownCollection(position);
-}
-
 bool AbstractMusicManagerDecorator::playMusic(const wxString& name)
 {
     return getDelegate().playMusic(name);

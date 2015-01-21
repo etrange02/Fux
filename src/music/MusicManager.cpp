@@ -237,22 +237,6 @@ bool MusicManager::playMusicAt(long position)
     return true;
 }
 
-/** @brief Old methods, must be deleted
- *
- * @param position long
- * @return bool
- * @deprecated
- */
-bool MusicManager::playMusicAtInShownCollection(long position)
-{
-    bool play = false;
-    if (hasEfficientSearchedWord())
-        play = playMusicAtInSearch(position);
-    else
-        play = playMusicAt(position);
-    return play;
-}
-
 bool MusicManager::playMusicAtInSearch(long position)
 {
     if (position < 0 || position >= (long)getSearchedMusics().size())
@@ -260,7 +244,7 @@ bool MusicManager::playMusicAtInSearch(long position)
     return playMusicAt(m_musicList->getPositionInList(getSearchedMusics().at(position)));
 }
 
-/** @brief Plays a title
+/** @brief Plays a title.
  * Default behaviour when a title ends
  * @return true on success
  *
@@ -333,12 +317,10 @@ bool MusicManager::playMusicThenParse(wxString filename)
  * Reorganizes the music list by moving some titles at a different place
  * @param titles a list of music name
  * @param position the position to place titles
- * @param update ??? not used - must be deleted
- * @param autoDelete ??? not used - must be deleted
  * @return void
  *
  */
-void MusicManager::moveIntTitlesAt(wxArrayString* titles, long position, bool update, bool autoDelete)
+void MusicManager::moveIntTitlesAt(wxArrayString* titles, long position)
 {
     MusicCollection *oldMusics = &m_musicList->getCollection();
 
@@ -404,7 +386,7 @@ void MusicManager::moveIntTitlesAt(wxArrayString* titles, long position, bool up
  * @return void
  *
  */
-void MusicManager::moveIntTitlesAtInSearch(wxArrayString* titles, long position, bool update/* = true*/, bool autoDelete/* = true*/)
+void MusicManager::moveIntTitlesAtInSearch(wxArrayString* titles, long position)
 {
 
 }
@@ -413,11 +395,10 @@ void MusicManager::moveIntTitlesAtInSearch(wxArrayString* titles, long position,
  * Inserts titles at a specific position
  * @param titles a list of music name
  * @param position the position to place titles
- * @param update ??? not used - must be deleted
  * @return void
  *
  */
-void MusicManager::placeStringTitlesAt(wxArrayString* titles, size_t position, bool update)
+void MusicManager::placeStringTitlesAt(wxArrayString* titles, size_t position)
 {
     m_musicList->insertLines(titles, position);
     if (position <= m_musicPosition)
@@ -432,7 +413,7 @@ void MusicManager::placeStringTitlesAt(wxArrayString* titles, size_t position, b
  * @return void
  *
  */
-void MusicManager::placeStringTitlesAtInSearch(wxArrayString* titles, size_t position, bool update/* = true*/)
+void MusicManager::placeStringTitlesAtInSearch(wxArrayString* titles, size_t position)
 {
 
 }

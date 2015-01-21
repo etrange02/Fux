@@ -2149,7 +2149,7 @@
 
 1416433635 c:\workspace\projects\fux\include\classes.h
 
-1421789860 c:\workspace\projects\fux\include\music\musicmanager.h
+1421864859 c:\workspace\projects\fux\include\music\musicmanager.h
 	<wx/wx.h>
 	<ctime>
 	<algorithm>
@@ -3044,7 +3044,7 @@
 1420201180 source:c:\workspace\projects\fux\src\gui\explorer\gestionperiphelementlecteurracinefichier.cpp
 	"../../../include/gui/explorer/GestionPeriphElementLecteurRacineFichier.h"
 
-1421688674 source:c:\workspace\projects\fux\src\gui\explorer\gestionperiphmoitiepage.cpp
+1421865290 source:c:\workspace\projects\fux\src\gui\explorer\gestionperiphmoitiepage.cpp
 	"../../../include/gui/explorer/GestionPeriphMoitiePage.h"
 	"MusicManagerSwitcher.h"
 
@@ -3059,7 +3059,7 @@
 	"../../../include/gui/musiclist/PlayList.h"
 	"MusicManagerSwitcher.h"
 
-1421789079 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
+1421865121 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
 	"../../../include/gui/musiclist/PlayList.h"
 	"MusicManagerSwitcher.h"
 
@@ -3145,7 +3145,7 @@
 1421271389 source:c:\workspace\projects\fux\src\music\musiclist.cpp
 	"../../include/music/MusicList.h"
 
-1421789951 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
+1421864859 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
 	"../../include/music/MusicManager.h"
 
 1420201180 source:c:\workspace\projects\fux\src\network\tcpclient.cpp
@@ -3245,34 +3245,34 @@
 1421263810 source:c:\workspace\projects\fux\src\music\imusic.cpp
 	"../../include/music/IMusic.h"
 
-1421789892 c:\workspace\projects\fux\include\music\imusicmanager.h
+1421865262 c:\workspace\projects\fux\include\music\imusicmanager.h
 	<vector>
 	"Music.h"
 	"MusicPlayer.h"
 
-1421789866 source:c:\workspace\projects\fux\src\music\abstractmusicmanagerdecorator.cpp
+1421862908 source:c:\workspace\projects\fux\src\music\abstractmusicmanagerdecorator.cpp
 	"AbstractMusicManagerDecorator.h"
 
-1421789892 c:\workspace\projects\fux\include\music\abstractmusicmanagerdecorator.h
+1421865248 c:\workspace\projects\fux\include\music\abstractmusicmanagerdecorator.h
 	<vector>
 	"IMusicManager.h"
 	"MusicManager.h"
 
-1421789146 source:c:\workspace\projects\fux\src\music\musicmanagerdefaultdecorator.cpp
+1421865218 source:c:\workspace\projects\fux\src\music\musicmanagerdefaultdecorator.cpp
 	"MusicManagerDefaultDecorator.h"
 
-1421588970 c:\workspace\projects\fux\include\music\musicmanagerdefaultdecorator.h
+1421865218 c:\workspace\projects\fux\include\music\musicmanagerdefaultdecorator.h
 	"AbstractMusicManagerDecorator.h"
 	"MusicManager.h"
 
-1421789065 source:c:\workspace\projects\fux\src\music\musicmanagersearchdecorator.cpp
+1421865384 source:c:\workspace\projects\fux\src\music\musicmanagersearchdecorator.cpp
 	"MusicManagerSearchDecorator.h"
 
-1421536023 c:\workspace\projects\fux\include\music\musicmanagersearchdecorator.h
+1421865208 c:\workspace\projects\fux\include\music\musicmanagersearchdecorator.h
 	"AbstractMusicManagerDecorator.h"
 	"MusicManager.h"
 
-1421789544 source:c:\workspace\projects\fux\src\music\musicmanagerswitcher.cpp
+1421790608 source:c:\workspace\projects\fux\src\music\musicmanagerswitcher.cpp
 	"MusicManagerSwitcher.h"
 
 1421692035 c:\workspace\projects\fux\include\music\musicmanagerswitcher.h

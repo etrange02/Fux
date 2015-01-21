@@ -21,14 +21,14 @@ size_t MusicManagerSearchDecorator::getCurrentMusicPosition()
     return getDelegate().getCurrentMusicPositionInSearch();
 }
 
-void MusicManagerSearchDecorator::moveIntTitlesAt(wxArrayString* titles, long position, bool update, bool autoDelete)
+void MusicManagerSearchDecorator::moveIntTitlesAt(wxArrayString* titles, long position)
 {
-    getDelegate().moveIntTitlesAtInSearch(titles, position, update, autoDelete);
+    getDelegate().moveIntTitlesAtInSearch(titles, position);
 }
 
-void MusicManagerSearchDecorator::placeStringTitlesAt(wxArrayString* titles, size_t position, bool update)
+void MusicManagerSearchDecorator::placeStringTitlesAt(wxArrayString* titles, size_t position)
 {
-    getDelegate().placeStringTitlesAtInSearch(titles, position, update);
+    getDelegate().placeStringTitlesAtInSearch(titles, position);
 }
 
 void MusicManagerSearchDecorator::deleteTitleAt(size_t position)
@@ -36,4 +36,8 @@ void MusicManagerSearchDecorator::deleteTitleAt(size_t position)
     getDelegate().deleteTitleAtInSearch(position);
 }
 
+bool MusicManagerSearchDecorator::playMusicAt(long position)
+{
+    return getDelegate().playMusicAtInSearch(position);
+}
 

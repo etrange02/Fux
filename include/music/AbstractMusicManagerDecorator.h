@@ -16,9 +16,10 @@ class AbstractMusicManagerDecorator : public IMusicManager
 
 //        virtual std::vector<Music*>& getMusics() = 0;
 //        /**/virtual size_t getCurrentMusicPosition() = 0;
-//        /**/virtual void moveIntTitlesAt(wxArrayString* titles, long position, bool update = true, bool autoDelete = true) = 0;
-//        /**/virtual void placeStringTitlesAt(wxArrayString* titles, size_t position, bool update = true) = 0;
+//        /**/virtual void moveIntTitlesAt(wxArrayString* titles, long position) = 0;
+//        /**/virtual void placeStringTitlesAt(wxArrayString* titles, size_t position) = 0;
 //        /**/virtual void deleteTitleAt(size_t position) = 0;
+//        /**/virtual bool playMusicAt(long position) = 0;
 
         virtual bool isRepete();
         virtual bool isRandom();
@@ -33,9 +34,7 @@ class AbstractMusicManagerDecorator : public IMusicManager
         virtual bool playNextOrRandomMusic();
         virtual bool playPreviousOrRandomMusic();
         virtual bool playAMusic();
-        virtual bool playMusicAt(long position);
-        virtual bool playMusicAtInShownCollection(long position);
-        virtual bool playMusic(const wxString& name/*, long position*/);
+        virtual bool playMusic(const wxString& name);
         virtual bool playMusicThenParse(wxString filename);
         virtual bool playSameMusic();
 
