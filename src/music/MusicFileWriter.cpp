@@ -10,7 +10,7 @@
 
 using namespace TagLib;
 
-MusicFileWriter::MusicFileWriter(const Music* src, Music& dst) :
+MusicFileWriter::MusicFileWriter(Music* src, Music* dst) :
     m_musicSrc(src),
     m_musicDst(dst)
 {
@@ -18,10 +18,13 @@ MusicFileWriter::MusicFileWriter(const Music* src, Music& dst) :
 
 MusicFileWriter::~MusicFileWriter()
 {
+    delete m_musicSrc;
 }
 
 void MusicFileWriter::process()
 {
+    if (NULL == m_musicSrc || NULL == m_musicDst)
+        return;
     fillData();
     saveImage();
     renameFile();
@@ -29,7 +32,7 @@ void MusicFileWriter::process()
 
 void MusicFileWriter::fillData()
 {
-    TagLib::FileRef fileRef(TagLib::FileName(m_musicDst.GetFileName().fn_str()));
+    TagLib::FileRef fileRef(TagLib::FileName(m_musicDst->GetFileName().fn_str()));
 
     if (!fileRef.isNull())
     {
@@ -47,13 +50,13 @@ void MusicFileWriter::fillData()
 
 void MusicFileWriter::saveImage()
 {
-    if (!m_musicSrc->HasRecordSleeve() || (m_musicDst.HasRecordSleeve() && m_musicSrc->GetRecordSleeve()->IsSameAs(*m_musicDst.GetRecordSleeve())))
+    if (!m_musicSrc->HasRecordSleeve() || (m_musicDst->HasRecordSleeve() && m_musicSrc->GetRecordSleeve()->IsSameAs(*m_musicDst->GetRecordSleeve())))
         return;
 
-    TagLib::FileRef fileRef(TagLib::FileName(m_musicDst.GetFileName().fn_str()));
+    TagLib::FileRef fileRef(TagLib::FileName(m_musicDst->GetFileName().fn_str()));
     if (!fileRef.isNull() && fileRef.file()->isValid())
     {
-        TagLib::MPEG::File f(TagLib::FileName(m_musicDst.GetFileName().fn_str()));
+        TagLib::MPEG::File f(TagLib::FileName(m_musicDst->GetFileName().fn_str()));
         if (f.ID3v2Tag())
         {
             ID3v2::Tag *tagv2 = f.ID3v2Tag(true);
@@ -86,8 +89,13 @@ void MusicFileWriter::saveImage()
 
 void MusicFileWriter::renameFile()
 {
-    if (m_musicSrc->GetFileName().IsSameAs(m_musicDst.GetFileName()))
+    if (m_musicSrc->GetFileName().IsSameAs(m_musicDst->GetFileName()))
         return;
-    wxRenameFile(m_musicDst.GetFileName(), m_musicSrc->GetFileName());
+    wxRenameFile(m_musicDst->GetFileName(), m_musicSrc->GetFileName());
+}
+
+Music* MusicFileWriter::getMusic() const
+{
+    return m_musicDst;
 }
 

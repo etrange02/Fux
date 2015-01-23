@@ -25,6 +25,7 @@ class MusicFileReaderThread : public fux::thread::IRunnable
     private:
         void sendUpdatedLineEvent();
 
+    private:
         MusicFileReader* m_musicFileReader;
         wxWindow* m_parent;
 };

@@ -13,7 +13,7 @@ extern const wxEventType wxEVT_IMAGE_SELECTION;
 class ImagePochetteMusique : public wxStaticBitmap
 {
     public:
-        ImagePochetteMusique(wxWindow*, wxWindowID, wxBitmap, bool);
+        ImagePochetteMusique(wxWindow* parent, wxWindowID id, const int width, const int height, bool warnParent);
         ~ImagePochetteMusique();
         bool AfficheImage(bool);
         wxImage& GetImage();
@@ -23,8 +23,12 @@ class ImagePochetteMusique : public wxStaticBitmap
         bool IsModified();
 
     private:
-        bool m_modif, m_avertirParent;
+        bool m_modif;
+        bool m_warnParent;
+        int m_width;
+        int m_height;
         wxImage m_image;
+        wxBitmap m_defaultBitmap;
 
     DECLARE_EVENT_TABLE()
 };

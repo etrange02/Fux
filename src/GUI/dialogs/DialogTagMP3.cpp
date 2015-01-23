@@ -27,7 +27,7 @@ DialogTagMP3::DialogTagMP3(wxWindow *parent, wxWindowID id, wxString chanson) : 
     sizerH = new wxBoxSizer(wxHORIZONTAL);
     sizerV->Add(sizerH, 1, wxALL|wxEXPAND, 5);
 
-    m_image = new ImagePochetteMusique(this, ID_PAGE_PLAYLIST_DETAILS_POCHETTE, wxBitmap(250, 250), false);
+    m_image = new ImagePochetteMusique(this, ID_PAGE_PLAYLIST_DETAILS_POCHETTE, 250, 250, false);
     sizerH->Add(m_image, 0, wxALL, 0);
 
     m_notebook = new wxNotebook(this, -1);

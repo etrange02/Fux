@@ -207,6 +207,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/music/MusicFileReader.h" />
 		<Unit filename="include/music/MusicFileReaderThread.h" />
 		<Unit filename="include/music/MusicFileWriter.h" />
+		<Unit filename="include/music/MusicFileWriterThread.h" />
 		<Unit filename="include/music/MusicList.h" />
 		<Unit filename="include/music/MusicManager.h" />
 		<Unit filename="include/music/MusicManagerDefaultDecorator.h" />
@@ -289,6 +290,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/music/MusicFileReader.cpp" />
 		<Unit filename="src/music/MusicFileReaderThread.cpp" />
 		<Unit filename="src/music/MusicFileWriter.cpp" />
+		<Unit filename="src/music/MusicFileWriterThread.cpp" />
 		<Unit filename="src/music/MusicList.cpp" />
 		<Unit filename="src/music/MusicManager.cpp" />
 		<Unit filename="src/music/MusicManagerDefaultDecorator.cpp" />

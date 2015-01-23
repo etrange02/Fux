@@ -11,8 +11,8 @@
 const wxEventType wxEVT_FUX_MUSICFILE_READER_THREAD = wxNewEventType();
 
 /** @brief Constructor
- * Constructor
- * @param musicFileReader Delegate the work to
+ *
+ * @param musicFileReader Delegates the work to
  *
  */
 MusicFileReaderThread::MusicFileReaderThread(MusicFileReader* musicFileReader, wxWindow* parent) :

@@ -7,6 +7,7 @@
 #include "MusicFileReader.h"
 #include "MusicFileWriter.h"
 #include "MusicFileReaderThread.h"
+#include "MusicFileWriterThread.h"
 
 /** @brief Music Factory
  *
@@ -23,8 +24,9 @@ namespace fux
                 static Music* createMusic();
                 static Music* createMusic(wxString& filename);
                 static MusicFile* createMusicFileReader(Music& music);
-                static MusicFile* createMusicFileWriter(const Music* inMusic, Music& outMusic);
+                static MusicFile* createMusicFileWriter(Music* inMusic, Music* outMusic);
                 static MusicFileReaderThread* createMusicFileReaderThread(Music& music, wxWindow* parent);
+                static MusicFileWriterThread* createMusicFileWriterThread(Music* inMusic, Music* outMusic, wxWindow* parent);
         };
     }
 }

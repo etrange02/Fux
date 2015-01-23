@@ -25,12 +25,16 @@ const wxEventType wxEVT_IMAGE_SELECTION = wxNewEventType();
  * @param Parent la fenêtre parente
  * @param id l'identifiant de l'instance
  * @param label un wxBitmap à modifier
- * @param avertirParent si vrai, le parent est averti des modifications de l'image
+ * @param warnParent si vrai, le parent est averti des modifications de l'image
  */
-ImagePochetteMusique::ImagePochetteMusique(wxWindow *Parent, wxWindowID id, wxBitmap label, bool avertirParent) : wxStaticBitmap(Parent, id, label)
+ImagePochetteMusique::ImagePochetteMusique(wxWindow* parent, wxWindowID id, const int width, const int height, bool warnParent) :
+    m_modif(false),
+    m_warnParent(warnParent),
+    m_width(width),
+    m_height(height),
+    m_defaultBitmap(wxImage(m_width, m_height))
 {
-    m_modif = false;
-    m_avertirParent = avertirParent;
+    wxStaticBitmap::Create(parent, id, m_defaultBitmap, wxPoint(), wxSize(m_width, m_height));
     SetDropTarget(new DropFichierImagePochetteMusique(this));
 }
 
@@ -47,22 +51,15 @@ ImagePochetteMusique::~ImagePochetteMusique()
  */
 bool ImagePochetteMusique::AfficheImage(bool affiche)
 {
-    int largeur = 0;
-    int hauteur = 0;
-    GetSize(&largeur, &hauteur);
-
-    largeur = std::max(largeur, 0);
-    hauteur = std::max(hauteur, 0);
-
     if (affiche && m_image.IsOk())
     {
-        SetBitmap(wxBitmap(m_image.Scale(largeur, hauteur)));
+        SetBitmap(wxBitmap(m_image.Scale(m_width, m_height)));
         return true;
     }
     else
     {
         m_image.Destroy();
-        SetBitmap(wxBitmap(wxImage(largeur, hauteur)));
+        SetBitmap(m_defaultBitmap);
         return false;
     }
 }
@@ -103,7 +100,7 @@ void ImagePochetteMusique::LectureImageEvent(wxString chaine)
 {
     if (m_image.LoadFile(chaine))
     {
-        if (m_avertirParent)
+        if (m_warnParent)
         {
             wxCommandEvent evt(wxEVT_IMAGE_SELECTION, GetId());
             evt.SetString(chaine);

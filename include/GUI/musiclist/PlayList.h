@@ -60,7 +60,6 @@ class PlayList : public wxPanel
         wxSearchCtrl *m_champsRecherche;
 
         ImagePochetteMusique *m_pochette;
-        wxImage m_defaultRecordSleeve;
         PlayListTableau *m_liste;
 
     DECLARE_EVENT_TABLE()

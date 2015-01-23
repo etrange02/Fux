@@ -127,5 +127,10 @@
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
     (wxObject *) NULL ),
 
+#define EVT_FUX_MUSICFILE_WRITER_THREAD(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_MUSICFILE_WRITER_THREAD, wxID_ANY, wxID_ANY,\
+    (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
+    (wxObject *) NULL ),
+
 
 #endif // EVENTS_H_INCLUDED

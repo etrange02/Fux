@@ -60,8 +60,13 @@ MusicFileReaderThread* Factory::createMusicFileReaderThread(Music& music, wxWind
  * @return MusicFile*
  *
  */
-MusicFile* Factory::createMusicFileWriter(const Music* inMusic, Music& outMusic)
+MusicFile* Factory::createMusicFileWriter(Music* inMusic, Music* outMusic)
 {
     return new MusicFileWriter(inMusic, outMusic);
+}
+
+MusicFileWriterThread* Factory::createMusicFileWriterThread(Music* inMusic, Music* outMusic, wxWindow* parent)
+{
+    return new MusicFileWriterThread(new MusicFileWriter(inMusic, outMusic), parent);
 }
 
