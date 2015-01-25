@@ -9,8 +9,10 @@
 class IMusicManager
 {
     public:
+        IMusicManager();
+        virtual ~IMusicManager();
 
-        virtual std::vector<Music*>& getMusics() = 0;
+        /**/virtual std::vector<Music*>& getMusics() = 0;
         /**/virtual size_t getCurrentMusicPosition() = 0;
         /**/virtual void moveIntTitlesAt(wxArrayString* titles, long position) = 0;
         /**/virtual void placeStringTitlesAt(wxArrayString* titles, size_t position) = 0;
@@ -28,7 +30,7 @@ class IMusicManager
 
         virtual bool playNextMusic() = 0;
         virtual bool playPreviousMusic() = 0;
-        virtual bool playNextOrRandomMusic();
+        virtual bool playNextOrRandomMusic() = 0;
         virtual bool playPreviousOrRandomMusic() = 0;
         virtual bool playAMusic() = 0;
         virtual bool playMusic(const wxString& name) = 0;

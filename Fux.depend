@@ -2149,15 +2149,10 @@
 
 1416433635 c:\workspace\projects\fux\include\classes.h
 
-1422194090 c:\workspace\projects\fux\include\music\musicmanager.h
+1422195587 c:\workspace\projects\fux\include\music\musicmanager.h
 	<wx/wx.h>
-	<ctime>
-	<algorithm>
-	"IMusicManager.h"
 	"MusicPlayer.h"
 	"MusicList.h"
-	"../tools/thread/ThreadManager.h"
-	"../predicates/findPosition.h"
 
 1422193613 c:\workspace\projects\fux\include\music\musicplayer.h
 	<wx/wx.h>
@@ -3149,8 +3144,12 @@
 1421271389 source:c:\workspace\projects\fux\src\music\musiclist.cpp
 	"../../include/music/MusicList.h"
 
-1422195187 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
+1422195587 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
 	"../../include/music/MusicManager.h"
+	<ctime>
+	<algorithm>
+	"../tools/thread/ThreadManager.h"
+	"../predicates/findPosition.h"
 
 1420201180 source:c:\workspace\projects\fux\src\network\tcpclient.cpp
 	"../../include/network/TCPClient.h"
@@ -3249,7 +3248,7 @@
 1421263810 source:c:\workspace\projects\fux\src\music\imusic.cpp
 	"../../include/music/IMusic.h"
 
-1422192244 c:\workspace\projects\fux\include\music\imusicmanager.h
+1422196178 c:\workspace\projects\fux\include\music\imusicmanager.h
 	<vector>
 	"Music.h"
 	"MusicPlayer.h"
@@ -3293,4 +3292,7 @@
 	<wx/event.h>
 	"IRunnable.h"
 	"MusicFileWriter.h"
+
+1422195959 source:c:\workspace\projects\fux\src\music\imusicmanager.cpp
+	"IMusicManager.h"
 
