@@ -17,12 +17,12 @@
 BEGIN_EVENT_TABLE(PlayList, wxPanel)
     EVT_BUTTON(ID_PAGE_PLAYLIST_BOUTON_ENREGISTRE_M3U, PlayList::EnregistrerM3U)
     EVT_COLLAPSIBLEPANE_CHANGED(ID_PAGE_PLAYLIST_PANNEAUREPLIABLE, PlayList::OnPanneau)
-    EVT_LIST_ITEM_FOCUSED(ID_PAGE_PLAYLIST_LISTE, PlayList::OnAfficheDetails)
-    EVT_BUTTON(ID_PAGE_PLAYLIST_BOUTON_APPLIQUER, PlayList::OnAppliquerTAG)
-    EVT_BUTTON(ID_PAGE_PLAYLIST_BOUTON_ANNULER, PlayList::OnAnnulerTAG)
-    EVT_VIDER_PANNEAU(ID_PAGE_PLAYLIST_LISTE, PlayList::EvtViderPanneauTAG)
-    EVT_IMAGE_SELECTION(ID_PAGE_PLAYLIST_POCHETTE, PlayList::EvtImage)
-    EVT_LISTE_DETAILS(ID_PAGE_PLAYLIST_LISTE, PlayList::FenetreDetails)
+    EVT_LIST_ITEM_FOCUSED(ID_PAGE_PLAYLIST_LISTE,   PlayList::OnAfficheDetails)
+    EVT_BUTTON(ID_PAGE_PLAYLIST_BOUTON_APPLIQUER,   PlayList::OnAppliquerTAG)
+    EVT_BUTTON(ID_PAGE_PLAYLIST_BOUTON_ANNULER,     PlayList::OnAnnulerTAG)
+    EVT_VIDER_PANNEAU(ID_PAGE_PLAYLIST_LISTE,       PlayList::EvtViderPanneauTAG)
+    EVT_IMAGE_SELECTION(ID_PAGE_PLAYLIST_POCHETTE,  PlayList::EvtImage)
+    EVT_LISTE_DETAILS(ID_PAGE_PLAYLIST_LISTE,       PlayList::FenetreDetails)
     EVT_MOUSE_EVENTS(PlayList::MouseEvents)
     //EVT_SEARCHCTRL_SEARCH_BTN(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::RechercheListeLecture)
     //EVT_SEARCHCTRL_CANCEL_BTN(ID_PAGE_PLAYLIST_CHAMPS_RECHERCHE_LOCALE, PlayList::)
@@ -306,6 +306,7 @@ void PlayList::EvtImage(wxCommandEvent &event)
 {
     /////////////////
     // save modified data into music file
+    // la pochette contient la bonne image. il est nécessaire de l'enregistrer dans le fichier mp3
     /////////////////
 }
 
@@ -314,142 +315,22 @@ void PlayList::EvtImage(wxCommandEvent &event)
  */
 void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
 {
-    // TODO (David): Show details window
-    /*DialogTagMP3 *fen = new DialogTagMP3(this, -1, _T(""));
+    int position = m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
+    if (position < 0)
+        return;
 
-    m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
-    if (!m_ObjetTAG.isNull())
-    {
-        fen->SetChanson(fichierTAG);
-        fen->SetArtiste(wxString(m_ObjetTAG.tag()->artist().toCString(true), wxConvUTF8));//Artiste
-        fen->SetAlbum(wxString(m_ObjetTAG.tag()->album().toCString(true), wxConvUTF8));//Album
-        fen->SetTitre(wxString(m_ObjetTAG.tag()->title().toCString(true), wxConvUTF8));//Titre
-        fen->SetAnnee(m_ObjetTAG.tag()->year());
-        fen->SetGenre(wxString(m_ObjetTAG.tag()->genre().toCString(true), wxConvUTF8));//Genre
-        fen->SetDuration(m_liste->GetDuration(m_ObjetTAG.audioProperties()->length()));
-        fen->SetDebit(m_ObjetTAG.audioProperties()->bitrate());
-        fen->SetCommentaire(wxString(m_ObjetTAG.tag()->comment().toCString(true), wxConvUTF8));
-        fen->SetTaille(m_ObjetTAG.file()->length());
+    Music* music = MusicManagerSwitcher::getSearch().getMusics().at(position);
+    DialogTagMP3 dialog(this, -1, *music);
+    dialog.Layout();
 
-        TagLib::MPEG::File f(TagLib::FileName(fichierTAG.fn_str()));
-        if(f.ID3v2Tag())
-        {
-            TagLib::ID3v2::FrameList l = f.ID3v2Tag()->frameList("APIC");
-            if (!l.isEmpty())
-            {
-                TagLib::ID3v2::AttachedPictureFrame *p = static_cast<TagLib::ID3v2::AttachedPictureFrame *>(l.front());
-                int imgTaille = p->picture().size();
+    bool mustChange = (wxID_OK == dialog.ShowModal());
+    mustChange &= dialog.isModified();
 
-                if (p != NULL)
-                {
-                    wxMemoryOutputStream imgStreamOut;
-                    imgStreamOut.Write(p->picture().data(), imgTaille);
-                    wxMemoryInputStream stream(imgStreamOut);
-                    wxString typeImage(p->mimeType().toCString(true), wxConvLocal);
-
-                    if (typeImage.IsSameAs(_T("image/jpeg")) || typeImage.IsSameAs(_T("image/jpg")))
-                        fen->GetImage()->SetImage(wxImage(stream, _T("image/jpeg")));
-                    fen->GetImage()->AfficheImage(true);
-                }
-            }
-            else
-                fen->GetImage()->AfficheImage(false);
-        }
-
-        m_ObjetTAG = TagLib::FileRef("");
-
-        fen->Layout();
-        if (fen->ShowModal() == wxID_OK)
-        {
-            if (fen->IsModified())
-            {
-                m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
-                if (!m_ObjetTAG.isNull() && !Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
-                {
-                    wxString tempo = fichierTAG;
-                    wxString art = fen->GetArtiste();
-                    for (unsigned int j = 0; j < art.length(); j++)
-                    {
-                        if (art[j] == '/')
-                            art[j] = ';';
-                    }
-                    m_ObjetTAG.tag()->setArtist(TagLib::String(art.fn_str()));//Artiste
-                    m_ObjetTAG.tag()->setAlbum(TagLib::String(fen->GetAlbum().fn_str()));//Album
-                    m_ObjetTAG.tag()->setTitle(TagLib::String(fen->GetTitre().fn_str()));//Titre
-                    m_ObjetTAG.tag()->setYear(fen->GetAnnee());//Année
-                    if (fen->GetGenre().IsSameAs(_T("Other")) || fen->GetGenre().IsSameAs(_T("Inconnu")))
-                        m_ObjetTAG.tag()->setGenre("");//Genre
-                    else
-                        m_ObjetTAG.tag()->setGenre(TagLib::String(fen->GetGenre().fn_str()));//Genre
-                    m_ObjetTAG.tag()->setComment(TagLib::String(fen->GetCommentaire().fn_str()));
-                    m_ObjetTAG.save();
-                    m_ObjetTAG = TagLib::FileRef("");
-
-                    int i = tempo.Find(wxFileName::GetPathSeparator(), true);
-                    tempo = tempo.Left(i);
-                    tempo << wxFileName::GetPathSeparator() << fen->GetNom();//Nom du fichier
-                    if (fichierTAG != tempo)
-                    {
-                        if (wxRenameFile(fichierTAG, tempo, true))
-                            FichierListe::Get()->EchangeNom(fichierTAG, tempo);
-                        else
-                            wxMessageBox(_("Erreur dans le nom.\nVérifiez que vous utilisez des caractères autorisés."), _("Erreur"));
-                    }
-
-                    TagLib::MPEG::File f(TagLib::FileName(fichierTAG.fn_str()));
-                    ID3v2::Tag *tagv2 = f.ID3v2Tag(true);
-                    if(tagv2 && fen->GetImage()->IsModified())
-                    {
-                        TagLib::ID3v2::AttachedPictureFrame *pict;
-                        TagLib::ID3v2::FrameList FrameList = tagv2->frameListMap()["APIC"];
-                        for( std::list<TagLib::ID3v2::Frame*>::iterator iter = FrameList.begin(); iter != FrameList.end(); ++iter )
-                        {
-                            pict = static_cast<TagLib::ID3v2::AttachedPictureFrame *>( *iter );
-                            tagv2->removeFrame(pict, true);
-                        }
-
-                        TagLib::ID3v2::AttachedPictureFrame *p = new TagLib::ID3v2::AttachedPictureFrame;
-                        p->setMimeType("image/jpeg");
-                        p->setType(TagLib::ID3v2::AttachedPictureFrame::FrontCover);
-                        wxMemoryOutputStream imgStreamOut;
-                        if(fen->GetImage()->GetImage().SaveFile(imgStreamOut, wxBITMAP_TYPE_JPEG))
-                        {
-                            ByteVector ImgData((TagLib::uint)imgStreamOut.GetSize());
-                            imgStreamOut.CopyTo(ImgData.data(), imgStreamOut.GetSize());
-                            p->setPicture(ImgData);
-                            tagv2->addFrame(p);
-                            f.save();
-                        }
-                    }
-                    else if (fen->GetImage()->IsModified())
-                    {
-                        TagLib::ID3v2::AttachedPictureFrame *pict;
-                        TagLib::ID3v2::FrameList FrameList = tagv2->frameListMap()["APIC"];
-                        for( std::list<TagLib::ID3v2::Frame*>::iterator iter = FrameList.begin(); iter != FrameList.end(); ++iter )
-                        {
-                            pict = static_cast<TagLib::ID3v2::AttachedPictureFrame *>( *iter );
-                            tagv2->removeFrame(pict, true);
-                        }
-                        f.save();
-                    }
-                    m_liste->MAJ();
-                   //m_liste->SetItemState(ligneSel, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED);/////////////////////
-                }
-                else if (Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
-                    wxMessageBox(_("Vous ne pouvez pas modifier un fichier lorsque celui-ci est en cours de lecture."), _("Erreur !"));
-                else
-                    wxMessageBox(_("Sélectionnez un fichier"), _("Erreur !"));
-            }
-        }
-    }
+    if (mustChange)
+        MusicManagerSwitcher::getSearch().updateMusicContent(position, dialog.getResult());
     else
-    {
-        m_ObjetTAG = TagLib::FileRef("");
-        wxMessageBox(_("Sélectionnez un fichier"), _("Erreur !"));
-    }
-
-    delete fen;
-    */
+        delete dialog.getResult();
+    // TODO (David): Show details window
 }
 
 /**

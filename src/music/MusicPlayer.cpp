@@ -4,7 +4,12 @@ const wxEventType wxEVT_FUX_MUSICPLAYER_CHANGE_TITLE = wxNewEventType();
 const wxEventType wxEVT_FUX_MUSICPLAYER_UPDATE_GRAPH = wxNewEventType();
 const wxEventType wxEVT_FUX_MUSICPLAYER_CHANGE_STATUS = wxNewEventType();
 
-MusicPlayer::MusicPlayer()
+MusicPlayer::MusicPlayer() :
+    m_sound(NULL),
+    m_channel(NULL),
+    m_parent(NULL),
+    m_hasLoadedMusic(false),
+    m_stopped(true)
 {
     initialize();
 }
@@ -33,12 +38,6 @@ void MusicPlayer::initialize()
     //FMOD_System_SetOutputByPlugin(m_system, codec);
 
     FMOD_System_Init(m_system, 1, FMOD_INIT_NORMAL, NULL);//(void*)cheminPluginAAC.c_str());//
-    m_sound = NULL;
-    m_channel = NULL;
-    m_parent = NULL;
-    m_hasLoadedMusic = false;
-    m_stopped = true;
-    m_filename = wxEmptyString;
 
     m_currentTime = new Duration();
     m_totalTime = new Duration();
@@ -49,7 +48,7 @@ void MusicPlayer::initialize()
  * @return void
  *
  */
-void MusicPlayer::play(wxString filename)
+void MusicPlayer::play(const wxString& filename)
 {
     release();
     if (wxFileExists(filename))
@@ -170,10 +169,7 @@ void MusicPlayer::getSpectrum(float* spectrum, int size)
 
 void MusicPlayer::updateCurrentTime()
 {
-    unsigned int position;
-    FMOD_Channel_GetPosition(m_channel, &position, FMOD_TIMEUNIT_MS);
-
-    m_currentTime->SetMSecondeTot(position);
+    m_currentTime->SetMSecondeTot(getPosition());
 }
 
 bool MusicPlayer::isEnding()
@@ -204,7 +200,7 @@ void MusicPlayer::updateTotalTime()
     m_totalTime->SetMSecondeTot(time);
 }
 
-void MusicPlayer::setPosition(int position)
+void MusicPlayer::setPosition(unsigned int position)
 {
     FMOD_Channel_SetPosition(m_channel, position, FMOD_TIMEUNIT_MS);
     updateCurrentTime();
@@ -250,4 +246,10 @@ wxString& MusicPlayer::getFileName()
     return m_filename;
 }
 
+unsigned int MusicPlayer::getPosition()
+{
+    unsigned int position;
+    FMOD_Channel_GetPosition(m_channel, &position, FMOD_TIMEUNIT_MS);
+    return position;
+}
 

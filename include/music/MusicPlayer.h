@@ -18,12 +18,12 @@ class MusicPlayer// : IMusicPlayer
         MusicPlayer();
         virtual ~MusicPlayer();
 
-        void play(wxString filename);
+        void play(const wxString& filename);
         void release();
         void stop();
         void setPause(bool state);
         void setVolume(int volume);
-        void setPosition(int position);
+        void setPosition(unsigned int position);
         void setParent(wxWindow *parent);
 
         bool hasLoadedMusic();
@@ -38,6 +38,7 @@ class MusicPlayer// : IMusicPlayer
         Duration *getTotalTime();
         wxWindow *getParent();
         wxString& getFileName();
+        unsigned int getPosition();
 
     protected:
         void initialize();

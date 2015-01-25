@@ -8,8 +8,6 @@
  **************************************************************/
 #include "../../include/music/MusicManager.h"
 
-static MusicManager* s_musicManager_instance = NULL;
-
 const wxEventType wxEVT_FUX_MUSICMANAGER_NO_FILE = wxNewEventType();
 const wxEventType wxEVT_FUX_MUSICMANAGER_SEARCH_DONE = wxNewEventType();
 
@@ -35,18 +33,6 @@ MusicManager::~MusicManager()
 {
     delete m_musicList;
 }
-
-/** @brief Singleton
- *
- * @return the MusicManager
- *
- */
-//MusicManager& MusicManager::get()
-//{
-//    if (NULL == s_musicManager_instance)
-//        s_musicManager_instance = new MusicManager();
-//    return *s_musicManager_instance;
-//}
 
 /** @brief Repete mode
  *
@@ -213,7 +199,7 @@ bool MusicManager::playPreviousOrRandomMusic()
 }
 
 /** @brief Plays the title found at position position
- * Plays the title found at position position
+ *
  * @param position the position
  * @return true on succes
  *
@@ -237,6 +223,12 @@ bool MusicManager::playMusicAt(long position)
     return true;
 }
 
+/** @brief Plays the title found at position position
+ *
+ * @param position long
+ * @return bool
+ *
+ */
 bool MusicManager::playMusicAtInSearch(long position)
 {
     if (position < 0 || position >= (long)getSearchedMusics().size())
@@ -384,7 +376,7 @@ void MusicManager::moveIntTitlesAt(wxArrayString* titles, long position)
  * @param update
  * @param autoDelete
  * @return void
- *
+ * @deprecated
  */
 void MusicManager::moveIntTitlesAtInSearch(wxArrayString* titles, long position)
 {
@@ -411,7 +403,7 @@ void MusicManager::placeStringTitlesAt(wxArrayString* titles, size_t position)
  * @param position size_t
  * @param update
  * @return void
- *
+ * @deprecated
  */
 void MusicManager::placeStringTitlesAtInSearch(wxArrayString* titles, size_t position)
 {
@@ -499,6 +491,9 @@ void MusicManager::deleteTitles(wxArrayString& titles, bool update)
         m_musicList->sendMusicListUpdatedEvent();
 }
 
+/** @brief Explores the directory where the current music is located.
+ *
+ */
 void MusicManager::parse()
 {
     if (!getMusicPlayer().hasLoadedMusic())
@@ -508,6 +503,13 @@ void MusicManager::parse()
     launchSearching();
 }
 
+/** @brief Explores directories in filenames
+ *
+ * @param filenames wxArrayString&
+ * @param update indicator to send an event
+ * @return void
+ *
+ */
 void MusicManager::parse(wxArrayString& filenames, bool update)
 {
     bool startPlaying = empty();
@@ -519,6 +521,12 @@ void MusicManager::parse(wxArrayString& filenames, bool update)
     launchSearching();
 }
 
+/** @brief
+ *
+ * @param filename const wxString&
+ * @return void
+ * @see MusicManger::parse
+ */
 void MusicManager::parse(const wxString& filename)
 {
     wxArrayString arrayS;
@@ -526,6 +534,12 @@ void MusicManager::parse(const wxString& filename)
     parse(arrayS);
 }
 
+/** @brief Modifies the parent
+ *
+ * @param parent wxWindow*
+ * @return void
+ *
+ */
 void MusicManager::setParent(wxWindow* parent)
 {
     m_parent = parent;
@@ -533,21 +547,42 @@ void MusicManager::setParent(wxWindow* parent)
     m_musicPlayer.setParent(m_parent);
 }
 
+/** @brief Return the parent window
+ *
+ * @return wxWindow*
+ *
+ */
 wxWindow* MusicManager::getParent() const
 {
     return m_parent;
 }
 
+/** @brief Indicates if the music list is empty
+ *
+ * @return bool
+ *
+ */
 bool MusicManager::empty() const
 {
     return m_musicList->empty();
 }
 
+/** @brief Returns the music list's size
+ *
+ * @return size_t
+ *
+ */
 size_t MusicManager::size() const
 {
     return m_musicList->size();
 }
 
+/** @brief Creates a play list file (M3U file) with the music list
+ *
+ * @param filename the output
+ * @return bool
+ *
+ */
 bool MusicManager::saveMusicListIntoFile(wxString const &filename)
 {
     wxTextFile outputFile(filename);
@@ -572,6 +607,11 @@ bool MusicManager::saveMusicListIntoFile(wxString const &filename)
     return true;
 }
 
+/** @brief Event - No music in play list
+ *
+ * @return void
+ *
+ */
 void MusicManager::sendMusicNoFileEvent()
 {
     if (NULL == m_parent)
@@ -580,6 +620,11 @@ void MusicManager::sendMusicNoFileEvent()
     m_parent->GetEventHandler()->AddPendingEvent(evt);
 }
 
+/** @brief Event - Search done
+ *
+ * @return void
+ *
+ */
 void MusicManager::sendSearchEndingEvent()
 {
     if (NULL == m_parent)
@@ -588,11 +633,22 @@ void MusicManager::sendSearchEndingEvent()
     m_parent->GetEventHandler()->AddPendingEvent(evt);
 }
 
+/** @brief Returns the keyword used to make search
+ *
+ * @return wxString
+ *
+ */
 wxString MusicManager::getSearchedWord() const
 {
     return m_searchedWord;
 }
 
+/** @brief Modifies the search keyword and refresh the research
+ *
+ * @param searchedWord const wxString&
+ * @return void
+ *
+ */
 void MusicManager::setSearchWord(const wxString& searchedWord)
 {
     m_searchedWord = searchedWord.Lower();
@@ -600,6 +656,11 @@ void MusicManager::setSearchWord(const wxString& searchedWord)
     launchSearching();
 }
 
+/** @brief Process the research
+ *
+ * @return void
+ *
+ */
 void MusicManager::launchSearching()
 {
     m_searchedMusicCollection.clear();
@@ -614,8 +675,76 @@ void MusicManager::launchSearching()
     }
 }
 
+/** @brief Indicates if keyword is not empty
+ *
+ * @return bool
+ *
+ */
 bool MusicManager::hasEfficientSearchedWord() const
 {
     return !getSearchedWord().IsEmpty();/* && !getSearchedWord().IsSameAs(_T("*"));*/
+}
+
+/** @brief Updates the content of a music file.
+ * Position defined in the music list
+ * @param position position in the music list
+ * @param musicData
+ *
+ */
+void MusicManager::updateMusicContent(const long position, Music* musicData)
+{
+    updateMusicContent(position, musicData, getAllMusics());
+}
+
+/** @brief Updates the content of a music file.
+ * Position defined in the search list
+ * @param position position in the search list
+ * @param musicData
+ * @see MusicManager::updateMusicContent
+ */
+void MusicManager::updateMusicContentInSearch(const long position, Music* musicData)
+{
+    updateMusicContent(position, musicData, getSearchedMusics());
+}
+
+/** @brief Updates the content of a music file.
+ * Process the treatment
+ * @param position a position of a music
+ * @param musicData data
+ * @param collection a collection of musics
+ *
+ */
+void MusicManager::updateMusicContent(const long position, Music* musicData, std::vector<Music*>& collection)
+{
+    if (position >= collection.size())
+        return;
+    Music* musicToModify = collection.at(position);
+
+    if (musicToModify == getMusic()) // on modifie le titre courant
+        updateCurrentMusic(musicData);
+    else // on modifie un autre titre
+        fux::music::Factory::createMusicFileWriterThread(musicData, musicToModify, getParent());
+}
+
+/** @brief Updates the content of the current music file played.
+ * Specific treatment, which can not be threaded
+ * @param newMusicData data
+ *
+ */
+void MusicManager::updateCurrentMusic(Music* newMusicData)
+{
+    // before
+    wxString filename = getMusicPlayer().getFileName();
+    unsigned int time = getMusicPlayer().getPosition();
+    getMusicPlayer().release();
+
+    // modification
+    MusicFile* musicFile = fux::music::Factory::createMusicFileWriter(newMusicData, getMusic());
+    musicFile->process();
+
+    //after
+    getMusicPlayer().play(filename);
+    getMusicPlayer().setPosition(time);
+    delete musicFile;
 }
 

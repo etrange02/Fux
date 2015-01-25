@@ -18,6 +18,7 @@ class MusicManagerDefaultDecorator : public AbstractMusicManagerDecorator
         virtual void placeStringTitlesAt(wxArrayString* titles, size_t position);
         virtual void deleteTitleAt(size_t position);
         virtual bool playMusicAt(long position);
+        virtual void updateMusicContent(const long position, Music* music);
 };
 
 #endif // MUSICMANAGERDEFAULTDECORATOR_H

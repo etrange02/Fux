@@ -13,7 +13,7 @@ const wxEventType wxEVT_PREFERENCE_MAJ_M3U = wxNewEventType();
 
 /**
  * @class DialogEnregistreM3U
- * @brief Ouvre une boÃ®te de dialogue permettant de choisir le nom du fichiers .m3u Ã  crÃ©er et Ã©ventuellement le raccourci.
+ * @brief Ouvre une boîte de dialogue permettant de choisir le nom du fichiers .m3u à créer et éventuellement le raccourci.
  */
 BEGIN_EVENT_TABLE(DialogEnregistreM3U, wxDialog)
     EVT_BUTTON(ID_DIALOGUE_SAUVEGARDE_M3U, DialogEnregistreM3U::OuvrirDossier)
@@ -21,12 +21,12 @@ END_EVENT_TABLE()
 
 /**
  * Constructeur
- * @param parent la fenÃªtre parente
+ * @param parent la fenêtre parente
  * @param id l'identifiant de l'instance
- * @param racc le rÃ©pertoire oÃ¹ doit Ãªtre crÃ©Ã© un raccourci
+ * @param racc le répertoire où doit être créé un raccourci
  */
  DialogEnregistreM3U::DialogEnregistreM3U(wxWindow *parent, wxWindowID id, wxString racc) :
-     wxDialog(parent, id, _("CrÃ©ation de playlist (fichier .m3u)"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER),
+     wxDialog(parent, id, _("Création de playlist (fichier .m3u)"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER),
      m_chemin(wxEmptyString),
      m_raccourci(racc),
      m_rep(Parametre::Get()->getRepertoireParametre(_T("Play_list_M3U")))
@@ -43,7 +43,7 @@ DialogEnregistreM3U::~DialogEnregistreM3U()
 }
 
 /**
- * CrÃ©e les Ã©lÃ©ments graphiques de la fenÃªtre
+ * Crée les éléments graphiques de la fenêtre
  */
 void DialogEnregistreM3U::Creer()
 {
@@ -56,14 +56,14 @@ void DialogEnregistreM3U::Creer()
     m_liste = new wxChoice(this, wxID_ANY);
     sizerV->Add(m_liste, 0, wxLEFT|wxRIGHT|wxDOWN|wxEXPAND, 5);
 
-    m_text[1].Create(this, wxID_ANY, _("Ou bien crÃ©ez une nouvelle sauvegarde"));
+    m_text[1].Create(this, wxID_ANY, _("Ou bien créez une nouvelle sauvegarde"));
     sizerV->Add(&m_text[1], 0, wxALL, 5);
     m_boiteNouveau = new wxTextCtrl(this, wxID_ANY, _T(""));
     sizerV->Add(m_boiteNouveau, 0, wxLEFT|wxRIGHT|wxDOWN|wxEXPAND, 5);
 
     sizerV->Add(new wxStaticLine(this), 0, wxUP|wxLEFT|wxRIGHT|wxEXPAND, 15);
 
-    m_text[2].Create(this, wxID_ANY, _("CrÃ©er un raccourci ? OÃ¹ le place-t-on ?"));
+    m_text[2].Create(this, wxID_ANY, _("Créer un raccourci ? Où le place-t-on ?"));
     sizerV->Add(&m_text[2], 0, wxALL, 5);
 
     wxBoxSizer *sizerH1 = new wxBoxSizer(wxHORIZONTAL);
@@ -79,7 +79,7 @@ void DialogEnregistreM3U::Creer()
 }
 
 /**
- * CrÃ©e une liste de tous les fichiers .m3u prÃ©sents dans le dossier des paramÃ¨tres
+ * Crée une liste de tous les fichiers .m3u présents dans le dossier des paramètres
  */
 void DialogEnregistreM3U::CreerListeM3U()
 {
@@ -95,7 +95,7 @@ void DialogEnregistreM3U::CreerListeM3U()
 }
 
 /**
- * Retourne le nom complet du fichier .m3u Ã  crÃ©er
+ * Retourne le nom complet du fichier .m3u à créer
  * @return le nom complet du fichier
  */
 wxString DialogEnregistreM3U::GetChemin()
@@ -107,7 +107,7 @@ wxString DialogEnregistreM3U::GetChemin()
 }
 
 /**
- * Retourne le nom du dossier dans lequel un raccourci doit Ãªtre placÃ©
+ * Retourne le nom du dossier dans lequel un raccourci doit être placé
  * @return le nom complet du dossier
  */
 wxString DialogEnregistreM3U::GetCheminRaccourci()
@@ -123,13 +123,13 @@ wxString DialogEnregistreM3U::GetCheminRaccourci()
 }
 
 /**
- * Ouvre une fenÃªtre pour sÃ©lectionner un rÃ©pertoire
+ * Ouvre une fenêtre pour sélectionner un répertoire
  */
 void DialogEnregistreM3U::OuvrirDossier(wxCommandEvent &WXUNUSED(event))
 {
     int ouvert;
 
-    wxDirDialog navig(this, _("Choisissez le rÃ©pertoire dans lequel vous voulez crÃ©er un raccourci"), m_boiteRaccourci->GetValue());//, wxEmptyString);
+    wxDirDialog navig(this, _("Choisissez le répertoire dans lequel vous voulez créer un raccourci"), m_boiteRaccourci->GetValue());//, wxEmptyString);
     ouvert = navig.ShowModal();
 
     if (ouvert == wxID_OK)
@@ -137,8 +137,8 @@ void DialogEnregistreM3U::OuvrirDossier(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Associe un panel qui doit recevoir un Ã©vÃ¨nement lors d'une modification
- * @param Panel un panel qui doit recevoir les Ã©vÃ¨nements
+ * Associe un panel qui doit recevoir un évènement lors d'une modification
+ * @param Panel un panel qui doit recevoir les évènements
  */
 void DialogEnregistreM3U::SetPanelToBeCall(wxPanel* Panel)
 {
@@ -146,7 +146,7 @@ void DialogEnregistreM3U::SetPanelToBeCall(wxPanel* Panel)
 }
 
 /**
- * Informe le panel de la mise Ã  jour
+ * Informe le panel de la mise à jour
  * @see DialogEnregistreM3U::SetPanelToBeCall
  */
 void DialogEnregistreM3U::CallPanel()

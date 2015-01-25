@@ -16,8 +16,9 @@
 /**
  * Default constructor
  */
-Music::Music() : Music::Music(wxEmptyString)
+Music::Music()
 {
+    Music(wxEmptyString);
 }
 
 /**
@@ -41,12 +42,42 @@ Music::Music(wxString filename) :
 {
 }
 
+Music::Music(const Music& music)
+{
+    *this = music;
+}
+
 /**
  * Destructor
  */
 Music::~Music()
 {
     delete m_recordSleeve;
+}
+
+
+Music& Music::operator=(const Music& music)
+{
+    m_filename      = music.m_filename;
+    m_name          = music.m_name;
+    m_artists       = music.m_artists;
+    m_album         = music.m_album;
+    m_title         = music.m_title;
+    m_path          = music.m_path;
+    m_genres        = music.m_genres;
+    m_extension     = music.m_extension;
+    m_year          = music.m_year;
+    m_duration      = music.m_duration;
+    m_debit         = music.m_debit;
+    m_size          = music.m_size;
+
+    delete m_recordSleeve;
+    if (music.m_recordSleeve)
+        m_recordSleeve = new wxImage(*music.m_recordSleeve);
+    else
+        m_recordSleeve = NULL;
+
+    return *this;
 }
 
 /** @brief Modifies the name

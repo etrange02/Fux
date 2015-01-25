@@ -20,7 +20,8 @@ extern const wxEventType wxEVT_FUX_MUSICMANAGER_SEARCH_DONE;
 class MusicManager
 {
     public:
-        //static MusicManager& get();
+        MusicManager();
+        virtual ~MusicManager();
 
         std::vector<Music*>& getAllMusics();
         std::vector<Music*>& getSearchedMusics();
@@ -34,6 +35,8 @@ class MusicManager
         void placeStringTitlesAtInSearch(wxArrayString* titles, size_t position);
         void deleteTitleAt(size_t position);
         void deleteTitleAtInSearch(size_t position);
+        void updateMusicContent(const long position, Music* musicData);
+        void updateMusicContentInSearch(const long position, Music* musicData);
         void deleteTitles(wxArrayString& titles, bool update = false);
 
         bool isRepete();
@@ -69,14 +72,14 @@ class MusicManager
         wxString getSearchedWord() const;
         void setSearchWord(const wxString& searchedWord);
         bool hasEfficientSearchedWord() const;
-        MusicManager();
-        virtual ~MusicManager();
 
     protected:
         bool playRandomMusic();
         void sendMusicNoFileEvent();
         void sendSearchEndingEvent();
         void launchSearching();
+        void updateMusicContent(const long position, Music* musicData, std::vector<Music*>& collection);
+        void updateCurrentMusic(Music* newMusicData);
 
     private:
 

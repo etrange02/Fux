@@ -41,4 +41,9 @@ bool MusicManagerDefaultDecorator::playMusicAt(long position)
     return getDelegate().playMusicAt(position);
 }
 
+void MusicManagerDefaultDecorator::updateMusicContent(const long position, Music* music)
+{
+    getDelegate().updateMusicContent(position, music);
+}
+
 

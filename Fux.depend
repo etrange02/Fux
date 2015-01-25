@@ -2107,7 +2107,7 @@
 
 1421997950 c:\workspace\projects\fux\include\constants\events.h
 
-1416433635 c:\workspace\projects\fux\include\constants\ids.h
+1422138986 c:\workspace\projects\fux\include\constants\ids.h
 
 1416433635 c:\workspace\projects\fux\include\constants\strings.h
 
@@ -2149,7 +2149,7 @@
 
 1416433635 c:\workspace\projects\fux\include\classes.h
 
-1421864859 c:\workspace\projects\fux\include\music\musicmanager.h
+1422194090 c:\workspace\projects\fux\include\music\musicmanager.h
 	<wx/wx.h>
 	<ctime>
 	<algorithm>
@@ -2159,7 +2159,7 @@
 	"../tools/thread/ThreadManager.h"
 	"../predicates/findPosition.h"
 
-1420617367 c:\workspace\projects\fux\include\music\musicplayer.h
+1422193613 c:\workspace\projects\fux\include\music\musicplayer.h
 	<wx/wx.h>
 	<fmod.hpp>
 	"Duration.h"
@@ -2178,7 +2178,7 @@
 	"../settings/Parametre.h"
 	"../tools/thread/ThreadManager.h"
 
-1421264023 c:\workspace\projects\fux\include\music\music.h
+1422047249 c:\workspace\projects\fux\include\music\music.h
 	<wx/wx.h>
 	<wx/image.h>
 	"IMusic.h"
@@ -2190,7 +2190,7 @@
 1416433635 c:\workspace\projects\fux\include\music\chansonnompos.h
 	"wx/wx.h"
 
-1422015647 c:\workspace\projects\fux\include\music\factory.h
+1422047922 c:\workspace\projects\fux\include\music\factory.h
 	<wx/wx.h>
 	"Music.h"
 	"MusicFile.h"
@@ -2813,12 +2813,13 @@
 	<wx/wx.h>
 	<wx/event.h>
 
-1420617367 c:\workspace\projects\fux\include\gui\dialogs\dialogtagmp3.h
+1422047813 c:\workspace\projects\fux\include\gui\dialogs\dialogtagmp3.h
 	<wx/wx.h>
 	<wx/notebook.h>
 	"../../Define.h"
 	"../widgets/ImagePochetteMusique.h"
 	"DialogTagMP3Info.h"
+	"Music.h"
 
 1422033824 c:\workspace\projects\fux\include\gui\widgets\imagepochettemusique.h
 	<wx/wx.h>
@@ -2836,11 +2837,12 @@
 
 1416433635 c:\workspace\projects\fux\include\gui\tools\jaquetteclasses.h
 
-1420617367 c:\workspace\projects\fux\include\gui\dialogs\dialogtagmp3info.h
+1422138974 c:\workspace\projects\fux\include\gui\dialogs\dialogtagmp3info.h
 	<wx/wx.h>
 	<wx/filename.h>
 	<wx/spinctrl.h>
 	"../../Define.h"
+	"Music.h"
 
 1416433635 c:\workspace\projects\fux\include\network\tcpserveur.h
 	<wx/wx.h>
@@ -3010,13 +3012,14 @@
 1416433635 c:\workspace\projects\fux\include\explorer\state\playlistdrivemanagerstate.h
 	"DriveManagerState.h"
 
-1420201180 source:c:\workspace\projects\fux\src\gui\dialogs\dialogenregistrem3u.cpp
+1422045871 source:c:\workspace\projects\fux\src\gui\dialogs\dialogenregistrem3u.cpp
 	"../../../include/gui/dialogs/DialogEnregistreM3U.h"
 
-1422033967 source:c:\workspace\projects\fux\src\gui\dialogs\dialogtagmp3.cpp
+1422143352 source:c:\workspace\projects\fux\src\gui\dialogs\dialogtagmp3.cpp
 	"../../../include/gui/dialogs/DialogTagMP3.h"
+	"../../music/Factory.h"
 
-1420617367 source:c:\workspace\projects\fux\src\gui\dialogs\dialogtagmp3info.cpp
+1422142888 source:c:\workspace\projects\fux\src\gui\dialogs\dialogtagmp3info.cpp
 	"../../../include/gui/dialogs/DialogTagMP3Info.h"
 
 1416433636 source:c:\workspace\projects\fux\src\gui\explorer\drivemanagerspanel.cpp
@@ -3056,11 +3059,11 @@
 	"../../../include/gui/graph/MusiqueGraph.h"
 	"MusicManagerSwitcher.h"
 
-1422034105 source:c:\workspace\projects\fux\src\gui\musiclist\playlist.cpp
+1422193072 source:c:\workspace\projects\fux\src\gui\musiclist\playlist.cpp
 	"../../../include/gui/musiclist/PlayList.h"
 	"MusicManagerSwitcher.h"
 
-1421865121 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
+1422139753 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
 	"../../../include/gui/musiclist/PlayList.h"
 	"MusicManagerSwitcher.h"
 
@@ -3088,7 +3091,7 @@
 1416433636 source:c:\workspace\projects\fux\src\music\chansonnompos.cpp
 	"../../include/music/ChansonNomPos.h"
 
-1420617367 source:c:\workspace\projects\fux\src\music\musicplayer.cpp
+1422194210 source:c:\workspace\projects\fux\src\music\musicplayer.cpp
 	"../../include/music/MusicPlayer.h"
 
 1416433636 source:c:\workspace\projects\fux\src\predicates\findposition.cpp
@@ -3128,10 +3131,10 @@
 1420582741 source:c:\workspace\projects\fux\src\music\duree.cpp
 	"../../include/music/Duree.h"
 
-1422015805 source:c:\workspace\projects\fux\src\music\factory.cpp
+1422048005 source:c:\workspace\projects\fux\src\music\factory.cpp
 	"../../include/music/Factory.h"
 
-1421263811 source:c:\workspace\projects\fux\src\music\music.cpp
+1422144960 source:c:\workspace\projects\fux\src\music\music.cpp
 	"../../include/music/Music.h"
 
 1421185970 source:c:\workspace\projects\fux\src\music\musicfilereader.cpp
@@ -3146,7 +3149,7 @@
 1421271389 source:c:\workspace\projects\fux\src\music\musiclist.cpp
 	"../../include/music/MusicList.h"
 
-1421864859 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
+1422195187 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
 	"../../include/music/MusicManager.h"
 
 1420201180 source:c:\workspace\projects\fux\src\network\tcpclient.cpp
@@ -3246,7 +3249,7 @@
 1421263810 source:c:\workspace\projects\fux\src\music\imusic.cpp
 	"../../include/music/IMusic.h"
 
-1421865262 c:\workspace\projects\fux\include\music\imusicmanager.h
+1422192244 c:\workspace\projects\fux\include\music\imusicmanager.h
 	<vector>
 	"Music.h"
 	"MusicPlayer.h"
@@ -3259,17 +3262,17 @@
 	"IMusicManager.h"
 	"MusicManager.h"
 
-1421865218 source:c:\workspace\projects\fux\src\music\musicmanagerdefaultdecorator.cpp
+1422192464 source:c:\workspace\projects\fux\src\music\musicmanagerdefaultdecorator.cpp
 	"MusicManagerDefaultDecorator.h"
 
-1421865218 c:\workspace\projects\fux\include\music\musicmanagerdefaultdecorator.h
+1422192449 c:\workspace\projects\fux\include\music\musicmanagerdefaultdecorator.h
 	"AbstractMusicManagerDecorator.h"
 	"MusicManager.h"
 
-1421865384 source:c:\workspace\projects\fux\src\music\musicmanagersearchdecorator.cpp
+1422192444 source:c:\workspace\projects\fux\src\music\musicmanagersearchdecorator.cpp
 	"MusicManagerSearchDecorator.h"
 
-1421865208 c:\workspace\projects\fux\include\music\musicmanagersearchdecorator.h
+1422192334 c:\workspace\projects\fux\include\music\musicmanagersearchdecorator.h
 	"AbstractMusicManagerDecorator.h"
 	"MusicManager.h"
 

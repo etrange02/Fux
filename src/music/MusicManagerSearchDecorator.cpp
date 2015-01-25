@@ -41,3 +41,8 @@ bool MusicManagerSearchDecorator::playMusicAt(long position)
     return getDelegate().playMusicAtInSearch(position);
 }
 
+void MusicManagerSearchDecorator::updateMusicContent(const long position, Music* music)
+{
+    getDelegate().updateMusicContentInSearch(position, music);
+}
+

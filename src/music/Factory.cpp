@@ -31,6 +31,17 @@ Music* Factory::createMusic(wxString& filename)
     return new Music(filename);
 }
 
+/** @brief Creates a copy of a music.
+ *
+ * @param music instance to copy
+ * @return Music*
+ *
+ */
+Music* Factory::createMusic(const Music& music)
+{
+    return new Music(music);
+}
+
 /** @brief Creates a MusicFile for reading TAG value in music file
  *
  * @param music a music

@@ -16,6 +16,7 @@ class IMusicManager
         /**/virtual void placeStringTitlesAt(wxArrayString* titles, size_t position) = 0;
         /**/virtual void deleteTitleAt(size_t position) = 0;
         /**/virtual bool playMusicAt(long position) = 0;
+        /**/virtual void updateMusicContent(const long position, Music* music) = 0;
 
         virtual bool isRepete() = 0;
         virtual bool isRandom() = 0;
