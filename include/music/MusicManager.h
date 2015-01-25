@@ -2,15 +2,8 @@
 #define MUSICMANAGER_H
 
 #include <wx/wx.h>
-#include <ctime>
-#include <algorithm>
-//#include "../Define.h"
-//#include "IMusic.h"
-#include "IMusicManager.h"
 #include "MusicPlayer.h"
 #include "MusicList.h"
-#include "../tools/thread/ThreadManager.h"
-#include "../predicates/findPosition.h"
 
 class MusicList;
 

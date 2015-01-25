@@ -7,6 +7,10 @@
  * License:
  **************************************************************/
 #include "../../include/music/MusicManager.h"
+#include <ctime>
+#include <algorithm>
+#include "../tools/thread/ThreadManager.h"
+#include "../predicates/findPosition.h"
 
 const wxEventType wxEVT_FUX_MUSICMANAGER_NO_FILE = wxNewEventType();
 const wxEventType wxEVT_FUX_MUSICMANAGER_SEARCH_DONE = wxNewEventType();
