@@ -12,6 +12,8 @@
 #include "../tools/thread/ThreadManager.h"
 #include "../predicates/findPosition.h"
 
+using namespace fux::music;
+
 const wxEventType wxEVT_FUX_MUSICMANAGER_NO_FILE = wxNewEventType();
 const wxEventType wxEVT_FUX_MUSICMANAGER_SEARCH_DONE = wxNewEventType();
 
@@ -727,7 +729,7 @@ void MusicManager::updateMusicContent(const long position, Music* musicData, std
     if (musicToModify == getMusic()) // on modifie le titre courant
         updateCurrentMusic(musicData);
     else // on modifie un autre titre
-        fux::music::Factory::createMusicFileWriterThread(musicData, musicToModify, getParent());
+        fux::thread::ThreadManager::get().addRunnable(Factory::createMusicFileWriterThread(musicData, musicToModify, getParent()));
 }
 
 /** @brief Updates the content of the current music file played.

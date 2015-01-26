@@ -286,6 +286,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/music/Duration.cpp" />
 		<Unit filename="src/music/Factory.cpp" />
 		<Unit filename="src/music/IMusic.cpp" />
+		<Unit filename="src/music/IMusicManager.cpp" />
 		<Unit filename="src/music/Music.cpp" />
 		<Unit filename="src/music/MusicFileReader.cpp" />
 		<Unit filename="src/music/MusicFileReaderThread.cpp" />

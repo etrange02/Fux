@@ -12,7 +12,6 @@
 #include "../tools/dir_traverser/ISearchTraversable.h"
 #include "../tools/dir_traverser/Search.h"
 #include "../settings/Parametre.h"
-#include "../tools/thread/ThreadManager.h"
 
 extern const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE;
 extern const wxEventType wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED;

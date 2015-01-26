@@ -34,6 +34,7 @@ class MusicFileWriter : public MusicFile
         void renameFile();
         void fillData();
         void saveImage();
+        void copy();
 
         Music* m_musicSrc; //!< Member variable "m_musicIn"
         Music* m_musicDst; //!< Member variable "m_musicOut"

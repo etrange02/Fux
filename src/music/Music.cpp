@@ -18,7 +18,7 @@
  */
 Music::Music()
 {
-    Music(wxEmptyString);
+    Music("");
 }
 
 /**
@@ -27,13 +27,6 @@ Music::Music()
  */
 Music::Music(wxString filename) :
     m_filename(filename),
-    m_name(wxEmptyString),
-    m_artists(wxEmptyString),
-    m_album(wxEmptyString),
-    m_title(wxEmptyString),
-    m_path(wxEmptyString),
-    m_genres(wxEmptyString),
-    m_extension(wxEmptyString),
     m_year(0),
     m_duration(0),
     m_debit(0),
@@ -71,11 +64,11 @@ Music& Music::operator=(const Music& music)
     m_debit         = music.m_debit;
     m_size          = music.m_size;
 
-    delete m_recordSleeve;
-    if (music.m_recordSleeve)
+    if (NULL != m_recordSleeve)
+        delete m_recordSleeve;
+    m_recordSleeve = NULL;
+    if (NULL != music.m_recordSleeve)
         m_recordSleeve = new wxImage(*music.m_recordSleeve);
-    else
-        m_recordSleeve = NULL;
 
     return *this;
 }

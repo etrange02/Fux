@@ -28,6 +28,7 @@ void MusicFileWriter::process()
     fillData();
     saveImage();
     renameFile();
+    copy();
 }
 
 void MusicFileWriter::fillData()
@@ -40,7 +41,7 @@ void MusicFileWriter::fillData()
         artists.Replace(_T("/"), _T(";"), true);
 
         fileRef.tag()->setAlbum (TagLib::String(m_musicSrc->GetAlbum() .fn_str()));
-//        fileRef.tag()->setArtist(TagLib::String(artists));
+        fileRef.tag()->setArtist(TagLib::String(artists.fn_str()));
         fileRef.tag()->setTitle (TagLib::String(m_musicSrc->GetTitle() .fn_str()));
         fileRef.tag()->setGenre (TagLib::String(m_musicSrc->GetGenres().fn_str()));
         fileRef.tag()->setYear  (               m_musicSrc->GetYear());
@@ -97,5 +98,10 @@ void MusicFileWriter::renameFile()
 Music* MusicFileWriter::getMusic() const
 {
     return m_musicDst;
+}
+
+void MusicFileWriter::copy()
+{
+    *m_musicDst = *m_musicSrc;
 }
 

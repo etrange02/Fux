@@ -27,6 +27,11 @@ DialogTagMP3::DialogTagMP3(wxWindow *parent, const wxWindowID id, const Music& m
     initialize();
 }
 
+DialogTagMP3::~DialogTagMP3()
+{
+    delete m_music;
+}
+
 void DialogTagMP3::initialize()
 {
     wxBoxSizer *sizerV = NULL, *sizerH = NULL;
@@ -68,9 +73,11 @@ wxString& DialogTagMP3::getComment() const
     m_comment->GetValue();
 }
 
-Music* DialogTagMP3::getResult() const
+Music* DialogTagMP3::getResult()
 {
     m_pageInfo->toMusic();
-    return m_music;
+    Music* music = m_music;
+    m_music = NULL;
+    return music;
 }
 

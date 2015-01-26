@@ -238,7 +238,6 @@ void PlayList::OnAnnulerTAG(wxCommandEvent &WXUNUSED(event))
     {
         RemplirPanneauTAG(itemPosition);
     }
-
 }
 
 /**
@@ -319,7 +318,13 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
     if (position < 0)
         return;
 
+    if (MusicManagerSwitcher::getSearch().getMusics().size() <= position)
+        return;
+
     Music* music = MusicManagerSwitcher::getSearch().getMusics().at(position);
+
+    if (NULL == music)
+        return;
     DialogTagMP3 dialog(this, -1, *music);
     dialog.Layout();
 
@@ -328,9 +333,6 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
 
     if (mustChange)
         MusicManagerSwitcher::getSearch().updateMusicContent(position, dialog.getResult());
-    else
-        delete dialog.getResult();
-    // TODO (David): Show details window
 }
 
 /**

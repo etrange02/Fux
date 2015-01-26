@@ -7,6 +7,7 @@
  * License:
  **************************************************************/
 #include "../../include/music/MusicList.h"
+#include "../tools/thread/ThreadManager.h"
 
 using namespace fux::music;
 

@@ -12,10 +12,11 @@ class DialogTagMP3 : public wxDialog
 {
     public:
         DialogTagMP3(wxWindow *parent, const wxWindowID id, const Music& music);
+        ~DialogTagMP3();
         bool isModified();
         wxString& getComment() const;
         ImagePochetteMusique* getImage();
-        Music* getResult() const;
+        Music* getResult();
 
     private:
         void initialize();
