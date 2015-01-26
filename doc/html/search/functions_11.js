@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['videliste',['VideListe',['../class_liste_gestion_periph.html#a3c8964b803b834887f51b938b728a419',1,'ListeGestionPeriph']]],
-  ['vider',['Vider',['../class_array_fenetre_detachable.html#a913adc8a459bd30900c6c3bbb38c0428',1,'ArrayFenetreDetachable']]],
-  ['viderliste',['ViderListe',['../class_thread_fichier_fichier.html#a8509e30b36cceff11fae5b989dae6611',1,'ThreadFichierFichier']]],
-  ['viderpanneautag',['ViderPanneauTAG',['../class_play_list.html#a27f3908a9bfbb5c292a6901eaba6078f',1,'PlayList']]]
+  ['updatecolors',['updateColors',['../class_play_list_tableau.html#ac3e17e32232ecc363e47e88cd34b14bd',1,'PlayListTableau']]],
+  ['updatecurrentmusic',['updateCurrentMusic',['../class_music_manager.html#a7d535ebe260caa533b7f7bae17ed9782',1,'MusicManager']]],
+  ['updatemusiccontent',['updateMusicContent',['../class_music_manager.html#a41a9d1847880a758da862b94f4625474',1,'MusicManager::updateMusicContent(const long position, Music *musicData)'],['../class_music_manager.html#a18489125ecc1947ac67f00f18527fe66',1,'MusicManager::updateMusicContent(const long position, Music *musicData, std::vector&lt; Music * &gt; &amp;collection)']]],
+  ['updatemusiccontentinsearch',['updateMusicContentInSearch',['../class_music_manager.html#af423dd40467b9f2a6eae47d39a7c0aeb',1,'MusicManager']]]
 ];

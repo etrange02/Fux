@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -105,6 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_r.html#index_r"><span>r</span></a></li>
       <li><a href="functions_s.html#index_s"><span>s</span></a></li>
       <li><a href="functions_t.html#index_t"><span>t</span></a></li>
+      <li><a href="functions_u.html#index_u"><span>u</span></a></li>
       <li><a href="functions_v.html#index_v"><span>v</span></a></li>
       <li><a href="functions_~.html#index_~"><span>~</span></a></li>
     </ul>
@@ -129,7 +131,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -142,6 +144,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>AbstractMusicManagerDecorator()
+: <a class="el" href="class_abstract_music_manager_decorator.html#ac3a52e32e8ec2919baa20f91a16db8c7">AbstractMusicManagerDecorator</a>
+</li>
 <li>Add()
 : <a class="el" href="class_array_fenetre_detachable.html#a0cb54beb43a623be0ab96a4500842086">ArrayFenetreDetachable</a>
 </li>
@@ -155,10 +160,13 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_music_list.html#a436397a59eee24bf8c9f8c94e9e42f7d">MusicList</a>
 </li>
 <li>addLine()
-: <a class="el" href="class_play_list_tableau.html#a09f0c114521046e75a8f30059c1c7760">PlayListTableau</a>
+: <a class="el" href="class_play_list_tableau.html#a0ee2a2b61f9e976a40ef19dff50f5ca9">PlayListTableau</a>
 </li>
 <li>addLines()
-: <a class="el" href="class_music_list.html#a971bd29cd47eff624bca535a33c5ff6c">MusicList</a>
+: <a class="el" href="class_music_list.html#ad40e87401a053976c0af95b89798bdf4">MusicList</a>
+</li>
+<li>addLineThread()
+: <a class="el" href="class_play_list_tableau.html#a1de34433bf8c0ff5f557d6263458150e">PlayListTableau</a>
 </li>
 <li>addRunnable()
 : <a class="el" href="classfux_1_1thread_1_1_thread_manager.html#a98cb346a041825b25716e5cebab7de69">fux::thread::ThreadManager</a>
@@ -281,7 +289,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Dec 30 2014 13:13:45 for Fu(X) 2.0 by
+    <li class="footer">Generated on Tue Jan 27 2015 00:42:54 for Fu(X) 2.0 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

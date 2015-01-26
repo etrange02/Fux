@@ -2,7 +2,7 @@ var searchData=
 [
   ['elementlecteurracinefichier',['ElementLecteurRacineFichier',['../class_element_lecteur_racine_fichier.html#a3d0e294d66a1aafa85d0814bbd9442a5',1,'ElementLecteurRacineFichier']]],
   ['elementthreadfichier',['ElementThreadFichier',['../class_element_thread_fichier.html#af34e5bcd8b0a5b9433261566877035a3',1,'ElementThreadFichier']]],
-  ['empty',['empty',['../class_music_list.html#a78c7875e4ff76512dec06a673c80b5ce',1,'MusicList']]],
+  ['empty',['empty',['../class_music_list.html#a78c7875e4ff76512dec06a673c80b5ce',1,'MusicList::empty()'],['../class_music_manager.html#ab2c2102b165362c6ef3bb3c007285287',1,'MusicManager::empty()']]],
   ['enregistrerm3u',['EnregistrerM3U',['../class_play_list.html#a9aa01c3962ff4c199981f16718b2dd1f',1,'PlayList']]],
   ['entry',['Entry',['../class_b_d_d_thread.html#acd5363e93dc46a6277879198ea362e95',1,'BDDThread::Entry()'],['../classfux_1_1thread_1_1_thread_process.html#af1cdef5c6a60b7c5261dee99300604e4',1,'fux::thread::ThreadProcess::Entry()']]],
   ['envoiemessagedrag',['EnvoieMessageDrag',['../class_bouton_fenetre_detachable.html#a8efaeaebb933b673e792926fd98af9ec',1,'BoutonFenetreDetachable']]],

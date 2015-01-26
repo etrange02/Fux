@@ -10,5 +10,5 @@ var searchData=
   ['drivemanagerspanel',['DriveManagersPanel',['../class_drive_managers_panel.html',1,'']]],
   ['drivemanagerstate',['DriveManagerState',['../class_drive_manager_state.html',1,'']]],
   ['dropfichierimagepochettemusique',['DropFichierImagePochetteMusique',['../class_drop_fichier_image_pochette_musique.html',1,'']]],
-  ['duree',['Duree',['../class_duree.html',1,'']]]
+  ['duration',['Duration',['../class_duration.html',1,'']]]
 ];

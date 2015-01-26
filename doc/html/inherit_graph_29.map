@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classfux_1_1thread_1_1_i_runnable.html" title="Interface for threaded treatments Interface for threaded treatments. " alt="" coords="5,5,153,32"/>
-<area shape="rect" id="node2" href="$class_music_file_reader_thread.html" title="Delegate for thread processing. " alt="" coords="201,5,360,32"/>
+<area shape="rect" id="node1" href="$classfux_1_1thread_1_1_i_thread_manager.html" title="Interface for thread manager Interface for thread manager. " alt="" coords="5,5,188,32"/>
+<area shape="rect" id="node2" href="$classfux_1_1thread_1_1_thread_manager.html" title="Manages thread on different cores Manages thread on different cores. " alt="" coords="236,5,416,32"/>
 </map>

@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -100,7 +101,7 @@ $(document).ready(function(){initNavTree('class_dialog_tag_m_p3_info.html','');}
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -118,7 +119,7 @@ $(document).ready(function(){initNavTree('class_dialog_tag_m_p3_info.html','');}
 </div><!--header-->
 <div class="contents">
 
-<p>Page affichant les propriétés du titre donné en paramètre.  
+<p>Page affichant les propri�t�s du titre donn� en param�tre.  
  <a href="class_dialog_tag_m_p3_info.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for DialogTagMP3Info:</div>
@@ -128,65 +129,20 @@ Collaboration diagram for DialogTagMP3Info:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afbd7ac17a4c87c3db8b0be8d8fd5b25d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#afbd7ac17a4c87c3db8b0be8d8fd5b25d">DialogTagMP3Info</a> (wxWindow *parent, wxWindowID id, wxString chanson)</td></tr>
-<tr class="memdesc:afbd7ac17a4c87c3db8b0be8d8fd5b25d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#afbd7ac17a4c87c3db8b0be8d8fd5b25d">More...</a><br /></td></tr>
-<tr class="separator:afbd7ac17a4c87c3db8b0be8d8fd5b25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad226b1fb0d5532794d7b1518563fa018"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#ad226b1fb0d5532794d7b1518563fa018">DialogTagMP3Info</a> (wxWindow *parent, wxWindowID id, <a class="el" href="class_music.html">Music</a> *music)</td></tr>
+<tr class="memdesc:ad226b1fb0d5532794d7b1518563fa018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#ad226b1fb0d5532794d7b1518563fa018">More...</a><br /></td></tr>
+<tr class="separator:ad226b1fb0d5532794d7b1518563fa018"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afde9bc8e3ce67dc6c20796751dab7a61"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#afde9bc8e3ce67dc6c20796751dab7a61">~DialogTagMP3Info</a> ()</td></tr>
 <tr class="memdesc:afde9bc8e3ce67dc6c20796751dab7a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#afde9bc8e3ce67dc6c20796751dab7a61">More...</a><br /></td></tr>
 <tr class="separator:afde9bc8e3ce67dc6c20796751dab7a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48b887ca31331143632214564f225f9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#a48b887ca31331143632214564f225f9e">SetChanson</a> (wxString chanson)</td></tr>
-<tr class="memdesc:a48b887ca31331143632214564f225f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associe le titre pour afficher les détails.  <a href="#a48b887ca31331143632214564f225f9e">More...</a><br /></td></tr>
-<tr class="separator:a48b887ca31331143632214564f225f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8177accfdf791c633b86a8457e10bc9"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#ad8177accfdf791c633b86a8457e10bc9">GetNom</a> ()</td></tr>
-<tr class="memdesc:ad8177accfdf791c633b86a8457e10bc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nom de la chanson.  <a href="#ad8177accfdf791c633b86a8457e10bc9">More...</a><br /></td></tr>
-<tr class="separator:ad8177accfdf791c633b86a8457e10bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac56c3b47cc0c8d78ed18f678c8fdf120"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#ac56c3b47cc0c8d78ed18f678c8fdf120">GetTitre</a> ()</td></tr>
-<tr class="memdesc:ac56c3b47cc0c8d78ed18f678c8fdf120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le titre de la chanson - TAG.  <a href="#ac56c3b47cc0c8d78ed18f678c8fdf120">More...</a><br /></td></tr>
-<tr class="separator:ac56c3b47cc0c8d78ed18f678c8fdf120"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f94999fe18ca07a02229892fe2216e4"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#a4f94999fe18ca07a02229892fe2216e4">GetAlbum</a> ()</td></tr>
-<tr class="memdesc:a4f94999fe18ca07a02229892fe2216e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'album de la chanson - TAG.  <a href="#a4f94999fe18ca07a02229892fe2216e4">More...</a><br /></td></tr>
-<tr class="separator:a4f94999fe18ca07a02229892fe2216e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6213c3f32d708473d07253f9e3cbdf04"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#a6213c3f32d708473d07253f9e3cbdf04">GetArtiste</a> ()</td></tr>
-<tr class="memdesc:a6213c3f32d708473d07253f9e3cbdf04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'artiste de la chanson - TAG.  <a href="#a6213c3f32d708473d07253f9e3cbdf04">More...</a><br /></td></tr>
-<tr class="separator:a6213c3f32d708473d07253f9e3cbdf04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae203494d22e0110c3e454174bde95131"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#ae203494d22e0110c3e454174bde95131">GetGenre</a> ()</td></tr>
-<tr class="memdesc:ae203494d22e0110c3e454174bde95131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le genre de la chanson - TAG.  <a href="#ae203494d22e0110c3e454174bde95131">More...</a><br /></td></tr>
-<tr class="separator:ae203494d22e0110c3e454174bde95131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c9c508e3bcef2fb77b998b6b0a748c7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#a0c9c508e3bcef2fb77b998b6b0a748c7">GetAnnee</a> ()</td></tr>
-<tr class="memdesc:a0c9c508e3bcef2fb77b998b6b0a748c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'année de parution de la chanson - TAG.  <a href="#a0c9c508e3bcef2fb77b998b6b0a748c7">More...</a><br /></td></tr>
-<tr class="separator:a0c9c508e3bcef2fb77b998b6b0a748c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f9c4ed42ce5ec9cfb197771e46c7a2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#a6f9c4ed42ce5ec9cfb197771e46c7a2c">SetTitre</a> (wxString titre)</td></tr>
-<tr class="memdesc:a6f9c4ed42ce5ec9cfb197771e46c7a2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le titre affiché dans la boîte Titre.  <a href="#a6f9c4ed42ce5ec9cfb197771e46c7a2c">More...</a><br /></td></tr>
-<tr class="separator:a6f9c4ed42ce5ec9cfb197771e46c7a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2610608f666fe818638ef126f2b1656"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#aa2610608f666fe818638ef126f2b1656">SetAlbum</a> (wxString album)</td></tr>
-<tr class="memdesc:aa2610608f666fe818638ef126f2b1656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le nom de l'album affiché dans la boîte Album.  <a href="#aa2610608f666fe818638ef126f2b1656">More...</a><br /></td></tr>
-<tr class="separator:aa2610608f666fe818638ef126f2b1656"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae52d26c3ed64a113830d426cfa8b4a6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#ae52d26c3ed64a113830d426cfa8b4a6f">SetArtiste</a> (wxString artiste)</td></tr>
-<tr class="memdesc:ae52d26c3ed64a113830d426cfa8b4a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le nom de l'artiste affiché dans la boîte Artiste.  <a href="#ae52d26c3ed64a113830d426cfa8b4a6f">More...</a><br /></td></tr>
-<tr class="separator:ae52d26c3ed64a113830d426cfa8b4a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cdbf542e4227d2e1a49ba0b7e8b00bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#a4cdbf542e4227d2e1a49ba0b7e8b00bd">SetGenre</a> (wxString genre)</td></tr>
-<tr class="memdesc:a4cdbf542e4227d2e1a49ba0b7e8b00bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le genre affiché dans la boîte Genre.  <a href="#a4cdbf542e4227d2e1a49ba0b7e8b00bd">More...</a><br /></td></tr>
-<tr class="separator:a4cdbf542e4227d2e1a49ba0b7e8b00bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b0daedd3d6f868280447055732eaea0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#a5b0daedd3d6f868280447055732eaea0">SetAnnee</a> (int annee)</td></tr>
-<tr class="memdesc:a5b0daedd3d6f868280447055732eaea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie l'année affiché dans la boîte Année.  <a href="#a5b0daedd3d6f868280447055732eaea0">More...</a><br /></td></tr>
-<tr class="separator:a5b0daedd3d6f868280447055732eaea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3570dfe950577efef7894d265c654df4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#a3570dfe950577efef7894d265c654df4">SetDuree</a> (wxString duree)</td></tr>
-<tr class="memdesc:a3570dfe950577efef7894d265c654df4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie la durée affiché dans le champs durée.  <a href="#a3570dfe950577efef7894d265c654df4">More...</a><br /></td></tr>
-<tr class="separator:a3570dfe950577efef7894d265c654df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abeed02860993f8b91f0e2626bac64177"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#abeed02860993f8b91f0e2626bac64177">SetDebit</a> (int debit)</td></tr>
-<tr class="memdesc:abeed02860993f8b91f0e2626bac64177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le débit affiché dans le champs Débit.  <a href="#abeed02860993f8b91f0e2626bac64177">More...</a><br /></td></tr>
-<tr class="separator:abeed02860993f8b91f0e2626bac64177"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addeb1894c47755497df46f2c483640e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#addeb1894c47755497df46f2c483640e3">SetTaille</a> (int taille)</td></tr>
-<tr class="memdesc:addeb1894c47755497df46f2c483640e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie la taille affiché dans le champs Taille.  <a href="#addeb1894c47755497df46f2c483640e3">More...</a><br /></td></tr>
-<tr class="separator:addeb1894c47755497df46f2c483640e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd7aeb5cc5b8daea280d81913c6554e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#acd7aeb5cc5b8daea280d81913c6554e9">IsModified</a> ()</td></tr>
-<tr class="memdesc:acd7aeb5cc5b8daea280d81913c6554e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si un champs textuel de la page a été modifié  <a href="#acd7aeb5cc5b8daea280d81913c6554e9">More...</a><br /></td></tr>
-<tr class="separator:acd7aeb5cc5b8daea280d81913c6554e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d3304b8aae855a3979d5b8e8ef02d60"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#a5d3304b8aae855a3979d5b8e8ef02d60">isModified</a> ()</td></tr>
+<tr class="memdesc:a5d3304b8aae855a3979d5b8e8ef02d60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si un champs textuel de la page a �t� modifi�  <a href="#a5d3304b8aae855a3979d5b8e8ef02d60">More...</a><br /></td></tr>
+<tr class="separator:a5d3304b8aae855a3979d5b8e8ef02d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Page affichant les propriétés du titre donné en paramètre. </p>
+<div class="textblock"><p>Page affichant les propri�t�s du titre donn� en param�tre. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="afbd7ac17a4c87c3db8b0be8d8fd5b25d"></a>
+<a class="anchor" id="ad226b1fb0d5532794d7b1518563fa018"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -205,8 +161,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">wxString&#160;</td>
-          <td class="paramname"><em>chanson</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_music.html">Music</a> *&#160;</td>
+          <td class="paramname"><em>music</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -219,7 +175,7 @@ Public Member Functions</h2></td></tr>
 <p>Constructeur. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parent</td><td>la fenêtre parente </td></tr>
+    <tr><td class="paramname">parent</td><td>la fen�tre parente </td></tr>
     <tr><td class="paramname">id</td><td>l'identifiant de la page </td></tr>
     <tr><td class="paramname">chanson</td><td></td></tr>
   </table>
@@ -246,12 +202,12 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a4f94999fe18ca07a02229892fe2216e4"></a>
+<a class="anchor" id="a5d3304b8aae855a3979d5b8e8ef02d60"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">wxString DialogTagMP3Info::GetAlbum </td>
+          <td class="memname">bool DialogTagMP3Info::isModified </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -259,332 +215,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retourne l'album de la chanson - TAG. </p>
-<dl class="section return"><dt>Returns</dt><dd>le nom de l'album </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a0c9c508e3bcef2fb77b998b6b0a748c7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int DialogTagMP3Info::GetAnnee </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retourne l'année de parution de la chanson - TAG. </p>
-<dl class="section return"><dt>Returns</dt><dd>l'année de parution </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a6213c3f32d708473d07253f9e3cbdf04"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">wxString DialogTagMP3Info::GetArtiste </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retourne l'artiste de la chanson - TAG. </p>
-<dl class="section return"><dt>Returns</dt><dd>le nom de l'artiste </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ae203494d22e0110c3e454174bde95131"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">wxString DialogTagMP3Info::GetGenre </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retourne le genre de la chanson - TAG. </p>
-<dl class="section return"><dt>Returns</dt><dd>le genre </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ad8177accfdf791c633b86a8457e10bc9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">wxString DialogTagMP3Info::GetNom </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retourne le nom de la chanson. </p>
-<dl class="section return"><dt>Returns</dt><dd>le nom du fichier </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ac56c3b47cc0c8d78ed18f678c8fdf120"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">wxString DialogTagMP3Info::GetTitre </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retourne le titre de la chanson - TAG. </p>
-<dl class="section return"><dt>Returns</dt><dd>le titre </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="acd7aeb5cc5b8daea280d81913c6554e9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool DialogTagMP3Info::IsModified </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Indique si un champs textuel de la page a été modifié </p>
+<p>Indique si un champs textuel de la page a �t� modifi� </p>
 <dl class="section return"><dt>Returns</dt><dd>vrai ou faux selon le cas </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="aa2610608f666fe818638ef126f2b1656"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DialogTagMP3Info::SetAlbum </td>
-          <td>(</td>
-          <td class="paramtype">wxString&#160;</td>
-          <td class="paramname"><em>album</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modifie le nom de l'album affiché dans la boîte Album. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">album</td><td>le nom de l'album </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a5b0daedd3d6f868280447055732eaea0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DialogTagMP3Info::SetAnnee </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>annee</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modifie l'année affiché dans la boîte Année. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">annee</td><td>l'année de parution de la chanson </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ae52d26c3ed64a113830d426cfa8b4a6f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DialogTagMP3Info::SetArtiste </td>
-          <td>(</td>
-          <td class="paramtype">wxString&#160;</td>
-          <td class="paramname"><em>artiste</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modifie le nom de l'artiste affiché dans la boîte Artiste. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">artiste</td><td>le nom de l'artiste </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a48b887ca31331143632214564f225f9e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DialogTagMP3Info::SetChanson </td>
-          <td>(</td>
-          <td class="paramtype">wxString&#160;</td>
-          <td class="paramname"><em>chanson</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Associe le titre pour afficher les détails. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">chanson</td><td>le nom complet du titre </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="abeed02860993f8b91f0e2626bac64177"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DialogTagMP3Info::SetDebit </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>debit</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modifie le débit affiché dans le champs Débit. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">debit</td><td>le débit de la chanson </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a3570dfe950577efef7894d265c654df4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DialogTagMP3Info::SetDuree </td>
-          <td>(</td>
-          <td class="paramtype">wxString&#160;</td>
-          <td class="paramname"><em>duree</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modifie la durée affiché dans le champs durée. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">duree</td><td>la durée de la chanson </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a4cdbf542e4227d2e1a49ba0b7e8b00bd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DialogTagMP3Info::SetGenre </td>
-          <td>(</td>
-          <td class="paramtype">wxString&#160;</td>
-          <td class="paramname"><em>genre</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modifie le genre affiché dans la boîte Genre. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">genre</td><td>le genre de la chanson </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="addeb1894c47755497df46f2c483640e3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DialogTagMP3Info::SetTaille </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>taille</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modifie la taille affiché dans le champs Taille. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">taille</td><td>la taille de la chanson </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a6f9c4ed42ce5ec9cfb197771e46c7a2c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DialogTagMP3Info::SetTitre </td>
-          <td>(</td>
-          <td class="paramtype">wxString&#160;</td>
-          <td class="paramname"><em>titre</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modifie le titre affiché dans la boîte Titre. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">titre</td><td>le titre </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -598,7 +230,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_dialog_tag_m_p3_info.html">DialogTagMP3Info</a></li>
-    <li class="footer">Generated on Tue Dec 30 2014 13:13:44 for Fu(X) 2.0 by
+    <li class="footer">Generated on Tue Jan 27 2015 00:42:16 for Fu(X) 2.0 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

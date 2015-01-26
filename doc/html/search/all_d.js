@@ -2,6 +2,7 @@ var searchData=
 [
   ['pagegestionperiph',['PageGestionPeriph',['../class_page_gestion_periph.html',1,'PageGestionPeriph'],['../class_page_gestion_periph.html#a2e2226f75815fe7542b27d87e83a6fcf',1,'PageGestionPeriph::PageGestionPeriph()']]],
   ['parametre',['Parametre',['../class_parametre.html',1,'Parametre'],['../class_parametre.html#a7f33063b2094bbfbc6be12e5c7abb3e0',1,'Parametre::Parametre()']]],
+  ['parse',['parse',['../class_music_manager.html#a4a16d6e85d58215906a1b95645b7f730',1,'MusicManager::parse()'],['../class_music_manager.html#a376b4bacd871759d23f8a17e28c4457b',1,'MusicManager::parse(const wxString &amp;filename)'],['../class_music_manager.html#a6710fd56f897a7e30a948ad397aba946',1,'MusicManager::parse(wxArrayString &amp;filenames, bool update=true)']]],
   ['parsedirectory',['parseDirectory',['../class_music_list.html#a30309f93d1f478a64076195ab4aa1cb0',1,'MusicList']]],
   ['parsedirectoryrecursively',['parseDirectoryRecursively',['../class_music_list.html#a6c7b81f630a79eb6d75701e0a763e937',1,'MusicList']]],
   ['parsedirectorywithoutrecurs',['parseDirectoryWithoutRecurs',['../class_music_list.html#a8ed65b7e05cf5386dbcd5c0816cc3817',1,'MusicList']]],
@@ -9,14 +10,16 @@ var searchData=
   ['placerchanson',['PlacerChanson',['../class_musique_graph.html#a4bf6816621fb45e4be2634b89688ab88',1,'MusiqueGraph']]],
   ['placerligneint',['PlacerLigneInt',['../class_page_gestion_periph.html#aeb9191fc2960d32f4cd9b4ce2bfe1d0b',1,'PageGestionPeriph']]],
   ['placerlignestring',['PlacerLigneString',['../class_page_gestion_periph.html#a3cc212b3587c57a68fad9fd3bd63a53e',1,'PageGestionPeriph']]],
-  ['placestringtitlesat',['placeStringTitlesAt',['../class_music_manager.html#a85c6e164a8ef39961ac802995518b81d',1,'MusicManager']]],
-  ['play',['play',['../class_music_player.html#a192b86b9d03fe5edeebe3ea1aa93cd22',1,'MusicPlayer']]],
+  ['placestringtitlesat',['placeStringTitlesAt',['../class_music_manager.html#a00be4f5b8a831373b8ab27f5cde68f54',1,'MusicManager']]],
+  ['placestringtitlesatinsearch',['placeStringTitlesAtInSearch',['../class_music_manager.html#a57a9e8284e77c95ddc9b71f7534259c3',1,'MusicManager']]],
+  ['play',['play',['../class_music_player.html#af6752a482ae8102542a9a0265b07b374',1,'MusicPlayer']]],
   ['playamusic',['playAMusic',['../class_music_manager.html#ac273ef6dcfa2b802f4ba5ccbcdb467bf',1,'MusicManager']]],
   ['playlist',['PlayList',['../class_play_list.html',1,'PlayList'],['../class_play_list.html#ae0dfa1097c048135343a8d68ebac8cd5',1,'PlayList::PlayList()']]],
   ['playlistdrivemanagerstate',['PlaylistDriveManagerState',['../class_playlist_drive_manager_state.html',1,'PlaylistDriveManagerState'],['../class_playlist_drive_manager_state.html#aee5dd81ed8bcb9cd09fa3e0820854043',1,'PlaylistDriveManagerState::PlaylistDriveManagerState()']]],
   ['playlisttableau',['PlayListTableau',['../class_play_list_tableau.html',1,'PlayListTableau'],['../class_play_list_tableau.html#a486a32be7a8bbf1d3dc19781fba94919',1,'PlayListTableau::PlayListTableau()']]],
   ['playmusic',['playMusic',['../class_music_manager.html#aaca044c0cd0fcd692dacddb035f6365b',1,'MusicManager']]],
   ['playmusicat',['playMusicAt',['../class_music_manager.html#ae9244799274abed2989bc9e5cb0e64d8',1,'MusicManager']]],
+  ['playmusicatinsearch',['playMusicAtInSearch',['../class_music_manager.html#a1713acd8fb2c281b986df7c425568669',1,'MusicManager']]],
   ['playmusicthenparse',['playMusicThenParse',['../class_music_manager.html#a8fa38c14a2f052dedaf850b034570978',1,'MusicManager']]],
   ['playnextmusic',['playNextMusic',['../class_music_manager.html#ab275fe7bc8d5f18dcbe2e051a80d4567',1,'MusicManager']]],
   ['playnextorrandommusic',['playNextOrRandomMusic',['../class_music_manager.html#aed222a940e4c6088f8dad9e4446b073d',1,'MusicManager']]],
@@ -27,5 +30,5 @@ var searchData=
   ['preferencecouleur',['PreferenceCouleur',['../class_preference_couleur.html',1,'']]],
   ['preferencedefaut',['PreferenceDefaut',['../class_preference_defaut.html',1,'PreferenceDefaut'],['../class_preference_defaut.html#aecb7b7306f1f6b193d687afa530b9c0b',1,'PreferenceDefaut::PreferenceDefaut(wxWindow *Parent, wxWindowID Id)'],['../class_preference_defaut.html#a1d2329377d1fd1dbf9cf3a71642b4d6b',1,'PreferenceDefaut::PreferenceDefaut(wxWindow *Parent, wxWindowID Id, PreferenceCouleur *pageCouleur, PreferenceSon *pageSon)']]],
   ['preferenceson',['PreferenceSon',['../class_preference_son.html',1,'']]],
-  ['process',['process',['../class_music_file_reader_thread.html#ac5a8a686bc714ac7b1c2daab42d8bc60',1,'MusicFileReaderThread::process()'],['../classfux_1_1thread_1_1_i_runnable.html#a49f35aaa61c43f3ab3d2b349f5140b4e',1,'fux::thread::IRunnable::process()']]]
+  ['process',['process',['../class_music_file_reader_thread.html#ac5a8a686bc714ac7b1c2daab42d8bc60',1,'MusicFileReaderThread::process()'],['../class_music_file_writer_thread.html#a38c45f78811330bcfdfcda7c372b71b8',1,'MusicFileWriterThread::process()'],['../classfux_1_1thread_1_1_i_runnable.html#a49f35aaa61c43f3ab3d2b349f5140b4e',1,'fux::thread::IRunnable::process()']]]
 ];

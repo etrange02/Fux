@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_image_text.html" title="Transforme et affiche une chaîne de caractère dans une surface OpenGL. " alt="" coords="5,5,88,32"/>
+<area shape="rect" id="node1" href="$class_i_music.html" title="Interface of a Music with some implemented methods. " alt="" coords="5,5,65,32"/>
+<area shape="rect" id="node2" href="$class_music.html" title="Handles music properties (file and sound) " alt="" coords="113,5,171,32"/>
 </map>

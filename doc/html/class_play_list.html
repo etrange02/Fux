@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -100,7 +101,7 @@ $(document).ready(function(){initNavTree('class_play_list.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -118,14 +119,14 @@ $(document).ready(function(){initNavTree('class_play_list.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Page contenant la liste de lecture et une description dÃ©taillÃ©e des titres.  
+<p>Page contenant la liste de lecture et une description détaillée des titres.  
  <a href="class_play_list.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for PlayList:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_play_list__coll__graph.png" border="0" usemap="#_play_list_coll__map" alt="Collaboration graph"/></div>
 <map name="_play_list_coll__map" id="_play_list_coll__map">
-<area shape="rect" id="node3" href="class_image_pochette_musique.html" title="Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour changer l..." alt="" coords="100,81,259,108"/><area shape="rect" id="node5" href="class_play_list_tableau.html" title="Tableau (GUI) dans lequel sont affichÃ©s les informations des titres mis dans la liste de lecture..." alt="" coords="283,81,398,108"/></map>
+<area shape="rect" id="node3" href="class_image_pochette_musique.html" title="Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour changer l..." alt="" coords="100,81,259,108"/><area shape="rect" id="node5" href="class_play_list_tableau.html" title="Tableau (GUI) dans lequel sont affichés les informations des titres mis dans la liste de lecture..." alt="" coords="283,81,398,108"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -137,50 +138,47 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a784a88450eb35878667315177e8859aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#a784a88450eb35878667315177e8859aa">More...</a><br /></td></tr>
 <tr class="separator:a784a88450eb35878667315177e8859aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa28117918256798428665452da6082e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_play_list_tableau.html">PlayListTableau</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list.html#aa28117918256798428665452da6082e1">GetPlayListTableau</a> ()</td></tr>
-<tr class="memdesc:aa28117918256798428665452da6082e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'instance de la liste que gÃ¨re la page.  <a href="#aa28117918256798428665452da6082e1">More...</a><br /></td></tr>
+<tr class="memdesc:aa28117918256798428665452da6082e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'instance de la liste que gère la page.  <a href="#aa28117918256798428665452da6082e1">More...</a><br /></td></tr>
 <tr class="separator:aa28117918256798428665452da6082e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9774f7d53d135dd659ee8f513b49eb5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list.html#a9774f7d53d135dd659ee8f513b49eb5a">Initialize</a> (wxWindow *Parent, bool MAJListe=false)</td></tr>
-<tr class="memdesc:a9774f7d53d135dd659ee8f513b49eb5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">CrÃ©e les composants graphiques de la page.  <a href="#a9774f7d53d135dd659ee8f513b49eb5a">More...</a><br /></td></tr>
-<tr class="separator:a9774f7d53d135dd659ee8f513b49eb5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a392f82e08750e47c6461b72bce73aa2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list.html#a392f82e08750e47c6461b72bce73aa2a">Initialize</a> (wxWindow *Parent)</td></tr>
+<tr class="memdesc:a392f82e08750e47c6461b72bce73aa2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée les composants graphiques de la page.  <a href="#a392f82e08750e47c6461b72bce73aa2a">More...</a><br /></td></tr>
+<tr class="separator:a392f82e08750e47c6461b72bce73aa2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9aa01c3962ff4c199981f16718b2dd1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list.html#a9aa01c3962ff4c199981f16718b2dd1f">EnregistrerM3U</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a9aa01c3962ff4c199981f16718b2dd1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - Affiche une boÃ®te de dialogue pour enregistrer la liste de lecture dans un fichier .m3u.  <a href="#a9aa01c3962ff4c199981f16718b2dd1f">More...</a><br /></td></tr>
+<tr class="memdesc:a9aa01c3962ff4c199981f16718b2dd1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Affiche une boîte de dialogue pour enregistrer la liste de lecture dans un fichier .m3u.  <a href="#a9aa01c3962ff4c199981f16718b2dd1f">More...</a><br /></td></tr>
 <tr class="separator:a9aa01c3962ff4c199981f16718b2dd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dc1677d57e8777262d35305d2c433c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list.html#a4dc1677d57e8777262d35305d2c433c4">OnPanneau</a> (wxCollapsiblePaneEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a4dc1677d57e8777262d35305d2c433c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - Lors de l'ouverture/fermeture du panneau, redimensionne le sizer de la page.  <a href="#a4dc1677d57e8777262d35305d2c433c4">More...</a><br /></td></tr>
+<tr class="memdesc:a4dc1677d57e8777262d35305d2c433c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Lors de l'ouverture/fermeture du panneau, redimensionne le sizer de la page.  <a href="#a4dc1677d57e8777262d35305d2c433c4">More...</a><br /></td></tr>
 <tr class="separator:a4dc1677d57e8777262d35305d2c433c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a534818c958d9a72b72eb65dc5a11cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list.html#a6a534818c958d9a72b72eb65dc5a11cc">OnAfficheDetails</a> (wxListEvent &amp;)</td></tr>
 <tr class="memdesc:a6a534818c958d9a72b72eb65dc5a11cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event - Called when a line is selected in the play list.  <a href="#a6a534818c958d9a72b72eb65dc5a11cc">More...</a><br /></td></tr>
 <tr class="separator:a6a534818c958d9a72b72eb65dc5a11cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c9f2c79c66667ff86bbb5a59746a8b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list.html#a0c9f2c79c66667ff86bbb5a59746a8b1">OnAppliquerTAG</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a0c9f2c79c66667ff86bbb5a59746a8b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - Applique les les modifications des TAGs au fichier sÃ©lectionnÃ©  <a href="#a0c9f2c79c66667ff86bbb5a59746a8b1">More...</a><br /></td></tr>
+<tr class="memdesc:a0c9f2c79c66667ff86bbb5a59746a8b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Applique les les modifications des TAGs au fichier sélectionné  <a href="#a0c9f2c79c66667ff86bbb5a59746a8b1">More...</a><br /></td></tr>
 <tr class="separator:a0c9f2c79c66667ff86bbb5a59746a8b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75afd79ddccdf141643b4d3becc424dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list.html#a75afd79ddccdf141643b4d3becc424dd">OnAnnulerTAG</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a75afd79ddccdf141643b4d3becc424dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - Remet les TAGs Ã  leur valeur d'origine ie ceux dans le fichier.  <a href="#a75afd79ddccdf141643b4d3becc424dd">More...</a><br /></td></tr>
+<tr class="memdesc:a75afd79ddccdf141643b4d3becc424dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Remet les TAGs à leur valeur d'origine ie ceux dans le fichier.  <a href="#a75afd79ddccdf141643b4d3becc424dd">More...</a><br /></td></tr>
 <tr class="separator:a75afd79ddccdf141643b4d3becc424dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8fb7556c14a697265c1c528e87d0cd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list.html#af8fb7556c14a697265c1c528e87d0cd1">FenetreDetails</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:af8fb7556c14a697265c1c528e87d0cd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - Affiche une fenÃªtre dÃ©taillant les propriÃ©tÃ©s du titre.  <a href="#af8fb7556c14a697265c1c528e87d0cd1">More...</a><br /></td></tr>
+<tr class="memdesc:af8fb7556c14a697265c1c528e87d0cd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Affiche une fenêtre détaillant les propriétés du titre.  <a href="#af8fb7556c14a697265c1c528e87d0cd1">More...</a><br /></td></tr>
 <tr class="separator:af8fb7556c14a697265c1c528e87d0cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27f3908a9bfbb5c292a6901eaba6078f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list.html#a27f3908a9bfbb5c292a6901eaba6078f">ViderPanneauTAG</a> ()</td></tr>
 <tr class="memdesc:a27f3908a9bfbb5c292a6901eaba6078f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Efface tous les champs.  <a href="#a27f3908a9bfbb5c292a6901eaba6078f">More...</a><br /></td></tr>
 <tr class="separator:a27f3908a9bfbb5c292a6901eaba6078f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a332c1d25ce6761c6e9107e5a1cc3f0fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list.html#a332c1d25ce6761c6e9107e5a1cc3f0fd">RemplirPanneauTAG</a> (wxString chaine)</td></tr>
-<tr class="memdesc:a332c1d25ce6761c6e9107e5a1cc3f0fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rempli les champs Ã  partir d'un fichier.  <a href="#a332c1d25ce6761c6e9107e5a1cc3f0fd">More...</a><br /></td></tr>
-<tr class="separator:a332c1d25ce6761c6e9107e5a1cc3f0fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7772ef7add17ee218ed8b6515bf31ae0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list.html#a7772ef7add17ee218ed8b6515bf31ae0">RemplirPanneauTAG</a> (<a class="el" href="class_music.html">Music</a> &amp;music)</td></tr>
-<tr class="memdesc:a7772ef7add17ee218ed8b6515bf31ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill fields with music data.  <a href="#a7772ef7add17ee218ed8b6515bf31ae0">More...</a><br /></td></tr>
-<tr class="separator:a7772ef7add17ee218ed8b6515bf31ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d2631812e1882c5df6baf95f58ab0e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list.html#a8d2631812e1882c5df6baf95f58ab0e1">RemplirPanneauTAG</a> (int musicPosition)</td></tr>
+<tr class="memdesc:a8d2631812e1882c5df6baf95f58ab0e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill fields with music data.  <a href="#a8d2631812e1882c5df6baf95f58ab0e1">More...</a><br /></td></tr>
+<tr class="separator:a8d2631812e1882c5df6baf95f58ab0e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a244fd7ac15347c8ded574e98335d11dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list.html#a244fd7ac15347c8ded574e98335d11dd">EvtViderPanneauTAG</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a244fd7ac15347c8ded574e98335d11dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - Efface tous les champs.  <a href="#a244fd7ac15347c8ded574e98335d11dd">More...</a><br /></td></tr>
+<tr class="memdesc:a244fd7ac15347c8ded574e98335d11dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Efface tous les champs.  <a href="#a244fd7ac15347c8ded574e98335d11dd">More...</a><br /></td></tr>
 <tr class="separator:a244fd7ac15347c8ded574e98335d11dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c8d165379f10cbbb97948f1140038fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list.html#a3c8d165379f10cbbb97948f1140038fa">EvtImage</a> (wxCommandEvent &amp;)</td></tr>
-<tr class="memdesc:a3c8d165379f10cbbb97948f1140038fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - AppelÃ© lors du changement de la pochette du titre.  <a href="#a3c8d165379f10cbbb97948f1140038fa">More...</a><br /></td></tr>
+<tr class="memdesc:a3c8d165379f10cbbb97948f1140038fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Appelé lors du changement de la pochette du titre.  <a href="#a3c8d165379f10cbbb97948f1140038fa">More...</a><br /></td></tr>
 <tr class="separator:a3c8d165379f10cbbb97948f1140038fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1366eb3ef8497573136b9e394b6422b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list.html#ae1366eb3ef8497573136b9e394b6422b">MouseEvents</a> (wxMouseEvent &amp;)</td></tr>
-<tr class="memdesc:ae1366eb3ef8497573136b9e394b6422b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement Souris -.  <a href="#ae1366eb3ef8497573136b9e394b6422b">More...</a><br /></td></tr>
+<tr class="memdesc:ae1366eb3ef8497573136b9e394b6422b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement Souris -.  <a href="#ae1366eb3ef8497573136b9e394b6422b">More...</a><br /></td></tr>
 <tr class="separator:ae1366eb3ef8497573136b9e394b6422b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Page contenant la liste de lecture et une description dÃ©taillÃ©e des titres. </p>
+<div class="textblock"><p>Page contenant la liste de lecture et une description détaillée des titres. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae0dfa1097c048135343a8d68ebac8cd5"></a>
 <div class="memitem">
@@ -240,7 +238,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - Affiche une boÃ®te de dialogue pour enregistrer la liste de lecture dans un fichier .m3u. </p>
+<p>Évènement - Affiche une boîte de dialogue pour enregistrer la liste de lecture dans un fichier .m3u. </p>
 
 </div>
 </div>
@@ -258,7 +256,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - AppelÃ© lors du changement de la pochette du titre. </p>
+<p>Évènement - Appelé lors du changement de la pochette du titre. </p>
 <p>L'enregistrement dans le fichier se fait automatiquement </p>
 
 </div>
@@ -277,7 +275,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - Efface tous les champs. </p>
+<p>Évènement - Efface tous les champs. </p>
 
 </div>
 </div>
@@ -295,7 +293,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - Affiche une fenÃªtre dÃ©taillant les propriÃ©tÃ©s du titre. </p>
+<p>Évènement - Affiche une fenêtre détaillant les propriétés du titre. </p>
 
 </div>
 </div>
@@ -312,12 +310,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retourne l'instance de la liste que gÃ¨re la page. </p>
-<dl class="section return"><dt>Returns</dt><dd>le liste gÃ©rÃ©e par la page </dd></dl>
+<p>Retourne l'instance de la liste que gère la page. </p>
+<dl class="section return"><dt>Returns</dt><dd>le liste gérée par la page </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a9774f7d53d135dd659ee8f513b49eb5a"></a>
+<a class="anchor" id="a392f82e08750e47c6461b72bce73aa2a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -325,27 +323,16 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void PlayList::Initialize </td>
           <td>(</td>
           <td class="paramtype">wxWindow *&#160;</td>
-          <td class="paramname"><em>Parent</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>Parent</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>MAJListe</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>CrÃ©e les composants graphiques de la page. </p>
+<p>Crée les composants graphiques de la page. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Parent</td><td>un pointeur sur la fenÃªtre parente </td></tr>
-    <tr><td class="paramname">MAJListe</td><td>si vrai, la liste est mis Ã  jour </td></tr>
+    <tr><td class="paramname">Parent</td><td>un pointeur sur la fenêtre parente </td></tr>
   </table>
   </dd>
 </dl>
@@ -366,7 +353,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement Souris -. </p>
+<p>Évènement Souris -. </p>
 
 </div>
 </div>
@@ -402,7 +389,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - Remet les TAGs Ã  leur valeur d'origine ie ceux dans le fichier. </p>
+<p>Évènement - Remet les TAGs à leur valeur d'origine ie ceux dans le fichier. </p>
 
 </div>
 </div>
@@ -420,7 +407,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - Applique les les modifications des TAGs au fichier sÃ©lectionnÃ© </p>
+<p>Évènement - Applique les les modifications des TAGs au fichier sélectionné </p>
 
 </div>
 </div>
@@ -438,43 +425,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - Lors de l'ouverture/fermeture du panneau, redimensionne le sizer de la page. </p>
+<p>Évènement - Lors de l'ouverture/fermeture du panneau, redimensionne le sizer de la page. </p>
 
 </div>
 </div>
-<a class="anchor" id="a332c1d25ce6761c6e9107e5a1cc3f0fd"></a>
+<a class="anchor" id="a8d2631812e1882c5df6baf95f58ab0e1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void PlayList::RemplirPanneauTAG </td>
           <td>(</td>
-          <td class="paramtype">wxString&#160;</td>
-          <td class="paramname"><em>chaine</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Rempli les champs Ã  partir d'un fichier. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">chaine</td><td>le nom complet du fichier </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a7772ef7add17ee218ed8b6515bf31ae0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PlayList::RemplirPanneauTAG </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_music.html">Music</a> &amp;&#160;</td>
-          <td class="paramname"><em>music</em></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>musicPosition</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -483,7 +446,7 @@ Public Member Functions</h2></td></tr>
 <p>Fill fields with music data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">music</td><td>a music </td></tr>
+    <tr><td class="paramname">musicPosition</td><td>a music position </td></tr>
   </table>
   </dd>
 </dl>
@@ -517,7 +480,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_play_list.html">PlayList</a></li>
-    <li class="footer">Generated on Tue Dec 30 2014 13:13:45 for Fu(X) 2.0 by
+    <li class="footer">Generated on Tue Jan 27 2015 00:42:27 for Fu(X) 2.0 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

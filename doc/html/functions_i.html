@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -105,6 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_r.html#index_r"><span>r</span></a></li>
       <li><a href="functions_s.html#index_s"><span>s</span></a></li>
       <li><a href="functions_t.html#index_t"><span>t</span></a></li>
+      <li><a href="functions_u.html#index_u"><span>u</span></a></li>
       <li><a href="functions_v.html#index_v"><span>v</span></a></li>
       <li><a href="functions_~.html#index_~"><span>~</span></a></li>
     </ul>
@@ -129,7 +131,7 @@ $(document).ready(function(){initNavTree('functions_i.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -146,7 +148,7 @@ $(document).ready(function(){initNavTree('functions_i.html','');});
 : <a class="el" href="class_music_file_reader.html#a3839e20dcb808f870ca623689b83ac5a">MusicFileReader</a>
 </li>
 <li>ImagePochetteMusique()
-: <a class="el" href="class_image_pochette_musique.html#a8cdca2fd1986d303b2f7c79395a61a53">ImagePochetteMusique</a>
+: <a class="el" href="class_image_pochette_musique.html#a7249c5a5fb1c5353a328c2b5d35ed759">ImagePochetteMusique</a>
 </li>
 <li>ImageText()
 : <a class="el" href="class_image_text.html#aba67445215ef71502c786073475985aa">ImageText</a>
@@ -158,7 +160,7 @@ $(document).ready(function(){initNavTree('functions_i.html','');});
 : <a class="el" href="class_music_player.html#a9e55af1a7f13595ffd161ab16d350605">MusicPlayer</a>
 </li>
 <li>Initialize()
-: <a class="el" href="class_play_list.html#a9774f7d53d135dd659ee8f513b49eb5a">PlayList</a>
+: <a class="el" href="class_play_list.html#a392f82e08750e47c6461b72bce73aa2a">PlayList</a>
 </li>
 <li>Insertion()
 : <a class="el" href="class_gest_periph.html#a459b77543a7a0651cd53be70c8d8d8fd">GestPeriph</a>
@@ -184,10 +186,12 @@ $(document).ready(function(){initNavTree('functions_i.html','');});
 <li>islisable()
 : <a class="el" href="class_parametre.html#a8a9ff3a057d1387d08453bcd779503b3">Parametre</a>
 </li>
+<li>isModified()
+: <a class="el" href="class_dialog_tag_m_p3.html#a6d46abc3280fe30d48652622d190e025">DialogTagMP3</a>
+, <a class="el" href="class_dialog_tag_m_p3_info.html#a5d3304b8aae855a3979d5b8e8ef02d60">DialogTagMP3Info</a>
+</li>
 <li>IsModified()
-: <a class="el" href="class_dialog_tag_m_p3.html#aa4de1d989706f452d905ca6a2269372a">DialogTagMP3</a>
-, <a class="el" href="class_dialog_tag_m_p3_info.html#acd7aeb5cc5b8daea280d81913c6554e9">DialogTagMP3Info</a>
-, <a class="el" href="class_image_pochette_musique.html#ae285551d90a3e72a1ecd8c9db6f96f83">ImagePochetteMusique</a>
+: <a class="el" href="class_image_pochette_musique.html#ae285551d90a3e72a1ecd8c9db6f96f83">ImagePochetteMusique</a>
 </li>
 <li>isPaused()
 : <a class="el" href="class_music_player.html#a078cc8ff3bfb273aee8a78a4cc7d7b03">MusicPlayer</a>
@@ -216,7 +220,7 @@ $(document).ready(function(){initNavTree('functions_i.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Dec 30 2014 13:13:45 for Fu(X) 2.0 by
+    <li class="footer">Generated on Tue Jan 27 2015 00:42:54 for Fu(X) 2.0 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

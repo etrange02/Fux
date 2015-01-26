@@ -1,11 +1,13 @@
 var searchData=
 [
+  ['abstractmusicmanagerdecorator',['AbstractMusicManagerDecorator',['../class_abstract_music_manager_decorator.html#ac3a52e32e8ec2919baa20f91a16db8c7',1,'AbstractMusicManagerDecorator']]],
   ['add',['Add',['../class_array_fenetre_detachable.html#a0cb54beb43a623be0ab96a4500842086',1,'ArrayFenetreDetachable']]],
   ['adddirline',['addDirLine',['../class_music_list.html#a3722d40a0178870c3e3c2a48c6359013',1,'MusicList']]],
   ['addfile',['AddFile',['../class_dn_d_liste_fichier.html#a5380b5e3e4ba5c079361528ac9e2160c',1,'DnDListeFichier']]],
   ['addfileline',['addFileLine',['../class_music_list.html#a436397a59eee24bf8c9f8c94e9e42f7d',1,'MusicList']]],
-  ['addline',['addLine',['../class_play_list_tableau.html#a09f0c114521046e75a8f30059c1c7760',1,'PlayListTableau::addLine(Music &amp;music)'],['../class_play_list_tableau.html#ae7c65c3792d645a628af75d556f27278',1,'PlayListTableau::addLine(Music &amp;music, const int position)']]],
-  ['addlines',['addLines',['../class_music_list.html#a971bd29cd47eff624bca535a33c5ff6c',1,'MusicList']]],
+  ['addline',['addLine',['../class_play_list_tableau.html#a0ee2a2b61f9e976a40ef19dff50f5ca9',1,'PlayListTableau::addLine(IMusic &amp;music)'],['../class_play_list_tableau.html#ad4d63a731a47b20e972a429964b1465b',1,'PlayListTableau::addLine(IMusic &amp;music, const int position)']]],
+  ['addlines',['addLines',['../class_music_list.html#ad40e87401a053976c0af95b89798bdf4',1,'MusicList']]],
+  ['addlinethread',['addLineThread',['../class_play_list_tableau.html#a1de34433bf8c0ff5f557d6263458150e',1,'PlayListTableau']]],
   ['addrunnable',['addRunnable',['../classfux_1_1thread_1_1_thread_manager.html#a98cb346a041825b25716e5cebab7de69',1,'fux::thread::ThreadManager']]],
   ['addstringarray',['AddStringArray',['../class_dn_d_liste_fichier.html#a5bbb3d6dfcc9fdcf766ceb6bf7a3c7f1',1,'DnDListeFichier']]],
   ['addunknownkindline',['addUnknownKindLine',['../class_music_list.html#a3e79e6ada7c9f3993eb464ea1e07da0f',1,'MusicList']]],

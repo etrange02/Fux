@@ -198,6 +198,7 @@ void PlayList::OnAfficheDetails(wxListEvent &event)
 void PlayList::OnAppliquerTAG(wxCommandEvent &WXUNUSED(event))
 {
     // TODO (David): Write the music writer
+    // N'utilise pas l'image
     /*m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
     if (!m_ObjetTAG.isNull() && !Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
     {
@@ -303,6 +304,7 @@ void PlayList::EvtViderPanneauTAG(wxCommandEvent &WXUNUSED(event))
 // TODO (David): Complete image modification
 void PlayList::EvtImage(wxCommandEvent &event)
 {
+    // enregistrement de l'image seule, sans le reste des infos
     /////////////////
     // save modified data into music file
     // la pochette contient la bonne image. il est nécessaire de l'enregistrer dans le fichier mp3

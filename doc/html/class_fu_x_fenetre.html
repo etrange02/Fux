@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -100,7 +101,7 @@ $(document).ready(function(){initNavTree('class_fu_x_fenetre.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -125,7 +126,7 @@ Collaboration diagram for FuXFenetre:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_fu_x_fenetre__coll__graph.png" border="0" usemap="#_fu_x_fenetre_coll__map" alt="Collaboration graph"/></div>
 <map name="_fu_x_fenetre_coll__map" id="_fu_x_fenetre_coll__map">
-<area shape="rect" id="node3" href="class_array_fenetre_detachable.html" title="Array contenant des FenetreDetachable. " alt="" coords="680,107,843,133"/><area shape="rect" id="node5" href="class_play_list.html" title="Page contenant la liste de lecture et une description dÃ©taillÃ©e des titres. " alt="" coords="727,157,796,184"/><area shape="rect" id="node7" href="class_image_pochette_musique.html" title="Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour changer l..." alt="" coords="368,107,527,133"/><area shape="rect" id="node9" href="class_play_list_tableau.html" title="Tableau (GUI) dans lequel sont affichÃ©s les informations des titres mis dans la liste de lecture..." alt="" coords="390,157,505,184"/><area shape="rect" id="node11" href="class_t_c_p_serveur.html" title="ReprÃ©sente le serveur. " alt="" coords="716,260,807,287"/><area shape="rect" id="node13" href="class_musique_graph.html" title="Panel affichant le graph, la barre de temps et le titre de la chanson. " alt="" coords="708,364,815,391"/><area shape="rect" id="node15" href="class_couleur.html" title="Champs RVB. " alt="" coords="414,364,481,391"/><area shape="rect" id="node16" href="class_image_text.html" title="Transforme et affiche une chaÃ®ne de caractÃ¨re dans une surface OpenGL. " alt="" coords="406,421,489,448"/><area shape="rect" id="node17" href="class_timer_graph.html" title="Timer gÃ©rant la mise Ã  jour du graphe et le passage d&#39;une chanson Ã  l&#39;autre. " alt="" coords="717,432,806,459"/><area shape="rect" id="node19" href="class_preference_son.html" title="Interface reprÃ©sentant diffÃ©rents volumes sonores Les fichiers sont synchronisÃ©s en mÃªme temps que ch..." alt="" coords="394,599,501,625"/><area shape="rect" id="node23" href="class_preference_defaut.html" title="GÃ¨re l&#39;application des filtres (couleur et sonore), et le comportement par dÃ©faut de l&#39;application..." alt="" coords="701,641,822,668"/><area shape="rect" id="node20" href="class_generic_tree_panel.html" title="Inteface gÃ©nÃ©rique pour les prÃ©fÃ©rences. " alt="" coords="185,599,311,625"/><area shape="rect" id="node22" href="class_preference_couleur.html" title="Interface reprÃ©sentant diffÃ©rentes compositions graphiques Les fichiers sont synchronisÃ©s en mÃªme tem..." alt="" coords="383,536,511,563"/></map>
+<area shape="rect" id="node3" href="class_array_fenetre_detachable.html" title="Array contenant des FenetreDetachable. " alt="" coords="680,107,843,133"/><area shape="rect" id="node5" href="class_play_list.html" title="Page contenant la liste de lecture et une description détaillée des titres. " alt="" coords="727,157,796,184"/><area shape="rect" id="node7" href="class_image_pochette_musique.html" title="Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour changer l..." alt="" coords="368,107,527,133"/><area shape="rect" id="node9" href="class_play_list_tableau.html" title="Tableau (GUI) dans lequel sont affichés les informations des titres mis dans la liste de lecture..." alt="" coords="390,157,505,184"/><area shape="rect" id="node11" href="class_t_c_p_serveur.html" title="ReprÃ©sente le serveur. " alt="" coords="716,260,807,287"/><area shape="rect" id="node13" href="class_musique_graph.html" title="Panel affichant le graph, la barre de temps et le titre de la chanson. " alt="" coords="708,364,815,391"/><area shape="rect" id="node15" href="class_couleur.html" title="Champs RVB. " alt="" coords="414,364,481,391"/><area shape="rect" id="node16" href="class_image_text.html" title="Transforme et affiche une chaÃ®ne de caractÃ¨re dans une surface OpenGL. " alt="" coords="406,421,489,448"/><area shape="rect" id="node17" href="class_timer_graph.html" title="Timer gÃ©rant la mise Ã  jour du graphe et le passage d&#39;une chanson Ã  l&#39;autre. " alt="" coords="717,432,806,459"/><area shape="rect" id="node19" href="class_preference_son.html" title="Interface reprÃ©sentant diffÃ©rents volumes sonores Les fichiers sont synchronisÃ©s en mÃªme temps que ch..." alt="" coords="394,599,501,625"/><area shape="rect" id="node23" href="class_preference_defaut.html" title="Gère l&#39;application des filtres (couleur et sonore), et le comportement par défaut de l&#39;application..." alt="" coords="701,641,822,668"/><area shape="rect" id="node20" href="class_generic_tree_panel.html" title="Inteface gÃ©nÃ©rique pour les prÃ©fÃ©rences. " alt="" coords="185,599,311,625"/><area shape="rect" id="node22" href="class_preference_couleur.html" title="Interface reprÃ©sentant diffÃ©rentes compositions graphiques Les fichiers sont synchronisÃ©s en mÃªme tem..." alt="" coords="383,536,511,563"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -140,31 +141,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1b4a1f03261617dbca99943e2508c252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event methods ///.  <a href="#a1b4a1f03261617dbca99943e2508c252">More...</a><br /></td></tr>
 <tr class="separator:a1b4a1f03261617dbca99943e2508c252"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72fae3f2664c50ae90c039b4be2cb732"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a72fae3f2664c50ae90c039b4be2cb732">AffichePreference</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a72fae3f2664c50ae90c039b4be2cb732"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpÃ¨re un basculement sur la page contenant les prÃ©fÃ©rences.  <a href="#a72fae3f2664c50ae90c039b4be2cb732">More...</a><br /></td></tr>
+<tr class="memdesc:a72fae3f2664c50ae90c039b4be2cb732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opère un basculement sur la page contenant les préférences.  <a href="#a72fae3f2664c50ae90c039b4be2cb732">More...</a><br /></td></tr>
 <tr class="separator:a72fae3f2664c50ae90c039b4be2cb732"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6216ca48d3908daf0770da6a280378b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#aa6216ca48d3908daf0770da6a280378b">AfficheEncodage</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:aa6216ca48d3908daf0770da6a280378b"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpÃ¨re un basculement sur la page contenant la gestion de CDs.  <a href="#aa6216ca48d3908daf0770da6a280378b">More...</a><br /></td></tr>
+<tr class="memdesc:aa6216ca48d3908daf0770da6a280378b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opère un basculement sur la page contenant la gestion de CDs.  <a href="#aa6216ca48d3908daf0770da6a280378b">More...</a><br /></td></tr>
 <tr class="separator:aa6216ca48d3908daf0770da6a280378b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4032c54b71618bb9b106a61d540cb9c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a4032c54b71618bb9b106a61d540cb9c3">AfficheListeDeLecture</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a4032c54b71618bb9b106a61d540cb9c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpÃ¨re un basculement sur la page affichant la liste complÃ¨te des titres mis en mÃ©moire.  <a href="#a4032c54b71618bb9b106a61d540cb9c3">More...</a><br /></td></tr>
+<tr class="memdesc:a4032c54b71618bb9b106a61d540cb9c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opère un basculement sur la page affichant la liste complète des titres mis en mémoire.  <a href="#a4032c54b71618bb9b106a61d540cb9c3">More...</a><br /></td></tr>
 <tr class="separator:a4032c54b71618bb9b106a61d540cb9c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88f03b00dc45ac874093c834fdb707f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a88f03b00dc45ac874093c834fdb707f1">AfficheGestPeriph</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a88f03b00dc45ac874093c834fdb707f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpÃ¨re un basculement sur la page permettant une exploration de l'ordinateur.  <a href="#a88f03b00dc45ac874093c834fdb707f1">More...</a><br /></td></tr>
+<tr class="memdesc:a88f03b00dc45ac874093c834fdb707f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opère un basculement sur la page permettant une exploration de l'ordinateur.  <a href="#a88f03b00dc45ac874093c834fdb707f1">More...</a><br /></td></tr>
 <tr class="separator:a88f03b00dc45ac874093c834fdb707f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d8e70c8fe164ea0eb90153fcebb0dde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a5d8e70c8fe164ea0eb90153fcebb0dde">AfficherPreferenceCouleur</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a5d8e70c8fe164ea0eb90153fcebb0dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bascule sur la page des PrÃ©fÃ©rences, onglet <a class="el" href="class_couleur.html" title="Champs RVB. ">Couleur</a>.  <a href="#a5d8e70c8fe164ea0eb90153fcebb0dde">More...</a><br /></td></tr>
+<tr class="memdesc:a5d8e70c8fe164ea0eb90153fcebb0dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bascule sur la page des Préférences, onglet <a class="el" href="class_couleur.html" title="Champs RVB. ">Couleur</a>.  <a href="#a5d8e70c8fe164ea0eb90153fcebb0dde">More...</a><br /></td></tr>
 <tr class="separator:a5d8e70c8fe164ea0eb90153fcebb0dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c8c379e87daa9e6b726a8a6986b1748"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a9c8c379e87daa9e6b726a8a6986b1748">AfficherPreferenceSon</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a9c8c379e87daa9e6b726a8a6986b1748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bascule sur la page des PrÃ©fÃ©rences, onglet Son.  <a href="#a9c8c379e87daa9e6b726a8a6986b1748">More...</a><br /></td></tr>
+<tr class="memdesc:a9c8c379e87daa9e6b726a8a6986b1748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bascule sur la page des Préférences, onglet Son.  <a href="#a9c8c379e87daa9e6b726a8a6986b1748">More...</a><br /></td></tr>
 <tr class="separator:a9c8c379e87daa9e6b726a8a6986b1748"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1f2e6d13c0828ec3dc558d26b0279bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#aa1f2e6d13c0828ec3dc558d26b0279bc">AfficherPreferenceDefaut</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:aa1f2e6d13c0828ec3dc558d26b0279bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bascule sur la page des PrÃ©fÃ©rences, onglet DÃ©faut.  <a href="#aa1f2e6d13c0828ec3dc558d26b0279bc">More...</a><br /></td></tr>
+<tr class="memdesc:aa1f2e6d13c0828ec3dc558d26b0279bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bascule sur la page des Préférences, onglet Défaut.  <a href="#aa1f2e6d13c0828ec3dc558d26b0279bc">More...</a><br /></td></tr>
 <tr class="separator:aa1f2e6d13c0828ec3dc558d26b0279bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6db73fe9e0380999f97b0f9df1146e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#af6db73fe9e0380999f97b0f9df1146e7">SeparationPanel</a> (wxCommandEvent &amp;)</td></tr>
-<tr class="memdesc:af6db73fe9e0380999f97b0f9df1146e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - Permet la sÃ©paration des pages dans diffÃ©rentes fenÃªtres.  <a href="#af6db73fe9e0380999f97b0f9df1146e7">More...</a><br /></td></tr>
+<tr class="memdesc:af6db73fe9e0380999f97b0f9df1146e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Permet la séparation des pages dans différentes fenêtres.  <a href="#af6db73fe9e0380999f97b0f9df1146e7">More...</a><br /></td></tr>
 <tr class="separator:af6db73fe9e0380999f97b0f9df1146e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a298742a6d6bd9d3bc7809e782401934a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a298742a6d6bd9d3bc7809e782401934a">ReunionPanel</a> (wxCommandEvent &amp;)</td></tr>
-<tr class="memdesc:a298742a6d6bd9d3bc7809e782401934a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - Permet la rÃ©intÃ©gration des pages dans la fenÃªtre principale.  <a href="#a298742a6d6bd9d3bc7809e782401934a">More...</a><br /></td></tr>
+<tr class="memdesc:a298742a6d6bd9d3bc7809e782401934a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Permet la réintégration des pages dans la fenêtre principale.  <a href="#a298742a6d6bd9d3bc7809e782401934a">More...</a><br /></td></tr>
 <tr class="separator:a298742a6d6bd9d3bc7809e782401934a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a268d48e98a6ff1afc63e5053160a22a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a268d48e98a6ff1afc63e5053160a22a8">EventUpdateMusicVolume</a> (wxScrollEvent &amp;WXUNUSED(event))</td></tr>
 <tr class="memdesc:a268d48e98a6ff1afc63e5053160a22a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le volume sonore.  <a href="#a268d48e98a6ff1afc63e5053160a22a8">More...</a><br /></td></tr>
@@ -173,7 +174,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aee6d3c29479d74309e6517e880e4f254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime le titre en cours de diffusion de la liste de lecture.  <a href="#aee6d3c29479d74309e6517e880e4f254">More...</a><br /></td></tr>
 <tr class="separator:aee6d3c29479d74309e6517e880e4f254"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52bc39f17d08bf4cf849051535ff1a92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a52bc39f17d08bf4cf849051535ff1a92">EventMusicStop</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a52bc39f17d08bf4cf849051535ff1a92"><td class="mdescLeft">&#160;</td><td class="mdescRight">ArrÃªte la chanson.  <a href="#a52bc39f17d08bf4cf849051535ff1a92">More...</a><br /></td></tr>
+<tr class="memdesc:a52bc39f17d08bf4cf849051535ff1a92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arrête la chanson.  <a href="#a52bc39f17d08bf4cf849051535ff1a92">More...</a><br /></td></tr>
 <tr class="separator:a52bc39f17d08bf4cf849051535ff1a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abff43f17b0c4a7eef42e772f7d6ed5df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#abff43f17b0c4a7eef42e772f7d6ed5df">EventMenuBarPlay</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
 <tr class="memdesc:abff43f17b0c4a7eef42e772f7d6ed5df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Barre de menu : relance la lecture.  <a href="#abff43f17b0c4a7eef42e772f7d6ed5df">More...</a><br /></td></tr>
@@ -182,61 +183,61 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:abca31d4161e697c48d3e032ed04bbec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passe au titre suivant.  <a href="#abca31d4161e697c48d3e032ed04bbec3">More...</a><br /></td></tr>
 <tr class="separator:abca31d4161e697c48d3e032ed04bbec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abee5323d69c4e3b69ed1a078c117ef7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#abee5323d69c4e3b69ed1a078c117ef7c">EventMusicPrevious</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:abee5323d69c4e3b69ed1a078c117ef7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passe au titre prÃ©cÃ©dent.  <a href="#abee5323d69c4e3b69ed1a078c117ef7c">More...</a><br /></td></tr>
+<tr class="memdesc:abee5323d69c4e3b69ed1a078c117ef7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passe au titre précédent.  <a href="#abee5323d69c4e3b69ed1a078c117ef7c">More...</a><br /></td></tr>
 <tr class="separator:abee5323d69c4e3b69ed1a078c117ef7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afea7e4d27231b0ebe1d4ee30eec6569a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#afea7e4d27231b0ebe1d4ee30eec6569a">EventMusicRandomize</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:afea7e4d27231b0ebe1d4ee30eec6569a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Active/DÃ©sactive la lecture alÃ©atoire.  <a href="#afea7e4d27231b0ebe1d4ee30eec6569a">More...</a><br /></td></tr>
+<tr class="memdesc:afea7e4d27231b0ebe1d4ee30eec6569a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Active/Désactive la lecture aléatoire.  <a href="#afea7e4d27231b0ebe1d4ee30eec6569a">More...</a><br /></td></tr>
 <tr class="separator:afea7e4d27231b0ebe1d4ee30eec6569a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9df86be4c1725724518e2214ac0ca6ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a9df86be4c1725724518e2214ac0ca6ec">EventMusicRepete</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a9df86be4c1725724518e2214ac0ca6ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Active/DÃ©sactive la rÃ©pÃ©tition.  <a href="#a9df86be4c1725724518e2214ac0ca6ec">More...</a><br /></td></tr>
+<tr class="memdesc:a9df86be4c1725724518e2214ac0ca6ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Active/Désactive la répétition.  <a href="#a9df86be4c1725724518e2214ac0ca6ec">More...</a><br /></td></tr>
 <tr class="separator:a9df86be4c1725724518e2214ac0ca6ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd650b18738f781aa9f169de5c235f75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#abd650b18738f781aa9f169de5c235f75">EventOpenDialogToPlayMusic</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:abd650b18738f781aa9f169de5c235f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ouvre une fenÃªtre pour choisir le ou les titres de musique Ã  lire.  <a href="#abd650b18738f781aa9f169de5c235f75">More...</a><br /></td></tr>
+<tr class="memdesc:abd650b18738f781aa9f169de5c235f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ouvre une fenêtre pour choisir le ou les titres de musique à lire.  <a href="#abd650b18738f781aa9f169de5c235f75">More...</a><br /></td></tr>
 <tr class="separator:abd650b18738f781aa9f169de5c235f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac541ce6e5f9b403373f863743c942759"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#ac541ce6e5f9b403373f863743c942759">EventOpenDialogToSelectPlayListFile</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:ac541ce6e5f9b403373f863743c942759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ouvre une fenÃªtre afin de choisir une liste de lecture enregistrÃ©e.  <a href="#ac541ce6e5f9b403373f863743c942759">More...</a><br /></td></tr>
+<tr class="memdesc:ac541ce6e5f9b403373f863743c942759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ouvre une fenêtre afin de choisir une liste de lecture enregistrée  <a href="#ac541ce6e5f9b403373f863743c942759">More...</a><br /></td></tr>
 <tr class="separator:ac541ce6e5f9b403373f863743c942759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0478d83dce22cd43c10e36f956aa0b26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a0478d83dce22cd43c10e36f956aa0b26">EventPlayButtonPressed</a> (wxCommandEvent &amp;event)</td></tr>
-<tr class="memdesc:a0478d83dce22cd43c10e36f956aa0b26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relance la lecture si un titre est chargÃ©, ouvre une fenÃªtre de sÃ©lection sinon.  <a href="#a0478d83dce22cd43c10e36f956aa0b26">More...</a><br /></td></tr>
+<tr class="memdesc:a0478d83dce22cd43c10e36f956aa0b26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relance la lecture si un titre est chargé, ouvre une fenêtre de sélection sinon.  <a href="#a0478d83dce22cd43c10e36f956aa0b26">More...</a><br /></td></tr>
 <tr class="separator:a0478d83dce22cd43c10e36f956aa0b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e88891272ff120f75158dc12ead608b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a8e88891272ff120f75158dc12ead608b">EventQuit</a> (wxCommandEvent &amp;event)</td></tr>
 <tr class="memdesc:a8e88891272ff120f75158dc12ead608b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provoque la fermeture du programme.  <a href="#a8e88891272ff120f75158dc12ead608b">More...</a><br /></td></tr>
 <tr class="separator:a8e88891272ff120f75158dc12ead608b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6ea2d779b498fdb35e3cea2afd832d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#ad6ea2d779b498fdb35e3cea2afd832d4">EventSavePlayList</a> (wxCommandEvent &amp;)</td></tr>
-<tr class="memdesc:ad6ea2d779b498fdb35e3cea2afd832d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche une fenÃªtre permettant l'enregistrement de la liste de lecture.  <a href="#ad6ea2d779b498fdb35e3cea2afd832d4">More...</a><br /></td></tr>
+<tr class="memdesc:ad6ea2d779b498fdb35e3cea2afd832d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche une fenêtre permettant l'enregistrement de la liste de lecture.  <a href="#ad6ea2d779b498fdb35e3cea2afd832d4">More...</a><br /></td></tr>
 <tr class="separator:ad6ea2d779b498fdb35e3cea2afd832d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab50ccc6c2df6cf1a1b2735ef4c049b1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#ab50ccc6c2df6cf1a1b2735ef4c049b1b">EventUpdatePlayLists</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:ab50ccc6c2df6cf1a1b2735ef4c049b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provoque une mise Ã  jour de la liste de lecture affichÃ©e Ã  l'utilisateur.  <a href="#ab50ccc6c2df6cf1a1b2735ef4c049b1b">More...</a><br /></td></tr>
+<tr class="memdesc:ab50ccc6c2df6cf1a1b2735ef4c049b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provoque une mise à jour de la liste de lecture affichée à l'utilisateur.  <a href="#ab50ccc6c2df6cf1a1b2735ef4c049b1b">More...</a><br /></td></tr>
 <tr class="separator:ab50ccc6c2df6cf1a1b2735ef4c049b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98780b7c73142d15a4a11d10f701f554"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a98780b7c73142d15a4a11d10f701f554">MenuAbout</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
 <tr class="memdesc:a98780b7c73142d15a4a11d10f701f554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche le menu About de l'application.  <a href="#a98780b7c73142d15a4a11d10f701f554">More...</a><br /></td></tr>
 <tr class="separator:a98780b7c73142d15a4a11d10f701f554"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36dd67c4d32e1880da63b28e7a8d2fa1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a36dd67c4d32e1880da63b28e7a8d2fa1">MenuSiteWeb</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a36dd67c4d32e1880da63b28e7a8d2fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche le site de l'application Ã  travers le navigateur internet.  <a href="#a36dd67c4d32e1880da63b28e7a8d2fa1">More...</a><br /></td></tr>
+<tr class="memdesc:a36dd67c4d32e1880da63b28e7a8d2fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche le site de l'application à travers le navigateur internet.  <a href="#a36dd67c4d32e1880da63b28e7a8d2fa1">More...</a><br /></td></tr>
 <tr class="separator:a36dd67c4d32e1880da63b28e7a8d2fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92d517f1cf801e82a06e915e96c9cd43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a92d517f1cf801e82a06e915e96c9cd43">MenuAide</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a92d517f1cf801e82a06e915e96c9cd43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la page d'aide Ã  travers le navigateur internet.  <a href="#a92d517f1cf801e82a06e915e96c9cd43">More...</a><br /></td></tr>
+<tr class="memdesc:a92d517f1cf801e82a06e915e96c9cd43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la page d'aide à travers le navigateur internet.  <a href="#a92d517f1cf801e82a06e915e96c9cd43">More...</a><br /></td></tr>
 <tr class="separator:a92d517f1cf801e82a06e915e96c9cd43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6617bec57a7388b499f0a0a0315839a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#ab6617bec57a7388b499f0a0a0315839a">EvtServeurAjout</a> (wxCommandEvent &amp;)</td></tr>
-<tr class="memdesc:ab6617bec57a7388b499f0a0a0315839a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement provenant du serveur de l'application : un titre ajoutÃ©  <a href="#ab6617bec57a7388b499f0a0a0315839a">More...</a><br /></td></tr>
+<tr class="memdesc:ab6617bec57a7388b499f0a0a0315839a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement provenant du serveur de l'application : un titre ajouté  <a href="#ab6617bec57a7388b499f0a0a0315839a">More...</a><br /></td></tr>
 <tr class="separator:ab6617bec57a7388b499f0a0a0315839a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3cd58ca80405317fe1dca9ecb8752f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#ad3cd58ca80405317fe1dca9ecb8752f7">OnTitreChange</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:ad3cd58ca80405317fe1dca9ecb8752f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Informe le panel du graphe que le titre de la chanson a Ã©tÃ© modifiÃ©.  <a href="#ad3cd58ca80405317fe1dca9ecb8752f7">More...</a><br /></td></tr>
+<tr class="memdesc:ad3cd58ca80405317fe1dca9ecb8752f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Informe le panel du graphe que le titre de la chanson a été modifié.  <a href="#ad3cd58ca80405317fe1dca9ecb8752f7">More...</a><br /></td></tr>
 <tr class="separator:ad3cd58ca80405317fe1dca9ecb8752f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c6d7d5d7dac3b2edfd16a7c68a5f3f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a2c6d7d5d7dac3b2edfd16a7c68a5f3f9">OnKeyDownRaccourci</a> (wxKeyEvent &amp;)</td></tr>
-<tr class="memdesc:a2c6d7d5d7dac3b2edfd16a7c68a5f3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nements clavier - Utilisation des raccourcis gÃ©nÃ©raux (titre suivant, volume, ...)  <a href="#a2c6d7d5d7dac3b2edfd16a7c68a5f3f9">More...</a><br /></td></tr>
+<tr class="memdesc:a2c6d7d5d7dac3b2edfd16a7c68a5f3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènements clavier - Utilisation des raccourcis généraux (titre suivant, volume, ...)  <a href="#a2c6d7d5d7dac3b2edfd16a7c68a5f3f9">More...</a><br /></td></tr>
 <tr class="separator:a2c6d7d5d7dac3b2edfd16a7c68a5f3f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e4d70a0b67be79ea1beeca2afce4236"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a0e4d70a0b67be79ea1beeca2afce4236">EventMusicChanged</a> (wxCommandEvent &amp;)</td></tr>
-<tr class="memdesc:a0e4d70a0b67be79ea1beeca2afce4236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provoque les changements nÃ©cessaires afin de s'adapter Ã  la nouvelle situation : changement de titre ou suppression de tous les titres.  <a href="#a0e4d70a0b67be79ea1beeca2afce4236">More...</a><br /></td></tr>
+<tr class="memdesc:a0e4d70a0b67be79ea1beeca2afce4236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provoque les changements nécessaires afin de s'adapter à la nouvelle situation : changement de titre ou suppression de tous les titres.  <a href="#a0e4d70a0b67be79ea1beeca2afce4236">More...</a><br /></td></tr>
 <tr class="separator:a0e4d70a0b67be79ea1beeca2afce4236"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecb74a065d16599c59e7fc13ed108701"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#aecb74a065d16599c59e7fc13ed108701">EventSwitchButtonImage</a> (wxCommandEvent &amp;event)</td></tr>
-<tr class="memdesc:aecb74a065d16599c59e7fc13ed108701"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie l'image du bouton lecture/pause en fonction de l'Ã©tat du systÃ¨me.  <a href="#aecb74a065d16599c59e7fc13ed108701">More...</a><br /></td></tr>
+<tr class="memdesc:aecb74a065d16599c59e7fc13ed108701"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie l'image du bouton lecture/pause en fonction de l'état du système.  <a href="#aecb74a065d16599c59e7fc13ed108701">More...</a><br /></td></tr>
 <tr class="separator:aecb74a065d16599c59e7fc13ed108701"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b213e0036a3b7b03c2ce834b983aa3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a2b213e0036a3b7b03c2ce834b983aa3a">SwitchWindow</a> ()</td></tr>
 <tr class="memdesc:a2b213e0036a3b7b03c2ce834b983aa3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal management methods ///.  <a href="#a2b213e0036a3b7b03c2ce834b983aa3a">More...</a><br /></td></tr>
 <tr class="separator:a2b213e0036a3b7b03c2ce834b983aa3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6457d2c240231e56c5fea4e5bb6db4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#ad6457d2c240231e56c5fea4e5bb6db4a">readPreferences</a> (bool loadDefaultMusic)</td></tr>
-<tr class="memdesc:ad6457d2c240231e56c5fea4e5bb6db4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lit les prÃ©fÃ©rences se trouvant dans le fichier de configuration si celui-ci existe.  <a href="#ad6457d2c240231e56c5fea4e5bb6db4a">More...</a><br /></td></tr>
+<tr class="memdesc:ad6457d2c240231e56c5fea4e5bb6db4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lit les préférences se trouvant dans le fichier de configuration si celui-ci existe.  <a href="#ad6457d2c240231e56c5fea4e5bb6db4a">More...</a><br /></td></tr>
 <tr class="separator:ad6457d2c240231e56c5fea4e5bb6db4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a0384aaae64ffdb8a22218d039ec34e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fu_x_fenetre.html#a3a0384aaae64ffdb8a22218d039ec34e">changePlayPauseImageStatus</a> ()</td></tr>
 <tr class="memdesc:a3a0384aaae64ffdb8a22218d039ec34e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal management methods ///.  <a href="#a3a0384aaae64ffdb8a22218d039ec34e">More...</a><br /></td></tr>
@@ -274,7 +275,7 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">argc</td><td>Entier indiquant la taille du tableau </td></tr>
-    <tr><td class="paramname">argv</td><td>Tableau de caractÃ¨res </td></tr>
+    <tr><td class="paramname">argv</td><td>Tableau de caractères </td></tr>
   </table>
   </dd>
 </dl>
@@ -321,7 +322,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>OpÃ¨re un basculement sur la page contenant la gestion de CDs. </p>
+<p>Opère un basculement sur la page contenant la gestion de CDs. </p>
 
 </div>
 </div>
@@ -339,7 +340,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>OpÃ¨re un basculement sur la page permettant une exploration de l'ordinateur. </p>
+<p>Opère un basculement sur la page permettant une exploration de l'ordinateur. </p>
 
 </div>
 </div>
@@ -357,7 +358,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>OpÃ¨re un basculement sur la page affichant la liste complÃ¨te des titres mis en mÃ©moire. </p>
+<p>Opère un basculement sur la page affichant la liste complète des titres mis en mémoire. </p>
 
 </div>
 </div>
@@ -375,7 +376,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>OpÃ¨re un basculement sur la page contenant les prÃ©fÃ©rences. </p>
+<p>Opère un basculement sur la page contenant les préférences. </p>
 
 </div>
 </div>
@@ -394,7 +395,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Event methods ///. </p>
-<p>OpÃ¨re un basculement sur la page contenant le graphe (page principal) </p>
+<p>Opère un basculement sur la page contenant le graphe (page principal) </p>
 
 </div>
 </div>
@@ -412,7 +413,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Bascule sur la page des PrÃ©fÃ©rences, onglet <a class="el" href="class_couleur.html" title="Champs RVB. ">Couleur</a>. </p>
+<p>Bascule sur la page des Préférences, onglet <a class="el" href="class_couleur.html" title="Champs RVB. ">Couleur</a>. </p>
 
 </div>
 </div>
@@ -430,7 +431,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Bascule sur la page des PrÃ©fÃ©rences, onglet DÃ©faut. </p>
+<p>Bascule sur la page des Préférences, onglet Défaut. </p>
 
 </div>
 </div>
@@ -448,7 +449,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Bascule sur la page des PrÃ©fÃ©rences, onglet Son. </p>
+<p>Bascule sur la page des Préférences, onglet Son. </p>
 
 </div>
 </div>
@@ -519,7 +520,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Provoque les changements nÃ©cessaires afin de s'adapter Ã  la nouvelle situation : changement de titre ou suppression de tous les titres. </p>
+<p>Provoque les changements nécessaires afin de s'adapter à la nouvelle situation : changement de titre ou suppression de tous les titres. </p>
 
 </div>
 </div>
@@ -555,7 +556,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Passe au titre prÃ©cÃ©dent. </p>
+<p>Passe au titre précédent. </p>
 
 </div>
 </div>
@@ -573,7 +574,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Active/DÃ©sactive la lecture alÃ©atoire. </p>
+<p>Active/Désactive la lecture aléatoire. </p>
 
 </div>
 </div>
@@ -591,7 +592,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Active/DÃ©sactive la rÃ©pÃ©tition. </p>
+<p>Active/Désactive la répétition. </p>
 
 </div>
 </div>
@@ -609,7 +610,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>ArrÃªte la chanson. </p>
+<p>Arrête la chanson. </p>
 
 </div>
 </div>
@@ -627,8 +628,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ouvre une fenÃªtre pour choisir le ou les titres de musique Ã  lire. </p>
-<p>Ajoute le(s) titre(s) Ã  liste si celle-ci n'est pas vide </p>
+<p>Ouvre une fenêtre pour choisir le ou les titres de musique à lire. </p>
+<p>Ajoute le(s) titre(s) à liste si celle-ci n'est pas vide </p>
 
 </div>
 </div>
@@ -646,7 +647,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ouvre une fenÃªtre afin de choisir une liste de lecture enregistrÃ©e. </p>
+<p>Ouvre une fenêtre afin de choisir une liste de lecture enregistrée </p>
 
 </div>
 </div>
@@ -664,7 +665,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Relance la lecture si un titre est chargÃ©, ouvre une fenÃªtre de sÃ©lection sinon. </p>
+<p>Relance la lecture si un titre est chargé, ouvre une fenêtre de sélection sinon. </p>
 
 </div>
 </div>
@@ -700,7 +701,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Affiche une fenÃªtre permettant l'enregistrement de la liste de lecture. </p>
+<p>Affiche une fenêtre permettant l'enregistrement de la liste de lecture. </p>
 
 </div>
 </div>
@@ -718,7 +719,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Modifie l'image du bouton lecture/pause en fonction de l'Ã©tat du systÃ¨me. </p>
+<p>Modifie l'image du bouton lecture/pause en fonction de l'état du système. </p>
 
 </div>
 </div>
@@ -754,7 +755,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Provoque une mise Ã  jour de la liste de lecture affichÃ©e Ã  l'utilisateur. </p>
+<p>Provoque une mise à jour de la liste de lecture affichée à l'utilisateur. </p>
 
 </div>
 </div>
@@ -772,7 +773,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement provenant du serveur de l'application : un titre ajoutÃ© </p>
+<p>Évènement provenant du serveur de l'application : un titre ajouté </p>
 
 </div>
 </div>
@@ -808,7 +809,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Affiche la page d'aide Ã  travers le navigateur internet. </p>
+<p>Affiche la page d'aide à travers le navigateur internet. </p>
 
 </div>
 </div>
@@ -826,7 +827,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Affiche le site de l'application Ã  travers le navigateur internet. </p>
+<p>Affiche le site de l'application à travers le navigateur internet. </p>
 
 </div>
 </div>
@@ -844,10 +845,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nements clavier - Utilisation des raccourcis gÃ©nÃ©raux (titre suivant, volume, ...) </p>
+<p>Évènements clavier - Utilisation des raccourcis généraux (titre suivant, volume, ...) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td>l'Ã©vÃ©nement Ã  analyser </td></tr>
+    <tr><td class="paramname">event</td><td>l'événement à analyser </td></tr>
   </table>
   </dd>
 </dl>
@@ -868,7 +869,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Informe le panel du graphe que le titre de la chanson a Ã©tÃ© modifiÃ©. </p>
+<p>Informe le panel du graphe que le titre de la chanson a été modifié. </p>
 
 </div>
 </div>
@@ -886,10 +887,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Lit les prÃ©fÃ©rences se trouvant dans le fichier de configuration si celui-ci existe. </p>
+<p>Lit les préférences se trouvant dans le fichier de configuration si celui-ci existe. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">loadDefaultMusic</td><td>Si vrai, l'application cherche Ã  lancer le fichier enregistrÃ© comme devant Ãªtre lancÃ© Ã  l'ouverture de l'application </td></tr>
+    <tr><td class="paramname">loadDefaultMusic</td><td>Si vrai, l'application cherche à lancer le fichier enregistré comme devant être lancé à l'ouverture de l'application </td></tr>
   </table>
   </dd>
 </dl>
@@ -910,7 +911,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - Permet la rÃ©intÃ©gration des pages dans la fenÃªtre principale. </p>
+<p>Évènement - Permet la réintégration des pages dans la fenêtre principale. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">event</td><td></td></tr>
@@ -934,7 +935,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - Permet la sÃ©paration des pages dans diffÃ©rentes fenÃªtres. </p>
+<p>Évènement - Permet la séparation des pages dans différentes fenêtres. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">event</td><td></td></tr>
@@ -958,7 +959,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Internal management methods ///. </p>
-<p>Ã‰change la page actuelle contre une autre page (effectue l'opÃ©ration) </p>
+<p>Échange la page actuelle contre une autre page (effectue l'opération) </p>
 
 </div>
 </div>
@@ -972,7 +973,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_fu_x_fenetre.html">FuXFenetre</a></li>
-    <li class="footer">Generated on Tue Dec 30 2014 13:13:44 for Fu(X) 2.0 by
+    <li class="footer">Generated on Tue Jan 27 2015 00:42:22 for Fu(X) 2.0 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

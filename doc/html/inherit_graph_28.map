@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classfux_1_1thread_1_1_factory.html" title="Thread Factory. " alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node1" href="$classfux_1_1thread_1_1_i_runnable.html" title="Interface for threaded treatments Interface for threaded treatments. " alt="" coords="5,31,153,57"/>
+<area shape="rect" id="node2" href="$class_music_file_reader_thread.html" title="Delegate for thread processing. " alt="" coords="201,5,360,32"/>
+<area shape="rect" id="node3" href="$class_music_file_writer_thread.html" title="Delegate for thread process. " alt="" coords="205,56,357,83"/>
 </map>

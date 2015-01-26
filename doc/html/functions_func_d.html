@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -105,6 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_func_r.html#index_r"><span>r</span></a></li>
       <li><a href="functions_func_s.html#index_s"><span>s</span></a></li>
       <li><a href="functions_func_t.html#index_t"><span>t</span></a></li>
+      <li><a href="functions_func_u.html#index_u"><span>u</span></a></li>
       <li><a href="functions_func_v.html#index_v"><span>v</span></a></li>
       <li><a href="functions_func_~.html#index_~"><span>~</span></a></li>
     </ul>
@@ -129,7 +131,7 @@ $(document).ready(function(){initNavTree('functions_func_d.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -181,11 +183,17 @@ $(document).ready(function(){initNavTree('functions_func_d.html','');});
 <li>deleteCurrentTitle()
 : <a class="el" href="class_music_manager.html#ac686817863ae4ece1f18a8e5a938a691">MusicManager</a>
 </li>
+<li>deleteInstance()
+: <a class="el" href="classfux_1_1thread_1_1_thread_manager.html#a8a33d24f00bb242524ce77cdec193b49">fux::thread::ThreadManager</a>
+</li>
 <li>deleteTitleAt()
 : <a class="el" href="class_music_manager.html#acd127ea9debf1036a8d5230164080074">MusicManager</a>
 </li>
+<li>deleteTitleAtInSearch()
+: <a class="el" href="class_music_manager.html#acd79516db4c4b15a0fe41a5a89e7298d">MusicManager</a>
+</li>
 <li>deleteTitles()
-: <a class="el" href="class_music_manager.html#a7527a02e2bf4797e91a31b2e6d43843d">MusicManager</a>
+: <a class="el" href="class_music_manager.html#a5263d4d9a4020353b0616b037a0e311c">MusicManager</a>
 </li>
 <li>Deplace()
 : <a class="el" href="class_page_gestion_periph.html#a095945af47d4a92537015c235db3c997">PageGestionPeriph</a>
@@ -203,16 +211,16 @@ $(document).ready(function(){initNavTree('functions_func_d.html','');});
 : <a class="el" href="class_dialog_enregistre_m3_u.html#aff1389735a8003d116d5d6988d14a6c0">DialogEnregistreM3U</a>
 </li>
 <li>DialogTagMP3()
-: <a class="el" href="class_dialog_tag_m_p3.html#a8448439f88f296186e0041f797a6685e">DialogTagMP3</a>
+: <a class="el" href="class_dialog_tag_m_p3.html#aee895a0558a4e2c3dbef2ccf3f4c104c">DialogTagMP3</a>
 </li>
 <li>DialogTagMP3Info()
-: <a class="el" href="class_dialog_tag_m_p3_info.html#afbd7ac17a4c87c3db8b0be8d8fd5b25d">DialogTagMP3Info</a>
+: <a class="el" href="class_dialog_tag_m_p3_info.html#ad226b1fb0d5532794d7b1518563fa018">DialogTagMP3Info</a>
 </li>
 <li>DirDriveManagerState()
 : <a class="el" href="class_dir_drive_manager_state.html#a907ccaa4e68bb01d4cff9ec361b8e670">DirDriveManagerState</a>
 </li>
 <li>DnDCible()
-: <a class="el" href="class_dn_d_cible.html#a5c8b56644ac623dcd05cd567b84e4f3a">DnDCible</a>
+: <a class="el" href="class_dn_d_cible.html#ab2a639f7e15845eb5bc7eed889a4e31b">DnDCible</a>
 </li>
 <li>DnDListeFichier()
 : <a class="el" href="class_dn_d_liste_fichier.html#ac0d119906763e6c8fb836cfa55541aef">DnDListeFichier</a>
@@ -226,8 +234,8 @@ $(document).ready(function(){initNavTree('functions_func_d.html','');});
 <li>DropFichierImagePochetteMusique()
 : <a class="el" href="class_drop_fichier_image_pochette_musique.html#ae0491ffe79cebeca35760536f578eb61">DropFichierImagePochetteMusique</a>
 </li>
-<li>Duree()
-: <a class="el" href="class_duree.html#aa2a28a5a1412b9829178b9d4d0918571">Duree</a>
+<li>Duration()
+: <a class="el" href="class_duration.html#a688948a87d69e8982cf7e292c7fe4b0a">Duration</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -235,7 +243,7 @@ $(document).ready(function(){initNavTree('functions_func_d.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Dec 30 2014 13:13:45 for Fu(X) 2.0 by
+    <li class="footer">Generated on Tue Jan 27 2015 00:42:54 for Fu(X) 2.0 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

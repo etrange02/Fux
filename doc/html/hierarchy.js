@@ -5,7 +5,6 @@ var hierarchy =
     ] ],
     [ "BDD", "class_b_d_d.html", null ],
     [ "BDDRequete", "class_b_d_d_requete.html", null ],
-    [ "ChansonNomPos", "class_chanson_nom_pos.html", null ],
     [ "ComparaisonRequete", "class_comparaison_requete.html", null ],
     [ "Couleur", "class_couleur.html", null ],
     [ "CouperCopierColler", "class_couper_copier_coller.html", null ],
@@ -16,7 +15,7 @@ var hierarchy =
       [ "FileDriveManagerState", "class_file_drive_manager_state.html", null ],
       [ "PlaylistDriveManagerState", "class_playlist_drive_manager_state.html", null ]
     ] ],
-    [ "Duree", "class_duree.html", null ],
+    [ "Duration", "class_duration.html", null ],
     [ "ElementLecteurRacineFichier", "class_element_lecteur_racine_fichier.html", null ],
     [ "ElementThreadFichier", "class_element_thread_fichier.html", null ],
     [ "ExplorerDriveManagers", "class_explorer_drive_managers.html", null ],
@@ -31,9 +30,16 @@ var hierarchy =
     [ "IMusic", "class_i_music.html", [
       [ "Music", "class_music.html", null ]
     ] ],
+    [ "IMusicManager", "class_i_music_manager.html", [
+      [ "AbstractMusicManagerDecorator", "class_abstract_music_manager_decorator.html", [
+        [ "MusicManagerDefaultDecorator", "class_music_manager_default_decorator.html", null ],
+        [ "MusicManagerSearchDecorator", "class_music_manager_search_decorator.html", null ]
+      ] ]
+    ] ],
     [ "IMusicPlayer", "class_i_music_player.html", null ],
     [ "fux::thread::IRunnable", "classfux_1_1thread_1_1_i_runnable.html", [
-      [ "MusicFileReaderThread", "class_music_file_reader_thread.html", null ]
+      [ "MusicFileReaderThread", "class_music_file_reader_thread.html", null ],
+      [ "MusicFileWriterThread", "class_music_file_writer_thread.html", null ]
     ] ],
     [ "ISearchTraversable", "class_i_search_traversable.html", [
       [ "MusicList", "class_music_list.html", null ]
@@ -46,6 +52,7 @@ var hierarchy =
       [ "MusicFileWriter", "class_music_file_writer.html", null ]
     ] ],
     [ "MusicManager", "class_music_manager.html", null ],
+    [ "MusicManagerSwitcher", "class_music_manager_switcher.html", null ],
     [ "MusicPlayer", "class_music_player.html", null ],
     [ "Parametre", "class_parametre.html", null ],
     [ "std::ThreadSafeQueue< T, _Sequence >", "classstd_1_1_thread_safe_queue.html", null ],

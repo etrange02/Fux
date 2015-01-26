@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -100,7 +101,7 @@ $(document).ready(function(){initNavTree('class_music_list.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -149,9 +150,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a598308a7d4be7a7d1d02cbe04c7cac27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.html#a598308a7d4be7a7d1d02cbe04c7cac27">clear</a> ()</td></tr>
 <tr class="memdesc:a598308a7d4be7a7d1d02cbe04c7cac27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the list Clears the list.  <a href="#a598308a7d4be7a7d1d02cbe04c7cac27">More...</a><br /></td></tr>
 <tr class="separator:a598308a7d4be7a7d1d02cbe04c7cac27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a971bd29cd47eff624bca535a33c5ff6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.html#a971bd29cd47eff624bca535a33c5ff6c">addLines</a> (wxArrayString *pathArray)</td></tr>
-<tr class="memdesc:a971bd29cd47eff624bca535a33c5ff6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds in the list some lines Adds some lines in the list according to their kind (music file, playlist file, directory)  <a href="#a971bd29cd47eff624bca535a33c5ff6c">More...</a><br /></td></tr>
-<tr class="separator:a971bd29cd47eff624bca535a33c5ff6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad40e87401a053976c0af95b89798bdf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.html#ad40e87401a053976c0af95b89798bdf4">addLines</a> (wxArrayString &amp;pathArray)</td></tr>
+<tr class="memdesc:ad40e87401a053976c0af95b89798bdf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds in the list some lines Adds some lines in the list according to their kind (music file, playlist file, directory)  <a href="#ad40e87401a053976c0af95b89798bdf4">More...</a><br /></td></tr>
+<tr class="separator:ad40e87401a053976c0af95b89798bdf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e79e6ada7c9f3993eb464ea1e07da0f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.html#a3e79e6ada7c9f3993eb464ea1e07da0f">addUnknownKindLine</a> (wxString path)</td></tr>
 <tr class="memdesc:a3e79e6ada7c9f3993eb464ea1e07da0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the path in the list after verifications Adds the path in the list after verifications of its kind.  <a href="#a3e79e6ada7c9f3993eb464ea1e07da0f">More...</a><br /></td></tr>
 <tr class="separator:a3e79e6ada7c9f3993eb464ea1e07da0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,7 +163,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a3722d40a0178870c3e3c2a48c6359013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the directory Parse the directory.  <a href="#a3722d40a0178870c3e3c2a48c6359013">More...</a><br /></td></tr>
 <tr class="separator:a3722d40a0178870c3e3c2a48c6359013"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ad762c29d066bc9e2eeed4e967fdf40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.html#a6ad762c29d066bc9e2eeed4e967fdf40">importFileContent</a> (wxString filename)</td></tr>
-<tr class="memdesc:a6ad762c29d066bc9e2eeed4e967fdf40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the content of the file into the list Adds the content of the file into the list.  <a href="#a6ad762c29d066bc9e2eeed4e967fdf40">More...</a><br /></td></tr>
+<tr class="memdesc:a6ad762c29d066bc9e2eeed4e967fdf40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the content of the file into the list.  <a href="#a6ad762c29d066bc9e2eeed4e967fdf40">More...</a><br /></td></tr>
 <tr class="separator:a6ad762c29d066bc9e2eeed4e967fdf40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8031f2ddf4076347b430b9cfc72904a1"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.html#a8031f2ddf4076347b430b9cfc72904a1">getNameAtPosition</a> (long position)</td></tr>
 <tr class="memdesc:a8031f2ddf4076347b430b9cfc72904a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the filename at the wanted position Gets the filename at the wanted position.  <a href="#a8031f2ddf4076347b430b9cfc72904a1">More...</a><br /></td></tr>
@@ -170,20 +171,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab495d5e167bd8657889834cb39e1316e"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.html#ab495d5e167bd8657889834cb39e1316e">getPositionInList</a> (const wxString &amp;filename, long position=-1)</td></tr>
 <tr class="memdesc:ab495d5e167bd8657889834cb39e1316e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the nearest position of the pair &lt;filename, position&gt; Gets the nearest position of the filename at the wanted position.  <a href="#ab495d5e167bd8657889834cb39e1316e">More...</a><br /></td></tr>
 <tr class="separator:ab495d5e167bd8657889834cb39e1316e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6d24630383f049ee8f2e41e410b0229"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.html#ad6d24630383f049ee8f2e41e410b0229">getPositionInList</a> (const <a class="el" href="class_music.html">Music</a> *music)</td></tr>
-<tr class="memdesc:ad6d24630383f049ee8f2e41e410b0229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the position of music Gets the position of the <a class="el" href="class_music.html" title="Handles music properties (file and sound) ">Music</a> music in the list.  <a href="#ad6d24630383f049ee8f2e41e410b0229">More...</a><br /></td></tr>
-<tr class="separator:ad6d24630383f049ee8f2e41e410b0229"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a466955cee05745b1daf127e83bfbe02e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.html#a466955cee05745b1daf127e83bfbe02e">removeLine</a> (<a class="el" href="class_chanson_nom_pos.html">ChansonNomPos</a> &amp;title)</td></tr>
-<tr class="memdesc:a466955cee05745b1daf127e83bfbe02e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the title from the list Removes the title from the list.  <a href="#a466955cee05745b1daf127e83bfbe02e">More...</a><br /></td></tr>
-<tr class="separator:a466955cee05745b1daf127e83bfbe02e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40ee36b7dbb9a66f2fa13a33744a918c"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.html#a40ee36b7dbb9a66f2fa13a33744a918c">getPositionInList</a> (const <a class="el" href="class_i_music.html">IMusic</a> *music)</td></tr>
+<tr class="memdesc:a40ee36b7dbb9a66f2fa13a33744a918c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the position of music Gets the position of the <a class="el" href="class_music.html" title="Handles music properties (file and sound) ">Music</a> music in the list.  <a href="#a40ee36b7dbb9a66f2fa13a33744a918c">More...</a><br /></td></tr>
+<tr class="separator:a40ee36b7dbb9a66f2fa13a33744a918c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ca212a7d9e01397a138a09d589961f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.html#a8ca212a7d9e01397a138a09d589961f6">removeLine</a> (size_t position)</td></tr>
-<tr class="memdesc:a8ca212a7d9e01397a138a09d589961f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the title at the given position Removes the title at the given position.  <a href="#a8ca212a7d9e01397a138a09d589961f6">More...</a><br /></td></tr>
+<tr class="memdesc:a8ca212a7d9e01397a138a09d589961f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the title at the given position.  <a href="#a8ca212a7d9e01397a138a09d589961f6">More...</a><br /></td></tr>
 <tr class="separator:a8ca212a7d9e01397a138a09d589961f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72134b8a1a08da2f6db67265906833f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.html#a72134b8a1a08da2f6db67265906833f5">removeLines</a> (wxArrayString *filenameArray)</td></tr>
-<tr class="memdesc:a72134b8a1a08da2f6db67265906833f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes from the current list each filename in filenameArray Removes from the current list each filename in filenameArray.  <a href="#a72134b8a1a08da2f6db67265906833f5">More...</a><br /></td></tr>
-<tr class="separator:a72134b8a1a08da2f6db67265906833f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431184e79f4ec8fb2875ae60e434bb6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.html#a431184e79f4ec8fb2875ae60e434bb6c">removeLines</a> (wxArrayString &amp;filenameArray)</td></tr>
+<tr class="memdesc:a431184e79f4ec8fb2875ae60e434bb6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes from the current list each filename in filenameArray.  <a href="#a431184e79f4ec8fb2875ae60e434bb6c">More...</a><br /></td></tr>
+<tr class="separator:a431184e79f4ec8fb2875ae60e434bb6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a5c7fa9f8c034d7a1453b3ed59dca51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.html#a3a5c7fa9f8c034d7a1453b3ed59dca51">exchangeLine</a> (wxString filename1, wxString filename2)</td></tr>
-<tr class="memdesc:a3a5c7fa9f8c034d7a1453b3ed59dca51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchange two lines Exchange two lines.  <a href="#a3a5c7fa9f8c034d7a1453b3ed59dca51">More...</a><br /></td></tr>
+<tr class="memdesc:a3a5c7fa9f8c034d7a1453b3ed59dca51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchange two lines.  <a href="#a3a5c7fa9f8c034d7a1453b3ed59dca51">More...</a><br /></td></tr>
 <tr class="separator:a3a5c7fa9f8c034d7a1453b3ed59dca51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0313855e8196b5bbcaf211446d358cb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.html#a0313855e8196b5bbcaf211446d358cb7">insertLines</a> (wxArrayString *filenameArray, long position)</td></tr>
 <tr class="memdesc:a0313855e8196b5bbcaf211446d358cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert filenames at a specific position Insert filenames at a specific position.  <a href="#a0313855e8196b5bbcaf211446d358cb7">More...</a><br /></td></tr>
@@ -320,14 +318,14 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a971bd29cd47eff624bca535a33c5ff6c"></a>
+<a class="anchor" id="ad40e87401a053976c0af95b89798bdf4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void MusicList::addLines </td>
           <td>(</td>
-          <td class="paramtype">wxArrayString *&#160;</td>
+          <td class="paramtype">wxArrayString &amp;&#160;</td>
           <td class="paramname"><em>pathArray</em></td><td>)</td>
           <td></td>
         </tr>
@@ -438,7 +436,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Exchange two lines Exchange two lines. </p>
+<p>Exchange two lines. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename1</td><td>First line </td></tr>
@@ -446,7 +444,7 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>voidTODO (David): Mauvaise idée, utiliser les positions sera plus efficaces, et remplissage avec un filereader TODO (David): Pas utilisé dans le code, à supprimer ?? L'idée de base devait être la mise à jour d'une ligne =&gt; on crée un nouvel objet avec les bonne valeurs, on le met à la place de l'ancien, on supprime l'ancien </dd></dl>
 
 </div>
 </div>
@@ -547,14 +545,14 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad6d24630383f049ee8f2e41e410b0229"></a>
+<a class="anchor" id="a40ee36b7dbb9a66f2fa13a33744a918c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">long MusicList::getPositionInList </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_music.html">Music</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_i_music.html">IMusic</a> *&#160;</td>
           <td class="paramname"><em>music</em></td><td>)</td>
           <td></td>
         </tr>
@@ -586,7 +584,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Adds the content of the file into the list Adds the content of the file into the list. </p>
+<p>Adds the content of the file into the list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>a filename </td></tr>
@@ -735,31 +733,6 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a466955cee05745b1daf127e83bfbe02e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MusicList::removeLine </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_chanson_nom_pos.html">ChansonNomPos</a> &amp;&#160;</td>
-          <td class="paramname"><em>title</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Removes the title from the list Removes the title from the list. </p>
-<p>The position is prioritary </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">title</td><td>a pair &lt;string, position&gt; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a8ca212a7d9e01397a138a09d589961f6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -774,7 +747,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Removes the title at the given position Removes the title at the given position. </p>
+<p>Removes the title at the given position. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">position</td><td>the position to remove </td></tr>
@@ -785,21 +758,21 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a72134b8a1a08da2f6db67265906833f5"></a>
+<a class="anchor" id="a431184e79f4ec8fb2875ae60e434bb6c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void MusicList::removeLines </td>
           <td>(</td>
-          <td class="paramtype">wxArrayString *&#160;</td>
+          <td class="paramtype">wxArrayString &amp;&#160;</td>
           <td class="paramname"><em>filenameArray</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Removes from the current list each filename in filenameArray Removes from the current list each filename in filenameArray. </p>
+<p>Removes from the current list each filename in filenameArray. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filenameArray</td><td>A list of filenames </td></tr>
@@ -881,7 +854,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_music_list.html">MusicList</a></li>
-    <li class="footer">Generated on Tue Dec 30 2014 13:13:45 for Fu(X) 2.0 by
+    <li class="footer">Generated on Tue Jan 27 2015 00:42:25 for Fu(X) 2.0 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

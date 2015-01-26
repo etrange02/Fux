@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -100,7 +101,7 @@ $(document).ready(function(){initNavTree('class_preference_defaut.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -118,7 +119,7 @@ $(document).ready(function(){initNavTree('class_preference_defaut.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>GÃ¨re l'application des filtres (couleur et sonore), et le comportement par dÃ©faut de l'application.  
+<p>Gère l'application des filtres (couleur et sonore), et le comportement par défaut de l'application.  
  <a href="class_preference_defaut.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for PreferenceDefaut:</div>
@@ -140,59 +141,59 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:adb456d9e3a3e882c01469e6b81aa4da5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#adb456d9e3a3e882c01469e6b81aa4da5">More...</a><br /></td></tr>
 <tr class="separator:adb456d9e3a3e882c01469e6b81aa4da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0f325f3422c4bfb1ae71458aa1f4f01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#af0f325f3422c4bfb1ae71458aa1f4f01">Creer</a> (wxWindow *Parent, wxWindowID Id)</td></tr>
-<tr class="memdesc:af0f325f3422c4bfb1ae71458aa1f4f01"><td class="mdescLeft">&#160;</td><td class="mdescRight">CrÃ©e les diffÃ©rents composants graphiques du panel.  <a href="#af0f325f3422c4bfb1ae71458aa1f4f01">More...</a><br /></td></tr>
+<tr class="memdesc:af0f325f3422c4bfb1ae71458aa1f4f01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée les différents composants graphiques du panel.  <a href="#af0f325f3422c4bfb1ae71458aa1f4f01">More...</a><br /></td></tr>
 <tr class="separator:af0f325f3422c4bfb1ae71458aa1f4f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33e392da6275a6601997c9292b793ba3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#a33e392da6275a6601997c9292b793ba3">CreerListe</a> (wxChoice *liste)</td></tr>
-<tr class="memdesc:a33e392da6275a6601997c9292b793ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit une liste de fichier .m3u Ã  partir des fichiers prÃ©sents dans l'arborescence de Fu(X)  <a href="#a33e392da6275a6601997c9292b793ba3">More...</a><br /></td></tr>
+<tr class="memdesc:a33e392da6275a6601997c9292b793ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit une liste de fichier .m3u à partir des fichiers présents dans l'arborescence de Fu(X)  <a href="#a33e392da6275a6601997c9292b793ba3">More...</a><br /></td></tr>
 <tr class="separator:a33e392da6275a6601997c9292b793ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bdace33b2ed38ca197980420e28e3bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#a4bdace33b2ed38ca197980420e28e3bb">Defaut_Bouton_Recherche</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a4bdace33b2ed38ca197980420e28e3bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - Ouvre une fenÃªtre de navigation pour sÃ©lectionner un .mp3 (Il sera lu au lancement de Fu(X))  <a href="#a4bdace33b2ed38ca197980420e28e3bb">More...</a><br /></td></tr>
+<tr class="memdesc:a4bdace33b2ed38ca197980420e28e3bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Ouvre une fenêtre de navigation pour sélectionner un .mp3 (Il sera lu au lancement de Fu(X))  <a href="#a4bdace33b2ed38ca197980420e28e3bb">More...</a><br /></td></tr>
 <tr class="separator:a4bdace33b2ed38ca197980420e28e3bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a653b24ace9587722a8256b25a581a3bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#a653b24ace9587722a8256b25a581a3bf">Defaut_Bouton_DossierDefaut</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a653b24ace9587722a8256b25a581a3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - Ouvre une fenÃªtre de navigation pour sÃ©lectionner le dossier Ã  ouvrir par dÃ©faut.  <a href="#a653b24ace9587722a8256b25a581a3bf">More...</a><br /></td></tr>
+<tr class="memdesc:a653b24ace9587722a8256b25a581a3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Ouvre une fenêtre de navigation pour sélectionner le dossier à ouvrir par défaut.  <a href="#a653b24ace9587722a8256b25a581a3bf">More...</a><br /></td></tr>
 <tr class="separator:a653b24ace9587722a8256b25a581a3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae189aeda1c388c23811e03215f4c1310"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#ae189aeda1c388c23811e03215f4c1310">Evt_MAJListe</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:ae189aeda1c388c23811e03215f4c1310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - Met Ã  jour toutes les listes de la page.  <a href="#ae189aeda1c388c23811e03215f4c1310">More...</a><br /></td></tr>
+<tr class="memdesc:ae189aeda1c388c23811e03215f4c1310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Met à jour toutes les listes de la page.  <a href="#ae189aeda1c388c23811e03215f4c1310">More...</a><br /></td></tr>
 <tr class="separator:ae189aeda1c388c23811e03215f4c1310"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc4ab8da7491a04e44eae8c17334fd93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#afc4ab8da7491a04e44eae8c17334fd93">Defaut_RadioMP3_M3U</a> (wxCommandEvent &amp;event)</td></tr>
-<tr class="memdesc:afc4ab8da7491a04e44eae8c17334fd93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - Active/DÃ©sactive les listes en fonction du type (MP3 ou M3U) choisi.  <a href="#afc4ab8da7491a04e44eae8c17334fd93">More...</a><br /></td></tr>
+<tr class="memdesc:afc4ab8da7491a04e44eae8c17334fd93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Active/Désactive les listes en fonction du type (MP3 ou M3U) choisi.  <a href="#afc4ab8da7491a04e44eae8c17334fd93">More...</a><br /></td></tr>
 <tr class="separator:afc4ab8da7491a04e44eae8c17334fd93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12902a255c890cb19ccf0a13745d507f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#a12902a255c890cb19ccf0a13745d507f">Defaut_CheckBoxCouleur</a> (wxCommandEvent &amp;event)</td></tr>
-<tr class="memdesc:a12902a255c890cb19ccf0a13745d507f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - Active/DÃ©sactive la liste des filtres couleurs.  <a href="#a12902a255c890cb19ccf0a13745d507f">More...</a><br /></td></tr>
+<tr class="memdesc:a12902a255c890cb19ccf0a13745d507f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Active/Désactive la liste des filtres couleurs.  <a href="#a12902a255c890cb19ccf0a13745d507f">More...</a><br /></td></tr>
 <tr class="separator:a12902a255c890cb19ccf0a13745d507f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef169b250431e49296d9633abd1bde62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#aef169b250431e49296d9633abd1bde62">Defaut_CheckBoxSon</a> (wxCommandEvent &amp;event)</td></tr>
-<tr class="memdesc:aef169b250431e49296d9633abd1bde62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - Active/DÃ©sactive la liste des filtres sons.  <a href="#aef169b250431e49296d9633abd1bde62">More...</a><br /></td></tr>
+<tr class="memdesc:aef169b250431e49296d9633abd1bde62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Active/Désactive la liste des filtres sons.  <a href="#aef169b250431e49296d9633abd1bde62">More...</a><br /></td></tr>
 <tr class="separator:aef169b250431e49296d9633abd1bde62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f557fb25af0e1f6821e4063c1700c14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#a5f557fb25af0e1f6821e4063c1700c14">Defaut_CheckBoxReprise</a> (wxCommandEvent &amp;event)</td></tr>
-<tr class="memdesc:a5f557fb25af0e1f6821e4063c1700c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - Active/DÃ©sactive les listes permettant une lecture de musique sans donner de paramÃ¨tre Ã  l'application.  <a href="#a5f557fb25af0e1f6821e4063c1700c14">More...</a><br /></td></tr>
+<tr class="memdesc:a5f557fb25af0e1f6821e4063c1700c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Active/Désactive les listes permettant une lecture de musique sans donner de paramètre à l'application.  <a href="#a5f557fb25af0e1f6821e4063c1700c14">More...</a><br /></td></tr>
 <tr class="separator:a5f557fb25af0e1f6821e4063c1700c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17e645fefe38243a240b9069e329614a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#a17e645fefe38243a240b9069e329614a">Defaut_CheckBoxTAG</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a17e645fefe38243a240b9069e329614a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement/Non implÃ©mentÃ© - Modifie le mode d'affichage des titres : titre du fichier ou donnÃ©es incorporÃ©es (TAG)  <a href="#a17e645fefe38243a240b9069e329614a">More...</a><br /></td></tr>
+<tr class="memdesc:a17e645fefe38243a240b9069e329614a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement/Non implémenté - Modifie le mode d'affichage des titres : titre du fichier ou données incorporées (TAG)  <a href="#a17e645fefe38243a240b9069e329614a">More...</a><br /></td></tr>
 <tr class="separator:a17e645fefe38243a240b9069e329614a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46dad4d9ae571b3869bb4b47761760e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#a46dad4d9ae571b3869bb4b47761760e8">OuvertureFichier</a> ()</td></tr>
-<tr class="memdesc:a46dad4d9ae571b3869bb4b47761760e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique Ã  la fenÃªtre les paramÃ¨tres contenus dans le fichier de configuration enregistrÃ©  <a href="#a46dad4d9ae571b3869bb4b47761760e8">More...</a><br /></td></tr>
+<tr class="memdesc:a46dad4d9ae571b3869bb4b47761760e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique à la fenêtre les paramètres contenus dans le fichier de configuration enregistré  <a href="#a46dad4d9ae571b3869bb4b47761760e8">More...</a><br /></td></tr>
 <tr class="separator:a46dad4d9ae571b3869bb4b47761760e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65a9afeadd1f7265f099a1b2bf154f76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#a65a9afeadd1f7265f099a1b2bf154f76">Defaut_Bouton_Portable</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a65a9afeadd1f7265f099a1b2bf154f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement - Lance la crÃ©ation de l'arborescence contenant les fichiers de configuration dans le rÃ©pertoire d'installation de Fu(X)  <a href="#a65a9afeadd1f7265f099a1b2bf154f76">More...</a><br /></td></tr>
+<tr class="memdesc:a65a9afeadd1f7265f099a1b2bf154f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Lance la création de l'arborescence contenant les fichiers de configuration dans le répertoire d'installation de Fu(X)  <a href="#a65a9afeadd1f7265f099a1b2bf154f76">More...</a><br /></td></tr>
 <tr class="separator:a65a9afeadd1f7265f099a1b2bf154f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc2a498cd1c77db343a936acdca39bfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#abc2a498cd1c77db343a936acdca39bfe">Defaut_CheckBoxDefautBDR</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:abc2a498cd1c77db343a936acdca39bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement/Non implÃ©mentÃ© - Modifie la Base de Registre (BDR de Windows) pour mettre Fu(X) en application par dÃ©faut.  <a href="#abc2a498cd1c77db343a936acdca39bfe">More...</a><br /></td></tr>
+<tr class="memdesc:abc2a498cd1c77db343a936acdca39bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement/Non implémenté - Modifie la Base de Registre (BDR de Windows) pour mettre Fu(X) en application par défaut.  <a href="#abc2a498cd1c77db343a936acdca39bfe">More...</a><br /></td></tr>
 <tr class="separator:abc2a498cd1c77db343a936acdca39bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a575a808863d379d563ad2b463e2470c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#a575a808863d379d563ad2b463e2470c8">Defaut_Bouton_CheminDefaut</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a575a808863d379d563ad2b463e2470c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ã‰vÃ¨nement/Non implÃ©mentÃ© - Lance l'ouverture d'une fenÃªtre pour sÃ©lectionner le rÃ©pertoire devant Ãªtre ouvert lors d'une recherche.  <a href="#a575a808863d379d563ad2b463e2470c8">More...</a><br /></td></tr>
+<tr class="memdesc:a575a808863d379d563ad2b463e2470c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement/Non implémenté - Lance l'ouverture d'une fenêtre pour sélectionner le répertoire devant être ouvert lors d'une recherche.  <a href="#a575a808863d379d563ad2b463e2470c8">More...</a><br /></td></tr>
 <tr class="separator:a575a808863d379d563ad2b463e2470c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad33c1e80e10c47c1e2e8af3c1a15b80f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#ad33c1e80e10c47c1e2e8af3c1a15b80f">MAJListe</a> (bool save=true)</td></tr>
-<tr class="memdesc:ad33c1e80e10c47c1e2e8af3c1a15b80f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met Ã  jour toutes les listes de la page.  <a href="#ad33c1e80e10c47c1e2e8af3c1a15b80f">More...</a><br /></td></tr>
+<tr class="memdesc:ad33c1e80e10c47c1e2e8af3c1a15b80f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour toutes les listes de la page.  <a href="#ad33c1e80e10c47c1e2e8af3c1a15b80f">More...</a><br /></td></tr>
 <tr class="separator:ad33c1e80e10c47c1e2e8af3c1a15b80f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4fe70f224ab173a30e110ea0795c26b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#af4fe70f224ab173a30e110ea0795c26b">SetPreferencePage</a> (<a class="el" href="class_preference_couleur.html">PreferenceCouleur</a> *pageCouleur, <a class="el" href="class_preference_son.html">PreferenceSon</a> *pageSon)</td></tr>
-<tr class="memdesc:af4fe70f224ab173a30e110ea0795c26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associe des pages de prÃ©fÃ©rences Ã  celle-ci.  <a href="#af4fe70f224ab173a30e110ea0795c26b">More...</a><br /></td></tr>
+<tr class="memdesc:af4fe70f224ab173a30e110ea0795c26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associe des pages de préférences à celle-ci.  <a href="#af4fe70f224ab173a30e110ea0795c26b">More...</a><br /></td></tr>
 <tr class="separator:af4fe70f224ab173a30e110ea0795c26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a552807a2009f13a27ebad2055a5781b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preference_defaut.html#a552807a2009f13a27ebad2055a5781b2">AutoSave</a> ()</td></tr>
-<tr class="memdesc:a552807a2009f13a27ebad2055a5781b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enregistre les prÃ©fÃ©rences dans un fichier.  <a href="#a552807a2009f13a27ebad2055a5781b2">More...</a><br /></td></tr>
+<tr class="memdesc:a552807a2009f13a27ebad2055a5781b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enregistre les préférences dans un fichier.  <a href="#a552807a2009f13a27ebad2055a5781b2">More...</a><br /></td></tr>
 <tr class="separator:a552807a2009f13a27ebad2055a5781b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>GÃ¨re l'application des filtres (couleur et sonore), et le comportement par dÃ©faut de l'application. </p>
+<div class="textblock"><p>Gère l'application des filtres (couleur et sonore), et le comportement par défaut de l'application. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aecb7b7306f1f6b193d687afa530b9c0b"></a>
 <div class="memitem">
@@ -221,8 +222,8 @@ Public Member Functions</h2></td></tr>
 <p>Constructeur. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Parent</td><td>un pointeur vers la fenÃªtre parente </td></tr>
-    <tr><td class="paramname">Id</td><td>l'identifiant de la fenÃªtre </td></tr>
+    <tr><td class="paramname">Parent</td><td>un pointeur vers la fenêtre parente </td></tr>
+    <tr><td class="paramname">Id</td><td>l'identifiant de la fenêtre </td></tr>
   </table>
   </dd>
 </dl>
@@ -268,8 +269,8 @@ Public Member Functions</h2></td></tr>
 <p>Constructeur. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Parent</td><td>un pointeur vers la fenÃªtre parente </td></tr>
-    <tr><td class="paramname">Id</td><td>l'identifiant de la fenÃªtre </td></tr>
+    <tr><td class="paramname">Parent</td><td>un pointeur vers la fenêtre parente </td></tr>
+    <tr><td class="paramname">Id</td><td>l'identifiant de la fenêtre </td></tr>
     <tr><td class="paramname">pageCouleur</td><td></td></tr>
     <tr><td class="paramname">pageSon</td><td></td></tr>
   </table>
@@ -317,8 +318,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Enregistre les prÃ©fÃ©rences dans un fichier. </p>
-<dl class="section return"><dt>Returns</dt><dd>vrai si rÃ©ussite </dd></dl>
+<p>Enregistre les préférences dans un fichier. </p>
+<dl class="section return"><dt>Returns</dt><dd>vrai si réussite </dd></dl>
 
 </div>
 </div>
@@ -346,11 +347,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>CrÃ©e les diffÃ©rents composants graphiques du panel. </p>
+<p>Crée les différents composants graphiques du panel. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Parent</td><td>un pointeur vers la fenÃªtre parente </td></tr>
-    <tr><td class="paramname">Id</td><td>l'identifiant de la fenÃªtre </td></tr>
+    <tr><td class="paramname">Parent</td><td>un pointeur vers la fenêtre parente </td></tr>
+    <tr><td class="paramname">Id</td><td>l'identifiant de la fenêtre </td></tr>
   </table>
   </dd>
 </dl>
@@ -371,14 +372,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construit une liste de fichier .m3u Ã  partir des fichiers prÃ©sents dans l'arborescence de Fu(X) </p>
+<p>Construit une liste de fichier .m3u à partir des fichiers présents dans l'arborescence de Fu(X) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">liste</td><td>une liste Ã  remplir </td></tr>
+    <tr><td class="paramname">liste</td><td>une liste à remplir </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>le nombre d'Ã©lÃ©ments dans la liste </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>le nombre d'éléments dans la liste </dd></dl>
 
 </div>
 </div>
@@ -396,7 +397,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement/Non implÃ©mentÃ© - Lance l'ouverture d'une fenÃªtre pour sÃ©lectionner le rÃ©pertoire devant Ãªtre ouvert lors d'une recherche. </p>
+<p>Évènement/Non implémenté - Lance l'ouverture d'une fenêtre pour sélectionner le répertoire devant être ouvert lors d'une recherche. </p>
 
 </div>
 </div>
@@ -414,7 +415,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - Ouvre une fenÃªtre de navigation pour sÃ©lectionner le dossier Ã  ouvrir par dÃ©faut. </p>
+<p>Évènement - Ouvre une fenêtre de navigation pour sélectionner le dossier à ouvrir par défaut. </p>
 
 </div>
 </div>
@@ -432,7 +433,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - Lance la crÃ©ation de l'arborescence contenant les fichiers de configuration dans le rÃ©pertoire d'installation de Fu(X) </p>
+<p>Évènement - Lance la création de l'arborescence contenant les fichiers de configuration dans le répertoire d'installation de Fu(X) </p>
 
 </div>
 </div>
@@ -450,7 +451,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - Ouvre une fenÃªtre de navigation pour sÃ©lectionner un .mp3 (Il sera lu au lancement de Fu(X)) </p>
+<p>Évènement - Ouvre une fenêtre de navigation pour sélectionner un .mp3 (Il sera lu au lancement de Fu(X)) </p>
 
 </div>
 </div>
@@ -468,7 +469,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - Active/DÃ©sactive la liste des filtres couleurs. </p>
+<p>Évènement - Active/Désactive la liste des filtres couleurs. </p>
 
 </div>
 </div>
@@ -486,7 +487,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement/Non implÃ©mentÃ© - Modifie la Base de Registre (BDR de Windows) pour mettre Fu(X) en application par dÃ©faut. </p>
+<p>Évènement/Non implémenté - Modifie la Base de Registre (BDR de Windows) pour mettre Fu(X) en application par défaut. </p>
 
 </div>
 </div>
@@ -504,7 +505,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - Active/DÃ©sactive les listes permettant une lecture de musique sans donner de paramÃ¨tre Ã  l'application. </p>
+<p>Évènement - Active/Désactive les listes permettant une lecture de musique sans donner de paramètre à l'application. </p>
 
 </div>
 </div>
@@ -522,7 +523,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - Active/DÃ©sactive la liste des filtres sons. </p>
+<p>Évènement - Active/Désactive la liste des filtres sons. </p>
 
 </div>
 </div>
@@ -540,7 +541,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement/Non implÃ©mentÃ© - Modifie le mode d'affichage des titres : titre du fichier ou donnÃ©es incorporÃ©es (TAG) </p>
+<p>Évènement/Non implémenté - Modifie le mode d'affichage des titres : titre du fichier ou données incorporées (TAG) </p>
 
 </div>
 </div>
@@ -558,7 +559,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - Active/DÃ©sactive les listes en fonction du type (MP3 ou M3U) choisi. </p>
+<p>Évènement - Active/Désactive les listes en fonction du type (MP3 ou M3U) choisi. </p>
 
 </div>
 </div>
@@ -576,7 +577,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ã‰vÃ¨nement - Met Ã  jour toutes les listes de la page. </p>
+<p>Évènement - Met à jour toutes les listes de la page. </p>
 
 </div>
 </div>
@@ -594,7 +595,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Met Ã  jour toutes les listes de la page. </p>
+<p>Met à jour toutes les listes de la page. </p>
 
 </div>
 </div>
@@ -611,7 +612,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Applique Ã  la fenÃªtre les paramÃ¨tres contenus dans le fichier de configuration enregistrÃ© </p>
+<p>Applique à la fenêtre les paramètres contenus dans le fichier de configuration enregistré </p>
 
 </div>
 </div>
@@ -639,7 +640,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Associe des pages de prÃ©fÃ©rences Ã  celle-ci. </p>
+<p>Associe des pages de préférences à celle-ci. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pageCouleur</td><td></td></tr>
@@ -660,7 +661,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_preference_defaut.html">PreferenceDefaut</a></li>
-    <li class="footer">Generated on Tue Dec 30 2014 13:13:45 for Fu(X) 2.0 by
+    <li class="footer">Generated on Tue Jan 27 2015 00:42:29 for Fu(X) 2.0 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

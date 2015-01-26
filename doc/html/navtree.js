@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "Fu(X) 2.0", "index.html", [
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Classes", null, [
       [ "Class List", "annotated.html", "annotated" ],
       [ "Class Index", "classes.html", null ],
@@ -19,9 +20,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"class_bouton_fenetre_detachable.html#a8efaeaebb933b673e792926fd98af9ec",
-"class_image_text.html",
-"class_playlist_drive_manager_state.html#accabfadcaa9ce6d5e0f6e60c4e935435"
+"class_b_d_d.html#aed711ace98dcb3f2ee15eefa69e277ce",
+"class_music.html#a01620b0be61403cd3937d544a1d9f533",
+"class_play_list_tableau.html#a9b1f1f3cbd8eac3550b5a75dbb34f94d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

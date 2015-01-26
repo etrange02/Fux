@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -100,7 +101,7 @@ $(document).ready(function(){initNavTree('class_dialog_enregistre_m3_u.html','')
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -119,7 +120,7 @@ $(document).ready(function(){initNavTree('class_dialog_enregistre_m3_u.html','')
 </div><!--header-->
 <div class="contents">
 
-<p>Ouvre une boÃ®te de dialogue permettant de choisir le nom du fichiers .m3u Ã  crÃ©er et Ã©ventuellement le raccourci.  
+<p>Ouvre une boîte de dialogue permettant de choisir le nom du fichiers .m3u à créer et éventuellement le raccourci.  
  <a href="class_dialog_enregistre_m3_u.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for DialogEnregistreM3U:</div>
@@ -136,32 +137,32 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a8bd4ad958951abf1cf91372a527b8ba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#a8bd4ad958951abf1cf91372a527b8ba9">More...</a><br /></td></tr>
 <tr class="separator:a8bd4ad958951abf1cf91372a527b8ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2ce4564cdc664fedc3348247aab5638"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_enregistre_m3_u.html#ae2ce4564cdc664fedc3348247aab5638">Creer</a> ()</td></tr>
-<tr class="memdesc:ae2ce4564cdc664fedc3348247aab5638"><td class="mdescLeft">&#160;</td><td class="mdescRight">CrÃ©e les Ã©lÃ©ments graphiques de la fenÃªtre.  <a href="#ae2ce4564cdc664fedc3348247aab5638">More...</a><br /></td></tr>
+<tr class="memdesc:ae2ce4564cdc664fedc3348247aab5638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée les éléments graphiques de la fenêtre.  <a href="#ae2ce4564cdc664fedc3348247aab5638">More...</a><br /></td></tr>
 <tr class="separator:ae2ce4564cdc664fedc3348247aab5638"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a589117c773ce820aed7f1f67204fb3cb"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_enregistre_m3_u.html#a589117c773ce820aed7f1f67204fb3cb">GetChemin</a> ()</td></tr>
-<tr class="memdesc:a589117c773ce820aed7f1f67204fb3cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nom complet du fichier .m3u Ã  crÃ©er.  <a href="#a589117c773ce820aed7f1f67204fb3cb">More...</a><br /></td></tr>
+<tr class="memdesc:a589117c773ce820aed7f1f67204fb3cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nom complet du fichier .m3u à créer.  <a href="#a589117c773ce820aed7f1f67204fb3cb">More...</a><br /></td></tr>
 <tr class="separator:a589117c773ce820aed7f1f67204fb3cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a124046c6b497050e80da8f9d7066a10c"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_enregistre_m3_u.html#a124046c6b497050e80da8f9d7066a10c">GetCheminRaccourci</a> ()</td></tr>
-<tr class="memdesc:a124046c6b497050e80da8f9d7066a10c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nom du dossier dans lequel un raccourci doit Ãªtre placÃ©  <a href="#a124046c6b497050e80da8f9d7066a10c">More...</a><br /></td></tr>
+<tr class="memdesc:a124046c6b497050e80da8f9d7066a10c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nom du dossier dans lequel un raccourci doit être placé  <a href="#a124046c6b497050e80da8f9d7066a10c">More...</a><br /></td></tr>
 <tr class="separator:a124046c6b497050e80da8f9d7066a10c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab44e915984d06327708a85eb85318d0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_enregistre_m3_u.html#ab44e915984d06327708a85eb85318d0a">CreerListeM3U</a> ()</td></tr>
-<tr class="memdesc:ab44e915984d06327708a85eb85318d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">CrÃ©e une liste de tous les fichiers .m3u prÃ©sents dans le dossier des paramÃ¨tres.  <a href="#ab44e915984d06327708a85eb85318d0a">More...</a><br /></td></tr>
+<tr class="memdesc:ab44e915984d06327708a85eb85318d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée une liste de tous les fichiers .m3u présents dans le dossier des paramètres.  <a href="#ab44e915984d06327708a85eb85318d0a">More...</a><br /></td></tr>
 <tr class="separator:ab44e915984d06327708a85eb85318d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fd1ccd038cd11e549272b43557a42ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_enregistre_m3_u.html#a3fd1ccd038cd11e549272b43557a42ad">OuvrirDossier</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
-<tr class="memdesc:a3fd1ccd038cd11e549272b43557a42ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ouvre une fenÃªtre pour sÃ©lectionner un rÃ©pertoire.  <a href="#a3fd1ccd038cd11e549272b43557a42ad">More...</a><br /></td></tr>
+<tr class="memdesc:a3fd1ccd038cd11e549272b43557a42ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ouvre une fenêtre pour sélectionner un répertoire.  <a href="#a3fd1ccd038cd11e549272b43557a42ad">More...</a><br /></td></tr>
 <tr class="separator:a3fd1ccd038cd11e549272b43557a42ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a3c96c514cd4403f2fb885249da8444d9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_enregistre_m3_u.html#a3c96c514cd4403f2fb885249da8444d9">SetPanelToBeCall</a> (wxPanel *Panel)</td></tr>
-<tr class="memdesc:a3c96c514cd4403f2fb885249da8444d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associe un panel qui doit recevoir un Ã©vÃ¨nement lors d'une modification.  <a href="#a3c96c514cd4403f2fb885249da8444d9">More...</a><br /></td></tr>
+<tr class="memdesc:a3c96c514cd4403f2fb885249da8444d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associe un panel qui doit recevoir un évènement lors d'une modification.  <a href="#a3c96c514cd4403f2fb885249da8444d9">More...</a><br /></td></tr>
 <tr class="separator:a3c96c514cd4403f2fb885249da8444d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55400562b8d7d2452d0071cafc109d59"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_enregistre_m3_u.html#a55400562b8d7d2452d0071cafc109d59">CallPanel</a> ()</td></tr>
-<tr class="memdesc:a55400562b8d7d2452d0071cafc109d59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Informe le panel de la mise Ã  jour.  <a href="#a55400562b8d7d2452d0071cafc109d59">More...</a><br /></td></tr>
+<tr class="memdesc:a55400562b8d7d2452d0071cafc109d59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Informe le panel de la mise à jour.  <a href="#a55400562b8d7d2452d0071cafc109d59">More...</a><br /></td></tr>
 <tr class="separator:a55400562b8d7d2452d0071cafc109d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Ouvre une boÃ®te de dialogue permettant de choisir le nom du fichiers .m3u Ã  crÃ©er et Ã©ventuellement le raccourci. </p>
+<div class="textblock"><p>Ouvre une boîte de dialogue permettant de choisir le nom du fichiers .m3u à créer et éventuellement le raccourci. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aff1389735a8003d116d5d6988d14a6c0"></a>
 <div class="memitem">
@@ -196,9 +197,9 @@ Static Public Member Functions</h2></td></tr>
 <p>Constructeur. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parent</td><td>la fenÃªtre parente </td></tr>
+    <tr><td class="paramname">parent</td><td>la fenêtre parente </td></tr>
     <tr><td class="paramname">id</td><td>l'identifiant de l'instance </td></tr>
-    <tr><td class="paramname">racc</td><td>le rÃ©pertoire oÃ¹ doit Ãªtre crÃ©Ã© un raccourci </td></tr>
+    <tr><td class="paramname">racc</td><td>le répertoire où doit être créé un raccourci </td></tr>
   </table>
   </dd>
 </dl>
@@ -244,8 +245,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Informe le panel de la mise Ã  jour. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_dialog_enregistre_m3_u.html#a3c96c514cd4403f2fb885249da8444d9" title="Associe un panel qui doit recevoir un Ã©vÃ¨nement lors d&#39;une modification. ">DialogEnregistreM3U::SetPanelToBeCall</a> </dd></dl>
+<p>Informe le panel de la mise à jour. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_dialog_enregistre_m3_u.html#a3c96c514cd4403f2fb885249da8444d9" title="Associe un panel qui doit recevoir un évènement lors d&#39;une modification. ">DialogEnregistreM3U::SetPanelToBeCall</a> </dd></dl>
 
 </div>
 </div>
@@ -262,7 +263,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>CrÃ©e les Ã©lÃ©ments graphiques de la fenÃªtre. </p>
+<p>Crée les éléments graphiques de la fenêtre. </p>
 
 </div>
 </div>
@@ -279,7 +280,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>CrÃ©e une liste de tous les fichiers .m3u prÃ©sents dans le dossier des paramÃ¨tres. </p>
+<p>Crée une liste de tous les fichiers .m3u présents dans le dossier des paramètres. </p>
 
 </div>
 </div>
@@ -296,7 +297,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retourne le nom complet du fichier .m3u Ã  crÃ©er. </p>
+<p>Retourne le nom complet du fichier .m3u à créer. </p>
 <dl class="section return"><dt>Returns</dt><dd>le nom complet du fichier </dd></dl>
 
 </div>
@@ -314,7 +315,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retourne le nom du dossier dans lequel un raccourci doit Ãªtre placÃ© </p>
+<p>Retourne le nom du dossier dans lequel un raccourci doit être placé </p>
 <dl class="section return"><dt>Returns</dt><dd>le nom complet du dossier </dd></dl>
 
 </div>
@@ -333,7 +334,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ouvre une fenÃªtre pour sÃ©lectionner un rÃ©pertoire. </p>
+<p>Ouvre une fenêtre pour sélectionner un répertoire. </p>
 
 </div>
 </div>
@@ -359,10 +360,10 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Associe un panel qui doit recevoir un Ã©vÃ¨nement lors d'une modification. </p>
+<p>Associe un panel qui doit recevoir un évènement lors d'une modification. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Panel</td><td>un panel qui doit recevoir les Ã©vÃ¨nements </td></tr>
+    <tr><td class="paramname">Panel</td><td>un panel qui doit recevoir les évènements </td></tr>
   </table>
   </dd>
 </dl>
@@ -379,7 +380,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_dialog_enregistre_m3_u.html">DialogEnregistreM3U</a></li>
-    <li class="footer">Generated on Tue Dec 30 2014 13:13:44 for Fu(X) 2.0 by
+    <li class="footer">Generated on Tue Jan 27 2015 00:42:16 for Fu(X) 2.0 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

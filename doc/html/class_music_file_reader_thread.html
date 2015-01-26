@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -100,7 +101,7 @@ $(document).ready(function(){initNavTree('class_music_file_reader_thread.html','
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -132,9 +133,9 @@ Collaboration diagram for MusicFileReaderThread:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a45cccf130fd6446f4d368cba70f2aaf0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_file_reader_thread.html#a45cccf130fd6446f4d368cba70f2aaf0">MusicFileReaderThread</a> (<a class="el" href="class_music_file_reader.html">MusicFileReader</a> *musicFileReader)</td></tr>
-<tr class="memdesc:a45cccf130fd6446f4d368cba70f2aaf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a45cccf130fd6446f4d368cba70f2aaf0">More...</a><br /></td></tr>
-<tr class="separator:a45cccf130fd6446f4d368cba70f2aaf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a168fe1281e55ab591ba79b3ce9d202aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_file_reader_thread.html#a168fe1281e55ab591ba79b3ce9d202aa">MusicFileReaderThread</a> (<a class="el" href="class_music_file_reader.html">MusicFileReader</a> *musicFileReader, wxWindow *parent)</td></tr>
+<tr class="memdesc:a168fe1281e55ab591ba79b3ce9d202aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a168fe1281e55ab591ba79b3ce9d202aa">More...</a><br /></td></tr>
+<tr class="separator:a168fe1281e55ab591ba79b3ce9d202aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e7c278591aa943fc36b31e3a812d32d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_file_reader_thread.html#a6e7c278591aa943fc36b31e3a812d32d">~MusicFileReaderThread</a> ()</td></tr>
 <tr class="memdesc:a6e7c278591aa943fc36b31e3a812d32d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#a6e7c278591aa943fc36b31e3a812d32d">More...</a><br /></td></tr>
 <tr class="separator:a6e7c278591aa943fc36b31e3a812d32d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,7 +146,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Delegate for thread processing. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a45cccf130fd6446f4d368cba70f2aaf0"></a>
+<a class="anchor" id="a168fe1281e55ab591ba79b3ce9d202aa"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -153,17 +154,27 @@ Public Member Functions</h2></td></tr>
           <td class="memname">MusicFileReaderThread::MusicFileReaderThread </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_music_file_reader.html">MusicFileReader</a> *&#160;</td>
-          <td class="paramname"><em>musicFileReader</em></td><td>)</td>
+          <td class="paramname"><em>musicFileReader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">wxWindow *&#160;</td>
+          <td class="paramname"><em>parent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Default constructor. </p>
-<p>Constructor Constructor.</p>
+<p>Constructor.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">musicFileReader</td><td>Delegate the work to </td></tr>
+    <tr><td class="paramname">musicFileReader</td><td>Delegates the work to </td></tr>
   </table>
   </dd>
 </dl>
@@ -236,7 +247,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_music_file_reader_thread.html">MusicFileReaderThread</a></li>
-    <li class="footer">Generated on Tue Dec 30 2014 13:13:45 for Fu(X) 2.0 by
+    <li class="footer">Generated on Tue Jan 27 2015 00:42:24 for Fu(X) 2.0 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -100,7 +101,7 @@ $(document).ready(function(){initNavTree('class_image_pochette_musique.html','')
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -128,9 +129,9 @@ Collaboration diagram for ImagePochetteMusique:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8cdca2fd1986d303b2f7c79395a61a53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_pochette_musique.html#a8cdca2fd1986d303b2f7c79395a61a53">ImagePochetteMusique</a> (wxWindow *, wxWindowID, wxBitmap, bool)</td></tr>
-<tr class="memdesc:a8cdca2fd1986d303b2f7c79395a61a53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a8cdca2fd1986d303b2f7c79395a61a53">More...</a><br /></td></tr>
-<tr class="separator:a8cdca2fd1986d303b2f7c79395a61a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7249c5a5fb1c5353a328c2b5d35ed759"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_pochette_musique.html#a7249c5a5fb1c5353a328c2b5d35ed759">ImagePochetteMusique</a> (wxWindow *parent, wxWindowID id, const int width, const int height, bool warnParent)</td></tr>
+<tr class="memdesc:a7249c5a5fb1c5353a328c2b5d35ed759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a7249c5a5fb1c5353a328c2b5d35ed759">More...</a><br /></td></tr>
+<tr class="separator:a7249c5a5fb1c5353a328c2b5d35ed759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5863c71226fe3834bf46b802c4f08f8c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_pochette_musique.html#a5863c71226fe3834bf46b802c4f08f8c">~ImagePochetteMusique</a> ()</td></tr>
 <tr class="memdesc:a5863c71226fe3834bf46b802c4f08f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desctructeur.  <a href="#a5863c71226fe3834bf46b802c4f08f8c">More...</a><br /></td></tr>
 <tr class="separator:a5863c71226fe3834bf46b802c4f08f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,7 +157,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour changer l'image ; lors de tout changement, la fenêtre parente peut en être informée. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a8cdca2fd1986d303b2f7c79395a61a53"></a>
+<a class="anchor" id="a7249c5a5fb1c5353a328c2b5d35ed759"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -164,7 +165,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">ImagePochetteMusique::ImagePochetteMusique </td>
           <td>(</td>
           <td class="paramtype">wxWindow *&#160;</td>
-          <td class="paramname"><em>Parent</em>, </td>
+          <td class="paramname"><em>parent</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -175,14 +176,20 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">wxBitmap&#160;</td>
-          <td class="paramname"><em>label</em>, </td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>avertirParent</em>&#160;</td>
+          <td class="paramname"><em>warnParent</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -198,7 +205,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">Parent</td><td>la fenêtre parente </td></tr>
     <tr><td class="paramname">id</td><td>l'identifiant de l'instance </td></tr>
     <tr><td class="paramname">label</td><td>un wxBitmap à modifier </td></tr>
-    <tr><td class="paramname">avertirParent</td><td>si vrai, le parent est averti des modifications de l'image </td></tr>
+    <tr><td class="paramname">warnParent</td><td>si vrai, le parent est averti des modifications de l'image </td></tr>
   </table>
   </dd>
 </dl>
@@ -361,7 +368,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_image_pochette_musique.html">ImagePochetteMusique</a></li>
-    <li class="footer">Generated on Tue Dec 30 2014 13:13:45 for Fu(X) 2.0 by
+    <li class="footer">Generated on Tue Jan 27 2015 00:42:22 for Fu(X) 2.0 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

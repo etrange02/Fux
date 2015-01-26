@@ -15,8 +15,6 @@ var class_music =
     [ "GetPath", "class_music.html#ad3cb31d1caf7b26807f9c1f61f6ef866", null ],
     [ "GetRecordSleeve", "class_music.html#aeed818866d177a43fcd8433a43ffe43a", null ],
     [ "GetSize", "class_music.html#a3331609194112ad5c2a916f8bcd22a0c", null ],
-    [ "GetStringDuration", "class_music.html#afc4ffcdda2323599ba11ff1d345ea7f3", null ],
-    [ "GetStringYear", "class_music.html#aef741a3f3381f77f06c585a34876a61d", null ],
     [ "GetTitle", "class_music.html#a5ef2d63982cc13f161e1bdce927029c2", null ],
     [ "GetYear", "class_music.html#a8baacac1ea65a19c6064cb026283091d", null ],
     [ "SetAlbum", "class_music.html#a6736bc3e6e6893e9367c5be61dd0f454", null ],

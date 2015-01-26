@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -105,6 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_r.html#index_r"><span>r</span></a></li>
       <li><a href="functions_s.html#index_s"><span>s</span></a></li>
       <li><a href="functions_t.html#index_t"><span>t</span></a></li>
+      <li><a href="functions_u.html#index_u"><span>u</span></a></li>
       <li><a href="functions_v.html#index_v"><span>v</span></a></li>
       <li><a href="functions_~.html#index_~"><span>~</span></a></li>
     </ul>
@@ -129,7 +131,7 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -158,12 +160,7 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 </li>
 <li>Get()
 : <a class="el" href="class_gest_periph.html#a359276a8f531ce160001226486175fa4">GestPeriph</a>
-</li>
-<li>get()
-: <a class="el" href="class_music_manager.html#aa282c6e9eff3559bdc6701ea068e03a8">MusicManager</a>
-</li>
-<li>Get()
-: <a class="el" href="class_musique_graph.html#a14946ee2f1b1eb437c36a1678d88c2ca">MusiqueGraph</a>
+, <a class="el" href="class_musique_graph.html#a14946ee2f1b1eb437c36a1678d88c2ca">MusiqueGraph</a>
 , <a class="el" href="class_parametre.html#afc0de0da7d04486d5ba6932562d96ed8">Parametre</a>
 , <a class="el" href="class_slider_son.html#a12734402e8a2adaac811284f7e10639f">SliderSon</a>
 , <a class="el" href="class_thread_fichier_fichier.html#a6260062a1726f6988a5b863969ae5903">ThreadFichierFichier</a>
@@ -172,9 +169,7 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 : <a class="el" href="class_element_thread_fichier.html#a7f32281c4caa240dcd32436978d7f7dc">ElementThreadFichier</a>
 </li>
 <li>GetAlbum()
-: <a class="el" href="class_dialog_tag_m_p3.html#a43c185daa0bb2a0c16e9af5640207f2a">DialogTagMP3</a>
-, <a class="el" href="class_dialog_tag_m_p3_info.html#a4f94999fe18ca07a02229892fe2216e4">DialogTagMP3Info</a>
-, <a class="el" href="class_music.html#a331aba1d02454483487cf37516201144">Music</a>
+: <a class="el" href="class_music.html#a331aba1d02454483487cf37516201144">Music</a>
 </li>
 <li>GetAlbumAnnee()
 : <a class="el" href="class_b_d_d.html#aa7812609cd5e75aec3fe38ea8760d5b9">BDD</a>
@@ -188,13 +183,8 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 <li>GetAlbumNom()
 : <a class="el" href="class_b_d_d.html#a746162d4081425ca35b897ab684731a5">BDD</a>
 </li>
-<li>GetAnnee()
-: <a class="el" href="class_dialog_tag_m_p3.html#a86779ac0fc0690b3ab7f368e649707ba">DialogTagMP3</a>
-, <a class="el" href="class_dialog_tag_m_p3_info.html#a0c9c508e3bcef2fb77b998b6b0a748c7">DialogTagMP3Info</a>
-</li>
-<li>GetArtiste()
-: <a class="el" href="class_dialog_tag_m_p3.html#a9c4aaf0ab8ec1571cc65693d7a9c05be">DialogTagMP3</a>
-, <a class="el" href="class_dialog_tag_m_p3_info.html#a6213c3f32d708473d07253f9e3cbdf04">DialogTagMP3Info</a>
+<li>getAllMusics()
+: <a class="el" href="class_music_manager.html#a943a94cb6c5044afaf71de802dac89fe">MusicManager</a>
 </li>
 <li>GetArtisteIDs()
 : <a class="el" href="class_b_d_d.html#a318ebaa2c67d5f1c31fcf32e90c5dc88">BDD</a>
@@ -226,7 +216,7 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 , <a class="el" href="class_page_gestion_periph.html#a52a2665960223d06ee075870ae980f4c">PageGestionPeriph</a>
 </li>
 <li>getCheminCouleur()
-: <a class="el" href="class_parametre.html#ad17cb3cb6157d022e19ad8db7f24574d">Parametre</a>
+: <a class="el" href="class_parametre.html#ae163f9a7dcff57df93ea835921003bf8">Parametre</a>
 </li>
 <li>GetCheminRaccourci()
 : <a class="el" href="class_dialog_enregistre_m3_u.html#a124046c6b497050e80da8f9d7066a10c">DialogEnregistreM3U</a>
@@ -236,9 +226,6 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 </li>
 <li>getCollection()
 : <a class="el" href="class_music_list.html#a82c269c8bc46eb3747d715972ef0b392">MusicList</a>
-</li>
-<li>GetCommentaire()
-: <a class="el" href="class_dialog_tag_m_p3.html#a783111b0c05865035122d1a0b9e05da6">DialogTagMP3</a>
 </li>
 <li>GetConnexionTableau()
 : <a class="el" href="class_t_c_p_serveur.html#a7e94d48b028cf1e3c23871bc196ec639">TCPServeur</a>
@@ -257,6 +244,9 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 </li>
 <li>getCurrentMusicPosition()
 : <a class="el" href="class_music_manager.html#a1704be187c0d8c0a970dfa14d1a8696d">MusicManager</a>
+</li>
+<li>getCurrentMusicPositionInSearch()
+: <a class="el" href="class_music_manager.html#acf4996fc3095c09a458e7d52093b41d5">MusicManager</a>
 </li>
 <li>GetDataHere()
 : <a class="el" href="class_music_play_list_dn_d_buffer_data.html#abc468ab76aa99b61e6e9505334410a20">MusicPlayListDnDBufferData</a>
@@ -305,10 +295,6 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 <li>getFiltre()
 : <a class="el" href="class_parametre.html#a175ad0ea2e02f2e5ae79a79481d9435a">Parametre</a>
 </li>
-<li>GetGenre()
-: <a class="el" href="class_dialog_tag_m_p3.html#a6bd1bd06e46a7610e9ea967293e8edc1">DialogTagMP3</a>
-, <a class="el" href="class_dialog_tag_m_p3_info.html#ae203494d22e0110c3e454174bde95131">DialogTagMP3Info</a>
-</li>
 <li>GetGenres()
 : <a class="el" href="class_music.html#ad5ad0da48d40d15ef296fd7734e9ffbe">Music</a>
 </li>
@@ -328,8 +314,7 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 : <a class="el" href="class_element_lecteur_racine_fichier.html#a8c953b4fa79d524606a375cc5a564c5b">ElementLecteurRacineFichier</a>
 </li>
 <li>GetImage()
-: <a class="el" href="class_dialog_tag_m_p3.html#ac5f601bcb5f43730c3386cd71d8eeb40">DialogTagMP3</a>
-, <a class="el" href="class_image_pochette_musique.html#a77ab588db875a30e4b30c8c1b422d230">ImagePochetteMusique</a>
+: <a class="el" href="class_image_pochette_musique.html#a77ab588db875a30e4b30c8c1b422d230">ImagePochetteMusique</a>
 </li>
 <li>GetListePersoChanson()
 : <a class="el" href="class_b_d_d.html#a2e6b251b871606ca21af5a6ef0d077bb">BDD</a>
@@ -344,16 +329,13 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 : <a class="el" href="class_element_lecteur_racine_fichier.html#ac04dcc611e9408631ee24bf5c87105fa">ElementLecteurRacineFichier</a>
 </li>
 <li>GetMSecondeTot()
-: <a class="el" href="class_duree.html#af64741aec784cd7de435432c58528931">Duree</a>
+: <a class="el" href="class_duration.html#aa3c3799f09d74c94bdf68eb9bf098b74">Duration</a>
 </li>
 <li>getMusic()
 : <a class="el" href="class_music_manager.html#af7d49c88d13a4e30fcb0116b96c9a07c">MusicManager</a>
 </li>
 <li>getMusicPlayer()
 : <a class="el" href="class_music_manager.html#a3219467f98a4811e9c5fe0628c50dc30">MusicManager</a>
-</li>
-<li>getMusics()
-: <a class="el" href="class_music_manager.html#a85be5743e1a39069b8b99a4defc13fb1">MusicManager</a>
 </li>
 <li>GetName()
 : <a class="el" href="class_music.html#a8a0062a5f274a23b4d101577d9db9557">Music</a>
@@ -362,10 +344,7 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 : <a class="el" href="class_music_list.html#a8031f2ddf4076347b430b9cfc72904a1">MusicList</a>
 </li>
 <li>GetNom()
-: <a class="el" href="class_chanson_nom_pos.html#af6bdaf2a324a359a7598b74d3555643f">ChansonNomPos</a>
-, <a class="el" href="class_dialog_tag_m_p3.html#a8d4801b97018d9ca2b7fe249f3a0f294">DialogTagMP3</a>
-, <a class="el" href="class_dialog_tag_m_p3_info.html#ad8177accfdf791c633b86a8457e10bc9">DialogTagMP3Info</a>
-, <a class="el" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc">ElementThreadFichier</a>
+: <a class="el" href="class_element_thread_fichier.html#a7a5feeb77f6b3e1d51e024df86ca6ecc">ElementThreadFichier</a>
 </li>
 <li>GetNomAffiche()
 : <a class="el" href="class_element_lecteur_racine_fichier.html#a88074faf81362c679d5e233606975172">ElementLecteurRacineFichier</a>
@@ -375,6 +354,7 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 </li>
 <li>getParent()
 : <a class="el" href="class_music_list.html#a70a2c603d10477608c7571cbdf6ca4a8">MusicList</a>
+, <a class="el" href="class_music_manager.html#a9105b751f708d3673d791c13cb7b4202">MusicManager</a>
 </li>
 <li>GetPath()
 : <a class="el" href="class_music.html#ad3cb31d1caf7b26807f9c1f61f6ef866">Music</a>
@@ -382,14 +362,11 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 <li>GetPlayListTableau()
 : <a class="el" href="class_play_list.html#aa28117918256798428665452da6082e1">PlayList</a>
 </li>
-<li>GetPos()
-: <a class="el" href="class_chanson_nom_pos.html#a1edd5a5dd32b103ffbab511f3b20f2e8">ChansonNomPos</a>
-</li>
 <li>GetPositionCoord()
 : <a class="el" href="class_dn_d_cible.html#a404ac098ac28ac02307287fa324bd5c2">DnDCible</a>
 </li>
 <li>getPositionInList()
-: <a class="el" href="class_music_list.html#ad6d24630383f049ee8f2e41e410b0229">MusicList</a>
+: <a class="el" href="class_music_list.html#a40ee36b7dbb9a66f2fa13a33744a918c">MusicList</a>
 </li>
 <li>GetProduitArtiste()
 : <a class="el" href="class_b_d_d.html#ad12a9f36d86693ed9344e6ecedec8e25">BDD</a>
@@ -416,10 +393,16 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 : <a class="el" href="class_parametre.html#a17807d4f67561fc2bdaecaf59014fca1">Parametre</a>
 </li>
 <li>getRepertoireParametre()
-: <a class="el" href="class_parametre.html#aaae8a6d958d66a5a769a042b2bf65ab6">Parametre</a>
+: <a class="el" href="class_parametre.html#a18a6e103534a955fcf2bef73b8b1094c">Parametre</a>
+</li>
+<li>getSearchedMusics()
+: <a class="el" href="class_music_manager.html#a21b1f20bb1e26867b2ad65e877936929">MusicManager</a>
+</li>
+<li>getSearchedWord()
+: <a class="el" href="class_music_manager.html#a30aa38b9b29cf4d7770e8d8f321ddd59">MusicManager</a>
 </li>
 <li>GetSeconde()
-: <a class="el" href="class_duree.html#ab970d524b5190f4116fe3265a5e6691f">Duree</a>
+: <a class="el" href="class_duration.html#a84bce8dbbaaa97c9a17e3270418a7185">Duration</a>
 </li>
 <li>GetSize()
 : <a class="el" href="class_music.html#a3331609194112ad5c2a916f8bcd22a0c">Music</a>
@@ -431,20 +414,16 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 : <a class="el" href="class_parametre.html#aa06b482406215b03426f26693e0d9788">Parametre</a>
 </li>
 <li>GetStringDuration()
-: <a class="el" href="class_music.html#afc4ffcdda2323599ba11ff1d345ea7f3">Music</a>
+: <a class="el" href="class_i_music.html#ac1fc8f80e97cea5ac4fc75a718516122">IMusic</a>
 </li>
 <li>GetStringYear()
-: <a class="el" href="class_music.html#aef741a3f3381f77f06c585a34876a61d">Music</a>
+: <a class="el" href="class_i_music.html#a66512b9e4aeb83f4c633b8ad9d45d9eb">IMusic</a>
 </li>
 <li>GetTableau()
 : <a class="el" href="class_t_c_p_connexion_echange_instance_local_host.html#ace81dc574abfaf229bcdbe414019955f">TCPConnexionEchangeInstanceLocalHost</a>
 </li>
 <li>GetTitle()
 : <a class="el" href="class_music.html#a5ef2d63982cc13f161e1bdce927029c2">Music</a>
-</li>
-<li>GetTitre()
-: <a class="el" href="class_dialog_tag_m_p3.html#ac3d12107f339defc0955ea3f5e212fee">DialogTagMP3</a>
-, <a class="el" href="class_dialog_tag_m_p3_info.html#ac56c3b47cc0c8d78ed18f678c8fdf120">DialogTagMP3Info</a>
 </li>
 <li>GetTransFile()
 : <a class="el" href="class_music_play_list_dn_d_buffer_data.html#a69db85515ba15e41378efd7c5a420539">MusicPlayListDnDBufferData</a>
@@ -480,7 +459,7 @@ $(document).ready(function(){initNavTree('functions_g.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Dec 30 2014 13:13:45 for Fu(X) 2.0 by
+    <li class="footer">Generated on Tue Jan 27 2015 00:42:54 for Fu(X) 2.0 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

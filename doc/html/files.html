@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -97,7 +98,7 @@ $(document).ready(function(){initNavTree('files.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -173,19 +174,24 @@ $(document).ready(function(){initNavTree('files.html','');});
 <tr id="row_0_4_6_4_" class="even" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ImagePochetteMusique.h</b></td><td class="desc"></td></tr>
 <tr id="row_0_4_6_5_" class="even" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>SliderSon.h</b></td><td class="desc"></td></tr>
 <tr id="row_0_5_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_0_5_" class="arrow" onclick="toggleFolder('0_5_')">&#9658;</span><span id="img_0_5_" class="iconfclosed" onclick="toggleFolder('0_5_')">&#160;</span><a class="el" href="dir_bef5442c0c96b47669dde4af199f024d.html" target="_self">music</a></td><td class="desc"></td></tr>
-<tr id="row_0_5_0_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ChansonNomPos.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_5_1_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>Duree.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_5_0_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>AbstractMusicManagerDecorator.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_5_1_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>Duration.h</b></td><td class="desc"></td></tr>
 <tr id="row_0_5_2_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>Factory.h</b></td><td class="desc"></td></tr>
 <tr id="row_0_5_3_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>IMusic.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_5_4_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>IMusicPlayer.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_5_5_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>Music.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_5_6_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicFile.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_5_7_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicFileReader.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_5_8_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicFileReaderThread.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_5_9_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicFileWriter.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_5_10_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicList.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_5_11_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicManager.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_5_12_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicPlayer.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_5_4_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>IMusicManager.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_5_5_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>IMusicPlayer.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_5_6_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>Music.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_5_7_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicFile.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_5_8_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicFileReader.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_5_9_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicFileReaderThread.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_5_10_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicFileWriter.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_5_11_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicFileWriterThread.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_5_12_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicList.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_5_13_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicManager.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_5_14_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicManagerDefaultDecorator.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_5_15_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicManagerSearchDecorator.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_5_16_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicManagerSwitcher.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_5_17_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicPlayer.h</b></td><td class="desc"></td></tr>
 <tr id="row_0_6_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_0_6_" class="arrow" onclick="toggleFolder('0_6_')">&#9658;</span><span id="img_0_6_" class="iconfclosed" onclick="toggleFolder('0_6_')">&#160;</span><a class="el" href="dir_dafb25a37831a87d2e2e8b780f24e872.html" target="_self">network</a></td><td class="desc"></td></tr>
 <tr id="row_0_6_0_" class="even" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>TCPClient.h</b></td><td class="desc"></td></tr>
 <tr id="row_0_6_1_" class="even" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>TCPConnexionEchangeInstanceLocalHost.h</b></td><td class="desc"></td></tr>
@@ -279,16 +285,22 @@ $(document).ready(function(){initNavTree('files.html','');});
 <tr id="row_1_3_6_4_" class="even" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ImagePochetteMusique.cpp</b></td><td class="desc"></td></tr>
 <tr id="row_1_3_6_5_" class="even" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>SliderSon.cpp</b></td><td class="desc"></td></tr>
 <tr id="row_1_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_1_4_" class="arrow" onclick="toggleFolder('1_4_')">&#9658;</span><span id="img_1_4_" class="iconfclosed" onclick="toggleFolder('1_4_')">&#160;</span><a class="el" href="dir_cc94bbbd6458851dcc70e30eea527aa9.html" target="_self">music</a></td><td class="desc"></td></tr>
-<tr id="row_1_4_0_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ChansonNomPos.cpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_4_1_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>Duree.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_4_0_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>AbstractMusicManagerDecorator.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_4_1_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>Duration.cpp</b></td><td class="desc"></td></tr>
 <tr id="row_1_4_2_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>Factory.cpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_4_3_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>Music.cpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_4_4_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicFileReader.cpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_4_5_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicFileReaderThread.cpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_4_6_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicFileWriter.cpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_4_7_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicList.cpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_4_8_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicManager.cpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_4_9_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicPlayer.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_4_3_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>IMusic.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_4_4_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>IMusicManager.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_4_5_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>Music.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_4_6_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicFileReader.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_4_7_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicFileReaderThread.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_4_8_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicFileWriter.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_4_9_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicFileWriterThread.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_4_10_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicList.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_4_11_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicManager.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_4_12_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicManagerDefaultDecorator.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_4_13_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicManagerSearchDecorator.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_4_14_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicManagerSwitcher.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_4_15_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicPlayer.cpp</b></td><td class="desc"></td></tr>
 <tr id="row_1_5_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_1_5_" class="arrow" onclick="toggleFolder('1_5_')">&#9658;</span><span id="img_1_5_" class="iconfclosed" onclick="toggleFolder('1_5_')">&#160;</span><a class="el" href="dir_fc4c7f03e1a69a98c370fae55a743828.html" target="_self">network</a></td><td class="desc"></td></tr>
 <tr id="row_1_5_0_" class="even" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>TCPClient.cpp</b></td><td class="desc"></td></tr>
 <tr id="row_1_5_1_" class="even" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>TCPConnexionEchangeInstanceLocalHost.cpp</b></td><td class="desc"></td></tr>
@@ -333,7 +345,7 @@ $(document).ready(function(){initNavTree('files.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Dec 30 2014 13:13:45 for Fu(X) 2.0 by
+    <li class="footer">Generated on Tue Jan 27 2015 00:42:54 for Fu(X) 2.0 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>
