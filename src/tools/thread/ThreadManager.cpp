@@ -125,9 +125,14 @@ void ThreadManager::clearWorks()
  */
 void ThreadManager::addRunnable(IRunnable* runnable)
 {
+    #if DEBUG
+    runnable->process();
+    delete runnable;
+    #else // DEBUG
     m_works.push(runnable);
 
     activateAWorker();
+    #endif // DEBUG
 }
 
 /** @brief Called by workers when work is done.
