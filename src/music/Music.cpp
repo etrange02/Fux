@@ -35,7 +35,8 @@ Music::Music(wxString filename) :
 {
 }
 
-Music::Music(const Music& music)
+Music::Music(const Music& music) :
+    m_recordSleeve(NULL)
 {
     *this = music;
 }
