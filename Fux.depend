@@ -2172,7 +2172,7 @@
 	"../tools/dir_traverser/Search.h"
 	"../settings/Parametre.h"
 
-1422047249 c:\workspace\projects\fux\include\music\music.h
+1422446330 c:\workspace\projects\fux\include\music\music.h
 	<wx/wx.h>
 	<wx/image.h>
 	"IMusic.h"
@@ -2352,7 +2352,7 @@
 	"id3v2header.h"
 	"taglib_export.h"
 
-1422211595 c:\workspace\projects\fux\include\music\musicfilewriter.h
+1422480506 c:\workspace\projects\fux\include\music\musicfilewriter.h
 	<wx/wx.h>
 	<wx/stdpaths.h>
 	<wx/filename.h>
@@ -2540,7 +2540,7 @@
 
 1412500750 c:\workspace\libraries\wx302gl\include\wx\generic\statline.h
 
-1422034081 c:\workspace\projects\fux\include\gui\musiclist\playlist.h
+1422431285 c:\workspace\projects\fux\include\gui\musiclist\playlist.h
 	"../../Define.h"
 	<wx/wx.h>
 	<wx/stdpaths.h>
@@ -3053,7 +3053,7 @@
 	"../../../include/gui/graph/MusiqueGraph.h"
 	"MusicManagerSwitcher.h"
 
-1422258459 source:c:\workspace\projects\fux\src\gui\musiclist\playlist.cpp
+1422431436 source:c:\workspace\projects\fux\src\gui\musiclist\playlist.cpp
 	"../../../include/gui/musiclist/PlayList.h"
 	"MusicManagerSwitcher.h"
 
@@ -3128,23 +3128,24 @@
 1422048005 source:c:\workspace\projects\fux\src\music\factory.cpp
 	"../../include/music/Factory.h"
 
-1422294149 source:c:\workspace\projects\fux\src\music\music.cpp
+1422480319 source:c:\workspace\projects\fux\src\music\music.cpp
 	"../../include/music/Music.h"
 
-1421185970 source:c:\workspace\projects\fux\src\music\musicfilereader.cpp
+1422431532 source:c:\workspace\projects\fux\src\music\musicfilereader.cpp
 	"MusicFileReader.h"
 
 1421998525 source:c:\workspace\projects\fux\src\music\musicfilereaderthread.cpp
 	"MusicFileReaderThread.h"
 
-1422211839 source:c:\workspace\projects\fux\src\music\musicfilewriter.cpp
+1422641598 source:c:\workspace\projects\fux\src\music\musicfilewriter.cpp
 	"MusicFileWriter.h"
+	"Tools.h"
 
 1422197178 source:c:\workspace\projects\fux\src\music\musiclist.cpp
 	"../../include/music/MusicList.h"
 	"../tools/thread/ThreadManager.h"
 
-1422211214 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
+1422471077 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
 	"../../include/music/MusicManager.h"
 	<ctime>
 	<algorithm>
@@ -3295,4 +3296,10 @@
 
 1422195959 source:c:\workspace\projects\fux\src\music\imusicmanager.cpp
 	"IMusicManager.h"
+
+1422641565 c:\workspace\projects\fux\include\tools\tools.h
+	"wx/wx.h"
+
+1422641572 source:c:\workspace\projects\fux\src\tools\tools.cpp
+	"Tools.h"
 

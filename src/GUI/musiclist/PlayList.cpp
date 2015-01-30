@@ -197,32 +197,25 @@ void PlayList::OnAfficheDetails(wxListEvent &event)
  */
 void PlayList::OnAppliquerTAG(wxCommandEvent &WXUNUSED(event))
 {
-    // TODO (David): Write the music writer
-    // N'utilise pas l'image
-    /*m_ObjetTAG = TagLib::FileRef(TagLib::FileName(fichierTAG.fn_str()));
-    if (!m_ObjetTAG.isNull() && !Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
-    {
-        wxString tempo = fichierTAG;
-        m_ObjetTAG.save();
+    int position = m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
+    if (position < 0)
+        return;
 
-        int i = tempo.Find(wxFileName::GetPathSeparator(), true);
-        tempo = tempo.Left(i);
-        tempo << wxFileName::GetPathSeparator() << m_BoiteNom->GetValue();//Nom du fichier
-        if (fichierTAG != tempo)
-        {
-            if (wxRenameFile(fichierTAG, tempo, true))
-                FichierListe::Get()->EchangeNom(fichierTAG, tempo);
-            else
-                wxMessageBox(_("Erreur dans le nom.\nVérifiez que vous utilisez des caractères autorisés."), _("Erreur"));
-        }
-        m_liste->MAJ();
-        //m_liste->SetItemState(ligneSel, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED);/////////////////////
-    }
-    else if (Musique::Get()->GetNomComplet().IsSameAs(fichierTAG))
-        wxMessageBox(_("Vous ne pouvez pas modifier un fichier lorsque celui-ci est en cours de lecture."), _("Erreur !"));
-    else
-        wxMessageBox(_("Sélectionnez un fichier"), _("Erreur !"));
-        */
+    if (MusicManagerSwitcher::getSearch().getMusics().size() <= position)
+        return;
+
+    Music* music = fux::music::Factory::createMusic(*MusicManagerSwitcher::getSearch().getMusics().at(position));
+
+    music->SetAlbum(m_BoiteAlbum->GetValue());
+    music->SetName(m_BoiteNom->GetValue());
+    music->SetArtists(m_BoiteArtiste->GetValue());
+    music->SetTitle(m_BoiteTitre->GetValue());
+    music->SetGenres(m_BoiteGenre->GetValue());
+    music->SetYear(m_BoiteAnnee->GetValue());
+
+    MusicManagerSwitcher::getSearch().updateMusicContent(position, music);
+    // TODO (David): Supprimer l'extension du nom de la chanson
+    // N'utilise pas l'image
 }
 
 /**

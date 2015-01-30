@@ -13,7 +13,7 @@ using namespace TagLib;
 MusicFileReader::MusicFileReader(Music& music) :
     m_music(music)
 {
-    m_music.SetName(m_music.GetFileName().AfterLast(wxFileName::GetPathSeparator()));
+    m_music.SetName(m_music.GetFileName().AfterLast(wxFileName::GetPathSeparator()).BeforeLast('.'));
 }
 
 MusicFileReader::~MusicFileReader()

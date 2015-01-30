@@ -740,16 +740,16 @@ void MusicManager::updateMusicContent(const long position, Music* musicData, std
 void MusicManager::updateCurrentMusic(Music* newMusicData)
 {
     // before
-    wxString filename = getMusicPlayer().getFileName();
+    Music* music = getMusic();
     unsigned int time = getMusicPlayer().getPosition();
     getMusicPlayer().release();
 
     // modification
-    MusicFile* musicFile = fux::music::Factory::createMusicFileWriter(newMusicData, getMusic());
+    MusicFile* musicFile = fux::music::Factory::createMusicFileWriter(newMusicData, music);
     musicFile->process();
 
     //after
-    getMusicPlayer().play(filename);
+    getMusicPlayer().play(music->GetFileName());
     getMusicPlayer().setPosition(time);
     delete musicFile;
 }

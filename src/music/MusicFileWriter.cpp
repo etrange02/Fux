@@ -7,6 +7,7 @@
  * License:
  **************************************************************/
 #include "MusicFileWriter.h"
+#include "Tools.h"
 
 using namespace TagLib;
 
@@ -54,10 +55,10 @@ void MusicFileWriter::saveImage()
     if (!m_musicSrc->HasRecordSleeve() || (m_musicDst->HasRecordSleeve() && m_musicSrc->GetRecordSleeve()->IsSameAs(*m_musicDst->GetRecordSleeve())))
         return;
 
-    TagLib::FileRef fileRef(TagLib::FileName(m_musicDst->GetFileName().fn_str()));
+    TagLib::FileRef fileRef(TagLib::FileName(m_musicSrc->GetFileName().fn_str()));
     if (!fileRef.isNull() && fileRef.file()->isValid())
     {
-        TagLib::MPEG::File f(TagLib::FileName(m_musicDst->GetFileName().fn_str()));
+        TagLib::MPEG::File f(TagLib::FileName(m_musicSrc->GetFileName().fn_str()));
         if (f.ID3v2Tag())
         {
             ID3v2::Tag *tagv2 = f.ID3v2Tag(true);
@@ -88,11 +89,26 @@ void MusicFileWriter::saveImage()
     }
 }
 
+/** @brief Renames the music file.
+ * If it is impossible, previous value are restored.
+ */
 void MusicFileWriter::renameFile()
 {
-    if (m_musicSrc->GetFileName().IsSameAs(m_musicDst->GetFileName()))
+    refreshFileName(*m_musicSrc);
+    if (m_musicSrc->EqualsFilename(m_musicDst))
         return;
-    wxRenameFile(m_musicDst->GetFileName(), m_musicSrc->GetFileName());
+
+    if (containsInvalidCharacter(m_musicSrc->GetFileName()))
+        return;
+
+    if (wxRenameFile(m_musicDst->GetFileName(), m_musicSrc->GetFileName()))
+        m_musicDst->SetFileName(m_musicSrc->GetFileName());
+    else
+    {
+        m_musicSrc->SetFileName(m_musicDst->GetFileName());
+        m_musicSrc->SetName(m_musicDst->GetName());
+        m_musicSrc->SetPath(m_musicDst->GetPath());
+    }
 }
 
 Music* MusicFileWriter::getMusic() const
@@ -103,5 +119,16 @@ Music* MusicFileWriter::getMusic() const
 void MusicFileWriter::copy()
 {
     *m_musicDst = *m_musicSrc;
+}
+
+void MusicFileWriter::refreshFileName(Music& music)
+{
+    wxString newFileName;
+    newFileName << music.GetPath()
+                << wxFileName::GetPathSeparator()
+                << music.GetName()
+                << '.'
+                << music.GetExtension().Lower();
+    music.SetFileName(newFileName);
 }
 

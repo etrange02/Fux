@@ -362,7 +362,7 @@ bool Music::EqualsFilename(const IMusic *music) const
 {
     if (NULL == music)
         return false;
-    return this->GetFileName().IsSameAs(music->GetFileName());
+    return this->GetFileName().IsSameAs(music->GetFileName(), false);
 }
 
 void Music::ShrinkData()
