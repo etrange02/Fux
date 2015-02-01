@@ -214,8 +214,6 @@ void PlayList::OnAppliquerTAG(wxCommandEvent &WXUNUSED(event))
     music->SetYear(m_BoiteAnnee->GetValue());
 
     MusicManagerSwitcher::getSearch().updateMusicContent(position, music);
-    // TODO (David): Supprimer l'extension du nom de la chanson
-    // N'utilise pas l'image
 }
 
 /**
@@ -294,14 +292,19 @@ void PlayList::EvtViderPanneauTAG(wxCommandEvent &WXUNUSED(event))
 /**
  * Évènement - Appelé lors du changement de la pochette du titre. L'enregistrement dans le fichier se fait automatiquement
  */
-// TODO (David): Complete image modification
 void PlayList::EvtImage(wxCommandEvent &event)
 {
-    // enregistrement de l'image seule, sans le reste des infos
-    /////////////////
-    // save modified data into music file
-    // la pochette contient la bonne image. il est nécessaire de l'enregistrer dans le fichier mp3
-    /////////////////
+    long position = m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
+    if (0 > position) // ==> -1
+        return;
+
+    if (MusicManagerSwitcher::getSearch().getMusics().size() <= position)
+        return;
+
+    Music* music = fux::music::Factory::createMusic(*MusicManagerSwitcher::getSearch().getMusics().at(position));
+
+    music->SetRecordSleeve(&m_pochette->GetImage());
+    MusicManagerSwitcher::getSearch().updateMusicContent(position, music);
 }
 
 /**

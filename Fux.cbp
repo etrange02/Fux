@@ -49,6 +49,7 @@ IMPORTANT, A FAIRE !!!
 					<Add directory="include" />
 					<Add directory="include/tools/stl" />
 					<Add directory="include/tools/thread" />
+					<Add directory="include/tools" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -76,6 +77,7 @@ IMPORTANT, A FAIRE !!!
 					<Add directory="include" />
 					<Add directory="include/tools/stl" />
 					<Add directory="include/tools/thread" />
+					<Add directory="include/tools" />
 				</Compiler>
 			</Target>
 			<Environment>
@@ -225,6 +227,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/tools/OS_Win.h" />
 		<Unit filename="include/tools/ThreadGestion.h" />
 		<Unit filename="include/tools/Timer.h" />
+		<Unit filename="include/tools/Tools.h" />
 		<Unit filename="include/tools/dir_traverser/ISearchTraversable.h" />
 		<Unit filename="include/tools/dir_traverser/Search.h" />
 		<Unit filename="include/tools/dir_traverser/TraverserCopieDossier.h" />
@@ -330,6 +333,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/tools/OS_Win.cpp" />
 		<Unit filename="src/tools/ThreadGestion.cpp" />
 		<Unit filename="src/tools/Timer.cpp" />
+		<Unit filename="src/tools/Tools.cpp" />
 		<Unit filename="src/tools/dir_traverser/Search.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserCopieDossier.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserCopieFichier.cpp" />

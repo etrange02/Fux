@@ -53,6 +53,8 @@ PlayListTableau::PlayListTableau(wxWindow *Parent) : wxListCtrl(Parent, ID_PAGE_
     InsertColumn(7, _("Genre"),       wxLIST_FORMAT_LEFT,    80);
     InsertColumn(8, _("Ext."),        wxLIST_FORMAT_LEFT,    50);
 
+    SetMinSize(wxSize(10, 10));
+
     SetDropTarget(new DnDCible(this));
     //DragAcceptFiles(true);
 

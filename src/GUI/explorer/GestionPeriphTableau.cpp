@@ -55,6 +55,7 @@ void ListeGestionPeriph::Creer(wxWindow *Parent, wxWindowID id)
     Create(Parent, id, wxDefaultPosition, wxDefaultSize, wxLC_REPORT |  wxLC_HRULES | wxLC_VRULES);
     InsertColumn(0, _("Nom"), wxLIST_FORMAT_CENTER, 400);
     InsertColumn(1, _("Type"), wxLIST_FORMAT_CENTER, 60);
+    SetMinSize(wxSize(10, 10));
 
     SetDropTarget(new DnDCible(this, Parent));
 
