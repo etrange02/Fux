@@ -44,12 +44,7 @@ IMPORTANT, A FAIRE !!!
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add directory="include/music" />
-					<Add directory="include/preddicates" />
-					<Add directory="include" />
-					<Add directory="include/tools/stl" />
-					<Add directory="include/tools/thread" />
-					<Add directory="include/tools" />
+					<Add directory="include/explorer/state" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -72,12 +67,7 @@ IMPORTANT, A FAIRE !!!
 					<Add option="-Wall" />
 					<Add option="-g" />
 					<Add option="-DDEBUG" />
-					<Add directory="include/music" />
-					<Add directory="include/preddicates" />
-					<Add directory="include" />
-					<Add directory="include/tools/stl" />
-					<Add directory="include/tools/thread" />
-					<Add directory="include/tools" />
+					<Add directory="include/explorer/state" />
 				</Compiler>
 			</Target>
 			<Environment>
@@ -110,6 +100,23 @@ IMPORTANT, A FAIRE !!!
 			<Add directory="${WXSQLITE3}/include" />
 			<Add directory="${FMODEX}/inc" />
 			<Add directory="${TAGLIB}/Headers" />
+			<Add directory="include" />
+			<Add directory="include/application" />
+			<Add directory="include/db" />
+			<Add directory="include/explorer" />
+			<Add directory="include/explorer/state" />
+			<Add directory="include/GUI" />
+			<Add directory="include/GUI/dialogs" />
+			<Add directory="include/GUI/explorer" />
+			<Add directory="include/GUI/widgets" />
+			<Add directory="include/music" />
+			<Add directory="include/network" />
+			<Add directory="include/preddicates" />
+			<Add directory="include/ressources" />
+			<Add directory="include/settings" />
+			<Add directory="include/tools" />
+			<Add directory="include/tools/stl" />
+			<Add directory="include/tools/thread" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/include" />
@@ -188,10 +195,14 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/db/BDDRequete.h" />
 		<Unit filename="include/db/BDDThread.h" />
 		<Unit filename="include/db/BDDThreadEvent.h" />
+		<Unit filename="include/explorer/DriveManagerListElement.h" />
 		<Unit filename="include/explorer/ExplorerDriveManagers.h" />
 		<Unit filename="include/explorer/ExplorerDriveManagersData.h" />
+		<Unit filename="include/explorer/ExplorerFactory.h" />
 		<Unit filename="include/explorer/ExplorerManager.h" />
 		<Unit filename="include/explorer/ExplorerManagerData.h" />
+		<Unit filename="include/explorer/MenuElement.h" />
+		<Unit filename="include/explorer/MenuElementData.h" />
 		<Unit filename="include/explorer/state/DefaultDriveManagerState.h" />
 		<Unit filename="include/explorer/state/DirDriveManagerState.h" />
 		<Unit filename="include/explorer/state/DriveManagerState.h" />
@@ -219,6 +230,9 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/network/TCPClient.h" />
 		<Unit filename="include/network/TCPConnexionEchangeInstanceLocalHost.h" />
 		<Unit filename="include/network/TCPServeur.h" />
+		<Unit filename="include/predicates/findControllerOfExplorerPanel.h" />
+		<Unit filename="include/predicates/findMenuElementById.h" />
+		<Unit filename="include/predicates/findPathMenuElement.h" />
 		<Unit filename="include/predicates/findPosition.h" />
 		<Unit filename="include/settings/Couleur.h" />
 		<Unit filename="include/settings/Parametre.h" />
@@ -251,11 +265,26 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/GUI/explorer/DriveManagersPanel.cpp" />
 		<Unit filename="src/GUI/explorer/ExplorerListCtrl.cpp" />
 		<Unit filename="src/GUI/explorer/ExplorerPanel.cpp" />
-		<Unit filename="src/GUI/explorer/GestionPeriph.cpp" />
-		<Unit filename="src/GUI/explorer/GestionPeriphCouperCopier.cpp" />
-		<Unit filename="src/GUI/explorer/GestionPeriphElementLecteurRacineFichier.cpp" />
-		<Unit filename="src/GUI/explorer/GestionPeriphMoitiePage.cpp" />
-		<Unit filename="src/GUI/explorer/GestionPeriphTableau.cpp" />
+		<Unit filename="src/GUI/explorer/GestionPeriph.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="src/GUI/explorer/GestionPeriphCouperCopier.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="src/GUI/explorer/GestionPeriphElementLecteurRacineFichier.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="src/GUI/explorer/GestionPeriphMoitiePage.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="src/GUI/explorer/GestionPeriphTableau.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Unit filename="src/GUI/graph/MusiqueGraph.cpp" />
 		<Unit filename="src/GUI/musiclist/PlayList.cpp" />
 		<Unit filename="src/GUI/musiclist/PlayListTableau.cpp" />
@@ -276,10 +305,14 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/db/BDDRequete.cpp" />
 		<Unit filename="src/db/BDDThread.cpp" />
 		<Unit filename="src/db/BDDThreadEvent.cpp" />
+		<Unit filename="src/explorer/DriveManagerListElement.cpp" />
 		<Unit filename="src/explorer/ExplorerDriveManagers.cpp" />
 		<Unit filename="src/explorer/ExplorerDriveManagersData.cpp" />
+		<Unit filename="src/explorer/ExplorerFactory.cpp" />
 		<Unit filename="src/explorer/ExplorerManager.cpp" />
 		<Unit filename="src/explorer/ExplorerManagerData.cpp" />
+		<Unit filename="src/explorer/MenuElement.cpp" />
+		<Unit filename="src/explorer/MenuElementData.cpp" />
 		<Unit filename="src/explorer/state/DefaultDriveManagerState.cpp" />
 		<Unit filename="src/explorer/state/DirDriveManagerState.cpp" />
 		<Unit filename="src/explorer/state/DriveManagerState.cpp" />
@@ -304,6 +337,9 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/network/TCPClient.cpp" />
 		<Unit filename="src/network/TCPConnexionEchangeInstanceLocalHost.cpp" />
 		<Unit filename="src/network/TCPServeur.cpp" />
+		<Unit filename="src/predicates/findControllerOfExplorerPanel.cpp" />
+		<Unit filename="src/predicates/findMenuElementById.cpp" />
+		<Unit filename="src/predicates/findPathMenuElement.cpp" />
 		<Unit filename="src/predicates/findPosition.cpp" />
 		<Unit filename="src/ressources/Ressource.rc">
 			<Option compilerVar="WINDRES" />

@@ -3,17 +3,26 @@
 
 #include "DriveManagerState.h"
 
-class DefaultDriveManagerState : DriveManagerState
+namespace explorer
 {
-    public:
-        /** Default constructor */
-        DefaultDriveManagerState();
-        /** Default destructor */
-        virtual ~DefaultDriveManagerState();
+    class DefaultDriveManagerState : public DriveManagerState
+    {
+        public:
+            /** Default constructor */
+            DefaultDriveManagerState(ExplorerManagerData& data);
+            /** Default destructor */
+            virtual ~DefaultDriveManagerState();
 
-        virtual bool IsDefault();
-    protected:
-    private:
-};
+            virtual bool isDefault();
+            virtual bool fillExplorerList();
+            virtual bool fillExplorerList(const wxString& elementToSelect);
+
+            virtual DriveManagerState& getPreviousState();
+            virtual void openElement(const std::vector<long>& indexes);
+
+        protected:
+        private:
+    };
+}
 
 #endif // DEFAULTDRIVEMANAGERSTATE_H

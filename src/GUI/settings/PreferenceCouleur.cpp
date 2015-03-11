@@ -10,8 +10,8 @@
 
 /**
  * @class PreferenceCouleur
- * @brief Interface repr√©sentant diff√©rentes compositions graphiques
- * Les fichiers sont synchronis√©s en m√™me temps que chaque modification. Chaque fichier est associ√© √† un n≈ìud dans l'arbre d'exploration
+ * @brief Interface reprÈsentant diffÈrentes compositions graphiques
+ * Les fichiers sont synchronisÈs en mÍme temps que chaque modification. Chaque fichier est associÈ ‡ un núud dans l'arbre d'exploration
  */
 
  BEGIN_EVENT_TABLE(PreferenceCouleur, wxScrolledWindow)
@@ -32,8 +32,8 @@
 
 /**
  * Constructeur
- * @param Parent la fen√™tre parente
- * @param Id l'identifiant de la fen√™tre
+ * @param Parent la fenÍtre parente
+ * @param Id l'identifiant de la fenÍtre
  */
 PreferenceCouleur::PreferenceCouleur(wxWindow* Parent, wxWindowID Id): GenericTreePanel(Parent, Id, ID_APP_PREF_COULEUR_TREE)
 {
@@ -59,7 +59,7 @@ PreferenceCouleur::~PreferenceCouleur()
 }
 
 /**
- * Compl√®te la page en ajoutant des sizers et des box
+ * ComplËte la page en ajoutant des sizers et des box
  */
 void PreferenceCouleur::Creer()
 {
@@ -71,7 +71,7 @@ void PreferenceCouleur::Creer()
         m_bitmap[i].Create(POCHETTE_COTE, POCHETTE_COTE);
 
     //// Background ////
-    m_sizerFond = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Arri√®re plan"));
+    m_sizerFond = new wxStaticBoxSizer(wxHORIZONTAL, this, _("ArriËre plan"));
     m_sizer2Preferences->Add(m_sizerFond, 0, wxALL|wxSHAPED, 5);
     m_apercuFond = new wxStaticBitmap(this, ID_APP_PREF_COULEUR_IMG_FOND, m_bitmap[FOND]);
     m_sizerFond->Add(m_apercuFond, 0, wxALL | wxSHAPED, 5);
@@ -157,14 +157,14 @@ void PreferenceCouleur::Creer()
     m_sizerGraph = new wxBoxSizer(wxHORIZONTAL);
     m_sizer2Preferences->Add(m_sizerGraph, 0, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL, 0);
 
-        //// Partie sup√©rieure du graphe ////
-        m_sizerGraphHaut = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Partie sup√©rieure du graph"));
+        //// Partie supÈrieure du graphe ////
+        m_sizerGraphHaut = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Partie supÈrieure du graph"));
         m_sizerGraph->Add(m_sizerGraphHaut, 1, wxALL | wxSHAPED, 5);
 
         wxSizer *sizerFlexGridHaut = new wxFlexGridSizer(4, 1, 5, 5);//Contient nom et cases non modifiables (droite); dispo en colonne
         m_sizerGraphHaut->Add(sizerFlexGridHaut, 0, wxALL | wxEXPAND, 5);
 
-        wxStaticText* TextHaut = new wxStaticText(this, wxID_ANY, _("Haut de l'√©cran"));
+        wxStaticText* TextHaut = new wxStaticText(this, wxID_ANY, _("Haut de l'Ècran"));
 
         m_checkBoxHaut = new wxCheckBox[3];
         m_checkBoxHaut[ROUGE].Create(this, ID_APP_PREF_COULEUR_BOX_HAUT, _("Rouge"));
@@ -187,7 +187,7 @@ void PreferenceCouleur::Creer()
         wxSizer *sizerFlexGraphSup = new wxFlexGridSizer(4, 1, 5, 5);//Contient nom et cases non modifiables (droite); dispo en colonne
         m_sizerGraphHaut->Add(sizerFlexGraphSup, 0, wxALL | wxEXPAND, 5);
 
-        wxStaticText* TextSup = new wxStaticText(this, wxID_ANY, _("Moiti√© sup√©rieure"));
+        wxStaticText* TextSup = new wxStaticText(this, wxID_ANY, _("MoitiÈ supÈrieure"));
         m_checkBoxMiSup = new wxCheckBox[3];
         m_checkBoxMiSup[ROUGE].Create(this, ID_APP_PREF_COULEUR_BOX_HAUT, _("Rouge"));
         m_checkBoxMiSup[VERT].Create(this, ID_APP_PREF_COULEUR_BOX_HAUT, _("Vert"));
@@ -199,20 +199,20 @@ void PreferenceCouleur::Creer()
         sizerFlexGraphSup->Add(&m_checkBoxMiSup[VERT], 0, wxALL, 0);
         sizerFlexGraphSup->Add(&m_checkBoxMiSup[BLEU], 0, wxALL, 0);
 
-        //// Sym√©trie ////
+        //// SymÈtrie ////
         wxSizer *sizerMilieu = new wxBoxSizer(wxVERTICAL);
         m_sizerGraph->Add(sizerMilieu, 0, wxALL|wxALIGN_CENTER_VERTICAL, 0);
-        m_doubleBarre = new wxCheckBox(this, ID_APP_PREF_COULEUR_BOX_DOUBLE, _("Sym√©trie horizontale"));
+        m_doubleBarre = new wxCheckBox(this, ID_APP_PREF_COULEUR_BOX_DOUBLE, _("SymÈtrie horizontale"));
         sizerMilieu->Add(m_doubleBarre, 1, wxALL|wxALIGN_CENTER_HORIZONTAL, 0);
 
-        //// Partie inf√©rieure du graphe ////
-        m_sizerGraphBas = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Partie inf√©rieure du graph"));
+        //// Partie infÈrieure du graphe ////
+        m_sizerGraphBas = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Partie infÈrieure du graph"));
         m_sizerGraph->Add(m_sizerGraphBas, 1, wxALL | wxSHAPED, 5);
 
         wxSizer *sizerFlexGraphInf = new wxFlexGridSizer(4, 1, 5, 5);//Contient nom et cases non modifiables (droite); dispo en colonne
         m_sizerGraphBas->Add(sizerFlexGraphInf, 0, wxALL | wxEXPAND, 5);
 
-        wxStaticText* TextInf = new wxStaticText(this, wxID_ANY, _("Moiti√© inf√©rieure"));
+        wxStaticText* TextInf = new wxStaticText(this, wxID_ANY, _("MoitiÈ infÈrieure"));
 
         m_checkBoxMiInf = new wxCheckBox[3];
         m_checkBoxMiInf[ROUGE].Create(this, ID_APP_PREF_COULEUR_BOX_BAS, _("Rouge"));
@@ -235,7 +235,7 @@ void PreferenceCouleur::Creer()
         wxSizer *sizerFlexGridBas = new wxFlexGridSizer(4, 1, 5, 5);//Contient nom et cases non modifiables (droite); dispo en colonne
         m_sizerGraphBas->Add(sizerFlexGridBas, 0, wxALL | wxEXPAND, 5);
 
-        wxStaticText* TextBas = new wxStaticText(this, wxID_ANY, _("Bas de l'√©cran"));
+        wxStaticText* TextBas = new wxStaticText(this, wxID_ANY, _("Bas de l'Ècran"));
         m_checkBoxBas = new wxCheckBox[3];
         m_checkBoxBas[ROUGE].Create(this, ID_APP_PREF_COULEUR_BOX_BAS, _("Rouge"));
         m_checkBoxBas[VERT].Create(this, ID_APP_PREF_COULEUR_BOX_BAS, _("Vert"));
@@ -260,7 +260,7 @@ void PreferenceCouleur::Creer()
 }
 
 /**
- * Rempli l'arbre avec les √©l√©ments du dossier. Les √©l√©ments inexistants sont supprim√©s
+ * Rempli l'arbre avec les ÈlÈments du dossier. Les ÈlÈments inexistants sont supprimÈs
  */
 void PreferenceCouleur::RemplirTree()
 {
@@ -280,8 +280,8 @@ void PreferenceCouleur::RemplirTree()
 }
 
 /**
- * Rempli une liste avec les √©l√©ments du dossier
- * @param liste une liste √† remplir
+ * Rempli une liste avec les ÈlÈments du dossier
+ * @param liste une liste ‡ remplir
  */
 void PreferenceCouleur::MajListe(wxChoice *liste)
 {
@@ -300,8 +300,8 @@ void PreferenceCouleur::MajListe(wxChoice *liste)
 }
 
 /**
- * Affiche le menu sur un √©l√©ment de l'arbre
- * @param event un √©v√®nement
+ * Affiche le menu sur un ÈlÈment de l'arbre
+ * @param event un ÈvËnement
  */
 void PreferenceCouleur::EvtTreeMenu(wxTreeEvent &event)
 {
@@ -310,8 +310,8 @@ void PreferenceCouleur::EvtTreeMenu(wxTreeEvent &event)
 }
 
 /**
- * Autorise ou non la modification d'un n≈ìud
- * @param event un √©v√®nement
+ * Autorise ou non la modification d'un núud
+ * @param event un ÈvËnement
  */
 void PreferenceCouleur::EvtTreeModifNomDebut(wxTreeEvent &event)
 {
@@ -327,8 +327,8 @@ void PreferenceCouleur::EvtTreeModifNomDebut(wxTreeEvent &event)
 }
 
 /**
- * Applique les modifications dans le fichier correspondant au n≈ìud s√©lectionn√©
- * @param event un √©v√®nement
+ * Applique les modifications dans le fichier correspondant au núud sÈlectionnÈ
+ * @param event un ÈvËnement
  */
 void PreferenceCouleur::EvtTreeModifNomFin(wxTreeEvent &event)
 {
@@ -357,8 +357,8 @@ void PreferenceCouleur::EvtTreeModifNomFin(wxTreeEvent &event)
 }
 
 /**
- * Affiche le contenu d'un n≈ìud dans la page
- * @param event un √©v√®nement
+ * Affiche le contenu d'un núud dans la page
+ * @param event un ÈvËnement
  */
 void PreferenceCouleur::EvtTreeVoirNoeud(wxTreeEvent &event)
 {
@@ -381,8 +381,8 @@ void PreferenceCouleur::EvtTreeVoirNoeud(wxTreeEvent &event)
 }
 
 /**
- * Applique les param√®tres contenus dans le n≈ìud s√©lectionn√©
- * @param event un √©v√®nement
+ * Applique les paramËtres contenus dans le núud sÈlectionnÈ
+ * @param event un ÈvËnement
  */
 void PreferenceCouleur::EvtTreeAppliquerNoeud(wxTreeEvent &event)
 {
@@ -392,7 +392,7 @@ void PreferenceCouleur::EvtTreeAppliquerNoeud(wxTreeEvent &event)
     }
     else if (event.GetItem() == m_nodeNouveau)
     {
-        wxTextEntryDialog *dlg = new wxTextEntryDialog(this, _("Choisissez un nom"), _("Cr√©ation de filtre couleur"));
+        wxTextEntryDialog *dlg = new wxTextEntryDialog(this, _("Choisissez un nom"), _("CrÈation de filtre couleur"));
 
         if (dlg->ShowModal() == wxID_OK)
         {
@@ -410,14 +410,14 @@ void PreferenceCouleur::EvtTreeAppliquerNoeud(wxTreeEvent &event)
                     CallListeners();
                 }
                 else
-                    wxMessageBox(_("Erreur dans le nom.\nV√©rifiez que vous utilisez des caract√®res autoris√©s."), _("Erreur"));
+                    wxMessageBox(_("Erreur dans le nom.\nVÈrifiez que vous utilisez des caractËres autorisÈs."), _("Erreur"));
             }
         }
     }
 }
 
 /**
- * Efface le n≈ìud (et le fichier correspondant)
+ * Efface le núud (et le fichier correspondant)
  */
 void PreferenceCouleur::EvtMenuSupprimer(wxCommandEvent &WXUNUSED(event))
 {
@@ -431,7 +431,7 @@ void PreferenceCouleur::EvtMenuSupprimer(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Renommage d'un n≈ìud (et de son fichier correspondant)
+ * Renommage d'un núud (et de son fichier correspondant)
  */
 void PreferenceCouleur::EvtMenuRenommer(wxCommandEvent &WXUNUSED(event))
 {
@@ -439,7 +439,7 @@ void PreferenceCouleur::EvtMenuRenommer(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Renommage du nom du fichier. Le n≈ìud correspondant est modifi√©
+ * Renommage du nom du fichier. Le núud correspondant est modifiÈ
  */
 void PreferenceCouleur::EvtTextNom(wxCommandEvent &WXUNUSED(event))
 {
@@ -461,7 +461,7 @@ void PreferenceCouleur::EvtTextNom(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Ev√®nement - Appel√© lors de l'utilisation d'un slider
+ * EvËnement - AppelÈ lors de l'utilisation d'un slider
  * @see MAJ_Fond
  */
 void PreferenceCouleur::Couleur_MAJ_Fond(wxScrollEvent &WXUNUSED(event))
@@ -471,7 +471,7 @@ void PreferenceCouleur::Couleur_MAJ_Fond(wxScrollEvent &WXUNUSED(event))
 }
 
 /**
- * Modifie les informations et la couleur du carr√© de visualisation "Arri√®re plan"
+ * Modifie les informations et la couleur du carrÈ de visualisation "ArriËre plan"
  */
 void PreferenceCouleur::MAJ_Fond()
 {
@@ -493,7 +493,7 @@ void PreferenceCouleur::MAJ_Fond()
 }
 
 /**
- * Ev√®nement - Appel√© lors de l'utilisation d'un slider
+ * EvËnement - AppelÈ lors de l'utilisation d'un slider
  * @see MAJ_Barre
  */
 void PreferenceCouleur::Couleur_MAJ_Barre(wxScrollEvent &WXUNUSED(event))
@@ -503,7 +503,7 @@ void PreferenceCouleur::Couleur_MAJ_Barre(wxScrollEvent &WXUNUSED(event))
 }
 
 /**
- * Modifie les informations et la couleur du carr√© de visualisation "Barre de progression et texte"
+ * Modifie les informations et la couleur du carrÈ de visualisation "Barre de progression et texte"
  */
 void PreferenceCouleur::MAJ_Barre()
 {
@@ -536,7 +536,7 @@ void PreferenceCouleur::MAJ_Barre()
 }
 
 /**
- * Ev√®nement - Appel√© lors de la modification d'une checkbox
+ * EvËnement - AppelÈ lors de la modification d'une checkbox
  * @see MAJ_GraphSup
  */
 void PreferenceCouleur::Couleur_MAJ_GraphSup(wxCommandEvent &WXUNUSED(event))
@@ -546,7 +546,7 @@ void PreferenceCouleur::Couleur_MAJ_GraphSup(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Modifie la couleur du carr√© de visualisation "Partie sup√©rieure du graphe"
+ * Modifie la couleur du carrÈ de visualisation "Partie supÈrieure du graphe"
  */
 void PreferenceCouleur::MAJ_GraphSup()
 {
@@ -569,7 +569,7 @@ void PreferenceCouleur::MAJ_GraphSup()
 }
 
 /**
- * Ev√®nement - Appel√© lors de la modification d'une checkbox
+ * EvËnement - AppelÈ lors de la modification d'une checkbox
  * @see MAJ_GraphInf
  */
 void PreferenceCouleur::Couleur_MAJ_GraphInf(wxCommandEvent &WXUNUSED(event))
@@ -579,7 +579,7 @@ void PreferenceCouleur::Couleur_MAJ_GraphInf(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Modifie la couleur du carr√© de visualisation "Partie inf√©rieure du graphe"
+ * Modifie la couleur du carrÈ de visualisation "Partie infÈrieure du graphe"
  */
 void PreferenceCouleur::MAJ_GraphInf()
 {
@@ -602,7 +602,7 @@ void PreferenceCouleur::MAJ_GraphInf()
 }
 
 /**
- * Ev√®nement - Appel√© lors de la modification d'une checkbox
+ * EvËnement - AppelÈ lors de la modification d'une checkbox
  * @see MAJ_Symetrie
  */
 void PreferenceCouleur::Couleur_MAJ_Symetrie(wxCommandEvent &WXUNUSED(event))
@@ -612,7 +612,7 @@ void PreferenceCouleur::Couleur_MAJ_Symetrie(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Modifie l'acc√®s au bloc sur la partie inf√©rieure du graphe
+ * Modifie l'accËs au bloc sur la partie infÈrieure du graphe
  */
 void PreferenceCouleur::MAJ_Symetrie()
 {
@@ -637,7 +637,7 @@ void PreferenceCouleur::MAJ_Symetrie()
 }
 
 /**
- * Met toutes les valeurs par d√©faut
+ * Met toutes les valeurs par dÈfaut
  */
 void PreferenceCouleur::ValeursDefaut()
 {
@@ -666,13 +666,13 @@ void PreferenceCouleur::ValeursDefaut()
  * @param fond la couleur du fond
  * @param barre la couleur de la barre de progression
  * @param police la couleur du texte
- * @param haut la couleur de la partie sup√©rieure du graphe
- * @param miSup la couleur de la moiti√© sup√©rieure du graphe
- * @param symetrie sym√©trie du graphe
- * @param miInf la couleur de la moiti√© inf√©rieure du graphe
- * @param bas la couleur de la partie inf√©rieure du graphe
+ * @param haut la couleur de la partie supÈrieure du graphe
+ * @param miSup la couleur de la moitiÈ supÈrieure du graphe
+ * @param symetrie symÈtrie du graphe
+ * @param miInf la couleur de la moitiÈ infÈrieure du graphe
+ * @param bas la couleur de la partie infÈrieure du graphe
  * @param oldNom l'ancien nom du filtre
- * @return vrai si r√©ussite
+ * @return vrai si rÈussite
  */
 bool PreferenceCouleur::ModifierFiltre(wxString nom, Couleur fond, Couleur barre, Couleur police, Couleur haut, Couleur miSup, bool symetrie, Couleur miInf, Couleur bas, wxString oldNom)
 {
@@ -749,10 +749,10 @@ bool PreferenceCouleur::ModifierFiltre(wxString nom, Couleur fond, Couleur barre
 }
 
 /**
- * Modifie un filtre existant, version simplifi√©e de l'autre version
+ * Modifie un filtre existant, version simplifiÈe de l'autre version
  * @param nom le nom du filtre
  * @param oldNom l'ancien nom du filtre
- * @return vrai si r√©ussite
+ * @return vrai si rÈussite
  */
 bool PreferenceCouleur::ModifierFiltre(wxString nom, wxString oldNom)
 {
@@ -769,10 +769,10 @@ bool PreferenceCouleur::ModifierFiltre(wxString nom, wxString oldNom)
 }
 
 /**
- * Lit le contenu d'un fichier(filtre) et modifie le graphe ou la fen√™tre de visualisation
- * @param filtre le nom du filtre √† lire
- * @param evenement si vrai, les param√®tres sont juste visualis√©s, si faux les param√®tres sont appliqu√©s au graphe
- * @return vrai si r√©ussite
+ * Lit le contenu d'un fichier(filtre) et modifie le graphe ou la fenÍtre de visualisation
+ * @param filtre le nom du filtre ‡ lire
+ * @param evenement si vrai, les paramËtres sont juste visualisÈs, si faux les paramËtres sont appliquÈs au graphe
+ * @return vrai si rÈussite
  */
 bool PreferenceCouleur::OuvrirFiltre(wxString filtre, bool evenement)
 {
@@ -891,7 +891,7 @@ bool PreferenceCouleur::OuvrirFiltre(wxString filtre, bool evenement)
 }
 
 /**
- * Applique les valeurs du filtre audio s√©lectionn√©
+ * Applique les valeurs du filtre audio sÈlectionnÈ
  */
 void PreferenceCouleur::AppliquerFiltreSelectionne()
 {

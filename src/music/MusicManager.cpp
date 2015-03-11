@@ -516,7 +516,7 @@ void MusicManager::parse()
  * @return void
  *
  */
-void MusicManager::parse(wxArrayString& filenames, bool update)
+void MusicManager::parse(const wxArrayString& filenames, bool update)
 {
     bool startPlaying = empty();
     m_musicList->addLines(filenames);

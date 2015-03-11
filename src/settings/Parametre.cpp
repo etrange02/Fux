@@ -14,7 +14,7 @@
  * @brief La classe Paramètre contient toutes les informations sur l'emplacement des différents fichiers et dossiers nécessaires à l'exécution de Fu(X).
  */
 
-static Parametre* instanceParametre = NULL;
+Parametre* Parametre::s_instanceParametre = NULL;
 
 /**
  * Constructeur
@@ -79,9 +79,16 @@ Parametre::~Parametre()
  */
 Parametre* Parametre::Get()
 {
-    if (!instanceParametre)
-        instanceParametre = new Parametre;
-    return instanceParametre;
+    if (!s_instanceParametre)
+        s_instanceParametre = new Parametre;
+    return s_instanceParametre;
+}
+
+Parametre& Parametre::get()
+{
+    if (!s_instanceParametre)
+        s_instanceParametre = new Parametre;
+    return *s_instanceParametre;
 }
 
 /**
@@ -220,12 +227,13 @@ void Parametre::setRepertoireDefaut(wxString chemin)
  * @param ext l'extension à tester
  * @return vrai si l'extension permet l'ID3v2
  */
-bool Parametre::isID3V2(const wxString &ext)
+bool Parametre::isID3V2(const wxString &path)
 {
+    wxString extension = path.AfterLast('.').Lower();
     unsigned int i = 0;
     while (i<m_id3v2.Count())
     {
-        if (m_id3v2.Item(i).IsSameAs(ext))
+        if (m_id3v2.Item(i).IsSameAs(extension))
             return true;
         else
             i++;
@@ -235,15 +243,16 @@ bool Parametre::isID3V2(const wxString &ext)
 
 /**
  * Indique si Fu(X) peut lire et gérer l'extension. La chaîne envoyée doit être en minuscule et ne pas contenir de '.'
- * @param ext l'extension qui doit être testé.
+ * @param path l'extension qui doit être testé.
  * @return vrai si la lecture est possible
  */
-bool Parametre::islisable(const wxString &ext)
+bool Parametre::islisable(const wxString &path)
 {
+    wxString extension = path.AfterLast('.').Lower();
     unsigned int i = 0;
     while (i<m_extension.Count())
     {
-        if (m_extension.Item(i).IsSameAs(ext, false))
+        if (m_extension.Item(i).IsSameAs(extension, false))
             return true;
         else
             i++;
@@ -390,8 +399,8 @@ wxString Parametre::getRepertoireExecutableLib(wxString element)
     return wxStandardPaths::Get().GetDataDir() + wxFileName::GetPathSeparator() + _T("lib") + wxFileName::GetPathSeparator() + element;
 }
 
-bool Parametre::isContainerFile(const wxString& extension)
+bool Parametre::isContainerFile(const wxString& path)
 {
-    return extension.IsSameAs(_T("m3u"), false);
+    return path.AfterLast('.').IsSameAs(_T("m3u"), false);
 }
 

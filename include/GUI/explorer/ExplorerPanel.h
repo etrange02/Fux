@@ -1,38 +1,67 @@
 #ifndef EXPLORERPANEL_H
 #define EXPLORERPANEL_H
 
-#include "../../Define.h"
+#include "Define.h"
+#include <vector>
 #include <wx/wx.h>
 #include <wx/statline.h>
 
 #include "ExplorerListCtrl.h"
 //#include "../../explorer/ExplorerManager.h" // Must be deactivated to compile, self-inclusion
 
+
 class ExplorerManager;
 
-class ExplorerPanel : public wxPanel
+namespace gui
 {
-    public:
-        /** Default constructor */
-        ExplorerPanel(wxWindow* parent, wxWindowID id, wxWindowID idExplorerList, wxWindowID idPreviousButton, wxWindowID idRefreshButton, wxWindowID idTextField, wxWindowID idCheckBox, wxString& managerName, wxString& managerDescription);
-        /** Default destructor */
-        virtual ~ExplorerPanel();
+    namespace explorer
+    {
 
-        void SetExplorerManager(ExplorerManager* explorerManager);
+        class ExplorerPanel : public wxPanel
+        {
+            public:
+                /** Default constructor */
+                ExplorerPanel(wxWindow* parent, const wxString& managerName, const wxString& managerDescription);
+                /** Default destructor */
+                virtual ~ExplorerPanel();
 
-    protected:
-        void Create(wxWindow* parent, wxWindowID id, wxWindowID idExplorerList, wxWindowID idPreviousButton, wxWindowID idRefreshButton, wxWindowID idTextField, wxWindowID idCheckBox, wxString& managerName, wxString& managerDescription);
+                void setExplorerManager(ExplorerManager* explorerManager);
 
-    private:
-        ExplorerListCtrl *m_explorerList;
-        ExplorerManager *m_explorerManager;
+                ExplorerListCtrl& getExplorerListCtrl();
 
-        wxStaticBoxSizer *m_sizer1V;
-        wxSizer *m_sizer1H, *m_sizer2H;
-        wxTextCtrl *m_pathTextCtrl;
-        wxButton *m_refreshButton, *m_previousButton;
-        wxCheckBox *m_hiddenFilesCheckBox, *m_filterCheckBox;
-        wxString m_managerName, m_managerDescription;
-};
+                void onFilterKnownFormatCheckBox(wxCommandEvent& event);
+                void onHiddenFilesCheckBox(wxCommandEvent& event);
+                void onPreviousButton(wxCommandEvent& event);
+                void onRefreshButton (wxCommandEvent& event);
+                void onItemActivatedInListCtrl(wxCommandEvent& event);
+                void onDragBeginInListCtrl(wxCommandEvent& event);
+
+                bool isHiddenFilesChecked() const;
+                bool isFilterActivated() const;
+
+                void setTexts(const wxString& name, const wxString& description);
+                void setTexts();
+
+
+            protected:
+                void create();
+                std::vector<long> getSelectedItems();
+
+            private:
+                wxString m_managerName;
+                wxString m_managerDescription;
+                ExplorerListCtrl *m_explorerList;
+                ExplorerManager *m_explorerManager;
+
+                wxStaticBoxSizer *m_sizer1V;
+                wxSizer *m_sizer1H, *m_sizer2H;
+                wxTextCtrl *m_pathTextCtrl;
+                wxButton *m_refreshButton, *m_previousButton;
+                wxCheckBox *m_hiddenFilesCheckBox, *m_filterCheckBox;
+
+//            DECLARE_EVENT_TABLE()
+        };
+    }
+}
 
 #endif // EXPLORERPANEL_H

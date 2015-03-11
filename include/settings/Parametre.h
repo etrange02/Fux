@@ -17,6 +17,7 @@ class Parametre
 {
     public:
         static Parametre* Get();
+        static Parametre& get();
 
         wxString getCheminCouleur(wxString nom);
         wxString getCheminCouleur();
@@ -41,8 +42,8 @@ class Parametre
         void setVolume(wxString, wxString);
         void setSousDossier(bool);
         void setRepertoireDefaut(wxString);
-        bool isID3V2(const wxString&);
-        bool islisable(const wxString&);
+        bool isID3V2(const wxString& path);
+        bool islisable(const wxString& path);
         void creerRepertoireParametre();
         void creerRepertoireParametre(wxString);
 
@@ -51,7 +52,12 @@ class Parametre
     protected:
         Parametre();
         ~Parametre();
+        Parametre(const Parametre&);
+        Parametre& operator=(const Parametre&);
 
+        static Parametre* s_instanceParametre;
+
+    private:
         wxString m_cheminCouleur, m_cheminSon, m_extensionValide, m_repertoireDefaut, m_cheminRepertParam;
         bool m_doubleBarre, m_sousDossier, m_paramInstallation;
         Couleur m_fond, m_barre, m_police, m_haut, m_miSup, m_miInf, m_bas;

@@ -1,25 +1,34 @@
 #ifndef EXPLORERMANAGER_H
 #define EXPLORERMANAGER_H
 
-#include "../Define.h"
+#include "Define.h"
 #include "ExplorerManagerData.h"
-#include "../gui/explorer/ExplorerPanel.h"
+#include "ExplorerPanel.h"
+
+class ExplorerDriveManagers;
 
 class ExplorerManager
 {
     public:
-        ExplorerManager();
+        ExplorerManager(gui::explorer::ExplorerPanel& explorerPanel, ExplorerDriveManagers& explorerDriveManagers);
         /** Default destructor */
         virtual ~ExplorerManager();
 
-        void SetExplorerPanel(ExplorerPanel *explorerPanel);
+        void setDirState     (const wxString& path);
+        void setPlayListState();
+        void setFileState    (const wxString& path);
+        void setDefaultState ();
+
+        void refresh();
+        void makeParentDir();
+        void openElement(const std::vector<long>& indexes);
+
+        gui::explorer::ExplorerPanel& getExplorerPanel() const;
 
     protected:
 
     private:
-        void Initialize();
-
-        ExplorerManagerData *m_data;
+        ExplorerManagerData m_data;
 };
 
 #endif // EXPLORERMANAGER_H

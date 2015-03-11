@@ -9,7 +9,8 @@ MusicPlayer::MusicPlayer() :
     m_channel(NULL),
     m_parent(NULL),
     m_hasLoadedMusic(false),
-    m_stopped(true)
+    m_stopped(true),
+    m_volume(0.0f)
 {
     initialize();
 }

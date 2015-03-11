@@ -17,7 +17,6 @@
 static GestPeriph* s_instanceGestPeriph = NULL;
 
 BEGIN_EVENT_TABLE(GestPeriph, wxPanel)
-    EVT_BUTTON(ID_PAGE_PERIHERIQUE_BOUTON_MESDOC, GestPeriph::AfficheMenu_MesDoc)
     EVT_MENU(ID_PAGE_PERIHERIQUE_MENU_MESDOC_GAUCHE, GestPeriph::AffListeMesDoc)
     EVT_MENU(ID_PAGE_PERIHERIQUE_MENU_MESDOC_DROITE, GestPeriph::AffListeMesDoc)
     EVT_BUTTON(ID_PAGE_PERIHERIQUE_BOUTON_PERIPH, GestPeriph::AfficheMenu_Periph)
@@ -80,7 +79,7 @@ void GestPeriph::Creer(wxWindow *Parent)
     SetSizer(m_sizer1V);
 
     //Boutons supérieurs//////////////////////////////////////////////////////////
-    m_sizerBoutonRacc = new wxFlexGridSizer(1, 3, 10, 10);
+    /*m_sizerBoutonRacc = new wxFlexGridSizer(1, 3, 10, 10);
     m_sizer1V->Add(m_sizerBoutonRacc, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
 
     m_boutonMesDoc = new wxButton(this, ID_PAGE_PERIHERIQUE_BOUTON_MESDOC, _("Mes Documents"));
@@ -93,7 +92,7 @@ void GestPeriph::Creer(wxWindow *Parent)
     m_boutonMesDoc->SetToolTip(_("Accédez au dossier Mes Documents"));
     m_boutonPeriph->SetToolTip(_("Accédez aux différents lecteurs de votre ordinateur"));
     m_boutonAutre->SetToolTip(_("Accédez aux enregistrements et à la liste de lecture de Fu(X)"));
-
+*/
     //Navigation//////////////////////////////////////////////////////////
     m_sizer2G = new wxBoxSizer(wxHORIZONTAL);
     m_sizer1V->Add(m_sizer2G, 1, wxALL | wxEXPAND, 5);
@@ -146,189 +145,6 @@ void GestPeriph::Creer(wxWindow *Parent)
     m_listeD->Connect(wxEVT_CHILD_FOCUS, wxChildFocusEventHandler(GestPeriph::FocusD), NULL, this);
 
     ComparaisonStatut();
-}
-
-/**
- * Affiche un menu lors du clic sur le bouton "Mes Documents"
- */
-void GestPeriph::AfficheMenu_MesDoc(wxCommandEvent &WXUNUSED(event))
-{    PopupMenu(m_menuMesDoc);}
-
-/**
- * Affiche un menu lors du clic sur le bouton "Ordinateur"
- */
-void GestPeriph::AfficheMenu_Periph(wxCommandEvent &WXUNUSED(event))
-{
-    ListePeripherique();
-    PopupMenu(m_menuPeriph);
-}
-
-/**
- * Affiche un menu lors du clic sur le bouton "Autre"
- */
-void GestPeriph::AfficheMenu_Autre(wxCommandEvent &WXUNUSED(event))
-{
-    ListeM3U();
-    PopupMenu(m_menuAutre);
-}
-
-/**
- * Crée et prépare le menu présentant les lecteurs de l'ordinateur
- */
-void GestPeriph::ListePeripherique()
-{
-    bool inclu;
-    ElementLecteurRacineFichier *t = NULL;
-    for (unsigned int i = 0; i<m_listeLecteur->GetCount(); i++)
-    {
-        t = m_listeLecteur->Item(i);
-        if (t->GetUtilise())
-        {
-            m_menuPeriph->Remove(t->GetMenuItem());
-            t->PasUtilise();
-        }
-    }
-
-    wxArrayString chemin = wxFSVolume().GetVolumes();
-    unsigned int j = 0;
-
-    for (size_t i = 0; i < chemin.Count(); i++)
-    {
-        if (wxDirExists(chemin[i]))
-        {
-            inclu = false;
-            j = 0;
-            while (j < m_listeLecteur->GetCount() && !inclu)
-            {
-                if (m_listeLecteur->Item(j)->GetChemin() == chemin[i])
-                {
-                    t = m_listeLecteur->Item(j);
-                    inclu = true;
-                }
-                j++;
-            }
-
-            if (!inclu)
-            {
-                wxFSVolume volume(chemin[i]);
-                t = Insertion(m_listeLecteur, chemin[i], volume.GetDisplayName());
-            }
-
-            t->SetMenuItem(m_menuPeriph->AppendSubMenu(t->GetMenu(), t->GetNomAffiche()));
-            t->SetUtilise(true);
-        }
-    }
-}
-
-/**
- * Crée et prépare le menu présentant les .m3u enregistrés dans les dossiers de Fu(X)
- */
-void GestPeriph::ListeM3U()
-{
-    if (!wxDir::Exists(Parametre::Get()->getRepertoireParametre(_T("Play_list_M3U"))))
-        return;
-    bool inclu;
-    //Vidage du menu
-    ElementLecteurRacineFichier *t = NULL;
-    for (unsigned int i = 0; i<m_listePlaylist->GetCount(); i++)
-    {
-        t = m_listePlaylist->Item(i);
-        if (t->GetUtilise())
-        {
-            m_menuM3U->Remove(t->GetMenuItem());
-            t->PasUtilise();
-        }
-    }
-
-    wxArrayString chaine;
-    wxString cheminM3U = Parametre::Get()->getRepertoireParametre(_T("Play_list_M3U"));
-
-    //wxDir Repertoire(cheminM3U);
-    wxDir::GetAllFiles(cheminM3U, &chaine, _T("*.m3u"));//, wxDIR_FILES);
-
-    unsigned int j = 0;
-
-    for (unsigned int i=0; i<chaine.GetCount(); i++)
-    {
-        inclu = false;
-        j = 0;
-        while (j < m_listePlaylist->GetCount() && !inclu)
-        {
-            if (m_listePlaylist->Item(j)->GetChemin() == chaine.Item(i))
-            {
-                t = m_listePlaylist->Item(j);
-                inclu = true;
-            }
-            j++;
-        }
-
-        if (!inclu)
-            t = Insertion(m_listePlaylist, chaine.Item(i), cheminM3U.Length()+1);
-
-        t->SetMenuItem(m_menuM3U->AppendSubMenu(t->GetMenu(), t->GetNomAffiche()));
-        t->SetUtilise(true);
-    }
-}
-
-/**
- * Insère dans liste un élément
- * @param liste la liste
- * @param chemin l'emplacement d'un élément
- * @param type le type de l'élément
- * @return l'objet créé
- */
-ElementLecteurRacineFichier *GestPeriph::Insertion(ArrayOfElementLecteurRacineFichier *liste, wxString chemin, wxString type)
-{
-    ElementLecteurRacineFichier *nouveau = new ElementLecteurRacineFichier();
-
-    if (liste == NULL || nouveau == NULL)
-        return NULL;
-
-    nouveau->SetChemin(chemin);
-    #ifdef __WINDOWS__
-        nouveau->SetNomAffiche(type);
-    #else
-        nouveau->SetNomAffiche(type + " (" + chemin.BeforeLast(wxFileName::GetPathSeparator()) + ")");
-    #endif
-
-    nouveau->SetIdGauche(wxNewId());
-    Connect(nouveau->GetIdGauche(), wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler(GestPeriph::AffListeRepertoireLect));
-    nouveau->SetIdDroite(wxNewId());
-    Connect(nouveau->GetIdDroite(), wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler(GestPeriph::AffListeRepertoireLect));
-
-    nouveau->CreerMenu();
-    nouveau->SetUtilise(false);
-    liste->Add(nouveau);
-    return nouveau;
-}
-
-/**
- * Insère dans liste un élément
- * @param liste la liste
- * @param chemin l'emplacement d'un élément
- * @param nbr sert à la création de l'affichage, retire les nbr premiers caractères de chemin
- * @return l'objet créé
- */
-ElementLecteurRacineFichier *GestPeriph::Insertion(ArrayOfElementLecteurRacineFichier *liste, wxString chemin, int nbr)
-{
-    ElementLecteurRacineFichier *nouveau = new ElementLecteurRacineFichier();
-
-    if (liste == NULL || nouveau == NULL)
-        return NULL;
-
-    nouveau->SetChemin(chemin);
-    nouveau->SetNomAffiche(chemin.Remove(0, nbr));
-
-    nouveau->SetIdGauche(wxNewId());
-    Connect(nouveau->GetIdGauche(), wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler(GestPeriph::AffListeM3U));
-
-    nouveau->SetIdDroite(wxNewId());
-    Connect(nouveau->GetIdDroite(), wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler(GestPeriph::AffListeM3U));
-
-    nouveau->CreerMenu();
-    nouveau->SetUtilise(false);
-    liste->Add(nouveau);
-    return nouveau;
 }
 
 /**

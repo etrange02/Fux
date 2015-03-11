@@ -2,8 +2,6 @@
 #define CLASSES_H_INCLUDED
 
 class BDDThread;
-class GestPeriph;
-class Musique;
 class FichierListe;
 class Parametre;
 class SliderSon;

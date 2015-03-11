@@ -140,10 +140,10 @@ void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
 {
     DialogEnregistreM3U *fen = new DialogEnregistreM3U(this, wxID_ANY, wxEmptyString);
     fen->Creer();
-    bool modif = true;
 
     if (fen->ShowModal() == wxID_OK)
     {
+        bool modif = true;
         if (fen->GetName().IsEmpty())
             return;
 

@@ -117,14 +117,14 @@ void MusiqueGraph::OnPaint(wxPaintEvent&)
         register unsigned int i = 0;
         if (MusicManagerSwitcher::get().getMusicPlayer().isPlaying())
         {
-            register unsigned int spec = 0, retard = 0;
+            register unsigned int retard = 0;
             Couleur couleur;
 
             MusicManagerSwitcher::get().getMusicPlayer().getSpectrum(spectrum, m_largeur_tab);
             glBegin(GL_LINES);
             for (i = 0; i < m_largeur_tab-1; i++)
             {
-                spec = (unsigned int)(spectrum[i]*10*m_sizer_h);
+                register unsigned int spec = (unsigned int)(spectrum[i]*10*m_sizer_h);
                 if (spec > (unsigned int) m_sizer_h -19)
                     spec = m_sizer_h -19;
 

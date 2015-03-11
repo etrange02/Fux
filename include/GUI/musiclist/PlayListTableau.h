@@ -13,7 +13,6 @@
 #include <wx/renderer.h>
 #include "../../music/MusicManager.h"
 #include "../../tools/dnd/DnDCible.h"
-#include "../explorer/GestionPeriph.h"
 #include "../widgets/SliderSon.h"
 #include "../../tools/FichierLog.h"
 #include "../../db/BDDRequete.h"

@@ -3,17 +3,26 @@
 
 #include "DriveManagerState.h"
 
-class PlaylistDriveManagerState : DriveManagerState
+namespace explorer
 {
-    public:
-        /** Default constructor */
-        PlaylistDriveManagerState();
-        /** Default destructor */
-        virtual ~PlaylistDriveManagerState();
-        virtual bool IsPlaylist();
+    class PlaylistDriveManagerState : public DriveManagerState
+    {
+        public:
+            /** Default constructor */
+            PlaylistDriveManagerState(ExplorerManagerData& data);
+            /** Default destructor */
+            virtual ~PlaylistDriveManagerState();
 
-    protected:
-    private:
-};
+            virtual bool isPlaylist();
+            virtual bool fillExplorerList();
+            virtual bool fillExplorerList(const wxString& elementToSelect);
+
+            virtual DriveManagerState& getPreviousState();
+            virtual void openElement(const std::vector<long>& indexes);
+
+        protected:
+        private:
+    };
+}
 
 #endif // PLAYLISTDRIVEMANAGERSTATE_H

@@ -7,6 +7,7 @@
  * License:
  **************************************************************/
 #include "Tools.h"
+#include "Define.h"
 
 /** @brief Indicates if the string contains reserved characters.
  * The invalid characters is based on Windows file system. It is on this
@@ -15,8 +16,33 @@
  * @return bool
  *
  */
-bool containsInvalidCharacter(const wxString& str)
+bool tool::containsInvalidCharacter(const wxString& str)
 {
     str.Contains("/\\:*?\"<>|");
+}
+
+/** @brief Returns a string according to the Id
+ *
+ * @param id const int
+ * @return wxString&
+ *
+ */
+wxString tool::getResource(const int id)
+{
+    wxString val;
+    switch (id)
+    {
+        case ID_EXPLORER_PANEL_1_NAME:
+            val = _("Navig gauche"); break;
+        case ID_EXPLORER_PANEL_2_NAME:
+            val = _("Navig droite"); break;
+        case ID_EXPLORER_PANEL_1_DESCRIPTION:
+            val = _("Navigation gauche : Fu(X) toujours en développement"); break;
+        case ID_EXPLORER_PANEL_2_DESCRIPTION:
+            val = _("Navigation droite : donc toujours plus loin !"); break;
+        default:
+            break;
+    }
+    return val;
 }
 

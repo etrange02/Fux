@@ -15,13 +15,20 @@
 #include "../settings/PreferenceCouleur.h"
 #include "../settings/PreferenceDefaut.h"
 #include "../musiclist/PlayList.h"
-#include "../explorer/GestionPeriph.h"
 #include "../../network/TCPServeur.h"
 #include "./SliderSon.h"
 #include "../../tools/FichierLog.h"
 #include "../../db/BDDThread.h"
 #include "../tools/ArrayFenetreDetachable.h"
 #include "./BoutonFenetreDetachable.h"
+
+namespace gui
+{
+    namespace explorer
+    {
+        class DriveManagersPanel;
+    }
+}
 
 class FuXFenetre: public wxFrame
 {
@@ -96,7 +103,7 @@ class FuXFenetre: public wxFrame
     void LeftSizerCreation();
 
   protected:
-    wxBoxSizer *sizerPrincipalH, *sizerGaucheV, *sizerDroit, *sizerDroitPrincipal, *sizerDroitPreference, *sizerDroitExtracteur, *sizerDroitPlayist, *sizerDroitIPod;
+    wxBoxSizer *sizerPrincipalH, *sizerGaucheV, *sizerDroit, *sizerDroitPrincipal, *sizerDroitPreference, *sizerDroitExtracteur, *m_sizerDroitPlaylist, *m_sizerRightExplorer;
 
     wxMenuBar *menuBarre;
     wxMenu *menuFichier, *menuAffichage, *menuPreferences, *menuExtraction, *menuAide, *menuControle;
@@ -117,6 +124,7 @@ class FuXFenetre: public wxFrame
     TCPServeur *m_serveur;
 
     int m_FenetreActuel, m_nouvelleFenetre;
+    gui::explorer::DriveManagersPanel* m_driveManagersPanel;
 
     DECLARE_EVENT_TABLE()
 };

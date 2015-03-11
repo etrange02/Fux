@@ -20,10 +20,12 @@ const wxEventType wxEVT_SERVEUR = wxNewEventType();
  * @param parent fenêtre parente (Serveur uniquement)
  * @param id identifiant de la connexion (Serveur uniquement)
  */
-TCPConnexionEchangeInstanceLocalHost::TCPConnexionEchangeInstanceLocalHost(wxWindow *parent, int id) : wxConnection()
+TCPConnexionEchangeInstanceLocalHost::TCPConnexionEchangeInstanceLocalHost(wxWindow *parent, int id) :
+    wxConnection(),
+    m_parent(parent),
+    m_nombreString(0),
+    m_id(id)
 {
-    m_parent = parent;
-    m_id = id;
 }
 
 /**
@@ -31,8 +33,10 @@ TCPConnexionEchangeInstanceLocalHost::TCPConnexionEchangeInstanceLocalHost(wxWin
  * @param data Ligne à exécuter
  * @return vrai si réussite, faux sinon.
  */
-bool TCPConnexionEchangeInstanceLocalHost::Execute(const wxString data)
-{    return wxConnection::Execute(data);}
+bool TCPConnexionEchangeInstanceLocalHost::Execute(const wxString& data)
+{
+    return wxConnection::Execute(data);
+}
 
 /**
  * Côté serveur - Demande l'exécution de données

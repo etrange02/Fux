@@ -2,28 +2,49 @@
 #define EXPLORERMANAGERDATA_H
 
 #include <wx/wx.h>
-#include "../Define.h"
-#include "../gui/explorer/ExplorerPanel.h"
+#include <vector>
+#include "explorer/DriveManagerListElement.h"
+#include "Define.h"
+#include "gui/explorer/ExplorerPanel.h"
+
+namespace explorer
+{
+    class DriveManagerState;
+}
+
+class ExplorerDriveManagers;
 
 class ExplorerManagerData
 {
     public:
         /** Default constructor */
-        ExplorerManagerData();
+        ExplorerManagerData(explorer::DriveManagerState& state, gui::explorer::ExplorerPanel& explorer, ExplorerDriveManagers& explorerDriveManagers);
         /** Default destructor */
         virtual ~ExplorerManagerData();
 
-        wxMenu *GetMenu();
+        gui::explorer::ExplorerPanel& getExplorerPanel() const;
+
+        wxMenu *GetMenu() const;
         void SetMenu(wxMenu *menu);
 
-        void SetExplorerPanel(ExplorerPanel *explorerPanel);
-        ExplorerPanel* GetExplorerPanel();
+        void setState(explorer::DriveManagerState& state);
+        explorer::DriveManagerState& getState() const;
+
+        void setPath(const wxString& path);
+        const wxString& getPath() const;
+
+        std::vector<DriveManagerListElement>& getElements();
+
+        ExplorerDriveManagers& getExplorerDriveManagers() const;
 
     protected:
     private:
-        void Initialize();
+        wxString m_path;
+        std::vector<DriveManagerListElement> m_elements;
+        gui::explorer::ExplorerPanel& m_explorerPanel;
+        ExplorerDriveManagers& m_explorerDriveManagers;
         wxMenu *m_menu;
-        ExplorerPanel *m_explorerPanel;
+        explorer::DriveManagerState* m_state;
 };
 
 #endif // EXPLORERMANAGERDATA_H

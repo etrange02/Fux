@@ -1,26 +1,90 @@
 #ifndef DRIVEMANAGERSPANEL_H
 #define DRIVEMANAGERSPANEL_H
 
-#include <list>
-
-#include "../../Define.h"
+#include <vector>
 #include <wx/wx.h>
-#include "../explorer/ExplorerPanel.h"
+#include <wx/menu.h>
+#include "MenuElement.h"
 
-class DriveManagersPanel : public wxPanel
+class ExplorerDriveManagers;
+
+namespace gui
 {
-    public:
-        /** Default constructor */
-        DriveManagersPanel();
-        /** Default destructor */
-        virtual ~DriveManagersPanel();
-        ExplorerPanel* createNewExplorerPanel();
+    namespace explorer
+    {
+        class ExplorerPanel;
 
-    protected:
-    private:
-        void Initialize();
+        class DriveManagersPanel : public wxPanel
+        {
+            public:
+                /** Default constructor */
+                DriveManagersPanel(wxWindow *parent, ExplorerDriveManagers& explorerDriveManagers);
+                /** Default destructor */
+                virtual ~DriveManagersPanel();
 
-        std::list<ExplorerPanel*> *m_explorerPanels;
-};
+                void onButtonMyDocuments(wxCommandEvent& event);
+                void onButtonDrivers    (wxCommandEvent& event);
+                void onButtonOthers     (wxCommandEvent& event);
+
+                void onMenuItemMyDocumentsLeftSelected    (wxCommandEvent& event);
+                void onMenuItemMyDocumentsRightSelected   (wxCommandEvent& event);
+                void onMenuItemPlayListLeftSelected       (wxCommandEvent& event);
+                void onMenuItemPlayListRightSelected      (wxCommandEvent& event);
+                void onMenuItemDriversLeftSelected        (wxCommandEvent& event);
+                void onMenuItemDriversRightSelected       (wxCommandEvent& event);
+                void onMenuItemContainerFilesLeftSelected (wxCommandEvent& event);
+                void onMenuItemContainerFilesRightSelected(wxCommandEvent& event);
+
+                void onButtonDelete   (wxCommandEvent& event);
+                void onButtonCopy     (wxCommandEvent& event);
+                void onButtonMoveLeft (wxCommandEvent& event);
+                void onButtonMoveRight(wxCommandEvent& event);
+
+                void enableButtonDelete   (const bool enable);
+                void enableButtonCopy     (const bool enable);
+                void enableButtonMoveLeft (const bool enable);
+                void enableButtonMoveRight(const bool enable);
+
+            protected:
+            private:
+                void Initialize(wxWindow *parent);
+                ExplorerPanel* createNewExplorerPanel(const wxString& managerName, const wxString& managerDescription);
+                void createMenus();
+                void fillDriversMenu();
+                void fillContainerFilesMenu();
+                void emptyMenu(wxMenu& menu, std::vector<MenuElement>& menuElements);
+                void fillMenu (wxMenu& menu, std::vector<MenuElement>& menuElements);
+                void mergeAndMarkPresentElements(std::vector<MenuElement>& menuElements,
+                                                 std::vector<MenuElementData> menuElementData,
+                                                 void (DriveManagersPanel::*funcMappingLeft)(wxCommandEvent&),
+                                                 void (DriveManagersPanel::*funcMappingRight)(wxCommandEvent&) );
+
+                MenuElement& getMenuElementById(std::vector<MenuElement>& menuElements, const int id);
+
+            private:
+                std::vector<MenuElement> m_driversMenuElement;
+                std::vector<MenuElement> m_containerFilesMenuElement;
+
+                ExplorerDriveManagers& m_explorerDriveManagers;
+                ExplorerPanel* m_leftExplorerPanels;
+                ExplorerPanel* m_rightExplorerPanels;
+
+                wxButton* m_streamButton;
+                wxMenu*   m_myDocumentsMenu;
+                wxMenu*   m_driversMenu;
+                wxMenu*   m_otherMenu;
+                wxMenu*   m_containerFilesMenu;
+
+                enum STREAM_BUTTON_KIND {
+                    STREAM_MOVE_LEFT,
+                    STREAM_COPY,
+                    STREAM_MOVE_RIGHT,
+                    STREAM_DELETE
+                    };
+
+            DECLARE_EVENT_TABLE();
+        };
+    }
+}
 
 #endif // DRIVERMANAGERSPANEL_H

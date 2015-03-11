@@ -1,23 +1,35 @@
-#include "../../include/explorer/ExplorerManagerData.h"
+/***************************************************************
+ * Name:      ExplorerManagerData.cpp
+ * Purpose:   Code for Fu(X) 2.0
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
+ * Created:   2014-11-19
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
+ * License:
+ **************************************************************/
+#include "ExplorerManagerData.h"
+#include "DriveManagerState.h"
+#include "explorer/ExplorerDriveManagers.h"
 
-ExplorerManagerData::ExplorerManagerData()
+ExplorerManagerData::ExplorerManagerData(explorer::DriveManagerState& state, gui::explorer::ExplorerPanel& explorer, ExplorerDriveManagers& explorerDriveManagers) :
+    m_menu(NULL),
+    m_state(&state),
+    m_explorerPanel(explorer),
+    m_explorerDriveManagers(explorerDriveManagers)
 {
-    Initialize();
 }
 
 ExplorerManagerData::~ExplorerManagerData()
 {
-    if (NULL != m_menu)
-        delete m_menu;
+    delete m_menu;
+    delete m_state;
 }
 
-void ExplorerManagerData::Initialize()
+gui::explorer::ExplorerPanel& ExplorerManagerData::getExplorerPanel() const
 {
-    m_menu = NULL;
-    m_explorerPanel = NULL;
+    return m_explorerPanel;
 }
 
-wxMenu* ExplorerManagerData::GetMenu()
+wxMenu* ExplorerManagerData::GetMenu() const
 {
     return m_menu;
 }
@@ -26,17 +38,39 @@ void ExplorerManagerData::SetMenu(wxMenu* menu)
 {
     if (NULL == menu)
         return;
-    this->m_menu = menu;
+    m_menu = menu;
 }
 
-void ExplorerManagerData::SetExplorerPanel(ExplorerPanel* explorerPanel)
+void ExplorerManagerData::setState(explorer::DriveManagerState& state)
 {
-    m_explorerPanel = explorerPanel;
+    if (m_state == &state)
+        return;
+    delete m_state;
+    m_state = &state;
 }
 
-ExplorerPanel* ExplorerManagerData::GetExplorerPanel()
+explorer::DriveManagerState& ExplorerManagerData::getState() const
 {
-    return m_explorerPanel;
+    return *m_state;
 }
 
+void ExplorerManagerData::setPath(const wxString& path)
+{
+    m_path = path;
+}
+
+const wxString& ExplorerManagerData::getPath() const
+{
+    return m_path;
+}
+
+std::vector<DriveManagerListElement>& ExplorerManagerData::getElements()
+{
+    return m_elements;
+}
+
+ExplorerDriveManagers& ExplorerManagerData::getExplorerDriveManagers() const
+{
+    return m_explorerDriveManagers;
+}
 

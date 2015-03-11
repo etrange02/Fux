@@ -16,7 +16,10 @@
 /**
  * Constructeur
  */
-ImageText::ImageText()
+ImageText::ImageText() :
+    m_largeur(0),
+    m_hauteur(0),
+    m_largeurEcran(0)
 {
     m_ID = new GLuint[1];
     glGenTextures(1, &m_ID[0]);

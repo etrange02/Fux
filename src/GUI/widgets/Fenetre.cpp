@@ -12,8 +12,9 @@
     #pragma hdrstop
 #endif
 
-#include "../../../include/gui/widgets/Fenetre.h"
+#include "Fenetre.h"
 #include "MusicManagerSwitcher.h"
+#include "ExplorerDriveManagers.h"
 
 /**
  * @class FuXFenetre
@@ -147,7 +148,7 @@ FuXFenetre::~FuXFenetre()
     m_TimerGraph.Stop();
     delete[] m_imageBouton;
 //    Musique::Get()->Delete();
-    GestPeriph::Get()->Delete();
+//    GestPeriph::Get()->Delete();
     delete m_musiqueGraph;
     delete m_playList;
     delete m_panelsAssocies;
@@ -231,24 +232,24 @@ void FuXFenetre::panelAssociation()
     FichierLog::Get()->Ajouter(_T("FuXFenetre::CreerPages() - Extraction"));
     #endif
     /////////////////////////////////////////////////////////////
-    sizerDroitPlayist = new wxBoxSizer(wxVERTICAL);
+    m_sizerDroitPlaylist = new wxBoxSizer(wxVERTICAL);
     m_playList->Initialize(this);
 
     //m_grille = new PlayListGrille(this);
-    sizerDroitPlayist->Add(m_playList, 1, wxALL | wxEXPAND, 0);
-    sizerDroitPlayist->Show(m_playList);
+    m_sizerDroitPlaylist->Add(m_playList, 1, wxALL | wxEXPAND, 0);
+    m_sizerDroitPlaylist->Show(m_playList);
 
-    sizerDroitPlayist->Layout();
+    m_sizerDroitPlaylist->Layout();
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::CreerPages() - Playlist"));
     #endif
     ////////////////////////////////////////////////////////////////////
-    sizerDroitIPod = new wxBoxSizer(wxVERTICAL);
-    GestPeriph::Get()->Creer(this);
+    m_sizerRightExplorer = new wxBoxSizer(wxVERTICAL);
+    m_driveManagersPanel = new gui::explorer::DriveManagersPanel(this, ExplorerDriveManagers::get());
 
-    sizerDroitIPod->Add(GestPeriph::Get(), 1, wxALL | wxEXPAND, 0);
-    sizerDroitIPod->Show(GestPeriph::Get());
-    sizerDroitIPod->Layout();
+    m_sizerRightExplorer->Add(m_driveManagersPanel, 1, wxALL | wxEXPAND, 0);
+    m_sizerRightExplorer->Show(m_driveManagersPanel);
+    m_sizerRightExplorer->Layout();
     //////////////////////////////////////////////////////////////////////
 
     sizerDroit = new wxBoxSizer(wxVERTICAL);
@@ -256,25 +257,25 @@ void FuXFenetre::panelAssociation()
     sizerPrincipalH->Add(sizerDroit, 1, wxALL | wxEXPAND, 0);
 
     sizerDroit->Add(sizerDroitPrincipal, 1, wxALL | wxEXPAND, 0);
+    sizerDroit->Add(m_sizerDroitPlaylist, 1, wxALL | wxEXPAND, 0);
+    sizerDroit->Add(m_sizerRightExplorer, 1, wxALL | wxEXPAND, 0);
     sizerDroit->Add(sizerDroitPreference, 1, wxALL | wxEXPAND, 0);//2
     sizerDroit->Add(sizerDroitExtracteur, 1, wxALL | wxEXPAND, 0);
-    sizerDroit->Add(sizerDroitPlayist, 1, wxALL | wxEXPAND, 0);
-    sizerDroit->Add(sizerDroitIPod, 1, wxALL | wxEXPAND, 0);
 
     m_panelsAssocies = new bool[5];// {true, true, true, true, true};
     for (int i = 0; i < 5 ; i++){m_panelsAssocies[i] = true;}
 
 
     sizerDroitPrincipal->SetMinSize(512, 292);
+    m_sizerDroitPlaylist->SetMinSize(512, 292);
+    m_sizerRightExplorer->SetMinSize(512, 292);
     sizerDroitPreference->SetMinSize(512, 292);
     sizerDroitExtracteur->SetMinSize(512, 292);
-    sizerDroitPlayist->SetMinSize(512, 292);
-    sizerDroitIPod->SetMinSize(512, 292);
 
+    sizerDroit->Hide(m_sizerDroitPlaylist);
+    sizerDroit->Hide(m_sizerRightExplorer);
     sizerDroit->Hide(sizerDroitPreference);
     sizerDroit->Hide(sizerDroitExtracteur);
-    sizerDroit->Hide(sizerDroitPlayist);
-    sizerDroit->Hide(sizerDroitIPod);
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("FuXFenetre::CreerPages() - Fin"));
     #endif
@@ -504,17 +505,17 @@ void FuXFenetre::SeparationPanel(wxCommandEvent &event)
             #endif
             break;
         case LISTELECTURE:
-            sizerDroit->Detach(sizerDroitPlayist);
-            m_fenetresDetachables->Add(this, (wxWindow*) m_playList, sizerDroitPlayist, LISTELECTURE, event.GetId(), _("Liste de lecture - Fu(X) 2.0"));
-            sizerDroitPlayist = NULL;
+            sizerDroit->Detach(m_sizerDroitPlaylist);
+            m_fenetresDetachables->Add(this, (wxWindow*) m_playList, m_sizerDroitPlaylist, LISTELECTURE, event.GetId(), _("Liste de lecture - Fu(X) 2.0"));
+            m_sizerDroitPlaylist = NULL;
             #if DEBUG
             FichierLog::Get()->Ajouter(_T("FuXFenetre::SeparationPanel - LISTELECTURE"));
             #endif
             break;
         case GESTIONPERIPH:
-            sizerDroit->Detach(sizerDroitIPod);
-            m_fenetresDetachables->Add(this, (wxWindow*) GestPeriph::Get(), sizerDroitIPod, GESTIONPERIPH, event.GetId(), _("Exploration - Fu(X) 2.0"));
-            sizerDroitIPod = NULL;
+            sizerDroit->Detach(m_sizerRightExplorer);
+            m_fenetresDetachables->Add(this, (wxWindow*) m_driveManagersPanel, m_sizerRightExplorer, GESTIONPERIPH, event.GetId(), _("Exploration - Fu(X) 2.0"));
+            m_sizerRightExplorer = NULL;
             #if DEBUG
             FichierLog::Get()->Ajouter(_T("FuXFenetre::SeparationPanel - GESTIONPERIPH"));
             #endif
@@ -562,15 +563,15 @@ void FuXFenetre::ReunionPanel(wxCommandEvent &event)
             #endif
             break;
         case LISTELECTURE:
-            sizerDroitPlayist = (wxBoxSizer*)f->RetourNormale();
-            s = sizerDroitPlayist;
+            m_sizerDroitPlaylist = (wxBoxSizer*)f->RetourNormale();
+            s = m_sizerDroitPlaylist;
             #if DEBUG
             FichierLog::Get()->Ajouter(_T("FuXFenetre::ReunionPanel - LISTELECTURE"));
             #endif
             break;
         case GESTIONPERIPH:
-            sizerDroitIPod = (wxBoxSizer*)f->RetourNormale();
-            s = sizerDroitIPod;
+            m_sizerRightExplorer = (wxBoxSizer*)f->RetourNormale();
+            s = m_sizerRightExplorer;
             #if DEBUG
             FichierLog::Get()->Ajouter(_T("FuXFenetre::ReunionPanel - GESTIONPERIPH"));
             #endif
@@ -743,7 +744,7 @@ void FuXFenetre::EventMusicChanged(wxCommandEvent &WXUNUSED(event))
 void FuXFenetre::EventUpdatePlayLists(wxCommandEvent &WXUNUSED(event))
 {
 //    m_playList->GetPlayListTableau()->MAJ();
-    GestPeriph::Get()->MAJPlaylist();
+//    GestPeriph::Get()->MAJPlaylist();
 }
 
 /**
@@ -990,12 +991,12 @@ void FuXFenetre::SwitchWindow()/////////////////
                         sizerDroit->Hide(sizerDroitExtracteur);
                     break;
                 case LISTELECTURE:
-                    if (sizerDroitPlayist)
-                        sizerDroit->Hide(sizerDroitPlayist);
+                    if (m_sizerDroitPlaylist)
+                        sizerDroit->Hide(m_sizerDroitPlaylist);
                     break;
                 case GESTIONPERIPH:
-                    if (sizerDroitIPod)
-                        sizerDroit->Hide(sizerDroitIPod);
+                    if (m_sizerRightExplorer)
+                        sizerDroit->Hide(m_sizerRightExplorer);
                     break;
                 default:
             break;
@@ -1016,11 +1017,11 @@ void FuXFenetre::SwitchWindow()/////////////////
                 break;
             case LISTELECTURE:
                 m_FenetreActuel = LISTELECTURE;
-                sizerDroit->Show(sizerDroitPlayist);
+                sizerDroit->Show(m_sizerDroitPlaylist);
                 break;
             case GESTIONPERIPH:
                 m_FenetreActuel = GESTIONPERIPH;
-                sizerDroit->Show(sizerDroitIPod);
+                sizerDroit->Show(m_sizerRightExplorer);
                 break;
             default:
                 break;
@@ -1040,7 +1041,7 @@ void FuXFenetre::SwitchWindow()/////////////////
             m_playList->GetPlayListTableau()->SetFocus();
             break;
         case GESTIONPERIPH:
-            GestPeriph::Get()->SetFocus();
+            m_driveManagersPanel->SetFocus();
             break;
         default:
             break;

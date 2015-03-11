@@ -11,7 +11,7 @@ class TCPConnexionEchangeInstanceLocalHost : public wxConnection
 {
     public:
         TCPConnexionEchangeInstanceLocalHost(wxWindow *parent = NULL, int id = -1);
-        virtual bool Execute(const wxString data);
+        virtual bool Execute(const wxString& data);
         virtual bool OnExecute(const wxString& topic, wxChar *data, int size, wxIPCFormat format);
 
         virtual bool OnDisconnect();

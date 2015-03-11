@@ -580,7 +580,7 @@ void PlayListTableau::SuppressionLigne()
             SetItemState(position, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED);
         else if (GetItemCount() >= 1)
             SetItemState(position-1, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED);
-        GestPeriph::Get()->MAJPlaylist();
+//        GestPeriph::Get()->MAJPlaylist();
         SetFocus();
     }
     #if DEBUG
@@ -596,7 +596,7 @@ void PlayListTableau::SuppressionLigne()
  */
 void PlayListTableau::onUpdateLine(wxCommandEvent& event)
 {
-    IMusic* music = (IMusic*) (event.GetClientData());
+    IMusic* music = static_cast<IMusic*>(event.GetClientData());
     std::vector<Music*>::iterator iter = std::find(MusicManagerSwitcher::getSearch().getMusics().begin(), MusicManagerSwitcher::getSearch().getMusics().end(), music);
 
     if (iter == MusicManagerSwitcher::getSearch().getMusics().end())

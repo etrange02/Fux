@@ -16,16 +16,15 @@
 /**
  * Default constructor
  */
-Music::Music()
+Music::Music() : Music("")
 {
-    Music("");
 }
 
 /**
  * Constructor
  * @param filename a file name
  */
-Music::Music(wxString filename) :
+Music::Music(const wxString& filename) :
     m_filename(filename),
     m_year(0),
     m_duration(0),

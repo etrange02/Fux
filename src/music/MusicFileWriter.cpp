@@ -64,11 +64,10 @@ void MusicFileWriter::saveImage()
             ID3v2::Tag *tagv2 = f.ID3v2Tag(true);
             if(tagv2)
             {
-                TagLib::ID3v2::AttachedPictureFrame *pict;
                 TagLib::ID3v2::FrameList FrameList = tagv2->frameListMap()["APIC"];
                 for( std::list<TagLib::ID3v2::Frame*>::iterator iter = FrameList.begin(); iter != FrameList.end(); ++iter )
                 {
-                    pict = static_cast<TagLib::ID3v2::AttachedPictureFrame *>( *iter );
+                    TagLib::ID3v2::AttachedPictureFrame *pict = static_cast<TagLib::ID3v2::AttachedPictureFrame *>( *iter );
                     tagv2->removeFrame(pict, true);
                 }
 
@@ -98,7 +97,7 @@ void MusicFileWriter::renameFile()
     if (m_musicSrc->EqualsFilename(m_musicDst))
         return;
 
-    if (containsInvalidCharacter(m_musicSrc->GetFileName()))
+    if (tool::containsInvalidCharacter(m_musicSrc->GetFileName()))
         return;
 
     if (wxRenameFile(m_musicDst->GetFileName(), m_musicSrc->GetFileName()))

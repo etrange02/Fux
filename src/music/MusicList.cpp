@@ -73,7 +73,7 @@ size_t MusicList::size() const
  * @return void
  *
  */
-void MusicList::parseDirectory(wxString dirname, bool recursive)
+void MusicList::parseDirectory(const wxString& dirname, bool recursive)
 {
     if (recursive)
         parseDirectoryRecursively(dirname);
@@ -87,7 +87,7 @@ void MusicList::parseDirectory(wxString dirname, bool recursive)
  * @return void
  *
  */
-void MusicList::parseDirectoryRecursively(wxString dirname)
+void MusicList::parseDirectoryRecursively(const wxString& dirname)
 {
     wxDir dir(dirname);
     Search research(this);
@@ -100,7 +100,7 @@ void MusicList::parseDirectoryRecursively(wxString dirname)
  * @return void
  *
  */
-void MusicList::parseDirectoryWithoutRecurs(wxString dirname)
+void MusicList::parseDirectoryWithoutRecurs(const wxString& dirname)
 {
     wxDir dir(dirname);
     wxString temp;
@@ -130,9 +130,9 @@ void MusicList::clear()
  * @return void
  *
  */
-void MusicList::addLines(wxArrayString& pathArray)
+void MusicList::addLines(const wxArrayString& pathArray)
 {
-    for ( wxArrayString::iterator iter = pathArray.begin(); iter != pathArray.end(); ++iter)
+    for ( wxArrayString::const_iterator iter = pathArray.begin(); iter != pathArray.end(); ++iter)
     {
         addUnknownKindLine(*iter);
     }
@@ -144,7 +144,7 @@ void MusicList::addLines(wxArrayString& pathArray)
  * @return void
  *
  */
-void MusicList::addUnknownKindLine(wxString path)
+void MusicList::addUnknownKindLine(const wxString& path)
 {
     if (wxFileExists(path))
     {
@@ -167,7 +167,7 @@ void MusicList::addUnknownKindLine(wxString path)
  * @return void
  *
  */
-void MusicList::addFileLine(wxString path)
+void MusicList::addFileLine(const wxString& path)
 {
     Music *music = Factory::createMusic(path);
     m_musicList->push_back(music);
@@ -181,7 +181,7 @@ void MusicList::addFileLine(wxString path)
  * @return void
  *
  */
-void MusicList::addDirLine(wxString path)
+void MusicList::addDirLine(const wxString& path)
 {
     parseDirectory(path, Parametre::Get()->getSousDossier());
 }
@@ -192,7 +192,7 @@ void MusicList::addDirLine(wxString path)
  * @return void
  *
  */
-void MusicList::importFileContent(wxString filename)
+void MusicList::importFileContent(const wxString& filename)
 {
     wxTextFile m3uFile(filename);
     m3uFile.Open();
@@ -339,7 +339,7 @@ void MusicList::removeLines(wxArrayString& filenameArray)
 /// TODO (David): Mauvaise idée, utiliser les positions sera plus efficaces, et remplissage avec un filereader
 /// TODO (David): Pas utilisé dans le code, à supprimer ?? L'idée de base devait être la mise à jour d'une ligne
 /// => on crée un nouvel objet avec les bonne valeurs, on le met à la place de l'ancien, on supprime l'ancien
-void MusicList::exchangeLine(wxString filename1, wxString filename2)
+void MusicList::exchangeLine(const wxString& filename1, const wxString& filename2)
 {
     int lineToChange = getPositionInList(filename1);
     IMusic *music = getCollection().at(lineToChange);

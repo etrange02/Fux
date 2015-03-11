@@ -1,9 +1,9 @@
 #ifndef EXPLORERDRIVEMANAGERSDATA_H
 #define EXPLORERDRIVEMANAGERSDATA_H
 
-#include <list>
+#include <vector>
 #include "ExplorerManager.h"
-#include "../gui/explorer/DriveManagersPanel.h"
+#include "DriveManagersPanel.h"
 
 class ExplorerDriveManagersData
 {
@@ -13,15 +13,15 @@ class ExplorerDriveManagersData
         /** Default destructor */
         virtual ~ExplorerDriveManagersData();
 
-        std::list<ExplorerManager*>* getExplorerManagers();
+        std::vector<ExplorerManager*>& getExplorerManagers() const;
 
-        DriveManagersPanel* getDriverManagersPanel();
-        //void setDriverManagersPanel(DriveManagersPanel* driverManagerPanel);
+        gui::explorer::DriveManagersPanel* getDriveManagersPanel();
+        void setDriveManagersPanel(gui::explorer::DriveManagersPanel* driverManagerPanel);
 
     protected:
     private:
-        std::list<ExplorerManager*> *m_explorerManagers;
-        DriveManagersPanel *m_driveManagersPanel;
+        std::vector<ExplorerManager*> *m_explorerManagers;
+        gui::explorer::DriveManagersPanel *m_driveManagersPanel;
 };
 
 #endif // EXPLORERDRIVEMANAGERSDATA_H

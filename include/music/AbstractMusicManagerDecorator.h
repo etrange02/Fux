@@ -43,7 +43,7 @@ class AbstractMusicManagerDecorator : public IMusicManager
 
         virtual void parse();
         virtual void parse(const wxString& filename);
-        virtual void parse(wxArrayString& filenames, bool update = true);
+        virtual void parse(const wxArrayString& filenames, bool update = true);
 
         virtual void setParent(wxWindow* parent);
         virtual wxWindow* getParent() const;

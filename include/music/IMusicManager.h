@@ -42,7 +42,7 @@ class IMusicManager
 
         virtual void parse() = 0;
         virtual void parse(const wxString& filename) = 0;
-        virtual void parse(wxArrayString& filenames, bool update = true) = 0;
+        virtual void parse(const wxArrayString& filenames, bool update = true) = 0;
 
         virtual void setParent(wxWindow* parent) = 0;
         virtual wxWindow* getParent() const = 0;

@@ -35,10 +35,6 @@ class GestPeriph : public wxPanel
         void AfficheMenu_Periph(wxCommandEvent &WXUNUSED(event));
         void AfficheMenu_Autre(wxCommandEvent &WXUNUSED(event));
 
-        ElementLecteurRacineFichier* Insertion(ArrayOfElementLecteurRacineFichier*, wxString, wxString);
-        ElementLecteurRacineFichier* Insertion(ArrayOfElementLecteurRacineFichier*, wxString, int);
-        void ListePeripherique();
-        void ListeM3U();
         void DetruireListes();
 
 

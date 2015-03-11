@@ -7,20 +7,32 @@
 #include <wx/filename.h>
 
 
-class ExplorerListCtrl : public wxListCtrl
+namespace gui
 {
-    public:
-        ExplorerListCtrl(wxWindow *parent, wxWindowID id);
-        virtual ~ExplorerListCtrl();
+    namespace explorer
+    {
+        class ExplorerListCtrl : public wxListCtrl
+        {
+            public:
+                ExplorerListCtrl(wxWindow *parent, wxWindowID id);
+                virtual ~ExplorerListCtrl();
 
-        void addDir(wxString& dir);
-        void addFile(wxString& file);
-        void addInexistantFile(wxString& file);
-        void addLine(wxString& name, wxString& type);
+                void addDir(const wxString& dir);
+                void addFile(const wxString& file);
+                void addInexistantFile(const wxString& file);
+                void addLine(const wxString& name, const wxString& type);
+                void addLine(wxString& name, wxString& type);
 
-    protected:
-        void Create(wxWindow *parent, wxWindowID id);
-    private:
-};
+                void selectLine(const wxString& text);
+                void selectLine(const long line);
+
+            protected:
+                void Create();
+                int addItem(const wxString& name, const wxString& kind);
+                int addItem(const wxString& name, const wxString& kind, const wxColor& foreground, const wxColor& background);
+            private:
+        };
+    }
+}
 
 #endif // EXPLORERLISTCTRL_H

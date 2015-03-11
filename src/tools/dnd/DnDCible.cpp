@@ -63,8 +63,8 @@ wxDragResult DnDCible::OnData(wxCoord WXUNUSED(x), wxCoord y, wxDragResult WXUNU
             MusicManagerSwitcher::get().placeStringTitlesAt(TransFile->arrayString(), GetPositionCoord(y)/*, true*/);
             //Musique::Get()->PlacerLigneString(TransFile->arrayString(), GetPositionCoord(y), true);//Les coordonnées commencent au coin sup gauche de la liste, dans les en-têtes
     }
-    else
-        m_pageGestion->GlisserTraitement(TransFile->arrayString(), GetPositionCoord(y));//Les coordonnées commencent au coin sup gauche de la liste, dans les en-têtes
+ //   else
+   //     m_pageGestion->GlisserTraitement(TransFile->arrayString(), GetPositionCoord(y));//Les coordonnées commencent au coin sup gauche de la liste, dans les en-têtes
 
     TransFile->Clear();
     return wxDragCopy;

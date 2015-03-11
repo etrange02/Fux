@@ -10,7 +10,7 @@ class Music : public IMusic
 {
     public:
         Music();
-        Music(wxString filename);
+        Music(const wxString& filename);
         Music(const Music& music);
         Music& operator=(const Music& music);
         virtual ~Music();

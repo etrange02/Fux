@@ -52,7 +52,7 @@ class MusicManager
         void deleteCurrentTitle();
         void parse();
         void parse(const wxString& filename);
-        void parse(wxArrayString& filenames, bool update = true);
+        void parse(const wxArrayString& filenames, bool update = true);
 
         void setParent(wxWindow* parent);
         wxWindow* getParent() const;

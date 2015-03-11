@@ -112,7 +112,7 @@ void AbstractMusicManagerDecorator::parse(const wxString& filename)
     getDelegate().parse(filename);
 }
 
-void AbstractMusicManagerDecorator::parse(wxArrayString& filenames, bool update)
+void AbstractMusicManagerDecorator::parse(const wxArrayString& filenames, bool update)
 {
     getDelegate().parse(filenames, update);
 }

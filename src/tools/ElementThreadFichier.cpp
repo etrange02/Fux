@@ -19,11 +19,11 @@
  * @param action l'action à entreprendre (COPIE, DEPLACE, SUPPRIME)
  * @param destination le répertoire de destination où doit d'effectuer l'action
  */
-ElementThreadFichier::ElementThreadFichier(wxString nom, int action, wxString destination)
+ElementThreadFichier::ElementThreadFichier(wxString nom, int action, wxString destination) :
+    m_nom(nom),
+    m_destination(destination),
+    m_action(action)
 {
-    m_nom = nom;
-    m_action = action;
-    m_destination = destination;
 }
 
 /**

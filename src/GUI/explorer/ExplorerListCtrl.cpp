@@ -1,11 +1,22 @@
-#include "../../../include/gui/explorer/ExplorerListCtrl.h"
+/***************************************************************
+ * Name:      ExplorerListCtrl.cpp
+ * Purpose:   Code for Fu(X) 2.0
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
+ * Created:   2014-11-19
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
+ * License:
+ **************************************************************/
+#include "ExplorerListCtrl.h"
+
+using namespace gui::explorer;
 
 /**
  * Constructor
  */
-ExplorerListCtrl::ExplorerListCtrl(wxWindow *parent, wxWindowID id)
+ExplorerListCtrl::ExplorerListCtrl(wxWindow *parent, wxWindowID id) :
+    wxListCtrl(parent, id, wxDefaultPosition, wxDefaultSize, wxLC_REPORT |  wxLC_HRULES | wxLC_VRULES)
 {
-    Create(parent, id);
+    Create();
 }
 
 /**
@@ -16,44 +27,65 @@ ExplorerListCtrl::~ExplorerListCtrl()
     //dtor
 }
 
-void ExplorerListCtrl::Create(wxWindow* parent, wxWindowID id)
+void ExplorerListCtrl::Create()
 {
-    wxListCtrl::Create(parent, id, wxDefaultPosition, wxDefaultSize, wxLC_REPORT |  wxLC_HRULES | wxLC_VRULES);
     InsertColumn(0, _("Nom"), wxLIST_FORMAT_CENTER, 400);
     InsertColumn(1, _("Type"), wxLIST_FORMAT_CENTER, 60);
+    SetMinSize(wxSize(10, 10)); //< Allows the listctrl to be resized as little as we want
 }
 
-void ExplorerListCtrl::addDir(wxString& dir)
+void ExplorerListCtrl::addDir(const wxString& dir)
 {
-    int pos = GetItemCount();
-    pos = InsertItem(pos, dir);
-    SetItem(pos, 1, _T("Dossier"));
-    SetItemBackgroundColour(pos, wxColor(236, 150, 243));
-    SetItemTextColour(pos, wxColor(255, 253, 151));
+    addItem(dir, _T("Dossier"), /*wxColor(236, 150, 243)*/wxColor(255, 255, 0), wxColor(130, 0, 236));
 }
 
-void ExplorerListCtrl::addFile(wxString& file)
+void ExplorerListCtrl::addFile(const wxString& file)
 {
-    int pos = GetItemCount();
-    int j = file.Find(wxFileName::GetPathSeparator(), true);
-    pos = InsertItem(pos, file.Right(file.Length()-j-1));
-    SetItem(pos, 1, file.AfterLast('.'));
+    addItem(file.AfterLast(wxFileName::GetPathSeparator()).BeforeLast('.'), file.AfterLast('.'));
 }
 
-void ExplorerListCtrl::addInexistantFile(wxString& file)
+void ExplorerListCtrl::addInexistantFile(const wxString& file)
 {
-    int pos = GetItemCount();
-    pos = InsertItem(pos, file);
-    SetItem(pos, 1, _("Fichier inexistant"));
-    SetItemTextColour(pos, wxColor(255, 255, 255));
-    SetItemBackgroundColour(pos, wxColor(255, 0, 0));
+    addItem(file, _("Fichier inexistant"), wxColor(255, 255, 255), wxColor(255, 0, 0));
+}
+
+void ExplorerListCtrl::addLine(const wxString& name, const wxString& type)
+{
+    addItem(name, type);
 }
 
 void ExplorerListCtrl::addLine(wxString& name, wxString& type)
 {
+    addItem(name, type);
+}
+
+int ExplorerListCtrl::addItem(const wxString& name, const wxString& kind)
+{
     int pos = GetItemCount();
     pos = InsertItem(pos, name);
-    SetItem(pos, 1, type);
+    SetItem(pos, 1, kind);
+    return pos;
+}
+
+int ExplorerListCtrl::addItem(const wxString& name, const wxString& kind, const wxColor& foreground, const wxColor& background)
+{
+    int pos = addItem(name, kind);
+    SetItemTextColour(pos, foreground);
+    SetItemBackgroundColour(pos, background);
+}
+
+void ExplorerListCtrl::selectLine(const wxString& text)
+{
+    long lineToSelect = FindItem(-1, text);
+    selectLine(lineToSelect);
+}
+
+void ExplorerListCtrl::selectLine(const long line)
+{
+    if (line < 0 || line >= GetItemCount())
+        return;
+    SetItemState(line, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED);
+    EnsureVisible(line);
 }
 
 

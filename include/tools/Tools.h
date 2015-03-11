@@ -3,6 +3,10 @@
 
 #include "wx/wx.h"
 
-bool containsInvalidCharacter(const wxString& str);
+namespace tool
+{
+    bool containsInvalidCharacter(const wxString& str);
+    wxString getResource(const int id);
+}
 
 #endif // TOOLS_H
