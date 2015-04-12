@@ -22,7 +22,7 @@ DefaultDriveManagerState::~DefaultDriveManagerState()
     //dtor
 }
 
-bool DefaultDriveManagerState::isDefault()
+bool DefaultDriveManagerState::isDefault() const
 {
     return true;
 }
@@ -45,7 +45,33 @@ DriveManagerState& DefaultDriveManagerState::getPreviousState()
     return *this;
 }
 
-void DefaultDriveManagerState::openElement(const std::vector<long>& indexes)
+void DefaultDriveManagerState::openElement(const std::vector<unsigned long>& indexes)
 {
 }
+
+void DefaultDriveManagerState::deleteSelectedItems()
+{
+
+}
+
+bool DefaultDriveManagerState::canCopyTo(const DriveManagerState& other) const
+{
+    return false;
+}
+
+bool DefaultDriveManagerState::canMoveTo(const DriveManagerState& other) const
+{
+    return false;
+}
+
+void DefaultDriveManagerState::copyElements(DriveManagerState& source)
+{
+
+}
+
+void DefaultDriveManagerState::moveElements(DriveManagerState& source)
+{
+
+}
+
 

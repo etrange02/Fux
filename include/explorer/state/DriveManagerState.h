@@ -17,23 +17,32 @@ namespace explorer
             /** Default destructor */
             virtual ~DriveManagerState();
 
-            virtual bool isDefault();
-            virtual bool isDirectory();
-            virtual bool isFile();
-            virtual bool isPlaylist();
+            virtual bool isDefault() const;
+            virtual bool isDirectory() const;
+            virtual bool isFile() const;
+            virtual bool isPlaylist() const;
             virtual bool fillExplorerList() = 0;
             virtual bool fillExplorerList(const wxString& elementToSelect) = 0;
 
             virtual DriveManagerState& getPreviousState() = 0;
-            virtual void openElement(const std::vector<long>& indexes) = 0;
+            virtual void openElement(const std::vector<unsigned long>& indexes) = 0;
 
             void addDriveManagerListElement(const wxString& filename);
+            bool isSameKind(const DriveManagerState& other) const;
+
+            virtual bool canCopyTo(const DriveManagerState& other) const = 0;
+            virtual bool canMoveTo(const DriveManagerState& other) const = 0;
+            virtual void deleteSelectedItems() = 0;
+            virtual void moveElements(DriveManagerState& source) = 0;
+            virtual void copyElements(DriveManagerState& source) = 0;
+            wxArrayString getSelectedItems();
+            wxArrayString getSelectedItemsPosition();
+
+            const wxString& getPath() const;
 
         protected:
             ExplorerManagerData& m_data;
-            wxArrayString convertPositionToString(const std::vector<long>& indexes);
-
-        private:
+            wxArrayString convertPositionToString(const std::vector<unsigned long>& indexes);
     };
 }
 

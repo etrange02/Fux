@@ -3,14 +3,14 @@
 
 #include <wx/wx.h>
 #include <wx/event.h>
-#include "IRunnable.h"
+#include "thread/IRunnable.h"
 #include "MusicFileWriter.h"
 
 extern const wxEventType wxEVT_FUX_MUSICFILE_READER_THREAD;
 
 /** @brief Delegate for thread process
  */
-class MusicFileWriterThread : public fux::thread::IRunnable
+class MusicFileWriterThread : public tools::thread::IRunnable
 {
     public:
         /** Default constructor */

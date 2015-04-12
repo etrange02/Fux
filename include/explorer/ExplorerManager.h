@@ -6,6 +6,10 @@
 #include "ExplorerPanel.h"
 
 class ExplorerDriveManagers;
+namespace explorer
+{
+    class DriveManagerState;
+}
 
 class ExplorerManager
 {
@@ -21,9 +25,11 @@ class ExplorerManager
 
         void refresh();
         void makeParentDir();
-        void openElement(const std::vector<long>& indexes);
+        void openElement(const std::vector<unsigned long>& indexes);
 
         gui::explorer::ExplorerPanel& getExplorerPanel() const;
+
+        explorer::DriveManagerState& getState() const;
 
     protected:
 

@@ -23,7 +23,11 @@ class ExplorerDriveManagers
         void setPlayListState(gui::explorer::ExplorerPanel& explorerPanel);
         void setFileState    (gui::explorer::ExplorerPanel& explorerPanel, const wxString& path);
 
-        void updateStreamButtonStates();
+        void deleteSelectedLines(gui::explorer::ExplorerPanel& explorerPanel);
+        void copySelectedLines  (gui::explorer::ExplorerPanel& sourceExplorerPanel, gui::explorer::ExplorerPanel& destinationExplorerPanel);
+        void moveSelectedLines  (gui::explorer::ExplorerPanel& sourceExplorerPanel, gui::explorer::ExplorerPanel& destinationExplorerPanel);
+
+        void updateStreamButtonStates(gui::explorer::ExplorerPanel& explorerPanel);
 
     protected:
         ExplorerManager& getControllerOf(gui::explorer::ExplorerPanel& explorerPanel);

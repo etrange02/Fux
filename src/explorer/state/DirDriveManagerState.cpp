@@ -11,7 +11,9 @@
 #include "Parametre.h"
 #include "explorer/ExplorerFactory.h"
 #include "explorer/ExplorerManagerData.h"
-#include "MusicManagerSwitcher.h"
+#include "music/MusicManagerSwitcher.h"
+#include "tools/thread/ThreadManager.h"
+#include "tools/thread/ThreadFactory.h"
 
 using namespace explorer;
 
@@ -26,7 +28,7 @@ DirDriveManagerState::~DirDriveManagerState()
     //dtor
 }
 
-bool DirDriveManagerState::isDirectory()
+bool DirDriveManagerState::isDirectory() const
 {
     return true;
 }
@@ -36,7 +38,6 @@ bool DirDriveManagerState::fillExplorerList()
     if (!wxDirExists(m_data.getPath()))
         return false;
 
-    bool cont = true;
     const bool hidden = m_data.getExplorerPanel().isHiddenFilesChecked();
     const bool filtre = m_data.getExplorerPanel().isFilterActivated();
     wxString filename;
@@ -46,7 +47,7 @@ bool DirDriveManagerState::fillExplorerList()
     m_data.getElements().clear();
 
     //Dossiers
-    cont = (hidden) ? repertoire.GetFirst(&filename, wxEmptyString, wxDIR_DIRS | wxDIR_HIDDEN) : repertoire.GetFirst(&filename, wxEmptyString, wxDIR_DIRS);
+    bool cont = (hidden) ? repertoire.GetFirst(&filename, wxEmptyString, wxDIR_DIRS | wxDIR_HIDDEN) : repertoire.GetFirst(&filename, wxEmptyString, wxDIR_DIRS);
     while (cont)
     {
         addDriveManagerListElement(repertoire.GetNameWithSep() + filename);
@@ -83,7 +84,7 @@ bool DirDriveManagerState::fillExplorerList()
     //SetFocus();
     //wxCommandEvent evt(wxEVT_LISTE_RENEW);
     //GetParent()->GetEventHandler()->AddPendingEvent(evt);
-
+    return true;
 }
 
 bool DirDriveManagerState::fillExplorerList(const wxString& elementToSelect)
@@ -101,14 +102,14 @@ DriveManagerState& DirDriveManagerState::getPreviousState()
     return *(explorer::ExplorerFactory::createDefaultDriveManagerState(m_data));
 }
 
-void DirDriveManagerState::openElement(const std::vector<long>& indexes)
+void DirDriveManagerState::openElement(const std::vector<unsigned long>& indexes)
 {
     const wxString& path = m_data.getElements().at(indexes.at(0)).getFilename();
 
     if (Parametre::get().isID3V2(path))
     {
         MusicManagerSwitcher::get().parse(convertPositionToString(indexes));
-        MusicManagerSwitcher::get().playMusic(path);
+        //MusicManagerSwitcher::get().playMusic(path);
     }
     else if (Parametre::get().isContainerFile(path))
     {
@@ -122,5 +123,30 @@ void DirDriveManagerState::openElement(const std::vector<long>& indexes)
         m_data.setPath(path);
         fillExplorerList();
     }
+}
+
+void DirDriveManagerState::deleteSelectedItems()
+{
+    tools::thread::ThreadManager::get().addRunnable(tools::thread::ThreadFactory::createFileDeletionThread(getSelectedItems()));
+}
+
+bool DirDriveManagerState::canCopyTo(const DriveManagerState& other) const
+{
+    return !this->getPath().IsSameAs(other.getPath());
+}
+
+bool DirDriveManagerState::canMoveTo(const DriveManagerState& other) const
+{
+    return other.isDirectory() && !this->getPath().IsSameAs(other.getPath());
+}
+
+void DirDriveManagerState::copyElements(DriveManagerState& source)
+{
+    // insertion de nouveaux fichiers dans le dossier courant -> thread
+}
+
+void DirDriveManagerState::moveElements(DriveManagerState& source)
+{
+    // renommage de fichiers (changement de chemin) d'une répertoire à l'autre
 }
 

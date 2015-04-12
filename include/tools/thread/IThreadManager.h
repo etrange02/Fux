@@ -5,10 +5,10 @@
 
 /** @brief Interface for thread manager
  * Interface for thread manager
- * @class fux::thread::IThreadManager
+ * @class tools::thread::IThreadManager
  */
 
-namespace fux
+namespace tools
 {
     namespace thread
     {

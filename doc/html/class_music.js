@@ -1,7 +1,8 @@
 var class_music =
 [
     [ "Music", "class_music.html#ab5143f67c021bc77894c8e91de2b916b", null ],
-    [ "Music", "class_music.html#a0391bbf51f843b5c017882e25a10f63f", null ],
+    [ "Music", "class_music.html#a8ec314affd55967198c13bb0f15de9e1", null ],
+    [ "Music", "class_music.html#a477a66f1584fc9006917ea8dd05c92fd", null ],
     [ "~Music", "class_music.html#a0b4f3b9a018207e0c08003505f1f87fe", null ],
     [ "EqualsFilename", "class_music.html#a485607394cd52759e323efdd3e4e2f79", null ],
     [ "GetAlbum", "class_music.html#a331aba1d02454483487cf37516201144", null ],
@@ -15,8 +16,13 @@ var class_music =
     [ "GetPath", "class_music.html#ad3cb31d1caf7b26807f9c1f61f6ef866", null ],
     [ "GetRecordSleeve", "class_music.html#aeed818866d177a43fcd8433a43ffe43a", null ],
     [ "GetSize", "class_music.html#a3331609194112ad5c2a916f8bcd22a0c", null ],
+    [ "GetStringDuration", "class_music.html#ac1fc8f80e97cea5ac4fc75a718516122", null ],
+    [ "GetStringYear", "class_music.html#a66512b9e4aeb83f4c633b8ad9d45d9eb", null ],
     [ "GetTitle", "class_music.html#a5ef2d63982cc13f161e1bdce927029c2", null ],
     [ "GetYear", "class_music.html#a8baacac1ea65a19c6064cb026283091d", null ],
+    [ "HasRecordSleeve", "class_music.html#a8b10f99f17930ad8ec6a193721dacb85", null ],
+    [ "IsMatching", "class_music.html#ade649fab00c5bdb8084be6bec628f010", null ],
+    [ "operator=", "class_music.html#a9483a18b8b699e6b6496865f2c4809c4", null ],
     [ "SetAlbum", "class_music.html#a6736bc3e6e6893e9367c5be61dd0f454", null ],
     [ "SetArtists", "class_music.html#ad9d2c85ee39011c4c28c2a7caae2d59c", null ],
     [ "SetDebit", "class_music.html#a789475b7e12b280e76c1f324bf5b9751", null ],
@@ -29,5 +35,6 @@ var class_music =
     [ "SetRecordSleeve", "class_music.html#a5bf05b0749d38c6c03d07ed15c4571b8", null ],
     [ "SetSize", "class_music.html#a48f0b14624b212109337d22d0b04076a", null ],
     [ "SetTitle", "class_music.html#aaf8cdf2b839713f3ec8b76af6bce817a", null ],
-    [ "SetYear", "class_music.html#ad68c04ceec6f813ef328e411c56c634d", null ]
+    [ "SetYear", "class_music.html#ad68c04ceec6f813ef328e411c56c634d", null ],
+    [ "ShrinkData", "class_music.html#aec7cb6fd852b8a108709c8d8096ed32f", null ]
 ];

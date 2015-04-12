@@ -318,7 +318,7 @@ bool MusicManager::playMusicThenParse(wxString filename)
  * @return void
  *
  */
-void MusicManager::moveIntTitlesAt(wxArrayString* titles, long position)
+void MusicManager::moveIntTitlesAt(const wxArrayString& titles, long position)
 {
     MusicCollection *oldMusics = &m_musicList->getCollection();
 
@@ -326,7 +326,7 @@ void MusicManager::moveIntTitlesAt(wxArrayString* titles, long position)
     MusicCollection *notSelectedMusics  = new MusicCollection();
     MusicCollection *newMusics          = new MusicCollection();
 
-    wxArrayString::iterator positionIterator = titles->begin();
+    wxArrayString::const_iterator positionIterator = titles.begin();
     long pos = 0;
     (*positionIterator).ToLong(&pos);
     long i = 0;
@@ -337,7 +337,7 @@ void MusicManager::moveIntTitlesAt(wxArrayString* titles, long position)
         {
             selectedMusics->push_back(*iter);
             ++positionIterator;
-            if (positionIterator == titles->end())
+            if (positionIterator == titles.end())
                 pos = -1;
             else
                 (*positionIterator).ToLong(&pos);
@@ -384,7 +384,7 @@ void MusicManager::moveIntTitlesAt(wxArrayString* titles, long position)
  * @return void
  * @deprecated
  */
-void MusicManager::moveIntTitlesAtInSearch(wxArrayString* titles, long position)
+void MusicManager::moveIntTitlesAtInSearch(const wxArrayString& titles, long position)
 {
 
 }
@@ -396,7 +396,7 @@ void MusicManager::moveIntTitlesAtInSearch(wxArrayString* titles, long position)
  * @return void
  *
  */
-void MusicManager::placeStringTitlesAt(wxArrayString* titles, size_t position)
+void MusicManager::placeStringTitlesAt(const wxArrayString& titles, size_t position)
 {
     m_musicList->insertLines(titles, position);
     if (position <= m_musicPosition)
@@ -411,7 +411,7 @@ void MusicManager::placeStringTitlesAt(wxArrayString* titles, size_t position)
  * @return void
  * @deprecated
  */
-void MusicManager::placeStringTitlesAtInSearch(wxArrayString* titles, size_t position)
+void MusicManager::placeStringTitlesAtInSearch(const wxArrayString& titles, size_t position)
 {
 
 }
@@ -729,7 +729,7 @@ void MusicManager::updateMusicContent(const long position, Music* musicData, std
     if (musicToModify == getMusic()) // on modifie le titre courant
         updateCurrentMusic(musicData);
     else // on modifie un autre titre
-        fux::thread::ThreadManager::get().addRunnable(Factory::createMusicFileWriterThread(musicData, musicToModify, getParent()));
+        tools::thread::ThreadManager::get().addRunnable(Factory::createMusicFileWriterThread(musicData, musicToModify, getParent()));
 }
 
 /** @brief Updates the content of the current music file played.

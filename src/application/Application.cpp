@@ -31,7 +31,9 @@ bool wxFuXApp::OnInit()
 {
     // Gestion de la langue
     //TraductionInternationale();
+    m_checker = NULL;
 
+    #ifndef DEBUG
     m_checker = new wxSingleInstanceChecker(_T("Fu(X)") + wxGetUserId());
     if (m_checker->IsAnotherRunning())
     {
@@ -46,6 +48,7 @@ bool wxFuXApp::OnInit()
         return false;
     }
     else
+    #endif
     {
         //Parametre::Get();
         #if DEBUG
@@ -68,7 +71,7 @@ int wxFuXApp::OnExit()
     //Parametre::Get()->~Parametre();
     #if DEBUG
     FichierLog::Get()->Ajouter(_T("Fin de l'application"));
-    FichierLog::Get()->Delete();
+    FichierLog::Delete();
     #endif
     return 0;
 }

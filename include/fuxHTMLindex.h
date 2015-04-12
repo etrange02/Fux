@@ -20,12 +20,18 @@
    Fu(X) intégrera une fonctionnalité de réveil (comme dans la première version).</p>
  * <h2> A faire</h2>
  * <p><ul>
- * <li>Mettre en place la BDD... en cours ;)</li>
- * <li>Remplacer la structure des fichiers sauve par du XML ---> Fait</li>
- * <li>Unifier les classes ImageMusique et ImagePochette ---> Fait (ImagePochetteMusique)</li>
+ * <li>Revoir l'architecture des classes... en cours :)</li>
+ * <li>Mettre en place la BDD... en cours</li>
  * <li>Mettre en place le réveil</li>
+ * <li>Compilation sous Linux</li>
  * <li>...</li>
  * <li>Garder quelques surprises !</li>
+ * </ul></p>
+ * <h2> Les points traités</h2>
+ * <p><ul>
+ * <li>Refondre le gestionnaire de musique</li>
+ * <li>Passer à la version 3 de wxWidgets</li>
+ * <li>Et plein d'autres choses</li>
  * </ul></p>
  *
  * <a href="..">Page principale</a>

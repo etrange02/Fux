@@ -21,12 +21,12 @@ size_t MusicManagerDefaultDecorator::getCurrentMusicPosition()
     return getDelegate().getCurrentMusicPosition();
 }
 
-void MusicManagerDefaultDecorator::moveIntTitlesAt(wxArrayString* titles, long position)
+void MusicManagerDefaultDecorator::moveIntTitlesAt(const wxArrayString& titles, long position)
 {
     getDelegate().moveIntTitlesAt(titles, position);
 }
 
-void MusicManagerDefaultDecorator::placeStringTitlesAt(wxArrayString* titles, size_t position)
+void MusicManagerDefaultDecorator::placeStringTitlesAt(const wxArrayString& titles, size_t position)
 {
     getDelegate().placeStringTitlesAt(titles, position);
 }

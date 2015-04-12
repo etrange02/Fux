@@ -1,0 +1,871 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Fu(X) 2.0: Référence de la classe MusicList</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://www.mathjax.org/mathjax/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="play.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fu(X) 2.0
+   &#160;<span id="projectnumber">a5</span>
+   </div>
+   <div id="projectbrief">Fu(X) est un lecteur audio dont le but est de redéfinir l&#39;utilisation en apportant une nouvelle approche aussi intuitive que puissante !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.xhtml"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.xhtml"><span>Pages&#160;associées</span></a></li>
+      <li class="current"><a href="annotated.xhtml"><span>Classes</span></a></li>
+      <li><a href="files.xhtml"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.xhtml"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.xhtml"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.xhtml"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.xhtml"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_music_list.xhtml','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pro-methods">Fonctions membres protégées</a> &#124;
+<a href="class_music_list-members.xhtml">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe MusicList</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Graphe d'héritage de MusicList:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_music_list__inherit__graph.svg" width="142" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.xhtml">légende</a>]</span></center></div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Graphe de collaboration de MusicList:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_music_list__coll__graph.svg" width="142" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.xhtml">légende</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:aaea7791cda9dc9b88536f0aa567970aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#aaea7791cda9dc9b88536f0aa567970aa">MusicList</a> ()</td></tr>
+<tr class="memdesc:aaea7791cda9dc9b88536f0aa567970aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#aaea7791cda9dc9b88536f0aa567970aa">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aaea7791cda9dc9b88536f0aa567970aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50ac37d6bb9ae0ce33daa7652e740b90"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a50ac37d6bb9ae0ce33daa7652e740b90">~MusicList</a> ()</td></tr>
+<tr class="memdesc:a50ac37d6bb9ae0ce33daa7652e740b90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#a50ac37d6bb9ae0ce33daa7652e740b90">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a50ac37d6bb9ae0ce33daa7652e740b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c269c8bc46eb3747d715972ef0b392"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_music.xhtml">Music</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a82c269c8bc46eb3747d715972ef0b392">getCollection</a> () const </td></tr>
+<tr class="memdesc:a82c269c8bc46eb3747d715972ef0b392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the music list Get the music list, in which the playlist is stored.  <a href="#a82c269c8bc46eb3747d715972ef0b392">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a82c269c8bc46eb3747d715972ef0b392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78c7875e4ff76512dec06a673c80b5ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a78c7875e4ff76512dec06a673c80b5ce">empty</a> () const </td></tr>
+<tr class="memdesc:a78c7875e4ff76512dec06a673c80b5ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the presence of elements Indicates the presence of elements.  <a href="#a78c7875e4ff76512dec06a673c80b5ce">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a78c7875e4ff76512dec06a673c80b5ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21f426b1afdfeab1d6a3c1ec176335b7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a21f426b1afdfeab1d6a3c1ec176335b7">size</a> () const </td></tr>
+<tr class="memdesc:a21f426b1afdfeab1d6a3c1ec176335b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the list size Gets the list.  <a href="#a21f426b1afdfeab1d6a3c1ec176335b7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a21f426b1afdfeab1d6a3c1ec176335b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08fdb77606ef442581a99d8e85ff2558"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a08fdb77606ef442581a99d8e85ff2558">parseDirectory</a> (const wxString &amp;dirname, bool recursive)</td></tr>
+<tr class="memdesc:a08fdb77606ef442581a99d8e85ff2558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the directory given in parameter Parse the directory given in parameter.  <a href="#a08fdb77606ef442581a99d8e85ff2558">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a08fdb77606ef442581a99d8e85ff2558"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a598308a7d4be7a7d1d02cbe04c7cac27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a598308a7d4be7a7d1d02cbe04c7cac27">clear</a> ()</td></tr>
+<tr class="memdesc:a598308a7d4be7a7d1d02cbe04c7cac27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the list Clears the list.  <a href="#a598308a7d4be7a7d1d02cbe04c7cac27">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a598308a7d4be7a7d1d02cbe04c7cac27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a945a97de0fcb60583592c545c273bbd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a945a97de0fcb60583592c545c273bbd3">addLines</a> (const wxArrayString &amp;pathArray)</td></tr>
+<tr class="memdesc:a945a97de0fcb60583592c545c273bbd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds in the list some lines Adds some lines in the list according to their kind (music file, playlist file, directory)  <a href="#a945a97de0fcb60583592c545c273bbd3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a945a97de0fcb60583592c545c273bbd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb0e18dc537668bea420005fce1b3f08"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#acb0e18dc537668bea420005fce1b3f08">addUnknownKindLine</a> (const wxString &amp;path)</td></tr>
+<tr class="memdesc:acb0e18dc537668bea420005fce1b3f08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the path in the list after verifications Adds the path in the list after verifications of its kind.  <a href="#acb0e18dc537668bea420005fce1b3f08">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acb0e18dc537668bea420005fce1b3f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a925a21b098701261704ad49f9aa8df82"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a925a21b098701261704ad49f9aa8df82">addFileLine</a> (const wxString &amp;path)</td></tr>
+<tr class="memdesc:a925a21b098701261704ad49f9aa8df82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a music file in the list Adds a music file in the list.  <a href="#a925a21b098701261704ad49f9aa8df82">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a925a21b098701261704ad49f9aa8df82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56259f08eb2145b8c3f5d575044b293e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a56259f08eb2145b8c3f5d575044b293e">addDirLine</a> (const wxString &amp;path)</td></tr>
+<tr class="memdesc:a56259f08eb2145b8c3f5d575044b293e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the directory Parse the directory.  <a href="#a56259f08eb2145b8c3f5d575044b293e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a56259f08eb2145b8c3f5d575044b293e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768939b3800688880448f749a55e1745"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a768939b3800688880448f749a55e1745">importFileContent</a> (const wxString &amp;filename)</td></tr>
+<tr class="memdesc:a768939b3800688880448f749a55e1745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the content of the file into the list.  <a href="#a768939b3800688880448f749a55e1745">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a768939b3800688880448f749a55e1745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8031f2ddf4076347b430b9cfc72904a1"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a8031f2ddf4076347b430b9cfc72904a1">getNameAtPosition</a> (long position)</td></tr>
+<tr class="memdesc:a8031f2ddf4076347b430b9cfc72904a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the filename at the wanted position Gets the filename at the wanted position.  <a href="#a8031f2ddf4076347b430b9cfc72904a1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8031f2ddf4076347b430b9cfc72904a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab495d5e167bd8657889834cb39e1316e"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#ab495d5e167bd8657889834cb39e1316e">getPositionInList</a> (const wxString &amp;filename, long position=-1)</td></tr>
+<tr class="memdesc:ab495d5e167bd8657889834cb39e1316e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the nearest position of the pair &lt;filename, position&gt; Gets the nearest position of the filename at the wanted position.  <a href="#ab495d5e167bd8657889834cb39e1316e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab495d5e167bd8657889834cb39e1316e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40ee36b7dbb9a66f2fa13a33744a918c"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a40ee36b7dbb9a66f2fa13a33744a918c">getPositionInList</a> (const <a class="el" href="class_i_music.xhtml">IMusic</a> *music)</td></tr>
+<tr class="memdesc:a40ee36b7dbb9a66f2fa13a33744a918c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the position of music Gets the position of the <a class="el" href="class_music.xhtml" title="Handles music properties (file and sound) ">Music</a> music in the list.  <a href="#a40ee36b7dbb9a66f2fa13a33744a918c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a40ee36b7dbb9a66f2fa13a33744a918c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ca212a7d9e01397a138a09d589961f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a8ca212a7d9e01397a138a09d589961f6">removeLine</a> (size_t position)</td></tr>
+<tr class="memdesc:a8ca212a7d9e01397a138a09d589961f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the title at the given position.  <a href="#a8ca212a7d9e01397a138a09d589961f6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8ca212a7d9e01397a138a09d589961f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431184e79f4ec8fb2875ae60e434bb6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a431184e79f4ec8fb2875ae60e434bb6c">removeLines</a> (wxArrayString &amp;filenameArray)</td></tr>
+<tr class="memdesc:a431184e79f4ec8fb2875ae60e434bb6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes from the current list each filename in filenameArray.  <a href="#a431184e79f4ec8fb2875ae60e434bb6c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a431184e79f4ec8fb2875ae60e434bb6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4af005cd36eabdc1626bb65028b07e1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a4af005cd36eabdc1626bb65028b07e1d">exchangeLine</a> (const wxString &amp;filename1, const wxString &amp;filename2)</td></tr>
+<tr class="memdesc:a4af005cd36eabdc1626bb65028b07e1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchange two lines.  <a href="#a4af005cd36eabdc1626bb65028b07e1d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4af005cd36eabdc1626bb65028b07e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0313855e8196b5bbcaf211446d358cb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a0313855e8196b5bbcaf211446d358cb7">insertLines</a> (wxArrayString *filenameArray, long position)</td></tr>
+<tr class="memdesc:a0313855e8196b5bbcaf211446d358cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert filenames at a specific position Insert filenames at a specific position.  <a href="#a0313855e8196b5bbcaf211446d358cb7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0313855e8196b5bbcaf211446d358cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e6c54ef8c1ccf7bda14cb52d2ca1f23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a9e6c54ef8c1ccf7bda14cb52d2ca1f23">setParent</a> (wxWindow *parent)</td></tr>
+<tr class="memdesc:a9e6c54ef8c1ccf7bda14cb52d2ca1f23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifies the parent window Modifies the parent window.  <a href="#a9e6c54ef8c1ccf7bda14cb52d2ca1f23">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9e6c54ef8c1ccf7bda14cb52d2ca1f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70a2c603d10477608c7571cbdf6ca4a8"><td class="memItemLeft" align="right" valign="top">wxWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a70a2c603d10477608c7571cbdf6ca4a8">getParent</a> () const </td></tr>
+<tr class="memdesc:a70a2c603d10477608c7571cbdf6ca4a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the parent window Gets the parent window.  <a href="#a70a2c603d10477608c7571cbdf6ca4a8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a70a2c603d10477608c7571cbdf6ca4a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc3d94bfe9f849a421b55d6930234dae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#acc3d94bfe9f849a421b55d6930234dae">sendMusicListUpdatedEvent</a> ()</td></tr>
+<tr class="memdesc:acc3d94bfe9f849a421b55d6930234dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send an event - the music list has been modified Send an event to the parent window - the music list has been modified.  <a href="#acc3d94bfe9f849a421b55d6930234dae">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acc3d94bfe9f849a421b55d6930234dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Fonctions membres protégées</h2></td></tr>
+<tr class="memitem:a5fabbe29262f53822d342833758dd5eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a5fabbe29262f53822d342833758dd5eb">parseDirectoryRecursively</a> (const wxString &amp;dirname)</td></tr>
+<tr class="memdesc:a5fabbe29262f53822d342833758dd5eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the directory given in parameter and subdirectories Parse the directory given in parameter and subdirectories.  <a href="#a5fabbe29262f53822d342833758dd5eb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5fabbe29262f53822d342833758dd5eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2855b1fbd7652fe2ba78b34f99966a9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_music_list.xhtml#a2855b1fbd7652fe2ba78b34f99966a9c">parseDirectoryWithoutRecurs</a> (const wxString &amp;dirname)</td></tr>
+<tr class="memdesc:a2855b1fbd7652fe2ba78b34f99966a9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse only the directory given in parameter Parse only the directory given in parameter and not subdirectories.  <a href="#a2855b1fbd7652fe2ba78b34f99966a9c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2855b1fbd7652fe2ba78b34f99966a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"></div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="aaea7791cda9dc9b88536f0aa567970aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MusicList::MusicList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a50ac37d6bb9ae0ce33daa7652e740b90"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MusicList::~MusicList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default destructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a56259f08eb2145b8c3f5d575044b293e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MusicList::addDirLine </td>
+          <td>(</td>
+          <td class="paramtype">const wxString &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse the directory Parse the directory. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>the directory path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a925a21b098701261704ad49f9aa8df82"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MusicList::addFileLine </td>
+          <td>(</td>
+          <td class="paramtype">const wxString &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a music file in the list Adds a music file in the list. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>a music path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+
+<p>Implémente <a class="el" href="class_i_search_traversable.xhtml">ISearchTraversable</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a945a97de0fcb60583592c545c273bbd3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MusicList::addLines </td>
+          <td>(</td>
+          <td class="paramtype">const wxArrayString &amp;&#160;</td>
+          <td class="paramname"><em>pathArray</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds in the list some lines Adds some lines in the list according to their kind (music file, playlist file, directory) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathArray</td><td>paths </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acb0e18dc537668bea420005fce1b3f08"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MusicList::addUnknownKindLine </td>
+          <td>(</td>
+          <td class="paramtype">const wxString &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds the path in the list after verifications Adds the path in the list after verifications of its kind. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>a file or directory path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a598308a7d4be7a7d1d02cbe04c7cac27"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MusicList::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clears the list Clears the list. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a78c7875e4ff76512dec06a673c80b5ce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MusicList::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates the presence of elements Indicates the presence of elements. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>true if the list is empty </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4af005cd36eabdc1626bb65028b07e1d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MusicList::exchangeLine </td>
+          <td>(</td>
+          <td class="paramtype">const wxString &amp;&#160;</td>
+          <td class="paramname"><em>filename1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const wxString &amp;&#160;</td>
+          <td class="paramname"><em>filename2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Exchange two lines. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename1</td><td>First line </td></tr>
+    <tr><td class="paramname">filename2</td><td>Second line </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>voidTODO (David): Mauvaise id�e, utiliser les positions sera plus efficaces, et remplissage avec un filereader TODO (David): Pas utilis� dans le code, � supprimer ?? L'id�e de base devait �tre la mise � jour d'une ligne =&gt; on cr�e un nouvel objet avec les bonne valeurs, on le met � la place de l'ancien, on supprime l'ancien </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a82c269c8bc46eb3747d715972ef0b392"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_music.xhtml">Music</a> * &gt; &amp; MusicList::getCollection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the music list Get the music list, in which the playlist is stored. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>the music list </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8031f2ddf4076347b430b9cfc72904a1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxString MusicList::getNameAtPosition </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the filename at the wanted position Gets the filename at the wanted position. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>a position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>a filename if found, an empty string otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a70a2c603d10477608c7571cbdf6ca4a8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxWindow * MusicList::getParent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the parent window Gets the parent window. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>the parent window </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab495d5e167bd8657889834cb39e1316e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long MusicList::getPositionInList </td>
+          <td>(</td>
+          <td class="paramtype">const wxString &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>position</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the nearest position of the pair &lt;filename, position&gt; Gets the nearest position of the filename at the wanted position. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>a filename </td></tr>
+    <tr><td class="paramname">position</td><td>a position if known, else a negative number </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>a positive number indicating the position if found, -1 otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a40ee36b7dbb9a66f2fa13a33744a918c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long MusicList::getPositionInList </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_i_music.xhtml">IMusic</a> *&#160;</td>
+          <td class="paramname"><em>music</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the position of music Gets the position of the <a class="el" href="class_music.xhtml" title="Handles music properties (file and sound) ">Music</a> music in the list. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">music</td><td>an instance </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>a positive number if found, -1 otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a768939b3800688880448f749a55e1745"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MusicList::importFileContent </td>
+          <td>(</td>
+          <td class="paramtype">const wxString &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds the content of the file into the list. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>a filename </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0313855e8196b5bbcaf211446d358cb7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MusicList::insertLines </td>
+          <td>(</td>
+          <td class="paramtype">wxArrayString *&#160;</td>
+          <td class="paramname"><em>filenameArray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insert filenames at a specific position Insert filenames at a specific position. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filenameArray</td><td>A list of filenames </td></tr>
+    <tr><td class="paramname">position</td><td>position to put filenames </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a08fdb77606ef442581a99d8e85ff2558"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MusicList::parseDirectory </td>
+          <td>(</td>
+          <td class="paramtype">const wxString &amp;&#160;</td>
+          <td class="paramname"><em>dirname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>recursive</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse the directory given in parameter Parse the directory given in parameter. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dirname</td><td>the directory name </td></tr>
+    <tr><td class="paramname">recursive</td><td>recurs all subdirectories </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5fabbe29262f53822d342833758dd5eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MusicList::parseDirectoryRecursively </td>
+          <td>(</td>
+          <td class="paramtype">const wxString &amp;&#160;</td>
+          <td class="paramname"><em>dirname</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse the directory given in parameter and subdirectories Parse the directory given in parameter and subdirectories. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dirname</td><td>the directory name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2855b1fbd7652fe2ba78b34f99966a9c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MusicList::parseDirectoryWithoutRecurs </td>
+          <td>(</td>
+          <td class="paramtype">const wxString &amp;&#160;</td>
+          <td class="paramname"><em>dirname</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse only the directory given in parameter Parse only the directory given in parameter and not subdirectories. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dirname</td><td>the directory name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8ca212a7d9e01397a138a09d589961f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MusicList::removeLine </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes the title at the given position. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>the position to remove </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a431184e79f4ec8fb2875ae60e434bb6c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MusicList::removeLines </td>
+          <td>(</td>
+          <td class="paramtype">wxArrayString &amp;&#160;</td>
+          <td class="paramname"><em>filenameArray</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes from the current list each filename in filenameArray. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filenameArray</td><td>A list of filenames </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acc3d94bfe9f849a421b55d6930234dae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MusicList::sendMusicListUpdatedEvent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Send an event - the music list has been modified Send an event to the parent window - the music list has been modified. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9e6c54ef8c1ccf7bda14cb52d2ca1f23"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MusicList::setParent </td>
+          <td>(</td>
+          <td class="paramtype">wxWindow *&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Modifies the parent window Modifies the parent window. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a21f426b1afdfeab1d6a3c1ec176335b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t MusicList::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the list size Gets the list. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>the list size </dd></dl>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>C:/Workspace/Projects/fux/include/music/<a class="el" href="">MusicList.h</a></li>
+<li>C:/Workspace/Projects/fux/src/music/<a class="el" href="">MusicList.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_music_list.xhtml">MusicList</a></li>
+    <li class="footer">Généré le Mercredi 1 Avril 2015 20:02:07 pour Fu(X) 2.0 par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
+</body>
+</html>

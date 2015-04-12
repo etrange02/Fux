@@ -1,11 +1,30 @@
-Warning: The selected output language "french" has not been updated
-since release 1.8.0.  As a result some sentences may appear in English.
-
-C:/Fux/src/gui/settings/PreferenceCouleur.cpp:34: warning: argument 'Parent' of command @param is not found in the argument list of EVT_TREE_ITEM_RIGHT_CLICK(ID_APP_PREF_COULEUR_TREE, PreferenceCouleur::EvtTreeMenu)
-C:/Fux/src/gui/settings/PreferenceCouleur.cpp:34: warning: argument 'Id' of command @param is not found in the argument list of EVT_TREE_ITEM_RIGHT_CLICK(ID_APP_PREF_COULEUR_TREE, PreferenceCouleur::EvtTreeMenu)
-C:/Fux/src/gui/settings/PreferenceSon.cpp:31: warning: argument 'Parent' of command @param is not found in the argument list of EVT_TREE_ITEM_RIGHT_CLICK(ID_APP_PREF_SON_TREE, PreferenceSon::EvtTreeMenu)
-C:/Fux/src/gui/settings/PreferenceSon.cpp:31: warning: argument 'Id' of command @param is not found in the argument list of EVT_TREE_ITEM_RIGHT_CLICK(ID_APP_PREF_SON_TREE, PreferenceSon::EvtTreeMenu)
-C:/Fux/src/gui/musiclist/PlayListTableau.cpp:371: warning: argument 'titre' of command @param is not found in the argument list of PlayListTableau::ChangementChanson()
-C:/Fux/src/tools/dir_traverser/Search.cpp:17: warning: argument 'fichier' of command @param is not found in the argument list of Search::Search(ISearchTraversable *searchTraversable)
-C:/Fux/src/tools/dir_traverser/Search.cpp:17: warning: The following parameters of Search::Search(ISearchTraversable *searchTraversable) are not documented:
+C:/Workspace/Projects/fux/src/GUI/settings/PreferenceCouleur.cpp:34: warning: argument 'Parent' of command @param is not found in the argument list of EVT_TREE_ITEM_RIGHT_CLICK(ID_APP_PREF_COULEUR_TREE, PreferenceCouleur::EvtTreeMenu)
+C:/Workspace/Projects/fux/src/GUI/settings/PreferenceCouleur.cpp:34: warning: argument 'Id' of command @param is not found in the argument list of EVT_TREE_ITEM_RIGHT_CLICK(ID_APP_PREF_COULEUR_TREE, PreferenceCouleur::EvtTreeMenu)
+C:/Workspace/Projects/fux/src/GUI/settings/PreferenceSon.cpp:31: warning: argument 'Parent' of command @param is not found in the argument list of EVT_TREE_ITEM_RIGHT_CLICK(ID_APP_PREF_SON_TREE, PreferenceSon::EvtTreeMenu)
+C:/Workspace/Projects/fux/src/GUI/settings/PreferenceSon.cpp:31: warning: argument 'Id' of command @param is not found in the argument list of EVT_TREE_ITEM_RIGHT_CLICK(ID_APP_PREF_SON_TREE, PreferenceSon::EvtTreeMenu)
+C:/Workspace/Projects/fux/src/GUI/dialogs/DialogTagMP3.cpp:18: warning: argument 'chanson' of command @param is not found in the argument list of DialogTagMP3::DialogTagMP3(wxWindow *parent, const wxWindowID id, const Music &music)
+C:/Workspace/Projects/fux/src/GUI/dialogs/DialogTagMP3.cpp:18: warning: The following parameters of DialogTagMP3::DialogTagMP3(wxWindow *parent, const wxWindowID id, const Music &music) are not documented:
+  parameter 'music'
+C:/Workspace/Projects/fux/src/GUI/dialogs/DialogTagMP3Info.cpp:17: warning: argument 'chanson' of command @param is not found in the argument list of DialogTagMP3Info::DialogTagMP3Info(wxWindow *parent, wxWindowID id, Music *music)
+C:/Workspace/Projects/fux/src/GUI/dialogs/DialogTagMP3Info.cpp:17: warning: The following parameters of DialogTagMP3Info::DialogTagMP3Info(wxWindow *parent, wxWindowID id, Music *music) are not documented:
+  parameter 'music'
+C:/Workspace/Projects/fux/src/GUI/widgets/ImagePochetteMusique.cpp:24: warning: argument 'Parent' of command @param is not found in the argument list of ImagePochetteMusique::ImagePochetteMusique(wxWindow *parent, wxWindowID id, const int width, const int height, bool warnParent)
+C:/Workspace/Projects/fux/src/GUI/widgets/ImagePochetteMusique.cpp:24: warning: argument 'label' of command @param is not found in the argument list of ImagePochetteMusique::ImagePochetteMusique(wxWindow *parent, wxWindowID id, const int width, const int height, bool warnParent)
+C:/Workspace/Projects/fux/src/GUI/widgets/ImagePochetteMusique.cpp:24: warning: The following parameters of ImagePochetteMusique::ImagePochetteMusique(wxWindow *parent, wxWindowID id, const int width, const int height, bool warnParent) are not documented:
+  parameter 'parent'
+  parameter 'width'
+  parameter 'height'
+C:/Workspace/Projects/fux/src/music/MusicFileReaderThread.cpp:13: warning: The following parameters of MusicFileReaderThread::MusicFileReaderThread(MusicFileReader *musicFileReader, wxWindow *parent) are not documented:
+  parameter 'parent'
+C:/Workspace/Projects/fux/src/music/MusicManager.cpp:378: warning: argument 'update' of command @param is not found in the argument list of MusicManager::moveIntTitlesAtInSearch(wxArrayString *titles, long position)
+C:/Workspace/Projects/fux/src/music/MusicManager.cpp:378: warning: argument 'autoDelete' of command @param is not found in the argument list of MusicManager::moveIntTitlesAtInSearch(wxArrayString *titles, long position)
+C:/Workspace/Projects/fux/src/music/MusicManager.cpp:406: warning: argument 'update' of command @param is not found in the argument list of MusicManager::placeStringTitlesAtInSearch(wxArrayString *titles, size_t position)
+C:/Workspace/Projects/fux/src/settings/Parametre.cpp:238: warning: argument 'ext' of command @param is not found in the argument list of Parametre::isID3V2(const wxString &path)
+C:/Workspace/Projects/fux/src/settings/Parametre.cpp:238: warning: The following parameters of Parametre::isID3V2(const wxString &path) are not documented:
+  parameter 'path'
+C:/Workspace/Projects/fux/src/GUI/musiclist/PlayListTableau.cpp:318: warning: argument 'titre' of command @param is not found in the argument list of PlayListTableau::updateColors()
+C:/Workspace/Projects/fux/src/tools/dir_traverser/Search.cpp:17: warning: argument 'fichier' of command @param is not found in the argument list of Search::Search(ISearchTraversable *searchTraversable)
+C:/Workspace/Projects/fux/src/tools/dir_traverser/Search.cpp:17: warning: The following parameters of Search::Search(ISearchTraversable *searchTraversable) are not documented:
   parameter 'searchTraversable'
+C:/Workspace/Projects/fux/src/music/Factory.cpp:56: warning: The following parameters of fux::music::Factory::createMusicFileReaderThread(Music &music, wxWindow *parent) are not documented:
+  parameter 'parent'

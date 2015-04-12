@@ -1,22 +1,9 @@
 #ifndef PLAYLISTTABLEAU_H_INCLUDED
 #define PLAYLISTTABLEAU_H_INCLUDED
 
-#include "../../Define.h"
 #include <wx/wx.h>
-#include <wx/stdpaths.h>
-#include <wx/dir.h>
 #include <wx/listctrl.h>
-#include <wx/tarstrm.h>
-#include <wx/progdlg.h>
-#include <wx/dnd.h>
-#include <wx/mstream.h>
-#include <wx/renderer.h>
-#include "../../music/MusicManager.h"
-#include "../../tools/dnd/DnDCible.h"
-#include "../widgets/SliderSon.h"
-#include "../../tools/FichierLog.h"
-#include "../../db/BDDRequete.h"
-#include "../../db/BDDThread.h"
+#include <wx/thread.h>
 
 extern const wxEventType wxEVT_VIDER_PANNEAU;
 extern const wxEventType wxEVT_LISTE_DETAILS;
@@ -65,10 +52,11 @@ class PlayListTableau : public wxListCtrl
         void setDefaultColor(const size_t position);
 
     private:
-        bool m_couper;
-        wxMenu *m_menu;
+        wxMutex m_mutexMAJPlaylist;
         wxArrayString m_tableauCouper;
         wxArrayInt m_ocurrenceLigne;
+        bool m_couper;
+        wxMenu *m_menu;
         long m_yMenu;
 
         int m_positionChanson;

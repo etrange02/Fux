@@ -8,7 +8,6 @@
 #include "dir_traverser/TraverserCopieDossier.h"
 #include "dir_traverser/TraverserCopieFichier.h"
 #include "dir_traverser/TraverserDeplaceFichier.h"
-#include "dir_traverser/TraverserSupprimeFichier.h"
 #include "ElementThreadFichier.h"
 #include "FichierLog.h"
 

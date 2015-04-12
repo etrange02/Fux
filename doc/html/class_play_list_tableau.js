@@ -1,11 +1,13 @@
 var class_play_list_tableau =
 [
     [ "PlayListTableau", "class_play_list_tableau.html#a486a32be7a8bbf1d3dc19781fba94919", null ],
+    [ "~PlayListTableau", "class_play_list_tableau.html#add6ca77e6b5123e5797264b4c8cd23fc", null ],
     [ "addLine", "class_play_list_tableau.html#a0ee2a2b61f9e976a40ef19dff50f5ca9", null ],
     [ "addLine", "class_play_list_tableau.html#ad4d63a731a47b20e972a429964b1465b", null ],
     [ "addLineThread", "class_play_list_tableau.html#a1de34433bf8c0ff5f557d6263458150e", null ],
     [ "AfficheMenu", "class_play_list_tableau.html#a9cca151e5f31b4e1cabdf61950175326", null ],
     [ "ChansonActive", "class_play_list_tableau.html#a9b1f1f3cbd8eac3550b5a75dbb34f94d", null ],
+    [ "GetDuration", "class_play_list_tableau.html#a4d7dd07fbe3adfaf903c18ceb98c0e5d", null ],
     [ "Glisser", "class_play_list_tableau.html#a8476e9a4839aed812a159e2fc2829687", null ],
     [ "MAJ", "class_play_list_tableau.html#a43dc67b763c691e534410ef502f9f897", null ],
     [ "menuColler", "class_play_list_tableau.html#a46e1e54943b4e647db929e70385ccc73", null ],
@@ -19,6 +21,10 @@ var class_play_list_tableau =
     [ "OnKey", "class_play_list_tableau.html#ac9cedb895d0a0ad1176754c17a1b26f5", null ],
     [ "onUpdateLine", "class_play_list_tableau.html#afdb00201d500398ba7d866ec6ef47598", null ],
     [ "removeLine", "class_play_list_tableau.html#aa8e58e9afd5ed6e1d48d89c5a2a49bb1", null ],
+    [ "setDefaultColor", "class_play_list_tableau.html#a1d204c5462566ceef015025d54ee2890", null ],
     [ "SuppressionLigne", "class_play_list_tableau.html#ab1b3b28168597b8afc7fd1d2939ffb74", null ],
-    [ "updateColors", "class_play_list_tableau.html#ac3e17e32232ecc363e47e88cd34b14bd", null ]
+    [ "updateColor", "class_play_list_tableau.html#a222823bf1c8b5d91af1ca17abe3fb2ce", null ],
+    [ "updateColorNormalMode", "class_play_list_tableau.html#affadca68389cda83f6d9258657561cbf", null ],
+    [ "updateColors", "class_play_list_tableau.html#ac3e17e32232ecc363e47e88cd34b14bd", null ],
+    [ "updateColorSearchMode", "class_play_list_tableau.html#a8e9090501606b2a8551ecd93096641c7", null ]
 ];

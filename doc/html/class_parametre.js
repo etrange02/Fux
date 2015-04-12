@@ -1,8 +1,12 @@
 var class_parametre =
 [
     [ "Parametre", "class_parametre.html#a7f33063b2094bbfbc6be12e5c7abb3e0", null ],
+    [ "~Parametre", "class_parametre.html#ad199d7d9dfee5860baa43a8fcdf4a521", null ],
+    [ "Parametre", "class_parametre.html#a5fa4597e9b0a7e075635c09c0930aa27", null ],
     [ "creerRepertoireParametre", "class_parametre.html#ada64bfc9bc451877ba8611f3faff27a9", null ],
     [ "creerRepertoireParametre", "class_parametre.html#a4ba62181e16c9b8b1fa4c01fe9b8ff5b", null ],
+    [ "Get", "class_parametre.html#afc0de0da7d04486d5ba6932562d96ed8", null ],
+    [ "get", "class_parametre.html#a4baba47b2e0f2841389d1f640b3382bd", null ],
     [ "getCheminCouleur", "class_parametre.html#ad17cb3cb6157d022e19ad8db7f24574d", null ],
     [ "getCheminCouleur", "class_parametre.html#ae163f9a7dcff57df93ea835921003bf8", null ],
     [ "getCheminSon", "class_parametre.html#aaae6dc039d463ffa104e76605724c441", null ],
@@ -17,14 +21,17 @@ var class_parametre =
     [ "getRepertoireParametre", "class_parametre.html#a830c3e398ba3e4251b8f8fb954141de9", null ],
     [ "getRepertoireParametre", "class_parametre.html#aaae8a6d958d66a5a769a042b2bf65ab6", null ],
     [ "getSousDossier", "class_parametre.html#aa06b482406215b03426f26693e0d9788", null ],
-    [ "isID3V2", "class_parametre.html#af57c65de995367b7e652a3c4e08aa460", null ],
-    [ "islisable", "class_parametre.html#a8a9ff3a057d1387d08453bcd779503b3", null ],
+    [ "isContainerFile", "class_parametre.html#ae3f6d5eacac69acf31cb297c5ac3a926", null ],
+    [ "isID3V2", "class_parametre.html#abfaff93e40caa704a7603302b4fb3822", null ],
+    [ "islisable", "class_parametre.html#a428ae85adee55c0e4dacbd0e52e8fe36", null ],
     [ "isRepertoireInstallationDefaut", "class_parametre.html#a04fcf91df13d7233ed99a0d157532ea4", null ],
+    [ "operator=", "class_parametre.html#a7a81a4a52207a18d9fa017ee3047a08a", null ],
     [ "setCheminCouleur", "class_parametre.html#a5eebc3b29d5a43954b0b30f509110146", null ],
     [ "setCheminSon", "class_parametre.html#aa3861add4f19dd9da00196195df3c0d1", null ],
     [ "setCouleurs", "class_parametre.html#a7e567bd7a74025f5ba9dcc6413e498ec", null ],
     [ "setRepertoireDefaut", "class_parametre.html#a6941cf06c034b914942bba72ca0624a4", null ],
     [ "setSousDossier", "class_parametre.html#a407df5eef395bcb30d18010cf93ab660", null ],
     [ "setVolume", "class_parametre.html#a6205a7c26249d9093a91dde1e17449c7", null ],
-    [ "setVolume", "class_parametre.html#a4938a711d2171180a4c101c96e1de332", null ]
+    [ "setVolume", "class_parametre.html#a4938a711d2171180a4c101c96e1de332", null ],
+    [ "s_instanceParametre", "class_parametre.html#a85d6f931ffef870963632242df17f452", null ]
 ];

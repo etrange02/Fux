@@ -1,15 +1,16 @@
 <map id="FuXFenetre" name="FuXFenetre">
-<area shape="rect" id="node3" href="$class_array_fenetre_detachable.html" title="Array contenant des FenetreDetachable. " alt="" coords="680,107,843,133"/>
-<area shape="rect" id="node5" href="$class_play_list.html" title="Page contenant la liste de lecture et une description d�taill�e des titres. " alt="" coords="727,157,796,184"/>
-<area shape="rect" id="node7" href="$class_image_pochette_musique.html" title="Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour changer l..." alt="" coords="368,107,527,133"/>
-<area shape="rect" id="node9" href="$class_play_list_tableau.html" title="Tableau (GUI) dans lequel sont affich�s les informations des titres mis dans la liste de lecture..." alt="" coords="390,157,505,184"/>
-<area shape="rect" id="node11" href="$class_t_c_p_serveur.html" title="Représente le serveur. " alt="" coords="716,260,807,287"/>
-<area shape="rect" id="node13" href="$class_musique_graph.html" title="Panel affichant le graph, la barre de temps et le titre de la chanson. " alt="" coords="708,364,815,391"/>
-<area shape="rect" id="node15" href="$class_couleur.html" title="Champs RVB. " alt="" coords="414,364,481,391"/>
-<area shape="rect" id="node16" href="$class_image_text.html" title="Transforme et affiche une chaîne de caractère dans une surface OpenGL. " alt="" coords="406,421,489,448"/>
-<area shape="rect" id="node17" href="$class_timer_graph.html" title="Timer gérant la mise à jour du graphe et le passage d&#39;une chanson à l&#39;autre. " alt="" coords="717,432,806,459"/>
-<area shape="rect" id="node19" href="$class_preference_son.html" title="Interface représentant différents volumes sonores Les fichiers sont synchronisés en même temps que ch..." alt="" coords="394,599,501,625"/>
-<area shape="rect" id="node23" href="$class_preference_defaut.html" title="G�re l&#39;application des filtres (couleur et sonore), et le comportement par d�faut de l&#39;application..." alt="" coords="701,641,822,668"/>
-<area shape="rect" id="node20" href="$class_generic_tree_panel.html" title="Inteface générique pour les préférences. " alt="" coords="185,599,311,625"/>
-<area shape="rect" id="node22" href="$class_preference_couleur.html" title="Interface représentant différentes compositions graphiques Les fichiers sont synchronisés en même tem..." alt="" coords="383,536,511,563"/>
+<area shape="rect" id="node3" href="$class_array_fenetre_detachable.html" title="Array contenant des FenetreDetachable. " alt="" coords="692,58,855,85"/>
+<area shape="rect" id="node5" href="$class_play_list.html" title="Page contenant la liste de lecture et une description d�taill�e des titres. " alt="" coords="739,176,808,202"/>
+<area shape="rect" id="node22" href="$classgui_1_1explorer_1_1_drive_managers_panel.html" title="gui::explorer::DriveManagers\lPanel" alt="" coords="680,110,867,151"/>
+<area shape="rect" id="node7" href="$class_image_pochette_musique.html" title="Composant affichant une image, acceptant le Drag &amp; Drop, et ouvre le navigateur de fichier pour changer l..." alt="" coords="368,118,527,145"/>
+<area shape="rect" id="node9" href="$class_play_list_tableau.html" title="Tableau (GUI) dans lequel sont affich�s les informations des titres mis dans la liste de lecture..." alt="" coords="390,169,505,196"/>
+<area shape="rect" id="node11" href="$class_t_c_p_serveur.html" title="Représente le serveur. " alt="" coords="728,242,819,269"/>
+<area shape="rect" id="node13" href="$class_musique_graph.html" title="Panel affichant le graph, la barre de temps et le titre de la chanson. " alt="" coords="720,326,827,353"/>
+<area shape="rect" id="node15" href="$class_couleur.html" title="Champs RVB. " alt="" coords="414,376,481,402"/>
+<area shape="rect" id="node16" href="$class_image_text.html" title="Transforme et affiche une chaîne de caractère dans une surface OpenGL. " alt="" coords="406,433,489,460"/>
+<area shape="rect" id="node17" href="$class_timer_graph.html" title="Timer gérant la mise à jour du graphe et le passage d&#39;une chanson à l&#39;autre. " alt="" coords="729,444,818,470"/>
+<area shape="rect" id="node19" href="$class_preference_son.html" title="Interface représentant différents volumes sonores Les fichiers sont synchronisés en même temps que ch..." alt="" coords="394,610,501,637"/>
+<area shape="rect" id="node24" href="$class_preference_defaut.html" title="G�re l&#39;application des filtres (couleur et sonore), et le comportement par d�faut de l&#39;application..." alt="" coords="713,580,834,606"/>
+<area shape="rect" id="node20" href="$class_generic_tree_panel.html" title="Inteface générique pour les préférences. " alt="" coords="185,610,311,637"/>
+<area shape="rect" id="node23" href="$class_preference_couleur.html" title="Interface repr�sentant diff�rentes compositions graphiques Les fichiers sont synchronis�s en m�me temps q..." alt="" coords="383,548,511,574"/>
 </map>

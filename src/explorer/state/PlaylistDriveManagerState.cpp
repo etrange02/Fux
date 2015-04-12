@@ -25,7 +25,7 @@ PlaylistDriveManagerState::~PlaylistDriveManagerState()
     //dtor
 }
 
-bool PlaylistDriveManagerState::isPlaylist()
+bool PlaylistDriveManagerState::isPlaylist() const
 {
     return true;
 }
@@ -58,8 +58,49 @@ DriveManagerState& PlaylistDriveManagerState::getPreviousState()
     return *this;
 }
 
-void PlaylistDriveManagerState::openElement(const std::vector<long>& indexes)
+void PlaylistDriveManagerState::openElement(const std::vector<unsigned long>& indexes)
 {
     MusicManagerSwitcher::get().playMusicAt(indexes.at(0));
+}
+
+void PlaylistDriveManagerState::deleteSelectedItems()
+{
+    std::vector<unsigned long> selectedItemsPosition = m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines();
+
+    for (std::vector<unsigned long>::reverse_iterator iter = selectedItemsPosition.rbegin(); iter != selectedItemsPosition.rend(); ++iter)
+    {
+        MusicManagerSwitcher::get().deleteTitleAt(*iter);
+        m_data.getElements().erase(m_data.getElements().begin() + *iter);
+    }
+    m_data.getExplorerPanel().getExplorerListCtrl().removeSelectedLines();
+}
+
+bool PlaylistDriveManagerState::canCopyTo(const DriveManagerState& other) const
+{
+    return true;
+}
+
+bool PlaylistDriveManagerState::canMoveTo(const DriveManagerState& other) const
+{
+    return true;
+}
+
+void PlaylistDriveManagerState::copyElements(DriveManagerState& source)
+{
+    MusicManagerSwitcher::get().parse(source.getSelectedItems());
+    fillExplorerList();
+}
+
+void PlaylistDriveManagerState::moveElements(DriveManagerState& source)
+{
+    std::vector<unsigned long> selectedItemsPosition = m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines();
+
+    const long position = (selectedItemsPosition.empty()) ? MusicManagerSwitcher::get().size() : selectedItemsPosition.at(0);
+
+    wxArrayString itemsPosition = source.getSelectedItemsPosition();
+    MusicManagerSwitcher::get().moveIntTitlesAt(itemsPosition, position);
+
+    fillExplorerList();
+    source.fillExplorerList();
 }
 

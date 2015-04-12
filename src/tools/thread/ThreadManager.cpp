@@ -6,10 +6,12 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../../include/tools/thread/ThreadManager.h"
+#include "tools/thread/ThreadManager.h"
 #include <algorithm>
+#include "tools/thread/ThreadFactory.h"
+#include "tools/thread/ThreadProcess.h"
 
-using namespace fux::thread;
+using namespace tools::thread;
 
 static ThreadManager* s_threadManager = NULL;
 
@@ -66,7 +68,7 @@ void ThreadManager::initialize()
     ThreadProcess *tp = NULL;
     for (int i = 0; i < wxThread::GetCPUCount() -1 ; ++i)
     {
-        tp = Factory::createThreadProcess(this);
+        tp = ThreadFactory::createThreadProcess(this);
         m_workers.push_back(tp);
         tp->Create();
         tp->Run();

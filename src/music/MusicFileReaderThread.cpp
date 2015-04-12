@@ -25,8 +25,7 @@ MusicFileReaderThread::MusicFileReaderThread(MusicFileReader* musicFileReader, w
  */
 MusicFileReaderThread::~MusicFileReaderThread()
 {
-    if (NULL != m_musicFileReader)
-        delete m_musicFileReader;
+    delete m_musicFileReader;
 }
 
 /** @brief Process the work

@@ -25,7 +25,7 @@ FileDriveManagerState::~FileDriveManagerState()
     //dtor
 }
 
-bool FileDriveManagerState::isFile()
+bool FileDriveManagerState::isFile() const
 {
     return true;
 }
@@ -42,9 +42,9 @@ bool FileDriveManagerState::fillExplorerList()
     m_data.getExplorerPanel().getExplorerListCtrl().DeleteAllItems();
     m_data.getElements().clear();
 
-    int debut = 0;
+    const int start = 1;
 
-    for (size_t i = debut; i < max; i++)
+    for (size_t i = start; i < max; i++)
     {
         filename = file.GetLine(i);
 
@@ -74,11 +74,80 @@ DriveManagerState& FileDriveManagerState::getPreviousState()
     return *(explorer::ExplorerFactory::createDirDriveManagerState(m_data));
 }
 
-void FileDriveManagerState::openElement(const std::vector<long>& indexes)
+void FileDriveManagerState::openElement(const std::vector<unsigned long>& indexes)
 {
     MusicManagerSwitcher::get().parse(convertPositionToString(indexes));
 }
 
+void FileDriveManagerState::deleteSelectedItems()
+{
+    wxTextFile file(m_data.getPath());
+    if (!file.Exists() || !file.Open())
+        return;
 
+    const int start = 1;
+    std::vector<unsigned long> selectedItemsPosition = m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines();
+
+    for (std::vector<unsigned long>::reverse_iterator iter = selectedItemsPosition.rbegin(); iter != selectedItemsPosition.rend(); ++iter)
+    {
+        file.RemoveLine(start + *iter);
+        m_data.getElements().erase(m_data.getElements().begin() + *iter);
+    }
+    m_data.getExplorerPanel().getExplorerListCtrl().removeSelectedLines();
+
+    file.Write();
+    file.Close();
+}
+
+bool FileDriveManagerState::canCopyTo(const DriveManagerState& other) const
+{
+    return true;
+}
+
+bool FileDriveManagerState::canMoveTo(const DriveManagerState& other) const
+{
+    return true;
+}
+
+void FileDriveManagerState::copyElements(DriveManagerState& source)
+{
+    wxTextFile file(m_data.getPath());
+    if (!file.Exists() || !file.Open())
+        return;
+
+    wxArrayString selectedItems = source.getSelectedItems();
+
+    for (wxArrayString::iterator iter = selectedItems.begin(); iter != selectedItems.end(); ++iter)
+    {
+        file.AddLine(*iter);
+    }
+
+    file.Write();
+    file.Close();
+
+    fillExplorerList();
+}
+
+void FileDriveManagerState::moveElements(DriveManagerState& source)
+{
+    wxTextFile file(m_data.getPath());
+    if (!file.Exists() || !file.Open())
+        return;
+
+    wxArrayString selectedItems = source.getSelectedItems();
+    source.deleteSelectedItems();
+
+    const long startPosition = 1;
+    std::vector<unsigned long> selectedItemsPosition = m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines();
+
+    long position = (selectedItemsPosition.empty()) ? file.GetLineCount() : startPosition + selectedItemsPosition.at(0);
+
+    for (wxArrayString::iterator iter = selectedItems.begin(); iter != selectedItems.end(); ++iter, ++position)
+        file.InsertLine(*iter, position);
+
+    file.Write();
+    file.Close();
+    fillExplorerList();
+}
 
 

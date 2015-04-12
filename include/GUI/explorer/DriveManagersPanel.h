@@ -22,6 +22,7 @@ namespace gui
                 /** Default destructor */
                 virtual ~DriveManagersPanel();
 
+                void onFocusChanged     (wxCommandEvent& event);
                 void onButtonMyDocuments(wxCommandEvent& event);
                 void onButtonDrivers    (wxCommandEvent& event);
                 void onButtonOthers     (wxCommandEvent& event);
@@ -54,10 +55,10 @@ namespace gui
                 void fillContainerFilesMenu();
                 void emptyMenu(wxMenu& menu, std::vector<MenuElement>& menuElements);
                 void fillMenu (wxMenu& menu, std::vector<MenuElement>& menuElements);
-                void mergeAndMarkPresentElements(std::vector<MenuElement>& menuElements,
-                                                 std::vector<MenuElementData> menuElementData,
-                                                 void (DriveManagersPanel::*funcMappingLeft)(wxCommandEvent&),
-                                                 void (DriveManagersPanel::*funcMappingRight)(wxCommandEvent&) );
+                void mergeAndMarkPresentMenuElements(std::vector<MenuElement>& menuElements,
+                                                     std::vector<MenuElementData> menuElementData,
+                                                     void (DriveManagersPanel::*funcMappingLeft)(wxCommandEvent&),
+                                                     void (DriveManagersPanel::*funcMappingRight)(wxCommandEvent&) );
 
                 MenuElement& getMenuElementById(std::vector<MenuElement>& menuElements, const int id);
 
@@ -68,6 +69,7 @@ namespace gui
                 ExplorerDriveManagers& m_explorerDriveManagers;
                 ExplorerPanel* m_leftExplorerPanels;
                 ExplorerPanel* m_rightExplorerPanels;
+                ExplorerPanel* m_focusedExplorerPanel;
 
                 wxButton* m_streamButton;
                 wxMenu*   m_myDocumentsMenu;

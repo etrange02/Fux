@@ -8,5 +8,6 @@ var dir_db22b1395f615d1428e10e22469fe87b =
     [ "FichierLog.h", null, null ],
     [ "OS_Win.h", null, null ],
     [ "ThreadGestion.h", null, null ],
-    [ "Timer.h", null, null ]
+    [ "Timer.h", null, null ],
+    [ "Tools.h", null, null ]
 ];

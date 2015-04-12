@@ -42,7 +42,7 @@ class MusicList : public ISearchTraversable
         void removeLines(wxArrayString& filenameArray);
         void exchangeLine(const wxString& filename1, const wxString& filename2);
         //void moveLines
-        void insertLines(wxArrayString *filenameArray, long position);
+        void insertLines(const wxArrayString& filenameArray, long position);
 
         void setParent(wxWindow *parent);
         wxWindow *getParent() const;

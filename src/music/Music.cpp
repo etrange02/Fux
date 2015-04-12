@@ -51,6 +51,8 @@ Music::~Music()
 
 Music& Music::operator=(const Music& music)
 {
+    if (this == &music)
+        return *this;
     m_filename      = music.m_filename;
     m_name          = music.m_name;
     m_artists       = music.m_artists;

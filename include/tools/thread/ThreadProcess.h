@@ -8,10 +8,10 @@
 
 /** @brief Thread worker
  * Thread worker. The thread safety is based on semaphore (count)
- * @class fux::thread::ThreadProcess
+ * @class tools::thread::ThreadProcess
  */
 
- namespace fux
+ namespace tools
 {
     namespace thread
     {

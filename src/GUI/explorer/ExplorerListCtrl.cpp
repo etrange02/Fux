@@ -88,4 +88,27 @@ void ExplorerListCtrl::selectLine(const long line)
     EnsureVisible(line);
 }
 
+std::vector<unsigned long> ExplorerListCtrl::getSelectedLines()
+{
+    std::vector<unsigned long> selectedItemsPosition;
+    long index = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
+
+    while (index != -1)
+    {
+        selectedItemsPosition.push_back(index);
+        index = GetNextItem(index, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
+    }
+    return selectedItemsPosition;
+}
+
+void ExplorerListCtrl::removeSelectedLines()
+{
+    long index = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
+
+    while (index != -1)
+    {
+        DeleteItem(index);
+        index = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
+    }
+}
 

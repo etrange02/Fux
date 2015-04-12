@@ -12,7 +12,9 @@ Configurer configure.gcc
 -> STATIC 1
 -> RELEASE
 
-Faire une variable d'environnement $WXWIN pointant sur le répertoire de wxWidgets
+Pour la version C++11 il faut ajouter -std=gnu++11 les flags CXX.
+
+Faire une variable d'environnement $WXWIN pointant sur le répertoire de wxWidgets.
 
 Compiler avec makefile.gcc
 Note: suivant la version de windows, il est possible de faire directement make au lieu de "mingw32-make -f makefile.gcc".
@@ -42,14 +44,14 @@ Compiler avec makefile.gcc
 Zlib est à compiler en static. (Configuration dans CMake).
 TagLib nécessaite au préalable zlib pour être compilé.
 Pour utiliser la version statique, il faut préciser le chemin du fichier zlib.a.
-Utiliser CMake pour configurer le projet, unicode, static (et dyn car ne marche pas toujours)
+Utiliser CMake pour configurer le projet, unicode, static (et dyn car ne marche pas toujours).
 --> utilise la dll, test à faire sans !
 
-Une fois compilé, créer dans le répertoire de sortie/taglib un dossier Headers. Copier dedans tous les fichiers .h du projet (ceux d'origine et ceux qui ont été créés). Ajouter aussi les fichiers .tcc
+Une fois compilé, créer dans le répertoire de sortie/taglib un dossier Headers. Copier dedans tous les fichiers .h du projet (ceux d'origine et ceux qui ont été créés). Ajouter aussi les fichiers .tcc.
 
 =============================================
 4. Récupérer FMODex
---> utilise la dll
+--> utilise la dll.
 
 =============================================
 5. Modifier le fichier FuX.cbp (variables)

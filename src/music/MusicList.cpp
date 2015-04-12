@@ -6,14 +6,14 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../include/music/MusicList.h"
-#include "../tools/thread/ThreadManager.h"
+#include "music/MusicList.h"
+#include "tools/thread/ThreadManager.h"
 
 using namespace fux::music;
 
 const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE = wxNewEventType();
 const wxEventType wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED = wxNewEventType();
-/// TODO (David): Complete wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED event
+/// TODO (David): Complete wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED event by using it to refresh PlayListTableau and explorers...
 
 
 typedef std::vector<Music*> MusicCollection;
@@ -172,7 +172,7 @@ void MusicList::addFileLine(const wxString& path)
     Music *music = Factory::createMusic(path);
     m_musicList->push_back(music);
     wxWindow *parent = isSendEventWhenAdding() ? m_parent : NULL;
-    fux::thread::ThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(*music, parent));
+    tools::thread::ThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(*music, parent));
 }
 
 /** @brief Parse the directory
@@ -355,7 +355,7 @@ void MusicList::exchangeLine(const wxString& filename1, const wxString& filename
  * @return void
  *
  */
-void MusicList::insertLines(wxArrayString* filenameArray, long position)
+void MusicList::insertLines(const wxArrayString& filenameArray, long position)
 {
     long insertionLine = position;
 
@@ -366,7 +366,7 @@ void MusicList::insertLines(wxArrayString* filenameArray, long position)
 
     std::vector<Music*> *tmpArray = new std::vector<Music*>();
 
-    for (wxArrayString::iterator iter = filenameArray->begin(); iter != filenameArray->end(); ++iter)
+    for (wxArrayString::const_iterator iter = filenameArray.begin(); iter != filenameArray.end(); ++iter)
     {
         if (Parametre::Get()->islisable(iter->AfterLast('.').Lower()))
         {

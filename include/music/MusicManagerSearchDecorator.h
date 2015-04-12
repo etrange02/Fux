@@ -14,8 +14,8 @@ class MusicManagerSearchDecorator : public AbstractMusicManagerDecorator
 
         virtual std::vector<Music*>& getMusics();
         virtual size_t getCurrentMusicPosition();
-        virtual void moveIntTitlesAt(wxArrayString* titles, long position);
-        virtual void placeStringTitlesAt(wxArrayString* titles, size_t position);
+        virtual void moveIntTitlesAt(const wxArrayString& titles, long position);
+        virtual void placeStringTitlesAt(const wxArrayString& titles, size_t position);
         virtual void deleteTitleAt(size_t position);
         virtual bool playMusicAt(long position);
         virtual void updateMusicContent(const long position, Music* music);

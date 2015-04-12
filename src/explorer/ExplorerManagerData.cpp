@@ -11,9 +11,9 @@
 #include "explorer/ExplorerDriveManagers.h"
 
 ExplorerManagerData::ExplorerManagerData(explorer::DriveManagerState& state, gui::explorer::ExplorerPanel& explorer, ExplorerDriveManagers& explorerDriveManagers) :
-    m_menu(NULL),
     m_state(&state),
     m_explorerPanel(explorer),
+    m_menu(NULL),
     m_explorerDriveManagers(explorerDriveManagers)
 {
 }

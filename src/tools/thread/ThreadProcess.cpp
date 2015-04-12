@@ -6,9 +6,9 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../../include/tools/thread/ThreadProcess.h"
+#include "tools/thread/ThreadProcess.h"
 
-using namespace fux::thread;
+using namespace tools::thread;
 
 /** @brief Contsructor
  *

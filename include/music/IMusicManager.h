@@ -14,8 +14,8 @@ class IMusicManager
 
         /**/virtual std::vector<Music*>& getMusics() = 0;
         /**/virtual size_t getCurrentMusicPosition() = 0;
-        /**/virtual void moveIntTitlesAt(wxArrayString* titles, long position) = 0;
-        /**/virtual void placeStringTitlesAt(wxArrayString* titles, size_t position) = 0;
+        /**/virtual void moveIntTitlesAt(const wxArrayString& titles, long position) = 0;
+        /**/virtual void placeStringTitlesAt(const wxArrayString& titles, size_t position) = 0;
         /**/virtual void deleteTitleAt(size_t position) = 0;
         /**/virtual bool playMusicAt(long position) = 0;
         /**/virtual void updateMusicContent(const long position, Music* music) = 0;

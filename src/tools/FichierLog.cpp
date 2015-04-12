@@ -6,7 +6,7 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
- #include "../../include/tools/FichierLog.h"
+ #include "tools/FichierLog.h"
 
 /**
  * @class FichierLog

@@ -4,20 +4,21 @@
 #include <vector>
 #include "IThreadManager.h"
 #include "ThreadSafeQueue.h"
-#include "ThreadProcess.h"
-#include "Factory.h"
+
 
 /** @brief Manages thread on different cores
  * Manages thread on different cores. Producer-Consumer model
- * @class fux::thread::ThreadManager
+ * @class tools::thread::ThreadManager
  */
 
 
-namespace fux
+namespace tools
 {
     namespace thread
     {
-        class ThreadManager : public fux::thread::IThreadManager
+        class ThreadProcess;
+
+        class ThreadManager : public tools::thread::IThreadManager
         {
             public:
                 /** Singleton */

@@ -10,7 +10,7 @@ extern const wxEventType wxEVT_FUX_MUSICFILE_READER_THREAD;
 
 /** @brief Delegate for thread processing
  */
-class MusicFileReaderThread : public fux::thread::IRunnable
+class MusicFileReaderThread : public tools::thread::IRunnable
 {
     public:
         /** Default constructor */

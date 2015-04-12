@@ -9,10 +9,10 @@
 #include "ExplorerPanel.h"
 #include "explorer/ExplorerManager.h"
 
+const wxEventType wxEVT_FUX_EXPLORERLISTCTRL_FOCUS = wxNewEventType();
+
 using namespace gui::explorer;
 
-//BEGIN_EVENT_TABLE(ExplorerPanel, wxPanel)
-//END_EVENT_TABLE()
 
 ExplorerPanel::ExplorerPanel(wxWindow* parent, const wxString& managerName, const wxString& managerDescription) :
     wxPanel(parent, wxNewId()),
@@ -26,6 +26,11 @@ ExplorerPanel::ExplorerPanel(wxWindow* parent, const wxString& managerName, cons
 ExplorerPanel::~ExplorerPanel()
 {
     //dtor
+}
+
+bool ExplorerPanel::operator==(const ExplorerPanel& other)
+{
+    return m_explorerList == other.m_explorerList;
 }
 
 void ExplorerPanel::create()
@@ -59,12 +64,13 @@ void ExplorerPanel::create()
 
 //    Connect(-1, wxEVT_LISTE_PERIPH_CLAVIER, wxKeyEventHandler(PageGestionPeriph::OnKey));
 //    Connect(-1, wxEVT_LISTE_PERIPH_SOURIS, wxCommandEventHandler(PageGestionPeriph::OnMenu));
-    Bind(wxEVT_COMMAND_BUTTON_CLICKED,      wxCommandEventHandler(ExplorerPanel::onPreviousButton),             this, m_previousButton->GetId());
-    Bind(wxEVT_COMMAND_BUTTON_CLICKED,      wxCommandEventHandler(ExplorerPanel::onRefreshButton),              this, m_refreshButton->GetId());
-    Bind(wxEVT_COMMAND_CHECKBOX_CLICKED,    wxCommandEventHandler(ExplorerPanel::onHiddenFilesCheckBox),        this, m_hiddenFilesCheckBox->GetId());
-    Bind(wxEVT_COMMAND_CHECKBOX_CLICKED,    wxCommandEventHandler(ExplorerPanel::onFilterKnownFormatCheckBox),  this, m_filterCheckBox->GetId());
-    Bind(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxCommandEventHandler(ExplorerPanel::onItemActivatedInListCtrl),    this, m_explorerList->GetId());
-    Bind(wxEVT_COMMAND_LIST_BEGIN_DRAG,     wxCommandEventHandler(ExplorerPanel::onDragBeginInListCtrl),        this, m_explorerList->GetId());
+    m_previousButton->Bind     (wxEVT_COMMAND_BUTTON_CLICKED,      &ExplorerPanel::onPreviousButton,            this);
+    m_refreshButton->Bind      (wxEVT_COMMAND_BUTTON_CLICKED,      &ExplorerPanel::onRefreshButton,             this);
+    m_hiddenFilesCheckBox->Bind(wxEVT_COMMAND_CHECKBOX_CLICKED,    &ExplorerPanel::onHiddenFilesCheckBox,       this);
+    m_filterCheckBox->Bind     (wxEVT_COMMAND_CHECKBOX_CLICKED,    &ExplorerPanel::onFilterKnownFormatCheckBox, this);
+    m_explorerList->Bind       (wxEVT_COMMAND_LIST_ITEM_ACTIVATED, &ExplorerPanel::onItemActivatedInListCtrl,   this);
+    m_explorerList->Bind       (wxEVT_COMMAND_LIST_BEGIN_DRAG,     &ExplorerPanel::onDragBeginInListCtrl,       this);
+    m_explorerList->Bind       (wxEVT_CHILD_FOCUS,                 &ExplorerPanel::onListFocused,               this);
 
     SetMinSize(wxSize(10, 10)); //< Allows the listctrl to be resized as little as we want
 }
@@ -131,9 +137,9 @@ void ExplorerPanel::setTexts()
     m_pathTextCtrl->SetValue(m_managerDescription);
 }
 
-std::vector<long> ExplorerPanel::getSelectedItems()
+std::vector<unsigned long> ExplorerPanel::getSelectedItems()
 {
-    std::vector<long> selectedIndexes;
+    std::vector<unsigned long> selectedIndexes;
     long index = m_explorerList->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
     while (index != -1)
     {
@@ -141,5 +147,20 @@ std::vector<long> ExplorerPanel::getSelectedItems()
         index = m_explorerList->GetNextItem(index, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
     }
     return selectedIndexes;
+}
+
+void ExplorerPanel::onListFocused(wxChildFocusEvent& event)
+{
+    sendExplorerListCtrlFocusEvent();
+}
+
+void ExplorerPanel::sendExplorerListCtrlFocusEvent()
+{
+    if (NULL == GetParent())
+        return;
+
+    wxCommandEvent evt(wxEVT_FUX_EXPLORERLISTCTRL_FOCUS);
+    evt.SetClientData(this);
+    wxQueueEvent(GetParent(), evt.Clone());
 }
 

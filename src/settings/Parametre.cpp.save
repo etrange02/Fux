@@ -73,6 +73,17 @@ Parametre::~Parametre()
     #endif
 }
 
+
+Parametre(const Parametre&)
+{
+    
+}
+
+Parametre& Parametre::operator=(const Parametre&)
+{
+    
+}
+
 /**
  * Retourne l'instance de la classe Parametre
  * @return l'instance
@@ -227,7 +238,7 @@ void Parametre::setRepertoireDefaut(wxString chemin)
  * @param ext l'extension à tester
  * @return vrai si l'extension permet l'ID3v2
  */
-bool Parametre::isID3V2(const wxString &ext)
+bool Parametre::isID3V2(const wxString &path)
 {
     wxString extension = path.AfterLast('.').Lower();
     unsigned int i = 0;

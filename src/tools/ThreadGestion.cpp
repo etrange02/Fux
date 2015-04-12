@@ -181,8 +181,8 @@ void ThreadFichierFichier::FichierSuppression(wxString chemin)
 {
     wxArrayString tableau;
     wxDir dir(chemin);
-    TraverserSupprimeFichier traverser(chemin, tableau);
-    dir.Traverse(traverser);
+//    TraverserSupprimeFichier traverser(chemin, tableau);
+//    dir.Traverse(traverser);
     DossierSuppression(tableau);
 }
 

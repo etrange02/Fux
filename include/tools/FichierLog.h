@@ -9,7 +9,7 @@ class FichierLog
 {
     public:
         static FichierLog* Get();
-        void Delete();
+        static void Delete();
 
         void Ajouter(wxString);
         void Ajouter(const wxChar* ch1);

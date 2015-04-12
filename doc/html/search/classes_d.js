@@ -1,4 +1,24 @@
 var searchData=
 [
-  ['wxfuxapp',['wxFuXApp',['../classwx_fu_x_app.html',1,'']]]
+  ['wxapp',['wxApp',['../classwx_app.html',1,'']]],
+  ['wxbutton',['wxButton',['../classwx_button.html',1,'']]],
+  ['wxclient',['wxClient',['../classwx_client.html',1,'']]],
+  ['wxconnection',['wxConnection',['../classwx_connection.html',1,'']]],
+  ['wxdataobjectsimple',['wxDataObjectSimple',['../classwx_data_object_simple.html',1,'']]],
+  ['wxdialog',['wxDialog',['../classwx_dialog.html',1,'']]],
+  ['wxdirtraverser',['wxDirTraverser',['../classwx_dir_traverser.html',1,'']]],
+  ['wxdroptarget',['wxDropTarget',['../classwx_drop_target.html',1,'']]],
+  ['wxevent',['wxEvent',['../classwx_event.html',1,'']]],
+  ['wxfiledroptarget',['wxFileDropTarget',['../classwx_file_drop_target.html',1,'']]],
+  ['wxframe',['wxFrame',['../classwx_frame.html',1,'']]],
+  ['wxfuxapp',['wxFuXApp',['../classwx_fu_x_app.html',1,'']]],
+  ['wxglcanvas',['wxGLCanvas',['../classwx_g_l_canvas.html',1,'']]],
+  ['wxlistctrl',['wxListCtrl',['../classwx_list_ctrl.html',1,'']]],
+  ['wxpanel',['wxPanel',['../classwx_panel.html',1,'']]],
+  ['wxscrolledwindow',['wxScrolledWindow',['../classwx_scrolled_window.html',1,'']]],
+  ['wxserver',['wxServer',['../classwx_server.html',1,'']]],
+  ['wxslider',['wxSlider',['../classwx_slider.html',1,'']]],
+  ['wxstaticbitmap',['wxStaticBitmap',['../classwx_static_bitmap.html',1,'']]],
+  ['wxthread',['wxThread',['../classwx_thread.html',1,'']]],
+  ['wxtimer',['wxTimer',['../classwx_timer.html',1,'']]]
 ];

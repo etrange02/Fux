@@ -4,7 +4,7 @@
 - Composant pour TagLib -> libérer le thread de l'interface pour la BDD
 Maj BDD avec musique et non l'interface
 
-Revoir la gestion des pages dans la fenêtre. Utiliser des define avec un vector sera plus simple et permettra de typer les fenêtres flottantes. Ou une version template pour garder le polymorphisme.
+Revoir la gestion des pages dans la fenêtre. Utiliser des define avec un vector sera plus simple et permettra de typer les fenêtres flottantes. Ou une version template pour garder le polymorphisme.(panels flottants).
 
 wxConfigBase + wxDisplay -> enregistrement de la position des fenêtres à la fermeture de l'appli
 

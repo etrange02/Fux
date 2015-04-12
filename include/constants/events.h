@@ -1,6 +1,15 @@
 #ifndef EVENTS_H_INCLUDED
 #define EVENTS_H_INCLUDED
 
+/* Include a new event kind in source files :
+   Header:
+        extern const wxEventType wxMY_EVENT;
+        // Indicates that event is defined in another file.
+        // Useful to avoid multiple declarations
+   Source:
+        const wxEventType wxMY_EVENT = wxNewEventType();
+ */
+
 #define EVT_MUSIQUE_CHANGE(id, fn) \
     DECLARE_EVENT_TABLE_ENTRY( wxEVT_MUSIQUE_CHANGE, id, wxID_ANY, \
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
@@ -132,5 +141,9 @@
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
     (wxObject *) NULL ),
 
+#define EVT_FUX_EXPLORERLISTCTRL_FOCUS(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_EXPLORERLISTCTRL_FOCUS, wxID_ANY, wxID_ANY,\
+    (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
+    (wxObject *) NULL ),
 
 #endif // EVENTS_H_INCLUDED

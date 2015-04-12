@@ -107,7 +107,7 @@ void MusiqueGraph::OnPaint(wxPaintEvent&)
     glEnable(GL_BLEND);
     glDisable(GL_DEPTH_TEST);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    wxPaintDC(this);//Permet un arrêt rapide et non unblocage de la fenêtre
+    //wxPaintDC(this);//Permet un arrêt rapide et non unblocage de la fenêtre
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glClearColor(m_fond.GetRed()/255.0, m_fond.GetGreen()/255.0, m_fond.GetBlue()/255.0, 1);

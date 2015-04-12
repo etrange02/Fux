@@ -22,10 +22,10 @@ class MusicManager
         size_t getCurrentMusicPositionInSearch();
         bool playMusicAt(long position);
         bool playMusicAtInSearch(long position);
-        void moveIntTitlesAt(wxArrayString* titles, long position);
-        void moveIntTitlesAtInSearch(wxArrayString* titles, long position);
-        void placeStringTitlesAt(wxArrayString* titles, size_t position);
-        void placeStringTitlesAtInSearch(wxArrayString* titles, size_t position);
+        void moveIntTitlesAt(const wxArrayString& titles, long position);
+        void moveIntTitlesAtInSearch(const wxArrayString& titles, long position);
+        void placeStringTitlesAt(const wxArrayString& titles, size_t position);
+        void placeStringTitlesAtInSearch(const wxArrayString& titles, size_t position);
         void deleteTitleAt(size_t position);
         void deleteTitleAtInSearch(size_t position);
         void updateMusicContent(const long position, Music* musicData);

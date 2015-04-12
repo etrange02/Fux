@@ -21,12 +21,12 @@ size_t MusicManagerSearchDecorator::getCurrentMusicPosition()
     return getDelegate().getCurrentMusicPositionInSearch();
 }
 
-void MusicManagerSearchDecorator::moveIntTitlesAt(wxArrayString* titles, long position)
+void MusicManagerSearchDecorator::moveIntTitlesAt(const wxArrayString& titles, long position)
 {
     getDelegate().moveIntTitlesAtInSearch(titles, position);
 }
 
-void MusicManagerSearchDecorator::placeStringTitlesAt(wxArrayString* titles, size_t position)
+void MusicManagerSearchDecorator::placeStringTitlesAt(const wxArrayString& titles, size_t position)
 {
     getDelegate().placeStringTitlesAtInSearch(titles, position);
 }

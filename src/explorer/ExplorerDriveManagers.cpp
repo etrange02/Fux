@@ -9,8 +9,9 @@
 #include "ExplorerDriveManagers.h"
 #include "MenuElementData.h"
 #include "Parametre.h"
-#include "../predicates/findControllerOfExplorerPanel.h"
+#include "predicates/findControllerOfExplorerPanel.h"
 #include <wx/volume.h>
+#include "DriveManagerState.h"
 
 ExplorerDriveManagers ExplorerDriveManagers::s_explorerDriveManagersInstance = ExplorerDriveManagers();
 
@@ -106,7 +107,47 @@ ExplorerManager& ExplorerDriveManagers::getControllerOf(gui::explorer::ExplorerP
         throw wxString("No controller found.");
 }
 
-void ExplorerDriveManagers::updateStreamButtonStates()
+void ExplorerDriveManagers::updateStreamButtonStates(gui::explorer::ExplorerPanel& explorerPanel)
 {
+    const bool isFirst = ( explorerPanel == m_data.getExplorerManagers().at(0)->getExplorerPanel() );
+    ExplorerManager& focusedEM = getControllerOf(explorerPanel);
+    ExplorerManager& other = *m_data.getExplorerManagers().at(isFirst ? 1 : 0);
+
+    m_data.getDriveManagersPanel()->enableButtonCopy     (!focusedEM.getState().isDefault() && !other.getState().isDefault());
+    m_data.getDriveManagersPanel()->enableButtonDelete   (!focusedEM.getState().isDefault());
+    m_data.getDriveManagersPanel()->enableButtonMoveLeft (   !isFirst
+                                                          && !focusedEM.getState().isDefault()
+                                                          &&  focusedEM.getState().isSameKind(other.getState())
+                                                         );
+    m_data.getDriveManagersPanel()->enableButtonMoveRight( isFirst
+                                                          && !focusedEM.getState().isDefault()
+                                                          &&  focusedEM.getState().isSameKind(other.getState())
+                                                         );
+}
+
+void ExplorerDriveManagers::deleteSelectedLines(gui::explorer::ExplorerPanel& explorerPanel)
+{
+    ExplorerManager& manager = getControllerOf(explorerPanel);
+    manager.getState().deleteSelectedItems();
+}
+
+void ExplorerDriveManagers::copySelectedLines(gui::explorer::ExplorerPanel& sourceExplorerPanel, gui::explorer::ExplorerPanel& destinationExplorerPanel)
+{
+    ExplorerManager& source = getControllerOf(sourceExplorerPanel);
+    ExplorerManager& destination = getControllerOf(destinationExplorerPanel);
+    if (!source.getState().canCopyTo(destination.getState()))
+        return;
+
+    destination.getState().copyElements(source.getState());
+}
+
+void ExplorerDriveManagers::moveSelectedLines(gui::explorer::ExplorerPanel& sourceExplorerPanel, gui::explorer::ExplorerPanel& destinationExplorerPanel)
+{
+    ExplorerManager& source = getControllerOf(sourceExplorerPanel);
+    ExplorerManager& destination = getControllerOf(destinationExplorerPanel);
+    if (!source.getState().canMoveTo(destination.getState()))
+        return;
+
+    destination.getState().moveElements(source.getState());
 }
 

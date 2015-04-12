@@ -1,12 +1,13 @@
 /***************************************************************
  * Name:      DnDCible.cpp
  * Purpose:   Code for Fu(X) 2.0
- * Author:    David Lecoconnier (etrange02@aol.com)
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2012-06-26
- * Copyright: David Lecoconnier (http://www.fuxplay.com)
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
 #include "../../../include/tools/dnd/DnDCible.h"
+#include "MusicManagerSwitcher.h"
 
 /**
  * @class DnDCible
@@ -57,13 +58,13 @@ wxDragResult DnDCible::OnData(wxCoord WXUNUSED(x), wxCoord y, wxDragResult WXUNU
     {
         if (TransFile->Item(0).IsNumber())
             //Musique::Get()->PlacerLigneInt(TransFile->arrayString(), GetPositionCoord(y), true);
-            MusicManager::get()->moveIntTitlesAt(TransFile->arrayString(), GetPositionCoord(y), true, true);
+            MusicManagerSwitcher::get().moveIntTitlesAt(TransFile->arrayString(), GetPositionCoord(y)/*, true, true*/);
         else
-            MusicManager::get()->placeStringTitlesAt(TransFile->arrayString(), GetPositionCoord(y), true);
+            MusicManagerSwitcher::get().placeStringTitlesAt(TransFile->arrayString(), GetPositionCoord(y)/*, true*/);
             //Musique::Get()->PlacerLigneString(TransFile->arrayString(), GetPositionCoord(y), true);//Les coordonnées commencent au coin sup gauche de la liste, dans les en-têtes
     }
-    else
-        m_pageGestion->GlisserTraitement(TransFile->arrayString(), GetPositionCoord(y));//Les coordonnées commencent au coin sup gauche de la liste, dans les en-têtes
+ //   else
+   //     m_pageGestion->GlisserTraitement(TransFile->arrayString(), GetPositionCoord(y));//Les coordonnées commencent au coin sup gauche de la liste, dans les en-têtes
 
     TransFile->Clear();
     return wxDragCopy;
@@ -76,7 +77,6 @@ wxDragResult DnDCible::OnData(wxCoord WXUNUSED(x), wxCoord y, wxDragResult WXUNU
  */
 long DnDCible::GetPositionCoord(int y)
 {
-    wxLogMessage(_("Test"));
     long pos = 0, i = m_liste->GetItemCount(), min = m_liste->GetTopItem();
     bool continuer = true;
     wxPoint point;
@@ -88,7 +88,6 @@ long DnDCible::GetPositionCoord(int y)
         if (rect.GetY() + rect.GetHeight() < y)//le relâchement de la souris est après le dernier item
             return i;
         pos = m_liste->GetItemCount();
-    wxLogMessage(_("Test2"));
     }
     else
         pos = min + m_liste->GetCountPerPage();
@@ -103,4 +102,3 @@ long DnDCible::GetPositionCoord(int y)
     }
     return pos;
 }
-

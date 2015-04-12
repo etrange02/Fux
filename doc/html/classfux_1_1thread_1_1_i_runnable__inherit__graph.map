@@ -1,0 +1,5 @@
+<map id="fux::thread::IRunnable" name="fux::thread::IRunnable">
+<area shape="rect" id="node2" href="$classfux_1_1thread_1_1_file_deletion_thread.html" title="fux::thread::FileDeletion\lThread" alt="" coords="5,80,164,121"/>
+<area shape="rect" id="node3" href="$class_music_file_reader_thread.html" title="Delegate for thread processing. " alt="" coords="188,87,347,114"/>
+<area shape="rect" id="node4" href="$class_music_file_writer_thread.html" title="Delegate for thread process. " alt="" coords="371,87,523,114"/>
+</map>

@@ -3,10 +3,10 @@
 
 /** @brief Interface for threaded treatments
  * Interface for threaded treatments
- * @class fux::thread::IRunnable
+ * @class tools::thread::IRunnable
  */
 
-namespace fux
+namespace tools
 {
     namespace thread
     {

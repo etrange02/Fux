@@ -15,7 +15,7 @@ class DnDListeFichier//Type de donnée glissé
         wxString& Item(size_t);
         size_t GetCount();
         void Clear();
-        wxArrayString* arrayString();
+        const wxArrayString& arrayString() const;
 
     private :
         wxArrayString m_Nom;

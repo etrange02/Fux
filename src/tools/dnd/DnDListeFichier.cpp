@@ -68,8 +68,11 @@ void DnDListeFichier::Clear()
 {    m_Nom.Clear();}
 
 /**
- * Retourne un pointeur sur le tableau
- * @return un pointeur de tableau
+ * Retourne  le tableau
+ * @return un tableau
  */
-wxArrayString* DnDListeFichier::arrayString()
-{    return &m_Nom;}
+const wxArrayString& DnDListeFichier::arrayString() const
+{
+    return m_Nom;
+}
+

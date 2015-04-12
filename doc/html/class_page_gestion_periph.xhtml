@@ -1,0 +1,962 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Fu(X) 2.0: RÃ©fÃ©rence de la classe PageGestionPeriph</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://www.mathjax.org/mathjax/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="play.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fu(X) 2.0
+   &#160;<span id="projectnumber">a5</span>
+   </div>
+   <div id="projectbrief">Fu(X) est un lecteur audio dont le but est de redÃ©finir l&#39;utilisation en apportant une nouvelle approche aussi intuitive que puissante !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- GÃ©nÃ©rÃ© par Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.xhtml"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.xhtml"><span>Pages&#160;associÃ©es</span></a></li>
+      <li class="current"><a href="annotated.xhtml"><span>Classes</span></a></li>
+      <li><a href="files.xhtml"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.xhtml"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.xhtml"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.xhtml"><span>HiÃ©rarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.xhtml"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_page_gestion_periph.xhtml','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="class_page_gestion_periph-members.xhtml">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">RÃ©fÃ©rence de la classe PageGestionPeriph</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Interface graphique permettant un déplacement dans l'arborescence des fichiers.  
+ <a href="class_page_gestion_periph.xhtml#details">Plus de dÃ©tails...</a></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Graphe d'hÃ©ritage de PageGestionPeriph:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_page_gestion_periph__inherit__graph.svg" width="146" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.xhtml">lÃ©gende</a>]</span></center></div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Graphe de collaboration de PageGestionPeriph:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_page_gestion_periph__coll__graph.svg" width="146" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.xhtml">lÃ©gende</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a2e2226f75815fe7542b27d87e83a6fcf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a2e2226f75815fe7542b27d87e83a6fcf">PageGestionPeriph</a> (wxWindow *, wxWindowID)</td></tr>
+<tr class="memdesc:a2e2226f75815fe7542b27d87e83a6fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a2e2226f75815fe7542b27d87e83a6fcf">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a2e2226f75815fe7542b27d87e83a6fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab50b47ddbd1cd0c77629f223a109cd5e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#ab50b47ddbd1cd0c77629f223a109cd5e">~PageGestionPeriph</a> ()</td></tr>
+<tr class="memdesc:ab50b47ddbd1cd0c77629f223a109cd5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#ab50b47ddbd1cd0c77629f223a109cd5e">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:ab50b47ddbd1cd0c77629f223a109cd5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefd13a1b43b4b7b9c6235e665824d6f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#aefd13a1b43b4b7b9c6235e665824d6f4">SetPageParallele</a> (<a class="el" href="class_page_gestion_periph.xhtml">PageGestionPeriph</a> *)</td></tr>
+<tr class="memdesc:aefd13a1b43b4b7b9c6235e665824d6f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associe cette instance avec sa "jumelle".  <a href="#aefd13a1b43b4b7b9c6235e665824d6f4">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:aefd13a1b43b4b7b9c6235e665824d6f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae9b6fbf4e3a52286dda69d7da6f3a2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#aae9b6fbf4e3a52286dda69d7da6f3a2b">SetFichierDossier</a> (wxString, int, bool activeLigne=false)</td></tr>
+<tr class="memdesc:aae9b6fbf4e3a52286dda69d7da6f3a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche à l'écran le contenu de l'entité se trouvant à l'adresse <em>chemin</em>  <a href="#aae9b6fbf4e3a52286dda69d7da6f3a2b">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:aae9b6fbf4e3a52286dda69d7da6f3a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8e81b5e7a36392aeefb15192a551f60"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#ac8e81b5e7a36392aeefb15192a551f60">GetEtat</a> ()</td></tr>
+<tr class="memdesc:ac8e81b5e7a36392aeefb15192a551f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le type de l'entité qui est actuellement affiché  <a href="#ac8e81b5e7a36392aeefb15192a551f60">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:ac8e81b5e7a36392aeefb15192a551f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52a2665960223d06ee075870ae980f4c"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a52a2665960223d06ee075870ae980f4c">GetChemin</a> ()</td></tr>
+<tr class="memdesc:a52a2665960223d06ee075870ae980f4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le chemin dont le contenu est affiché  <a href="#a52a2665960223d06ee075870ae980f4c">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a52a2665960223d06ee075870ae980f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af38ea3d005a1efcca8372700cee94d1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#af38ea3d005a1efcca8372700cee94d1b">OuvrirDossierSuivant</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
+<tr class="memdesc:af38ea3d005a1efcca8372700cee94d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Double clic sur un élément.  <a href="#af38ea3d005a1efcca8372700cee94d1b">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:af38ea3d005a1efcca8372700cee94d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a238b3ca91cdb7e833e7f9b0a804640f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a238b3ca91cdb7e833e7f9b0a804640f6">OuvrirDossierPrecedent</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
+<tr class="memdesc:a238b3ca91cdb7e833e7f9b0a804640f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Clic sur le bouton précédent.  <a href="#a238b3ca91cdb7e833e7f9b0a804640f6">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a238b3ca91cdb7e833e7f9b0a804640f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9204c60f46d71199ba14251a3afc7d8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a9204c60f46d71199ba14251a3afc7d8a">OuvrirDossierPrec</a> ()</td></tr>
+<tr class="memdesc:a9204c60f46d71199ba14251a3afc7d8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remonte d'un cran dans la hiérarchie des dossiers.  <a href="#a9204c60f46d71199ba14251a3afc7d8a">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a9204c60f46d71199ba14251a3afc7d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a646d8632b53e5800ca5ec8ebd5df2787"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a646d8632b53e5800ca5ec8ebd5df2787">RechargerE</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
+<tr class="memdesc:a646d8632b53e5800ca5ec8ebd5df2787"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement - Clic sur le bouton recharger.  <a href="#a646d8632b53e5800ca5ec8ebd5df2787">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a646d8632b53e5800ca5ec8ebd5df2787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f39ece52cab0143505a3929d7ec39d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a1f39ece52cab0143505a3929d7ec39d9">Recharger</a> ()</td></tr>
+<tr class="memdesc:a1f39ece52cab0143505a3929d7ec39d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provoque un rechargement du contenu de la liste.  <a href="#a1f39ece52cab0143505a3929d7ec39d9">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a1f39ece52cab0143505a3929d7ec39d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59b3ddb0729626bd16ef8ae2aab58857"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a59b3ddb0729626bd16ef8ae2aab58857">Suppression</a> ()</td></tr>
+<tr class="memdesc:a59b3ddb0729626bd16ef8ae2aab58857"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime un dossier, fichier, ou ligne d'un fichier.  <a href="#a59b3ddb0729626bd16ef8ae2aab58857">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a59b3ddb0729626bd16ef8ae2aab58857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70b738da23797b6f4f6f2092bf2962ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a70b738da23797b6f4f6f2092bf2962ae">Copie</a> ()</td></tr>
+<tr class="memdesc:a70b738da23797b6f4f6f2092bf2962ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provoque la recopie des lignes actives dans l'autre liste.  <a href="#a70b738da23797b6f4f6f2092bf2962ae">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a70b738da23797b6f4f6f2092bf2962ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a095945af47d4a92537015c235db3c997"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a095945af47d4a92537015c235db3c997">Deplace</a> ()</td></tr>
+<tr class="memdesc:a095945af47d4a92537015c235db3c997"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfert en fonction de la nature des données dans l'autre liste en fonction de la nature de celle-ci.  <a href="#a095945af47d4a92537015c235db3c997">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a095945af47d4a92537015c235db3c997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cb0a09a2672f3cfe4b2b5d7ec30b1b3"><td class="memItemLeft" align="right" valign="top">wxArrayString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a8cb0a09a2672f3cfe4b2b5d7ec30b1b3">GetFichierLigneSelection</a> ()</td></tr>
+<tr class="memdesc:a8cb0a09a2672f3cfe4b2b5d7ec30b1b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne un tableau contenant la sélection faite dans un fichier.  <a href="#a8cb0a09a2672f3cfe4b2b5d7ec30b1b3">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a8cb0a09a2672f3cfe4b2b5d7ec30b1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7594f9c4eeead24be9edbba8441dae7a"><td class="memItemLeft" align="right" valign="top">wxArrayString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a7594f9c4eeead24be9edbba8441dae7a">GetFichierLigneSelectionInt</a> ()</td></tr>
+<tr class="memdesc:a7594f9c4eeead24be9edbba8441dae7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne un tableau contenant la sélection faite dans un fichier.  <a href="#a7594f9c4eeead24be9edbba8441dae7a">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a7594f9c4eeead24be9edbba8441dae7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab93f8fcd941a368d25f36b0222b60bd8"><td class="memItemLeft" align="right" valign="top">wxArrayString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#ab93f8fcd941a368d25f36b0222b60bd8">GetDossierLigneSelection</a> ()</td></tr>
+<tr class="memdesc:ab93f8fcd941a368d25f36b0222b60bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne un tableau contenant la sélection faite dans un dossier.  <a href="#ab93f8fcd941a368d25f36b0222b60bd8">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:ab93f8fcd941a368d25f36b0222b60bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55f0646c72024f060c8ef94196323aea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a55f0646c72024f060c8ef94196323aea">OnKey</a> (wxKeyEvent &amp;)</td></tr>
+<tr class="memdesc:a55f0646c72024f060c8ef94196323aea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement clavier - affiche le menu, couper-copier-coller, supprimer.  <a href="#a55f0646c72024f060c8ef94196323aea">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a55f0646c72024f060c8ef94196323aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a264190aaa0df5a3073b22819acbc36ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a264190aaa0df5a3073b22819acbc36ca">OnMenu</a> (wxCommandEvent &amp;)</td></tr>
+<tr class="memdesc:a264190aaa0df5a3073b22819acbc36ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Évènement menu.  <a href="#a264190aaa0df5a3073b22819acbc36ca">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a264190aaa0df5a3073b22819acbc36ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4dba74428600043796c14a924ec1e4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#aa4dba74428600043796c14a924ec1e4a">MenuCreerDossier</a> ()</td></tr>
+<tr class="memdesc:aa4dba74428600043796c14a924ec1e4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu - Affiche une fenêtre pour la création de dossier.  <a href="#aa4dba74428600043796c14a924ec1e4a">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:aa4dba74428600043796c14a924ec1e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a117294b04fe8c379c591b1c0cd1baf8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a117294b04fe8c379c591b1c0cd1baf8c">MenuCreerM3U</a> ()</td></tr>
+<tr class="memdesc:a117294b04fe8c379c591b1c0cd1baf8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu - Affiche une fenêtre pour la création d'un fichier M3U.  <a href="#a117294b04fe8c379c591b1c0cd1baf8c">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a117294b04fe8c379c591b1c0cd1baf8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbcbd472ce3256a6b3ed9d66135beb7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#acbcbd472ce3256a6b3ed9d66135beb7a">MenuSuprimer</a> ()</td></tr>
+<tr class="memdesc:acbcbd472ce3256a6b3ed9d66135beb7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu - Provoque la suppression des lignes sélectionnées.  <a href="#acbcbd472ce3256a6b3ed9d66135beb7a">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:acbcbd472ce3256a6b3ed9d66135beb7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fece374b4607de829a9f4f018c0f602"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a8fece374b4607de829a9f4f018c0f602">MenuRenommer</a> ()</td></tr>
+<tr class="memdesc:a8fece374b4607de829a9f4f018c0f602"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu - Affiche une fenêtre permettant de renommer un dossier ou un fichier.  <a href="#a8fece374b4607de829a9f4f018c0f602">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a8fece374b4607de829a9f4f018c0f602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b4edf9f1c5868c2b55d46569bbb514c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a8b4edf9f1c5868c2b55d46569bbb514c">MenuCouper</a> ()</td></tr>
+<tr class="memdesc:a8b4edf9f1c5868c2b55d46569bbb514c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu - Opérations Couper-Copier-Coller - Met en mémoire les lignes sélectionnées pour un déplacement.  <a href="#a8b4edf9f1c5868c2b55d46569bbb514c">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a8b4edf9f1c5868c2b55d46569bbb514c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dc995a0f830a3ac40e0cd9419657617"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a3dc995a0f830a3ac40e0cd9419657617">MenuCopier</a> ()</td></tr>
+<tr class="memdesc:a3dc995a0f830a3ac40e0cd9419657617"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu - Opérations Couper-Copier-Coller - Met en mémoire les lignes sélectionnées pour une copie.  <a href="#a3dc995a0f830a3ac40e0cd9419657617">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a3dc995a0f830a3ac40e0cd9419657617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e77f888f5a73d371d17d1dcc440db93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a8e77f888f5a73d371d17d1dcc440db93">MenuColler</a> ()</td></tr>
+<tr class="memdesc:a8e77f888f5a73d371d17d1dcc440db93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu - Opérations Couper-Copier-Coller - Déplace les lignes précédemment coupées/copiées dans le répertoire/fichier courant.  <a href="#a8e77f888f5a73d371d17d1dcc440db93">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a8e77f888f5a73d371d17d1dcc440db93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac565520c7ba82c616e21823d8bbf0c4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#ac565520c7ba82c616e21823d8bbf0c4a">MenuLire</a> ()</td></tr>
+<tr class="memdesc:ac565520c7ba82c616e21823d8bbf0c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu - Provoque la lecture de la chanson sélectionnée.  <a href="#ac565520c7ba82c616e21823d8bbf0c4a">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:ac565520c7ba82c616e21823d8bbf0c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba3aa0f5777673410c695da8d231c9df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#aba3aa0f5777673410c695da8d231c9df">MenuRaccourci</a> ()</td></tr>
+<tr class="memdesc:aba3aa0f5777673410c695da8d231c9df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu - Affiche une fenêtre permettant la création d'un raccourci d'un fichier ou dossier.  <a href="#aba3aa0f5777673410c695da8d231c9df">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:aba3aa0f5777673410c695da8d231c9df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4174a884c20c18ab2c3a8ea2ca09213f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a4174a884c20c18ab2c3a8ea2ca09213f">Glisser</a> (wxCommandEvent &amp;WXUNUSED(event))</td></tr>
+<tr class="memdesc:a4174a884c20c18ab2c3a8ea2ca09213f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drag &amp; Drop - Initialise une opération de DnD.  <a href="#a4174a884c20c18ab2c3a8ea2ca09213f">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a4174a884c20c18ab2c3a8ea2ca09213f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55c703fc9b16632bed521e9f87d2e99b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a55c703fc9b16632bed521e9f87d2e99b">GlisserTraitement</a> (wxArrayString *, long)</td></tr>
+<tr class="memdesc:a55c703fc9b16632bed521e9f87d2e99b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drag &amp; Drop - Gère la modification des données suite à l'appel de DnD.  <a href="#a55c703fc9b16632bed521e9f87d2e99b">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a55c703fc9b16632bed521e9f87d2e99b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f78ceec92b78eb02ecc719595bab107"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a1f78ceec92b78eb02ecc719595bab107">isDragging</a> ()</td></tr>
+<tr class="memdesc:a1f78ceec92b78eb02ecc719595bab107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si une opération de déplacement est en cours.  <a href="#a1f78ceec92b78eb02ecc719595bab107">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a1f78ceec92b78eb02ecc719595bab107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb9191fc2960d32f4cd9b4ce2bfe1d0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#aeb9191fc2960d32f4cd9b4ce2bfe1d0b">PlacerLigneInt</a> (wxArrayString *, long, bool)</td></tr>
+<tr class="memdesc:aeb9191fc2960d32f4cd9b4ce2bfe1d0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie l'ordre des lignes d'un m3u à partir du numéro des lignes.  <a href="#aeb9191fc2960d32f4cd9b4ce2bfe1d0b">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:aeb9191fc2960d32f4cd9b4ce2bfe1d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cc212b3587c57a68fad9fd3bd63a53e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page_gestion_periph.xhtml#a3cc212b3587c57a68fad9fd3bd63a53e">PlacerLigneString</a> (wxArrayString *, long)</td></tr>
+<tr class="memdesc:a3cc212b3587c57a68fad9fd3bd63a53e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place le contenu du tableau <b>ligne</b> à la position <b>pos</b> dans le fichier courant.  <a href="#a3cc212b3587c57a68fad9fd3bd63a53e">Plus de dÃ©tails...</a><br /></td></tr>
+<tr class="separator:a3cc212b3587c57a68fad9fd3bd63a53e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description dÃ©taillÃ©e</h2>
+<div class="textblock"><p>Interface graphique permettant un déplacement dans l'arborescence des fichiers. </p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a2e2226f75815fe7542b27d87e83a6fcf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PageGestionPeriph::PageGestionPeriph </td>
+          <td>(</td>
+          <td class="paramtype">wxWindow *&#160;</td>
+          <td class="paramname"><em>Parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">wxWindowID&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur. </p>
+<dl class="params"><dt>ParamÃ¨tres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Parent</td><td>la fenêtre parente </td></tr>
+    <tr><td class="paramname">id</td><td>l'identifiant de la fenêtre parente </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab50b47ddbd1cd0c77629f223a109cd5e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PageGestionPeriph::~PageGestionPeriph </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destructeur. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a70b738da23797b6f4f6f2092bf2962ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::Copie </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Provoque la recopie des lignes actives dans l'autre liste. </p>
+<p>Dossier à Dossier et Fichier à Fichier </p>
+
+</div>
+</div>
+<a class="anchor" id="a095945af47d4a92537015c235db3c997"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::Deplace </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transfert en fonction de la nature des données dans l'autre liste en fonction de la nature de celle-ci. </p>
+<p>Ce peut-être un déplacement ou une copie </p>
+
+</div>
+</div>
+<a class="anchor" id="a52a2665960223d06ee075870ae980f4c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxString PageGestionPeriph::GetChemin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le chemin dont le contenu est affiché </p>
+<dl class="section return"><dt>Renvoie</dt><dd>le chemin </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab93f8fcd941a368d25f36b0222b60bd8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxArrayString * PageGestionPeriph::GetDossierLigneSelection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne un tableau contenant la sélection faite dans un dossier. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>le tableau de caractères </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac8e81b5e7a36392aeefb15192a551f60"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PageGestionPeriph::GetEtat </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le type de l'entité qui est actuellement affiché </p>
+<dl class="section return"><dt>Renvoie</dt><dd>le type </dd></dl>
+<dl class="section see"><dt>Voir Ã©galement</dt><dd><a class="el" href="class_page_gestion_periph.xhtml#aae9b6fbf4e3a52286dda69d7da6f3a2b" title="Affiche à l&#39;écran le contenu de l&#39;entité se trouvant à l&#39;adresse chemin ">PageGestionPeriph::SetFichierDossier</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8cb0a09a2672f3cfe4b2b5d7ec30b1b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxArrayString * PageGestionPeriph::GetFichierLigneSelection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne un tableau contenant la sélection faite dans un fichier. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>le tableau de caractères </dd></dl>
+<dl class="section see"><dt>Voir Ã©galement</dt><dd><a class="el" href="class_page_gestion_periph.xhtml#a7594f9c4eeead24be9edbba8441dae7a" title="Retourne un tableau contenant la sélection faite dans un fichier. ">PageGestionPeriph::GetFichierLigneSelectionInt</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7594f9c4eeead24be9edbba8441dae7a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxArrayString * PageGestionPeriph::GetFichierLigneSelectionInt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne un tableau contenant la sélection faite dans un fichier. </p>
+<p>Tableau de nombre. </p><dl class="section return"><dt>Renvoie</dt><dd>le tableau de nombres (sous forme de texte) </dd></dl>
+<dl class="section see"><dt>Voir Ã©galement</dt><dd><a class="el" href="class_page_gestion_periph.xhtml#a8cb0a09a2672f3cfe4b2b5d7ec30b1b3" title="Retourne un tableau contenant la sélection faite dans un fichier. ">GetFichierLigneSelection</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4174a884c20c18ab2c3a8ea2ca09213f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::Glisser </td>
+          <td>(</td>
+          <td class="paramtype">wxCommandEvent &amp;&#160;</td>
+          <td class="paramname"><em>WXUNUSED</em>event</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Drag &amp; Drop - Initialise une opération de DnD. </p>
+
+</div>
+</div>
+<a class="anchor" id="a55c703fc9b16632bed521e9f87d2e99b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::GlisserTraitement </td>
+          <td>(</td>
+          <td class="paramtype">wxArrayString *&#160;</td>
+          <td class="paramname"><em>tableau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Drag &amp; Drop - Gère la modification des données suite à l'appel de DnD. </p>
+<dl class="params"><dt>ParamÃ¨tres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tableau</td><td>tableau de caractères </td></tr>
+    <tr><td class="paramname">pos</td><td>position/indice ou doit s'effectuer l'opération </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1f78ceec92b78eb02ecc719595bab107"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PageGestionPeriph::isDragging </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indique si une opération de déplacement est en cours. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>vrai si une opération de déplacement est en cours </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8e77f888f5a73d371d17d1dcc440db93"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::MenuColler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Menu - Opérations Couper-Copier-Coller - Déplace les lignes précédemment coupées/copiées dans le répertoire/fichier courant. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3dc995a0f830a3ac40e0cd9419657617"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::MenuCopier </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Menu - Opérations Couper-Copier-Coller - Met en mémoire les lignes sélectionnées pour une copie. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8b4edf9f1c5868c2b55d46569bbb514c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::MenuCouper </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Menu - Opérations Couper-Copier-Coller - Met en mémoire les lignes sélectionnées pour un déplacement. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa4dba74428600043796c14a924ec1e4a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::MenuCreerDossier </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Menu - Affiche une fenêtre pour la création de dossier. </p>
+
+</div>
+</div>
+<a class="anchor" id="a117294b04fe8c379c591b1c0cd1baf8c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::MenuCreerM3U </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Menu - Affiche une fenêtre pour la création d'un fichier M3U. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac565520c7ba82c616e21823d8bbf0c4a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::MenuLire </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Menu - Provoque la lecture de la chanson sélectionnée. </p>
+<p>Si la liste courante n'est pas positionnée sur la playlist, le titre sélectionné est ajouté à la playlist </p>
+
+</div>
+</div>
+<a class="anchor" id="aba3aa0f5777673410c695da8d231c9df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::MenuRaccourci </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Menu - Affiche une fenêtre permettant la création d'un raccourci d'un fichier ou dossier. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8fece374b4607de829a9f4f018c0f602"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::MenuRenommer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Menu - Affiche une fenêtre permettant de renommer un dossier ou un fichier. </p>
+
+</div>
+</div>
+<a class="anchor" id="acbcbd472ce3256a6b3ed9d66135beb7a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::MenuSuprimer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Menu - Provoque la suppression des lignes sélectionnées. </p>
+
+</div>
+</div>
+<a class="anchor" id="a55f0646c72024f060c8ef94196323aea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::OnKey </td>
+          <td>(</td>
+          <td class="paramtype">wxKeyEvent &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Évènement clavier - affiche le menu, couper-copier-coller, supprimer. </p>
+
+</div>
+</div>
+<a class="anchor" id="a264190aaa0df5a3073b22819acbc36ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::OnMenu </td>
+          <td>(</td>
+          <td class="paramtype">wxCommandEvent &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Évènement menu. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9204c60f46d71199ba14251a3afc7d8a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::OuvrirDossierPrec </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remonte d'un cran dans la hiérarchie des dossiers. </p>
+<p>Si l'on était dans le répertoire racine, affiche une page blanche </p>
+
+</div>
+</div>
+<a class="anchor" id="a238b3ca91cdb7e833e7f9b0a804640f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::OuvrirDossierPrecedent </td>
+          <td>(</td>
+          <td class="paramtype">wxCommandEvent &amp;&#160;</td>
+          <td class="paramname"><em>WXUNUSED</em>event</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Évènement - Clic sur le bouton précédent. </p>
+<dl class="section see"><dt>Voir Ã©galement</dt><dd><a class="el" href="class_page_gestion_periph.xhtml#a9204c60f46d71199ba14251a3afc7d8a" title="Remonte d&#39;un cran dans la hiérarchie des dossiers. ">PageGestionPeriph::OuvrirDossierPrec</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af38ea3d005a1efcca8372700cee94d1b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::OuvrirDossierSuivant </td>
+          <td>(</td>
+          <td class="paramtype">wxCommandEvent &amp;&#160;</td>
+          <td class="paramname"><em>WXUNUSED</em>event</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Évènement - Double clic sur un élément. </p>
+
+</div>
+</div>
+<a class="anchor" id="aeb9191fc2960d32f4cd9b4ce2bfe1d0b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::PlacerLigneInt </td>
+          <td>(</td>
+          <td class="paramtype">wxArrayString *&#160;</td>
+          <td class="paramname"><em>ligne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>supprime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Modifie l'ordre des lignes d'un m3u à partir du numéro des lignes. </p>
+<p>Ce peut être un déplacement ou une copie selon <b>supprime</b> </p><dl class="params"><dt>ParamÃ¨tres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ligne</td><td>un tableau d'indice des lignes à déplacer </td></tr>
+    <tr><td class="paramname">pos</td><td>l'indice de ligne où doit être faite l'opération </td></tr>
+    <tr><td class="paramname">supprime</td><td>si vrai les lignes sélectionnées sont supprimé de leur position d'origine </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3cc212b3587c57a68fad9fd3bd63a53e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::PlacerLigneString </td>
+          <td>(</td>
+          <td class="paramtype">wxArrayString *&#160;</td>
+          <td class="paramname"><em>ligne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Place le contenu du tableau <b>ligne</b> à la position <b>pos</b> dans le fichier courant. </p>
+<dl class="params"><dt>ParamÃ¨tres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ligne</td><td>un tabeau de caractères </td></tr>
+    <tr><td class="paramname">pos</td><td>l'indice de ligne où doit être ajouté du texte </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1f39ece52cab0143505a3929d7ec39d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::Recharger </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Provoque un rechargement du contenu de la liste. </p>
+
+</div>
+</div>
+<a class="anchor" id="a646d8632b53e5800ca5ec8ebd5df2787"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::RechargerE </td>
+          <td>(</td>
+          <td class="paramtype">wxCommandEvent &amp;&#160;</td>
+          <td class="paramname"><em>WXUNUSED</em>event</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Évènement - Clic sur le bouton recharger. </p>
+
+</div>
+</div>
+<a class="anchor" id="aae9b6fbf4e3a52286dda69d7da6f3a2b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::SetFichierDossier </td>
+          <td>(</td>
+          <td class="paramtype">wxString&#160;</td>
+          <td class="paramname"><em>chemin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>objet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>activeLigne</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche à l'écran le contenu de l'entité se trouvant à l'adresse <em>chemin</em> </p>
+<dl class="params"><dt>ParamÃ¨tres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chemin</td><td>adresse de l'entité </td></tr>
+    <tr><td class="paramname">objet</td><td>la nature de l'entité : dossier, fichier m3u ou playlist </td></tr>
+    <tr><td class="paramname">activeLigne</td><td>si vrai, la vue sera active </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aefd13a1b43b4b7b9c6235e665824d6f4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::SetPageParallele </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_page_gestion_periph.xhtml">PageGestionPeriph</a> *&#160;</td>
+          <td class="paramname"><em>page</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Associe cette instance avec sa "jumelle". </p>
+<p>Ce jumelage permet une interaction entre entre les deux instances : glisser-déposer, copier-coller </p><dl class="params"><dt>ParamÃ¨tres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">page</td><td>l'instance de l'autre page </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a59b3ddb0729626bd16ef8ae2aab58857"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageGestionPeriph::Suppression </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime un dossier, fichier, ou ligne d'un fichier. </p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a Ã©tÃ© gÃ©nÃ©rÃ©e Ã  partir des fichiers suivants :<ul>
+<li>C:/Workspace/Projects/fux/include/GUI/explorer/<a class="el" href="">GestionPeriphMoitiePage.h</a></li>
+<li>C:/Workspace/Projects/fux/src/GUI/explorer/<a class="el" href="">GestionPeriphMoitiePage.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_page_gestion_periph.xhtml">PageGestionPeriph</a></li>
+    <li class="footer">GÃ©nÃ©rÃ© le Mercredi 1 Avril 2015 20:02:07 pour Fu(X) 2.0 par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
+</body>
+</html>

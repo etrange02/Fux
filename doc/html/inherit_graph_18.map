@@ -1,3 +1,7 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_explorer_drive_managers.html" title="ExplorerDriveManagers" alt="" coords="5,5,160,32"/>
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node1" href="$classexplorer_1_1_drive_manager_state.html" title="explorer::DriveManagerState" alt="" coords="5,111,191,138"/>
+<area shape="rect" id="node2" href="$classexplorer_1_1_default_drive_manager_state.html" title="explorer::DefaultDriveManager\lState" alt="" coords="240,5,435,47"/>
+<area shape="rect" id="node3" href="$classexplorer_1_1_dir_drive_manager_state.html" title="explorer::DirDriveManager\lState" alt="" coords="252,71,423,112"/>
+<area shape="rect" id="node4" href="$classexplorer_1_1_file_drive_manager_state.html" title="explorer::FileDriveManager\lState" alt="" coords="250,136,425,177"/>
+<area shape="rect" id="node5" href="$classexplorer_1_1_playlist_drive_manager_state.html" title="explorer::PlaylistDriveManager\lState" alt="" coords="239,201,436,243"/>
 </map>

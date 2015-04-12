@@ -5,10 +5,9 @@
 #include <vector>
 #include <wx/wx.h>
 #include <wx/statline.h>
+#include "explorer/ExplorerListCtrl.h"
 
-#include "ExplorerListCtrl.h"
-//#include "../../explorer/ExplorerManager.h" // Must be deactivated to compile, self-inclusion
-
+extern const wxEventType wxEVT_FUX_EXPLORERLISTCTRL_FOCUS;
 
 class ExplorerManager;
 
@@ -16,7 +15,6 @@ namespace gui
 {
     namespace explorer
     {
-
         class ExplorerPanel : public wxPanel
         {
             public:
@@ -25,16 +23,19 @@ namespace gui
                 /** Default destructor */
                 virtual ~ExplorerPanel();
 
+                bool operator==(const ExplorerPanel& other);
+
                 void setExplorerManager(ExplorerManager* explorerManager);
 
                 ExplorerListCtrl& getExplorerListCtrl();
 
-                void onFilterKnownFormatCheckBox(wxCommandEvent& event);
-                void onHiddenFilesCheckBox(wxCommandEvent& event);
-                void onPreviousButton(wxCommandEvent& event);
-                void onRefreshButton (wxCommandEvent& event);
-                void onItemActivatedInListCtrl(wxCommandEvent& event);
-                void onDragBeginInListCtrl(wxCommandEvent& event);
+                void onFilterKnownFormatCheckBox(wxCommandEvent&    event);
+                void onHiddenFilesCheckBox      (wxCommandEvent&    event);
+                void onPreviousButton           (wxCommandEvent&    event);
+                void onRefreshButton            (wxCommandEvent&    event);
+                void onItemActivatedInListCtrl  (wxCommandEvent&    event);
+                void onDragBeginInListCtrl      (wxCommandEvent&    event);
+                void onListFocused              (wxChildFocusEvent& event);
 
                 bool isHiddenFilesChecked() const;
                 bool isFilterActivated() const;
@@ -45,7 +46,10 @@ namespace gui
 
             protected:
                 void create();
-                std::vector<long> getSelectedItems();
+                std::vector<unsigned long> getSelectedItems();
+
+            private:
+                void sendExplorerListCtrlFocusEvent();
 
             private:
                 wxString m_managerName;
@@ -58,8 +62,6 @@ namespace gui
                 wxTextCtrl *m_pathTextCtrl;
                 wxButton *m_refreshButton, *m_previousButton;
                 wxCheckBox *m_hiddenFilesCheckBox, *m_filterCheckBox;
-
-//            DECLARE_EVENT_TABLE()
         };
     }
 }

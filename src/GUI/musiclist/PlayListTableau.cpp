@@ -6,8 +6,24 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../../include/gui/musiclist/PlayList.h"
+
+
+#include "Define.h"
+#include <wx/stdpaths.h>
+#include <wx/dir.h>
+#include <wx/tarstrm.h>
+#include <wx/progdlg.h>
+#include <wx/dnd.h>
+#include <wx/mstream.h>
+#include <wx/renderer.h>
+#include "gui/musiclist/PlayList.h"
 #include "MusicManagerSwitcher.h"
+#include "music/MusicManager.h"
+#include "widgets/SliderSon.h"
+#include "tools/FichierLog.h"
+#include "tools/dnd/DnDCible.h"
+#include "db/BDDRequete.h"
+#include "db/BDDThread.h"
 
 /**
  * @class PlayListTableau
@@ -31,7 +47,6 @@ END_EVENT_TABLE()
 
 const wxEventType wxEVT_VIDER_PANNEAU = wxNewEventType();
 const wxEventType wxEVT_LISTE_DETAILS = wxNewEventType();
-static wxMutex *s_mutexMAJPlaylist = new wxMutex;
 
 /**
  * Constructeur
@@ -80,7 +95,7 @@ PlayListTableau::~PlayListTableau()
  */
 void PlayListTableau::MAJ()
 {
-    wxMutexLocker lock(*s_mutexMAJPlaylist);
+    wxMutexLocker lock(m_mutexMAJPlaylist);
     #if DEBUG
     FichierLog::Get()->Ajouter("PlayListTableau::MAJ - Début après les tests");
     #endif
@@ -286,7 +301,7 @@ void PlayListTableau::MouseEvents(wxMouseEvent &event)
  */
 void PlayListTableau::removeLine(const int position)
 {
-    wxMutexLocker lock(*s_mutexMAJPlaylist);
+    wxMutexLocker lock(m_mutexMAJPlaylist);
     #if DEBUG
     FichierLog::Get()->Ajouter("PlayListTableau::removeLine(const int position)");
     #endif
@@ -365,7 +380,7 @@ void PlayListTableau::setDefaultColor(const size_t position)
  */
 void PlayListTableau::Glisser(wxListEvent &WXUNUSED(event))
 {
-    wxMutexLocker locker(*s_mutexMAJPlaylist);
+    wxMutexLocker locker(m_mutexMAJPlaylist);
     if (MusicManagerSwitcher::getSearch().hasEfficientSearchedWord())
         return;
 
@@ -508,7 +523,7 @@ void PlayListTableau::menuCouper(wxCommandEvent &WXUNUSED(event))
  */
 void PlayListTableau::menuColler(wxCommandEvent &WXUNUSED(event))
 {
-    MusicManagerSwitcher::getSearch().moveIntTitlesAt(&m_tableauCouper, m_yMenu/*, true*/);
+    MusicManagerSwitcher::getSearch().moveIntTitlesAt(m_tableauCouper, m_yMenu/*, true*/);
     m_tableauCouper.Clear();
     m_couper = false;
 }
@@ -531,7 +546,7 @@ void PlayListTableau::menuDetails(wxCommandEvent &WXUNUSED(event))
  /// Attention au multithread, lorsque l'on fait des ajouts de lignes au même moment. GUI monothread
 void PlayListTableau::SuppressionLigne()
 {
-    wxMutexLocker lock(*s_mutexMAJPlaylist);
+    wxMutexLocker lock(m_mutexMAJPlaylist);
     if (GetItemCount() == 0)
         return;
 
@@ -596,6 +611,8 @@ void PlayListTableau::SuppressionLigne()
  */
 void PlayListTableau::onUpdateLine(wxCommandEvent& event)
 {
+    ///FIXME: Might be useless because events come from only one manager.
+    wxMutexLocker lock(m_mutexMAJPlaylist);
     IMusic* music = static_cast<IMusic*>(event.GetClientData());
     std::vector<Music*>::iterator iter = std::find(MusicManagerSwitcher::getSearch().getMusics().begin(), MusicManagerSwitcher::getSearch().getMusics().end(), music);
 

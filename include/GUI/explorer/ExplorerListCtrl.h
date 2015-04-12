@@ -1,11 +1,11 @@
 #ifndef EXPLORERLISTCTRL_H
 #define EXPLORERLISTCTRL_H
 
-#include "../../Define.h"
+#include "Define.h"
 #include <wx/wx.h>
 #include <wx/listctrl.h>
 #include <wx/filename.h>
-
+#include <vector>
 
 namespace gui
 {
@@ -25,6 +25,9 @@ namespace gui
 
                 void selectLine(const wxString& text);
                 void selectLine(const long line);
+
+                std::vector<unsigned long> getSelectedLines();
+                void removeSelectedLines();
 
             protected:
                 void Create();

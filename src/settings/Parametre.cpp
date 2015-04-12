@@ -73,6 +73,18 @@ Parametre::~Parametre()
     #endif
 }
 
+Parametre::Parametre(const Parametre& other)
+{
+
+}
+
+Parametre& Parametre::operator=(const Parametre& other)
+{
+    if (this == &other)
+        return *this;
+    return *this;
+}
+
 /**
  * Retourne l'instance de la classe Parametre
  * @return l'instance

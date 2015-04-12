@@ -13,6 +13,8 @@
  * @brief Supprime les fichiers se trouvant dans une arborescence
  */
 
+ /// DELETE WITH GIT ////
+
 /**
  * Construteur
  * @param origine le répertoire où doit être supprimé les fichiers

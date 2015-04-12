@@ -45,6 +45,8 @@ IMPORTANT, A FAIRE !!!
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="include/explorer/state" />
+					<Add directory="include/explorer" />
+					<Add directory="include/tools/dir_traverser" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -68,6 +70,8 @@ IMPORTANT, A FAIRE !!!
 					<Add option="-g" />
 					<Add option="-DDEBUG" />
 					<Add directory="include/explorer/state" />
+					<Add directory="include/explorer" />
+					<Add directory="include/tools/dir_traverser" />
 				</Compiler>
 			</Target>
 			<Environment>
@@ -84,12 +88,14 @@ IMPORTANT, A FAIRE !!!
 				<Variable name="WX_VER1" value="3" />
 				<Variable name="WX_VER2" value="0" />
 				<Variable name="WX_VER3" value="2" />
+				<Variable name="__WX_VERSION__" value="${WX_VER1}.${WX_VER2}.${WX_VER3}" />
 			</Environment>
 		</Build>
 		<Compiler>
 			<Add option="-pipe" />
 			<Add option="-mthreads" />
 			<Add option='[[if (PLATFORM == PLATFORM_MSW &amp;&amp; (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.0.0&quot;))) print(_T(&quot;-Wno-attributes&quot;));]]' />
+			<Add option="-std=gnu++11" />
 			<Add option="-D__GNUWIN32__" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DwxUSE_UNICODE" />
@@ -248,14 +254,14 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/tools/dir_traverser/TraverserCopieFichier.h" />
 		<Unit filename="include/tools/dir_traverser/TraverserDeplaceFichier.h" />
 		<Unit filename="include/tools/dir_traverser/TraverserSupprimeDossier.h" />
-		<Unit filename="include/tools/dir_traverser/TraverserSupprimeFichier.h" />
 		<Unit filename="include/tools/dnd/DnDCible.h" />
 		<Unit filename="include/tools/dnd/DnDListeFichier.h" />
 		<Unit filename="include/tools/dnd/MusicPlayListDnDBufferData.h" />
 		<Unit filename="include/tools/stl/ThreadSafeQueue.h" />
-		<Unit filename="include/tools/thread/Factory.h" />
+		<Unit filename="include/tools/thread/FileDeletionThread.h" />
 		<Unit filename="include/tools/thread/IRunnable.h" />
 		<Unit filename="include/tools/thread/IThreadManager.h" />
+		<Unit filename="include/tools/thread/ThreadFactory.h" />
 		<Unit filename="include/tools/thread/ThreadManager.h" />
 		<Unit filename="include/tools/thread/ThreadProcess.h" />
 		<Unit filename="include/version.h" />
@@ -375,11 +381,11 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/tools/dir_traverser/TraverserCopieFichier.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserDeplaceFichier.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserSupprimeDossier.cpp" />
-		<Unit filename="src/tools/dir_traverser/TraverserSupprimeFichier.cpp" />
 		<Unit filename="src/tools/dnd/DnDCible.cpp" />
 		<Unit filename="src/tools/dnd/DnDListeFichier.cpp" />
 		<Unit filename="src/tools/dnd/MusicPlayListDnDBufferData.cpp" />
-		<Unit filename="src/tools/thread/Factory.cpp" />
+		<Unit filename="src/tools/thread/FileDeletionThread.cpp" />
+		<Unit filename="src/tools/thread/ThreadFactory.cpp" />
 		<Unit filename="src/tools/thread/ThreadManager.cpp" />
 		<Unit filename="src/tools/thread/ThreadProcess.cpp" />
 		<Extensions>
@@ -388,11 +394,11 @@ IMPORTANT, A FAIRE !!!
 			<debugger />
 			<DoxyBlocks>
 				<comment_style block="0" line="0" />
-				<doxyfile_project project_number="3.7.2901" output_directory="doc" output_language="French" use_auto_version="1" />
+				<doxyfile_project project_number="2.7.4514" output_directory="doc" output_language="French" use_auto_version="1" />
 				<doxyfile_build extract_all="1" extract_private="1" extract_static="1" />
 				<doxyfile_warnings />
 				<doxyfile_output html_help="1" />
-				<doxyfile_dot class_diagrams="1" />
+				<doxyfile_dot class_diagrams="1" have_dot="1" />
 				<general use_at_in_tags="1" />
 			</DoxyBlocks>
 			<AutoVersioning>

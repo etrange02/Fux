@@ -1,18 +1,18 @@
 var NAVTREE =
 [
   [ "Fu(X) 2.0", "index.html", [
-    [ "Deprecated List", "deprecated.html", null ],
+    [ "Liste des éléments obsolètes", "deprecated.html", null ],
     [ "Classes", null, [
-      [ "Class List", "annotated.html", "annotated" ],
-      [ "Class Index", "classes.html", null ],
-      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
-      [ "Class Members", "functions.html", [
-        [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", "functions_func" ]
+      [ "Liste des classes", "annotated.html", "annotated" ],
+      [ "Index des classes", "classes.html", null ],
+      [ "Hiérarchie des classes", "hierarchy.html", "hierarchy" ],
+      [ "Membres de classe", "functions.html", [
+        [ "Tout", "functions.html", "functions_dup" ],
+        [ "Fonctions", "functions_func.html", "functions_func" ]
       ] ]
     ] ],
-    [ "Files", null, [
-      [ "File List", "files.html", "files" ]
+    [ "Fichiers", null, [
+      [ "Liste des fichiers", "files.html", "files" ]
     ] ]
   ] ]
 ];
@@ -20,13 +20,17 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"class_b_d_d.html#aed711ace98dcb3f2ee15eefa69e277ce",
-"class_music.html#a01620b0be61403cd3937d544a1d9f533",
-"class_play_list_tableau.html#a9b1f1f3cbd8eac3550b5a75dbb34f94d"
+"class_array_fenetre_detachable.html#a4641d817757432e59922bf2ec2224223",
+"class_element_thread_fichier.html",
+"class_i_music_manager.html#ab6fc30a70a0bd74a2b1d20ad8ecff801",
+"class_music_manager_default_decorator.html#aaa4433c34295eee5b90c2804e5e90cbf",
+"class_play_list_tableau.html#ac9cedb895d0a0ad1176754c17a1b26f5",
+"classexplorer_1_1_drive_manager_state.html#ad02223e2bab89fa8a6ed21f711766511",
+"dir_ff75c1e080194f017f10c1d4ab6764ee.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';
+var SYNCOFFMSG = 'cliquez pour activer la synchronisation du panel';
 var navTreeSubIndices = new Array();
 
 function getData(varName)

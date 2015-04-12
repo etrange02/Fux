@@ -1,0 +1,5 @@
+<map id="IMusicManager" name="IMusicManager">
+<area shape="rect" id="node2" href="$class_abstract_music_manager_decorator.html" title="AbstractMusicManagerDecorator" alt="" coords="114,80,326,107"/>
+<area shape="rect" id="node3" href="$class_music_manager_default_decorator.html" title="MusicManagerDefaultDecorator" alt="" coords="5,155,208,181"/>
+<area shape="rect" id="node4" href="$class_music_manager_search_decorator.html" title="MusicManagerSearchDecorator" alt="" coords="233,155,437,181"/>
+</map>

@@ -1,4 +1,6 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_i_search_traversable.html" title="ISearchTraversable" alt="" coords="5,5,136,32"/>
-<area shape="rect" id="node2" href="$class_music_list.html" title="MusicList" alt="" coords="184,5,263,32"/>
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node1" href="$class_i_music_manager.html" title="IMusicManager" alt="" coords="5,31,116,57"/>
+<area shape="rect" id="node2" href="$class_abstract_music_manager_decorator.html" title="AbstractMusicManagerDecorator" alt="" coords="164,31,376,57"/>
+<area shape="rect" id="node3" href="$class_music_manager_default_decorator.html" title="MusicManagerDefaultDecorator" alt="" coords="425,5,627,32"/>
+<area shape="rect" id="node4" href="$class_music_manager_search_decorator.html" title="MusicManagerSearchDecorator" alt="" coords="424,56,628,83"/>
 </map>
