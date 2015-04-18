@@ -1,27 +1,25 @@
-#include "findPosition.h"
-#include "../../include/predicates/findPosition.h"
+/***************************************************************
+ * Name:      findPosition.cpp
+ * Purpose:   Code for Fu(X) 2.0
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
+ * Created:   2014-04-16
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
+ * License:
+ **************************************************************/
+#include "predicates/findPosition.h"
 
-findPosition::findPosition(Music *music)
+using namespace ::music;
+
+findPosition::findPosition(IMusic *music)
 {
     m_music = music;
-    m_position = 0;
 }
 
 findPosition::~findPosition()
-{
-    //dtor
-}
+{}
 
-size_t findPosition::getPosition()
+bool findPosition::operator()(const IMusic* music)
 {
-    return m_position;
-}
-
-bool findPosition::operator(const Music& music)
-{
-    if (m_music == music)
-        return true;
-    ++m_position;
-    return false;
+    return (m_music == music);
 }
 

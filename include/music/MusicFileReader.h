@@ -17,24 +17,27 @@
 #include <id3v2tag.h>
 #include <attachedpictureframe.h>
 
-class MusicFileReader : public MusicFile
+namespace music
 {
-    public:
-        /** Default constructor */
-        MusicFileReader(Music& music);
-        /** Default destructor */
-        virtual ~MusicFileReader();
+    class MusicFileReader : public MusicFile
+    {
+        public:
+            /** Default constructor */
+            MusicFileReader(Music& music);
+            /** Default destructor */
+            virtual ~MusicFileReader();
 
-        virtual void process();
+            virtual void process();
 
-        Music* getMusic();
+            Music* getMusic();
 
-    protected:
-        void FillFields();
-        void ImageExtracting();
+        protected:
+            void FillFields();
+            void ImageExtracting();
 
-    private:
-        Music& m_music; //!< Member variable "m_music"
-};
+        private:
+            Music& m_music; //!< Member variable "m_music"
+    };
+}
 
 #endif // MUSICFILEREADER_H

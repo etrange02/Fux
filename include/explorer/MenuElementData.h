@@ -3,26 +3,32 @@
 
 #include <wx/wx.h>
 
-class MenuElementData
+/**
+ * Explorer name space.
+ */
+namespace explorer
 {
-    public:
-        /** Default constructor */
-        MenuElementData();
-        MenuElementData(const MenuElementData& other);
-        /** Default destructor */
-        virtual ~MenuElementData();
-        MenuElementData& operator=(const MenuElementData& other);
+    class MenuElementData
+    {
+        public:
+            /** Default constructor */
+            MenuElementData();
+            MenuElementData(const MenuElementData& other);
+            /** Default destructor */
+            virtual ~MenuElementData();
+            MenuElementData& operator=(const MenuElementData& other);
 
-        void setLabel(const wxString& label);
-        void setPath(const wxString& path);
-        const wxString& getLabel() const;
-        const wxString& getPath() const;
+            void setLabel(const wxString& label);
+            void setPath(const wxString& path);
+            const wxString& getLabel() const;
+            const wxString& getPath() const;
 
-    protected:
+        protected:
 
-    private:
-        wxString m_label;
-        wxString m_path;
-};
+        private:
+            wxString m_label;
+            wxString m_path;
+    };
+}
 
 #endif // MENUELEMENTDATA_H

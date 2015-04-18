@@ -3,22 +3,28 @@
 
 #include <wx/wx.h>
 
-class DriveManagerListElement
+/**
+ * Explorer name space.
+ */
+namespace explorer
 {
-    public:
-        /** Default constructor */
-        DriveManagerListElement();
-        /** Default destructor */
-        virtual ~DriveManagerListElement();
+    class DriveManagerListElement
+    {
+        public:
+            /** Default constructor */
+            DriveManagerListElement();
+            /** Default destructor */
+            virtual ~DriveManagerListElement();
 
-        const wxString& getFilename() const;
-        void setFilename(const wxString& filename);
+            const wxString& getFilename() const;
+            void setFilename(const wxString& filename);
 
-    protected:
-    private:
-        wxString m_filename;
-        /// play list ??
-        /// pointer, reference
-};
+        protected:
+        private:
+            wxString m_filename;
+            /// play list ??
+            /// pointer, reference
+    };
+}
 
 #endif // DRIVEMANAGERLISTELEMENT_H

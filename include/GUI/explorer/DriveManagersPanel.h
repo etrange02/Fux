@@ -4,9 +4,12 @@
 #include <vector>
 #include <wx/wx.h>
 #include <wx/menu.h>
-#include "MenuElement.h"
+#include "explorer/MenuElement.h"
 
-class ExplorerDriveManagers;
+namespace explorer
+{
+    class ExplorerDriveManagers;
+}
 
 namespace gui
 {
@@ -18,7 +21,7 @@ namespace gui
         {
             public:
                 /** Default constructor */
-                DriveManagersPanel(wxWindow *parent, ExplorerDriveManagers& explorerDriveManagers);
+                DriveManagersPanel(wxWindow *parent, ::explorer::ExplorerDriveManagers& explorerDriveManagers);
                 /** Default destructor */
                 virtual ~DriveManagersPanel();
 
@@ -53,20 +56,20 @@ namespace gui
                 void createMenus();
                 void fillDriversMenu();
                 void fillContainerFilesMenu();
-                void emptyMenu(wxMenu& menu, std::vector<MenuElement>& menuElements);
-                void fillMenu (wxMenu& menu, std::vector<MenuElement>& menuElements);
-                void mergeAndMarkPresentMenuElements(std::vector<MenuElement>& menuElements,
-                                                     std::vector<MenuElementData> menuElementData,
+                void emptyMenu(wxMenu& menu, std::vector<::explorer::MenuElement>& menuElements);
+                void fillMenu (wxMenu& menu, std::vector<::explorer::MenuElement>& menuElements);
+                void mergeAndMarkPresentMenuElements(std::vector<::explorer::MenuElement>& menuElements,
+                                                     std::vector<::explorer::MenuElementData> menuElementData,
                                                      void (DriveManagersPanel::*funcMappingLeft)(wxCommandEvent&),
                                                      void (DriveManagersPanel::*funcMappingRight)(wxCommandEvent&) );
 
-                MenuElement& getMenuElementById(std::vector<MenuElement>& menuElements, const int id);
+                ::explorer::MenuElement& getMenuElementById(std::vector<::explorer::MenuElement>& menuElements, const int id);
 
             private:
-                std::vector<MenuElement> m_driversMenuElement;
-                std::vector<MenuElement> m_containerFilesMenuElement;
+                std::vector<::explorer::MenuElement> m_driversMenuElement;
+                std::vector<::explorer::MenuElement> m_containerFilesMenuElement;
 
-                ExplorerDriveManagers& m_explorerDriveManagers;
+                ::explorer::ExplorerDriveManagers& m_explorerDriveManagers;
                 ExplorerPanel* m_leftExplorerPanels;
                 ExplorerPanel* m_rightExplorerPanels;
                 ExplorerPanel* m_focusedExplorerPanel;

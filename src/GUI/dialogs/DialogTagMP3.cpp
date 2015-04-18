@@ -6,8 +6,10 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../../include/gui/dialogs/DialogTagMP3.h"
-#include "../../music/Factory.h"
+#include "gui/dialogs/DialogTagMP3.h"
+#include "music/Factory.h"
+
+using namespace ::music;
 
 /**
  * @class DialogTagMP3
@@ -23,7 +25,7 @@
 DialogTagMP3::DialogTagMP3(wxWindow *parent, const wxWindowID id, const Music& music) :
     wxDialog(parent, id, _("Détails"), wxDefaultPosition, wxDefaultSize, wxCAPTION|wxCLOSE_BOX|wxSYSTEM_MENU|wxRESIZE_BORDER)
 {
-    m_music = fux::music::Factory::createMusic(music);
+    m_music = Factory::createMusic(music);
     initialize();
 }
 

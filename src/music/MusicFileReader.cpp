@@ -9,6 +9,7 @@
 #include "MusicFileReader.h"
 
 using namespace TagLib;
+using namespace ::music;
 
 MusicFileReader::MusicFileReader(Music& music) :
     m_music(music)

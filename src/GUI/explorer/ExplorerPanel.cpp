@@ -75,7 +75,7 @@ void ExplorerPanel::create()
     SetMinSize(wxSize(10, 10)); //< Allows the listctrl to be resized as little as we want
 }
 
-void ExplorerPanel::setExplorerManager(ExplorerManager* explorerManager)
+void ExplorerPanel::setExplorerManager(::explorer::ExplorerManager* explorerManager)
 {
     m_explorerManager = explorerManager;
 }

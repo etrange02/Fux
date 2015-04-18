@@ -1,21 +1,20 @@
 #ifndef FINDPOSITION_H
 #define FINDPOSITION_H
 
+#include "music/IMusic.h"
 
 class findPosition
 {
     public:
         /** Default constructor */
-        findPosition();
+        findPosition(music::IMusic *music);
         /** Default destructor */
         virtual ~findPosition();
-        
-        bool operator()(const Music* music);
-        
-    protected:
+
+        bool operator()(const music::IMusic* music);
+
     private:
-        size_t m_position;
-        Music* m_music;
+        IMusic* m_music;
 };
 
 #endif // FINDPOSITION_H

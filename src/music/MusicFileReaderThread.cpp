@@ -8,6 +8,8 @@
  **************************************************************/
 #include "MusicFileReaderThread.h"
 
+using namespace ::music;
+
 const wxEventType wxEVT_FUX_MUSICFILE_READER_THREAD = wxNewEventType();
 
 /** @brief Constructor

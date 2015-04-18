@@ -6,8 +6,10 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../../include/gui/musiclist/PlayList.h"
+#include "gui/musiclist/PlayList.h"
 #include "MusicManagerSwitcher.h"
+
+using namespace ::music;
 
 /**
  * @class PlayList
@@ -204,7 +206,7 @@ void PlayList::OnAppliquerTAG(wxCommandEvent &WXUNUSED(event))
     if (MusicManagerSwitcher::getSearch().getMusics().size() <= position)
         return;
 
-    Music* music = fux::music::Factory::createMusic(*MusicManagerSwitcher::getSearch().getMusics().at(position));
+    Music* music = Factory::createMusic(*MusicManagerSwitcher::getSearch().getMusics().at(position));
 
     music->SetAlbum(m_BoiteAlbum->GetValue());
     music->SetName(m_BoiteNom->GetValue());
@@ -301,7 +303,7 @@ void PlayList::EvtImage(wxCommandEvent &event)
     if (MusicManagerSwitcher::getSearch().getMusics().size() <= position)
         return;
 
-    Music* music = fux::music::Factory::createMusic(*MusicManagerSwitcher::getSearch().getMusics().at(position));
+    Music* music = Factory::createMusic(*MusicManagerSwitcher::getSearch().getMusics().at(position));
 
     music->SetRecordSleeve(&m_pochette->GetImage());
     MusicManagerSwitcher::getSearch().updateMusicContent(position, music);

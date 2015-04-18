@@ -25,6 +25,8 @@
 #include "db/BDDRequete.h"
 #include "db/BDDThread.h"
 
+using namespace ::music;
+
 /**
  * @class PlayListTableau
  * @brief Tableau (GUI) dans lequel sont affichés les informations des titres mis dans la liste de lecture. D'une certaine manière, c'est la liste de lecture

@@ -8,6 +8,8 @@
  **************************************************************/
 #include "MusicFileWriterThread.h"
 
+using namespace ::music;
+
 const wxEventType wxEVT_FUX_MUSICFILE_WRITER_THREAD = wxNewEventType();
 
 MusicFileWriterThread::MusicFileWriterThread(MusicFileWriter* musicFileWriter, wxWindow* parent) :

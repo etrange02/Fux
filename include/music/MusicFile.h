@@ -2,10 +2,13 @@
 #define MUSICFILE_H
 
 
-class MusicFile
+namespace music
 {
-    public:
-        virtual void process() = 0;
-};
+    class MusicFile
+    {
+        public:
+            virtual void process() = 0;
+    };
+}
 
 #endif // MUSICFILE_H

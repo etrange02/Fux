@@ -13,6 +13,7 @@
 #include "explorer/ExplorerFactory.h"
 
 using namespace explorer;
+using namespace ::music;
 
 FileDriveManagerState::FileDriveManagerState(ExplorerManagerData& data) :
     DriveManagerState(data)

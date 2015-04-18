@@ -21,7 +21,7 @@ findControllerOfExplorerPanel::~findControllerOfExplorerPanel()
     //dtor
 }
 
-bool findControllerOfExplorerPanel::operator()(ExplorerManager* manager)
+bool findControllerOfExplorerPanel::operator()(explorer::ExplorerManager* manager)
 {
     if (NULL == manager)
         return false;

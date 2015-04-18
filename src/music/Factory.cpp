@@ -6,9 +6,9 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../include/music/Factory.h"
+#include "music/Factory.h"
 
-using namespace fux::music;
+using namespace music;
 
 /** @brief Creates an empty Music instance
  *

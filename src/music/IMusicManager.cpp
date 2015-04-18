@@ -8,6 +8,7 @@
  **************************************************************/
 #include "IMusicManager.h"
 
+using namespace ::music;
 
 IMusicManager::IMusicManager()
 {

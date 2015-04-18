@@ -9,7 +9,9 @@
 #include "explorer/ExplorerDriveManagersData.h"
 #include <algorithm>
 
-bool deleteAll(ExplorerManager* item) {delete item; return true;}
+using namespace explorer;
+
+bool deleteAll(::explorer::ExplorerManager* item) {delete item; return true;}
 
 ExplorerDriveManagersData::ExplorerDriveManagersData() :
     m_driveManagersPanel(NULL)
@@ -33,7 +35,7 @@ void ExplorerDriveManagersData::setDriveManagersPanel(gui::explorer::DriveManage
     m_driveManagersPanel = driveManagersPanel;
 }
 
-std::vector<ExplorerManager*>& ExplorerDriveManagersData::getExplorerManagers() const
+std::vector<::explorer::ExplorerManager*>& ExplorerDriveManagersData::getExplorerManagers() const
 {
     return *m_explorerManagers;
 }

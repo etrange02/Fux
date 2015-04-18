@@ -13,6 +13,8 @@
 #include <wx/volume.h>
 #include "DriveManagerState.h"
 
+using namespace explorer;
+
 ExplorerDriveManagers ExplorerDriveManagers::s_explorerDriveManagersInstance = ExplorerDriveManagers();
 
 ExplorerDriveManagers& ExplorerDriveManagers::get()
@@ -97,7 +99,7 @@ void ExplorerDriveManagers::setFileState(gui::explorer::ExplorerPanel& explorerP
     manager.setFileState(path);
 }
 
-ExplorerManager& ExplorerDriveManagers::getControllerOf(gui::explorer::ExplorerPanel& explorerPanel)
+::explorer::ExplorerManager& ExplorerDriveManagers::getControllerOf(gui::explorer::ExplorerPanel& explorerPanel)
 {
     findControllerOfExplorerPanel finder(explorerPanel);
     std::vector<ExplorerManager*>::iterator it = std::find_if(m_data.getExplorerManagers().begin(), m_data.getExplorerManagers().end(), finder);

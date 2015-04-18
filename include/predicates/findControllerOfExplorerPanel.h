@@ -1,14 +1,14 @@
 #ifndef FINDCONTROLLEROFEXPLORERPANEL_H
 #define FINDCONTROLLEROFEXPLORERPANEL_H
 
-namespace gui
-{
-    namespace explorer
-    {
+namespace gui {
+    namespace explorer {
         class ExplorerPanel;
     }
 }
-class ExplorerManager;
+namespace explorer {
+    class ExplorerManager;
+}
 
 class findControllerOfExplorerPanel
 {
@@ -18,7 +18,7 @@ class findControllerOfExplorerPanel
         /** Default destructor */
         virtual ~findControllerOfExplorerPanel();
 
-        bool operator()(ExplorerManager* manager);
+        bool operator()(::explorer::ExplorerManager* manager);
 
     private:
         const gui::explorer::ExplorerPanel& m_explorerPanel;

@@ -10,7 +10,9 @@
 #include "DriveManagerState.h"
 #include "explorer/ExplorerDriveManagers.h"
 
-ExplorerManagerData::ExplorerManagerData(explorer::DriveManagerState& state, gui::explorer::ExplorerPanel& explorer, ExplorerDriveManagers& explorerDriveManagers) :
+using namespace ::explorer;
+
+ExplorerManagerData::ExplorerManagerData(DriveManagerState& state, gui::explorer::ExplorerPanel& explorer, ExplorerDriveManagers& explorerDriveManagers) :
     m_state(&state),
     m_explorerPanel(explorer),
     m_menu(NULL),
@@ -49,7 +51,7 @@ void ExplorerManagerData::setState(explorer::DriveManagerState& state)
     m_state = &state;
 }
 
-explorer::DriveManagerState& ExplorerManagerData::getState() const
+DriveManagerState& ExplorerManagerData::getState() const
 {
     return *m_state;
 }

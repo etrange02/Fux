@@ -1,4 +1,14 @@
-#include "../../include/music/MusicPlayer.h"
+/***************************************************************
+ * Name:      MusicPlayer.cpp
+ * Purpose:   Code for Fu(X) 2.0
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
+ * Created:   2014-04-16
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
+ * License:
+ **************************************************************/
+#include "music/MusicPlayer.h"
+
+using namespace ::music;
 
 const wxEventType wxEVT_FUX_MUSICPLAYER_CHANGE_TITLE = wxNewEventType();
 const wxEventType wxEVT_FUX_MUSICPLAYER_UPDATE_GRAPH = wxNewEventType();
@@ -7,10 +17,13 @@ const wxEventType wxEVT_FUX_MUSICPLAYER_CHANGE_STATUS = wxNewEventType();
 MusicPlayer::MusicPlayer() :
     m_sound(NULL),
     m_channel(NULL),
+    m_system(NULL),
     m_parent(NULL),
     m_hasLoadedMusic(false),
     m_stopped(true),
-    m_volume(0.0f)
+    m_volume(0.0f),
+    m_currentTime(NULL),
+    m_totalTime(NULL)
 {
     initialize();
 }

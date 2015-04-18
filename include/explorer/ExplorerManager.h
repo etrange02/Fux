@@ -5,36 +5,42 @@
 #include "ExplorerManagerData.h"
 #include "ExplorerPanel.h"
 
-class ExplorerDriveManagers;
 namespace explorer
 {
     class DriveManagerState;
+    class ExplorerDriveManagers;
 }
 
-class ExplorerManager
+/**
+ * Explorer name space.
+ */
+namespace explorer
 {
-    public:
-        ExplorerManager(gui::explorer::ExplorerPanel& explorerPanel, ExplorerDriveManagers& explorerDriveManagers);
-        /** Default destructor */
-        virtual ~ExplorerManager();
+    class ExplorerManager
+    {
+        public:
+            ExplorerManager(gui::explorer::ExplorerPanel& explorerPanel, ExplorerDriveManagers& explorerDriveManagers);
+            /** Default destructor */
+            virtual ~ExplorerManager();
 
-        void setDirState     (const wxString& path);
-        void setPlayListState();
-        void setFileState    (const wxString& path);
-        void setDefaultState ();
+            void setDirState     (const wxString& path);
+            void setPlayListState();
+            void setFileState    (const wxString& path);
+            void setDefaultState ();
 
-        void refresh();
-        void makeParentDir();
-        void openElement(const std::vector<unsigned long>& indexes);
+            void refresh();
+            void makeParentDir();
+            void openElement(const std::vector<unsigned long>& indexes);
 
-        gui::explorer::ExplorerPanel& getExplorerPanel() const;
+            gui::explorer::ExplorerPanel& getExplorerPanel() const;
 
-        explorer::DriveManagerState& getState() const;
+            DriveManagerState& getState() const;
 
-    protected:
+        protected:
 
-    private:
-        ExplorerManagerData m_data;
-};
+        private:
+            ExplorerManagerData m_data;
+    };
+}
 
 #endif // EXPLORERMANAGER_H

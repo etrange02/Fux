@@ -6,7 +6,9 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../include/music/Music.h"
+#include "music/Music.h"
+
+using namespace ::music;
 
 /**
  * @class Music

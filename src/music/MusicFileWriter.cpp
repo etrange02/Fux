@@ -10,6 +10,7 @@
 #include "Tools.h"
 
 using namespace TagLib;
+using namespace ::music;
 
 MusicFileWriter::MusicFileWriter(Music* src, Music* dst) :
     m_musicSrc(src),
@@ -97,7 +98,7 @@ void MusicFileWriter::renameFile()
     if (m_musicSrc->EqualsFilename(m_musicDst))
         return;
 
-    if (tool::containsInvalidCharacter(m_musicSrc->GetFileName()))
+    if (tools::containsInvalidCharacter(m_musicSrc->GetFileName()))
         return;
 
     if (wxRenameFile(m_musicDst->GetFileName(), m_musicSrc->GetFileName()))

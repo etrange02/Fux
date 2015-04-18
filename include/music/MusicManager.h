@@ -5,86 +5,91 @@
 #include "MusicPlayer.h"
 #include "MusicList.h"
 
-class MusicList;
 
 extern const wxEventType wxEVT_FUX_MUSICMANAGER_NO_FILE;
 extern const wxEventType wxEVT_FUX_MUSICMANAGER_SEARCH_DONE;
 
-class MusicManager
+
+namespace music
 {
-    public:
-        MusicManager();
-        virtual ~MusicManager();
+    class MusicList;
 
-        std::vector<Music*>& getAllMusics();
-        std::vector<Music*>& getSearchedMusics();
-        size_t getCurrentMusicPosition();
-        size_t getCurrentMusicPositionInSearch();
-        bool playMusicAt(long position);
-        bool playMusicAtInSearch(long position);
-        void moveIntTitlesAt(const wxArrayString& titles, long position);
-        void moveIntTitlesAtInSearch(const wxArrayString& titles, long position);
-        void placeStringTitlesAt(const wxArrayString& titles, size_t position);
-        void placeStringTitlesAtInSearch(const wxArrayString& titles, size_t position);
-        void deleteTitleAt(size_t position);
-        void deleteTitleAtInSearch(size_t position);
-        void updateMusicContent(const long position, Music* musicData);
-        void updateMusicContentInSearch(const long position, Music* musicData);
-        void deleteTitles(wxArrayString& titles, bool update = false);
+    class MusicManager
+    {
+        public:
+            MusicManager();
+            virtual ~MusicManager();
 
-        bool isRepete();
-        bool isRandom();
-        Music *getMusic();
-        MusicPlayer& getMusicPlayer();
+            std::vector<Music*>& getAllMusics();
+            std::vector<Music*>& getSearchedMusics();
+            size_t getCurrentMusicPosition();
+            size_t getCurrentMusicPositionInSearch();
+            bool playMusicAt(long position);
+            bool playMusicAtInSearch(long position);
+            void moveIntTitlesAt(const wxArrayString& titles, long position);
+            void moveIntTitlesAtInSearch(const wxArrayString& titles, long position);
+            void placeStringTitlesAt(const wxArrayString& titles, size_t position);
+            void placeStringTitlesAtInSearch(const wxArrayString& titles, size_t position);
+            void deleteTitleAt(size_t position);
+            void deleteTitleAtInSearch(size_t position);
+            void updateMusicContent(const long position, Music* musicData);
+            void updateMusicContentInSearch(const long position, Music* musicData);
+            void deleteTitles(wxArrayString& titles, bool update = false);
 
-        void setRepete(bool repete);
-        void setRandom(bool random);
+            bool isRepete();
+            bool isRandom();
+            Music *getMusic();
+            MusicPlayer& getMusicPlayer();
 
-        bool playNextMusic();
-        bool playPreviousMusic();
-        bool playNextOrRandomMusic();
-        bool playPreviousOrRandomMusic();
-        bool playAMusic();
-        bool playMusic(const wxString& name);
-        bool playMusicThenParse(wxString filename);
-        bool playSameMusic();
+            void setRepete(bool repete);
+            void setRandom(bool random);
 
-        void deleteCurrentTitle();
-        void parse();
-        void parse(const wxString& filename);
-        void parse(const wxArrayString& filenames, bool update = true);
+            bool playNextMusic();
+            bool playPreviousMusic();
+            bool playNextOrRandomMusic();
+            bool playPreviousOrRandomMusic();
+            bool playAMusic();
+            bool playMusic(const wxString& name);
+            bool playMusicThenParse(wxString filename);
+            bool playSameMusic();
 
-        void setParent(wxWindow* parent);
-        wxWindow* getParent() const;
+            void deleteCurrentTitle();
+            void parse();
+            void parse(const wxString& filename);
+            void parse(const wxArrayString& filenames, bool update = true);
 
-        bool saveMusicListIntoFile(wxString const &filename);
+            void setParent(wxWindow* parent);
+            wxWindow* getParent() const;
 
-        bool empty() const;
-        size_t size() const;
+            bool saveMusicListIntoFile(wxString const &filename);
 
-        wxString getSearchedWord() const;
-        void setSearchWord(const wxString& searchedWord);
-        bool hasEfficientSearchedWord() const;
+            bool empty() const;
+            size_t size() const;
 
-    protected:
-        bool playRandomMusic();
-        void sendMusicNoFileEvent();
-        void sendSearchEndingEvent();
-        void launchSearching();
-        void updateMusicContent(const long position, Music* musicData, std::vector<Music*>& collection);
-        void updateCurrentMusic(Music* newMusicData);
+            wxString getSearchedWord() const;
+            void setSearchWord(const wxString& searchedWord);
+            bool hasEfficientSearchedWord() const;
 
-    private:
+        protected:
+            bool playRandomMusic();
+            void sendMusicNoFileEvent();
+            void sendSearchEndingEvent();
+            void launchSearching();
+            void updateMusicContent(const long position, Music* musicData, std::vector<Music*>& collection);
+            void updateCurrentMusic(Music* newMusicData);
 
-        wxWindow* m_parent;
-        bool m_repete;
-        bool m_random;
-        MusicPlayer m_musicPlayer;
-        MusicList* m_musicList;
-        Music* m_music;
-        size_t m_musicPosition;
-        wxString m_searchedWord;
-        std::vector<Music*> m_searchedMusicCollection;
-};
+        private:
+
+            wxWindow* m_parent;
+            bool m_repete;
+            bool m_random;
+            MusicPlayer m_musicPlayer;
+            MusicList* m_musicList;
+            Music* m_music;
+            size_t m_musicPosition;
+            wxString m_searchedWord;
+            std::vector<Music*> m_searchedMusicCollection;
+    };
+}
 
 #endif // MUSICMANAGER_H

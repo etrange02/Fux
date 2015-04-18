@@ -6,8 +6,10 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../include/settings/Parametre.h"
+#include "settings/Parametre.h"
 #include "MusicManagerSwitcher.h"
+
+using namespace ::music;
 
 /**
  * @class Parametre

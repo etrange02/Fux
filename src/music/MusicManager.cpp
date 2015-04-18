@@ -6,13 +6,13 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../include/music/MusicManager.h"
+#include "music/MusicManager.h"
 #include <ctime>
 #include <algorithm>
-#include "../tools/thread/ThreadManager.h"
-#include "../predicates/findPosition.h"
+#include "tools/thread/ThreadManager.h"
+#include "predicates/findPosition.h"
 
-using namespace fux::music;
+using namespace music;
 
 const wxEventType wxEVT_FUX_MUSICMANAGER_NO_FILE = wxNewEventType();
 const wxEventType wxEVT_FUX_MUSICMANAGER_SEARCH_DONE = wxNewEventType();
@@ -745,7 +745,7 @@ void MusicManager::updateCurrentMusic(Music* newMusicData)
     getMusicPlayer().release();
 
     // modification
-    MusicFile* musicFile = fux::music::Factory::createMusicFileWriter(newMusicData, music);
+    MusicFile* musicFile = music::Factory::createMusicFileWriter(newMusicData, music);
     musicFile->process();
 
     //after

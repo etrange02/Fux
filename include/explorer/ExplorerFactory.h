@@ -1,10 +1,13 @@
 #ifndef EXPLORERFACTORY_H
 #define EXPLORERFACTORY_H
 
-class ExplorerManagerData;
 
+/**
+ * Explorer name space.
+ */
 namespace explorer
 {
+    class ExplorerManagerData;
     class DriveManagerState;
     class DefaultDriveManagerState;
     class DirDriveManagerState;

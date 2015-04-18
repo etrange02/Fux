@@ -6,14 +6,16 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "ExplorerManager.h"
+#include "explorer/ExplorerManager.h"
 #include "explorer/ExplorerFactory.h"
-#include "DriveManagerState.h"
-#include "DefaultDriveManagerState.h"
 #include "explorer/ExplorerDriveManagers.h"
+#include "explorer/state/DriveManagerState.h"
+#include "explorer/state/DefaultDriveManagerState.h"
+
+using namespace ::explorer;
 
 ExplorerManager::ExplorerManager(gui::explorer::ExplorerPanel& explorerPanel, ExplorerDriveManagers& explorerDriveManagers) :
-    m_data(*(explorer::ExplorerFactory::createDefaultDriveManagerState(m_data)), explorerPanel, explorerDriveManagers)
+    m_data(*(ExplorerFactory::createDefaultDriveManagerState(m_data)), explorerPanel, explorerDriveManagers)
 {
     m_data.getExplorerPanel().setExplorerManager(this);
 }
@@ -25,7 +27,7 @@ ExplorerManager::~ExplorerManager()
 void ExplorerManager::setDirState(const wxString& path)
 {
     m_data.setPath(path);
-    m_data.setState(*(explorer::ExplorerFactory::createDirDriveManagerState(m_data)));
+    m_data.setState(*(ExplorerFactory::createDirDriveManagerState(m_data)));
     m_data.getState().fillExplorerList();
     m_data.getExplorerDriveManagers().updateStreamButtonStates(m_data.getExplorerPanel());
     m_data.getExplorerPanel().getExplorerListCtrl().SetFocus();
@@ -34,7 +36,7 @@ void ExplorerManager::setDirState(const wxString& path)
 void ExplorerManager::setPlayListState()
 {
     m_data.setPath("");
-    m_data.setState(*(explorer::ExplorerFactory::createPlaylistDriveManagerState(m_data)));
+    m_data.setState(*(ExplorerFactory::createPlaylistDriveManagerState(m_data)));
     m_data.getState().fillExplorerList();
     m_data.getExplorerDriveManagers().updateStreamButtonStates(m_data.getExplorerPanel());
     m_data.getExplorerPanel().getExplorerListCtrl().SetFocus();
@@ -66,7 +68,7 @@ void ExplorerManager::refresh()
 
 void ExplorerManager::makeParentDir()
 {
-    explorer::DriveManagerState& newState = m_data.getState().getPreviousState();
+    DriveManagerState& newState = m_data.getState().getPreviousState();
     m_data.setState(newState);
 
     const wxString path    = m_data.getPath().BeforeLast(wxFileName::GetPathSeparator());
@@ -93,7 +95,7 @@ gui::explorer::ExplorerPanel& ExplorerManager::getExplorerPanel() const
     return m_data.getExplorerPanel();
 }
 
-explorer::DriveManagerState& ExplorerManager::getState() const
+DriveManagerState& ExplorerManager::getState() const
 {
     return m_data.getState();
 }

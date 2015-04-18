@@ -47,6 +47,7 @@ IMPORTANT, A FAIRE !!!
 					<Add directory="include/explorer/state" />
 					<Add directory="include/explorer" />
 					<Add directory="include/tools/dir_traverser" />
+					<Add directory="include/tools/thread" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -72,6 +73,7 @@ IMPORTANT, A FAIRE !!!
 					<Add directory="include/explorer/state" />
 					<Add directory="include/explorer" />
 					<Add directory="include/tools/dir_traverser" />
+					<Add directory="include/tools/thread" />
 				</Compiler>
 			</Target>
 			<Environment>
@@ -259,6 +261,8 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/tools/dnd/MusicPlayListDnDBufferData.h" />
 		<Unit filename="include/tools/stl/ThreadSafeQueue.h" />
 		<Unit filename="include/tools/thread/FileDeletionThread.h" />
+		<Unit filename="include/tools/thread/FileDuplicatingThread.h" />
+		<Unit filename="include/tools/thread/FileRenamingThread.h" />
 		<Unit filename="include/tools/thread/IRunnable.h" />
 		<Unit filename="include/tools/thread/IThreadManager.h" />
 		<Unit filename="include/tools/thread/ThreadFactory.h" />
@@ -385,6 +389,8 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/tools/dnd/DnDListeFichier.cpp" />
 		<Unit filename="src/tools/dnd/MusicPlayListDnDBufferData.cpp" />
 		<Unit filename="src/tools/thread/FileDeletionThread.cpp" />
+		<Unit filename="src/tools/thread/FileDuplicatingThread.cpp" />
+		<Unit filename="src/tools/thread/FileRenamingThread.cpp" />
 		<Unit filename="src/tools/thread/ThreadFactory.cpp" />
 		<Unit filename="src/tools/thread/ThreadManager.cpp" />
 		<Unit filename="src/tools/thread/ThreadProcess.cpp" />

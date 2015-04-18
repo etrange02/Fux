@@ -6,28 +6,31 @@
 #include "MusicManagerSearchDecorator.h"
 #include "MusicManager.h"
 
-class MusicManagerSwitcher
+namespace music
 {
-    public:
-        static IMusicManager& get();
-        static IMusicManager& getSearch();
-        static void deleteInstance();
+    class MusicManagerSwitcher
+    {
+        public:
+            static IMusicManager& get();
+            static IMusicManager& getSearch();
+            static void deleteInstance();
 
 
-    private:
-        /** Default constructor */
-        MusicManagerSwitcher();
-        /** Default destructor */
-        virtual ~MusicManagerSwitcher();
+        private:
+            /** Default constructor */
+            MusicManagerSwitcher();
+            /** Default destructor */
+            virtual ~MusicManagerSwitcher();
 
-        static MusicManagerSwitcher& getInstance();
-        IMusicManager& getDefaultDecorator();
-        IMusicManager& getSearchDecorator();
+            static MusicManagerSwitcher& getInstance();
+            IMusicManager& getDefaultDecorator();
+            IMusicManager& getSearchDecorator();
 
-    private:
-        MusicManager m_musicManager;
-        MusicManagerDefaultDecorator m_defaultDecorator;
-        MusicManagerSearchDecorator  m_searchDecorator;
-};
+        private:
+            MusicManager m_musicManager;
+            MusicManagerDefaultDecorator m_defaultDecorator;
+            MusicManagerSearchDecorator  m_searchDecorator;
+    };
+}
 
 #endif // MUSICMANAGERSWITCHER_H

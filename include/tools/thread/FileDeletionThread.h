@@ -10,7 +10,7 @@ namespace tools
     namespace thread
     {
         class FileDeletionThread : public tools::thread::IRunnable
-{
+        {
             public:
                 /** Default constructor */
                 FileDeletionThread(const wxArrayString& files);

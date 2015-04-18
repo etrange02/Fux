@@ -9,7 +9,9 @@
 
 extern const wxEventType wxEVT_FUX_EXPLORERLISTCTRL_FOCUS;
 
-class ExplorerManager;
+namespace explorer {
+    class ExplorerManager;
+}
 
 namespace gui
 {
@@ -25,7 +27,7 @@ namespace gui
 
                 bool operator==(const ExplorerPanel& other);
 
-                void setExplorerManager(ExplorerManager* explorerManager);
+                void setExplorerManager(::explorer::ExplorerManager* explorerManager);
 
                 ExplorerListCtrl& getExplorerListCtrl();
 
@@ -55,7 +57,7 @@ namespace gui
                 wxString m_managerName;
                 wxString m_managerDescription;
                 ExplorerListCtrl *m_explorerList;
-                ExplorerManager *m_explorerManager;
+                ::explorer::ExplorerManager *m_explorerManager;
 
                 wxStaticBoxSizer *m_sizer1V;
                 wxSizer *m_sizer1H, *m_sizer2H;

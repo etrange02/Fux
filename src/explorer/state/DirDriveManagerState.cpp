@@ -108,7 +108,7 @@ void DirDriveManagerState::openElement(const std::vector<unsigned long>& indexes
 
     if (Parametre::get().isID3V2(path))
     {
-        MusicManagerSwitcher::get().parse(convertPositionToString(indexes));
+        music::MusicManagerSwitcher::get().parse(convertPositionToString(indexes));
         //MusicManagerSwitcher::get().playMusic(path);
     }
     else if (Parametre::get().isContainerFile(path))

@@ -6,8 +6,10 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../../include/tools/dnd/DnDCible.h"
+#include "tools/dnd/DnDCible.h"
 #include "MusicManagerSwitcher.h"
+
+using namespace ::music;
 
 /**
  * @class DnDCible

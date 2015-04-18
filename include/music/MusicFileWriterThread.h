@@ -8,26 +8,29 @@
 
 extern const wxEventType wxEVT_FUX_MUSICFILE_READER_THREAD;
 
-/** @brief Delegate for thread process
- */
-class MusicFileWriterThread : public tools::thread::IRunnable
+namespace music
 {
-    public:
-        /** Default constructor */
-        MusicFileWriterThread(MusicFileWriter* musicFileWriter, wxWindow* parent);
-        /** Default destructor */
-        virtual ~MusicFileWriterThread();
+    /** @brief Delegate for thread process
+     */
+    class MusicFileWriterThread : public tools::thread::IRunnable
+    {
+        public:
+            /** Default constructor */
+            MusicFileWriterThread(MusicFileWriter* musicFileWriter, wxWindow* parent);
+            /** Default destructor */
+            virtual ~MusicFileWriterThread();
 
-        /** Overload */
-        virtual void process();
+            /** Overload */
+            virtual void process();
 
-    protected:
-    private:
-        void sendUpdatedLineEvent();
+        protected:
+        private:
+            void sendUpdatedLineEvent();
 
-    private:
-        MusicFileWriter* m_musicFileWriter;
-        wxWindow* m_parent;
-};
+        private:
+            MusicFileWriter* m_musicFileWriter;
+            wxWindow* m_parent;
+    };
+}
 
 #endif // MUSICFILEWRITERTHREAD_H

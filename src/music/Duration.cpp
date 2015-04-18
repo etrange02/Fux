@@ -6,7 +6,9 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../include/music/Duration.h"
+#include "music/Duration.h"
+
+using namespace ::music;
 
 /** Default constructor */
 Duration::Duration()

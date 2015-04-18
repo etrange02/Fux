@@ -5,23 +5,29 @@
 #include "ExplorerManager.h"
 #include "DriveManagersPanel.h"
 
-class ExplorerDriveManagersData
+/**
+ * Explorer name space.
+ */
+namespace explorer
 {
-    public:
-        /** Default constructor */
-        ExplorerDriveManagersData();
-        /** Default destructor */
-        virtual ~ExplorerDriveManagersData();
+    class ExplorerDriveManagersData
+    {
+        public:
+            /** Default constructor */
+            ExplorerDriveManagersData();
+            /** Default destructor */
+            virtual ~ExplorerDriveManagersData();
 
-        std::vector<ExplorerManager*>& getExplorerManagers() const;
+            std::vector<ExplorerManager*>& getExplorerManagers() const;
 
-        gui::explorer::DriveManagersPanel* getDriveManagersPanel();
-        void setDriveManagersPanel(gui::explorer::DriveManagersPanel* driverManagerPanel);
+            gui::explorer::DriveManagersPanel* getDriveManagersPanel();
+            void setDriveManagersPanel(gui::explorer::DriveManagersPanel* driverManagerPanel);
 
-    protected:
-    private:
-        std::vector<ExplorerManager*> *m_explorerManagers;
-        gui::explorer::DriveManagersPanel *m_driveManagersPanel;
-};
+        protected:
+        private:
+            std::vector<ExplorerManager*> *m_explorerManagers;
+            gui::explorer::DriveManagersPanel *m_driveManagersPanel;
+    };
+}
 
 #endif // EXPLORERDRIVEMANAGERSDATA_H

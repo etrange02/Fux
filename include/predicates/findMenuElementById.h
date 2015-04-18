@@ -1,7 +1,9 @@
 #ifndef FINDMENUELEMENTBYID_H
 #define FINDMENUELEMENTBYID_H
 
-class MenuElement;
+namespace explorer {
+    class MenuElement;
+}
 
 class findMenuElementById
 {
@@ -11,7 +13,7 @@ class findMenuElementById
         /** Default destructor */
         virtual ~findMenuElementById();
 
-        bool operator()(const MenuElement& element);
+        bool operator()(const ::explorer::MenuElement& element);
 
     private:
         const int m_id;

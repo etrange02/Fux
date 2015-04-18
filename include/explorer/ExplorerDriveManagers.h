@@ -5,42 +5,49 @@
 #include "ExplorerDriveManagersData.h"
 #include "DriveManagersPanel.h"
 
-class MenuElementData;
 
-class ExplorerDriveManagers
+/**
+ * Explorer name space.
+ */
+namespace explorer
 {
-    public:
-        static ExplorerDriveManagers& get();
+    class MenuElementData;
 
-        gui::explorer::DriveManagersPanel *getDriveManagersPanel();
-        void setDriveManagersPanel(gui::explorer::DriveManagersPanel* driveManagersPanel);
-        void addExplorerManager(gui::explorer::ExplorerPanel& explorerPanel);
+    class ExplorerDriveManagers
+    {
+        public:
+            static ExplorerDriveManagers& get();
 
-        std::vector<MenuElementData> getContainersFiles();
-        std::vector<MenuElementData> getDrivers();
+            gui::explorer::DriveManagersPanel *getDriveManagersPanel();
+            void setDriveManagersPanel(gui::explorer::DriveManagersPanel* driveManagersPanel);
+            void addExplorerManager(gui::explorer::ExplorerPanel& explorerPanel);
 
-        void setDirState     (gui::explorer::ExplorerPanel& explorerPanel, const wxString& path);
-        void setPlayListState(gui::explorer::ExplorerPanel& explorerPanel);
-        void setFileState    (gui::explorer::ExplorerPanel& explorerPanel, const wxString& path);
+            std::vector<MenuElementData> getContainersFiles();
+            std::vector<MenuElementData> getDrivers();
 
-        void deleteSelectedLines(gui::explorer::ExplorerPanel& explorerPanel);
-        void copySelectedLines  (gui::explorer::ExplorerPanel& sourceExplorerPanel, gui::explorer::ExplorerPanel& destinationExplorerPanel);
-        void moveSelectedLines  (gui::explorer::ExplorerPanel& sourceExplorerPanel, gui::explorer::ExplorerPanel& destinationExplorerPanel);
+            void setDirState     (gui::explorer::ExplorerPanel& explorerPanel, const wxString& path);
+            void setPlayListState(gui::explorer::ExplorerPanel& explorerPanel);
+            void setFileState    (gui::explorer::ExplorerPanel& explorerPanel, const wxString& path);
 
-        void updateStreamButtonStates(gui::explorer::ExplorerPanel& explorerPanel);
+            void deleteSelectedLines(gui::explorer::ExplorerPanel& explorerPanel);
+            void copySelectedLines  (gui::explorer::ExplorerPanel& sourceExplorerPanel, gui::explorer::ExplorerPanel& destinationExplorerPanel);
+            void moveSelectedLines  (gui::explorer::ExplorerPanel& sourceExplorerPanel, gui::explorer::ExplorerPanel& destinationExplorerPanel);
 
-    protected:
-        ExplorerManager& getControllerOf(gui::explorer::ExplorerPanel& explorerPanel);
+            void updateStreamButtonStates(gui::explorer::ExplorerPanel& explorerPanel);
 
-    private:
-        /** Default constructor */
-        ExplorerDriveManagers();
-        /** Default destructor */
-        virtual ~ExplorerDriveManagers();
+        protected:
+            ExplorerManager& getControllerOf(gui::explorer::ExplorerPanel& explorerPanel);
 
-    private:
-        static ExplorerDriveManagers s_explorerDriveManagersInstance;
-        ExplorerDriveManagersData m_data;
-};
+        private:
+            /** Default constructor */
+            ExplorerDriveManagers();
+            /** Default destructor */
+            virtual ~ExplorerDriveManagers();
+
+        private:
+            static ExplorerDriveManagers s_explorerDriveManagersInstance;
+            ExplorerDriveManagersData m_data;
+    };
+}
 
 #endif // EXPLORERDRIVEMANAGERS_H

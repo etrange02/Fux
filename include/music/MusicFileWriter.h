@@ -17,30 +17,33 @@
 #include <id3v2tag.h>
 #include <attachedpictureframe.h>
 
-class MusicFileWriter : public MusicFile
+namespace music
 {
-    public:
-        /** Default constructor */
-        MusicFileWriter(Music* src, Music* dst);
-        /** Default destructor */
-        virtual ~MusicFileWriter();
+    class MusicFileWriter : public MusicFile
+    {
+        public:
+            /** Default constructor */
+            MusicFileWriter(Music* src, Music* dst);
+            /** Default destructor */
+            virtual ~MusicFileWriter();
 
-        /** Overload */
-        virtual void process();
+            /** Overload */
+            virtual void process();
 
-        Music* getMusic() const;
+            Music* getMusic() const;
 
-    protected:
-    private:
-        /** Renames the music file. */
-        void renameFile();
-        void fillData();
-        void saveImage();
-        void copy();
-        void refreshFileName(Music& music);
+        protected:
+        private:
+            /** Renames the music file. */
+            void renameFile();
+            void fillData();
+            void saveImage();
+            void copy();
+            void refreshFileName(Music& music);
 
-        Music* m_musicSrc; //!< Member variable "m_musicIn"
-        Music* m_musicDst; //!< Member variable "m_musicOut"
-};
+            Music* m_musicSrc; //!< Member variable "m_musicIn"
+            Music* m_musicDst; //!< Member variable "m_musicOut"
+    };
+}
 
 #endif // MUSICFILEWRITER_H

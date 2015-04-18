@@ -33,7 +33,7 @@ BEGIN_EVENT_TABLE(DriveManagersPanel, wxPanel)
     EVT_FUX_EXPLORERLISTCTRL_FOCUS(DriveManagersPanel::onFocusChanged)
 END_EVENT_TABLE()
 
-DriveManagersPanel::DriveManagersPanel(wxWindow *parent, ExplorerDriveManagers& explorerDriveManagers) :
+DriveManagersPanel::DriveManagersPanel(wxWindow *parent, ::explorer::ExplorerDriveManagers& explorerDriveManagers) :
     m_explorerDriveManagers(explorerDriveManagers),
     m_leftExplorerPanels(NULL),
     m_rightExplorerPanels(NULL),
@@ -69,8 +69,8 @@ void DriveManagersPanel::Initialize(wxWindow *Parent)
     otherButton->SetToolTip(_("Accédez aux enregistrements et à la liste de lecture de Fu(X)"));
 
     // Navigation
-    m_leftExplorerPanels  = createNewExplorerPanel(tool::getResource(ID_EXPLORER_PANEL_1_NAME), tool::getResource(ID_EXPLORER_PANEL_1_DESCRIPTION));
-    m_rightExplorerPanels = createNewExplorerPanel(tool::getResource(ID_EXPLORER_PANEL_2_NAME), tool::getResource(ID_EXPLORER_PANEL_2_DESCRIPTION));
+    m_leftExplorerPanels  = createNewExplorerPanel(tools::getResource(ID_EXPLORER_PANEL_1_NAME), tools::getResource(ID_EXPLORER_PANEL_1_DESCRIPTION));
+    m_rightExplorerPanels = createNewExplorerPanel(tools::getResource(ID_EXPLORER_PANEL_2_NAME), tools::getResource(ID_EXPLORER_PANEL_2_DESCRIPTION));
 
     m_explorerDriveManagers.setDriveManagersPanel(this);
     m_explorerDriveManagers.addExplorerManager(*m_leftExplorerPanels);
@@ -165,16 +165,16 @@ void DriveManagersPanel::fillContainerFilesMenu()
     fillMenu(*m_containerFilesMenu, m_containerFilesMenuElement);
 }
 
-void DriveManagersPanel::mergeAndMarkPresentMenuElements(std::vector<MenuElement>& menuElements, std::vector<MenuElementData> menuElementData, void (DriveManagersPanel::*funcMappingLeft)(wxCommandEvent&), void (DriveManagersPanel::*funcMappingRight)(wxCommandEvent&))
+void DriveManagersPanel::mergeAndMarkPresentMenuElements(std::vector<::explorer::MenuElement>& menuElements, std::vector<::explorer::MenuElementData> menuElementData, void (DriveManagersPanel::*funcMappingLeft)(wxCommandEvent&), void (DriveManagersPanel::*funcMappingRight)(wxCommandEvent&))
 {
-    for (std::vector<MenuElementData>::iterator it = menuElementData.begin(); it != menuElementData.end(); ++it)
+    for (std::vector<::explorer::MenuElementData>::iterator it = menuElementData.begin(); it != menuElementData.end(); ++it)
     {
         findPathMenuElement finder(it->getPath());
-        std::vector<MenuElement>::iterator menuElementIterator = std::find_if(menuElements.begin(), menuElements.end(), finder);
+        std::vector<::explorer::MenuElement>::iterator menuElementIterator = std::find_if(menuElements.begin(), menuElements.end(), finder);
 
         if (menuElements.end() == menuElementIterator)
         {
-            MenuElement element(*it);
+            ::explorer::MenuElement element(*it);
             element.setLeftID (wxNewId());
             element.setRightID(wxNewId());
 
@@ -190,9 +190,9 @@ void DriveManagersPanel::mergeAndMarkPresentMenuElements(std::vector<MenuElement
     }
 }
 
-void DriveManagersPanel::emptyMenu(wxMenu& menu, std::vector<MenuElement>& menuElements)
+void DriveManagersPanel::emptyMenu(wxMenu& menu, std::vector<::explorer::MenuElement>& menuElements)
 {
-    for (std::vector<MenuElement>::iterator it = menuElements.begin(); it != menuElements.end(); ++it)
+    for (std::vector<::explorer::MenuElement>::iterator it = menuElements.begin(); it != menuElements.end(); ++it)
     {
         if ((*it).isUsed())
         {
@@ -203,9 +203,9 @@ void DriveManagersPanel::emptyMenu(wxMenu& menu, std::vector<MenuElement>& menuE
     }
 }
 
-void DriveManagersPanel::fillMenu(wxMenu& menu, std::vector<MenuElement>& menuElements)
+void DriveManagersPanel::fillMenu(wxMenu& menu, std::vector<::explorer::MenuElement>& menuElements)
 {
-    for (std::vector<MenuElement>::iterator it = menuElements.begin(); it != menuElements.end(); ++it)
+    for (std::vector<::explorer::MenuElement>::iterator it = menuElements.begin(); it != menuElements.end(); ++it)
     {
         if ((*it).isUsed())
             (*it).setMenuItem(menu.AppendSubMenu((*it).getMenu(), (*it).getLabel()));
@@ -234,32 +234,32 @@ void DriveManagersPanel::onMenuItemPlayListRightSelected(wxCommandEvent& event)
 
 void DriveManagersPanel::onMenuItemDriversLeftSelected(wxCommandEvent& event)
 {
-    MenuElement& menuElement = getMenuElementById(m_driversMenuElement, event.GetId());
+    ::explorer::MenuElement& menuElement = getMenuElementById(m_driversMenuElement, event.GetId());
     m_explorerDriveManagers.setDirState(*m_leftExplorerPanels, menuElement.getPath());
 }
 
 void DriveManagersPanel::onMenuItemDriversRightSelected(wxCommandEvent& event)
 {
-    MenuElement& menuElement = getMenuElementById(m_driversMenuElement, event.GetId());
+    ::explorer::MenuElement& menuElement = getMenuElementById(m_driversMenuElement, event.GetId());
     m_explorerDriveManagers.setDirState(*m_rightExplorerPanels, menuElement.getPath());
 }
 
 void DriveManagersPanel::onMenuItemContainerFilesLeftSelected(wxCommandEvent& event)
 {
-    MenuElement& menuElement = getMenuElementById(m_containerFilesMenuElement, event.GetId());
+    ::explorer::MenuElement& menuElement = getMenuElementById(m_containerFilesMenuElement, event.GetId());
     m_explorerDriveManagers.setFileState(*m_leftExplorerPanels, menuElement.getPath());
 }
 
 void DriveManagersPanel::onMenuItemContainerFilesRightSelected(wxCommandEvent& event)
 {
-    MenuElement& menuElement = getMenuElementById(m_containerFilesMenuElement, event.GetId());
+    ::explorer::MenuElement& menuElement = getMenuElementById(m_containerFilesMenuElement, event.GetId());
     m_explorerDriveManagers.setFileState(*m_rightExplorerPanels, menuElement.getPath());
 }
 
-MenuElement& DriveManagersPanel::getMenuElementById(std::vector<MenuElement>& menuElements, const int id)
+::explorer::MenuElement& DriveManagersPanel::getMenuElementById(std::vector<::explorer::MenuElement>& menuElements, const int id)
 {
     findMenuElementById finder(id);
-    std::vector<MenuElement>::iterator it = std::find_if(menuElements.begin(), menuElements.end(), finder);
+    std::vector<::explorer::MenuElement>::iterator it = std::find_if(menuElements.begin(), menuElements.end(), finder);
     if (it != menuElements.end())
         return *it;
     else

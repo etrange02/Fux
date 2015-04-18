@@ -6,8 +6,10 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../../include/gui/graph/MusiqueGraph.h"
+#include "gui/graph/MusiqueGraph.h"
 #include "MusicManagerSwitcher.h"
+
+using namespace ::music;
 
 /**
  * @class MusiqueGraph

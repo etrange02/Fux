@@ -16,6 +16,8 @@
 #include "MusicManagerSwitcher.h"
 #include "ExplorerDriveManagers.h"
 
+using namespace ::music;
+
 /**
  * @class FuXFenetre
  * @brief Interface principale de l'application : barre de menu. Elle contient plusieurs wxSizer.
@@ -245,7 +247,7 @@ void FuXFenetre::panelAssociation()
     #endif
     ////////////////////////////////////////////////////////////////////
     m_sizerRightExplorer = new wxBoxSizer(wxVERTICAL);
-    m_driveManagersPanel = new gui::explorer::DriveManagersPanel(this, ExplorerDriveManagers::get());
+    m_driveManagersPanel = new gui::explorer::DriveManagersPanel(this, ::explorer::ExplorerDriveManagers::get());
 
     m_sizerRightExplorer->Add(m_driveManagersPanel, 1, wxALL | wxEXPAND, 0);
     m_sizerRightExplorer->Show(m_driveManagersPanel);

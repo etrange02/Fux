@@ -21,12 +21,12 @@ findPathMenuElement::~findPathMenuElement()
     //dtor
 }
 
-bool findPathMenuElement::operator()(const MenuElement& element)
+bool findPathMenuElement::operator()(const explorer::MenuElement& element)
 {
     return element.getPath().IsSameAs(m_path);
 }
 
-bool findPathMenuElement::operator()(const MenuElementData& element)
+bool findPathMenuElement::operator()(const explorer::MenuElementData& element)
 {
     return element.getPath().IsSameAs(m_path);
 }

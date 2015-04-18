@@ -5,10 +5,14 @@
 #include "explorer/ExplorerPanel.h"
 #include <vector>
 
-class ExplorerManagerData;
 
+/**
+ * Explorer name space.
+ */
 namespace explorer
 {
+    class ExplorerManagerData;
+
     class DriveManagerState
     {
         public:

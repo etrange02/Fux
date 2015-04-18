@@ -16,7 +16,7 @@
  * @return bool
  *
  */
-bool tool::containsInvalidCharacter(const wxString& str)
+bool tools::containsInvalidCharacter(const wxString& str)
 {
     str.Contains("/\\:*?\"<>|");
 }
@@ -27,7 +27,7 @@ bool tool::containsInvalidCharacter(const wxString& str)
  * @return wxString&
  *
  */
-wxString tool::getResource(const int id)
+wxString tools::getResource(const int id)
 {
     wxString val;
     switch (id)

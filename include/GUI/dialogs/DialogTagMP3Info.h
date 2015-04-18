@@ -10,7 +10,7 @@
 class DialogTagMP3Info : public wxPanel
 {
     public:
-        DialogTagMP3Info(wxWindow *parent, wxWindowID id, Music* music);
+        DialogTagMP3Info(wxWindow *parent, wxWindowID id, music::Music* music);
         ~DialogTagMP3Info();
         bool isModified();
 
@@ -27,7 +27,7 @@ class DialogTagMP3Info : public wxPanel
         wxSpinCtrl *m_boiteAnnee;
         wxStaticText *m_echantillonage, *m_taille, *m_duree;
         wxStaticText *m_texte;
-        Music* m_music;
+        music::Music* m_music;
 };
 
 #endif // DIALOGUEFENETREEXT_H_INCLUDED

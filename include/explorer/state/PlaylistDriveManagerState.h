@@ -3,6 +3,9 @@
 
 #include "DriveManagerState.h"
 
+/**
+ * Explorer name space.
+ */
 namespace explorer
 {
     class PlaylistDriveManagerState : public DriveManagerState

@@ -9,7 +9,7 @@
 #include "music/MusicList.h"
 #include "tools/thread/ThreadManager.h"
 
-using namespace fux::music;
+using namespace ::music;
 
 const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE = wxNewEventType();
 const wxEventType wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED = wxNewEventType();

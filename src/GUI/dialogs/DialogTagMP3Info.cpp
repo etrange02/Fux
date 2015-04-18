@@ -6,7 +6,9 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../../include/gui/dialogs/DialogTagMP3Info.h"
+#include "dialogs/DialogTagMP3Info.h"
+
+using namespace ::music;
 
 /**
  * @class DialogTagMP3Info

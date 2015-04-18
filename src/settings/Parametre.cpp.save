@@ -9,6 +9,8 @@
 #include "../../include/settings/Parametre.h"
 #include "MusicManagerSwitcher.h"
 
+using namespace ::music;
+
 /**
  * @class Parametre
  * @brief La classe Paramètre contient toutes les informations sur l'emplacement des différents fichiers et dossiers nécessaires à l'exécution de Fu(X).
@@ -73,15 +75,16 @@ Parametre::~Parametre()
     #endif
 }
 
-
-Parametre(const Parametre&)
+Parametre::Parametre(const Parametre& other)
 {
-    
+
 }
 
-Parametre& Parametre::operator=(const Parametre&)
+Parametre& Parametre::operator=(const Parametre& other)
 {
-    
+    if (this == &other)
+        return *this;
+    return *this;
 }
 
 /**

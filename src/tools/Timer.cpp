@@ -9,8 +9,10 @@
 #include <wx/wx.h>
 #include <wx/app.h>
 #include <wx/timer.h>
-#include "../../include/tools/Timer.h"
+#include "tools/Timer.h"
 #include "MusicManagerSwitcher.h"
+
+using namespace ::music;
 
 /**
  * @class TimerGraph

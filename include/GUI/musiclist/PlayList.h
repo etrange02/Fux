@@ -48,7 +48,7 @@ class PlayList : public wxPanel
         void RechercheListeLecture(wxCommandEvent&);
 
     private:
-        void RemplirPanneauTAG(IMusic& music);
+        void RemplirPanneauTAG(music::IMusic& music);
 
     protected:
         wxSizer *sizer, *m_sizerBouton, *m_sizerRep;

@@ -1,4 +1,14 @@
+/***************************************************************
+ * Name:      MenuElement.cpp
+ * Purpose:   Code for Fu(X) 2.0
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
+ * Created:   2015-03-12
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
+ * License:
+ **************************************************************/
 #include "MenuElement.h"
+
+using namespace explorer;
 
 MenuElement::MenuElement(MenuElementData& data) :
     m_rightID(0),

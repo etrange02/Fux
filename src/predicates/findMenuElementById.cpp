@@ -20,7 +20,7 @@ findMenuElementById::~findMenuElementById()
     //dtor
 }
 
-bool findMenuElementById::operator()(const MenuElement& element)
+bool findMenuElementById::operator()(const explorer::MenuElement& element)
 {
     return (m_id == element.getLeftID()) || (m_id == element.getRightID());
 }
