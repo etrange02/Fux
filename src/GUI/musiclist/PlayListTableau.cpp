@@ -17,7 +17,6 @@
 #include <wx/mstream.h>
 #include <wx/renderer.h>
 #include <algorithm>
-#include <memory>
 #include "gui/musiclist/PlayList.h"
 #include "MusicManagerSwitcher.h"
 #include "music/MusicManager.h"
@@ -26,6 +25,7 @@
 #include "tools/dnd/DnDCible.h"
 #include "db/BDDRequete.h"
 #include "db/BDDThread.h"
+#include "predicates/findSharedMusicContainer.h"
 
 using namespace ::music;
 
@@ -594,7 +594,7 @@ void PlayListTableau::onUpdateLine(wxCommandEvent& event)
     wxMutexLocker lock(m_mutexMAJPlaylist);
     Music* music = static_cast<Music*>(event.GetClientData());
 
-    myFinder finder(*music);
+    findSharedMusicContainer finder(*music);
     music::MusicCollection& musicCollection = MusicManagerSwitcher::getSearch().getMusics();
     MusicIterator iter = std::find_if(musicCollection.begin(),
                                     musicCollection.end(),
@@ -606,15 +606,5 @@ void PlayListTableau::onUpdateLine(wxCommandEvent& event)
     const int position = std::distance(musicCollection.begin(), iter);
     addLineThread(**iter, position);
     updateColor(position);
-}
-
-myFinder::myFinder(const music::Music& music) :
-    m_music(music)
-{
-}
-
-bool myFinder::operator()(std::shared_ptr<music::Music>& item)
-{
-    return &m_music == item.get();
 }
 

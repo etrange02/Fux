@@ -2575,7 +2575,7 @@
 1412504350 c:\workspace\libraries\wx302gl\include\wx\generic\srchctlg.h
 	"wx/bitmap.h"
 
-1432747818 c:\workspace\projects\fux\include\gui\musiclist\playlisttableau.h
+1432852855 c:\workspace\projects\fux\include\gui\musiclist\playlisttableau.h
 	<wx/wx.h>
 	<wx/listctrl.h>
 	<wx/thread.h>
@@ -3070,7 +3070,7 @@
 	"music/Factory.h"
 	<music/Music.h>
 
-1432747846 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
+1432852982 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
 	"Define.h"
 	<wx/stdpaths.h>
 	<wx/dir.h>
@@ -3080,7 +3080,6 @@
 	<wx/mstream.h>
 	<wx/renderer.h>
 	<algorithm>
-	<memory>
 	"gui/musiclist/PlayList.h"
 	"MusicManagerSwitcher.h"
 	"music/MusicManager.h"
@@ -3089,6 +3088,7 @@
 	"tools/dnd/DnDCible.h"
 	"db/BDDRequete.h"
 	"db/BDDThread.h"
+	"predicates/findSharedMusicContainer.h"
 
 1423817175 source:c:\workspace\projects\fux\src\gui\settings\preferencecouleur.cpp
 	"../../../include/gui/settings/PreferenceCouleur.h"
@@ -3190,7 +3190,7 @@
 	"ThreadProcess.h"
 	"IThreadManager.h"
 
-1432848201 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
+1432850313 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
 	<music/MusicManager.h>
 	<ctime>
 	<algorithm>
@@ -3401,4 +3401,7 @@
 	<wx/wx.h>
 	<wx/event.h>
 	"IRunnable.h"
+
+1432852982 c:\workspace\projects\fux\include\predicates\findsharedmusiccontainer.h
+	<memory>
 
