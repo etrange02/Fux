@@ -15,6 +15,12 @@
  * @brief Interface of a Music with some implemented methods.
  */
 
+/** @brief Destructor
+ */
+IMusic::~IMusic()
+{
+}
+
 /** @brief Gets the duration under dd:dd format
  * Gets the duration under dd:dd format. 0 inserted if necessary
  * @return a dd:dd string
@@ -53,5 +59,10 @@ bool IMusic::IsMatching(const wxString& word)
                  &&   wxNOT_FOUND == GetStringDuration().Lower().Find(word)
                  &&   wxNOT_FOUND == GetStringYear()    .Lower().Find(word)
              );
+}
+
+bool IMusic::operator==(const IMusic& other)
+{
+    return this == &other;
 }
 

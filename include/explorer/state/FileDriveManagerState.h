@@ -25,9 +25,22 @@ namespace explorer
 
             virtual bool canCopyTo(const DriveManagerState& other) const;
             virtual bool canMoveTo(const DriveManagerState& other) const;
+            virtual bool canDeleteSelectedItems() const;
+            virtual bool canPlayItems() const;
+            virtual bool canRename() const;
+            virtual bool canCreateShortcut() const;
+            virtual bool canSelectAll() const;
+            virtual bool canCreateDir() const;
+            virtual bool canCreateContainerFile() const;
+
             virtual void deleteSelectedItems();
             virtual void moveElements(DriveManagerState& source);
             virtual void copyElements(DriveManagerState& source);
+            virtual void createDir();
+            virtual void createContainerFile();
+            virtual void playItems();
+            virtual void rename();
+            virtual void createShortcut();
 
         protected:
         private:

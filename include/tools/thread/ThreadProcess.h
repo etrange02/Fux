@@ -39,9 +39,9 @@
                 virtual ExitCode Entry();
 
             private:
-                IRunnable* m_work;
                 wxSemaphore m_semaphore;
                 IThreadManager* m_threadManager;
+                IRunnable* m_work;
         };
     }
 }

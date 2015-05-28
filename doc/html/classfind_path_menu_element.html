@@ -54,6 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -102,7 +103,7 @@ $(document).ready(function(){initNavTree('classfind_path_menu_element.html','');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -128,12 +129,12 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a9c5b051c65e67ca159c371346eff2180"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfind_path_menu_element.html#a9c5b051c65e67ca159c371346eff2180">~findPathMenuElement</a> ()</td></tr>
 <tr class="memdesc:a9c5b051c65e67ca159c371346eff2180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#a9c5b051c65e67ca159c371346eff2180">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a9c5b051c65e67ca159c371346eff2180"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a099bc8da486c340fa5bea253d034b5e4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a099bc8da486c340fa5bea253d034b5e4"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const <a class="el" href="class_menu_element.html">MenuElement</a> &amp;element)</td></tr>
-<tr class="separator:a099bc8da486c340fa5bea253d034b5e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada6b53d634956c9f01fa1007c7e190d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada6b53d634956c9f01fa1007c7e190d7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const <a class="el" href="class_menu_element_data.html">MenuElementData</a> &amp;element)</td></tr>
-<tr class="separator:ada6b53d634956c9f01fa1007c7e190d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a746a3fdcdd2cc6449c0f6ea26842ca08"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a746a3fdcdd2cc6449c0f6ea26842ca08"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const ::<a class="el" href="classexplorer_1_1_menu_element.html">explorer::MenuElement</a> &amp;element)</td></tr>
+<tr class="separator:a746a3fdcdd2cc6449c0f6ea26842ca08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa9ca10c45fe717bd7b5907140c94adc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa9ca10c45fe717bd7b5907140c94adc"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const ::<a class="el" href="classexplorer_1_1_menu_element_data.html">explorer::MenuElementData</a> &amp;element)</td></tr>
+<tr class="separator:afa9ca10c45fe717bd7b5907140c94adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"></div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
@@ -190,7 +191,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classfind_path_menu_element.html">findPathMenuElement</a></li>
-    <li class="footer">Généré le Dimanche 12 Avril 2015 16:42:44 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Vendredi 29 Mai 2015 00:02:09 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

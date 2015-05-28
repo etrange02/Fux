@@ -54,6 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -102,7 +103,7 @@ $(document).ready(function(){initNavTree('classtools_1_1thread_1_1_i_runnable.ht
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -130,9 +131,11 @@ Graphe d'héritage de tools::thread::IRunnable:</div>
  <div class="center">
   <img src="classtools_1_1thread_1_1_i_runnable.png" usemap="#tools::thread::IRunnable_map" alt=""/>
   <map id="tools::thread::IRunnable_map" name="tools::thread::IRunnable_map">
-<area href="class_music_file_reader_thread.html" title="Delegate for thread processing. " alt="MusicFileReaderThread" shape="rect" coords="0,56,193,80"/>
-<area href="class_music_file_writer_thread.html" title="Delegate for thread process. " alt="MusicFileWriterThread" shape="rect" coords="203,56,396,80"/>
-<area href="classtools_1_1thread_1_1_file_deletion_thread.html" alt="tools::thread::FileDeletionThread" shape="rect" coords="406,56,599,80"/>
+<area href="classmusic_1_1_music_file_reader_thread.html" title="Delegate for thread processing. " alt="music::MusicFileReaderThread" shape="rect" coords="0,56,210,80"/>
+<area href="classmusic_1_1_music_file_writer_thread.html" title="Delegate for thread process. " alt="music::MusicFileWriterThread" shape="rect" coords="220,56,430,80"/>
+<area href="classtools_1_1thread_1_1_file_deletion_thread.html" alt="tools::thread::FileDeletionThread" shape="rect" coords="440,56,650,80"/>
+<area href="classtools_1_1thread_1_1_file_duplicating_thread.html" alt="tools::thread::FileDuplicatingThread" shape="rect" coords="660,56,870,80"/>
+<area href="classtools_1_1thread_1_1_file_renaming_thread.html" alt="tools::thread::FileRenamingThread" shape="rect" coords="880,56,1090,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -168,7 +171,7 @@ Fonctions membres publiques</h2></td></tr>
 
 <p>Launches treatment that can be done in a different thread. </p>
 
-<p>Implémenté dans <a class="el" href="class_music_file_reader_thread.html#ac5a8a686bc714ac7b1c2daab42d8bc60">MusicFileReaderThread</a>, <a class="el" href="class_music_file_writer_thread.html#a38c45f78811330bcfdfcda7c372b71b8">MusicFileWriterThread</a>, et <a class="el" href="classtools_1_1thread_1_1_file_deletion_thread.html#adeff4a8a83f89ec9170031bc0e29fd29">tools::thread::FileDeletionThread</a>.</p>
+<p>Implémenté dans <a class="el" href="classmusic_1_1_music_file_reader_thread.html#ac5a8a686bc714ac7b1c2daab42d8bc60">music::MusicFileReaderThread</a>, <a class="el" href="classmusic_1_1_music_file_writer_thread.html#a38c45f78811330bcfdfcda7c372b71b8">music::MusicFileWriterThread</a>, <a class="el" href="classtools_1_1thread_1_1_file_deletion_thread.html#adeff4a8a83f89ec9170031bc0e29fd29">tools::thread::FileDeletionThread</a>, <a class="el" href="classtools_1_1thread_1_1_file_duplicating_thread.html#aa3bfb5d95fe69dec92a215c2640ad1ba">tools::thread::FileDuplicatingThread</a>, et <a class="el" href="classtools_1_1thread_1_1_file_renaming_thread.html#a640f71a547c4e0d5ae016554a3c91b7c">tools::thread::FileRenamingThread</a>.</p>
 
 </div>
 </div>
@@ -181,7 +184,7 @@ Fonctions membres publiques</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>tools</b></li><li class="navelem"><b>thread</b></li><li class="navelem"><a class="el" href="classtools_1_1thread_1_1_i_runnable.html">IRunnable</a></li>
-    <li class="footer">Généré le Dimanche 12 Avril 2015 16:42:46 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Vendredi 29 Mai 2015 00:02:10 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

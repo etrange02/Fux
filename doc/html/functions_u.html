@@ -54,6 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -132,7 +133,7 @@ $(document).ready(function(){initNavTree('functions_u.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -149,13 +150,13 @@ $(document).ready(function(){initNavTree('functions_u.html','');});
 : <a class="el" href="class_play_list_tableau.html#ac3e17e32232ecc363e47e88cd34b14bd">PlayListTableau</a>
 </li>
 <li>updateCurrentMusic()
-: <a class="el" href="class_music_manager.html#a7d535ebe260caa533b7f7bae17ed9782">MusicManager</a>
+: <a class="el" href="classmusic_1_1_music_manager.html#a7d535ebe260caa533b7f7bae17ed9782">music::MusicManager</a>
 </li>
 <li>updateMusicContent()
-: <a class="el" href="class_music_manager.html#a18489125ecc1947ac67f00f18527fe66">MusicManager</a>
+: <a class="el" href="classmusic_1_1_music_manager.html#a5279262387cd22002571c35d997d9bda">music::MusicManager</a>
 </li>
 <li>updateMusicContentInSearch()
-: <a class="el" href="class_music_manager.html#af423dd40467b9f2a6eae47d39a7c0aeb">MusicManager</a>
+: <a class="el" href="classmusic_1_1_music_manager.html#af78c6b50c7f1934ae4bc637569f03bc0">music::MusicManager</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -163,7 +164,7 @@ $(document).ready(function(){initNavTree('functions_u.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Généré le Dimanche 12 Avril 2015 16:42:47 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Vendredi 29 Mai 2015 00:02:10 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

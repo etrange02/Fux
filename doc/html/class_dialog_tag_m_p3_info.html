@@ -54,6 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -102,7 +103,7 @@ $(document).ready(function(){initNavTree('class_dialog_tag_m_p3_info.html','');}
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -134,9 +135,9 @@ Graphe d'héritage de DialogTagMP3Info:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:ad226b1fb0d5532794d7b1518563fa018"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#ad226b1fb0d5532794d7b1518563fa018">DialogTagMP3Info</a> (wxWindow *parent, wxWindowID id, <a class="el" href="class_music.html">Music</a> *music)</td></tr>
-<tr class="memdesc:ad226b1fb0d5532794d7b1518563fa018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#ad226b1fb0d5532794d7b1518563fa018">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ad226b1fb0d5532794d7b1518563fa018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac60cf37b412a488daee003e964834152"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#ac60cf37b412a488daee003e964834152">DialogTagMP3Info</a> (wxWindow *parent, wxWindowID id, <a class="el" href="classmusic_1_1_music.html">music::Music</a> *music)</td></tr>
+<tr class="memdesc:ac60cf37b412a488daee003e964834152"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#ac60cf37b412a488daee003e964834152">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac60cf37b412a488daee003e964834152"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afde9bc8e3ce67dc6c20796751dab7a61"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_tag_m_p3_info.html#afde9bc8e3ce67dc6c20796751dab7a61">~DialogTagMP3Info</a> ()</td></tr>
 <tr class="memdesc:afde9bc8e3ce67dc6c20796751dab7a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#afde9bc8e3ce67dc6c20796751dab7a61">Plus de détails...</a><br /></td></tr>
 <tr class="separator:afde9bc8e3ce67dc6c20796751dab7a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,7 +151,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>toMusic</b> ()</td></
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Page affichant les propri�t�s du titre donn� en param�tre. </p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a class="anchor" id="ad226b1fb0d5532794d7b1518563fa018"></a>
+<a class="anchor" id="ac60cf37b412a488daee003e964834152"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -169,7 +170,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>toMusic</b> ()</td></
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_music.html">Music</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classmusic_1_1_music.html">music::Music</a> *&#160;</td>
           <td class="paramname"><em>music</em>&#160;</td>
         </tr>
         <tr>
@@ -238,7 +239,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>toMusic</b> ()</td></
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_dialog_tag_m_p3_info.html">DialogTagMP3Info</a></li>
-    <li class="footer">Généré le Dimanche 12 Avril 2015 16:42:44 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Vendredi 29 Mai 2015 00:02:09 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

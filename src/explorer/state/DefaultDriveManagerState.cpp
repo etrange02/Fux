@@ -64,6 +64,41 @@ bool DefaultDriveManagerState::canMoveTo(const DriveManagerState& other) const
     return false;
 }
 
+bool DefaultDriveManagerState::canDeleteSelectedItems() const
+{
+    return false;
+}
+
+bool DefaultDriveManagerState::canSelectAll() const
+{
+    return false;
+}
+
+bool DefaultDriveManagerState::canCreateDir() const
+{
+    return false;
+}
+
+bool DefaultDriveManagerState::canCreateContainerFile() const
+{
+    return false;
+}
+
+bool DefaultDriveManagerState::canPlayItems() const
+{
+    return false;
+}
+
+bool DefaultDriveManagerState::canRename() const
+{
+    return false;
+}
+
+bool DefaultDriveManagerState::canCreateShortcut() const
+{
+    return false;
+}
+
 void DefaultDriveManagerState::copyElements(DriveManagerState& source)
 {
 
@@ -74,4 +109,23 @@ void DefaultDriveManagerState::moveElements(DriveManagerState& source)
 
 }
 
+void DefaultDriveManagerState::createDir()
+{
+}
+
+void DefaultDriveManagerState::createContainerFile()
+{
+}
+
+void DefaultDriveManagerState::playItems()
+{
+}
+
+void DefaultDriveManagerState::rename()
+{
+}
+
+void DefaultDriveManagerState::createShortcut()
+{
+}
 

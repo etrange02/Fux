@@ -70,9 +70,9 @@ bool DialogTagMP3::isModified()
     return m_pageInfo->isModified() || m_comment->IsModified() || m_image->IsModified();
 }
 
-wxString& DialogTagMP3::getComment() const
+wxString DialogTagMP3::getComment() const
 {
-    m_comment->GetValue();
+    return m_comment->GetValue();
 }
 
 Music* DialogTagMP3::getResult()

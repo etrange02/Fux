@@ -6,7 +6,7 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
- #include "../../../include/gui/dialogs/DialogEnregistreM3U.h"
+ #include "gui/dialogs/DialogEnregistreM3U.h"
 
 static wxPanel *s_panelToBeCall = NULL;
 const wxEventType wxEVT_PREFERENCE_MAJ_M3U = wxNewEventType();

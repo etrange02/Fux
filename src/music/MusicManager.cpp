@@ -6,19 +6,18 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "music/MusicManager.h"
+#include <music/MusicManager.h>
 #include <ctime>
 #include <algorithm>
-#include "tools/thread/ThreadManager.h"
-#include "predicates/findPosition.h"
+#include <wx/dir.h>
+#include <tools/thread/ThreadManager.h>
+#include <predicates/findPosition.h>
+#include <music/Factory.h>
 
 using namespace music;
 
 const wxEventType wxEVT_FUX_MUSICMANAGER_NO_FILE = wxNewEventType();
 const wxEventType wxEVT_FUX_MUSICMANAGER_SEARCH_DONE = wxNewEventType();
-
-typedef std::vector<Music*> MusicCollection;
-typedef MusicCollection::iterator MusicIterator;
 
 /** @brief Default constructor
  */
@@ -27,10 +26,10 @@ MusicManager::MusicManager() :
     m_random(false),
     m_musicPosition(0),
     m_parent(NULL),
-    m_music(NULL)
+    m_music(NULL),
+    m_musicList(new MusicList)
 {
     srand(time(NULL));
-    m_musicList = new MusicList();
 }
 
 /** @brief Destructor
@@ -87,7 +86,7 @@ void MusicManager::setRandom(bool random)
  * @return the music list
  *
  */
-std::vector<Music*>& MusicManager::getAllMusics()
+std::vector<std::shared_ptr<Music>>& MusicManager::getAllMusics()
 {
     return m_musicList->getCollection();
 }
@@ -97,7 +96,7 @@ std::vector<Music*>& MusicManager::getAllMusics()
  * @return the music list
  *
  */
-std::vector<Music*>& MusicManager::getSearchedMusics()
+std::vector<std::shared_ptr<Music>>& MusicManager::getSearchedMusics()
 {
     return m_searchedMusicCollection;
 }
@@ -224,7 +223,7 @@ bool MusicManager::playMusicAt(long position)
         position = 0;
 
     m_musicPosition = position;
-    m_music = m_musicList->getCollection().at(position);
+    m_music = m_musicList->getCollection().at(position).get();
     m_musicPlayer.play(m_music->GetFileName());
     return true;
 }
@@ -239,7 +238,7 @@ bool MusicManager::playMusicAtInSearch(long position)
 {
     if (position < 0 || position >= (long)getSearchedMusics().size())
         position = 0;
-    return playMusicAt(m_musicList->getPositionInList(getSearchedMusics().at(position)));
+    return playMusicAt(m_musicList->getPositionInList(getSearchedMusics().at(position).get()));
 }
 
 /** @brief Plays a title.
@@ -307,7 +306,7 @@ bool MusicManager::playMusicThenParse(wxString filename)
     m_musicPlayer.play(filename);
     parse();
     m_musicPosition = m_musicList->getPositionInList(filename);
-    m_music = m_musicList->getCollection().at(m_musicPosition);
+    m_music = m_musicList->getCollection().at(m_musicPosition).get();
     return true;
 }
 
@@ -318,7 +317,7 @@ bool MusicManager::playMusicThenParse(wxString filename)
  * @return void
  *
  */
-void MusicManager::moveIntTitlesAt(const wxArrayString& titles, long position)
+void MusicManager::moveIntTitlesAt(const wxArrayString& titles, size_t position)
 {
     MusicCollection *oldMusics = &m_musicList->getCollection();
 
@@ -329,7 +328,7 @@ void MusicManager::moveIntTitlesAt(const wxArrayString& titles, long position)
     wxArrayString::const_iterator positionIterator = titles.begin();
     long pos = 0;
     (*positionIterator).ToLong(&pos);
-    long i = 0;
+    size_t i = 0;
 
     for (MusicIterator iter = oldMusics->begin(); iter != oldMusics->end(); ++iter)
     {
@@ -358,7 +357,7 @@ void MusicManager::moveIntTitlesAt(const wxArrayString& titles, long position)
     newMusics->insert(newMusics->end(), selectedMusics->begin(), selectedMusics->end());
 
     if (!notSelectedMusics->empty() && position != oldMusics->size() && position < notSelectedMusics->size())
-            newMusics->insert(newMusics->end(), notSelectedMusics->begin() + position, notSelectedMusics->end());
+        newMusics->insert(newMusics->end(), notSelectedMusics->begin() + position, notSelectedMusics->end());
 
     oldMusics->swap(*newMusics);
 
@@ -384,7 +383,7 @@ void MusicManager::moveIntTitlesAt(const wxArrayString& titles, long position)
  * @return void
  * @deprecated
  */
-void MusicManager::moveIntTitlesAtInSearch(const wxArrayString& titles, long position)
+void MusicManager::moveIntTitlesAtInSearch(const wxArrayString& titles, unsigned long position)
 {
 
 }
@@ -461,9 +460,11 @@ void MusicManager::deleteTitleAtInSearch(size_t position)
 {
     if (getSearchedMusics().size() > position)
     {
-        Music* music = getSearchedMusics().at(position);
+        MusicIterator iter = getSearchedMusics().begin() + position;
+        Music* music = getSearchedMusics().at(position).get();
         long pos = m_musicList->getPositionInList(music);
         deleteTitleAt(pos);
+        getSearchedMusics().erase(iter);
     }
 }
 
@@ -697,7 +698,7 @@ bool MusicManager::hasEfficientSearchedWord() const
  * @param musicData
  *
  */
-void MusicManager::updateMusicContent(const long position, Music* musicData)
+void MusicManager::updateMusicContent(const size_t position, Music* musicData)
 {
     updateMusicContent(position, musicData, getAllMusics());
 }
@@ -708,7 +709,7 @@ void MusicManager::updateMusicContent(const long position, Music* musicData)
  * @param musicData
  * @see MusicManager::updateMusicContent
  */
-void MusicManager::updateMusicContentInSearch(const long position, Music* musicData)
+void MusicManager::updateMusicContentInSearch(const size_t position, Music* musicData)
 {
     updateMusicContent(position, musicData, getSearchedMusics());
 }
@@ -720,13 +721,13 @@ void MusicManager::updateMusicContentInSearch(const long position, Music* musicD
  * @param collection a collection of musics
  *
  */
-void MusicManager::updateMusicContent(const long position, Music* musicData, std::vector<Music*>& collection)
+void MusicManager::updateMusicContent(const size_t position, Music* musicData, MusicCollection& collection)
 {
     if (position >= collection.size())
         return;
-    Music* musicToModify = collection.at(position);
+    std::shared_ptr<Music>& musicToModify = collection.at(position);
 
-    if (musicToModify == getMusic()) // on modifie le titre courant
+    if (musicToModify.get() == getMusic()) // on modifie le titre courant
         updateCurrentMusic(musicData);
     else // on modifie un autre titre
         tools::thread::ThreadManager::get().addRunnable(Factory::createMusicFileWriterThread(musicData, musicToModify, getParent()));
@@ -745,7 +746,8 @@ void MusicManager::updateCurrentMusic(Music* newMusicData)
     getMusicPlayer().release();
 
     // modification
-    MusicFile* musicFile = music::Factory::createMusicFileWriter(newMusicData, music);
+    std::shared_ptr<Music> musicPtr(music);
+    MusicFile* musicFile = Factory::createMusicFileWriter(newMusicData, musicPtr);
     musicFile->process();
 
     //after

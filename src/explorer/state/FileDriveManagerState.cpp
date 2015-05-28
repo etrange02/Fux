@@ -110,6 +110,41 @@ bool FileDriveManagerState::canMoveTo(const DriveManagerState& other) const
     return true;
 }
 
+bool FileDriveManagerState::canDeleteSelectedItems() const
+{
+    return !m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines().empty();
+}
+
+bool FileDriveManagerState::canSelectAll() const
+{
+    return true;
+}
+
+bool FileDriveManagerState::canCreateDir() const
+{
+    return 0 != m_data.getExplorerPanel().getExplorerListCtrl().GetItemCount();
+}
+
+bool FileDriveManagerState::canCreateContainerFile() const
+{
+    return !m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines().empty();;
+}
+
+bool FileDriveManagerState::canPlayItems() const
+{
+    return !m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines().empty();
+}
+
+bool FileDriveManagerState::canRename() const
+{
+    return false;
+}
+
+bool FileDriveManagerState::canCreateShortcut() const
+{
+    return false;
+}
+
 void FileDriveManagerState::copyElements(DriveManagerState& source)
 {
     wxTextFile file(m_data.getPath());
@@ -151,4 +186,23 @@ void FileDriveManagerState::moveElements(DriveManagerState& source)
     fillExplorerList();
 }
 
+void FileDriveManagerState::createDir()
+{
+}
+
+void FileDriveManagerState::createContainerFile()
+{
+}
+
+void FileDriveManagerState::playItems()
+{
+}
+
+void FileDriveManagerState::rename()
+{
+}
+
+void FileDriveManagerState::createShortcut()
+{
+}
 

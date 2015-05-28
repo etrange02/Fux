@@ -54,6 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -132,7 +133,7 @@ $(document).ready(function(){initNavTree('functions_c.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -158,7 +159,7 @@ $(document).ready(function(){initNavTree('functions_c.html','');});
 : <a class="el" href="class_dn_d_liste_fichier.html#a0290ff68a2fc776ad7afbea98baafc4e">DnDListeFichier</a>
 </li>
 <li>clear()
-: <a class="el" href="class_music_list.html#a598308a7d4be7a7d1d02cbe04c7cac27">MusicList</a>
+: <a class="el" href="classmusic_1_1_music_list.html#a598308a7d4be7a7d1d02cbe04c7cac27">music::MusicList</a>
 </li>
 <li>Close()
 : <a class="el" href="class_b_d_d.html#ae4fe2aa311bce61f06dd0d746daa18bb">BDD</a>
@@ -194,22 +195,22 @@ $(document).ready(function(){initNavTree('functions_c.html','');});
 : <a class="el" href="class_preference_couleur.html#a7f276aff8c02b94946d34c808ebc37c5">PreferenceCouleur</a>
 </li>
 <li>CouleurExtrem()
-: <a class="el" href="class_musique_graph.html#ad0a2db468b292694225a5b0d926f7bd3">MusiqueGraph</a>
+: <a class="el" href="classgui_1_1music_1_1_musique_graph.html#ad0a2db468b292694225a5b0d926f7bd3">gui::music::MusiqueGraph</a>
 </li>
 <li>CouperCopierColler()
 : <a class="el" href="class_couper_copier_coller.html#a08dcb6f025491aa28b7706775f231283">CouperCopierColler</a>
 </li>
 <li>createMusic()
-: <a class="el" href="classfux_1_1music_1_1_factory.html#a2aa871c1bca3121ef3f5ab48523f217e">fux::music::Factory</a>
+: <a class="el" href="classmusic_1_1_factory.html#a2aa871c1bca3121ef3f5ab48523f217e">music::Factory</a>
 </li>
 <li>createMusicFileReader()
-: <a class="el" href="classfux_1_1music_1_1_factory.html#a85f69dc3c61014499a4267c3d2ebd134">fux::music::Factory</a>
+: <a class="el" href="classmusic_1_1_factory.html#a789915c261afde78dea5dd60ae2440c2">music::Factory</a>
 </li>
 <li>createMusicFileReaderThread()
-: <a class="el" href="classfux_1_1music_1_1_factory.html#a860e4942bc8698f3b66c7e14f1698517">fux::music::Factory</a>
+: <a class="el" href="classmusic_1_1_factory.html#a06bcecfd88cb2c45b651ef6288ebd7ff">music::Factory</a>
 </li>
 <li>createMusicFileWriter()
-: <a class="el" href="classfux_1_1music_1_1_factory.html#acf035bde1d7e08a66080f5860c31b280">fux::music::Factory</a>
+: <a class="el" href="classmusic_1_1_factory.html#a773c2726e5d87adf8ec53eb03bb73b83">music::Factory</a>
 </li>
 <li>createThreadProcess()
 : <a class="el" href="classtools_1_1thread_1_1_thread_factory.html#ab9ab1ee49e5142f0282b31bc0362acb7">tools::thread::ThreadFactory</a>
@@ -245,7 +246,7 @@ $(document).ready(function(){initNavTree('functions_c.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Généré le Dimanche 12 Avril 2015 16:42:47 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Vendredi 29 Mai 2015 00:02:10 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

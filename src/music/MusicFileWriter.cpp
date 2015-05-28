@@ -12,7 +12,7 @@
 using namespace TagLib;
 using namespace ::music;
 
-MusicFileWriter::MusicFileWriter(Music* src, Music* dst) :
+MusicFileWriter::MusicFileWriter(Music* src, std::shared_ptr<Music>& dst) :
     m_musicSrc(src),
     m_musicDst(dst)
 {
@@ -25,7 +25,7 @@ MusicFileWriter::~MusicFileWriter()
 
 void MusicFileWriter::process()
 {
-    if (NULL == m_musicSrc || NULL == m_musicDst)
+    if (NULL == m_musicSrc)// || NULL == m_musicDst)
         return;
     fillData();
     saveImage();
@@ -35,7 +35,8 @@ void MusicFileWriter::process()
 
 void MusicFileWriter::fillData()
 {
-    TagLib::FileRef fileRef(TagLib::FileName(m_musicDst->GetFileName().fn_str()));
+    Music* musicDest = m_musicDst.get();
+    TagLib::FileRef fileRef(TagLib::FileName(musicDest->GetFileName().fn_str()));
 
     if (!fileRef.isNull())
     {
@@ -53,7 +54,8 @@ void MusicFileWriter::fillData()
 
 void MusicFileWriter::saveImage()
 {
-    if (!m_musicSrc->HasRecordSleeve() || (m_musicDst->HasRecordSleeve() && m_musicSrc->GetRecordSleeve()->IsSameAs(*m_musicDst->GetRecordSleeve())))
+    Music* musicDest = m_musicDst.get();
+    if (!m_musicSrc->HasRecordSleeve() || (musicDest->HasRecordSleeve() && m_musicSrc->GetRecordSleeve()->IsSameAs(*musicDest->GetRecordSleeve())))
         return;
 
     TagLib::FileRef fileRef(TagLib::FileName(m_musicSrc->GetFileName().fn_str()));
@@ -94,26 +96,27 @@ void MusicFileWriter::saveImage()
  */
 void MusicFileWriter::renameFile()
 {
+    Music* musicDest = m_musicDst.get();
     refreshFileName(*m_musicSrc);
-    if (m_musicSrc->EqualsFilename(m_musicDst))
+    if (m_musicSrc->EqualsFilename(musicDest))
         return;
 
     if (tools::containsInvalidCharacter(m_musicSrc->GetFileName()))
         return;
 
-    if (wxRenameFile(m_musicDst->GetFileName(), m_musicSrc->GetFileName()))
-        m_musicDst->SetFileName(m_musicSrc->GetFileName());
+    if (wxRenameFile(musicDest->GetFileName(), m_musicSrc->GetFileName()))
+        musicDest->SetFileName(m_musicSrc->GetFileName());
     else
     {
-        m_musicSrc->SetFileName(m_musicDst->GetFileName());
-        m_musicSrc->SetName(m_musicDst->GetName());
-        m_musicSrc->SetPath(m_musicDst->GetPath());
+        m_musicSrc->SetFileName(musicDest->GetFileName());
+        m_musicSrc->SetName(musicDest->GetName());
+        m_musicSrc->SetPath(musicDest->GetPath());
     }
 }
 
 Music* MusicFileWriter::getMusic() const
 {
-    return m_musicDst;
+    return m_musicDst.get();
 }
 
 void MusicFileWriter::copy()

@@ -2,12 +2,13 @@
 #define FACTORY_H
 
 #include <wx/wx.h>
-#include "Music.h"
-#include "MusicFile.h"
-#include "MusicFileReader.h"
-#include "MusicFileWriter.h"
-#include "MusicFileReaderThread.h"
-#include "MusicFileWriterThread.h"
+#include <memory>
+#include "music/Music.h"
+#include "music/MusicFile.h"
+#include "music/MusicFileReader.h"
+#include "music/MusicFileWriter.h"
+#include "music/MusicFileReaderThread.h"
+#include "music/MusicFileWriterThread.h"
 
 /** @brief Music Factory
  *
@@ -22,10 +23,10 @@ namespace music
             static Music* createMusic();
             static Music* createMusic(wxString& filename);
             static Music* createMusic(const Music& music);
-            static MusicFile* createMusicFileReader(Music& music);
-            static MusicFile* createMusicFileWriter(Music* inMusic, Music* outMusic);
-            static MusicFileReaderThread* createMusicFileReaderThread(Music& music, wxWindow* parent);
-            static MusicFileWriterThread* createMusicFileWriterThread(Music* inMusic, Music* outMusic, wxWindow* parent);
+            static MusicFileReader* createMusicFileReader(std::shared_ptr<Music>& music);
+            static MusicFileWriter* createMusicFileWriter(Music* inMusic, std::shared_ptr<Music>& outMusic);
+            static MusicFileReaderThread* createMusicFileReaderThread(std::shared_ptr<Music>& music, wxWindow* parent);
+            static MusicFileWriterThread* createMusicFileWriterThread(Music* inMusic, std::shared_ptr<Music>& outMusic, wxWindow* parent);
     };
 }
 

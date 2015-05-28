@@ -8,6 +8,9 @@
  **************************************************************/
 #include "gui/musiclist/PlayList.h"
 #include "MusicManagerSwitcher.h"
+#include "tools/FichierLog.h"
+#include "music/Factory.h"
+#include <music/Music.h>
 
 using namespace ::music;
 
@@ -46,9 +49,7 @@ PlayList::PlayList()
 PlayList::~PlayList()
 {
     delete m_liste;
-    #if DEBUG
-        FichierLog::Get()->Ajouter(_T("PlayList::~PlayList"));
-    #endif
+    LogFileAppend(_T("PlayList::~PlayList"));
 }
 
 /**
@@ -203,7 +204,7 @@ void PlayList::OnAppliquerTAG(wxCommandEvent &WXUNUSED(event))
     if (position < 0)
         return;
 
-    if (MusicManagerSwitcher::getSearch().getMusics().size() <= position)
+    if (MusicManagerSwitcher::getSearch().getMusics().size() <= static_cast<size_t>(position) )
         return;
 
     Music* music = Factory::createMusic(*MusicManagerSwitcher::getSearch().getMusics().at(position));
@@ -254,7 +255,7 @@ void PlayList::ViderPanneauTAG()
  */
 void PlayList::RemplirPanneauTAG(int musicPosition)
 {
-    std::vector<Music*>::iterator iter = MusicManagerSwitcher::getSearch().getMusics().begin() + musicPosition;
+    MusicIterator iter = MusicManagerSwitcher::getSearch().getMusics().begin() + musicPosition;
     RemplirPanneauTAG(**iter);
     m_sizerRep->Layout();
 }
@@ -294,13 +295,13 @@ void PlayList::EvtViderPanneauTAG(wxCommandEvent &WXUNUSED(event))
 /**
  * Évènement - Appelé lors du changement de la pochette du titre. L'enregistrement dans le fichier se fait automatiquement
  */
-void PlayList::EvtImage(wxCommandEvent &event)
+void PlayList::EvtImage(wxCommandEvent &WXUNUSED(event))
 {
     long position = m_liste->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
     if (0 > position) // ==> -1
         return;
 
-    if (MusicManagerSwitcher::getSearch().getMusics().size() <= position)
+    if (MusicManagerSwitcher::getSearch().getMusics().size() <= static_cast<size_t>(position) )
         return;
 
     Music* music = Factory::createMusic(*MusicManagerSwitcher::getSearch().getMusics().at(position));
@@ -318,10 +319,10 @@ void PlayList::FenetreDetails(wxCommandEvent &WXUNUSED(event))
     if (position < 0)
         return;
 
-    if (MusicManagerSwitcher::getSearch().getMusics().size() <= position)
+    if (MusicManagerSwitcher::getSearch().getMusics().size() <= static_cast<size_t>(position) )
         return;
 
-    Music* music = MusicManagerSwitcher::getSearch().getMusics().at(position);
+    Music* music = MusicManagerSwitcher::getSearch().getMusics().at(position).get();
 
     if (NULL == music)
         return;

@@ -36,9 +36,24 @@ namespace explorer
 
             virtual bool canCopyTo(const DriveManagerState& other) const = 0;
             virtual bool canMoveTo(const DriveManagerState& other) const = 0;
+            virtual bool canDeleteSelectedItems() const = 0;
+            virtual bool canSelectAll() const = 0;
+            virtual bool canCreateDir() const = 0;
+            virtual bool canCreateContainerFile() const = 0;
+            virtual bool canPlayItems() const = 0;
+            virtual bool canRename() const = 0;
+            virtual bool canCreateShortcut() const = 0;
+
             virtual void deleteSelectedItems() = 0;
             virtual void moveElements(DriveManagerState& source) = 0;
             virtual void copyElements(DriveManagerState& source) = 0;
+            virtual void selectAll();
+            virtual void createDir() = 0;
+            virtual void createContainerFile() = 0;
+            virtual void playItems() = 0;
+            virtual void rename() = 0;
+            virtual void createShortcut() = 0;
+
             wxArrayString getSelectedItems();
             wxArrayString getSelectedItemsPosition();
 

@@ -14,13 +14,13 @@ namespace music
             /** Default destructor */
             virtual ~MusicManagerSearchDecorator();
 
-            virtual std::vector<Music*>& getMusics();
+            virtual MusicCollection& getMusics();
             virtual size_t getCurrentMusicPosition();
-            virtual void moveIntTitlesAt(const wxArrayString& titles, long position);
+            virtual void moveIntTitlesAt(const wxArrayString& titles, size_t position);
             virtual void placeStringTitlesAt(const wxArrayString& titles, size_t position);
             virtual void deleteTitleAt(size_t position);
             virtual bool playMusicAt(long position);
-            virtual void updateMusicContent(const long position, Music* music);
+            virtual void updateMusicContent(const size_t position, Music* music);
     };
 }
 

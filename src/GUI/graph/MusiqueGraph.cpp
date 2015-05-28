@@ -7,8 +7,15 @@
  * License:
  **************************************************************/
 #include "gui/graph/MusiqueGraph.h"
-#include "MusicManagerSwitcher.h"
+#include "music/MusicManagerSwitcher.h"
+#include "music/MusicManager.h"
+#include "tools/ImageText.h"
+#include "tools/FichierLog.h"
+#include <GL/gl.h>
+#include <GL/glu.h>
+#include <wx/dir.h>
 
+using namespace ::gui::music;
 using namespace ::music;
 
 /**
@@ -72,15 +79,11 @@ MusiqueGraph::MusiqueGraph(wxWindow *Parent, int *args) : wxGLCanvas(Parent, wxI
  */
 MusiqueGraph::~MusiqueGraph()
 {
-    #if DEBUG
-    FichierLog::Get()->Ajouter(_T("MusiqueGraph::~MusiqueGraph - fin"));
-    #endif
+    LogFileAppend(_T("MusiqueGraph::~MusiqueGraph - fin"));
     delete m_imageText;
     delete m_context;
 
-    #if DEBUG
-    FichierLog::Get()->Ajouter(_T("MusiqueGraph::~MusiqueGraph - fin2"));
-    #endif
+    LogFileAppend(_T("MusiqueGraph::~MusiqueGraph - fin2"));
 }
 
 /**

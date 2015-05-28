@@ -9,124 +9,139 @@
 #include <wx/textfile.h>
 #include <wx/bmpbuttn.h>
 #include <wx/thread.h>
-#include "../../settings/Parametre.h"
-#include "../../tools/Timer.h"
-#include "../settings/PreferenceSon.h"
-#include "../settings/PreferenceCouleur.h"
-#include "../settings/PreferenceDefaut.h"
-#include "../musiclist/PlayList.h"
-#include "../../network/TCPServeur.h"
-#include "./SliderSon.h"
-#include "../../tools/FichierLog.h"
-#include "../../db/BDDThread.h"
-#include "../tools/ArrayFenetreDetachable.h"
-#include "./BoutonFenetreDetachable.h"
+#include "settings/Parametre.h"
+#include "tools/Timer.h"
+#include "settings/PreferenceSon.h"
+#include "settings/PreferenceCouleur.h"
+#include "settings/PreferenceDefaut.h"
+#include "musiclist/PlayList.h"
+#include "network/TCPServeur.h"
+#include "SliderSon.h"
+#include "tools/FichierLog.h"
+#include "db/BDDThread.h"
+#include "tools/ArrayFenetreDetachable.h"
+#include "BoutonFenetreDetachable.h"
 
 namespace gui
 {
-    namespace explorer
-    {
+    namespace explorer {
         class DriveManagersPanel;
+    }
+    namespace music {
+        class MusiqueGraph;
     }
 }
 
 class FuXFenetre: public wxFrame
 {
-  public:
-    FuXFenetre(int argc = 0, wxChar** argv = NULL);
-    virtual ~FuXFenetre();
+    public:
+        FuXFenetre(int argc = 0, wxChar** argv = NULL);
+        virtual ~FuXFenetre();
 
 
-    /// Event methods ///
-    // button left panel event //
-    void AffichePrincipal(wxCommandEvent &WXUNUSED(event));
-    void AfficheDefaut(wxCommandEvent &WXUNUSED(event));
-    void AffichePreference(wxCommandEvent &WXUNUSED(event));
-    void AfficheEncodage(wxCommandEvent &WXUNUSED(event));
-    void AfficheListeDeLecture(wxCommandEvent &WXUNUSED(event));
-    void AfficheGestPeriph(wxCommandEvent &WXUNUSED(event));
-    void AfficherPreferenceCouleur(wxCommandEvent &WXUNUSED(event));
-    void AfficherPreferenceSon(wxCommandEvent &WXUNUSED(event));
-    void AfficherPreferenceDefaut(wxCommandEvent &WXUNUSED(event));
-    void SeparationPanel(wxCommandEvent&);
-    void ReunionPanel(wxCommandEvent&);
-    void EventUpdateMusicVolume(wxScrollEvent &WXUNUSED(event));
-    // Bar menu event //
-    void EventDeleteCurrentPlayingTitle(wxCommandEvent &WXUNUSED(event));
-    void EventMusicStop(wxCommandEvent &WXUNUSED(event));
-    void EventMenuBarPlay(wxCommandEvent &WXUNUSED(event));
-    void EventMusicNext(wxCommandEvent &WXUNUSED(event));
-    void EventMusicPrevious(wxCommandEvent &WXUNUSED(event));
-    void EventMusicRandomize(wxCommandEvent &WXUNUSED(event));
-    void EventMusicRepete(wxCommandEvent &WXUNUSED(event));
-    void EventOpenDialogToPlayMusic(wxCommandEvent &WXUNUSED(event));
-    void EventOpenDialogToSelectPlayListFile(wxCommandEvent &WXUNUSED(event));
-    void EventPlayButtonPressed(wxCommandEvent &event);
-    void EventQuit(wxCommandEvent &event);
-    void EventSavePlayList(wxCommandEvent&);
-    void EventUpdatePlayLists(wxCommandEvent &WXUNUSED(event));
-    void onEventUpdatePlaylistSearchDone(wxCommandEvent &WXUNUSED(event));
-    void MenuAbout(wxCommandEvent &WXUNUSED(event));
-    void MenuSiteWeb(wxCommandEvent &WXUNUSED(event));
-    void MenuAide(wxCommandEvent &WXUNUSED(event));
-    // Internal management event //
-    void EvtServeurAjout(wxCommandEvent&);
-    void OnTitreChange(wxCommandEvent &WXUNUSED(event));
-    void OnKeyDownRaccourci(wxKeyEvent&);
-    void EventMusicChanged(wxCommandEvent&);
-    void EventSwitchButtonImage(wxCommandEvent &event);
-    void EventNoMusic(wxCommandEvent &WXUNUSED(event));
+        /// Event methods ///
+        // button left panel event //
+        void AffichePrincipal(wxCommandEvent &WXUNUSED(event));
+        void AfficheDefaut(wxCommandEvent &WXUNUSED(event));
+        void AffichePreference(wxCommandEvent &WXUNUSED(event));
+        void AfficheEncodage(wxCommandEvent &WXUNUSED(event));
+        void AfficheListeDeLecture(wxCommandEvent &WXUNUSED(event));
+        void AfficheGestPeriph(wxCommandEvent &WXUNUSED(event));
+        void AfficherPreferenceCouleur(wxCommandEvent &WXUNUSED(event));
+        void AfficherPreferenceSon(wxCommandEvent &WXUNUSED(event));
+        void AfficherPreferenceDefaut(wxCommandEvent &WXUNUSED(event));
+        void SeparationPanel(wxCommandEvent&);
+        void ReunionPanel(wxCommandEvent&);
+        void EventUpdateMusicVolume(wxScrollEvent &WXUNUSED(event));
+        // Bar menu event //
+        void EventDeleteCurrentPlayingTitle(wxCommandEvent &WXUNUSED(event));
+        void EventMusicStop(wxCommandEvent &WXUNUSED(event));
+        void EventMenuBarPlay(wxCommandEvent &WXUNUSED(event));
+        void EventMusicNext(wxCommandEvent &WXUNUSED(event));
+        void EventMusicPrevious(wxCommandEvent &WXUNUSED(event));
+        void EventMusicRandomize(wxCommandEvent &WXUNUSED(event));
+        void EventMusicRepete(wxCommandEvent &WXUNUSED(event));
+        void EventOpenDialogToPlayMusic(wxCommandEvent &WXUNUSED(event));
+        void EventOpenDialogToSelectPlayListFile(wxCommandEvent &WXUNUSED(event));
+        void EventPlayButtonPressed(wxCommandEvent &event);
+        void EventQuit(wxCommandEvent &event);
+        void EventSavePlayList(wxCommandEvent&);
+        void EventUpdatePlayLists(wxCommandEvent &WXUNUSED(event));
+        void onEventUpdatePlaylistSearchDone(wxCommandEvent &WXUNUSED(event));
+        void MenuAbout(wxCommandEvent &WXUNUSED(event));
+        void MenuSiteWeb(wxCommandEvent &WXUNUSED(event));
+        void MenuAide(wxCommandEvent &WXUNUSED(event));
+        // Internal management event //
+        void EvtServeurAjout(wxCommandEvent&);
+        void OnTitreChange(wxCommandEvent &WXUNUSED(event));
+        void OnKeyDownRaccourci(wxKeyEvent&);
+        void EventMusicChanged(wxCommandEvent&);
+        void EventSwitchButtonImage(wxCommandEvent &event);
+        void EventNoMusic(wxCommandEvent &WXUNUSED(event));
 
 
-    /// Internal management methods ///
-    void SwitchWindow();
-    void readPreferences(bool loadDefaultMusic);
-    void readPreferencesOldWay(bool loadDefaultMusic, wxTextFile& prefFile);
-    void readPreferencesNewWay(bool loadDefaultMusic, const wxString& fileName);
+        /// Internal management methods ///
+        void SwitchWindow();
+        void readPreferences(bool loadDefaultMusic);
+        void readPreferencesOldWay(bool loadDefaultMusic, wxTextFile& prefFile);
+        void readPreferencesNewWay(bool loadDefaultMusic, const wxString& fileName);
 
-    void changePlayPauseImageStatus();
-    void drawPlayImageStatus();
-    void drawPauseImageStatus();
-    void playButtonPressed();
-    void openDialogToPlayMusic();
-    void openDialogToSelectPlayListFile();
-    void deleteCurrentPlayingTitle();
+        void changePlayPauseImageStatus();
+        void drawPlayImageStatus();
+        void drawPauseImageStatus();
+        void playButtonPressed();
+        void openDialogToPlayMusic();
+        void openDialogToSelectPlayListFile();
+        void deleteCurrentPlayingTitle();
 
-    void onUpdateLine(wxCommandEvent& event);
+        void onUpdateLine(wxCommandEvent& event);
 
-  private :
+    private :
 
-    /// Initialization methods ///
-    void panelCreation();
-    void panelAssociation();
-    void MenuBarCreation();
-    void LeftSizerCreation();
+        /// Initialization methods ///
+        void panelCreation();
+        void panelAssociation();
+        void MenuBarCreation();
+        void LeftSizerCreation();
 
-  protected:
-    wxBoxSizer *sizerPrincipalH, *sizerGaucheV, *sizerDroit, *sizerDroitPrincipal, *sizerDroitPreference, *sizerDroitExtracteur, *m_sizerDroitPlaylist, *m_sizerRightExplorer;
+      protected:
+        wxBoxSizer* sizerPrincipalH;
+        wxBoxSizer* sizerGaucheV;
+        wxBoxSizer* sizerDroit;
+        wxBoxSizer* sizerDroitPrincipal;
+        wxBoxSizer* sizerDroitPreference;
+        wxBoxSizer* sizerDroitExtracteur;
+        wxBoxSizer* m_sizerDroitPlaylist;
+        wxBoxSizer* m_sizerRightExplorer;
 
-    wxMenuBar *menuBarre;
-    wxMenu *menuFichier, *menuAffichage, *menuPreferences, *menuExtraction, *menuAide, *menuControle;
-    wxNotebook *m_notebookPreference;
-    wxBitmapButton *m_boutonImageLP;
-    wxBitmap *m_imageBouton;
+        wxMenuBar* menuBarre;
+        wxMenu* menuFichier;
+        wxMenu* menuAffichage;
+        wxMenu* menuPreferences;
+        wxMenu* menuExtraction;
+        wxMenu* menuAide;
+        wxMenu* menuControle;
+        wxNotebook* m_notebookPreference;
+        wxBitmapButton* m_boutonImageLP;
+        wxBitmap* m_imageBouton;
 
-    MusiqueGraph *m_musiqueGraph;
-    TimerGraph m_TimerGraph;
-    PreferenceSon *m_pageSon;
-    PreferenceCouleur *m_pageCouleur;
-    PreferenceDefaut *m_pageDefaut;
-    PlayList *m_playList;
-    bool *m_panelsAssocies;
+        gui::music::MusiqueGraph *m_musiqueGraph;
+        TimerGraph m_TimerGraph;
+        PreferenceSon *m_pageSon;
+        PreferenceCouleur *m_pageCouleur;
+        PreferenceDefaut *m_pageDefaut;
+        PlayList *m_playList;
+        bool *m_panelsAssocies;
 
-    ArrayFenetreDetachable *m_fenetresDetachables;
+        ArrayFenetreDetachable *m_fenetresDetachables;
 
-    TCPServeur *m_serveur;
+        TCPServeur *m_serveur;
 
-    int m_FenetreActuel, m_nouvelleFenetre;
-    gui::explorer::DriveManagersPanel* m_driveManagersPanel;
+        int m_FenetreActuel;
+        int m_nouvelleFenetre;
+        gui::explorer::DriveManagersPanel* m_driveManagersPanel;
 
-    DECLARE_EVENT_TABLE()
+        DECLARE_EVENT_TABLE()
 };
 
 

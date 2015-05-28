@@ -29,6 +29,8 @@ namespace explorer
             void setPlayListState(gui::explorer::ExplorerPanel& explorerPanel);
             void setFileState    (gui::explorer::ExplorerPanel& explorerPanel, const wxString& path);
 
+            bool canCopySelectedLines(gui::explorer::ExplorerPanel& sourceExplorerPanel);
+            bool canMoveSelectedLines(gui::explorer::ExplorerPanel& sourceExplorerPanel);
             void deleteSelectedLines(gui::explorer::ExplorerPanel& explorerPanel);
             void copySelectedLines  (gui::explorer::ExplorerPanel& sourceExplorerPanel, gui::explorer::ExplorerPanel& destinationExplorerPanel);
             void moveSelectedLines  (gui::explorer::ExplorerPanel& sourceExplorerPanel, gui::explorer::ExplorerPanel& destinationExplorerPanel);
@@ -37,6 +39,8 @@ namespace explorer
 
         protected:
             ExplorerManager& getControllerOf(gui::explorer::ExplorerPanel& explorerPanel);
+            ExplorerManager& getOppositeExplorerManager(gui::explorer::ExplorerPanel& explorerPanel);
+            ExplorerManager& getOppositeExplorerManager(explorer::ExplorerManager& explorerManager);
 
         private:
             /** Default constructor */

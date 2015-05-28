@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['imageextracting',['ImageExtracting',['../class_music_file_reader.html#a3839e20dcb808f870ca623689b83ac5a',1,'MusicFileReader']]],
+  ['imageextracting',['ImageExtracting',['../classmusic_1_1_music_file_reader.html#a3839e20dcb808f870ca623689b83ac5a',1,'music::MusicFileReader']]],
   ['imagepochettemusique',['ImagePochetteMusique',['../class_image_pochette_musique.html#a7249c5a5fb1c5353a328c2b5d35ed759',1,'ImagePochetteMusique']]],
   ['imagetext',['ImageText',['../class_image_text.html#aba67445215ef71502c786073475985aa',1,'ImageText']]],
-  ['importfilecontent',['importFileContent',['../class_music_list.html#a768939b3800688880448f749a55e1745',1,'MusicList']]],
-  ['initialize',['initialize',['../class_music_player.html#a9e55af1a7f13595ffd161ab16d350605',1,'MusicPlayer::initialize()'],['../class_play_list.html#a392f82e08750e47c6461b72bce73aa2a',1,'PlayList::Initialize()']]],
-  ['insertlines',['insertLines',['../class_music_list.html#ac9bbd321c2d9868af3063f19313624be',1,'MusicList']]],
+  ['importfilecontent',['importFileContent',['../classmusic_1_1_music_list.html#a768939b3800688880448f749a55e1745',1,'music::MusicList']]],
+  ['initialize',['initialize',['../classmusic_1_1_music_player.html#a9e55af1a7f13595ffd161ab16d350605',1,'music::MusicPlayer::initialize()'],['../class_play_list.html#a392f82e08750e47c6461b72bce73aa2a',1,'PlayList::Initialize()']]],
+  ['insertlines',['insertLines',['../classmusic_1_1_music_list.html#ac9bbd321c2d9868af3063f19313624be',1,'music::MusicList']]],
   ['isaction',['IsAction',['../class_element_thread_fichier.html#a1764a11f1f3f094b3ff420f9f8896f0e',1,'ElementThreadFichier']]],
   ['isdragging',['isDragging',['../class_page_gestion_periph.html#a1f78ceec92b78eb02ecc719595bab107',1,'PageGestionPeriph']]],
   ['isid3v2',['isID3V2',['../class_parametre.html#abfaff93e40caa704a7603302b4fb3822',1,'Parametre']]],
@@ -13,11 +13,11 @@ var searchData=
   ['isinsidetype',['IsInsideType',['../class_array_fenetre_detachable.html#a4641d817757432e59922bf2ec2224223',1,'ArrayFenetreDetachable']]],
   ['islisable',['islisable',['../class_parametre.html#a428ae85adee55c0e4dacbd0e52e8fe36',1,'Parametre']]],
   ['ismodified',['isModified',['../class_dialog_tag_m_p3.html#a6d46abc3280fe30d48652622d190e025',1,'DialogTagMP3::isModified()'],['../class_dialog_tag_m_p3_info.html#a5d3304b8aae855a3979d5b8e8ef02d60',1,'DialogTagMP3Info::isModified()'],['../class_image_pochette_musique.html#ae285551d90a3e72a1ecd8c9db6f96f83',1,'ImagePochetteMusique::IsModified()']]],
-  ['ispaused',['isPaused',['../class_music_player.html#a078cc8ff3bfb273aee8a78a4cc7d7b03',1,'MusicPlayer']]],
-  ['isplaying',['isPlaying',['../class_music_player.html#a3263834225d4e6adc6943f000506b214',1,'MusicPlayer']]],
-  ['israndom',['isRandom',['../class_music_manager.html#a45d17942a8962d4e98fbaa3f154a5672',1,'MusicManager']]],
+  ['ispaused',['isPaused',['../classmusic_1_1_music_player.html#a078cc8ff3bfb273aee8a78a4cc7d7b03',1,'music::MusicPlayer']]],
+  ['isplaying',['isPlaying',['../classmusic_1_1_music_player.html#a3263834225d4e6adc6943f000506b214',1,'music::MusicPlayer']]],
+  ['israndom',['isRandom',['../classmusic_1_1_music_manager.html#a45d17942a8962d4e98fbaa3f154a5672',1,'music::MusicManager']]],
   ['isrepertoireinstallationdefaut',['isRepertoireInstallationDefaut',['../class_parametre.html#a04fcf91df13d7233ed99a0d157532ea4',1,'Parametre']]],
-  ['isrepete',['isRepete',['../class_music_manager.html#ab9bcd24a2d673600407b9d96850ad90c',1,'MusicManager']]],
-  ['isstopped',['isStopped',['../class_music_player.html#af7de0a0ba29c61b421b481b52138ce80',1,'MusicPlayer']]],
+  ['isrepete',['isRepete',['../classmusic_1_1_music_manager.html#ab9bcd24a2d673600407b9d96850ad90c',1,'music::MusicManager']]],
+  ['isstopped',['isStopped',['../classmusic_1_1_music_player.html#af7de0a0ba29c61b421b481b52138ce80',1,'music::MusicPlayer']]],
   ['item',['Item',['../class_dn_d_liste_fichier.html#a72854804d616324ed50bf27a24aa674e',1,'DnDListeFichier']]]
 ];

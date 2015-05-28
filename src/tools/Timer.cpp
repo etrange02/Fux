@@ -38,8 +38,8 @@ void TimerGraph::Notify()
 {
     if (MusicManagerSwitcher::get().getMusicPlayer().isEnding())
         MusicManagerSwitcher::get().playAMusic();
-    if (MusiqueGraph::Get()->IsShownOnScreen())
-        MusiqueGraph::Get()->OnIdle();
+    if (gui::music::MusiqueGraph::Get()->IsShownOnScreen())
+        gui::music::MusiqueGraph::Get()->OnIdle();
 }
 
 

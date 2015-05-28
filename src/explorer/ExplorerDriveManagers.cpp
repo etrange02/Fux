@@ -12,6 +12,7 @@
 #include "predicates/findControllerOfExplorerPanel.h"
 #include <wx/volume.h>
 #include "DriveManagerState.h"
+#include <algorithm>
 
 using namespace explorer;
 
@@ -113,7 +114,7 @@ void ExplorerDriveManagers::updateStreamButtonStates(gui::explorer::ExplorerPane
 {
     const bool isFirst = ( explorerPanel == m_data.getExplorerManagers().at(0)->getExplorerPanel() );
     ExplorerManager& focusedEM = getControllerOf(explorerPanel);
-    ExplorerManager& other = *m_data.getExplorerManagers().at(isFirst ? 1 : 0);
+    ExplorerManager& other = getOppositeExplorerManager(focusedEM);
 
     m_data.getDriveManagersPanel()->enableButtonCopy     (!focusedEM.getState().isDefault() && !other.getState().isDefault());
     m_data.getDriveManagersPanel()->enableButtonDelete   (!focusedEM.getState().isDefault());
@@ -127,6 +128,20 @@ void ExplorerDriveManagers::updateStreamButtonStates(gui::explorer::ExplorerPane
                                                          );
 }
 
+bool ExplorerDriveManagers::canCopySelectedLines(gui::explorer::ExplorerPanel& sourceExplorerPanel)
+{
+    ExplorerManager& source = getControllerOf(sourceExplorerPanel);
+    ExplorerManager& destination = getOppositeExplorerManager(source);
+    return source.getState().canCopyTo(destination.getState());
+}
+
+bool ExplorerDriveManagers::canMoveSelectedLines(gui::explorer::ExplorerPanel& sourceExplorerPanel)
+{
+    ExplorerManager& source = getControllerOf(sourceExplorerPanel);
+    ExplorerManager& destination = getOppositeExplorerManager(source);
+    return source.getState().canMoveTo(destination.getState());
+}
+
 void ExplorerDriveManagers::deleteSelectedLines(gui::explorer::ExplorerPanel& explorerPanel)
 {
     ExplorerManager& manager = getControllerOf(explorerPanel);
@@ -135,21 +150,34 @@ void ExplorerDriveManagers::deleteSelectedLines(gui::explorer::ExplorerPanel& ex
 
 void ExplorerDriveManagers::copySelectedLines(gui::explorer::ExplorerPanel& sourceExplorerPanel, gui::explorer::ExplorerPanel& destinationExplorerPanel)
 {
-    ExplorerManager& source = getControllerOf(sourceExplorerPanel);
-    ExplorerManager& destination = getControllerOf(destinationExplorerPanel);
-    if (!source.getState().canCopyTo(destination.getState()))
+    if (!canCopySelectedLines(sourceExplorerPanel))
         return;
 
+    ExplorerManager& source = getControllerOf(sourceExplorerPanel);
+    ExplorerManager& destination = getControllerOf(destinationExplorerPanel);
     destination.getState().copyElements(source.getState());
 }
 
 void ExplorerDriveManagers::moveSelectedLines(gui::explorer::ExplorerPanel& sourceExplorerPanel, gui::explorer::ExplorerPanel& destinationExplorerPanel)
 {
-    ExplorerManager& source = getControllerOf(sourceExplorerPanel);
-    ExplorerManager& destination = getControllerOf(destinationExplorerPanel);
-    if (!source.getState().canMoveTo(destination.getState()))
+    if (!canMoveSelectedLines(sourceExplorerPanel))
         return;
 
+    ExplorerManager& source = getControllerOf(sourceExplorerPanel);
+    ExplorerManager& destination = getControllerOf(destinationExplorerPanel);
     destination.getState().moveElements(source.getState());
 }
+
+ExplorerManager& ExplorerDriveManagers::getOppositeExplorerManager(gui::explorer::ExplorerPanel& explorerPanel)
+{
+    return getOppositeExplorerManager(getControllerOf(explorerPanel));
+}
+
+ExplorerManager& ExplorerDriveManagers::getOppositeExplorerManager(explorer::ExplorerManager& explorerManager)
+{
+    const bool isFirst = ( explorerManager.getExplorerPanel() == m_data.getExplorerManagers().at(0)->getExplorerPanel() );
+    return *m_data.getExplorerManagers().at(isFirst ? 1 : 0);
+}
+
+
 

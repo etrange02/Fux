@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Fu(X) 2.0: Référence de la classe music::IMusic</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script src="http://www.mathjax.org/mathjax/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="play_64x64.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Fu(X) 2.0
+   &#160;<span id="projectnumber">a5</span>
+   </div>
+   <div id="projectbrief">Fu(X) est un lecteur audio dont le but est de redéfinir l&#39;utilisation en apportant une nouvelle approche aussi intuitive que puissante !</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classmusic_1_1_i_music.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="classmusic_1_1_i_music-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe music::IMusic<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Graphe d'héritage de music::IMusic:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classmusic_1_1_i_music.png" usemap="#music::IMusic_map" alt=""/>
+  <map id="music::IMusic_map" name="music::IMusic_map">
+<area href="classmusic_1_1_music.html" alt="music::Music" shape="rect" coords="0,56,87,80"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:ab290b397a19b10661a5619585610661f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmusic_1_1_i_music.html#ab290b397a19b10661a5619585610661f">~IMusic</a> ()</td></tr>
+<tr class="memdesc:ab290b397a19b10661a5619585610661f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#ab290b397a19b10661a5619585610661f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab290b397a19b10661a5619585610661f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7453c67e9b4d30ee470f8c3805d55d78"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7453c67e9b4d30ee470f8c3805d55d78"></a>
+virtual wxString&#160;</td><td class="memItemRight" valign="bottom"><b>GetName</b> () const =0</td></tr>
+<tr class="separator:a7453c67e9b4d30ee470f8c3805d55d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cf84913807f6587b574d7381283e3a8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0cf84913807f6587b574d7381283e3a8"></a>
+virtual wxString&#160;</td><td class="memItemRight" valign="bottom"><b>GetArtists</b> () const =0</td></tr>
+<tr class="separator:a0cf84913807f6587b574d7381283e3a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fb0b7d600af114ac380f37a6108570d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6fb0b7d600af114ac380f37a6108570d"></a>
+virtual wxString&#160;</td><td class="memItemRight" valign="bottom"><b>GetAlbum</b> () const =0</td></tr>
+<tr class="separator:a6fb0b7d600af114ac380f37a6108570d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8f358a7c175d729e335a1ca5f22b88e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae8f358a7c175d729e335a1ca5f22b88e"></a>
+virtual wxString&#160;</td><td class="memItemRight" valign="bottom"><b>GetTitle</b> () const =0</td></tr>
+<tr class="separator:ae8f358a7c175d729e335a1ca5f22b88e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6596c4331af0e3e2efd927049e4a1b94"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6596c4331af0e3e2efd927049e4a1b94"></a>
+virtual wxString&#160;</td><td class="memItemRight" valign="bottom"><b>GetPath</b> () const =0</td></tr>
+<tr class="separator:a6596c4331af0e3e2efd927049e4a1b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b85c0377339e3e2981d13a620ba2b4e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1b85c0377339e3e2981d13a620ba2b4e"></a>
+virtual wxString&#160;</td><td class="memItemRight" valign="bottom"><b>GetGenres</b> () const =0</td></tr>
+<tr class="separator:a1b85c0377339e3e2981d13a620ba2b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae88f70143b1fb4f2ca36d93ba693b001"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae88f70143b1fb4f2ca36d93ba693b001"></a>
+virtual wxString&#160;</td><td class="memItemRight" valign="bottom"><b>GetExtension</b> () const =0</td></tr>
+<tr class="separator:ae88f70143b1fb4f2ca36d93ba693b001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f2a3576a70b7360a0d3936d3fb551ee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f2a3576a70b7360a0d3936d3fb551ee"></a>
+virtual wxString&#160;</td><td class="memItemRight" valign="bottom"><b>GetFileName</b> () const =0</td></tr>
+<tr class="separator:a4f2a3576a70b7360a0d3936d3fb551ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14a7064dcb528cec6cef93380822e9fa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a14a7064dcb528cec6cef93380822e9fa"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>GetYear</b> () const =0</td></tr>
+<tr class="separator:a14a7064dcb528cec6cef93380822e9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c6dcad5675c3680fa9bdd67207403e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c6dcad5675c3680fa9bdd67207403e0"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>GetDuration</b> () const =0</td></tr>
+<tr class="separator:a6c6dcad5675c3680fa9bdd67207403e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a030e56a88da3c25c5a13a1b5138644da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a030e56a88da3c25c5a13a1b5138644da"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>GetDebit</b> () const =0</td></tr>
+<tr class="separator:a030e56a88da3c25c5a13a1b5138644da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace904bd59ee301340cc8f78ffd5d9c8e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace904bd59ee301340cc8f78ffd5d9c8e"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>GetSize</b> () const =0</td></tr>
+<tr class="separator:ace904bd59ee301340cc8f78ffd5d9c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c8b76bda11ce70d34365263a6dec2b9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2c8b76bda11ce70d34365263a6dec2b9"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>HasRecordSleeve</b> () const =0</td></tr>
+<tr class="separator:a2c8b76bda11ce70d34365263a6dec2b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f438004b1a8db8c2eeff2d657dd8529"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f438004b1a8db8c2eeff2d657dd8529"></a>
+virtual wxImage *&#160;</td><td class="memItemRight" valign="bottom"><b>GetRecordSleeve</b> () const =0</td></tr>
+<tr class="separator:a2f438004b1a8db8c2eeff2d657dd8529"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1fc8f80e97cea5ac4fc75a718516122"><td class="memItemLeft" align="right" valign="top">virtual wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmusic_1_1_i_music.html#ac1fc8f80e97cea5ac4fc75a718516122">GetStringDuration</a> ()</td></tr>
+<tr class="memdesc:ac1fc8f80e97cea5ac4fc75a718516122"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the duration under dd:dd format Gets the duration under dd:dd format.  <a href="#ac1fc8f80e97cea5ac4fc75a718516122">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac1fc8f80e97cea5ac4fc75a718516122"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66512b9e4aeb83f4c633b8ad9d45d9eb"><td class="memItemLeft" align="right" valign="top">virtual wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmusic_1_1_i_music.html#a66512b9e4aeb83f4c633b8ad9d45d9eb">GetStringYear</a> ()</td></tr>
+<tr class="memdesc:a66512b9e4aeb83f4c633b8ad9d45d9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the year under string format.  <a href="#a66512b9e4aeb83f4c633b8ad9d45d9eb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a66512b9e4aeb83f4c633b8ad9d45d9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade649fab00c5bdb8084be6bec628f010"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade649fab00c5bdb8084be6bec628f010"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsMatching</b> (const wxString &amp;word)</td></tr>
+<tr class="separator:ade649fab00c5bdb8084be6bec628f010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1119c7de3960f0b8e0d9c22134e44018"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1119c7de3960f0b8e0d9c22134e44018"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>EqualsFilename</b> (const <a class="el" href="classmusic_1_1_i_music.html">IMusic</a> *music) const =0</td></tr>
+<tr class="separator:a1119c7de3960f0b8e0d9c22134e44018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e2f3efdcf41563b524e8060eee9e61a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e2f3efdcf41563b524e8060eee9e61a"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classmusic_1_1_i_music.html">IMusic</a> &amp;other)</td></tr>
+<tr class="separator:a6e2f3efdcf41563b524e8060eee9e61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"></div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="ab290b397a19b10661a5619585610661f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IMusic::~IMusic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="ac1fc8f80e97cea5ac4fc75a718516122"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxString IMusic::GetStringDuration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the duration under dd:dd format Gets the duration under dd:dd format. </p>
+<p>0 inserted if necessary </p><dl class="section return"><dt>Renvoie</dt><dd>a dd:dd string </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a66512b9e4aeb83f4c633b8ad9d45d9eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxString IMusic::GetStringYear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the year under string format. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>the year under string format </dd></dl>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>C:/Workspace/Projects/fux/include/music/<a class="el" href="">IMusic.h</a></li>
+<li>C:/Workspace/Projects/fux/src/music/<a class="el" href="">IMusic.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>music</b></li><li class="navelem"><a class="el" href="classmusic_1_1_i_music.html">IMusic</a></li>
+    <li class="footer">Généré le Vendredi 29 Mai 2015 00:02:10 pour Fu(X) 2.0 par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
+</body>
+</html>

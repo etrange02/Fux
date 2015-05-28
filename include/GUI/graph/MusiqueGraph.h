@@ -3,50 +3,62 @@
 
 #include <wx/wx.h>
 #include <wx/glcanvas.h>
-#include <GL/gl.h>
-#include <GL/glu.h>
-#include <wx/dir.h>
-#include "../../Classes.h"
-//#include "../../music/Musique.h"
-#include "../../music/MusicManager.h"
-#include "../tools/ImageText.h"
-#include "../../Define.h"
-#include "../widgets/SliderSon.h"
-#include "../../settings/Couleur.h"
-#include "../../tools/FichierLog.h"
+#include "Classes.h"
+#include "Define.h"
+#include "widgets/SliderSon.h"
+#include "settings/Couleur.h"
 
 extern const wxEventType wxEVT_MUSIQUE_SUPPRESSION;
 
-class MusiqueGraph : public wxGLCanvas
+class ImageText;
+
+namespace gui
 {
-    public:
-        MusiqueGraph(wxWindow *Parent, int *args);
-        virtual ~MusiqueGraph();
-        static MusiqueGraph* Get();
+    namespace music
+    {
+        class MusiqueGraph : public wxGLCanvas
+        {
+            public:
+                MusiqueGraph(wxWindow *Parent, int *args);
+                virtual ~MusiqueGraph();
+                static MusiqueGraph* Get();
 
-        void OnIdle();
-        Couleur CouleurExtrem(int, int, e_GraphPosition niveau = HAUT_SUP);
-        void Sizer_Size(wxSizeEvent &event);
-        void PlacerChanson(wxMouseEvent&);
-        void AffecteCouleurs(Couleur, Couleur, Couleur, Couleur, Couleur, bool, Couleur, Couleur);
-        void GetCouleurNom(Couleur**, Couleur**, Couleur**, Couleur**, Couleur**, bool**, Couleur**, Couleur**);
-        void OnToucheDown(wxKeyEvent&);
-        void OnPaint(wxPaintEvent&);
-        void OnEraseBackground(wxEraseEvent&);
-        void TitreChange();
-        void MouseEvents(wxMouseEvent&);
+                virtual void OnIdle();
+                Couleur CouleurExtrem(int, int, e_GraphPosition niveau = HAUT_SUP);
+                void Sizer_Size(wxSizeEvent &event);
+                void PlacerChanson(wxMouseEvent&);
+                void AffecteCouleurs(Couleur, Couleur, Couleur, Couleur, Couleur, bool, Couleur, Couleur);
+                void GetCouleurNom(Couleur**, Couleur**, Couleur**, Couleur**, Couleur**, bool**, Couleur**, Couleur**);
+                void OnToucheDown(wxKeyEvent&);
+                void OnPaint(wxPaintEvent&);
+                void OnEraseBackground(wxEraseEvent&);
+                void TitreChange();
+                void MouseEvents(wxMouseEvent&);
 
-    protected:
+            private:
+                Couleur m_fond;
+                Couleur m_barre;
+                Couleur m_police;
+                Couleur m_haut;
+                Couleur m_miSup;
+                Couleur m_miInf;
+                Couleur m_bas;
+                float *spectrum;//puissance de 2, 64 à 8192
+                float m_intervalle;
+                int m_epaisseurSpectre;
+                int m_sizer_w;
+                int m_sizer_h;
+                unsigned int m_largeur_tab;
+                unsigned int m_bandeRestante;
+                unsigned int m_moitEcran;
+                bool m_doubleBarre;
+                wxGLContext *m_context;
+                ImageText *m_imageText;
+                ImageText *m_imageTemps;
 
-        float *spectrum, m_intervalle;
-        int m_epaisseurSpectre, m_sizer_w, m_sizer_h;//puissance de 2, 64 à 8192
-        unsigned int m_largeur_tab, m_bandeRestante, m_moitEcran;
-        bool m_doubleBarre;
-        Couleur m_fond, m_barre, m_police, m_haut, m_miSup, m_miInf, m_bas;
-        wxGLContext *m_context;
-        ImageText *m_imageText, *m_imageTemps;
-
-        DECLARE_EVENT_TABLE()
-};
+            DECLARE_EVENT_TABLE()
+        };
+    }
+}
 
 #endif // MUSIQUEGRAPH_H_INCLUDED

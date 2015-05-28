@@ -72,6 +72,7 @@ int ExplorerListCtrl::addItem(const wxString& name, const wxString& kind, const 
     int pos = addItem(name, kind);
     SetItemTextColour(pos, foreground);
     SetItemBackgroundColour(pos, background);
+    return pos;
 }
 
 void ExplorerListCtrl::selectLine(const wxString& text)
@@ -86,6 +87,11 @@ void ExplorerListCtrl::selectLine(const long line)
         return;
     SetItemState(line, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED);
     EnsureVisible(line);
+}
+
+void ExplorerListCtrl::selectAll()
+{
+    SetItemState(-1, wxLIST_STATE_SELECTED, wxLIST_STATE_SELECTED);
 }
 
 std::vector<unsigned long> ExplorerListCtrl::getSelectedLines()
@@ -110,5 +116,11 @@ void ExplorerListCtrl::removeSelectedLines()
         DeleteItem(index);
         index = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
     }
+}
+
+void ExplorerListCtrl::deselectLines()
+{
+    while (GetSelectedItemCount() > 0)
+        SetItemState(GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED), 0, wxLIST_STATE_SELECTED);
 }
 

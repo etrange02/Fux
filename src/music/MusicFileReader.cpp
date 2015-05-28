@@ -11,25 +11,41 @@
 using namespace TagLib;
 using namespace ::music;
 
-MusicFileReader::MusicFileReader(Music& music) :
+/** @brief Constructor.
+ *
+ * @param music std::shared_ptr<Music>&
+ *
+ */
+MusicFileReader::MusicFileReader(std::shared_ptr<Music>& music) :
+    MusicFile(),
     m_music(music)
 {
-    m_music.SetName(m_music.GetFileName().AfterLast(wxFileName::GetPathSeparator()).BeforeLast('.'));
+    m_music->SetName(m_music->GetFileName().AfterLast(wxFileName::GetPathSeparator()).BeforeLast('.'));
 }
 
+/** @brief Destructor.
+ */
 MusicFileReader::~MusicFileReader()
 {
     //dtor
 }
 
+/** @brief Overload.
+ *
+ * @return void
+ *
+ */
 void MusicFileReader::process()
 {
-    if (m_music.GetFileName().IsEmpty() || !wxFileExists(m_music.GetFileName()))
+    if (m_music->GetFileName().IsEmpty() || !wxFileExists(m_music->GetFileName()))
         return;
+
+    if (m_music.use_count() == 1)
+        wxLogMessage(m_music->GetFileName());
 
     FillFields();
     ImageExtracting();
-    m_music.ShrinkData();
+    m_music->ShrinkData();
 }
 
 /** @brief Fill music data
@@ -39,19 +55,19 @@ void MusicFileReader::process()
  */
 void MusicFileReader::FillFields()
 {
-    m_music.SetPath(m_music.GetFileName().BeforeLast(wxFileName::GetPathSeparator()));
-    m_music.SetExtension(m_music.GetFileName().AfterLast('.'));
+    m_music->SetPath(m_music->GetFileName().BeforeLast(wxFileName::GetPathSeparator()));
+    m_music->SetExtension(m_music->GetFileName().AfterLast('.'));
 
-    TagLib::FileRef fileTAG = TagLib::FileRef(TagLib::FileName(m_music.GetFileName().fn_str()));
+    TagLib::FileRef fileTAG = TagLib::FileRef(TagLib::FileName(m_music->GetFileName().fn_str()));
 
-    m_music.SetArtists(wxString(fileTAG.tag()->artist().toCString(true), wxConvUTF8));
-    m_music.SetAlbum(wxString(fileTAG.tag()->album().toCString(true), wxConvUTF8));
-    m_music.SetTitle(wxString(fileTAG.tag()->title().toCString(true), wxConvUTF8));
-    m_music.SetGenres(wxString(fileTAG.tag()->genre().toCString(true), wxConvUTF8));
-    m_music.SetYear(fileTAG.tag()->year());
-    m_music.SetDuration(fileTAG.audioProperties()->length());
-    m_music.SetDebit(fileTAG.audioProperties()->bitrate());
-    m_music.SetSize(fileTAG.file()->length());
+	m_music->SetArtists(wxString(fileTAG.tag()->artist().toCString(true), wxConvUTF8));
+    m_music->SetAlbum(wxString(fileTAG.tag()->album().toCString(true), wxConvUTF8));
+    m_music->SetTitle(wxString(fileTAG.tag()->title().toCString(true), wxConvUTF8));
+    m_music->SetGenres(wxString(fileTAG.tag()->genre().toCString(true), wxConvUTF8));
+    m_music->SetYear(fileTAG.tag()->year());
+    m_music->SetDuration(fileTAG.audioProperties()->length());
+    m_music->SetDebit(fileTAG.audioProperties()->bitrate());
+    m_music->SetSize(fileTAG.file()->length());
 }
 
 /** @brief Fill sleeves (images)
@@ -61,7 +77,7 @@ void MusicFileReader::FillFields()
  */
 void MusicFileReader::ImageExtracting()
 {
-    TagLib::MPEG::File f(TagLib::FileName(m_music.GetFileName().fn_str()));
+    TagLib::MPEG::File f(TagLib::FileName(m_music->GetFileName().fn_str()));
     if(f.ID3v2Tag())
     {
         TagLib::ID3v2::FrameList l = f.ID3v2Tag()->frameList("APIC");
@@ -77,7 +93,7 @@ void MusicFileReader::ImageExtracting()
                 wxString typeImage(p->mimeType().toCString(true), wxConvLocal);
 
                 if (typeImage.IsSameAs(_T("image/jpeg")) || typeImage.IsSameAs(_T("image/jpg")))
-                    m_music.SetRecordSleeve(new wxImage(stream, _T("image/jpeg")));
+                    m_music->SetRecordSleeve(new wxImage(stream, _T("image/jpeg")));
             }
         }
     }
@@ -85,6 +101,6 @@ void MusicFileReader::ImageExtracting()
 
 Music* MusicFileReader::getMusic()
 {
-    return &m_music;
+    return m_music.get();
 }
 

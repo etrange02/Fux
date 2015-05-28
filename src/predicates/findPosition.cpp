@@ -23,3 +23,8 @@ bool findPosition::operator()(const IMusic* music)
     return (m_music == music);
 }
 
+bool findPosition::operator()(const std::shared_ptr<music::IMusic>& music)
+{
+    return (m_music == music.get());
+}
+

@@ -14,7 +14,7 @@ class DialogTagMP3 : public wxDialog
         DialogTagMP3(wxWindow *parent, const wxWindowID id, const music::Music& music);
         ~DialogTagMP3();
         bool isModified();
-        wxString& getComment() const;
+        wxString getComment() const;
         ImagePochetteMusique* getImage();
         music::Music* getResult();
 

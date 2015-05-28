@@ -36,8 +36,8 @@ bool PlaylistDriveManagerState::fillExplorerList()
     m_data.getExplorerPanel().getExplorerListCtrl().DeleteAllItems();
     m_data.getElements().clear();
 
-    std::vector<Music*>& musics = MusicManagerSwitcher::get().getMusics();
-    for (std::vector<Music*>::iterator it = musics.begin(); it != musics.end(); ++it)
+    music::MusicCollection& musics = MusicManagerSwitcher::get().getMusics();
+    for (MusicIterator it = musics.begin(); it != musics.end(); ++it)
     {
         m_data.getExplorerPanel().getExplorerListCtrl().addLine((*it)->GetName(), (*it)->GetExtension());
         addDriveManagerListElement((*it)->GetFileName());
@@ -86,6 +86,41 @@ bool PlaylistDriveManagerState::canMoveTo(const DriveManagerState& other) const
     return true;
 }
 
+bool PlaylistDriveManagerState::canDeleteSelectedItems() const
+{
+    return !m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines().empty();
+}
+
+bool PlaylistDriveManagerState::canSelectAll() const
+{
+    return true;
+}
+
+bool PlaylistDriveManagerState::canCreateDir() const
+{
+    return 0 != m_data.getExplorerPanel().getExplorerListCtrl().GetItemCount();
+}
+
+bool PlaylistDriveManagerState::canCreateContainerFile() const
+{
+    return !m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines().empty();
+}
+
+bool PlaylistDriveManagerState::canPlayItems() const
+{
+    return !m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines().empty();
+}
+
+bool PlaylistDriveManagerState::canRename() const
+{
+    return false;
+}
+
+bool PlaylistDriveManagerState::canCreateShortcut() const
+{
+    return false;
+}
+
 void PlaylistDriveManagerState::copyElements(DriveManagerState& source)
 {
     MusicManagerSwitcher::get().parse(source.getSelectedItems());
@@ -96,7 +131,7 @@ void PlaylistDriveManagerState::moveElements(DriveManagerState& source)
 {
     std::vector<unsigned long> selectedItemsPosition = m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines();
 
-    const long position = (selectedItemsPosition.empty()) ? MusicManagerSwitcher::get().size() : selectedItemsPosition.at(0);
+    const unsigned long position = (selectedItemsPosition.empty()) ? MusicManagerSwitcher::get().size() : selectedItemsPosition.at(0);
 
     wxArrayString itemsPosition = source.getSelectedItemsPosition();
     MusicManagerSwitcher::get().moveIntTitlesAt(itemsPosition, position);
@@ -105,3 +140,22 @@ void PlaylistDriveManagerState::moveElements(DriveManagerState& source)
     source.fillExplorerList();
 }
 
+void PlaylistDriveManagerState::createDir()
+{
+}
+
+void PlaylistDriveManagerState::createContainerFile()
+{
+}
+
+void PlaylistDriveManagerState::playItems()
+{
+}
+
+void PlaylistDriveManagerState::rename()
+{
+}
+
+void PlaylistDriveManagerState::createShortcut()
+{
+}

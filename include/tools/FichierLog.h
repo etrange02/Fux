@@ -3,7 +3,13 @@
 
 #include <wx/wx.h>
 #include <wx/file.h>
-#include "../settings/Parametre.h"
+#include "settings/Parametre.h"
+
+#if DEBUG
+#define LogFileAppend(string) FichierLog::Get()->Ajouter(string)
+#else
+#define LogFileAppend(string)
+#endif // DEBUG
 
 class FichierLog
 {

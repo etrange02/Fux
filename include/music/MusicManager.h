@@ -14,26 +14,29 @@ namespace music
 {
     class MusicList;
 
+    typedef std::vector<std::shared_ptr<Music>> MusicCollection;
+    typedef MusicCollection::iterator MusicIterator;
+
     class MusicManager
     {
         public:
             MusicManager();
             virtual ~MusicManager();
 
-            std::vector<Music*>& getAllMusics();
-            std::vector<Music*>& getSearchedMusics();
+            MusicCollection& getAllMusics();
+            MusicCollection& getSearchedMusics();
             size_t getCurrentMusicPosition();
             size_t getCurrentMusicPositionInSearch();
             bool playMusicAt(long position);
             bool playMusicAtInSearch(long position);
-            void moveIntTitlesAt(const wxArrayString& titles, long position);
-            void moveIntTitlesAtInSearch(const wxArrayString& titles, long position);
+            void moveIntTitlesAt(const wxArrayString& titles, size_t position);
+            void moveIntTitlesAtInSearch(const wxArrayString& titles, unsigned long position);
             void placeStringTitlesAt(const wxArrayString& titles, size_t position);
             void placeStringTitlesAtInSearch(const wxArrayString& titles, size_t position);
             void deleteTitleAt(size_t position);
             void deleteTitleAtInSearch(size_t position);
-            void updateMusicContent(const long position, Music* musicData);
-            void updateMusicContentInSearch(const long position, Music* musicData);
+            void updateMusicContent(const size_t position, Music* musicData);
+            void updateMusicContentInSearch(const size_t position, Music* musicData);
             void deleteTitles(wxArrayString& titles, bool update = false);
 
             bool isRepete();
@@ -75,20 +78,19 @@ namespace music
             void sendMusicNoFileEvent();
             void sendSearchEndingEvent();
             void launchSearching();
-            void updateMusicContent(const long position, Music* musicData, std::vector<Music*>& collection);
+            void updateMusicContent(const size_t position, Music* musicData, MusicCollection& collection);
             void updateCurrentMusic(Music* newMusicData);
 
         private:
-
-            wxWindow* m_parent;
+            MusicPlayer m_musicPlayer;
+            wxString m_searchedWord;
+            MusicCollection m_searchedMusicCollection;
             bool m_repete;
             bool m_random;
-            MusicPlayer m_musicPlayer;
-            MusicList* m_musicList;
-            Music* m_music;
             size_t m_musicPosition;
-            wxString m_searchedWord;
-            std::vector<Music*> m_searchedMusicCollection;
+            wxWindow* m_parent;
+            Music* m_music;
+            MusicList* m_musicList;
     };
 }
 

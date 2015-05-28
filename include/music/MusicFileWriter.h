@@ -6,6 +6,7 @@
 #include <wx/filename.h>
 #include <wx/dir.h>
 #include <wx/mstream.h>
+#include <memory>
 #include "Music.h"
 #include "MusicFile.h"
 
@@ -23,7 +24,7 @@ namespace music
     {
         public:
             /** Default constructor */
-            MusicFileWriter(Music* src, Music* dst);
+            MusicFileWriter(Music* src, std::shared_ptr<Music>& dst);
             /** Default destructor */
             virtual ~MusicFileWriter();
 
@@ -42,7 +43,7 @@ namespace music
             void refreshFileName(Music& music);
 
             Music* m_musicSrc; //!< Member variable "m_musicIn"
-            Music* m_musicDst; //!< Member variable "m_musicOut"
+            std::shared_ptr<Music> m_musicDst; //!< Member variable "m_musicOut"
     };
 }
 

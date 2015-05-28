@@ -54,6 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -132,7 +133,7 @@ $(document).ready(function(){initNavTree('functions_i.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -146,7 +147,7 @@ $(document).ready(function(){initNavTree('functions_i.html','');});
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>ImageExtracting()
-: <a class="el" href="class_music_file_reader.html#a3839e20dcb808f870ca623689b83ac5a">MusicFileReader</a>
+: <a class="el" href="classmusic_1_1_music_file_reader.html#a3839e20dcb808f870ca623689b83ac5a">music::MusicFileReader</a>
 </li>
 <li>ImagePochetteMusique()
 : <a class="el" href="class_image_pochette_musique.html#a7249c5a5fb1c5353a328c2b5d35ed759">ImagePochetteMusique</a>
@@ -155,16 +156,16 @@ $(document).ready(function(){initNavTree('functions_i.html','');});
 : <a class="el" href="class_image_text.html#aba67445215ef71502c786073475985aa">ImageText</a>
 </li>
 <li>importFileContent()
-: <a class="el" href="class_music_list.html#a768939b3800688880448f749a55e1745">MusicList</a>
+: <a class="el" href="classmusic_1_1_music_list.html#a768939b3800688880448f749a55e1745">music::MusicList</a>
 </li>
 <li>initialize()
-: <a class="el" href="class_music_player.html#a9e55af1a7f13595ffd161ab16d350605">MusicPlayer</a>
+: <a class="el" href="classmusic_1_1_music_player.html#a9e55af1a7f13595ffd161ab16d350605">music::MusicPlayer</a>
 </li>
 <li>Initialize()
 : <a class="el" href="class_play_list.html#a392f82e08750e47c6461b72bce73aa2a">PlayList</a>
 </li>
 <li>insertLines()
-: <a class="el" href="class_music_list.html#ac9bbd321c2d9868af3063f19313624be">MusicList</a>
+: <a class="el" href="classmusic_1_1_music_list.html#ac9bbd321c2d9868af3063f19313624be">music::MusicList</a>
 </li>
 <li>IsAction()
 : <a class="el" href="class_element_thread_fichier.html#a1764a11f1f3f094b3ff420f9f8896f0e">ElementThreadFichier</a>
@@ -192,22 +193,22 @@ $(document).ready(function(){initNavTree('functions_i.html','');});
 : <a class="el" href="class_image_pochette_musique.html#ae285551d90a3e72a1ecd8c9db6f96f83">ImagePochetteMusique</a>
 </li>
 <li>isPaused()
-: <a class="el" href="class_music_player.html#a078cc8ff3bfb273aee8a78a4cc7d7b03">MusicPlayer</a>
+: <a class="el" href="classmusic_1_1_music_player.html#a078cc8ff3bfb273aee8a78a4cc7d7b03">music::MusicPlayer</a>
 </li>
 <li>isPlaying()
-: <a class="el" href="class_music_player.html#a3263834225d4e6adc6943f000506b214">MusicPlayer</a>
+: <a class="el" href="classmusic_1_1_music_player.html#a3263834225d4e6adc6943f000506b214">music::MusicPlayer</a>
 </li>
 <li>isRandom()
-: <a class="el" href="class_music_manager.html#a45d17942a8962d4e98fbaa3f154a5672">MusicManager</a>
+: <a class="el" href="classmusic_1_1_music_manager.html#a45d17942a8962d4e98fbaa3f154a5672">music::MusicManager</a>
 </li>
 <li>isRepertoireInstallationDefaut()
 : <a class="el" href="class_parametre.html#a04fcf91df13d7233ed99a0d157532ea4">Parametre</a>
 </li>
 <li>isRepete()
-: <a class="el" href="class_music_manager.html#ab9bcd24a2d673600407b9d96850ad90c">MusicManager</a>
+: <a class="el" href="classmusic_1_1_music_manager.html#ab9bcd24a2d673600407b9d96850ad90c">music::MusicManager</a>
 </li>
 <li>isStopped()
-: <a class="el" href="class_music_player.html#af7de0a0ba29c61b421b481b52138ce80">MusicPlayer</a>
+: <a class="el" href="classmusic_1_1_music_player.html#af7de0a0ba29c61b421b481b52138ce80">music::MusicPlayer</a>
 </li>
 <li>Item()
 : <a class="el" href="class_dn_d_liste_fichier.html#a72854804d616324ed50bf27a24aa674e">DnDListeFichier</a>
@@ -218,7 +219,7 @@ $(document).ready(function(){initNavTree('functions_i.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Généré le Dimanche 12 Avril 2015 16:42:47 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Vendredi 29 Mai 2015 00:02:10 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

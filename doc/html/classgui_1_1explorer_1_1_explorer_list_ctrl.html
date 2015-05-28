@@ -54,6 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -102,7 +103,7 @@ $(document).ready(function(){initNavTree('classgui_1_1explorer_1_1_explorer_list
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -159,6 +160,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>selectLine</b> (const
 <tr class="memitem:a0f5b7a03422678ad7e0ea4523f20ca89"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f5b7a03422678ad7e0ea4523f20ca89"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>selectLine</b> (const long line)</td></tr>
 <tr class="separator:a0f5b7a03422678ad7e0ea4523f20ca89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa43207d23b4bc0d9b0756b82c529211"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa43207d23b4bc0d9b0756b82c529211"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>selectAll</b> ()</td></tr>
+<tr class="separator:aaa43207d23b4bc0d9b0756b82c529211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfd4f3acfe517192786f23672411e17a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acfd4f3acfe517192786f23672411e17a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>deselectLines</b> ()</td></tr>
+<tr class="separator:acfd4f3acfe517192786f23672411e17a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2676b47f250bf4b3e72e9f0a62ee432"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2676b47f250bf4b3e72e9f0a62ee432"></a>
 std::vector&lt; unsigned long &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getSelectedLines</b> ()</td></tr>
 <tr class="separator:ae2676b47f250bf4b3e72e9f0a62ee432"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -243,7 +250,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>addItem</b> (const wxS
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>gui</b></li><li class="navelem"><b>explorer</b></li><li class="navelem"><a class="el" href="classgui_1_1explorer_1_1_explorer_list_ctrl.html">ExplorerListCtrl</a></li>
-    <li class="footer">Généré le Dimanche 12 Avril 2015 16:42:46 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Vendredi 29 Mai 2015 00:02:09 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

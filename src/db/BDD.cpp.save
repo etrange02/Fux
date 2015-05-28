@@ -1,9 +1,9 @@
 /***************************************************************
  * Name:      BDD.cpp
  * Purpose:   Code for Fu(X) 2.0
- * Author:    David Lecoconnier (etrange02@aol.com)
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2011-11-29
- * Copyright: David Lecoconnier (http://www.fuxplay.com)
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
 #include "wx/wxprec.h"
@@ -12,7 +12,7 @@
     #pragma hdrstop
 #endif
 
-#include "../../include/BDD/BDD.h"
+#include "../../include/db/BDD.h"
 
 /**
  * @class BDD
@@ -49,7 +49,7 @@ BDD::BDD()
 
 BDD::~BDD()
 {
-    FichierLog::Get()->Ajouter(_T("BDD::~BDD"));
+    LogFileAppend(_T("BDD::~BDD"));
 }
 
 /**
@@ -679,7 +679,7 @@ wxArrayInt* BDD::RechercherChansonByNom(wxString nomChanson)
 
 /**
  * Renvoie la liste des chansons se trouvant dans l'album nom
- * @param nom le nom de l'album (pas nécessairement complet)
+ * @param nomAlbum le nom de l'album (pas nécessairement complet)
  * @return les albums parus avec cette chanson
  * @see GetContientAlbum
  */
@@ -690,7 +690,7 @@ wxArrayInt* BDD::RechercherChansonByAlbum(wxString nomAlbum)
 
 /**
  * Renvoie la liste des chansons produites par un artiste
- * @param nom le nom de l'artiste (pas nécessairement complet
+ * @param nomArtiste le nom de l'artiste (pas nécessairement complet
  * @return les chansons produites par l'artiste
  * @see GetProduitChanson
  */

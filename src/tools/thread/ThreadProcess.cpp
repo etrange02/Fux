@@ -17,8 +17,8 @@ using namespace tools::thread;
  */
 ThreadProcess::ThreadProcess(IThreadManager* threadManager) :
     wxThread(wxTHREAD_JOINABLE),
-    m_threadManager(threadManager),
     m_semaphore(0, 1),
+    m_threadManager(threadManager),
     m_work(NULL)
 {
 }

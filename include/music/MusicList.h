@@ -3,28 +3,31 @@
 
 #include <wx/wx.h>
 #include <vector>
+#include <memory>
 
-#include <wx/dir.h>
+#include "music/Music.h"
 
 #include "Define.h"
-#include "Music.h"
-#include "Factory.h"
 #include "tools/dir_traverser/ISearchTraversable.h"
 #include "tools/dir_traverser/Search.h"
-#include "settings/Parametre.h"
 
 extern const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE;
 extern const wxEventType wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED;
 
 namespace music
 {
+    class Music;
+
+    typedef std::vector<std::shared_ptr<Music>> MusicCollection;
+    typedef MusicCollection::iterator MusicIterator;
+
     class MusicList : public ISearchTraversable
     {
         public:
             MusicList();
             virtual ~MusicList();
 
-            std::vector<Music*>& getCollection() const;
+            MusicCollection& getCollection() const;
 
             bool empty() const;
             size_t size() const;
@@ -62,7 +65,7 @@ namespace music
             void sendMusicListLineDeleted(const int position);
 
         private:
-            std::vector<Music*> *m_musicList;
+            MusicCollection *m_musicList;
             wxWindow *m_parent;
             bool m_sendEventWhenAdding;
     };

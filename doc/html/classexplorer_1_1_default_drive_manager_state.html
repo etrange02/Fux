@@ -54,6 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -102,7 +103,7 @@ $(document).ready(function(){initNavTree('classexplorer_1_1_default_drive_manage
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -133,7 +134,7 @@ Graphe d'héritage de explorer::DefaultDriveManagerState:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a668a84bbda8173057df325daf5a7c564"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexplorer_1_1_default_drive_manager_state.html#a668a84bbda8173057df325daf5a7c564">DefaultDriveManagerState</a> (<a class="el" href="class_explorer_manager_data.html">ExplorerManagerData</a> &amp;data)</td></tr>
+<tr class="memitem:a668a84bbda8173057df325daf5a7c564"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexplorer_1_1_default_drive_manager_state.html#a668a84bbda8173057df325daf5a7c564">DefaultDriveManagerState</a> (<a class="el" href="classexplorer_1_1_explorer_manager_data.html">ExplorerManagerData</a> &amp;data)</td></tr>
 <tr class="memdesc:a668a84bbda8173057df325daf5a7c564"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a668a84bbda8173057df325daf5a7c564">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a668a84bbda8173057df325daf5a7c564"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a0d6723fa01a403004ba3b9f8832b1f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexplorer_1_1_default_drive_manager_state.html#a4a0d6723fa01a403004ba3b9f8832b1f">~DefaultDriveManagerState</a> ()</td></tr>
@@ -160,6 +161,27 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>canCopyTo</b>
 <tr class="memitem:aa03c66520f5bceb4f911adf876e7c320"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa03c66520f5bceb4f911adf876e7c320"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>canMoveTo</b> (const <a class="el" href="classexplorer_1_1_drive_manager_state.html">DriveManagerState</a> &amp;other) const </td></tr>
 <tr class="separator:aa03c66520f5bceb4f911adf876e7c320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1970104933543d6c47847ba57c94a5a9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1970104933543d6c47847ba57c94a5a9"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>canDeleteSelectedItems</b> () const </td></tr>
+<tr class="separator:a1970104933543d6c47847ba57c94a5a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abed14f0502eaf2929e2f26fc2937ae5d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abed14f0502eaf2929e2f26fc2937ae5d"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>canPlayItems</b> () const </td></tr>
+<tr class="separator:abed14f0502eaf2929e2f26fc2937ae5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d7233cd7cbe5ce82bb55970af2974b4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1d7233cd7cbe5ce82bb55970af2974b4"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>canRename</b> () const </td></tr>
+<tr class="separator:a1d7233cd7cbe5ce82bb55970af2974b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6edb51f79294b15afae61e3570568e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6edb51f79294b15afae61e3570568e3"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>canCreateShortcut</b> () const </td></tr>
+<tr class="separator:ab6edb51f79294b15afae61e3570568e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af958ce83124310abda5cb850fcd56fff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af958ce83124310abda5cb850fcd56fff"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>canSelectAll</b> () const </td></tr>
+<tr class="separator:af958ce83124310abda5cb850fcd56fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadeda4ea804105defb8dc5dfcb98eff7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadeda4ea804105defb8dc5dfcb98eff7"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>canCreateDir</b> () const </td></tr>
+<tr class="separator:aadeda4ea804105defb8dc5dfcb98eff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a472bfd23322d768ede1259b71b5b9f91"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a472bfd23322d768ede1259b71b5b9f91"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>canCreateContainerFile</b> () const </td></tr>
+<tr class="separator:a472bfd23322d768ede1259b71b5b9f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a120b1c73466830d68866add7336e03dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a120b1c73466830d68866add7336e03dc"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>deleteSelectedItems</b> ()</td></tr>
 <tr class="separator:a120b1c73466830d68866add7336e03dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,6 +191,21 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>moveElements<
 <tr class="memitem:a2f1feaed97cd613e49216564084d6f31"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f1feaed97cd613e49216564084d6f31"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>copyElements</b> (<a class="el" href="classexplorer_1_1_drive_manager_state.html">DriveManagerState</a> &amp;source)</td></tr>
 <tr class="separator:a2f1feaed97cd613e49216564084d6f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab423c2ad1ccb41c2c9e2f7d93f47a31d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab423c2ad1ccb41c2c9e2f7d93f47a31d"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>createDir</b> ()</td></tr>
+<tr class="separator:ab423c2ad1ccb41c2c9e2f7d93f47a31d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7de058f6d031280a780dd00b66784456"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7de058f6d031280a780dd00b66784456"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>createContainerFile</b> ()</td></tr>
+<tr class="separator:a7de058f6d031280a780dd00b66784456"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb7c5060382a051eed5022affef6c537"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb7c5060382a051eed5022affef6c537"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>playItems</b> ()</td></tr>
+<tr class="separator:acb7c5060382a051eed5022affef6c537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac27401cf106da845528de51e95a1cf82"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac27401cf106da845528de51e95a1cf82"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>rename</b> ()</td></tr>
+<tr class="separator:ac27401cf106da845528de51e95a1cf82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04096052d0ac096a675a4b58957040c2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04096052d0ac096a675a4b58957040c2"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>createShortcut</b> ()</td></tr>
+<tr class="separator:a04096052d0ac096a675a4b58957040c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae395b54ebd568624635bbef3aee32a1e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae395b54ebd568624635bbef3aee32a1e"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isDirectory</b> () const </td></tr>
 <tr class="separator:ae395b54ebd568624635bbef3aee32a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,6 +221,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>addDriveManagerListEl
 <tr class="memitem:a01041a5abe0867f64ea2a67e649b7eb6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01041a5abe0867f64ea2a67e649b7eb6"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isSameKind</b> (const <a class="el" href="classexplorer_1_1_drive_manager_state.html">DriveManagerState</a> &amp;other) const </td></tr>
 <tr class="separator:a01041a5abe0867f64ea2a67e649b7eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef45161030c5ee80df23f338e355eab5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aef45161030c5ee80df23f338e355eab5"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>selectAll</b> ()</td></tr>
+<tr class="separator:aef45161030c5ee80df23f338e355eab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac5742ee5305bab776847109fdc7c0c9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac5742ee5305bab776847109fdc7c0c9"></a>
 wxArrayString&#160;</td><td class="memItemRight" valign="bottom"><b>getSelectedItems</b> ()</td></tr>
 <tr class="separator:aac5742ee5305bab776847109fdc7c0c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -203,7 +243,7 @@ wxArrayString&#160;</td><td class="memItemRight" valign="bottom"><b>convertPosit
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
 <tr class="memitem:ad02223e2bab89fa8a6ed21f711766511"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad02223e2bab89fa8a6ed21f711766511"></a>
-<a class="el" href="class_explorer_manager_data.html">ExplorerManagerData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>m_data</b></td></tr>
+<a class="el" href="classexplorer_1_1_explorer_manager_data.html">ExplorerManagerData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>m_data</b></td></tr>
 <tr class="separator:ad02223e2bab89fa8a6ed21f711766511"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
@@ -215,7 +255,7 @@ Attributs protégés</h2></td></tr>
         <tr>
           <td class="memname">DefaultDriveManagerState::DefaultDriveManagerState </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_explorer_manager_data.html">ExplorerManagerData</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classexplorer_1_1_explorer_manager_data.html">ExplorerManagerData</a> &amp;&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
           <td></td>
         </tr>
@@ -260,8 +300,8 @@ Attributs protégés</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>explorer</b></li><li class="navelem"><a class="el" href="classexplorer_1_1_default_drive_manager_state.html">DefaultDriveManagerState</a></li>
-    <li class="footer">Généré le Dimanche 12 Avril 2015 16:42:45 pour Fu(X) 2.0 par
+    <li class="navelem"><a class="el" href="namespaceexplorer.html">explorer</a></li><li class="navelem"><a class="el" href="classexplorer_1_1_default_drive_manager_state.html">DefaultDriveManagerState</a></li>
+    <li class="footer">Généré le Vendredi 29 Mai 2015 00:02:09 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

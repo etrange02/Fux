@@ -9,7 +9,7 @@
 			<notes>
 				<![CDATA[Lecoconnier David
 Projet <Fu(X) 2.0>
-etrange02@aol.com
+david.lecoconnier@free.fr
 Créé le 24/07/2009
 
 IMPORTANT, A FAIRE !!!
@@ -44,10 +44,6 @@ IMPORTANT, A FAIRE !!!
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add directory="include/explorer/state" />
-					<Add directory="include/explorer" />
-					<Add directory="include/tools/dir_traverser" />
-					<Add directory="include/tools/thread" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -70,10 +66,6 @@ IMPORTANT, A FAIRE !!!
 					<Add option="-Wall" />
 					<Add option="-g" />
 					<Add option="-DDEBUG" />
-					<Add directory="include/explorer/state" />
-					<Add directory="include/explorer" />
-					<Add directory="include/tools/dir_traverser" />
-					<Add directory="include/tools/thread" />
 				</Compiler>
 			</Target>
 			<Environment>
@@ -125,6 +117,7 @@ IMPORTANT, A FAIRE !!!
 			<Add directory="include/tools" />
 			<Add directory="include/tools/stl" />
 			<Add directory="include/tools/thread" />
+			<Add directory="include/tools/dir_traverser" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/include" />
@@ -134,6 +127,7 @@ IMPORTANT, A FAIRE !!!
 			<Add library="${SQLITE3}/lib/sqlite3.a" />
 			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_gl.a" />
 			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_core.a" />
+			<Add library="libwxbase$(WX_VER1)$(WX_VER2)$(AURD)_net.a" />
 			<Add library="libwxbase$(WX_VER1)$(WX_VER2)$(AURD)_xml.a" />
 			<Add library="libwxbase$(WX_VER1)$(WX_VER2)$(AURD).a" />
 			<Add library="libwxpng$(RD).a" />
@@ -141,7 +135,7 @@ IMPORTANT, A FAIRE !!!
 			<Add library="libwxjpeg$(RD).a" />
 			<Add library="libwxzlib$(RD).a" />
 			<Add library="libwxregex$(AURD).a" />
-			<Add library="libwxexpat.a" />
+			<Add library="libwxexpat$(RD).a" />
 			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_adv.a" />
 			<Add library="libkernel32.a" />
 			<Add library="libuser32.a" />

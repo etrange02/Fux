@@ -1,7 +1,7 @@
 #ifndef PLAY_LISTE_H_INCLUDED
 #define PLAY_LISTE_H_INCLUDED
 
-#include "../../Define.h"
+#include "Define.h"
 #include <wx/wx.h>
 #include <wx/stdpaths.h>
 #include <wx/dir.h>
@@ -13,14 +13,14 @@
 #include <wx/progdlg.h>
 #include <wx/mstream.h>
 #include <wx/srchctrl.h>
-//#include "../../music/Musique.h"
-#include "../../music/MusicManager.h"
+//#include "music/Musique.h"
+#include "music/MusicManager.h"
 #include "PlayListTableau.h"
-#include "../dialogs/DialogEnregistreM3U.h"
-#include "../dialogs/DialogTagMP3.h"
-#include "../tools/jaquetteClasses.h"
-#include "../../tools/OS_Win.h"
-#include "../widgets/SliderSon.h"
+#include "dialogs/DialogEnregistreM3U.h"
+#include "dialogs/DialogTagMP3.h"
+#include "tools/jaquetteClasses.h"
+#include "tools/OS_Win.h"
+#include "widgets/SliderSon.h"
 
 
 class PlayList : public wxPanel

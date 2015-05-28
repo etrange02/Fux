@@ -54,6 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -102,7 +103,7 @@ $(document).ready(function(){initNavTree('classexplorer_1_1_explorer_factory.htm
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -123,16 +124,16 @@ $(document).ready(function(){initNavTree('classexplorer_1_1_explorer_factory.htm
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Fonctions membres publiques statiques</h2></td></tr>
 <tr class="memitem:aa4f4d4855d5ff02ec80f4bd1b515df8f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4f4d4855d5ff02ec80f4bd1b515df8f"></a>
-static <a class="el" href="classexplorer_1_1_drive_manager_state.html">DriveManagerState</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>createDefaultDriveManagerState</b> (<a class="el" href="class_explorer_manager_data.html">ExplorerManagerData</a> &amp;data)</td></tr>
+static <a class="el" href="classexplorer_1_1_drive_manager_state.html">DriveManagerState</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>createDefaultDriveManagerState</b> (<a class="el" href="classexplorer_1_1_explorer_manager_data.html">ExplorerManagerData</a> &amp;data)</td></tr>
 <tr class="separator:aa4f4d4855d5ff02ec80f4bd1b515df8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a674c94b2314c68e632429563963bbd4a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a674c94b2314c68e632429563963bbd4a"></a>
-static <a class="el" href="classexplorer_1_1_drive_manager_state.html">DriveManagerState</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>createDirDriveManagerState</b> (<a class="el" href="class_explorer_manager_data.html">ExplorerManagerData</a> &amp;data)</td></tr>
+static <a class="el" href="classexplorer_1_1_drive_manager_state.html">DriveManagerState</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>createDirDriveManagerState</b> (<a class="el" href="classexplorer_1_1_explorer_manager_data.html">ExplorerManagerData</a> &amp;data)</td></tr>
 <tr class="separator:a674c94b2314c68e632429563963bbd4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fb4f007a8bfdfd358c3751cce904840"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9fb4f007a8bfdfd358c3751cce904840"></a>
-static <a class="el" href="classexplorer_1_1_drive_manager_state.html">DriveManagerState</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>createFileDriveManagerState</b> (<a class="el" href="class_explorer_manager_data.html">ExplorerManagerData</a> &amp;data)</td></tr>
+static <a class="el" href="classexplorer_1_1_drive_manager_state.html">DriveManagerState</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>createFileDriveManagerState</b> (<a class="el" href="classexplorer_1_1_explorer_manager_data.html">ExplorerManagerData</a> &amp;data)</td></tr>
 <tr class="separator:a9fb4f007a8bfdfd358c3751cce904840"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a990b725fb21166b86f9ef5a122d1b78f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a990b725fb21166b86f9ef5a122d1b78f"></a>
-static <a class="el" href="classexplorer_1_1_drive_manager_state.html">DriveManagerState</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>createPlaylistDriveManagerState</b> (<a class="el" href="class_explorer_manager_data.html">ExplorerManagerData</a> &amp;data)</td></tr>
+static <a class="el" href="classexplorer_1_1_drive_manager_state.html">DriveManagerState</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>createPlaylistDriveManagerState</b> (<a class="el" href="classexplorer_1_1_explorer_manager_data.html">ExplorerManagerData</a> &amp;data)</td></tr>
 <tr class="separator:a990b725fb21166b86f9ef5a122d1b78f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
@@ -145,8 +146,8 @@ static <a class="el" href="classexplorer_1_1_drive_manager_state.html">DriveMana
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>explorer</b></li><li class="navelem"><a class="el" href="classexplorer_1_1_explorer_factory.html">ExplorerFactory</a></li>
-    <li class="footer">Généré le Dimanche 12 Avril 2015 16:42:45 pour Fu(X) 2.0 par
+    <li class="navelem"><a class="el" href="namespaceexplorer.html">explorer</a></li><li class="navelem"><a class="el" href="classexplorer_1_1_explorer_factory.html">ExplorerFactory</a></li>
+    <li class="footer">Généré le Vendredi 29 Mai 2015 00:02:09 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

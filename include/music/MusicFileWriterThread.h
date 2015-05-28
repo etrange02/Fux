@@ -6,7 +6,7 @@
 #include "thread/IRunnable.h"
 #include "MusicFileWriter.h"
 
-extern const wxEventType wxEVT_FUX_MUSICFILE_READER_THREAD;
+extern const wxEventType wxEVT_FUX_MUSICFILE_WRITER_THREAD;
 
 namespace music
 {

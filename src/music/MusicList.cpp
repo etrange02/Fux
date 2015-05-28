@@ -8,6 +8,8 @@
  **************************************************************/
 #include "music/MusicList.h"
 #include "tools/thread/ThreadManager.h"
+#include "music/Factory.h"
+#include "settings/Parametre.h"
 
 using namespace ::music;
 
@@ -16,17 +18,14 @@ const wxEventType wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED = wxNewEventType();
 /// TODO (David): Complete wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED event by using it to refresh PlayListTableau and explorers...
 
 
-typedef std::vector<Music*> MusicCollection;
-typedef MusicCollection::iterator MusicIterator;
-
-
 /** @brief Default constructor
  */
 MusicList::MusicList() :
+    ISearchTraversable(),
+    m_musicList(new MusicCollection),
     m_parent(NULL),
     m_sendEventWhenAdding(true)
 {
-    m_musicList = new std::vector<Music*>;
 }
 
 /** @brief Default destructor
@@ -41,7 +40,7 @@ MusicList::~MusicList()
  * @return the music list
  *
  */
-std::vector<Music*>& MusicList::getCollection() const
+MusicCollection& MusicList::getCollection() const
 {
     return *m_musicList;
 }
@@ -70,7 +69,6 @@ size_t MusicList::size() const
  * Parse the directory given in parameter
  * @param dirname the directory name
  * @param recursive recurs all subdirectories
- * @return void
  *
  */
 void MusicList::parseDirectory(const wxString& dirname, bool recursive)
@@ -84,7 +82,6 @@ void MusicList::parseDirectory(const wxString& dirname, bool recursive)
 /** @brief Parse the directory given in parameter and subdirectories
  * Parse the directory given in parameter and subdirectories
  * @param dirname the directory name
- * @return void
  *
  */
 void MusicList::parseDirectoryRecursively(const wxString& dirname)
@@ -97,7 +94,6 @@ void MusicList::parseDirectoryRecursively(const wxString& dirname)
 /** @brief Parse only the directory given in parameter
  * Parse only the directory given in parameter and not subdirectories
  * @param dirname the directory name
- * @return void
  *
  */
 void MusicList::parseDirectoryWithoutRecurs(const wxString& dirname)
@@ -116,7 +112,6 @@ void MusicList::parseDirectoryWithoutRecurs(const wxString& dirname)
 
 /** @brief Clears the list
  * Clears the list
- * @return void
  *
  */
 void MusicList::clear()
@@ -127,7 +122,6 @@ void MusicList::clear()
 /** @brief Adds in the list some lines
  * Adds some lines in the list according to their kind (music file, playlist file, directory)
  * @param pathArray paths
- * @return void
  *
  */
 void MusicList::addLines(const wxArrayString& pathArray)
@@ -141,7 +135,6 @@ void MusicList::addLines(const wxArrayString& pathArray)
 /** @brief Adds the path in the list after verifications
  * Adds the path in the list after verifications of its kind
  * @param path a file or directory path
- * @return void
  *
  */
 void MusicList::addUnknownKindLine(const wxString& path)
@@ -164,21 +157,20 @@ void MusicList::addUnknownKindLine(const wxString& path)
 /** @brief Adds a music file in the list
  * Adds a music file in the list
  * @param path a music path
- * @return void
  *
  */
 void MusicList::addFileLine(const wxString& path)
 {
-    Music *music = Factory::createMusic(path);
-    m_musicList->push_back(music);
+    Music* music = Factory::createMusic(path);
+    std::shared_ptr<Music> sp(music);
+    m_musicList->push_back(sp);
     wxWindow *parent = isSendEventWhenAdding() ? m_parent : NULL;
-    tools::thread::ThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(*music, parent));
+    tools::thread::ThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(sp, parent));
 }
 
 /** @brief Parse the directory
  * Parse the directory
  * @param path the directory path
- * @return void
  *
  */
 void MusicList::addDirLine(const wxString& path)
@@ -189,7 +181,6 @@ void MusicList::addDirLine(const wxString& path)
 /** @brief Adds the content of the file into the list
  *
  * @param filename a filename
- * @return void
  *
  */
 void MusicList::importFileContent(const wxString& filename)
@@ -282,7 +273,7 @@ long MusicList::getPositionInList(const IMusic* music)
 
     for (MusicIterator iter = getCollection().begin(); iter != getCollection().end(); ++iter, ++index)
     {
-        if (music == *iter)
+        if (music == (*iter).get())
             return index;
     }
     return -1;
@@ -291,7 +282,6 @@ long MusicList::getPositionInList(const IMusic* music)
 /** @brief Removes the title at the given position
  *
  * @param position the position to remove
- * @return void
  *
  */
 void MusicList::removeLine(size_t position)
@@ -308,7 +298,6 @@ void MusicList::removeLine(size_t position)
 /** @brief Removes from the current list each filename in filenameArray
  *
  * @param filenameArray A list of filenames
- * @return void
  *
  */
 void MusicList::removeLines(wxArrayString& filenameArray)
@@ -333,7 +322,6 @@ void MusicList::removeLines(wxArrayString& filenameArray)
 /** @brief Exchange two lines
  * @param filename1 First line
  * @param filename2 Second line
- * @return void
  *
  */
 /// TODO (David): Mauvaise idée, utiliser les positions sera plus efficaces, et remplissage avec un filereader
@@ -342,9 +330,9 @@ void MusicList::removeLines(wxArrayString& filenameArray)
 void MusicList::exchangeLine(const wxString& filename1, const wxString& filename2)
 {
     int lineToChange = getPositionInList(filename1);
-    IMusic *music = getCollection().at(lineToChange);
-    getCollection().assign(lineToChange, new Music(filename2));
-    delete music;
+    //std::shared_ptr<Music> music = getCollection().at(lineToChange);
+    getCollection().assign(lineToChange, std::make_shared<Music>(filename2));
+    //delete music;
     sendMusicListUpdatedEvent();
 }
 
@@ -352,7 +340,6 @@ void MusicList::exchangeLine(const wxString& filename1, const wxString& filename
  * Insert filenames at a specific position
  * @param filenameArray A list of filenames
  * @param position position to put filenames
- * @return void
  *
  */
 void MusicList::insertLines(const wxArrayString& filenameArray, long position)
@@ -364,7 +351,7 @@ void MusicList::insertLines(const wxArrayString& filenameArray, long position)
     else if (insertionLine > (long) m_musicList->size()+1)
         insertionLine = m_musicList->size() + 1;
 
-    std::vector<Music*> *tmpArray = new std::vector<Music*>();
+    MusicCollection *tmpArray = new MusicCollection();
 
     for (wxArrayString::const_iterator iter = filenameArray.begin(); iter != filenameArray.end(); ++iter)
     {
@@ -383,7 +370,6 @@ void MusicList::insertLines(const wxArrayString& filenameArray, long position)
 /** @brief Modifies the parent window
  * Modifies the parent window
  * @param parent The parent
- * @return void
  *
  */
 void MusicList::setParent(wxWindow* parent)
@@ -403,7 +389,6 @@ wxWindow* MusicList::getParent() const
 
 /** @brief Send an event - the music list has been modified
  * Send an event to the parent window - the music list has been modified
- * @return void
  *
  */
 void MusicList::sendMusicListUpdatedEvent()

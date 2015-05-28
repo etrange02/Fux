@@ -9,6 +9,7 @@ namespace music
     class IMusic
     {
         public:
+            virtual ~IMusic();
             virtual wxString GetName()          const = 0;
             virtual wxString GetArtists()       const = 0;
             virtual wxString GetAlbum()         const = 0;
@@ -29,6 +30,7 @@ namespace music
             bool IsMatching(const wxString& word);
 
             virtual bool EqualsFilename(const IMusic *music) const = 0;
+            virtual bool operator==(const IMusic& other);
     };
 }
 

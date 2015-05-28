@@ -3,8 +3,8 @@
 
 #include <wx/wx.h>
 #include <wx/button.h>
-#include "../../Define.h"
-#include "../../tools/FichierLog.h"
+#include "Define.h"
+#include "tools/FichierLog.h"
 
 extern const wxEventType wxEVT_BOUTON_FENETRE_DETACHABLE;
 

@@ -12,7 +12,7 @@ Configurer configure.gcc
 -> STATIC 1
 -> RELEASE
 
-Pour la version C++11 il faut ajouter -std=gnu++11 les flags CXX.
+Pour la version C++11 il faut ajouter -std=gnu++11 dans les flags CXX.
 
 Faire une variable d'environnement $WXWIN pointant sur le répertoire de wxWidgets.
 

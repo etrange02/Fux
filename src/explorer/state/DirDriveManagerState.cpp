@@ -140,6 +140,41 @@ bool DirDriveManagerState::canMoveTo(const DriveManagerState& other) const
     return other.isDirectory() && !this->getPath().IsSameAs(other.getPath());
 }
 
+bool DirDriveManagerState::canDeleteSelectedItems() const
+{
+    return !m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines().empty();
+}
+
+bool DirDriveManagerState::canSelectAll() const
+{
+    return true;
+}
+
+bool DirDriveManagerState::canCreateDir() const
+{
+    return true;
+}
+
+bool DirDriveManagerState::canCreateContainerFile() const
+{
+    return true;
+}
+
+bool DirDriveManagerState::canPlayItems() const
+{
+    return !m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines().empty();
+}
+
+bool DirDriveManagerState::canRename() const
+{
+    return !m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines().empty();
+}
+
+bool DirDriveManagerState::canCreateShortcut() const
+{
+    return !m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines().empty();
+}
+
 void DirDriveManagerState::copyElements(DriveManagerState& source)
 {
     // insertion de nouveaux fichiers dans le dossier courant -> thread
@@ -149,4 +184,25 @@ void DirDriveManagerState::moveElements(DriveManagerState& source)
 {
     // renommage de fichiers (changement de chemin) d'une répertoire à l'autre
 }
+
+void DirDriveManagerState::createDir()
+{
+}
+
+void DirDriveManagerState::createContainerFile()
+{
+}
+
+void DirDriveManagerState::playItems()
+{
+}
+
+void DirDriveManagerState::rename()
+{
+}
+
+void DirDriveManagerState::createShortcut()
+{
+}
+
 

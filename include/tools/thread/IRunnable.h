@@ -13,6 +13,7 @@ namespace tools
         class IRunnable
         {
             public:
+                virtual ~IRunnable() {}
                 /**
                  * Launches treatment that can be done in a different thread
                  */

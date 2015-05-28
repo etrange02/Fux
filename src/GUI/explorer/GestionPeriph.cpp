@@ -46,9 +46,7 @@ GestPeriph::~GestPeriph()
     ThreadFichierFichier::Get()->ViderListe();
     //delete ThreadFichierFichier::Get();
     delete[] m_boutonModif;
-    #if DEBUG
-    FichierLog::Get()->Ajouter(_T("GestPeriph::~GestPeriph"));
-    #endif
+    LogFileAppend(_T("GestPeriph::~GestPeriph"));
 }
 
 /**

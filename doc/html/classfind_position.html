@@ -54,6 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -102,7 +103,7 @@ $(document).ready(function(){initNavTree('classfind_position.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -122,26 +123,29 @@ $(document).ready(function(){initNavTree('classfind_position.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:af0848842bc56ceacd5b80b3d69cf6aac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfind_position.html#af0848842bc56ceacd5b80b3d69cf6aac">findPosition</a> (<a class="el" href="class_i_music.html">IMusic</a> *music)</td></tr>
-<tr class="memdesc:af0848842bc56ceacd5b80b3d69cf6aac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#af0848842bc56ceacd5b80b3d69cf6aac">Plus de détails...</a><br /></td></tr>
-<tr class="separator:af0848842bc56ceacd5b80b3d69cf6aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc8d7ade43f36affce0a38d561189093"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfind_position.html#adc8d7ade43f36affce0a38d561189093">findPosition</a> (<a class="el" href="classmusic_1_1_i_music.html">music::IMusic</a> *music)</td></tr>
+<tr class="memdesc:adc8d7ade43f36affce0a38d561189093"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#adc8d7ade43f36affce0a38d561189093">Plus de détails...</a><br /></td></tr>
+<tr class="separator:adc8d7ade43f36affce0a38d561189093"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bcfb4513ccf8c22ff7a43b4fc3d4fac"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfind_position.html#a1bcfb4513ccf8c22ff7a43b4fc3d4fac">~findPosition</a> ()</td></tr>
 <tr class="memdesc:a1bcfb4513ccf8c22ff7a43b4fc3d4fac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#a1bcfb4513ccf8c22ff7a43b4fc3d4fac">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a1bcfb4513ccf8c22ff7a43b4fc3d4fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad50991dd11d9dfffa2366ff6c17db054"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad50991dd11d9dfffa2366ff6c17db054"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const <a class="el" href="class_i_music.html">IMusic</a> *music)</td></tr>
-<tr class="separator:ad50991dd11d9dfffa2366ff6c17db054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaef44a5c9854151e562dbec28402a402"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaef44a5c9854151e562dbec28402a402"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const <a class="el" href="classmusic_1_1_i_music.html">music::IMusic</a> *music)</td></tr>
+<tr class="separator:aaef44a5c9854151e562dbec28402a402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1cf1b57ea8f01ee1171a223a20271b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad1cf1b57ea8f01ee1171a223a20271b2"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const std::shared_ptr&lt; <a class="el" href="classmusic_1_1_i_music.html">music::IMusic</a> &gt; &amp;music)</td></tr>
+<tr class="separator:ad1cf1b57ea8f01ee1171a223a20271b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"></div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a class="anchor" id="af0848842bc56ceacd5b80b3d69cf6aac"></a>
+<a class="anchor" id="adc8d7ade43f36affce0a38d561189093"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">findPosition::findPosition </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_i_music.html">IMusic</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classmusic_1_1_i_music.html">music::IMusic</a> *&#160;</td>
           <td class="paramname"><em>music</em></td><td>)</td>
           <td></td>
         </tr>
@@ -187,7 +191,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classfind_position.html">findPosition</a></li>
-    <li class="footer">Généré le Dimanche 12 Avril 2015 16:42:44 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Vendredi 29 Mai 2015 00:02:09 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

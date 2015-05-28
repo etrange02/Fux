@@ -112,7 +112,7 @@ void DriveManagersPanel::Initialize(wxWindow *Parent)
 
 ExplorerPanel* DriveManagersPanel::createNewExplorerPanel(const wxString& managerName, const wxString& managerDescription)
 {
-    ExplorerPanel *explorerPanel = new ExplorerPanel(this, managerName, managerDescription);
+    ExplorerPanel *explorerPanel = new ExplorerPanel(*this, managerName, managerDescription);
     return explorerPanel;
 }
 

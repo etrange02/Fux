@@ -54,6 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -102,7 +103,7 @@ $(document).ready(function(){initNavTree('classgui_1_1explorer_1_1_explorer_pane
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -132,18 +133,18 @@ Graphe d'héritage de gui::explorer::ExplorerPanel:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a51ab8dbd5cd23a215374e1239e164f11"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1explorer_1_1_explorer_panel.html#a51ab8dbd5cd23a215374e1239e164f11">ExplorerPanel</a> (wxWindow *parent, const wxString &amp;managerName, const wxString &amp;managerDescription)</td></tr>
-<tr class="memdesc:a51ab8dbd5cd23a215374e1239e164f11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a51ab8dbd5cd23a215374e1239e164f11">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a51ab8dbd5cd23a215374e1239e164f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a956e95532b38e6f7186991e9d14eefa4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1explorer_1_1_explorer_panel.html#a956e95532b38e6f7186991e9d14eefa4">ExplorerPanel</a> (<a class="el" href="classgui_1_1explorer_1_1_drive_managers_panel.html">DriveManagersPanel</a> &amp;managerPanel, const wxString &amp;managerName, const wxString &amp;managerDescription)</td></tr>
+<tr class="memdesc:a956e95532b38e6f7186991e9d14eefa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a956e95532b38e6f7186991e9d14eefa4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a956e95532b38e6f7186991e9d14eefa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af38e3eb6f87b78949a2807c70c54391b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1explorer_1_1_explorer_panel.html#af38e3eb6f87b78949a2807c70c54391b">~ExplorerPanel</a> ()</td></tr>
 <tr class="memdesc:af38e3eb6f87b78949a2807c70c54391b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#af38e3eb6f87b78949a2807c70c54391b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:af38e3eb6f87b78949a2807c70c54391b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2bdb3f0fe0e519c2a8b33381c3e51a7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2bdb3f0fe0e519c2a8b33381c3e51a7"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classgui_1_1explorer_1_1_explorer_panel.html">ExplorerPanel</a> &amp;other)</td></tr>
 <tr class="separator:ab2bdb3f0fe0e519c2a8b33381c3e51a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd5753a274da49387e2f17e5ecb9b8fe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd5753a274da49387e2f17e5ecb9b8fe"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setExplorerManager</b> (<a class="el" href="class_explorer_manager.html">ExplorerManager</a> *explorerManager)</td></tr>
-<tr class="separator:acd5753a274da49387e2f17e5ecb9b8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a923b9f355df58ddc9497e5f5aee7bda5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a923b9f355df58ddc9497e5f5aee7bda5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setExplorerManager</b> (::<a class="el" href="classexplorer_1_1_explorer_manager.html">explorer::ExplorerManager</a> *explorerManager)</td></tr>
+<tr class="separator:a923b9f355df58ddc9497e5f5aee7bda5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6defc442b9e62d1feac9f19ab6dc4ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6defc442b9e62d1feac9f19ab6dc4ef"></a>
 <a class="el" href="classgui_1_1explorer_1_1_explorer_list_ctrl.html">ExplorerListCtrl</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getExplorerListCtrl</b> ()</td></tr>
 <tr class="separator:ac6defc442b9e62d1feac9f19ab6dc4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,12 +163,44 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>onRefreshButton</b> (
 <tr class="memitem:ac7804f9d7da48e12543fc2aff33bc430"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7804f9d7da48e12543fc2aff33bc430"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>onItemActivatedInListCtrl</b> (wxCommandEvent &amp;event)</td></tr>
 <tr class="separator:ac7804f9d7da48e12543fc2aff33bc430"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a491bfb0ec56db75b5b406db5721ab52c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a491bfb0ec56db75b5b406db5721ab52c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onDragBeginInListCtrl</b> (wxCommandEvent &amp;event)</td></tr>
+<tr class="memitem:a491bfb0ec56db75b5b406db5721ab52c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1explorer_1_1_explorer_panel.html#a491bfb0ec56db75b5b406db5721ab52c">onDragBeginInListCtrl</a> (wxCommandEvent &amp;event)</td></tr>
 <tr class="separator:a491bfb0ec56db75b5b406db5721ab52c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacd1706ac1425367a30ccc2f2e473e0c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aacd1706ac1425367a30ccc2f2e473e0c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>onListFocused</b> (wxChildFocusEvent &amp;event)</td></tr>
 <tr class="separator:aacd1706ac1425367a30ccc2f2e473e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b534564e5a1690da0c9dbc786f63103"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5b534564e5a1690da0c9dbc786f63103"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onRightButtonMouseClicked</b> (wxMouseEvent &amp;event)</td></tr>
+<tr class="separator:a5b534564e5a1690da0c9dbc786f63103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a948974d54da2119f37ce937f4dd10e10"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a948974d54da2119f37ce937f4dd10e10"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onMenuCreateDir</b> (wxCommandEvent &amp;event)</td></tr>
+<tr class="separator:a948974d54da2119f37ce937f4dd10e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb07b796149ea9cf5bc01107c916927b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb07b796149ea9cf5bc01107c916927b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onMenuCreateContainerFile</b> (wxCommandEvent &amp;event)</td></tr>
+<tr class="separator:afb07b796149ea9cf5bc01107c916927b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cb07a2b3f49efd64e769b44245479f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1cb07a2b3f49efd64e769b44245479f9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onMenuCut</b> (wxCommandEvent &amp;event)</td></tr>
+<tr class="separator:a1cb07a2b3f49efd64e769b44245479f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3c3b4fb22b393fd08672d5970086f27"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3c3b4fb22b393fd08672d5970086f27"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onMenuCopy</b> (wxCommandEvent &amp;event)</td></tr>
+<tr class="separator:ac3c3b4fb22b393fd08672d5970086f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc9a4fbdacfc38e04fa625eeedcd378a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc9a4fbdacfc38e04fa625eeedcd378a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onMenuPaste</b> (wxCommandEvent &amp;event)</td></tr>
+<tr class="separator:afc9a4fbdacfc38e04fa625eeedcd378a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad49fb7eb0b377eb847943101d40991eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad49fb7eb0b377eb847943101d40991eb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onMenuDelete</b> (wxCommandEvent &amp;event)</td></tr>
+<tr class="separator:ad49fb7eb0b377eb847943101d40991eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b44bf5b622851fe0432341ca8603360"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b44bf5b622851fe0432341ca8603360"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onMenuRenameDir</b> (wxCommandEvent &amp;event)</td></tr>
+<tr class="separator:a2b44bf5b622851fe0432341ca8603360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f2e43c9be5e14a1f33e12ab486558bb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f2e43c9be5e14a1f33e12ab486558bb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onMenuCreateShortcut</b> (wxCommandEvent &amp;event)</td></tr>
+<tr class="separator:a7f2e43c9be5e14a1f33e12ab486558bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac14eec6fb8d35d87ba58898f6ea24f8f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac14eec6fb8d35d87ba58898f6ea24f8f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onMenuSelectAll</b> (wxCommandEvent &amp;event)</td></tr>
+<tr class="separator:ac14eec6fb8d35d87ba58898f6ea24f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d277563104a437bb5f50e1f6868099b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d277563104a437bb5f50e1f6868099b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onMenuPlay</b> (wxCommandEvent &amp;event)</td></tr>
+<tr class="separator:a7d277563104a437bb5f50e1f6868099b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a768644ef9faf1b47cebb8f6bdb2f0419"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a768644ef9faf1b47cebb8f6bdb2f0419"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isHiddenFilesChecked</b> () const </td></tr>
 <tr class="separator:a768644ef9faf1b47cebb8f6bdb2f0419"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -186,21 +219,18 @@ Fonctions membres protégées</h2></td></tr>
 <tr class="memitem:abfb172c5ad9b6c234ff8dc1545fd91de"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abfb172c5ad9b6c234ff8dc1545fd91de"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>create</b> ()</td></tr>
 <tr class="separator:abfb172c5ad9b6c234ff8dc1545fd91de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dab3f5f9d11ee2be03102a2cec0c82c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4dab3f5f9d11ee2be03102a2cec0c82c"></a>
-std::vector&lt; unsigned long &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getSelectedItems</b> ()</td></tr>
-<tr class="separator:a4dab3f5f9d11ee2be03102a2cec0c82c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"></div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a class="anchor" id="a51ab8dbd5cd23a215374e1239e164f11"></a>
+<a class="anchor" id="a956e95532b38e6f7186991e9d14eefa4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">ExplorerPanel::ExplorerPanel </td>
           <td>(</td>
-          <td class="paramtype">wxWindow *&#160;</td>
-          <td class="paramname"><em>parent</em>, </td>
+          <td class="paramtype"><a class="el" href="classgui_1_1explorer_1_1_drive_managers_panel.html">DriveManagersPanel</a> &amp;&#160;</td>
+          <td class="paramname"><em>managerPanel</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -251,6 +281,24 @@ std::vector&lt; unsigned long &gt;&#160;</td><td class="memItemRight" valign="bo
 
 </div>
 </div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a491bfb0ec56db75b5b406db5721ab52c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExplorerPanel::onDragBeginInListCtrl </td>
+          <td>(</td>
+          <td class="paramtype">wxCommandEvent &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>TODO: Dragging events </p>
+
+</div>
+</div>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li>C:/Workspace/Projects/fux/include/GUI/explorer/<a class="el" href="">ExplorerPanel.h</a></li>
 <li>C:/Workspace/Projects/fux/src/GUI/explorer/<a class="el" href="">ExplorerPanel.cpp</a></li>
@@ -261,7 +309,7 @@ std::vector&lt; unsigned long &gt;&#160;</td><td class="memItemRight" valign="bo
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>gui</b></li><li class="navelem"><b>explorer</b></li><li class="navelem"><a class="el" href="classgui_1_1explorer_1_1_explorer_panel.html">ExplorerPanel</a></li>
-    <li class="footer">Généré le Dimanche 12 Avril 2015 16:42:46 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Vendredi 29 Mai 2015 00:02:09 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

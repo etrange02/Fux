@@ -6,7 +6,7 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../../include/gui/explorer/GestionPeriph.h"
+#include "gui/explorer/GestionPeriph.h"
 
 /**
  * @class ListeGestionPeriph

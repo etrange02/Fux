@@ -1,16 +1,9 @@
 var annotated =
 [
-    [ "explorer", null, [
-      [ "DefaultDriveManagerState", "classexplorer_1_1_default_drive_manager_state.html", "classexplorer_1_1_default_drive_manager_state" ],
-      [ "DirDriveManagerState", "classexplorer_1_1_dir_drive_manager_state.html", "classexplorer_1_1_dir_drive_manager_state" ],
-      [ "DriveManagerState", "classexplorer_1_1_drive_manager_state.html", "classexplorer_1_1_drive_manager_state" ],
-      [ "ExplorerFactory", "classexplorer_1_1_explorer_factory.html", "classexplorer_1_1_explorer_factory" ],
-      [ "FileDriveManagerState", "classexplorer_1_1_file_drive_manager_state.html", "classexplorer_1_1_file_drive_manager_state" ],
-      [ "PlaylistDriveManagerState", "classexplorer_1_1_playlist_drive_manager_state.html", "classexplorer_1_1_playlist_drive_manager_state" ]
-    ] ],
+    [ "explorer", "namespaceexplorer.html", "namespaceexplorer" ],
     [ "fux", null, [
       [ "music", null, [
-        [ "Factory", "classfux_1_1music_1_1_factory.html", "classfux_1_1music_1_1_factory" ]
+        [ "Factory", "classfux_1_1music_1_1_factory.html", null ]
       ] ]
     ] ],
     [ "gui", null, [
@@ -18,7 +11,30 @@ var annotated =
         [ "DriveManagersPanel", "classgui_1_1explorer_1_1_drive_managers_panel.html", "classgui_1_1explorer_1_1_drive_managers_panel" ],
         [ "ExplorerListCtrl", "classgui_1_1explorer_1_1_explorer_list_ctrl.html", "classgui_1_1explorer_1_1_explorer_list_ctrl" ],
         [ "ExplorerPanel", "classgui_1_1explorer_1_1_explorer_panel.html", "classgui_1_1explorer_1_1_explorer_panel" ]
+      ] ],
+      [ "music", null, [
+        [ "MusiqueGraph", "classgui_1_1music_1_1_musique_graph.html", "classgui_1_1music_1_1_musique_graph" ]
       ] ]
+    ] ],
+    [ "music", null, [
+      [ "AbstractMusicManagerDecorator", "classmusic_1_1_abstract_music_manager_decorator.html", "classmusic_1_1_abstract_music_manager_decorator" ],
+      [ "Duration", "classmusic_1_1_duration.html", "classmusic_1_1_duration" ],
+      [ "Factory", "classmusic_1_1_factory.html", "classmusic_1_1_factory" ],
+      [ "IMusic", "classmusic_1_1_i_music.html", "classmusic_1_1_i_music" ],
+      [ "IMusicManager", "classmusic_1_1_i_music_manager.html", "classmusic_1_1_i_music_manager" ],
+      [ "IMusicPlayer", "classmusic_1_1_i_music_player.html", "classmusic_1_1_i_music_player" ],
+      [ "Music", "classmusic_1_1_music.html", "classmusic_1_1_music" ],
+      [ "MusicFile", "classmusic_1_1_music_file.html", "classmusic_1_1_music_file" ],
+      [ "MusicFileReader", "classmusic_1_1_music_file_reader.html", "classmusic_1_1_music_file_reader" ],
+      [ "MusicFileReaderThread", "classmusic_1_1_music_file_reader_thread.html", "classmusic_1_1_music_file_reader_thread" ],
+      [ "MusicFileWriter", "classmusic_1_1_music_file_writer.html", "classmusic_1_1_music_file_writer" ],
+      [ "MusicFileWriterThread", "classmusic_1_1_music_file_writer_thread.html", "classmusic_1_1_music_file_writer_thread" ],
+      [ "MusicList", "classmusic_1_1_music_list.html", "classmusic_1_1_music_list" ],
+      [ "MusicManager", "classmusic_1_1_music_manager.html", "classmusic_1_1_music_manager" ],
+      [ "MusicManagerDefaultDecorator", "classmusic_1_1_music_manager_default_decorator.html", "classmusic_1_1_music_manager_default_decorator" ],
+      [ "MusicManagerSearchDecorator", "classmusic_1_1_music_manager_search_decorator.html", "classmusic_1_1_music_manager_search_decorator" ],
+      [ "MusicManagerSwitcher", "classmusic_1_1_music_manager_switcher.html", "classmusic_1_1_music_manager_switcher" ],
+      [ "MusicPlayer", "classmusic_1_1_music_player.html", "classmusic_1_1_music_player" ]
     ] ],
     [ "std", null, [
       [ "ThreadSafeQueue", "classstd_1_1_thread_safe_queue.html", "classstd_1_1_thread_safe_queue" ]
@@ -27,6 +43,8 @@ var annotated =
       [ "thread", null, [
         [ "Factory", "classtools_1_1thread_1_1_factory.html", null ],
         [ "FileDeletionThread", "classtools_1_1thread_1_1_file_deletion_thread.html", "classtools_1_1thread_1_1_file_deletion_thread" ],
+        [ "FileDuplicatingThread", "classtools_1_1thread_1_1_file_duplicating_thread.html", "classtools_1_1thread_1_1_file_duplicating_thread" ],
+        [ "FileRenamingThread", "classtools_1_1thread_1_1_file_renaming_thread.html", "classtools_1_1thread_1_1_file_renaming_thread" ],
         [ "IRunnable", "classtools_1_1thread_1_1_i_runnable.html", "classtools_1_1thread_1_1_i_runnable" ],
         [ "IThreadManager", "classtools_1_1thread_1_1_i_thread_manager.html", "classtools_1_1thread_1_1_i_thread_manager" ],
         [ "ThreadFactory", "classtools_1_1thread_1_1_thread_factory.html", "classtools_1_1thread_1_1_thread_factory" ],
@@ -34,7 +52,6 @@ var annotated =
         [ "ThreadProcess", "classtools_1_1thread_1_1_thread_process.html", "classtools_1_1thread_1_1_thread_process" ]
       ] ]
     ] ],
-    [ "AbstractMusicManagerDecorator", "class_abstract_music_manager_decorator.html", "class_abstract_music_manager_decorator" ],
     [ "ArrayFenetreDetachable", "class_array_fenetre_detachable.html", "class_array_fenetre_detachable" ],
     [ "ArrayOfFenetreDetachable", "class_array_of_fenetre_detachable.html", null ],
     [ "BDD", "class_b_d_d.html", "class_b_d_d" ],
@@ -50,15 +67,9 @@ var annotated =
     [ "DialogTagMP3Info", "class_dialog_tag_m_p3_info.html", "class_dialog_tag_m_p3_info" ],
     [ "DnDCible", "class_dn_d_cible.html", "class_dn_d_cible" ],
     [ "DnDListeFichier", "class_dn_d_liste_fichier.html", "class_dn_d_liste_fichier" ],
-    [ "DriveManagerListElement", "class_drive_manager_list_element.html", "class_drive_manager_list_element" ],
     [ "DropFichierImagePochetteMusique", "class_drop_fichier_image_pochette_musique.html", "class_drop_fichier_image_pochette_musique" ],
-    [ "Duration", "class_duration.html", "class_duration" ],
     [ "ElementLecteurRacineFichier", "class_element_lecteur_racine_fichier.html", "class_element_lecteur_racine_fichier" ],
     [ "ElementThreadFichier", "class_element_thread_fichier.html", "class_element_thread_fichier" ],
-    [ "ExplorerDriveManagers", "class_explorer_drive_managers.html", "class_explorer_drive_managers" ],
-    [ "ExplorerDriveManagersData", "class_explorer_drive_managers_data.html", "class_explorer_drive_managers_data" ],
-    [ "ExplorerManager", "class_explorer_manager.html", "class_explorer_manager" ],
-    [ "ExplorerManagerData", "class_explorer_manager_data.html", "class_explorer_manager_data" ],
     [ "FenetreDetachable", "class_fenetre_detachable.html", "class_fenetre_detachable" ],
     [ "FichierLog", "class_fichier_log.html", "class_fichier_log" ],
     [ "findControllerOfExplorerPanel", "classfind_controller_of_explorer_panel.html", "classfind_controller_of_explorer_panel" ],
@@ -70,27 +81,13 @@ var annotated =
     [ "GestPeriph", "class_gest_periph.html", "class_gest_periph" ],
     [ "ImagePochetteMusique", "class_image_pochette_musique.html", "class_image_pochette_musique" ],
     [ "ImageText", "class_image_text.html", "class_image_text" ],
-    [ "IMusic", "class_i_music.html", "class_i_music" ],
-    [ "IMusicManager", "class_i_music_manager.html", "class_i_music_manager" ],
-    [ "IMusicPlayer", "class_i_music_player.html", "class_i_music_player" ],
+    [ "IMusic", "class_i_music.html", null ],
     [ "ISearchTraversable", "class_i_search_traversable.html", "class_i_search_traversable" ],
     [ "ListeGestionPeriph", "class_liste_gestion_periph.html", "class_liste_gestion_periph" ],
-    [ "MenuElement", "class_menu_element.html", "class_menu_element" ],
-    [ "MenuElementData", "class_menu_element_data.html", "class_menu_element_data" ],
-    [ "Music", "class_music.html", "class_music" ],
-    [ "MusicFile", "class_music_file.html", "class_music_file" ],
-    [ "MusicFileReader", "class_music_file_reader.html", "class_music_file_reader" ],
-    [ "MusicFileReaderThread", "class_music_file_reader_thread.html", "class_music_file_reader_thread" ],
-    [ "MusicFileWriter", "class_music_file_writer.html", "class_music_file_writer" ],
-    [ "MusicFileWriterThread", "class_music_file_writer_thread.html", "class_music_file_writer_thread" ],
-    [ "MusicList", "class_music_list.html", "class_music_list" ],
-    [ "MusicManager", "class_music_manager.html", "class_music_manager" ],
-    [ "MusicManagerDefaultDecorator", "class_music_manager_default_decorator.html", "class_music_manager_default_decorator" ],
-    [ "MusicManagerSearchDecorator", "class_music_manager_search_decorator.html", "class_music_manager_search_decorator" ],
-    [ "MusicManagerSwitcher", "class_music_manager_switcher.html", "class_music_manager_switcher" ],
-    [ "MusicPlayer", "class_music_player.html", "class_music_player" ],
+    [ "Music", "class_music.html", null ],
     [ "MusicPlayListDnDBufferData", "class_music_play_list_dn_d_buffer_data.html", "class_music_play_list_dn_d_buffer_data" ],
-    [ "MusiqueGraph", "class_musique_graph.html", "class_musique_graph" ],
+    [ "MusiqueGraph", "class_musique_graph.html", null ],
+    [ "myFinder", "classmy_finder.html", "classmy_finder" ],
     [ "PageGestionPeriph", "class_page_gestion_periph.html", "class_page_gestion_periph" ],
     [ "Parametre", "class_parametre.html", "class_parametre" ],
     [ "PlayList", "class_play_list.html", "class_play_list" ],
@@ -100,7 +97,6 @@ var annotated =
     [ "PreferenceSon", "class_preference_son.html", "class_preference_son" ],
     [ "Search", "class_search.html", "class_search" ],
     [ "SliderSon", "class_slider_son.html", "class_slider_son" ],
-    [ "StateExchange", "class_state_exchange.html", "class_state_exchange" ],
     [ "TCPClient", "class_t_c_p_client.html", "class_t_c_p_client" ],
     [ "TCPConnexionEchangeInstanceLocalHost", "class_t_c_p_connexion_echange_instance_local_host.html", "class_t_c_p_connexion_echange_instance_local_host" ],
     [ "TCPServeur", "class_t_c_p_serveur.html", "class_t_c_p_serveur" ],

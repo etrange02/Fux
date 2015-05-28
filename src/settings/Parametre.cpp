@@ -8,6 +8,7 @@
  **************************************************************/
 #include "settings/Parametre.h"
 #include "MusicManagerSwitcher.h"
+#include "tools/FichierLog.h"
 
 using namespace ::music;
 
@@ -70,9 +71,7 @@ Parametre::Parametre()
 
 Parametre::~Parametre()
 {
-    #if DEBUG
-    FichierLog::Get()->Ajouter(_T("Parametre::~Parametre()"));
-    #endif
+    LogFileAppend(_T("Parametre::~Parametre()"));
 }
 
 Parametre::Parametre(const Parametre& other)
@@ -174,7 +173,7 @@ void Parametre::setCouleurs(Couleur fond, Couleur barre, Couleur police, Couleur
     m_miInf = miInf; m_bas = bas;
     m_doubleBarre = doubleBarre;*/
 
-    MusiqueGraph::Get()->AffecteCouleurs(fond, barre, police, haut, miSup, doubleBarre, miInf, bas);
+    gui::music::MusiqueGraph::Get()->AffecteCouleurs(fond, barre, police, haut, miSup, doubleBarre, miInf, bas);
 }
 
 /**

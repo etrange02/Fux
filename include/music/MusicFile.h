@@ -7,6 +7,7 @@ namespace music
     class MusicFile
     {
         public:
+            virtual ~MusicFile() {}
             virtual void process() = 0;
     };
 }

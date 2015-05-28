@@ -18,7 +18,7 @@
  */
 bool tools::containsInvalidCharacter(const wxString& str)
 {
-    str.Contains("/\\:*?\"<>|");
+    return str.Contains("/\\:*?\"<>|");
 }
 
 /** @brief Returns a string according to the Id

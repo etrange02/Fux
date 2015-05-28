@@ -45,10 +45,10 @@ Music* Factory::createMusic(const Music& music)
 /** @brief Creates a MusicFile for reading TAG value in music file
  *
  * @param music a music
- * @return MusicFile*
+ * @return MusicFileReader*
  *
  */
-MusicFile* Factory::createMusicFileReader(Music& music)
+MusicFileReader* Factory::createMusicFileReader(std::shared_ptr<Music>& music)
 {
     return new MusicFileReader(music);
 }
@@ -59,7 +59,7 @@ MusicFile* Factory::createMusicFileReader(Music& music)
  * @return MusicFileReaderThread*
  * @see Factory::createMusicFileReader
  */
-MusicFileReaderThread* Factory::createMusicFileReaderThread(Music& music, wxWindow* parent)
+MusicFileReaderThread* Factory::createMusicFileReaderThread(std::shared_ptr<Music>& music, wxWindow* parent)
 {
     return new MusicFileReaderThread(new MusicFileReader(music), parent);
 }
@@ -68,16 +68,16 @@ MusicFileReaderThread* Factory::createMusicFileReaderThread(Music& music, wxWind
  * Can rename file if needed.
  * @param inMusic source
  * @param outMusic target
- * @return MusicFile*
+ * @return MusicFileWriter*
  *
  */
-MusicFile* Factory::createMusicFileWriter(Music* inMusic, Music* outMusic)
+MusicFileWriter* Factory::createMusicFileWriter(Music* inMusic, std::shared_ptr<Music>& outMusic)
 {
     return new MusicFileWriter(inMusic, outMusic);
 }
 
-MusicFileWriterThread* Factory::createMusicFileWriterThread(Music* inMusic, Music* outMusic, wxWindow* parent)
+MusicFileWriterThread* Factory::createMusicFileWriterThread(Music* inMusic, std::shared_ptr<Music>& outMusic, wxWindow* parent)
 {
-    return new MusicFileWriterThread(new MusicFileWriter(inMusic, outMusic), parent);
+    return new MusicFileWriterThread(createMusicFileWriter(inMusic, outMusic), parent);
 }
 

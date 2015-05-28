@@ -2,25 +2,29 @@
 #define IMUSICMANAGER_H
 
 #include <vector>
+#include <memory>
 
 #include "Music.h"
 #include "MusicPlayer.h"
 
 namespace music
 {
+    typedef std::vector<std::shared_ptr<Music>> MusicCollection;
+    typedef MusicCollection::iterator MusicIterator;
+
     class IMusicManager
     {
         public:
             IMusicManager();
             virtual ~IMusicManager();
 
-            /**/virtual std::vector<Music*>& getMusics() = 0;
+            /**/virtual MusicCollection& getMusics() = 0;
             /**/virtual size_t getCurrentMusicPosition() = 0;
-            /**/virtual void moveIntTitlesAt(const wxArrayString& titles, long position) = 0;
+            /**/virtual void moveIntTitlesAt(const wxArrayString& titles, size_t position) = 0;
             /**/virtual void placeStringTitlesAt(const wxArrayString& titles, size_t position) = 0;
             /**/virtual void deleteTitleAt(size_t position) = 0;
             /**/virtual bool playMusicAt(long position) = 0;
-            /**/virtual void updateMusicContent(const long position, Music* music) = 0;
+            /**/virtual void updateMusicContent(const size_t position, Music* music) = 0;
 
             virtual bool isRepete() = 0;
             virtual bool isRandom() = 0;

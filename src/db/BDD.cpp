@@ -49,7 +49,7 @@ BDD::BDD()
 
 BDD::~BDD()
 {
-    FichierLog::Get()->Ajouter(_T("BDD::~BDD"));
+    LogFileAppend(_T("BDD::~BDD"));
 }
 
 /**

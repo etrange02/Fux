@@ -6,11 +6,8 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "wx/wxprec.h"
-
-#ifndef WX_PRECOMP
-    #include "wx/wx.h"
-#endif
+#include <wx/wxprec.h>
+#include <wx/wx.h>
 
 #include "../../include/application/Application.h"
 
@@ -50,10 +47,7 @@ bool wxFuXApp::OnInit()
     else
     #endif
     {
-        //Parametre::Get();
-        #if DEBUG
-        FichierLog::Get()->Ajouter(_T("Démarrage de l'application, paramètre : ") + wxString(argc >= 2 ? argv[1] : _T("NULL")));
-        #endif
+        LogFileAppend(_("Démarrage de l'application, paramètre : ") + wxString(argc >= 2 ? argv[1] : _("NULL")));
         m_fenetre = new FuXFenetre(argc, argv);
         m_fenetre->Show(true);
 
@@ -69,8 +63,8 @@ int wxFuXApp::OnExit()
 {
     delete m_checker;
     //Parametre::Get()->~Parametre();
+    LogFileAppend(_("Fin de l'application"));
     #if DEBUG
-    FichierLog::Get()->Ajouter(_T("Fin de l'application"));
     FichierLog::Delete();
     #endif
     return 0;
@@ -95,11 +89,11 @@ void wxFuXApp::EnvoiStringAutreInstance()
             {
                 if (!connexion->Execute(chaine.GetFullPath()))
                 {
-                    wxLogMessage(_T("Erreur lors de l'envoie du titre à l'application principale : \n") + chaine.GetFullPath());
+                    wxLogMessage(_("Erreur lors de l'envoie du titre à l'application principale : \n") + chaine.GetFullPath());
                 }
             }
             else
-                wxLogMessage(_T("L'extension ") + chaine.GetExt() + _T(" n'est pas prise en compte"));
+                wxLogMessage(_("L'extension ") + chaine.GetExt() + _(" n'est pas prise en compte"));
         }
         connexion->Disconnect();
         delete connexion;
@@ -117,15 +111,15 @@ void wxFuXApp::TraductionInternationale()
     // Ajout des préfixes possibles de chemins d'accès aux catalogues
     wxLocale::AddCatalogLookupPathPrefix(wxT("."));
     wxLocale::AddCatalogLookupPathPrefix(wxT(".."));
-    wxLocale::AddCatalogLookupPathPrefix(_T("locale"));
+    wxLocale::AddCatalogLookupPathPrefix(_("locale"));
     // Mise en place de la langue par défaut du système
     m_local.Init(wxLANGUAGE_DEFAULT);
     {
         wxLogNull noLog; // Supprime les erreurs si les catalogues n'existent pas
         // Catalogue de l'application
-        m_local.AddCatalog(_T("Fu(X)"));
+        m_local.AddCatalog(_("Fu(X)"));
         // Catalogue de wxWidgets
-        m_local.AddCatalog(_T("wxstd"));
+        m_local.AddCatalog(_("wxstd"));
     }
 }
 

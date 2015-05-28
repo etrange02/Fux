@@ -25,6 +25,8 @@ namespace gui
 
                 void selectLine(const wxString& text);
                 void selectLine(const long line);
+                void selectAll();
+                void deselectLines();
 
                 std::vector<unsigned long> getSelectedLines();
                 void removeSelectedLines();

@@ -1,6 +1,6 @@
 var classgui_1_1explorer_1_1_drive_managers_panel =
 [
-    [ "DriveManagersPanel", "classgui_1_1explorer_1_1_drive_managers_panel.html#a3c8f45888908b3a2ed02c0549d002688", null ],
+    [ "DriveManagersPanel", "classgui_1_1explorer_1_1_drive_managers_panel.html#a2b4c1a000375e8bcdba4a081bad38ab3", null ],
     [ "~DriveManagersPanel", "classgui_1_1explorer_1_1_drive_managers_panel.html#a45bcbf96ef099cfa4ee30369a9345f00", null ],
     [ "enableButtonCopy", "classgui_1_1explorer_1_1_drive_managers_panel.html#ab9eb879cf6793f6f4e1e2a261a7617af", null ],
     [ "enableButtonDelete", "classgui_1_1explorer_1_1_drive_managers_panel.html#a7578cf4c78fad835c792972a4e90d06f", null ],

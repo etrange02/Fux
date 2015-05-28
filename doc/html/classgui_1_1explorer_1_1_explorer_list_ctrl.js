@@ -10,8 +10,10 @@ var classgui_1_1explorer_1_1_explorer_list_ctrl =
     [ "addLine", "classgui_1_1explorer_1_1_explorer_list_ctrl.html#a77bf93d5e30d0b0e8afd9965d9f756e8", null ],
     [ "addLine", "classgui_1_1explorer_1_1_explorer_list_ctrl.html#a004d07af930085bd4294c0739f771ce5", null ],
     [ "Create", "classgui_1_1explorer_1_1_explorer_list_ctrl.html#a002ddc9aa23a03d4c075579fe206810b", null ],
+    [ "deselectLines", "classgui_1_1explorer_1_1_explorer_list_ctrl.html#acfd4f3acfe517192786f23672411e17a", null ],
     [ "getSelectedLines", "classgui_1_1explorer_1_1_explorer_list_ctrl.html#ae2676b47f250bf4b3e72e9f0a62ee432", null ],
     [ "removeSelectedLines", "classgui_1_1explorer_1_1_explorer_list_ctrl.html#ab268046fc255f89b120215d762c64e89", null ],
+    [ "selectAll", "classgui_1_1explorer_1_1_explorer_list_ctrl.html#aaa43207d23b4bc0d9b0756b82c529211", null ],
     [ "selectLine", "classgui_1_1explorer_1_1_explorer_list_ctrl.html#af661d248722ddc2d47e3f1672512044c", null ],
     [ "selectLine", "classgui_1_1explorer_1_1_explorer_list_ctrl.html#a0f5b7a03422678ad7e0ea4523f20ca89", null ]
 ];

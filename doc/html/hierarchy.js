@@ -9,61 +9,67 @@ var hierarchy =
     [ "Couleur", "class_couleur.html", null ],
     [ "CouperCopierColler", "class_couper_copier_coller.html", null ],
     [ "DnDListeFichier", "class_dn_d_liste_fichier.html", null ],
-    [ "DriveManagerListElement", "class_drive_manager_list_element.html", null ],
+    [ "explorer::DriveManagerListElement", "classexplorer_1_1_drive_manager_list_element.html", null ],
     [ "explorer::DriveManagerState", "classexplorer_1_1_drive_manager_state.html", [
       [ "explorer::DefaultDriveManagerState", "classexplorer_1_1_default_drive_manager_state.html", null ],
       [ "explorer::DirDriveManagerState", "classexplorer_1_1_dir_drive_manager_state.html", null ],
       [ "explorer::FileDriveManagerState", "classexplorer_1_1_file_drive_manager_state.html", null ],
       [ "explorer::PlaylistDriveManagerState", "classexplorer_1_1_playlist_drive_manager_state.html", null ]
     ] ],
-    [ "Duration", "class_duration.html", null ],
+    [ "music::Duration", "classmusic_1_1_duration.html", null ],
     [ "ElementLecteurRacineFichier", "class_element_lecteur_racine_fichier.html", null ],
     [ "ElementThreadFichier", "class_element_thread_fichier.html", null ],
-    [ "ExplorerDriveManagers", "class_explorer_drive_managers.html", null ],
-    [ "ExplorerDriveManagersData", "class_explorer_drive_managers_data.html", null ],
+    [ "explorer::ExplorerDriveManagers", "classexplorer_1_1_explorer_drive_managers.html", null ],
+    [ "explorer::ExplorerDriveManagersData", "classexplorer_1_1_explorer_drive_managers_data.html", null ],
     [ "explorer::ExplorerFactory", "classexplorer_1_1_explorer_factory.html", null ],
-    [ "ExplorerManager", "class_explorer_manager.html", null ],
-    [ "ExplorerManagerData", "class_explorer_manager_data.html", null ],
-    [ "tools::thread::Factory", "classtools_1_1thread_1_1_factory.html", null ],
+    [ "explorer::ExplorerManager", "classexplorer_1_1_explorer_manager.html", null ],
+    [ "explorer::ExplorerManagerData", "classexplorer_1_1_explorer_manager_data.html", null ],
     [ "fux::music::Factory", "classfux_1_1music_1_1_factory.html", null ],
+    [ "tools::thread::Factory", "classtools_1_1thread_1_1_factory.html", null ],
+    [ "music::Factory", "classmusic_1_1_factory.html", null ],
     [ "FichierLog", "class_fichier_log.html", null ],
     [ "findControllerOfExplorerPanel", "classfind_controller_of_explorer_panel.html", null ],
     [ "findMenuElementById", "classfind_menu_element_by_id.html", null ],
     [ "findPathMenuElement", "classfind_path_menu_element.html", null ],
     [ "findPosition", "classfind_position.html", null ],
     [ "ImageText", "class_image_text.html", null ],
-    [ "IMusic", "class_i_music.html", [
-      [ "Music", "class_music.html", null ]
+    [ "IMusic", "class_i_music.html", null ],
+    [ "music::IMusic", "classmusic_1_1_i_music.html", [
+      [ "music::Music", "classmusic_1_1_music.html", null ]
     ] ],
-    [ "IMusicManager", "class_i_music_manager.html", [
-      [ "AbstractMusicManagerDecorator", "class_abstract_music_manager_decorator.html", [
-        [ "MusicManagerDefaultDecorator", "class_music_manager_default_decorator.html", null ],
-        [ "MusicManagerSearchDecorator", "class_music_manager_search_decorator.html", null ]
+    [ "music::IMusicManager", "classmusic_1_1_i_music_manager.html", [
+      [ "music::AbstractMusicManagerDecorator", "classmusic_1_1_abstract_music_manager_decorator.html", [
+        [ "music::MusicManagerDefaultDecorator", "classmusic_1_1_music_manager_default_decorator.html", null ],
+        [ "music::MusicManagerSearchDecorator", "classmusic_1_1_music_manager_search_decorator.html", null ]
       ] ]
     ] ],
-    [ "IMusicPlayer", "class_i_music_player.html", null ],
+    [ "music::IMusicPlayer", "classmusic_1_1_i_music_player.html", null ],
     [ "tools::thread::IRunnable", "classtools_1_1thread_1_1_i_runnable.html", [
-      [ "MusicFileReaderThread", "class_music_file_reader_thread.html", null ],
-      [ "MusicFileWriterThread", "class_music_file_writer_thread.html", null ],
-      [ "tools::thread::FileDeletionThread", "classtools_1_1thread_1_1_file_deletion_thread.html", null ]
+      [ "music::MusicFileReaderThread", "classmusic_1_1_music_file_reader_thread.html", null ],
+      [ "music::MusicFileWriterThread", "classmusic_1_1_music_file_writer_thread.html", null ],
+      [ "tools::thread::FileDeletionThread", "classtools_1_1thread_1_1_file_deletion_thread.html", null ],
+      [ "tools::thread::FileDuplicatingThread", "classtools_1_1thread_1_1_file_duplicating_thread.html", null ],
+      [ "tools::thread::FileRenamingThread", "classtools_1_1thread_1_1_file_renaming_thread.html", null ]
     ] ],
     [ "ISearchTraversable", "class_i_search_traversable.html", [
-      [ "MusicList", "class_music_list.html", null ]
+      [ "music::MusicList", "classmusic_1_1_music_list.html", null ]
     ] ],
     [ "tools::thread::IThreadManager", "classtools_1_1thread_1_1_i_thread_manager.html", [
       [ "tools::thread::ThreadManager", "classtools_1_1thread_1_1_thread_manager.html", null ]
     ] ],
-    [ "MenuElement", "class_menu_element.html", null ],
-    [ "MenuElementData", "class_menu_element_data.html", null ],
-    [ "MusicFile", "class_music_file.html", [
-      [ "MusicFileReader", "class_music_file_reader.html", null ],
-      [ "MusicFileWriter", "class_music_file_writer.html", null ]
+    [ "explorer::MenuElement", "classexplorer_1_1_menu_element.html", null ],
+    [ "explorer::MenuElementData", "classexplorer_1_1_menu_element_data.html", null ],
+    [ "Music", "class_music.html", null ],
+    [ "music::MusicFile", "classmusic_1_1_music_file.html", [
+      [ "music::MusicFileReader", "classmusic_1_1_music_file_reader.html", null ],
+      [ "music::MusicFileWriter", "classmusic_1_1_music_file_writer.html", null ]
     ] ],
-    [ "MusicManager", "class_music_manager.html", null ],
-    [ "MusicManagerSwitcher", "class_music_manager_switcher.html", null ],
-    [ "MusicPlayer", "class_music_player.html", null ],
+    [ "music::MusicManager", "classmusic_1_1_music_manager.html", null ],
+    [ "music::MusicManagerSwitcher", "classmusic_1_1_music_manager_switcher.html", null ],
+    [ "music::MusicPlayer", "classmusic_1_1_music_player.html", null ],
+    [ "MusiqueGraph", "class_musique_graph.html", null ],
+    [ "myFinder", "classmy_finder.html", null ],
     [ "Parametre", "class_parametre.html", null ],
-    [ "StateExchange", "class_state_exchange.html", null ],
     [ "tools::thread::ThreadFactory", "classtools_1_1thread_1_1_thread_factory.html", null ],
     [ "std::ThreadSafeQueue< T, _Sequence >", "classstd_1_1_thread_safe_queue.html", null ],
     [ "std::ThreadSafeQueue< tools::thread::IRunnable * >", "classstd_1_1_thread_safe_queue.html", null ],
@@ -107,7 +113,7 @@ var hierarchy =
       [ "FuXFenetre", "class_fu_x_fenetre.html", null ]
     ] ],
     [ "wxGLCanvas", "classwx_g_l_canvas.html", [
-      [ "MusiqueGraph", "class_musique_graph.html", null ]
+      [ "gui::music::MusiqueGraph", "classgui_1_1music_1_1_musique_graph.html", null ]
     ] ],
     [ "wxListCtrl", "classwx_list_ctrl.html", [
       [ "gui::explorer::ExplorerListCtrl", "classgui_1_1explorer_1_1_explorer_list_ctrl.html", null ],

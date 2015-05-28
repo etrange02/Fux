@@ -16,6 +16,8 @@
 #include <wx/dnd.h>
 #include <wx/mstream.h>
 #include <wx/renderer.h>
+#include <algorithm>
+#include <memory>
 #include "gui/musiclist/PlayList.h"
 #include "MusicManagerSwitcher.h"
 #include "music/MusicManager.h"
@@ -56,9 +58,7 @@ const wxEventType wxEVT_LISTE_DETAILS = wxNewEventType();
  */
 PlayListTableau::PlayListTableau(wxWindow *Parent) : wxListCtrl(Parent, ID_PAGE_PLAYLIST_LISTE, wxDefaultPosition, wxDefaultSize, wxLC_REPORT |  wxLC_HRULES | wxLC_VRULES)
 {
-    #if DEBUG
-    FichierLog::Get()->Ajouter("PlayListTableau::PlayListTableau - Création");
-    #endif
+    LogFileAppend("PlayListTableau::PlayListTableau - Création");
 
     InsertColumn(0, _("Nom"),         wxLIST_FORMAT_CENTER,  280);
     InsertColumn(1, _("Artiste"),     wxLIST_FORMAT_LEFT,    150);
@@ -87,9 +87,7 @@ PlayListTableau::PlayListTableau(wxWindow *Parent) : wxListCtrl(Parent, ID_PAGE_
 
 PlayListTableau::~PlayListTableau()
 {
-    #if DEBUG
-    FichierLog::Get()->Ajouter(_T("PlayListTableau::~PlayListTableau"));
-    #endif
+    LogFileAppend(_T("PlayListTableau::~PlayListTableau"));
 }
 
 /**
@@ -98,9 +96,7 @@ PlayListTableau::~PlayListTableau()
 void PlayListTableau::MAJ()
 {
     wxMutexLocker lock(m_mutexMAJPlaylist);
-    #if DEBUG
-    FichierLog::Get()->Ajouter("PlayListTableau::MAJ - Début après les tests");
-    #endif
+    LogFileAppend("PlayListTableau::MAJ - Début après les tests");
 
     wxString chaine, extrait;
 
@@ -120,12 +116,10 @@ void PlayListTableau::MAJ()
 
     Freeze();
 
-    #if DEBUG
-    FichierLog::Get()->Ajouter("PlayListTableau::MAJ - Début du for");
-    #endif
+    LogFileAppend("PlayListTableau::MAJ - Début du for");
 
     SetDoubleBuffered(true);
-    for (std::vector<Music*>::iterator iter = MusicManagerSwitcher::getSearch().getMusics().begin(); iter != MusicManagerSwitcher::getSearch().getMusics().end(); ++iter)
+    for (MusicIterator iter = MusicManagerSwitcher::getSearch().getMusics().begin(); iter != MusicManagerSwitcher::getSearch().getMusics().end(); ++iter)
     {
 //        BDDRequete *req = new BDDRequete(this);
 
@@ -155,13 +149,8 @@ void PlayListTableau::MAJ()
     SetDoubleBuffered(false);
     Thaw();
 
-    #if DEBUG
-    FichierLog::Get()->Ajouter(_T("PlayListTableau::MAJ - Fin du for : ") + wxString::Format(_T("%u"), GetItemCount()));
-    #endif
-
-    #if DEBUG
-    FichierLog::Get()->Ajouter(_T("PlayListTableau::MAJ - Fin"));
-    #endif
+    LogFileAppend(_T("PlayListTableau::MAJ - Fin du for : ") + wxString::Format(_T("%u"), GetItemCount()));
+    LogFileAppend(_T("PlayListTableau::MAJ - Fin"));
 }
 
 /** @brief Adds a line at the end of the list
@@ -304,9 +293,7 @@ void PlayListTableau::MouseEvents(wxMouseEvent &event)
 void PlayListTableau::removeLine(const int position)
 {
     wxMutexLocker lock(m_mutexMAJPlaylist);
-    #if DEBUG
-    FichierLog::Get()->Ajouter("PlayListTableau::removeLine(const int position)");
-    #endif
+    LogFileAppend("PlayListTableau::removeLine(const int position)");
 
     DeleteItem(position);
     for (wxArrayInt::iterator iter = m_ocurrenceLigne.begin(); iter != m_ocurrenceLigne.end(); ++iter)
@@ -322,9 +309,7 @@ void PlayListTableau::removeLine(const int position)
  */
 void PlayListTableau::updateColors()
 {
-    #if DEBUG
-    FichierLog::Get()->Ajouter(_T("PlayListTableau::updateColors"));
-    #endif
+    LogFileAppend(_T("PlayListTableau::updateColors"));
     if (MusicManagerSwitcher::getSearch().getMusics().empty())
         return;
 
@@ -552,17 +537,13 @@ void PlayListTableau::SuppressionLigne()
     if (GetItemCount() == 0)
         return;
 
-    #if DEBUG
-    FichierLog::Get()->Ajouter("PlayListTableau::SuppressionLigne - Début");
-    #endif
+    LogFileAppend("PlayListTableau::SuppressionLigne - Début");
     long position = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
     if (position != -1 && GetItemCount() > 0)
     {
         if (GetSelectedItemCount() == 1 && !MusicManagerSwitcher::getSearch().hasEfficientSearchedWord())
         {
-            #if DEBUG
-            FichierLog::Get()->Ajouter(_T("PlayListTableau::SuppressionLigne - 1 ligne"));
-            #endif
+            LogFileAppend(_T("PlayListTableau::SuppressionLigne - 1 ligne"));
 
             MusicManagerSwitcher::getSearch().deleteTitleAt(position);
             removeLine(position);
@@ -572,9 +553,7 @@ void PlayListTableau::SuppressionLigne()
             int i = 0;
             const int max = GetSelectedItemCount();
 
-            #if DEBUG
-            FichierLog::Get()->Ajouter(_T("PlayListTableau::SuppressionLigne - ") + wxString::Format(_T("%ld lignes"), max));
-            #endif
+            LogFileAppend(_T("PlayListTableau::SuppressionLigne - ") + wxString::Format(_T("%ld lignes"), max));
 
             wxProgressDialog barProgre(_("Mise à jour"), _("Suppression en cours"), max);
 
@@ -600,9 +579,7 @@ void PlayListTableau::SuppressionLigne()
 //        GestPeriph::Get()->MAJPlaylist();
         SetFocus();
     }
-    #if DEBUG
-    FichierLog::Get()->Ajouter(_T("PlayListTableau::SuppressionLigne - Fin"));
-    #endif
+    LogFileAppend(_T("PlayListTableau::SuppressionLigne - Fin"));
 }
 
 /** @brief Event - Adds a music line in the list
@@ -615,14 +592,29 @@ void PlayListTableau::onUpdateLine(wxCommandEvent& event)
 {
     ///FIXME: Might be useless because events come from only one manager.
     wxMutexLocker lock(m_mutexMAJPlaylist);
-    IMusic* music = static_cast<IMusic*>(event.GetClientData());
-    std::vector<Music*>::iterator iter = std::find(MusicManagerSwitcher::getSearch().getMusics().begin(), MusicManagerSwitcher::getSearch().getMusics().end(), music);
+    Music* music = static_cast<Music*>(event.GetClientData());
 
-    if (iter == MusicManagerSwitcher::getSearch().getMusics().end())
+    myFinder finder(*music);
+    music::MusicCollection& musicCollection = MusicManagerSwitcher::getSearch().getMusics();
+    MusicIterator iter = std::find_if(musicCollection.begin(),
+                                    musicCollection.end(),
+                                    finder);
+
+    if (iter == musicCollection.end())
         return;
 
-    const int position = std::distance(MusicManagerSwitcher::getSearch().getMusics().begin(), iter);
+    const int position = std::distance(musicCollection.begin(), iter);
     addLineThread(**iter, position);
     updateColor(position);
+}
+
+myFinder::myFinder(const music::Music& music) :
+    m_music(music)
+{
+}
+
+bool myFinder::operator()(std::shared_ptr<music::Music>& item)
+{
+    return &m_music == item.get();
 }
 

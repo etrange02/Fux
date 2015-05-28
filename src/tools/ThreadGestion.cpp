@@ -33,7 +33,7 @@ ThreadFichierFichier::~ThreadFichierFichier()
 {
     ViderListe();
     delete m_liste;
-    FichierLog::Get()->Ajouter(_T("ThreadFichierFichier::~ThreadFichierFichier"));
+    LogFileAppend(_T("ThreadFichierFichier::~ThreadFichierFichier"));
 }
 
 /**

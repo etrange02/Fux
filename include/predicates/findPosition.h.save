@@ -12,9 +12,10 @@ class findPosition
         virtual ~findPosition();
 
         bool operator()(const music::IMusic* music);
+        bool operator()(const std::shared_ptr music::IMusic* music);
 
     private:
-        IMusic* m_music;
+        music::IMusic* m_music;
 };
 
 #endif // FINDPOSITION_H

@@ -6,6 +6,7 @@
 #include <wx/filename.h>
 #include <wx/dir.h>
 #include <wx/mstream.h>
+#include <memory>
 #include "Music.h"
 #include "MusicFile.h"
 
@@ -23,7 +24,7 @@ namespace music
     {
         public:
             /** Default constructor */
-            MusicFileReader(Music& music);
+            MusicFileReader(std::shared_ptr<Music>& music);
             /** Default destructor */
             virtual ~MusicFileReader();
 
@@ -36,7 +37,7 @@ namespace music
             void ImageExtracting();
 
         private:
-            Music& m_music; //!< Member variable "m_music"
+            std::shared_ptr<Music> m_music; //!< Member variable "m_music"
     };
 }
 

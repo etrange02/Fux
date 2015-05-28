@@ -21,7 +21,7 @@ MusicManagerDefaultDecorator::~MusicManagerDefaultDecorator()
     //dtor
 }
 
-std::vector<Music*>& MusicManagerDefaultDecorator::getMusics()
+MusicCollection& MusicManagerDefaultDecorator::getMusics()
 {
     return getDelegate().getAllMusics();
 }
@@ -31,7 +31,7 @@ size_t MusicManagerDefaultDecorator::getCurrentMusicPosition()
     return getDelegate().getCurrentMusicPosition();
 }
 
-void MusicManagerDefaultDecorator::moveIntTitlesAt(const wxArrayString& titles, long position)
+void MusicManagerDefaultDecorator::moveIntTitlesAt(const wxArrayString& titles, size_t position)
 {
     getDelegate().moveIntTitlesAt(titles, position);
 }
@@ -51,7 +51,7 @@ bool MusicManagerDefaultDecorator::playMusicAt(long position)
     return getDelegate().playMusicAt(position);
 }
 
-void MusicManagerDefaultDecorator::updateMusicContent(const long position, Music* music)
+void MusicManagerDefaultDecorator::updateMusicContent(const size_t position, Music* music)
 {
     getDelegate().updateMusicContent(position, music);
 }

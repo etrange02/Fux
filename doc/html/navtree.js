@@ -2,6 +2,9 @@ var NAVTREE =
 [
   [ "Fu(X) 2.0", "index.html", [
     [ "Liste des éléments obsolètes", "deprecated.html", null ],
+    [ "Espaces de nommage", null, [
+      [ "Liste des espaces de nommage", "namespaces.html", "namespaces" ]
+    ] ],
     [ "Classes", null, [
       [ "Liste des classes", "annotated.html", "annotated" ],
       [ "Index des classes", "classes.html", null ],
@@ -20,13 +23,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"class_array_fenetre_detachable.html#a4641d817757432e59922bf2ec2224223",
-"class_element_thread_fichier.html",
-"class_i_music_manager.html#ab6fc30a70a0bd74a2b1d20ad8ecff801",
-"class_music_manager_default_decorator.html#aaa4433c34295eee5b90c2804e5e90cbf",
-"class_play_list_tableau.html#ac9cedb895d0a0ad1176754c17a1b26f5",
-"classexplorer_1_1_drive_manager_state.html#ad02223e2bab89fa8a6ed21f711766511",
-"dir_ff75c1e080194f017f10c1d4ab6764ee.html"
+"class_b_d_d.html#a8afd3ea33ec12bd6a6f8e54267a4b192",
+"class_fu_x_fenetre.html#a4032c54b71618bb9b106a61d540cb9c3",
+"class_play_list.html#ac37bf58d37235fb808ac51885122a417",
+"classexplorer_1_1_dir_drive_manager_state.html#a03bc359cf040273bc6b19b16170820cf",
+"classgui_1_1explorer_1_1_drive_managers_panel.html#a152727651a654df3899f56bdfc9fd71e",
+"classmusic_1_1_music_file_reader.html",
+"classtools_1_1thread_1_1_thread_manager.html#a23eda647209b79fdd76d080a9857faea"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';

@@ -54,6 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -99,7 +100,7 @@ $(document).ready(function(){initNavTree('files.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -135,7 +136,6 @@ $(document).ready(function(){initNavTree('files.html','');});
 <tr id="row_0_3_0_2_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>DriveManagerState.h</b></td><td class="desc"></td></tr>
 <tr id="row_0_3_0_3_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>FileDriveManagerState.h</b></td><td class="desc"></td></tr>
 <tr id="row_0_3_0_4_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>PlaylistDriveManagerState.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_3_0_5_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>StateExchange.h</b></td><td class="desc"></td></tr>
 <tr id="row_0_3_1_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>DriveManagerListElement.h</b></td><td class="desc"></td></tr>
 <tr id="row_0_3_2_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ExplorerDriveManagers.h</b></td><td class="desc"></td></tr>
 <tr id="row_0_3_3_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ExplorerDriveManagersData.h</b></td><td class="desc"></td></tr>
@@ -226,11 +226,13 @@ $(document).ready(function(){initNavTree('files.html','');});
 <tr id="row_0_9_2_0_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ThreadSafeQueue.h</b></td><td class="desc"></td></tr>
 <tr id="row_0_9_3_" style="display:none;"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span id="arr_0_9_3_" class="arrow" onclick="toggleFolder('0_9_3_')">&#9658;</span><span id="img_0_9_3_" class="iconfclosed" onclick="toggleFolder('0_9_3_')">&#160;</span><a class="el" href="dir_a0cf1b3c0a2e3774dfe6525219ed095e.html" target="_self">thread</a></td><td class="desc"></td></tr>
 <tr id="row_0_9_3_0_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>FileDeletionThread.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_9_3_1_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>IRunnable.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_9_3_2_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>IThreadManager.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_9_3_3_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ThreadFactory.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_9_3_4_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ThreadManager.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_9_3_5_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ThreadProcess.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_9_3_1_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>FileDuplicatingThread.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_9_3_2_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>FileRenamingThread.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_9_3_3_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>IRunnable.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_9_3_4_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>IThreadManager.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_9_3_5_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ThreadFactory.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_9_3_6_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ThreadManager.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_9_3_7_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ThreadProcess.h</b></td><td class="desc"></td></tr>
 <tr id="row_0_9_4_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ElementThreadFichier.h</b></td><td class="desc"></td></tr>
 <tr id="row_0_9_5_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>FichierLog.h</b></td><td class="desc"></td></tr>
 <tr id="row_0_9_6_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>OS_Win.h</b></td><td class="desc"></td></tr>
@@ -256,7 +258,6 @@ $(document).ready(function(){initNavTree('files.html','');});
 <tr id="row_1_2_0_2_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>DriveManagerState.cpp</b></td><td class="desc"></td></tr>
 <tr id="row_1_2_0_3_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>FileDriveManagerState.cpp</b></td><td class="desc"></td></tr>
 <tr id="row_1_2_0_4_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>PlaylistDriveManagerState.cpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_2_0_5_" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>StateExchange.cpp</b></td><td class="desc"></td></tr>
 <tr id="row_1_2_1_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>DriveManagerListElement.cpp</b></td><td class="desc"></td></tr>
 <tr id="row_1_2_2_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ExplorerDriveManagers.cpp</b></td><td class="desc"></td></tr>
 <tr id="row_1_2_3_" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ExplorerDriveManagersData.cpp</b></td><td class="desc"></td></tr>
@@ -349,9 +350,11 @@ $(document).ready(function(){initNavTree('files.html','');});
 <tr id="row_1_9_1_2_" class="even" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>MusicPlayListDnDBufferData.cpp</b></td><td class="desc"></td></tr>
 <tr id="row_1_9_2_" class="even" style="display:none;"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span id="arr_1_9_2_" class="arrow" onclick="toggleFolder('1_9_2_')">&#9658;</span><span id="img_1_9_2_" class="iconfclosed" onclick="toggleFolder('1_9_2_')">&#160;</span><a class="el" href="dir_2ff118ed2cd32a8f58076715321c100f.html" target="_self">thread</a></td><td class="desc"></td></tr>
 <tr id="row_1_9_2_0_" class="even" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>FileDeletionThread.cpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_9_2_1_" class="even" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ThreadFactory.cpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_9_2_2_" class="even" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ThreadManager.cpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_9_2_3_" class="even" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ThreadProcess.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_9_2_1_" class="even" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>FileDuplicatingThread.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_9_2_2_" class="even" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>FileRenamingThread.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_9_2_3_" class="even" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ThreadFactory.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_9_2_4_" class="even" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ThreadManager.cpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_9_2_5_" class="even" style="display:none;"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ThreadProcess.cpp</b></td><td class="desc"></td></tr>
 <tr id="row_1_9_3_" class="even" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>ElementThreadFichier.cpp</b></td><td class="desc"></td></tr>
 <tr id="row_1_9_4_" class="even" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>FichierLog.cpp</b></td><td class="desc"></td></tr>
 <tr id="row_1_9_5_" class="even" style="display:none;"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href=".html"><span class="icondoc"></span></a><b>OS_Win.cpp</b></td><td class="desc"></td></tr>
@@ -365,7 +368,7 @@ $(document).ready(function(){initNavTree('files.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Généré le Dimanche 12 Avril 2015 16:42:47 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Vendredi 29 Mai 2015 00:02:10 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

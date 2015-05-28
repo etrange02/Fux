@@ -4,10 +4,10 @@
 #include <wx/wx.h>
 #include <wx/snglinst.h>
 #include <wx/intl.h>
-#include "../gui/widgets/Fenetre.h"
-#include "../tools/FichierLog.h"
-#include "../network/TCPClient.h"
-#include "../network/TCPConnexionEchangeInstanceLocalHost.h"
+#include "gui/widgets/Fenetre.h"
+#include "tools/FichierLog.h"
+#include "network/TCPClient.h"
+#include "network/TCPConnexionEchangeInstanceLocalHost.h"
 
 class wxFuXApp : public wxApp
 {

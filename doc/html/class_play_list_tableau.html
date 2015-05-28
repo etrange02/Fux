@@ -54,6 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -102,7 +103,7 @@ $(document).ready(function(){initNavTree('class_play_list_tableau.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -192,18 +193,18 @@ wxString&#160;</td><td class="memItemRight" valign="bottom"><b>GetDuration</b> (
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Fonctions membres protégées</h2></td></tr>
-<tr class="memitem:a0ee2a2b61f9e976a40ef19dff50f5ca9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list_tableau.html#a0ee2a2b61f9e976a40ef19dff50f5ca9">addLine</a> (<a class="el" href="class_i_music.html">IMusic</a> &amp;music)</td></tr>
-<tr class="memdesc:a0ee2a2b61f9e976a40ef19dff50f5ca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a line at the end of the list.  <a href="#a0ee2a2b61f9e976a40ef19dff50f5ca9">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a0ee2a2b61f9e976a40ef19dff50f5ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4d63a731a47b20e972a429964b1465b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list_tableau.html#ad4d63a731a47b20e972a429964b1465b">addLine</a> (<a class="el" href="class_i_music.html">IMusic</a> &amp;music, const int position)</td></tr>
-<tr class="memdesc:ad4d63a731a47b20e972a429964b1465b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a line at the specified position.  <a href="#ad4d63a731a47b20e972a429964b1465b">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ad4d63a731a47b20e972a429964b1465b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1de34433bf8c0ff5f557d6263458150e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list_tableau.html#a1de34433bf8c0ff5f557d6263458150e">addLineThread</a> (<a class="el" href="class_i_music.html">IMusic</a> &amp;music, const int position)</td></tr>
-<tr class="memdesc:a1de34433bf8c0ff5f557d6263458150e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a line at the specified position.  <a href="#a1de34433bf8c0ff5f557d6263458150e">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a1de34433bf8c0ff5f557d6263458150e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5542cd0984b0ad4b61ad2a1a89ee9176"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list_tableau.html#a5542cd0984b0ad4b61ad2a1a89ee9176">modifyLine</a> (<a class="el" href="class_i_music.html">IMusic</a> &amp;music, const int position)</td></tr>
-<tr class="memdesc:a5542cd0984b0ad4b61ad2a1a89ee9176"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifies a line in the list.  <a href="#a5542cd0984b0ad4b61ad2a1a89ee9176">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a5542cd0984b0ad4b61ad2a1a89ee9176"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a83ea55ac94d71be6f99743a266c1a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list_tableau.html#a0a83ea55ac94d71be6f99743a266c1a8">addLine</a> (<a class="el" href="classmusic_1_1_i_music.html">music::IMusic</a> &amp;music)</td></tr>
+<tr class="memdesc:a0a83ea55ac94d71be6f99743a266c1a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a line at the end of the list.  <a href="#a0a83ea55ac94d71be6f99743a266c1a8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0a83ea55ac94d71be6f99743a266c1a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae15dc595f060ed7e9df18c91fdf32d14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list_tableau.html#ae15dc595f060ed7e9df18c91fdf32d14">addLine</a> (<a class="el" href="classmusic_1_1_i_music.html">music::IMusic</a> &amp;music, const int position)</td></tr>
+<tr class="memdesc:ae15dc595f060ed7e9df18c91fdf32d14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a line at the specified position.  <a href="#ae15dc595f060ed7e9df18c91fdf32d14">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae15dc595f060ed7e9df18c91fdf32d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dcf4fca773bb9a958e5798286adf3e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list_tableau.html#a9dcf4fca773bb9a958e5798286adf3e3">addLineThread</a> (<a class="el" href="classmusic_1_1_i_music.html">music::IMusic</a> &amp;music, const int position)</td></tr>
+<tr class="memdesc:a9dcf4fca773bb9a958e5798286adf3e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a line at the specified position.  <a href="#a9dcf4fca773bb9a958e5798286adf3e3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9dcf4fca773bb9a958e5798286adf3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6c9723619c4df7cb20e7e2c3e4f9d71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_play_list_tableau.html#ac6c9723619c4df7cb20e7e2c3e4f9d71">modifyLine</a> (<a class="el" href="classmusic_1_1_i_music.html">music::IMusic</a> &amp;music, const int position)</td></tr>
+<tr class="memdesc:ac6c9723619c4df7cb20e7e2c3e4f9d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifies a line in the list.  <a href="#ac6c9723619c4df7cb20e7e2c3e4f9d71">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac6c9723619c4df7cb20e7e2c3e4f9d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a222823bf1c8b5d91af1ca17abe3fb2ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a222823bf1c8b5d91af1ca17abe3fb2ce"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>updateColor</b> (const size_t position)</td></tr>
 <tr class="separator:a222823bf1c8b5d91af1ca17abe3fb2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -246,7 +247,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setDefaultColor</b> (
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a class="anchor" id="a0ee2a2b61f9e976a40ef19dff50f5ca9"></a>
+<a class="anchor" id="a0a83ea55ac94d71be6f99743a266c1a8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -256,7 +257,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setDefaultColor</b> (
         <tr>
           <td class="memname">void PlayListTableau::addLine </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_i_music.html">IMusic</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classmusic_1_1_i_music.html">music::IMusic</a> &amp;&#160;</td>
           <td class="paramname"><em>music</em></td><td>)</td>
           <td></td>
         </tr>
@@ -269,17 +270,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setDefaultColor</b> (
 </div><div class="memdoc">
 
 <p>Adds a line at the end of the list. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">music</td><td>a music data </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ad4d63a731a47b20e972a429964b1465b"></a>
+<a class="anchor" id="ae15dc595f060ed7e9df18c91fdf32d14"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -289,7 +283,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setDefaultColor</b> (
         <tr>
           <td class="memname">void PlayListTableau::addLine </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_i_music.html">IMusic</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classmusic_1_1_i_music.html">music::IMusic</a> &amp;&#160;</td>
           <td class="paramname"><em>music</em>, </td>
         </tr>
         <tr>
@@ -312,18 +306,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setDefaultColor</b> (
 </div><div class="memdoc">
 
 <p>Adds a line at the specified position. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">music</td><td>a music data </td></tr>
-    <tr><td class="paramname">position</td><td>position to place the line </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>void </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a1de34433bf8c0ff5f557d6263458150e"></a>
+<a class="anchor" id="a9dcf4fca773bb9a958e5798286adf3e3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -333,7 +319,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setDefaultColor</b> (
         <tr>
           <td class="memname">void PlayListTableau::addLineThread </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_i_music.html">IMusic</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classmusic_1_1_i_music.html">music::IMusic</a> &amp;&#160;</td>
           <td class="paramname"><em>music</em>, </td>
         </tr>
         <tr>
@@ -554,7 +540,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setDefaultColor</b> (
 
 </div>
 </div>
-<a class="anchor" id="a5542cd0984b0ad4b61ad2a1a89ee9176"></a>
+<a class="anchor" id="ac6c9723619c4df7cb20e7e2c3e4f9d71"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -564,7 +550,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setDefaultColor</b> (
         <tr>
           <td class="memname">void PlayListTableau::modifyLine </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_i_music.html">IMusic</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classmusic_1_1_i_music.html">music::IMusic</a> &amp;&#160;</td>
           <td class="paramname"><em>music</em>, </td>
         </tr>
         <tr>
@@ -698,7 +684,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setDefaultColor</b> (
 </div><div class="memdoc">
 
 <p>Supprime les lignes s�lectionn�es de la liste de lecture. </p>
-<p>TODO (David): Modifier le contenu pour transmettre un tableau de position (entier) au <a class="el" href="class_music_manager.html">MusicManager</a>. Ne pas supprimer directement les lignes, le manager enverra un message pour. mode normal/recherche !!! Attention au multithread, lorsque l'on fait des ajouts de lignes au m�me moment. GUI monothread </p>
+<p>TODO (David): Modifier le contenu pour transmettre un tableau de position (entier) au MusicManager. Ne pas supprimer directement les lignes, le manager enverra un message pour. mode normal/recherche !!! Attention au multithread, lorsque l'on fait des ajouts de lignes au m�me moment. GUI monothread </p>
 
 </div>
 </div>
@@ -735,7 +721,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setDefaultColor</b> (
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_play_list_tableau.html">PlayListTableau</a></li>
-    <li class="footer">Généré le Dimanche 12 Avril 2015 16:42:45 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Vendredi 29 Mai 2015 00:02:09 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>
