@@ -3405,3 +3405,6 @@
 1432852982 c:\workspace\projects\fux\include\predicates\findsharedmusiccontainer.h
 	<memory>
 
+1432853281 source:c:\workspace\projects\fux\src\predicates\findsharedmusiccontainer.cpp
+	"predicates/findSharedMusicContainer.h"
+

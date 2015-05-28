@@ -40,9 +40,6 @@ void MusicFileReader::process()
     if (m_music->GetFileName().IsEmpty() || !wxFileExists(m_music->GetFileName()))
         return;
 
-    if (m_music.use_count() == 1)
-        wxLogMessage(m_music->GetFileName());
-
     FillFields();
     ImageExtracting();
     m_music->ShrinkData();
