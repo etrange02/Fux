@@ -6,7 +6,8 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "MusicManagerDefaultDecorator.h"
+#include <MusicManagerDefaultDecorator.h>
+#include <music/DeletedLines.h>
 
 using namespace ::music;
 
@@ -54,6 +55,11 @@ bool MusicManagerDefaultDecorator::playMusicAt(long position)
 void MusicManagerDefaultDecorator::updateMusicContent(const size_t position, Music* music)
 {
     getDelegate().updateMusicContent(position, music);
+}
+
+int MusicManagerDefaultDecorator::getDeletedLine(DeletedLines& deletedLines)
+{
+    return deletedLines.getPosition();
 }
 
 

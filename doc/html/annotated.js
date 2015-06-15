@@ -18,6 +18,7 @@ var annotated =
     ] ],
     [ "music", null, [
       [ "AbstractMusicManagerDecorator", "classmusic_1_1_abstract_music_manager_decorator.html", "classmusic_1_1_abstract_music_manager_decorator" ],
+      [ "DeletedLines", "classmusic_1_1_deleted_lines.html", "classmusic_1_1_deleted_lines" ],
       [ "Duration", "classmusic_1_1_duration.html", "classmusic_1_1_duration" ],
       [ "Factory", "classmusic_1_1_factory.html", "classmusic_1_1_factory" ],
       [ "IMusic", "classmusic_1_1_i_music.html", "classmusic_1_1_i_music" ],
@@ -76,6 +77,7 @@ var annotated =
     [ "findMenuElementById", "classfind_menu_element_by_id.html", "classfind_menu_element_by_id" ],
     [ "findPathMenuElement", "classfind_path_menu_element.html", "classfind_path_menu_element" ],
     [ "findPosition", "classfind_position.html", "classfind_position" ],
+    [ "findSharedMusicContainer", "classfind_shared_music_container.html", "classfind_shared_music_container" ],
     [ "FuXFenetre", "class_fu_x_fenetre.html", "class_fu_x_fenetre" ],
     [ "GenericTreePanel", "class_generic_tree_panel.html", "class_generic_tree_panel" ],
     [ "GestPeriph", "class_gest_periph.html", "class_gest_periph" ],
@@ -87,7 +89,6 @@ var annotated =
     [ "Music", "class_music.html", null ],
     [ "MusicPlayListDnDBufferData", "class_music_play_list_dn_d_buffer_data.html", "class_music_play_list_dn_d_buffer_data" ],
     [ "MusiqueGraph", "class_musique_graph.html", null ],
-    [ "myFinder", "classmy_finder.html", "classmy_finder" ],
     [ "PageGestionPeriph", "class_page_gestion_periph.html", "class_page_gestion_periph" ],
     [ "Parametre", "class_parametre.html", "class_parametre" ],
     [ "PlayList", "class_play_list.html", "class_play_list" ],

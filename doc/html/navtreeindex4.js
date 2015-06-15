@@ -1,5 +1,13 @@
 var NAVTREEINDEX4 =
 {
+"classexplorer_1_1_default_drive_manager_state.html#ad02223e2bab89fa8a6ed21f711766511":[2,0,0,0,34],
+"classexplorer_1_1_default_drive_manager_state.html#ad693261bdf2a049047f9f60b1285db88":[2,0,0,0,26],
+"classexplorer_1_1_default_drive_manager_state.html#adb9f290e52a41292e6e4649bcf92cf91":[2,0,0,0,29],
+"classexplorer_1_1_default_drive_manager_state.html#ae395b54ebd568624635bbef3aee32a1e":[2,0,0,0,25],
+"classexplorer_1_1_default_drive_manager_state.html#aef45161030c5ee80df23f338e355eab5":[2,0,0,0,33],
+"classexplorer_1_1_default_drive_manager_state.html#af958ce83124310abda5cb850fcd56fff":[2,0,0,0,11],
+"classexplorer_1_1_dir_drive_manager_state.html":[2,0,0,1],
+"classexplorer_1_1_dir_drive_manager_state.html#a01041a5abe0867f64ea2a67e649b7eb6":[2,0,0,1,28],
 "classexplorer_1_1_dir_drive_manager_state.html#a03bc359cf040273bc6b19b16170820cf":[2,0,0,1,3],
 "classexplorer_1_1_dir_drive_manager_state.html#a085837e247c800ef91cfe87c4bf6e1da":[2,0,0,1,9],
 "classexplorer_1_1_dir_drive_manager_state.html#a0bf295d0a446b06aec7ecdf7ad59fb8b":[2,0,0,1,25],
@@ -241,13 +249,5 @@ var NAVTREEINDEX4 =
 "classfind_path_menu_element.html#a746a3fdcdd2cc6449c0f6ea26842ca08":[2,0,28,2],
 "classfind_path_menu_element.html#a9c5b051c65e67ca159c371346eff2180":[2,0,28,1],
 "classfind_path_menu_element.html#afa9ca10c45fe717bd7b5907140c94adc":[2,0,28,3],
-"classfind_position.html":[2,0,29],
-"classfind_position.html#a1bcfb4513ccf8c22ff7a43b4fc3d4fac":[2,0,29,1],
-"classfind_position.html#aaef44a5c9854151e562dbec28402a402":[2,0,29,2],
-"classfind_position.html#ad1cf1b57ea8f01ee1171a223a20271b2":[2,0,29,3],
-"classfind_position.html#adc8d7ade43f36affce0a38d561189093":[2,0,29,0],
-"classfux_1_1music_1_1_factory.html":[2,0,1,0,0],
-"classgui_1_1explorer_1_1_drive_managers_panel.html":[2,0,2,0,0],
-"classgui_1_1explorer_1_1_drive_managers_panel.html#a0aeafa70da70743635125a4b78b1d05f":[2,0,2,0,0,14],
-"classgui_1_1explorer_1_1_drive_managers_panel.html#a0b59fc7c827ee35cf5bc2511a8180b21":[2,0,2,0,0,5]
+"classfind_position.html":[2,0,29]
 };

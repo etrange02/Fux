@@ -1,6 +1,7 @@
 var searchData=
 [
   ['defaultdrivemanagerstate',['DefaultDriveManagerState',['../classexplorer_1_1_default_drive_manager_state.html',1,'explorer']]],
+  ['deletedlines',['DeletedLines',['../classmusic_1_1_deleted_lines.html',1,'music']]],
   ['dialogenregistrem3u',['DialogEnregistreM3U',['../class_dialog_enregistre_m3_u.html',1,'']]],
   ['dialogtagmp3',['DialogTagMP3',['../class_dialog_tag_m_p3.html',1,'']]],
   ['dialogtagmp3info',['DialogTagMP3Info',['../class_dialog_tag_m_p3_info.html',1,'']]],

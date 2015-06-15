@@ -15,7 +15,7 @@ class PlayListTableau : public wxListCtrl
         PlayListTableau(wxWindow *Parent);
         virtual ~PlayListTableau();
         void MAJ();
-        void removeLine(const int position);
+        void removeLine(const long position);
         wxString GetDuration(int);
 
         void ChansonActive(wxListEvent&);
@@ -32,6 +32,8 @@ class PlayListTableau : public wxListCtrl
         void menuDetails(wxCommandEvent &WXUNUSED(event));
         /** Event - Adds a music line in the list */
         void onUpdateLine(wxCommandEvent& event);
+        /** Event - Adds a music line in the list */
+        void onDeleteLine(wxCommandEvent& event);
         void updateColors();
 
         void SuppressionLigne();
@@ -50,6 +52,8 @@ class PlayListTableau : public wxListCtrl
         void updateColorNormalMode(const size_t position);
         void updateColorSearchMode(const size_t position);
         void setDefaultColor(const size_t position);
+
+        std::vector<unsigned long> getSelectedLines();
 
     private:
         wxMutex m_mutexMAJPlaylist;

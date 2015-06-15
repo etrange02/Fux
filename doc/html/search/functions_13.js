@@ -7,6 +7,7 @@ var searchData=
   ['_7ecouleur',['~Couleur',['../class_couleur.html#ad3be30be83649bc5db48ef46b592aec2',1,'Couleur']]],
   ['_7ecoupercopiercoller',['~CouperCopierColler',['../class_couper_copier_coller.html#a6fb4a5deab13dcac09a2a311dae4d51e',1,'CouperCopierColler']]],
   ['_7edefaultdrivemanagerstate',['~DefaultDriveManagerState',['../classexplorer_1_1_default_drive_manager_state.html#a4a0d6723fa01a403004ba3b9f8832b1f',1,'explorer::DefaultDriveManagerState']]],
+  ['_7edeletedlines',['~DeletedLines',['../classmusic_1_1_deleted_lines.html#a6e70606868d7bf373e9c3810b2011e65',1,'music::DeletedLines']]],
   ['_7edialogenregistrem3u',['~DialogEnregistreM3U',['../class_dialog_enregistre_m3_u.html#a8bd4ad958951abf1cf91372a527b8ba9',1,'DialogEnregistreM3U']]],
   ['_7edialogtagmp3info',['~DialogTagMP3Info',['../class_dialog_tag_m_p3_info.html#afde9bc8e3ce67dc6c20796751dab7a61',1,'DialogTagMP3Info']]],
   ['_7edirdrivemanagerstate',['~DirDriveManagerState',['../classexplorer_1_1_dir_drive_manager_state.html#a6c4fb0a723b396023df30a26bfe3866b',1,'explorer::DirDriveManagerState']]],

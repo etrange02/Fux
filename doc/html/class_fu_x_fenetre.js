@@ -36,6 +36,7 @@ var class_fu_x_fenetre =
     [ "MenuAbout", "class_fu_x_fenetre.html#a98780b7c73142d15a4a11d10f701f554", null ],
     [ "MenuAide", "class_fu_x_fenetre.html#a92d517f1cf801e82a06e915e96c9cd43", null ],
     [ "MenuSiteWeb", "class_fu_x_fenetre.html#a36dd67c4d32e1880da63b28e7a8d2fa1", null ],
+    [ "onDeleteLine", "class_fu_x_fenetre.html#ab1b93d439b2bcdf06570d4b23501e612", null ],
     [ "onEventUpdatePlaylistSearchDone", "class_fu_x_fenetre.html#aac28a5c5ce5c3599cd3d06bd15dd1a55", null ],
     [ "OnKeyDownRaccourci", "class_fu_x_fenetre.html#a2c6d7d5d7dac3b2edfd16a7c68a5f3f9", null ],
     [ "OnTitreChange", "class_fu_x_fenetre.html#ad3cd58ca80405317fe1dca9ecb8752f7", null ],

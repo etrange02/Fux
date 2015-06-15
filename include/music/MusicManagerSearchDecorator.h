@@ -21,6 +21,7 @@ namespace music
             virtual void deleteTitleAt(size_t position);
             virtual bool playMusicAt(long position);
             virtual void updateMusicContent(const size_t position, Music* music);
+            virtual int  getDeletedLine(DeletedLines& deletedLines);
     };
 }
 

@@ -13,5 +13,6 @@ var searchData=
   ['findmenuelementbyid',['findMenuElementById',['../classfind_menu_element_by_id.html',1,'']]],
   ['findpathmenuelement',['findPathMenuElement',['../classfind_path_menu_element.html',1,'']]],
   ['findposition',['findPosition',['../classfind_position.html',1,'']]],
+  ['findsharedmusiccontainer',['findSharedMusicContainer',['../classfind_shared_music_container.html',1,'']]],
   ['fuxfenetre',['FuXFenetre',['../class_fu_x_fenetre.html',1,'']]]
 ];

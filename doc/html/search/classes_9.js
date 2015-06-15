@@ -16,7 +16,6 @@ var searchData=
   ['musicmanagerswitcher',['MusicManagerSwitcher',['../classmusic_1_1_music_manager_switcher.html',1,'music']]],
   ['musicplayer',['MusicPlayer',['../classmusic_1_1_music_player.html',1,'music']]],
   ['musicplaylistdndbufferdata',['MusicPlayListDnDBufferData',['../class_music_play_list_dn_d_buffer_data.html',1,'']]],
-  ['musiquegraph',['MusiqueGraph',['../class_musique_graph.html',1,'']]],
   ['musiquegraph',['MusiqueGraph',['../classgui_1_1music_1_1_musique_graph.html',1,'gui::music']]],
-  ['myfinder',['myFinder',['../classmy_finder.html',1,'']]]
+  ['musiquegraph',['MusiqueGraph',['../class_musique_graph.html',1,'']]]
 ];

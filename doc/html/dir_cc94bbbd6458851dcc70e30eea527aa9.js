@@ -1,6 +1,7 @@
 var dir_cc94bbbd6458851dcc70e30eea527aa9 =
 [
     [ "AbstractMusicManagerDecorator.cpp", null, null ],
+    [ "DeletedLines.cpp", null, null ],
     [ "Duration.cpp", null, null ],
     [ "Factory.cpp", null, null ],
     [ "IMusic.cpp", null, null ],

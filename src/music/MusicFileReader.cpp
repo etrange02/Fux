@@ -75,7 +75,7 @@ void MusicFileReader::FillFields()
 void MusicFileReader::ImageExtracting()
 {
     TagLib::MPEG::File f(TagLib::FileName(m_music->GetFileName().fn_str()));
-    if(f.ID3v2Tag())
+    if (f.ID3v2Tag())
     {
         TagLib::ID3v2::FrameList l = f.ID3v2Tag()->frameList("APIC");
         if (!l.isEmpty())

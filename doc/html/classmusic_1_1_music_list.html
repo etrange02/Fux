@@ -178,9 +178,9 @@ long&#160;</td><td class="memItemRight" valign="bottom"><b>getPositionInList</b>
 <tr class="memitem:a40ee36b7dbb9a66f2fa13a33744a918c"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmusic_1_1_music_list.html#a40ee36b7dbb9a66f2fa13a33744a918c">getPositionInList</a> (const <a class="el" href="classmusic_1_1_i_music.html">IMusic</a> *music)</td></tr>
 <tr class="memdesc:a40ee36b7dbb9a66f2fa13a33744a918c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the position of music Gets the position of the <a class="el" href="classmusic_1_1_music.html">Music</a> music in the list.  <a href="#a40ee36b7dbb9a66f2fa13a33744a918c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a40ee36b7dbb9a66f2fa13a33744a918c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ca212a7d9e01397a138a09d589961f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmusic_1_1_music_list.html#a8ca212a7d9e01397a138a09d589961f6">removeLine</a> (size_t position)</td></tr>
-<tr class="memdesc:a8ca212a7d9e01397a138a09d589961f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the title at the given position.  <a href="#a8ca212a7d9e01397a138a09d589961f6">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a8ca212a7d9e01397a138a09d589961f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dfe3a8d959b5e17d6ccfc4d56b47430"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmusic_1_1_music_list.html#a3dfe3a8d959b5e17d6ccfc4d56b47430">removeLine</a> (size_t position)</td></tr>
+<tr class="memdesc:a3dfe3a8d959b5e17d6ccfc4d56b47430"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the title at the given position.  <a href="#a3dfe3a8d959b5e17d6ccfc4d56b47430">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3dfe3a8d959b5e17d6ccfc4d56b47430"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a431184e79f4ec8fb2875ae60e434bb6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmusic_1_1_music_list.html#a431184e79f4ec8fb2875ae60e434bb6c">removeLines</a> (wxArrayString &amp;filenameArray)</td></tr>
 <tr class="memdesc:a431184e79f4ec8fb2875ae60e434bb6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes from the current list each filename in filenameArray.  <a href="#a431184e79f4ec8fb2875ae60e434bb6c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a431184e79f4ec8fb2875ae60e434bb6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -217,9 +217,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> ()</td
 <tr class="memitem:a2855b1fbd7652fe2ba78b34f99966a9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmusic_1_1_music_list.html#a2855b1fbd7652fe2ba78b34f99966a9c">parseDirectoryWithoutRecurs</a> (const wxString &amp;dirname)</td></tr>
 <tr class="memdesc:a2855b1fbd7652fe2ba78b34f99966a9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse only the directory given in parameter Parse only the directory given in parameter and not subdirectories.  <a href="#a2855b1fbd7652fe2ba78b34f99966a9c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2855b1fbd7652fe2ba78b34f99966a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae995de6962aee2d61901c82e171c0a21"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae995de6962aee2d61901c82e171c0a21"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sendMusicListLineDeleted</b> (const int position)</td></tr>
-<tr class="separator:ae995de6962aee2d61901c82e171c0a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"></div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
@@ -703,12 +700,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sendMusicListLineDele
 
 </div>
 </div>
-<a class="anchor" id="a8ca212a7d9e01397a138a09d589961f6"></a>
+<a class="anchor" id="a3dfe3a8d959b5e17d6ccfc4d56b47430"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void MusicList::removeLine </td>
+          <td class="memname">bool MusicList::removeLine </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>position</em></td><td>)</td>
@@ -820,7 +817,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sendMusicListLineDele
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>music</b></li><li class="navelem"><a class="el" href="classmusic_1_1_music_list.html">MusicList</a></li>
-    <li class="footer">Généré le Vendredi 29 Mai 2015 00:02:10 pour Fu(X) 2.0 par
+    <li class="footer">Généré le Lundi 15 Juin 2015 18:09:41 pour Fu(X) 2.0 par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

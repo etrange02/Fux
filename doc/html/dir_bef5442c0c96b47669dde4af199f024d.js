@@ -1,6 +1,7 @@
 var dir_bef5442c0c96b47669dde4af199f024d =
 [
     [ "AbstractMusicManagerDecorator.h", null, null ],
+    [ "DeletedLines.h", null, null ],
     [ "Duration.h", null, null ],
     [ "Factory.h", null, null ],
     [ "IMusic.h", null, null ],

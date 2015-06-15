@@ -14,9 +14,12 @@ var searchData=
   ['defaut_5fcheckboxtag',['Defaut_CheckBoxTAG',['../class_preference_defaut.html#a17e645fefe38243a240b9069e329614a',1,'PreferenceDefaut']]],
   ['defaut_5fradiomp3_5fm3u',['Defaut_RadioMP3_M3U',['../class_preference_defaut.html#afc4ab8da7491a04e44eae8c17334fd93',1,'PreferenceDefaut']]],
   ['deletecurrenttitle',['deleteCurrentTitle',['../classmusic_1_1_music_manager.html#ac686817863ae4ece1f18a8e5a938a691',1,'music::MusicManager']]],
+  ['deletecurrenttitleinsearch',['deleteCurrentTitleInSearch',['../classmusic_1_1_music_manager.html#a3f62888a4ede2196135a4e2f1a3f0cce',1,'music::MusicManager']]],
+  ['deletedlines',['DeletedLines',['../classmusic_1_1_deleted_lines.html',1,'music']]],
+  ['deletedlines',['DeletedLines',['../classmusic_1_1_deleted_lines.html#ab405d46ff21c4e457530eb8676054a8b',1,'music::DeletedLines::DeletedLines()'],['../classmusic_1_1_deleted_lines.html#a988cd46886916bc511d0e3d548b98991',1,'music::DeletedLines::DeletedLines(const long position, const long positionInSearch)']]],
   ['deleteinstance',['deleteInstance',['../classtools_1_1thread_1_1_thread_manager.html#a8a33d24f00bb242524ce77cdec193b49',1,'tools::thread::ThreadManager']]],
-  ['deletetitleat',['deleteTitleAt',['../classmusic_1_1_music_manager.html#acd127ea9debf1036a8d5230164080074',1,'music::MusicManager']]],
-  ['deletetitleatinsearch',['deleteTitleAtInSearch',['../classmusic_1_1_music_manager.html#acd79516db4c4b15a0fe41a5a89e7298d',1,'music::MusicManager']]],
+  ['deletetitleat',['deleteTitleAt',['../classmusic_1_1_music_manager.html#a792f5c11ebf283e718717629a5d61fe7',1,'music::MusicManager']]],
+  ['deletetitleatinsearch',['deleteTitleAtInSearch',['../classmusic_1_1_music_manager.html#a2e39c2d518f4220f0eb82884b74b39e6',1,'music::MusicManager']]],
   ['deletetitles',['deleteTitles',['../classmusic_1_1_music_manager.html#a5263d4d9a4020353b0616b037a0e311c',1,'music::MusicManager']]],
   ['deplace',['Deplace',['../class_page_gestion_periph.html#a095945af47d4a92537015c235db3c997',1,'PageGestionPeriph']]],
   ['deplaced',['DeplaceD',['../class_gest_periph.html#a30e45334cdc2ad1b04e6eed73a084f86',1,'GestPeriph']]],
@@ -36,6 +39,6 @@ var searchData=
   ['drivemanagerstate',['DriveManagerState',['../classexplorer_1_1_drive_manager_state.html#ad5551bfcf731f2ded002ccc3a9c3d1cb',1,'explorer::DriveManagerState']]],
   ['drivemanagerstate',['DriveManagerState',['../classexplorer_1_1_drive_manager_state.html',1,'explorer']]],
   ['dropfichierimagepochettemusique',['DropFichierImagePochetteMusique',['../class_drop_fichier_image_pochette_musique.html',1,'DropFichierImagePochetteMusique'],['../class_drop_fichier_image_pochette_musique.html#ae0491ffe79cebeca35760536f578eb61',1,'DropFichierImagePochetteMusique::DropFichierImagePochetteMusique()']]],
-  ['duration',['Duration',['../classmusic_1_1_duration.html#a688948a87d69e8982cf7e292c7fe4b0a',1,'music::Duration']]],
-  ['duration',['Duration',['../classmusic_1_1_duration.html',1,'music']]]
+  ['duration',['Duration',['../classmusic_1_1_duration.html',1,'music']]],
+  ['duration',['Duration',['../classmusic_1_1_duration.html#a688948a87d69e8982cf7e292c7fe4b0a',1,'music::Duration']]]
 ];

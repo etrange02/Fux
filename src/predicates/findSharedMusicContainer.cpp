@@ -7,8 +7,10 @@
  * License:
  **************************************************************/
 #include "predicates/findSharedMusicContainer.h"
+#include "music/IMusic.h"
+#include "music/Music.h"
 
-findSharedMusicContainer::findSharedMusicContainer(const music::Music& music) :
+findSharedMusicContainer::findSharedMusicContainer(const music::IMusic& music) :
     m_music(music)
 {
 }

@@ -10,11 +10,11 @@
 #include "tools/thread/ThreadManager.h"
 #include "music/Factory.h"
 #include "settings/Parametre.h"
+#include "predicates/findSharedMusicContainer.h"
 
 using namespace ::music;
 
 const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE = wxNewEventType();
-const wxEventType wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED = wxNewEventType();
 /// TODO (David): Complete wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED event by using it to refresh PlayListTableau and explorers...
 
 
@@ -271,12 +271,13 @@ long MusicList::getPositionInList(const IMusic* music)
 
     long index = 0;
 
-    for (MusicIterator iter = getCollection().begin(); iter != getCollection().end(); ++iter, ++index)
-    {
-        if (music == (*iter).get())
-            return index;
-    }
-    return -1;
+    findSharedMusicContainer finder(*music);
+    MusicIterator iter = std::find_if(getCollection().begin(), getCollection().end(), finder);
+
+    if (iter == getCollection().end())
+        return -1;
+
+    return std::distance(getCollection().begin(), iter);
 }
 
 /** @brief Removes the title at the given position
@@ -284,15 +285,15 @@ long MusicList::getPositionInList(const IMusic* music)
  * @param position the position to remove
  *
  */
-void MusicList::removeLine(size_t position)
+bool MusicList::removeLine(size_t position)
 {
-    if (!getCollection().empty() && getCollection().size() > position)
-    {
-        MusicIterator it = getCollection().begin() + position;
-        getCollection().erase(it);
-        sendMusicListLineDeleted(position);
-        //sendMusicListUpdatedEvent();
-    }
+    if (getCollection().empty() || getCollection().size() <= position)
+        return false;
+
+    MusicIterator it = getCollection().begin() + position;
+    getCollection().erase(it);
+    //sendMusicListUpdatedEvent();
+    return true;
 }
 
 /** @brief Removes from the current list each filename in filenameArray
@@ -407,14 +408,5 @@ bool MusicList::isSendEventWhenAdding() const
 void MusicList::setSendEventWhenAdding(bool send)
 {
     m_sendEventWhenAdding = true;//send;
-}
-
-void MusicList::sendMusicListLineDeleted(const int position)
-{
-    if (NULL == getParent())
-        return;
-    wxCommandEvent evt(wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED, wxID_ANY);
-    evt.SetInt(position);
-    getParent()->GetEventHandler()->AddPendingEvent(evt);
 }
 

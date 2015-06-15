@@ -60,6 +60,7 @@ BEGIN_EVENT_TABLE(FuXFenetre, wxFrame)
     EVT_FUX_MUSICLIST_LIST_UPDATE       (FuXFenetre::EventUpdatePlayLists)
     EVT_FUX_MUSICMANAGER_NO_FILE        (FuXFenetre::EventNoMusic)
     EVT_FUX_MUSICMANAGER_SEARCH_DONE    (FuXFenetre::onEventUpdatePlaylistSearchDone)
+    EVT_FUX_MUSICMANAGER_LINE_DELETED   (FuXFenetre::onDeleteLine)
     EVT_FUX_MUSICFILE_READER_THREAD     (FuXFenetre::onUpdateLine)
 
     EVT_SERVEUR(wxID_ANY, FuXFenetre::EvtServeurAjout)
@@ -1116,6 +1117,13 @@ void FuXFenetre::readPreferences(bool loadDefaultMusic)
 void FuXFenetre::onUpdateLine(wxCommandEvent& event)
 {
     m_playList->GetPlayListTableau()->onUpdateLine(event);
+}
+
+void FuXFenetre::onDeleteLine(wxCommandEvent& event)
+{
+    m_playList->GetPlayListTableau()->onDeleteLine(event);
+    delete event.GetClientData();
+    event.SetClientData(NULL);
 }
 
 void FuXFenetre::onEventUpdatePlaylistSearchDone(wxCommandEvent &WXUNUSED(event))

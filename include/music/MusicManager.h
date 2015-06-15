@@ -8,13 +8,15 @@
 
 extern const wxEventType wxEVT_FUX_MUSICMANAGER_NO_FILE;
 extern const wxEventType wxEVT_FUX_MUSICMANAGER_SEARCH_DONE;
+extern const wxEventType wxEVT_FUX_MUSICMANAGER_LINE_DELETED;
 
 
 namespace music
 {
     class MusicList;
 
-    typedef std::vector<std::shared_ptr<Music>> MusicCollection;
+    typedef std::shared_ptr<Music> MusicItem;
+    typedef std::vector<MusicItem> MusicCollection;
     typedef MusicCollection::iterator MusicIterator;
 
     class MusicManager
@@ -33,8 +35,8 @@ namespace music
             void moveIntTitlesAtInSearch(const wxArrayString& titles, unsigned long position);
             void placeStringTitlesAt(const wxArrayString& titles, size_t position);
             void placeStringTitlesAtInSearch(const wxArrayString& titles, size_t position);
-            void deleteTitleAt(size_t position);
-            void deleteTitleAtInSearch(size_t position);
+            void deleteTitleAt(const size_t position);
+            void deleteTitleAtInSearch(const size_t position);
             void updateMusicContent(const size_t position, Music* musicData);
             void updateMusicContentInSearch(const size_t position, Music* musicData);
             void deleteTitles(wxArrayString& titles, bool update = false);
@@ -78,8 +80,16 @@ namespace music
             void sendMusicNoFileEvent();
             void sendSearchEndingEvent();
             void launchSearching();
+            void deleteTitle(const size_t position, const size_t positionInSearch);
             void updateMusicContent(const size_t position, Music* musicData, MusicCollection& collection);
             void updateCurrentMusic(Music* newMusicData);
+            long deleteCurrentTitleInSearch();
+            long deleteTitle(const Music& music);
+            long deleteTitle(const size_t position);
+            long deleteTitleInSearch(const Music& music);
+            long deleteTitleInSearch(const size_t position);
+
+            void sendMusicManagerLineDeleted(const long position, const long positionInSearch);
 
         private:
             MusicPlayer m_musicPlayer;

@@ -255,7 +255,10 @@ void PlayList::ViderPanneauTAG()
  */
 void PlayList::RemplirPanneauTAG(int musicPosition)
 {
-    MusicIterator iter = MusicManagerSwitcher::getSearch().getMusics().begin() + musicPosition;
+    music::MusicCollection& collection = MusicManagerSwitcher::getSearch().getMusics();
+    if (musicPosition >= collection.size())
+        return;
+    MusicIterator iter = collection.begin() + musicPosition;
     RemplirPanneauTAG(**iter);
     m_sizerRep->Layout();
 }

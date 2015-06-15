@@ -11,6 +11,7 @@ namespace music
 {
     typedef std::vector<std::shared_ptr<Music>> MusicCollection;
     typedef MusicCollection::iterator MusicIterator;
+    class DeletedLines;
 
     class IMusicManager
     {
@@ -25,6 +26,7 @@ namespace music
             /**/virtual void deleteTitleAt(size_t position) = 0;
             /**/virtual bool playMusicAt(long position) = 0;
             /**/virtual void updateMusicContent(const size_t position, Music* music) = 0;
+            /**/virtual int  getDeletedLine(DeletedLines& deletedLines) = 0;
 
             virtual bool isRepete() = 0;
             virtual bool isRandom() = 0;

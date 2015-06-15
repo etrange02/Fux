@@ -4,6 +4,7 @@
 class ISearchTraversable
 {
     public:
+        virtual ~ISearchTraversable() {}
         virtual void addFileLine(const wxString& path) = 0;
 };
 

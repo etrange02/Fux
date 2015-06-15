@@ -22,6 +22,7 @@ namespace music
     //        /**/virtual void placeStringTitlesAt(wxArrayString* titles, size_t position) = 0;
     //        /**/virtual void deleteTitleAt(size_t position) = 0;
     //        /**/virtual bool playMusicAt(long position) = 0;
+    //        /**/virtual int  getDeletedLine(DeletedLines& deletedLines) = 0;
 
             virtual bool isRepete();
             virtual bool isRandom();

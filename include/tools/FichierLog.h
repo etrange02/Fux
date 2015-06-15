@@ -1,3 +1,6 @@
+// *** ADDED BY HEADER FIXUP ***
+#include <string>
+// *** END ***
 #ifndef FICHIERLOG_H
 #define FICHIERLOG_H
 

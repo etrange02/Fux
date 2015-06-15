@@ -8,6 +8,7 @@ var hierarchy =
     [ "ComparaisonRequete", "class_comparaison_requete.html", null ],
     [ "Couleur", "class_couleur.html", null ],
     [ "CouperCopierColler", "class_couper_copier_coller.html", null ],
+    [ "music::DeletedLines", "classmusic_1_1_deleted_lines.html", null ],
     [ "DnDListeFichier", "class_dn_d_liste_fichier.html", null ],
     [ "explorer::DriveManagerListElement", "classexplorer_1_1_drive_manager_list_element.html", null ],
     [ "explorer::DriveManagerState", "classexplorer_1_1_drive_manager_state.html", [
@@ -32,6 +33,7 @@ var hierarchy =
     [ "findMenuElementById", "classfind_menu_element_by_id.html", null ],
     [ "findPathMenuElement", "classfind_path_menu_element.html", null ],
     [ "findPosition", "classfind_position.html", null ],
+    [ "findSharedMusicContainer", "classfind_shared_music_container.html", null ],
     [ "ImageText", "class_image_text.html", null ],
     [ "IMusic", "class_i_music.html", null ],
     [ "music::IMusic", "classmusic_1_1_i_music.html", [
@@ -68,7 +70,6 @@ var hierarchy =
     [ "music::MusicManagerSwitcher", "classmusic_1_1_music_manager_switcher.html", null ],
     [ "music::MusicPlayer", "classmusic_1_1_music_player.html", null ],
     [ "MusiqueGraph", "class_musique_graph.html", null ],
-    [ "myFinder", "classmy_finder.html", null ],
     [ "Parametre", "class_parametre.html", null ],
     [ "tools::thread::ThreadFactory", "classtools_1_1thread_1_1_thread_factory.html", null ],
     [ "std::ThreadSafeQueue< T, _Sequence >", "classstd_1_1_thread_safe_queue.html", null ],

@@ -80,6 +80,7 @@ var searchData=
   ['getsearchedmusics',['getSearchedMusics',['../classmusic_1_1_music_manager.html#a5cd63dcf58a79fd32df1b00bfb3f0bc4',1,'music::MusicManager']]],
   ['getsearchedword',['getSearchedWord',['../classmusic_1_1_music_manager.html#a30aa38b9b29cf4d7770e8d8f321ddd59',1,'music::MusicManager']]],
   ['getseconde',['GetSeconde',['../classmusic_1_1_duration.html#a84bce8dbbaaa97c9a17e3270418a7185',1,'music::Duration']]],
+  ['getselectedlines',['getSelectedLines',['../class_play_list_tableau.html#aa7c151a463ed2d29be1e517ef7aaea16',1,'PlayListTableau']]],
   ['getsize',['GetSize',['../classmusic_1_1_music.html#a3331609194112ad5c2a916f8bcd22a0c',1,'music::Music']]],
   ['getsizer',['GetSizer',['../class_fenetre_detachable.html#a7a8f06a5ffd00e3f37770265b4e85851',1,'FenetreDetachable']]],
   ['getsousdossier',['getSousDossier',['../class_parametre.html#aa06b482406215b03426f26693e0d9788',1,'Parametre']]],

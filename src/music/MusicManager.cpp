@@ -12,12 +12,15 @@
 #include <wx/dir.h>
 #include <tools/thread/ThreadManager.h>
 #include <predicates/findPosition.h>
+#include <predicates/findSharedMusicContainer.h>
 #include <music/Factory.h>
+#include <music/DeletedLines.h>
 
 using namespace music;
 
 const wxEventType wxEVT_FUX_MUSICMANAGER_NO_FILE = wxNewEventType();
 const wxEventType wxEVT_FUX_MUSICMANAGER_SEARCH_DONE = wxNewEventType();
+const wxEventType wxEVT_FUX_MUSICMANAGER_LINE_DELETED = wxNewEventType();
 
 /** @brief Default constructor
  */
@@ -138,6 +141,7 @@ size_t MusicManager::getCurrentMusicPosition()
  */
 size_t MusicManager::getCurrentMusicPositionInSearch()
 {
+    ///FIXME: Be careful with -1 size_t.
     MusicIterator iter = std::find_if(getSearchedMusics().begin(), getSearchedMusics().end(), findPosition(getMusic()));
 
     if (iter == getSearchedMusics().end())
@@ -421,13 +425,35 @@ void MusicManager::placeStringTitlesAtInSearch(const wxArrayString& titles, size
  */
 void MusicManager::deleteCurrentTitle()
 {
-    if (NULL != m_music)
+    if (NULL != getMusic())
     {
-        m_musicList->removeLine(m_musicPosition);
-        if (m_musicList->size() <= m_musicPosition)
-            m_musicPosition--;
+        const long positionInSearch = deleteCurrentTitleInSearch();
+        const long position = deleteTitle(m_musicPosition);
+        sendMusicManagerLineDeleted(position, positionInSearch);
         playMusicAt(m_musicPosition);
     }
+}
+
+/** @brief Delete the current playing title in the search list.
+ *
+ * @return position of the deleted line.
+ *
+ */
+long MusicManager::deleteCurrentTitleInSearch()
+{
+    if (!getSearchedMusics().empty())
+    {
+        size_t position = getCurrentMusicPositionInSearch();
+        deleteTitleAtInSearch(position);
+        /*MusicCollection& musics = getSearchedMusics();
+        findSharedMusicContainer finder(m_music);
+        MusicIterator iter = std::find_if(musics.begin(), musics.end(), finder);
+        getSearchedMusics().erase(iter);
+        */
+        return position;
+    }
+    else
+        return -1;
 }
 
 /** @brief Delete a title from the music list
@@ -438,13 +464,16 @@ void MusicManager::deleteCurrentTitle()
  */
 void MusicManager::deleteTitleAt(size_t position)
 {
+    if (position >= m_musicList->size())
+        return;
     if (position == m_musicPosition)
         deleteCurrentTitle();
     else
     {
-        m_musicList->removeLine(position);
-        if (m_musicPosition > position)
-            m_musicPosition--;
+        MusicItem& item = m_musicList->getCollection().at(position);
+        const long positionInSearch = deleteTitleInSearch(*item.get());
+        deleteTitle(position);
+        sendMusicManagerLineDeleted(position, positionInSearch);
     }
     if (empty())
         sendMusicNoFileEvent();
@@ -458,14 +487,62 @@ void MusicManager::deleteTitleAt(size_t position)
  */
 void MusicManager::deleteTitleAtInSearch(size_t position)
 {
-    if (getSearchedMusics().size() > position)
-    {
-        MusicIterator iter = getSearchedMusics().begin() + position;
-        Music* music = getSearchedMusics().at(position).get();
-        long pos = m_musicList->getPositionInList(music);
-        deleteTitleAt(pos);
-        getSearchedMusics().erase(iter);
-    }
+    if (getSearchedMusics().size() <= position)
+        return;
+
+    Music* music = getSearchedMusics().at(position).get();
+
+    const bool deleteCurrent = (getMusic() == music);
+
+    const long musicPosition = deleteTitle(*music);
+    deleteTitleInSearch(position);
+
+    sendMusicManagerLineDeleted(musicPosition, position);
+
+    if (deleteCurrent)
+        playMusicAt(musicPosition);
+}
+
+long MusicManager::deleteTitle(size_t position)
+{
+    int musicPosition = m_musicList->removeLine(position) ? position : -1;
+    if (m_musicPosition > position)
+        m_musicPosition--;
+    if (m_musicPosition >= m_musicList->size())
+        m_musicPosition = m_musicList->size()-1;
+    return musicPosition;
+}
+
+long MusicManager::deleteTitleInSearch(size_t position)
+{
+    if (position >= getSearchedMusics().size())
+        return -1;
+
+    MusicIterator iter = getSearchedMusics().begin() + position;
+    //Music* music = getSearchedMusics().at(position).get();
+    getSearchedMusics().erase(iter);
+
+    return position;
+}
+
+long MusicManager::deleteTitle(const Music& music)
+{
+    long position = m_musicList->getPositionInList(&music);
+    m_musicList->removeLine(position);
+    return position;
+}
+
+long MusicManager::deleteTitleInSearch(const Music& music)
+{
+    findSharedMusicContainer finder(music);
+    MusicIterator iter = std::find_if(getSearchedMusics().begin(), getSearchedMusics().end(), finder);
+
+    if (iter == getSearchedMusics().end())
+        return -1;
+
+    int position = std::distance(getSearchedMusics().begin(), iter);
+    getSearchedMusics().erase(iter);
+    return position;
 }
 
 /** @brief Delete titles from the music list
@@ -754,5 +831,17 @@ void MusicManager::updateCurrentMusic(Music* newMusicData)
     getMusicPlayer().play(music->GetFileName());
     getMusicPlayer().setPosition(time);
     delete musicFile;
+}
+
+void MusicManager::sendMusicManagerLineDeleted(const long position, const long positionInSearch)
+{
+    if (NULL == getParent())
+        return;
+    wxCommandEvent evt(wxEVT_FUX_MUSICMANAGER_LINE_DELETED, wxID_ANY);
+
+    DeletedLines* deletedLines = new DeletedLines(position, positionInSearch);
+    //DeletedLines deletedLines(position, positionInSearch);
+    evt.SetClientData(deletedLines);
+    getParent()->GetEventHandler()->AddPendingEvent(evt);
 }
 

@@ -20,6 +20,7 @@
 #include "gui/musiclist/PlayList.h"
 #include "MusicManagerSwitcher.h"
 #include "music/MusicManager.h"
+#include "music/DeletedLines.h"
 #include "widgets/SliderSon.h"
 #include "tools/FichierLog.h"
 #include "tools/dnd/DnDCible.h"
@@ -290,10 +291,13 @@ void PlayListTableau::MouseEvents(wxMouseEvent &event)
  * Remove a line from the control
  * @param position line to remove
  */
-void PlayListTableau::removeLine(const int position)
+void PlayListTableau::removeLine(const long position)
 {
+    if (position < 0)
+        return;
+
     wxMutexLocker lock(m_mutexMAJPlaylist);
-    LogFileAppend("PlayListTableau::removeLine(const int position)");
+    LogFileAppend("PlayListTableau::removeLine(const long position)");
 
     DeleteItem(position);
     for (wxArrayInt::iterator iter = m_ocurrenceLigne.begin(); iter != m_ocurrenceLigne.end(); ++iter)
@@ -319,7 +323,6 @@ void PlayListTableau::updateColors()
         {
             setDefaultColor(*iter);
         }
-
     }
 
     m_ocurrenceLigne.Empty();
@@ -538,48 +541,71 @@ void PlayListTableau::SuppressionLigne()
         return;
 
     LogFileAppend("PlayListTableau::SuppressionLigne - Début");
-    long position = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
-    if (position != -1 && GetItemCount() > 0)
+    std::vector<unsigned long> selectedLines = getSelectedLines();
+
+    if (selectedLines.empty())
+        return;
+
+    LogFileAppend(_T("PlayListTableau::SuppressionLigne - ") + wxString::Format(_T("%ld lignes"), selectedLines.size()));
+    wxProgressDialog barProgre(_("Mise à jour"), _("Suppression en cours"), selectedLines.size());
+    int i = 0;
+
+    int lastSelectedLine = selectedLines.back();
+    if (GetItemCount() > lastSelectedLine+1)//Toujours avoir une ligne active
+        SetItemState(lastSelectedLine+1, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED);
+    else
     {
-        if (GetSelectedItemCount() == 1 && !MusicManagerSwitcher::getSearch().hasEfficientSearchedWord())
+        int lineToSelect = 0;
+        if (selectedLines.size() > 1 && selectedLines.front() != 0)
         {
-            LogFileAppend(_T("PlayListTableau::SuppressionLigne - 1 ligne"));
+            bool found = false;
+            std::vector<unsigned long>::iterator currentIter = selectedLines.begin();
+            std::vector<unsigned long>::iterator nextIter = selectedLines.begin()+1;
 
-            MusicManagerSwitcher::getSearch().deleteTitleAt(position);
-            removeLine(position);
-        }
-        else
-        {
-            int i = 0;
-            const int max = GetSelectedItemCount();
-
-            LogFileAppend(_T("PlayListTableau::SuppressionLigne - ") + wxString::Format(_T("%ld lignes"), max));
-
-            wxProgressDialog barProgre(_("Mise à jour"), _("Suppression en cours"), max);
-
-            while (i < max)
+            while (nextIter != selectedLines.end() && !found)
             {
-                position = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
-                MusicManagerSwitcher::getSearch().deleteTitleAt(position);
-                removeLine(position);
-                ++i;
-                barProgre.Update(i);
+                if (*nextIter - *currentIter > 1)
+                {
+                    lineToSelect = *currentIter + 1;
+                    found = true;
+                }
+                ++currentIter;
+                ++nextIter;
             }
         }
+        SetItemState(lineToSelect, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED);
 
-        if (GetItemCount() == 0)
-        {
-            wxCommandEvent evt(wxEVT_VIDER_PANNEAU, GetId());
-            GetParent()->GetEventHandler()->AddPendingEvent(evt);
-        }
-        else if (GetItemCount() > position)//Toujours avoir une ligne active
-            SetItemState(position, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED);
-        else if (GetItemCount() >= 1)
-            SetItemState(position-1, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED);
-//        GestPeriph::Get()->MAJPlaylist();
-        SetFocus();
     }
+
+    for (std::vector<unsigned long>::reverse_iterator iter = selectedLines.rbegin(); iter != selectedLines.rend(); ++iter)
+    {
+        MusicManagerSwitcher::getSearch().deleteTitleAt(*iter);
+        ++i;
+        barProgre.Update(i);
+    }
+
+    if (GetItemCount() == 0)
+    {
+        wxCommandEvent evt(wxEVT_VIDER_PANNEAU, GetId());
+        GetParent()->GetEventHandler()->AddPendingEvent(evt);
+    }
+
+    SetFocus();
+
     LogFileAppend(_T("PlayListTableau::SuppressionLigne - Fin"));
+}
+
+/** @brief Event - Removes a music line in the list
+ *
+ * @param event an event
+ * @return void
+ *
+ */
+void PlayListTableau::onDeleteLine(wxCommandEvent& event)
+{
+    DeletedLines* deletedLines = static_cast<DeletedLines*>(event.GetClientData());
+    long position = MusicManagerSwitcher::getSearch().getDeletedLine(*deletedLines);
+    removeLine(position);
 }
 
 /** @brief Event - Adds a music line in the list
@@ -607,4 +633,23 @@ void PlayListTableau::onUpdateLine(wxCommandEvent& event)
     addLineThread(**iter, position);
     updateColor(position);
 }
+
+/** @brief Collects selected lines
+ *
+ * @return an of positions
+ *
+ */
+std::vector<unsigned long> PlayListTableau::getSelectedLines()
+{
+    std::vector<unsigned long> selectedItemsPosition;
+    long index = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
+
+    while (index != -1)
+    {
+        selectedItemsPosition.push_back(index);
+        index = GetNextItem(index, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
+    }
+    return selectedItemsPosition;
+}
+
 

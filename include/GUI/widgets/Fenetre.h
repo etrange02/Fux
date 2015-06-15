@@ -95,6 +95,7 @@ class FuXFenetre: public wxFrame
         void deleteCurrentPlayingTitle();
 
         void onUpdateLine(wxCommandEvent& event);
+        void onDeleteLine(wxCommandEvent& event);
 
     private :
 

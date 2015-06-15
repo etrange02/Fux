@@ -7,6 +7,7 @@ var classmusic_1_1_i_music_manager =
     [ "deleteTitles", "classmusic_1_1_i_music_manager.html#ab7305ed5c8eb288831a478c02ddac41b", null ],
     [ "empty", "classmusic_1_1_i_music_manager.html#a760ad36217bfe288cc4502eb2adb2e23", null ],
     [ "getCurrentMusicPosition", "classmusic_1_1_i_music_manager.html#a23f1c033837215f5f6db3d55a9c4307a", null ],
+    [ "getDeletedLine", "classmusic_1_1_i_music_manager.html#adc702b07324381e0363589cdb2b0ab3a", null ],
     [ "getMusic", "classmusic_1_1_i_music_manager.html#a74352519c867bcc43164b21882d8640b", null ],
     [ "getMusicPlayer", "classmusic_1_1_i_music_manager.html#a0bf13b4d2a6013459765e1ee2211ec80", null ],
     [ "getMusics", "classmusic_1_1_i_music_manager.html#aee5f3fb73e7d6a92e6bf4d4c540e4fe6", null ],

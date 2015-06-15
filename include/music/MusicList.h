@@ -12,7 +12,6 @@
 #include "tools/dir_traverser/Search.h"
 
 extern const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE;
-extern const wxEventType wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED;
 
 namespace music
 {
@@ -43,7 +42,7 @@ namespace music
             wxString getNameAtPosition(long position);
             long getPositionInList(const wxString& filename, long position = -1);
             long getPositionInList(const IMusic* music);
-            void removeLine(size_t position);
+            bool removeLine(size_t position);
             void removeLines(wxArrayString& filenameArray);
             void exchangeLine(const wxString& filename1, const wxString& filename2);
             //void moveLines
@@ -61,8 +60,6 @@ namespace music
             void initialize();
             void parseDirectoryRecursively(const wxString& dirname);
             void parseDirectoryWithoutRecurs(const wxString& dirname);
-
-            void sendMusicListLineDeleted(const int position);
 
         private:
             MusicCollection *m_musicList;

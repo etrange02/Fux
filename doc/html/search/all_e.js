@@ -7,7 +7,7 @@ var searchData=
   ['rechercherchansonbyartiste',['RechercherChansonByArtiste',['../class_b_d_d.html#a2d590aa98753cf4fe642d2820d44d83f',1,'BDD']]],
   ['rechercherchansonbynom',['RechercherChansonByNom',['../class_b_d_d.html#a01b0c91cf477d3f6c03ff63601602a48',1,'BDD']]],
   ['release',['release',['../classmusic_1_1_music_player.html#a21fe5620d1a9c167e5c681ebe56f1c52',1,'music::MusicPlayer']]],
-  ['removeline',['removeLine',['../class_play_list_tableau.html#aa8e58e9afd5ed6e1d48d89c5a2a49bb1',1,'PlayListTableau::removeLine()'],['../classmusic_1_1_music_list.html#a8ca212a7d9e01397a138a09d589961f6',1,'music::MusicList::removeLine()']]],
+  ['removeline',['removeLine',['../class_play_list_tableau.html#a59135be4ad62d5702b4810583defccc7',1,'PlayListTableau::removeLine()'],['../classmusic_1_1_music_list.html#a3dfe3a8d959b5e17d6ccfc4d56b47430',1,'music::MusicList::removeLine()']]],
   ['removelines',['removeLines',['../classmusic_1_1_music_list.html#a431184e79f4ec8fb2875ae60e434bb6c',1,'music::MusicList']]],
   ['remplirpanneautag',['RemplirPanneauTAG',['../class_play_list.html#a8d2631812e1882c5df6baf95f58ab0e1',1,'PlayList']]],
   ['resultsettoarrayint',['ResultSetToArrayInt',['../class_b_d_d.html#a5af634488e520a575de849161f929b22',1,'BDD']]],

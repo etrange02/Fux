@@ -23,13 +23,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"class_b_d_d.html#a8afd3ea33ec12bd6a6f8e54267a4b192",
-"class_fu_x_fenetre.html#a4032c54b71618bb9b106a61d540cb9c3",
-"class_play_list.html#ac37bf58d37235fb808ac51885122a417",
-"classexplorer_1_1_dir_drive_manager_state.html#a03bc359cf040273bc6b19b16170820cf",
-"classgui_1_1explorer_1_1_drive_managers_panel.html#a152727651a654df3899f56bdfc9fd71e",
-"classmusic_1_1_music_file_reader.html",
-"classtools_1_1thread_1_1_thread_manager.html#a23eda647209b79fdd76d080a9857faea"
+"class_b_d_d.html#a8062dabde190377163fa21ca48afb8b1",
+"class_fu_x_fenetre.html#a34824d9ae224e9ec5e5837dfa686052f",
+"class_play_list.html#aa28117918256798428665452da6082e1",
+"classexplorer_1_1_default_drive_manager_state.html#ad02223e2bab89fa8a6ed21f711766511",
+"classfind_position.html#a1bcfb4513ccf8c22ff7a43b4fc3d4fac",
+"classmusic_1_1_music.html#a8baacac1ea65a19c6064cb026283091d",
+"classstd_1_1_thread_safe_queue.html#ad0c76b9a5752075fac64652203f78a07"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';
