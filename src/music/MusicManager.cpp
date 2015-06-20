@@ -16,6 +16,8 @@
 #include <music/Factory.h>
 #include <music/DeletedLines.h>
 
+#define useMethod(object, method) ((object).*(method))
+
 using namespace music;
 
 const wxEventType wxEVT_FUX_MUSICMANAGER_NO_FILE = wxNewEventType();
@@ -139,7 +141,7 @@ size_t MusicManager::getCurrentMusicPosition()
  * @return the position
  *
  */
-size_t MusicManager::getCurrentMusicPositionInSearch()
+long MusicManager::getCurrentMusicPositionInSearch()
 {
     ///FIXME: Be careful with -1 size_t.
     MusicIterator iter = std::find_if(getSearchedMusics().begin(), getSearchedMusics().end(), findPosition(getMusic()));
@@ -479,6 +481,95 @@ void MusicManager::deleteTitleAt(size_t position)
         sendMusicNoFileEvent();
 }
 
+/** @brief Delete titles identified by their position in normal mode
+ *
+ * @param positions const std::vector<unsignedlong>&
+ * @return void
+ *
+ */
+void MusicManager::deleteTitleAt(const std::vector<unsigned long>& positions)
+{
+    deleteTitles(positions, &MusicManager::deleteTitleAt);
+}
+
+/** @brief Delete titles identified by their position in search mode
+ *
+ * @param positions const std::vector<unsignedlong>&
+ * @return void
+ *
+ */
+void MusicManager::deleteTitleAtInSearch(const std::vector<unsigned long>& positions)
+{
+    deleteTitles(positions, &MusicManager::deleteTitleAtInSearch);
+}
+
+/** @brief Delete titles identified by their position in a mode
+ *
+ * @param size_t const
+ * @return void MusicManager::deleteTitles(const std::vector<unsigned long>& positions, void
+ *
+ */
+void MusicManager::deleteTitles(const std::vector<unsigned long>& positions, void (MusicManager::*func)(const size_t))
+{
+    if (!changeToAnAvailableTitle(positions))
+        return;
+
+    for (std::vector<unsigned long>::const_reverse_iterator iter = positions.rbegin(); iter != positions.rend(); ++iter)
+        useMethod(*this, func)(*iter);
+}
+
+/** @brief Play a title which is not identified in positions. If all is selected, stop music
+ *
+ * @param positions const std::vector<unsignedlong>&
+ * @return indicates that all identifiers are not in positions
+ *
+ */
+bool MusicManager::changeToAnAvailableTitle(const std::vector<unsigned long>& positions)
+{
+    if (positions.size() == size())
+    {
+        deleteAllTitles();
+        return false;
+    }
+
+    std::vector<unsigned long>::const_iterator currentPosition = std::find(positions.begin(), positions.end(), m_musicPosition);
+    if (positions.end() != currentPosition)
+    {
+        unsigned long position = *currentPosition;
+
+        position = findNextAvailablePosition(positions, currentPosition, position);
+
+        if (size() <= position)
+        {
+            position = findNextAvailablePosition(positions, positions.begin(), 0);
+        }
+        playMusicAt(position);
+    }
+    return true;
+}
+
+/** @brief Find the first integer not present in positions from the beginIter and superior to start
+ *
+ * @param positions const std::vector<unsignedlong>&
+ * @param beginIter const std::vector<unsignedlong>::const_iterator&
+ * @param start const unsignedlong
+ * @return unsigned long
+ *
+ */
+unsigned long MusicManager::findNextAvailablePosition(const std::vector<unsigned long>& positions, const std::vector<unsigned long>::const_iterator& beginIter, const unsigned long start)
+{
+    unsigned long position = start;
+    std::vector<unsigned long>::const_iterator iter = beginIter;
+    while (positions.end() != iter)
+    {
+        if (*iter != position)
+            return position;
+        ++position;
+        ++iter;
+    }
+    return (positions.back()) + 1;
+}
+
 /** @brief Deletes a title from the search list
  *
  * @param position a position
@@ -573,6 +664,19 @@ void MusicManager::deleteTitles(wxArrayString& titles, bool update)
     }
     if (update)
         m_musicList->sendMusicListUpdatedEvent();
+}
+
+/** @brief Delete all titles and stop the music
+ *
+ * @return void
+ *
+ */
+void MusicManager::deleteAllTitles()
+{
+    MusicCollection emptyCollection;
+    m_musicList->getCollection().swap(emptyCollection);
+    m_musicPlayer.release();
+    sendMusicNoFileEvent();
 }
 
 /** @brief Explores the directory where the current music is located.
@@ -833,6 +937,13 @@ void MusicManager::updateCurrentMusic(Music* newMusicData)
     delete musicFile;
 }
 
+/** @brief Event - Give information about a newly deleted title (position in the two modes).
+ *
+ * @param position const long
+ * @param positionInSearch const long
+ * @return void
+ *
+ */
 void MusicManager::sendMusicManagerLineDeleted(const long position, const long positionInSearch)
 {
     if (NULL == getParent())

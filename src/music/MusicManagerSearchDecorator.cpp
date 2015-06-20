@@ -47,6 +47,11 @@ void MusicManagerSearchDecorator::deleteTitleAt(size_t position)
     getDelegate().deleteTitleAtInSearch(position);
 }
 
+void MusicManagerSearchDecorator::deleteTitleAt(const std::vector<unsigned long>& positions)
+{
+    getDelegate().deleteTitleAtInSearch(positions);
+}
+
 bool MusicManagerSearchDecorator::playMusicAt(long position)
 {
     return getDelegate().playMusicAtInSearch(position);

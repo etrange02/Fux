@@ -365,6 +365,6 @@ void PlayList::MouseEvents(wxMouseEvent &event)
 void PlayList::RechercheListeLecture(wxCommandEvent &WXUNUSED(event))
 {
     MusicManagerSwitcher::getSearch().setSearchWord(m_champsRecherche->GetValue());
-    m_liste->MAJ();
+    m_liste->updateLines();
 }
 

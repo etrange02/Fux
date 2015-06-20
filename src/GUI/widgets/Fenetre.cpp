@@ -812,6 +812,8 @@ void FuXFenetre::OnKeyDownRaccourci(wxKeyEvent &event)
 void FuXFenetre::EventNoMusic(wxCommandEvent& WXUNUSED(event))
 {
     drawPlayImageStatus();
+    m_playList->ViderPanneauTAG();
+    m_playList->GetPlayListTableau()->DeleteAllItems();
 }
 
 /// Internal management methods ///
@@ -1128,6 +1130,6 @@ void FuXFenetre::onDeleteLine(wxCommandEvent& event)
 
 void FuXFenetre::onEventUpdatePlaylistSearchDone(wxCommandEvent &WXUNUSED(event))
 {
-    m_playList->GetPlayListTableau()->MAJ();
+    m_playList->GetPlayListTableau()->updateLines();
 }
 

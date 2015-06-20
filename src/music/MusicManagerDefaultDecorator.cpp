@@ -47,6 +47,11 @@ void MusicManagerDefaultDecorator::deleteTitleAt(size_t position)
     getDelegate().deleteTitleAt(position);
 }
 
+void MusicManagerDefaultDecorator::deleteTitleAt(const std::vector<unsigned long>& positions)
+{
+    getDelegate().deleteTitleAt(positions);
+}
+
 bool MusicManagerDefaultDecorator::playMusicAt(long position)
 {
     return getDelegate().playMusicAt(position);

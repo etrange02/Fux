@@ -36,28 +36,28 @@ using namespace ::music;
  */
 
 BEGIN_EVENT_TABLE(PlayListTableau, wxListCtrl)
-    EVT_LIST_ITEM_ACTIVATED(ID_PAGE_PLAYLIST_LISTE, PlayListTableau::ChansonActive)
-    EVT_KEY_DOWN(PlayListTableau::OnKey)
-    EVT_LIST_BEGIN_DRAG(ID_PAGE_PLAYLIST_LISTE, PlayListTableau::Glisser)
-    EVT_RIGHT_DOWN(PlayListTableau::AfficheMenu)
-    EVT_MENU(ID_PAGE_PLAYLIST_MENU_LECTURE,     PlayListTableau::menuLecture)
-    EVT_MENU(ID_PAGE_PLAYLIST_MENU_PAUSE,       PlayListTableau::menuPause)
-    EVT_MENU(ID_PAGE_PLAYLIST_MENU_SUPPRIMER,   PlayListTableau::menuSupprimer)
-    EVT_MENU(ID_PAGE_PLAYLIST_MENU_COUPER,      PlayListTableau::menuCouper)
-    EVT_MENU(ID_PAGE_PLAYLIST_MENU_COLLER,      PlayListTableau::menuColler)
-    EVT_MENU(ID_PAGE_PLAYLIST_MENU_DETAILS,     PlayListTableau::menuDetails)
-    EVT_MOUSE_EVENTS(PlayListTableau::MouseEvents)
+    EVT_LIST_ITEM_ACTIVATED (ID_PAGE_PLAYLIST_LISTE,            PlayListTableau::onActiveLineEvent)
+    EVT_LIST_BEGIN_DRAG     (ID_PAGE_PLAYLIST_LISTE,            PlayListTableau::onDragEvent)
+    EVT_MENU                (ID_PAGE_PLAYLIST_MENU_LECTURE,     PlayListTableau::onMenuEventPlay)
+    EVT_MENU                (ID_PAGE_PLAYLIST_MENU_PAUSE,       PlayListTableau::onMenuEventPause)
+    EVT_MENU                (ID_PAGE_PLAYLIST_MENU_SUPPRIMER,   PlayListTableau::onMenuEventDelete)
+    EVT_MENU                (ID_PAGE_PLAYLIST_MENU_COUPER,      PlayListTableau::onMenuEventCut)
+    EVT_MENU                (ID_PAGE_PLAYLIST_MENU_COLLER,      PlayListTableau::onMenuEventPaste)
+    EVT_MENU                (ID_PAGE_PLAYLIST_MENU_DETAILS,     PlayListTableau::onMenuEventDetails)
+    EVT_MOUSE_EVENTS        (PlayListTableau::onMouseEvent)
+    EVT_RIGHT_DOWN          (PlayListTableau::onDisplayMenu)
+    EVT_KEY_DOWN            (PlayListTableau::onKeyboardEvent)
 END_EVENT_TABLE()
 
 
 const wxEventType wxEVT_VIDER_PANNEAU = wxNewEventType();
 const wxEventType wxEVT_LISTE_DETAILS = wxNewEventType();
 
-/**
- * Constructeur
- * @param Parent La fenêtre parente
+/** @brief Constructor.
+ *
+ * @param parent The parent window
  */
-PlayListTableau::PlayListTableau(wxWindow *Parent) : wxListCtrl(Parent, ID_PAGE_PLAYLIST_LISTE, wxDefaultPosition, wxDefaultSize, wxLC_REPORT |  wxLC_HRULES | wxLC_VRULES)
+PlayListTableau::PlayListTableau(wxWindow *parent) : wxListCtrl(parent, ID_PAGE_PLAYLIST_LISTE, wxDefaultPosition, wxDefaultSize, wxLC_REPORT |  wxLC_HRULES | wxLC_VRULES)
 {
     LogFileAppend("PlayListTableau::PlayListTableau - Création");
 
@@ -83,21 +83,23 @@ PlayListTableau::PlayListTableau(wxWindow *Parent) : wxListCtrl(Parent, ID_PAGE_
     m_menu->Append(ID_PAGE_PLAYLIST_MENU_COUPER,    _("Déplacer"));
     m_menu->Append(ID_PAGE_PLAYLIST_MENU_COLLER,    _("Déposer"));
     m_menu->Append(ID_PAGE_PLAYLIST_MENU_DETAILS,   _("Détails"));
-    m_couper = false;
+    m_cut = false;
 }
 
+/** @brief Destructor.
+ */
 PlayListTableau::~PlayListTableau()
 {
     LogFileAppend(_T("PlayListTableau::~PlayListTableau"));
 }
 
-/**
- * Efface le contenu de la liste et affiche les données relatives au fichier musique.liste
+/** @brief Clears the list and redraw all data.
+ *
  */
-void PlayListTableau::MAJ()
+void PlayListTableau::updateLines()
 {
-    wxMutexLocker lock(m_mutexMAJPlaylist);
-    LogFileAppend("PlayListTableau::MAJ - Début après les tests");
+    wxMutexLocker lock(m_mutexListUpdating);
+    LogFileAppend("PlayListTableau::updateLines - Début après les tests");
 
     wxString chaine, extrait;
 
@@ -117,21 +119,11 @@ void PlayListTableau::MAJ()
 
     Freeze();
 
-    LogFileAppend("PlayListTableau::MAJ - Début du for");
+    LogFileAppend("PlayListTableau::updateLines - Début du for");
 
     SetDoubleBuffered(true);
     for (MusicIterator iter = MusicManagerSwitcher::getSearch().getMusics().begin(); iter != MusicManagerSwitcher::getSearch().getMusics().end(); ++iter)
-    {
-//        BDDRequete *req = new BDDRequete(this);
-
         addLine(**iter);
-
-//        req->AjouterChanson(music->GetFileName(), music->GetYear() == 0 ? _T("") : music->GetStringYear(), music->GetGenres());
-//        req->AjouterArtiste(music->GetArtists());
-
-//        if (pos%10 == 5)
-//            wxApp::GetInstance()->Yield(false);
-    }
 
     if (!GetSelectedItemCount() && GetTopItem() == 0)
     {
@@ -150,8 +142,8 @@ void PlayListTableau::MAJ()
     SetDoubleBuffered(false);
     Thaw();
 
-    LogFileAppend(_T("PlayListTableau::MAJ - Fin du for : ") + wxString::Format(_T("%u"), GetItemCount()));
-    LogFileAppend(_T("PlayListTableau::MAJ - Fin"));
+    LogFileAppend(_T("PlayListTableau::updateLines - Fin du for : ") + wxString::Format(_T("%u"), GetItemCount()));
+    LogFileAppend(_T("PlayListTableau::updateLines - Fin"));
 }
 
 /** @brief Adds a line at the end of the list
@@ -214,25 +206,25 @@ void PlayListTableau::modifyLine(IMusic& music, const int position)
     SetItem(position, 8, music.GetExtension());//Extension
 }
 
-/**
- * Event. Informe l'application que le titre en cours de lecture doit changer
+/** @brief Event. Plays the activated line
+ *
  */
-void PlayListTableau::ChansonActive(wxListEvent &event)
+void PlayListTableau::onActiveLineEvent(wxListEvent& event)
 {
     MusicManagerSwitcher::getSearch().playMusicAt(event.GetIndex());
 }
 
-/**
- * Évènements clavier
+/** @brief Event. Keyboard
+ *
  */
-void PlayListTableau::OnKey(wxKeyEvent &event)
+void PlayListTableau::onKeyboardEvent(wxKeyEvent& event)
 {
     if (event.GetKeyCode() == WXK_DELETE)
-        SuppressionLigne();
+        removeSelectedLines();
     else if (event.GetKeyCode() == 'A' && event.ControlDown())
         SetItemState(-1, wxLIST_STATE_SELECTED, wxLIST_STATE_SELECTED);
     else if ((event.GetKeyCode() == 'R' && event.ControlDown()) || event.GetKeyCode() == WXK_F5)
-        MAJ();
+        updateLines();
     else if (event.ControlDown() && (event.GetKeyCode() == '+' || event.GetKeyCode() == WXK_ADD || event.GetKeyCode() == WXK_NUMPAD_ADD ||
                                      event.GetKeyCode() == '-' || event.GetKeyCode() == WXK_SUBTRACT || event.GetKeyCode() == WXK_NUMPAD_SUBTRACT))
     {
@@ -244,10 +236,10 @@ void PlayListTableau::OnKey(wxKeyEvent &event)
         event.Skip();
 }
 
-/**
- * Évènements souris
+/** @brief Event. Mouse.
+ *
  */
-void PlayListTableau::MouseEvents(wxMouseEvent &event)
+void PlayListTableau::onMouseEvent(wxMouseEvent &event)
 {
     if (event.ControlDown() && event.GetWheelRotation() != 0)
     {
@@ -287,8 +279,8 @@ void PlayListTableau::MouseEvents(wxMouseEvent &event)
         event.Skip();
 }
 
-/**
- * Remove a line from the control
+/** @brief Remove a line from the control
+ *
  * @param position line to remove
  */
 void PlayListTableau::removeLine(const long position)
@@ -296,19 +288,24 @@ void PlayListTableau::removeLine(const long position)
     if (position < 0)
         return;
 
-    wxMutexLocker lock(m_mutexMAJPlaylist);
+    wxMutexLocker lock(m_mutexListUpdating);
     LogFileAppend("PlayListTableau::removeLine(const long position)");
 
     DeleteItem(position);
-    for (wxArrayInt::iterator iter = m_ocurrenceLigne.begin(); iter != m_ocurrenceLigne.end(); ++iter)
+
+    wxArrayInt::iterator iterToDelete = std::find(m_similarLinesOccurences.begin(), m_similarLinesOccurences.end(), position);
+    if (m_similarLinesOccurences.end() != iterToDelete)
+        m_similarLinesOccurences.erase(iterToDelete);
+
+    for (wxArrayInt::iterator iter = m_similarLinesOccurences.begin(); iter != m_similarLinesOccurences.end(); ++iter)
     {
         if (*iter >= position)
             --(*iter);
     }
 }
 
-/**
- * Lors du changement de musique, cette méthode modifie les couleurs de chaque ligne du tableau. Le titre en cours est en orange, les doubles en vert.
+/** @brief Update colours of each line
+ *
  * @param titre les nom et position du titre en cours
  */
 void PlayListTableau::updateColors()
@@ -317,7 +314,7 @@ void PlayListTableau::updateColors()
     if (MusicManagerSwitcher::getSearch().getMusics().empty())
         return;
 
-    for (wxArrayInt::iterator iter = m_ocurrenceLigne.begin(); iter != m_ocurrenceLigne.end(); ++iter)
+    for (wxArrayInt::iterator iter = m_similarLinesOccurences.begin(); iter != m_similarLinesOccurences.end(); ++iter)
     {
         if (*iter < GetItemCount())
         {
@@ -325,8 +322,7 @@ void PlayListTableau::updateColors()
         }
     }
 
-    m_ocurrenceLigne.Empty();
-    m_positionChanson = -1;
+    m_similarLinesOccurences.Empty();
 
     for (size_t i = 0; i < (size_t) GetItemCount(); ++i)
     {
@@ -334,56 +330,77 @@ void PlayListTableau::updateColors()
     }
 }
 
+/** @brief Update the colour of one line according to its attributes
+ *
+ * @param position const size_t
+ * @return void
+ *
+ */
 void PlayListTableau::updateColor(const size_t position)
 {
-    if (GetItemText(position).IsSameAs(MusicManagerSwitcher::getSearch().getMusic()->GetName()))
+    IMusicManager& musicManager = MusicManagerSwitcher::getSearch();
+    if (GetItemText(position).IsSameAs(musicManager.getMusic()->GetName()))
     {
-        m_ocurrenceLigne.Add(position);
-        if (MusicManagerSwitcher::getSearch().getCurrentMusicPosition() == position && !MusicManagerSwitcher::getSearch().hasEfficientSearchedWord())//La couleur orange perd son sens lorsqu'il y a une recherche locale
+        m_similarLinesOccurences.Add(position);
+        long pos = musicManager.getCurrentMusicPosition();
+        if (pos == position && !musicManager.hasEfficientSearchedWord())//La couleur orange perd son sens lorsqu'il y a une recherche locale
             updateColorNormalMode(position);
         else
             updateColorSearchMode(position);
     }
 }
 
+/** @brief Sets the colours of the playing title (orange and yellow)
+ *
+ * @param position const size_t
+ * @return void
+ *
+ */
 void PlayListTableau::updateColorNormalMode(const size_t position)
 {
-    SetItemTextColour(position, wxColor(247, 236, 50));
-    SetItemBackgroundColour(position, wxColor(243, 124, 45));
-    m_positionChanson = position;
+    SetItemTextColour       (position, wxColor(247, 236, 50)); // yellow
+    SetItemBackgroundColour (position, wxColor(243, 124, 45)); // orange
 }
 
+/** @brief Sets the colours of the similar titles (green and indigo)
+ *
+ * @param position const size_t
+ * @return void
+ *
+ */
 void PlayListTableau::updateColorSearchMode(const size_t position)
 {
-    SetItemTextColour(position, wxColor(24, 14, 154));
-    SetItemBackgroundColour(position, wxColor(64, 247, 32));
+    SetItemTextColour       (position, wxColor(24, 14, 154)); // indigo
+    SetItemBackgroundColour (position, wxColor(64, 247, 32)); // green
 }
 
+/** @brief Sets the colour of normal line (white and black)
+ *
+ * @param position const size_t
+ * @return void
+ *
+ */
 void PlayListTableau::setDefaultColor(const size_t position)
 {
-    SetItemTextColour(position, wxColor(0, 0, 0));
-    SetItemBackgroundColour(position, wxColor(255, 255, 255));
+    SetItemTextColour       (position, wxColor(0, 0, 0));       // black
+    SetItemBackgroundColour (position, wxColor(255, 255, 255)); // white
 }
 
-/**
- * Opération de Drag&Drop. Déplace les lignes sélectionnées à un autre endroit de liste
+/** Drag&Drop event. Moves the selected lines to another location.
+ *
  */
-void PlayListTableau::Glisser(wxListEvent &WXUNUSED(event))
+void PlayListTableau::onDragEvent(wxListEvent &WXUNUSED(event))
 {
-    wxMutexLocker locker(m_mutexMAJPlaylist);
+    wxMutexLocker locker(m_mutexListUpdating);
     if (MusicManagerSwitcher::getSearch().hasEfficientSearchedWord())
         return;
 
-    long item = -1;
     DnDListeFichier* transfile = new DnDListeFichier();
 
-    item = GetNextItem(item, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
-    while (item != -1)
-    {
-        transfile->AddFile(wxString::Format(_("%d"), item));
-        //transfile->AddFile(Musique::Get()->GetFichier()->GetNomPosition(item));
-        item = GetNextItem(item, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
-    }
+    const std::vector<unsigned long> selectedLines = getSelectedLines();
+    for (std::vector<unsigned long>::const_iterator iter = selectedLines.begin(); iter != selectedLines.end(); ++iter)
+        transfile->AddFile(wxString::Format(_("%d"), *iter));
+
     if (transfile->GetCount() == 0)  // Si aucun fichier détruire l'instance et sortir
     {
         delete transfile;
@@ -398,10 +415,10 @@ void PlayListTableau::Glisser(wxListEvent &WXUNUSED(event))
     delete transfile;
 }
 
-/**
- * Affiche le menu obtenu lors d'un clic droit dans la liste
+/** @brief Event. Display a menu.
+ *
  */
-void PlayListTableau::AfficheMenu(wxMouseEvent &WXUNUSED(event))
+void PlayListTableau::onDisplayMenu(wxMouseEvent &WXUNUSED(event))
 {
     int flag = wxLIST_HITTEST_ONITEM | wxLIST_HITTEST_ONITEMRIGHT | wxLIST_HITTEST_TOLEFT | wxLIST_HITTEST_TORIGHT;
     long pos = HitTest(ScreenToClient(wxGetMousePosition()), flag);
@@ -414,7 +431,8 @@ void PlayListTableau::AfficheMenu(wxMouseEvent &WXUNUSED(event))
         SetItemState(pos, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED);
     }
 
-    if ((pos == m_positionChanson) || (pos == wxNOT_FOUND && GetItemCount() > 0))//Element sélectionné est chargé ou pas d'éléments sélectionnés
+    const long position = MusicManagerSwitcher::getSearch().getCurrentMusicPosition();
+    if ((pos == position) || (pos == wxNOT_FOUND && GetItemCount() > 0))//Element sélectionné est chargé ou pas d'éléments sélectionnés
     {
        ////////////////////// Musique::Get()->GetNomChanson().IsSameAs(GetItem(pos));/////////////////
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_LECTURE, false);
@@ -440,7 +458,7 @@ void PlayListTableau::AfficheMenu(wxMouseEvent &WXUNUSED(event))
     }
 
 
-    if (m_couper && !MusicManagerSwitcher::getSearch().hasEfficientSearchedWord())
+    if (m_cut && !MusicManagerSwitcher::getSearch().hasEfficientSearchedWord())
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_COLLER, true);
     else
         m_menu->Enable(ID_PAGE_PLAYLIST_MENU_COLLER, false);
@@ -463,19 +481,19 @@ void PlayListTableau::AfficheMenu(wxMouseEvent &WXUNUSED(event))
     PopupMenu(m_menu);
 }
 
-/**
- * Évènement. Lance la lecture du titre sélectionné
+/** @brief Event. Play the first selected music.
+ *
  */
-void PlayListTableau::menuLecture(wxCommandEvent &WXUNUSED(event))
+void PlayListTableau::onMenuEventPlay(wxCommandEvent &WXUNUSED(event))
 {
     long pos = GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_FOCUSED);
     MusicManagerSwitcher::getSearch().playMusicAt(pos);
 }
 
-/**
- * Évènement. Met en pause ou reprend la l'écoute
+/** @brief Event. Put the music in a pause state.
+ *
  */
-void PlayListTableau::menuPause(wxCommandEvent &WXUNUSED(event))
+void PlayListTableau::onMenuEventPause(wxCommandEvent &WXUNUSED(event))
 {
     if (MusicManagerSwitcher::getSearch().getMusicPlayer().isPlaying())
         MusicManagerSwitcher::getSearch().getMusicPlayer().setPause(true);
@@ -485,74 +503,68 @@ void PlayListTableau::menuPause(wxCommandEvent &WXUNUSED(event))
         MusicManagerSwitcher::getSearch().playSameMusic();
 }
 
-/**
- * Évènement. Supprime l'élément sélectionné de la liste
+/** @brief Event - Delete selected lines.
+ *
  */
-void PlayListTableau::menuSupprimer(wxCommandEvent &WXUNUSED(event))
+void PlayListTableau::onMenuEventDelete(wxCommandEvent &WXUNUSED(event))
 {
-    SuppressionLigne();
+    removeSelectedLines();
 }
 
-/**
- * Évènement. Mise en mémoire, Ctrl+X
+/** @brief Event. Cut&Paste scenario. Data placed in memory, Ctrl+X.
+ *
  */
-void PlayListTableau::menuCouper(wxCommandEvent &WXUNUSED(event))
+void PlayListTableau::onMenuEventCut(wxCommandEvent &WXUNUSED(event))
 {
     long item = -1;
     item = GetNextItem(item, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
     while (item != -1)
     {
-        m_tableauCouper.Add(wxString::Format(_T("%ld"), item));
+        m_cutTitles.Add(wxString::Format(_T("%ld"), item));
         item = GetNextItem(item, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
     }
-    m_couper = true;
+    m_cut = true;
 }
 
-/**
- * Évènement. Déplacement, Ctrl+V
+/** @brief Event. Cut&Paste scenario. Memorised data pasted, Ctrl+V.
+ *
  */
-void PlayListTableau::menuColler(wxCommandEvent &WXUNUSED(event))
+void PlayListTableau::onMenuEventPaste(wxCommandEvent &WXUNUSED(event))
 {
-    MusicManagerSwitcher::getSearch().moveIntTitlesAt(m_tableauCouper, m_yMenu/*, true*/);
-    m_tableauCouper.Clear();
-    m_couper = false;
+    MusicManagerSwitcher::getSearch().moveIntTitlesAt(m_cutTitles, m_yMenu/*, true*/);
+    m_cutTitles.Clear();
+    m_cut = false;
 }
 
-/**
- * Évènement. Affiche une fenêtre dans laquelle des détails sur le titre sont présent (durée, taille sur le disque)
+/** @brief Event. Show a dialogue with some data of the selected title.
+ *
  */
-void PlayListTableau::menuDetails(wxCommandEvent &WXUNUSED(event))
+void PlayListTableau::onMenuEventDetails(wxCommandEvent &WXUNUSED(event))
 {
     wxCommandEvent evt(wxEVT_LISTE_DETAILS, GetId());
     GetParent()->GetEventHandler()->AddPendingEvent(evt);
 }
 
-/**
- * Supprime les lignes sélectionnées de la liste de lecture
+/** @brief Removes selected lines.
+ *
  */
- /// TODO (David): Modifier le contenu pour transmettre un tableau de position (entier)
- /// au MusicManager. Ne pas supprimer directement les lignes, le manager enverra un message pour.
- /// mode normal/recherche !!!
- /// Attention au multithread, lorsque l'on fait des ajouts de lignes au même moment. GUI monothread
-void PlayListTableau::SuppressionLigne()
+void PlayListTableau::removeSelectedLines()
 {
-    wxMutexLocker lock(m_mutexMAJPlaylist);
+    wxMutexLocker lock(m_mutexListUpdating);
     if (GetItemCount() == 0)
         return;
 
-    LogFileAppend("PlayListTableau::SuppressionLigne - Début");
+    LogFileAppend("PlayListTableau::removeSelectedLines - Début");
     std::vector<unsigned long> selectedLines = getSelectedLines();
 
     if (selectedLines.empty())
         return;
 
     LogFileAppend(_T("PlayListTableau::SuppressionLigne - ") + wxString::Format(_T("%ld lignes"), selectedLines.size()));
-    wxProgressDialog barProgre(_("Mise à jour"), _("Suppression en cours"), selectedLines.size());
-    int i = 0;
 
-    int lastSelectedLine = selectedLines.back();
-    if (GetItemCount() > lastSelectedLine+1)//Toujours avoir une ligne active
-        SetItemState(lastSelectedLine+1, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED);
+    int lastSelectedLine = selectedLines.back() + 1;
+    if (GetItemCount() > lastSelectedLine)//Toujours avoir une ligne active
+        SetItemState(lastSelectedLine, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED);
     else
     {
         int lineToSelect = 0;
@@ -574,28 +586,16 @@ void PlayListTableau::SuppressionLigne()
             }
         }
         SetItemState(lineToSelect, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED);
-
     }
 
-    for (std::vector<unsigned long>::reverse_iterator iter = selectedLines.rbegin(); iter != selectedLines.rend(); ++iter)
-    {
-        MusicManagerSwitcher::getSearch().deleteTitleAt(*iter);
-        ++i;
-        barProgre.Update(i);
-    }
-
-    if (GetItemCount() == 0)
-    {
-        wxCommandEvent evt(wxEVT_VIDER_PANNEAU, GetId());
-        GetParent()->GetEventHandler()->AddPendingEvent(evt);
-    }
+    MusicManagerSwitcher::getSearch().deleteTitleAt(selectedLines);
 
     SetFocus();
 
     LogFileAppend(_T("PlayListTableau::SuppressionLigne - Fin"));
 }
 
-/** @brief Event - Removes a music line in the list
+/** @brief Event. Removes a music line in the list
  *
  * @param event an event
  * @return void
@@ -604,11 +604,11 @@ void PlayListTableau::SuppressionLigne()
 void PlayListTableau::onDeleteLine(wxCommandEvent& event)
 {
     DeletedLines* deletedLines = static_cast<DeletedLines*>(event.GetClientData());
-    long position = MusicManagerSwitcher::getSearch().getDeletedLine(*deletedLines);
+    const long position = MusicManagerSwitcher::getSearch().getDeletedLine(*deletedLines);
     removeLine(position);
 }
 
-/** @brief Event - Adds a music line in the list
+/** @brief Event. Adds a music line in the list
  *
  * @param event an event
  * @return void
@@ -617,7 +617,7 @@ void PlayListTableau::onDeleteLine(wxCommandEvent& event)
 void PlayListTableau::onUpdateLine(wxCommandEvent& event)
 {
     ///FIXME: Might be useless because events come from only one manager.
-    wxMutexLocker lock(m_mutexMAJPlaylist);
+    wxMutexLocker lock(m_mutexListUpdating);
     Music* music = static_cast<Music*>(event.GetClientData());
 
     findSharedMusicContainer finder(*music);
@@ -636,7 +636,7 @@ void PlayListTableau::onUpdateLine(wxCommandEvent& event)
 
 /** @brief Collects selected lines
  *
- * @return an of positions
+ * @return an array of positions
  *
  */
 std::vector<unsigned long> PlayListTableau::getSelectedLines()

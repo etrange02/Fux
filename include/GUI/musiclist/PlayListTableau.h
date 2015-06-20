@@ -14,29 +14,29 @@ class PlayListTableau : public wxListCtrl
     public:
         PlayListTableau(wxWindow *Parent);
         virtual ~PlayListTableau();
-        void MAJ();
+        void updateLines();
         void removeLine(const long position);
-        wxString GetDuration(int);
+        void removeSelectedLines();
+        wxString getDuration(int);
 
-        void ChansonActive(wxListEvent&);
-        void OnKey(wxKeyEvent&);
-        void MouseEvents(wxMouseEvent&);
-        void Glisser(wxListEvent &WXUNUSED(event));
-        void AfficheMenu(wxMouseEvent &WXUNUSED(event));
+        void onActiveLineEvent  (wxListEvent&);
+        void onKeyboardEvent    (wxKeyEvent&);
+        void onMouseEvent       (wxMouseEvent&);
+        void onDragEvent        (wxListEvent&    WXUNUSED(event));
+        void onDisplayMenu      (wxMouseEvent&   WXUNUSED(event));
 
-        void menuLecture(wxCommandEvent &WXUNUSED(event));
-        void menuPause(wxCommandEvent &WXUNUSED(event));
-        void menuSupprimer(wxCommandEvent &WXUNUSED(event));
-        void menuCouper(wxCommandEvent &WXUNUSED(event));
-        void menuColler(wxCommandEvent &WXUNUSED(event));
-        void menuDetails(wxCommandEvent &WXUNUSED(event));
+        void onMenuEventPlay    (wxCommandEvent& WXUNUSED(event));
+        void onMenuEventPause   (wxCommandEvent& WXUNUSED(event));
+        void onMenuEventDelete  (wxCommandEvent& WXUNUSED(event));
+        void onMenuEventCut     (wxCommandEvent& WXUNUSED(event));
+        void onMenuEventPaste   (wxCommandEvent& WXUNUSED(event));
+        void onMenuEventDetails (wxCommandEvent& WXUNUSED(event));
         /** Event - Adds a music line in the list */
         void onUpdateLine(wxCommandEvent& event);
         /** Event - Adds a music line in the list */
         void onDeleteLine(wxCommandEvent& event);
         void updateColors();
 
-        void SuppressionLigne();
 
     protected:
         /** Adds a line at the end of the list */
@@ -56,14 +56,12 @@ class PlayListTableau : public wxListCtrl
         std::vector<unsigned long> getSelectedLines();
 
     private:
-        wxMutex m_mutexMAJPlaylist;
-        wxArrayString m_tableauCouper;
-        wxArrayInt m_ocurrenceLigne;
-        bool m_couper;
+        wxMutex m_mutexListUpdating;
+        wxArrayString m_cutTitles;
+        wxArrayInt m_similarLinesOccurences;
+        bool m_cut;
         wxMenu *m_menu;
         long m_yMenu;
-
-        int m_positionChanson;
 
     DECLARE_EVENT_TABLE()
 };

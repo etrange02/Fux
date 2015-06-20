@@ -25,21 +25,23 @@ namespace music
             MusicManager();
             virtual ~MusicManager();
 
-            MusicCollection& getAllMusics();
-            MusicCollection& getSearchedMusics();
-            size_t getCurrentMusicPosition();
-            size_t getCurrentMusicPositionInSearch();
-            bool playMusicAt(long position);
-            bool playMusicAtInSearch(long position);
-            void moveIntTitlesAt(const wxArrayString& titles, size_t position);
-            void moveIntTitlesAtInSearch(const wxArrayString& titles, unsigned long position);
-            void placeStringTitlesAt(const wxArrayString& titles, size_t position);
+            MusicCollection& getAllMusics       ();
+            MusicCollection& getSearchedMusics  ();
+            size_t getCurrentMusicPosition      ();
+            long getCurrentMusicPositionInSearch();
+            bool playMusicAt                (long position);
+            bool playMusicAtInSearch        (long position);
+            void moveIntTitlesAt            (const wxArrayString& titles, size_t position);
+            void moveIntTitlesAtInSearch    (const wxArrayString& titles, unsigned long position);
+            void placeStringTitlesAt        (const wxArrayString& titles, size_t position);
             void placeStringTitlesAtInSearch(const wxArrayString& titles, size_t position);
-            void deleteTitleAt(const size_t position);
-            void deleteTitleAtInSearch(const size_t position);
-            void updateMusicContent(const size_t position, Music* musicData);
-            void updateMusicContentInSearch(const size_t position, Music* musicData);
-            void deleteTitles(wxArrayString& titles, bool update = false);
+            void deleteTitleAt              (const size_t position);
+            void deleteTitleAt              (const std::vector<unsigned long>& positions);
+            void deleteTitleAtInSearch      (const size_t position);
+            void deleteTitleAtInSearch      (const std::vector<unsigned long>& positions);
+            void updateMusicContent         (const size_t position, Music* musicData);
+            void updateMusicContentInSearch (const size_t position, Music* musicData);
+            void deleteTitles               (wxArrayString& titles, bool update = false);
 
             bool isRepete();
             bool isRandom();
@@ -88,6 +90,11 @@ namespace music
             long deleteTitle(const size_t position);
             long deleteTitleInSearch(const Music& music);
             long deleteTitleInSearch(const size_t position);
+            void deleteAllTitles();
+            void deleteTitles(const std::vector<unsigned long>& positions, void (MusicManager::*func)(const size_t));
+            bool changeToAnAvailableTitle(const std::vector<unsigned long>& positions);
+
+            unsigned long findNextAvailablePosition(const std::vector<unsigned long>& positions, const std::vector<unsigned long>::const_iterator& beginIter, const unsigned long start);
 
             void sendMusicManagerLineDeleted(const long position, const long positionInSearch);
 

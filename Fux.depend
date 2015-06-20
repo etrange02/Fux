@@ -2142,7 +2142,7 @@
 
 1423486751 c:\workspace\projects\fux\include\classes.h
 
-1434227309 c:\workspace\projects\fux\include\music\musicmanager.h
+1434735612 c:\workspace\projects\fux\include\music\musicmanager.h
 	<wx/wx.h>
 	"MusicPlayer.h"
 	"MusicList.h"
@@ -2510,7 +2510,7 @@
 
 1412504350 c:\workspace\libraries\wx302gl\include\wx\generic\statline.h
 
-1430083399 c:\workspace\projects\fux\include\gui\musiclist\playlist.h
+1434810465 c:\workspace\projects\fux\include\gui\musiclist\playlist.h
 	"Define.h"
 	<wx/wx.h>
 	<wx/stdpaths.h>
@@ -2576,7 +2576,7 @@
 1412504350 c:\workspace\libraries\wx302gl\include\wx\generic\srchctlg.h
 	"wx/bitmap.h"
 
-1434310569 c:\workspace\projects\fux\include\gui\musiclist\playlisttableau.h
+1434823363 c:\workspace\projects\fux\include\gui\musiclist\playlisttableau.h
 	<wx/wx.h>
 	<wx/listctrl.h>
 	<wx/thread.h>
@@ -2996,13 +2996,13 @@
 	"MusicManagerSearchDecorator.h"
 	"MusicManager.h"
 
-1434383909 c:\workspace\projects\fux\include\music\imusicmanager.h
+1434750332 c:\workspace\projects\fux\include\music\imusicmanager.h
 	<vector>
 	<memory>
 	"Music.h"
 	"MusicPlayer.h"
 
-1434383790 c:\workspace\projects\fux\include\music\musicmanagerdefaultdecorator.h
+1434750445 c:\workspace\projects\fux\include\music\musicmanagerdefaultdecorator.h
 	"AbstractMusicManagerDecorator.h"
 	"MusicManager.h"
 
@@ -3011,7 +3011,7 @@
 	"IMusicManager.h"
 	"MusicManager.h"
 
-1434383884 c:\workspace\projects\fux\include\music\musicmanagersearchdecorator.h
+1434750445 c:\workspace\projects\fux\include\music\musicmanagersearchdecorator.h
 	"AbstractMusicManagerDecorator.h"
 	"MusicManager.h"
 
@@ -3064,14 +3064,14 @@
 	<GL/glu.h>
 	<wx/dir.h>
 
-1434281708 source:c:\workspace\projects\fux\src\gui\musiclist\playlist.cpp
+1434810976 source:c:\workspace\projects\fux\src\gui\musiclist\playlist.cpp
 	"gui/musiclist/PlayList.h"
 	"MusicManagerSwitcher.h"
 	"tools/FichierLog.h"
 	"music/Factory.h"
 	<music/Music.h>
 
-1434312957 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
+1434823573 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
 	"Define.h"
 	<wx/stdpaths.h>
 	<wx/dir.h>
@@ -3113,7 +3113,7 @@
 1420204780 source:c:\workspace\projects\fux\src\gui\widgets\boutonfenetredetachable.cpp
 	"../../../include/gui/widgets/BoutonFenetreDetachable.h"
 
-1434312965 source:c:\workspace\projects\fux\src\gui\widgets\fenetre.cpp
+1434811005 source:c:\workspace\projects\fux\src\gui\widgets\fenetre.cpp
 	"wx/wxprec.h"
 	"Fenetre.h"
 	"MusicManagerSwitcher.h"
@@ -3163,7 +3163,7 @@
 1429309158 source:c:\workspace\projects\fux\src\music\musicfilewriterthread.cpp
 	"MusicFileWriterThread.h"
 
-1434226921 source:c:\workspace\projects\fux\src\music\musiclist.cpp
+1434405747 source:c:\workspace\projects\fux\src\music\musiclist.cpp
 	"music/MusicList.h"
 	"tools/thread/ThreadManager.h"
 	"music/Factory.h"
@@ -3193,7 +3193,7 @@
 	"ThreadProcess.h"
 	"IThreadManager.h"
 
-1434313077 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
+1434756107 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
 	<music/MusicManager.h>
 	<ctime>
 	<algorithm>
@@ -3208,11 +3208,11 @@
 	"music/IMusic.h"
 	<memory>
 
-1434383961 source:c:\workspace\projects\fux\src\music\musicmanagerdefaultdecorator.cpp
+1434750425 source:c:\workspace\projects\fux\src\music\musicmanagerdefaultdecorator.cpp
 	<MusicManagerDefaultDecorator.h>
 	<music/DeletedLines.h>
 
-1434383976 source:c:\workspace\projects\fux\src\music\musicmanagersearchdecorator.cpp
+1434750627 source:c:\workspace\projects\fux\src\music\musicmanagersearchdecorator.cpp
 	<MusicManagerSearchDecorator.h>
 	<music/DeletedLines.h>
 

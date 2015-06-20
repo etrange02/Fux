@@ -15,7 +15,6 @@
 using namespace ::music;
 
 const wxEventType wxEVT_FUX_MUSICLIST_LIST_UPDATE = wxNewEventType();
-/// TODO (David): Complete wxEVT_FUX_MUSICLIST_LIST_LINE_DELETED event by using it to refresh PlayListTableau and explorers...
 
 
 /** @brief Default constructor

@@ -19,6 +19,7 @@ namespace music
             virtual void moveIntTitlesAt(const wxArrayString& titles, size_t position);
             virtual void placeStringTitlesAt(const wxArrayString& titles, size_t position);
             virtual void deleteTitleAt(size_t position);
+            virtual void deleteTitleAt(const std::vector<unsigned long>& positions);
             virtual bool playMusicAt(long position);
             virtual void updateMusicContent(const size_t position, Music* music);
             virtual int  getDeletedLine(DeletedLines& deletedLines);

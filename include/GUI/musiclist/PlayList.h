@@ -13,7 +13,6 @@
 #include <wx/progdlg.h>
 #include <wx/mstream.h>
 #include <wx/srchctrl.h>
-//#include "music/Musique.h"
 #include "music/MusicManager.h"
 #include "PlayListTableau.h"
 #include "dialogs/DialogEnregistreM3U.h"
