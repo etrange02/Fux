@@ -29,7 +29,7 @@ namespace explorer
             virtual bool fillExplorerList(const wxString& elementToSelect) = 0;
 
             virtual DriveManagerState& getPreviousState() = 0;
-            virtual void openElement(const std::vector<unsigned long>& indexes) = 0;
+            virtual void openElement() = 0;
 
             void addDriveManagerListElement(const wxString& filename);
             bool isSameKind(const DriveManagerState& other) const;

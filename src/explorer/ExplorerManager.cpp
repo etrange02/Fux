@@ -80,12 +80,9 @@ void ExplorerManager::makeParentDir()
     m_data.getExplorerPanel().getExplorerListCtrl().SetFocus();
 }
 
-void ExplorerManager::openElement(const std::vector<unsigned long>& indexes)
+void ExplorerManager::openElement()
 {
-    if (indexes.empty() || indexes.at(0) >= m_data.getElements().size())
-        return;
-
-    m_data.getState().openElement(indexes);
+    m_data.getState().openElement();
     m_data.getExplorerDriveManagers().updateStreamButtonStates(m_data.getExplorerPanel());
     m_data.getExplorerPanel().getExplorerListCtrl().SetFocus();
 }

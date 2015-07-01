@@ -30,7 +30,7 @@ namespace explorer
 
             void refresh();
             void makeParentDir();
-            void openElement(const std::vector<unsigned long>& indexes);
+            void openElement();
 
             gui::explorer::ExplorerPanel& getExplorerPanel() const;
 

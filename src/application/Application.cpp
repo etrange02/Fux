@@ -9,7 +9,7 @@
 #include <wx/wxprec.h>
 #include <wx/wx.h>
 
-#include "../../include/application/Application.h"
+#include "application/Application.h"
 
 /**
  * @class wxFuXApp

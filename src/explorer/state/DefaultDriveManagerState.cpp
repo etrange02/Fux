@@ -45,7 +45,7 @@ DriveManagerState& DefaultDriveManagerState::getPreviousState()
     return *this;
 }
 
-void DefaultDriveManagerState::openElement(const std::vector<unsigned long>& indexes)
+void DefaultDriveManagerState::openElement()
 {
 }
 

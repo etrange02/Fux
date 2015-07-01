@@ -59,8 +59,12 @@ DriveManagerState& PlaylistDriveManagerState::getPreviousState()
     return *this;
 }
 
-void PlaylistDriveManagerState::openElement(const std::vector<unsigned long>& indexes)
+void PlaylistDriveManagerState::openElement()
 {
+    std::vector<unsigned long> indexes = m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines();
+    if (indexes.empty() || indexes.at(0) >= m_data.getElements().size())
+        return;
+
     MusicManagerSwitcher::get().playMusicAt(indexes.at(0));
 }
 
@@ -142,20 +146,28 @@ void PlaylistDriveManagerState::moveElements(DriveManagerState& source)
 
 void PlaylistDriveManagerState::createDir()
 {
+    wxLogMessage("Must be implemented.");
 }
 
 void PlaylistDriveManagerState::createContainerFile()
 {
+    wxLogMessage("Must be implemented.");
 }
 
 void PlaylistDriveManagerState::playItems()
 {
+    //std::vector<unsigned long> selectedItemsPosition = m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines();
+    openElement();
 }
 
 void PlaylistDriveManagerState::rename()
 {
+    // Nothing to do.
 }
 
 void PlaylistDriveManagerState::createShortcut()
 {
+    // Nothing to do.
 }
+
+

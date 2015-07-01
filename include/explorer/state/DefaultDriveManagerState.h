@@ -21,7 +21,7 @@ namespace explorer
             virtual bool fillExplorerList(const wxString& elementToSelect);
 
             virtual DriveManagerState& getPreviousState();
-            virtual void openElement(const std::vector<unsigned long>& indexes);
+            virtual void openElement();
 
             virtual bool canCopyTo(const DriveManagerState& other) const;
             virtual bool canMoveTo(const DriveManagerState& other) const;

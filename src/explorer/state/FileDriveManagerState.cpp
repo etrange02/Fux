@@ -75,8 +75,12 @@ DriveManagerState& FileDriveManagerState::getPreviousState()
     return *(explorer::ExplorerFactory::createDirDriveManagerState(m_data));
 }
 
-void FileDriveManagerState::openElement(const std::vector<unsigned long>& indexes)
+void FileDriveManagerState::openElement()
 {
+    std::vector<unsigned long> indexes = m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines();
+    if (indexes.empty() || indexes.at(0) >= m_data.getElements().size())
+        return;
+
     MusicManagerSwitcher::get().parse(convertPositionToString(indexes));
 }
 
@@ -188,21 +192,26 @@ void FileDriveManagerState::moveElements(DriveManagerState& source)
 
 void FileDriveManagerState::createDir()
 {
+    wxLogMessage("Must be implemented.");
 }
 
 void FileDriveManagerState::createContainerFile()
 {
+    wxLogMessage("Must be implemented.");
 }
 
 void FileDriveManagerState::playItems()
 {
+    wxLogMessage("Must be implemented.");
 }
 
 void FileDriveManagerState::rename()
 {
+    wxLogMessage("Must be implemented.");
 }
 
 void FileDriveManagerState::createShortcut()
 {
+    wxLogMessage("Must be implemented.");
 }
 

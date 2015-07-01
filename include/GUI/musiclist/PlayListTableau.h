@@ -59,9 +59,9 @@ class PlayListTableau : public wxListCtrl
         wxMutex m_mutexListUpdating;
         wxArrayString m_cutTitles;
         wxArrayInt m_similarLinesOccurences;
-        bool m_cut;
         wxMenu *m_menu;
         long m_yMenu;
+        bool m_cut;
 
     DECLARE_EVENT_TABLE()
 };

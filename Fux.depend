@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1432709968 source:c:\workspace\projects\fux\src\application\application.cpp
+1435128146 source:c:\workspace\projects\fux\src\application\application.cpp
 	<wx/wxprec.h>
 	<wx/wx.h>
-	"../../include/application/Application.h"
+	"application/Application.h"
 
 1412504350 c:\workspace\libraries\wx302gl\include\wx\wxprec.h
 	"wx/defs.h"
@@ -2576,7 +2576,7 @@
 1412504350 c:\workspace\libraries\wx302gl\include\wx\generic\srchctlg.h
 	"wx/bitmap.h"
 
-1434823363 c:\workspace\projects\fux\include\gui\musiclist\playlisttableau.h
+1434825335 c:\workspace\projects\fux\include\gui\musiclist\playlisttableau.h
 	<wx/wx.h>
 	<wx/listctrl.h>
 	<wx/thread.h>
@@ -2871,7 +2871,7 @@
 	"ExplorerManager.h"
 	"DriveManagersPanel.h"
 
-1428907829 c:\workspace\projects\fux\include\explorer\explorermanager.h
+1434956402 c:\workspace\projects\fux\include\explorer\explorermanager.h
 	"Define.h"
 	"ExplorerManagerData.h"
 	"ExplorerPanel.h"
@@ -2933,24 +2933,24 @@
 
 1428907770 c:\workspace\projects\fux\include\explorer\explorerfactory.h
 
-1431704234 c:\workspace\projects\fux\include\explorer\state\drivemanagerstate.h
+1434956402 c:\workspace\projects\fux\include\explorer\state\drivemanagerstate.h
 	"wx/wx.h"
 	"explorer/ExplorerPanel.h"
 	<vector>
 
-1431704052 c:\workspace\projects\fux\include\explorer\state\defaultdrivemanagerstate.h
+1434956402 c:\workspace\projects\fux\include\explorer\state\defaultdrivemanagerstate.h
 	"DriveManagerState.h"
 
-1431704052 c:\workspace\projects\fux\include\explorer\state\dirdrivemanagerstate.h
+1434956402 c:\workspace\projects\fux\include\explorer\state\dirdrivemanagerstate.h
 	"DriveManagerState.h"
 
-1431704052 c:\workspace\projects\fux\include\explorer\state\filedrivemanagerstate.h
+1434956402 c:\workspace\projects\fux\include\explorer\state\filedrivemanagerstate.h
 	"DriveManagerState.h"
 
-1431704052 c:\workspace\projects\fux\include\explorer\state\playlistdrivemanagerstate.h
+1434956402 c:\workspace\projects\fux\include\explorer\state\playlistdrivemanagerstate.h
 	"DriveManagerState.h"
 
-1428949456 source:c:\workspace\projects\fux\src\explorer\explorermanager.cpp
+1434956402 source:c:\workspace\projects\fux\src\explorer\explorermanager.cpp
 	"explorer/ExplorerManager.h"
 	"explorer/ExplorerFactory.h"
 	"explorer/ExplorerDriveManagers.h"
@@ -2968,7 +2968,7 @@
 1429373757 source:c:\workspace\projects\fux\src\explorer\menuelementdata.cpp
 	"MenuElementData.h"
 
-1431704052 source:c:\workspace\projects\fux\src\explorer\state\defaultdrivemanagerstate.cpp
+1434956402 source:c:\workspace\projects\fux\src\explorer\state\defaultdrivemanagerstate.cpp
 	"DefaultDriveManagerState.h"
 	"explorer/ExplorerManagerData.h"
 
@@ -2976,14 +2976,14 @@
 	"explorer/state/DriveManagerState.h"
 	"explorer/ExplorerManagerData.h"
 
-1431704162 source:c:\workspace\projects\fux\src\explorer\state\filedrivemanagerstate.cpp
+1435747386 source:c:\workspace\projects\fux\src\explorer\state\filedrivemanagerstate.cpp
 	"explorer/state/FileDriveManagerState.h"
 	"MusicManagerSwitcher.h"
 	<wx/textfile.h>
 	"explorer/ExplorerManagerData.h"
 	"explorer/ExplorerFactory.h"
 
-1432564187 source:c:\workspace\projects\fux\src\explorer\state\playlistdrivemanagerstate.cpp
+1435747384 source:c:\workspace\projects\fux\src\explorer\state\playlistdrivemanagerstate.cpp
 	"explorer/state/PlaylistDriveManagerState.h"
 	<vector>
 	"MusicManagerSwitcher.h"
@@ -3047,7 +3047,7 @@
 1432362165 source:c:\workspace\projects\fux\src\gui\explorer\explorerlistctrl.cpp
 	"ExplorerListCtrl.h"
 
-1432362726 source:c:\workspace\projects\fux\src\gui\explorer\explorerpanel.cpp
+1434956402 source:c:\workspace\projects\fux\src\gui\explorer\explorerpanel.cpp
 	"ExplorerPanel.h"
 	"DriveManagersPanel.h"
 	"explorer/ExplorerManager.h"
@@ -3303,8 +3303,8 @@
 1428846354 source:c:\workspace\projects\fux\src\tools\dnd\dndlistefichier.cpp
 	"../../../include/tools/dnd/DnDListeFichier.h"
 
-1420204780 source:c:\workspace\projects\fux\src\tools\dnd\musicplaylistdndbufferdata.cpp
-	"../../../include/tools/dnd/MusicPlayListDnDBufferData.h"
+1435158694 source:c:\workspace\projects\fux\src\tools\dnd\musicplaylistdndbufferdata.cpp
+	"tools/dnd/MusicPlayListDnDBufferData.h"
 
 1424812603 source:c:\workspace\projects\fux\src\tools\elementthreadfichier.cpp
 	"../../include/tools/ElementThreadFichier.h"
@@ -3351,7 +3351,7 @@
 	"Tools.h"
 	"Define.h"
 
-1431704123 source:c:\workspace\projects\fux\src\explorer\state\dirdrivemanagerstate.cpp
+1435747386 source:c:\workspace\projects\fux\src\explorer\state\dirdrivemanagerstate.cpp
 	"explorer/state/DirDriveManagerState.h"
 	<wx/dir.h>
 	"Parametre.h"
@@ -3421,4 +3421,65 @@
 	"DeletedLines.h"
 
 1434227474 c:\workspace\projects\fux\include\music\deletedlines.h
+
+1435158784 source:c:\workspace\projects\fux\src\tools\dnd\containerfiletransitivedata.cpp
+	"tools/dnd/ContainerFileTransitiveData.h"
+
+1435186516 c:\workspace\projects\fux\include\tools\dnd\containerfiletransitivedata.h
+	"tools/dnd/TransitiveData.h"
+
+1435301610 c:\workspace\projects\fux\include\tools\dnd\transitivedata.h
+	<vector>
+
+1435158784 source:c:\workspace\projects\fux\src\tools\dnd\dirtransitivedata.cpp
+	"tools/dnd/DirTransitiveData.h"
+
+1435159258 c:\workspace\projects\fux\include\tools\dnd\dirtransitivedata.h
+	<wx/wx.h>
+	"tools/dnd/TransitiveData.h"
+
+1435159469 source:c:\workspace\projects\fux\src\tools\dnd\transitivedata.cpp
+	"TransitiveData.h"
+
+1435158784 source:c:\workspace\projects\fux\src\tools\dnd\playlisttransitivedata.cpp
+	"tools/dnd/PlaylistTransitiveData.h"
+
+1435180703 c:\workspace\projects\fux\include\tools\dnd\playlisttransitivedata.h
+	"tools/dnd/TransitiveData.h"
+	<memory>
+	"music/Music.h"
+
+1435748509 source:c:\workspace\projects\fux\src\tools\dnd\sources\dirtransitivedata.cpp
+	"tools/dnd/sources/DirTransitiveData.h"
+
+1435748509 c:\workspace\projects\fux\include\tools\dnd\sources\dirtransitivedata.h
+	<wx/wx.h>
+	"tools/dnd/sources/TransitiveData.h"
+
+1435748894 c:\workspace\projects\fux\include\tools\dnd\sources\transitivedata.h
+	<vector>
+	"tools/dnd/targets/TransitiveDataTarget.h"
+
+1435748738 c:\workspace\projects\fux\include\tools\dnd\targets\transitivedatatarget.h
+
+1435748509 source:c:\workspace\projects\fux\src\tools\dnd\sources\containerfiletransitivedata.cpp
+	"tools/dnd/sources/ContainerFileTransitiveData.h"
+
+1435748913 c:\workspace\projects\fux\include\tools\dnd\sources\containerfiletransitivedata.h
+	<wx/wx.h>
+	"tools/dnd/sources/TransitiveData.h"
+
+1435748503 source:c:\workspace\projects\fux\src\tools\dnd\sources\playlisttransitivedata.cpp
+	"tools/dnd/sources/PlaylistTransitiveData.h"
+
+1435748509 c:\workspace\projects\fux\include\tools\dnd\sources\playlisttransitivedata.h
+	"tools/dnd/sources/TransitiveData.h"
+	<memory>
+	"music/Music.h"
+
+1435747894 source:c:\workspace\projects\fux\src\tools\dnd\sources\transitivedata.cpp
+	"tools/dnd/sources/TransitiveData.h"
+
+1435748936 source:c:\workspace\projects\fux\src\tools\dnd\targets\transitivedatatarget.cpp
+	"tools/dnd/targets/TransitiveDataTarget.h"
 

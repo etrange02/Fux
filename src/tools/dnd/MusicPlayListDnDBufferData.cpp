@@ -6,7 +6,7 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../../include/tools/dnd/MusicPlayListDnDBufferData.h"
+#include "tools/dnd/MusicPlayListDnDBufferData.h"
 
 /**
  * @class MusicPlayListDnDBufferData

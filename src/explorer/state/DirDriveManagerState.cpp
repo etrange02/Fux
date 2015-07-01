@@ -102,8 +102,12 @@ DriveManagerState& DirDriveManagerState::getPreviousState()
     return *(explorer::ExplorerFactory::createDefaultDriveManagerState(m_data));
 }
 
-void DirDriveManagerState::openElement(const std::vector<unsigned long>& indexes)
+void DirDriveManagerState::openElement()
 {
+    std::vector<unsigned long> indexes = m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines();
+    if (indexes.empty() || indexes.at(0) >= m_data.getElements().size())
+        return;
+
     const wxString& path = m_data.getElements().at(indexes.at(0)).getFilename();
 
     if (Parametre::get().isID3V2(path))
@@ -177,32 +181,40 @@ bool DirDriveManagerState::canCreateShortcut() const
 
 void DirDriveManagerState::copyElements(DriveManagerState& source)
 {
+    wxLogMessage("Must be implemented.");
     // insertion de nouveaux fichiers dans le dossier courant -> thread
 }
 
 void DirDriveManagerState::moveElements(DriveManagerState& source)
 {
+    wxLogMessage("Must be implemented.");
     // renommage de fichiers (changement de chemin) d'une répertoire à l'autre
+    // Attention au changement de lecteur. Le move peut être plus long que prévu dans ce cas.
 }
 
 void DirDriveManagerState::createDir()
 {
+    wxLogMessage("Must be implemented.");
 }
 
 void DirDriveManagerState::createContainerFile()
 {
+    wxLogMessage("Must be implemented.");
 }
 
 void DirDriveManagerState::playItems()
 {
+    wxLogMessage("Must be implemented.");
 }
 
 void DirDriveManagerState::rename()
 {
+    wxLogMessage("Must be implemented.");
 }
 
 void DirDriveManagerState::createShortcut()
 {
+    wxLogMessage("Must be implemented.");
 }
 
 

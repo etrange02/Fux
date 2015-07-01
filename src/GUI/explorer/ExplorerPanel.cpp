@@ -153,7 +153,7 @@ void ExplorerPanel::onRefreshButton(wxCommandEvent& WXUNUSED(event))
 
 void ExplorerPanel::onItemActivatedInListCtrl(wxCommandEvent& WXUNUSED(event))
 {
-    m_explorerManager->openElement(getExplorerListCtrl().getSelectedLines());
+    m_explorerManager->openElement();
 }
 
 void ExplorerPanel::onDragBeginInListCtrl(wxCommandEvent& WXUNUSED(event))
