@@ -53,8 +53,7 @@ wxDragResult DnDCible::OnData(wxCoord WXUNUSED(x), wxCoord y, wxDragResult WXUNU
     if (!GetData())
         return wxDragNone;
 
-    DnDListeFichier* TransFile;
-    TransFile = ((MusicPlayListDnDBufferData *)GetDataObject())->GetTransFile();
+    DnDListeFichier* TransFile = ((MusicPlayListDnDBufferData *)GetDataObject())->GetTransFile();
 
     if (m_pageGestion == NULL)
     {

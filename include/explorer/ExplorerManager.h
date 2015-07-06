@@ -32,6 +32,8 @@ namespace explorer
             void makeParentDir();
             void openElement();
 
+            void* getDraggedElements();
+
             gui::explorer::ExplorerPanel& getExplorerPanel() const;
 
             DriveManagerState& getState() const;

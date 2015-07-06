@@ -97,3 +97,9 @@ DriveManagerState& ExplorerManager::getState() const
     return m_data.getState();
 }
 
+void* ExplorerManager::getDraggedElements()
+{
+    //TODO: Call the DriveManagerState to have the selected items compiled in a good form.
+    return NULL;
+}
+

@@ -23,7 +23,10 @@
 #include "music/DeletedLines.h"
 #include "widgets/SliderSon.h"
 #include "tools/FichierLog.h"
-#include "tools/dnd/DnDCible.h"
+#include "tools/dnd/targets/PlaylistTransitiveDataTarget.h"
+#include "tools/dnd/dataObjects/PlaylistTransitiveData.h"
+#include "tools/dnd/dataObjects/ContainerFileTransitiveData.h"
+#include "tools/dnd/dataObjects/DataObject.h"
 #include "db/BDDRequete.h"
 #include "db/BDDThread.h"
 #include "predicates/findSharedMusicContainer.h"
@@ -73,7 +76,8 @@ PlayListTableau::PlayListTableau(wxWindow *parent) : wxListCtrl(parent, ID_PAGE_
 
     SetMinSize(wxSize(10, 10));
 
-    SetDropTarget(new DnDCible(this));
+    //SetDropTarget(new DnDCible(this));
+    SetDropTarget(new dragAndDrop::PlaylistTransitiveDataTarget());
     //DragAcceptFiles(true);
 
     m_menu = new wxMenu;
@@ -91,6 +95,7 @@ PlayListTableau::PlayListTableau(wxWindow *parent) : wxListCtrl(parent, ID_PAGE_
 PlayListTableau::~PlayListTableau()
 {
     LogFileAppend(_T("PlayListTableau::~PlayListTableau"));
+    SetDropTarget(NULL);
 }
 
 /** @brief Clears the list and redraw all data.
@@ -395,7 +400,7 @@ void PlayListTableau::onDragEvent(wxListEvent &WXUNUSED(event))
     if (MusicManagerSwitcher::getSearch().hasEfficientSearchedWord())
         return;
 
-    DnDListeFichier* transfile = new DnDListeFichier();
+    /*DnDListeFichier* transfile = new DnDListeFichier();
 
     const std::vector<unsigned long> selectedLines = getSelectedLines();
     for (std::vector<unsigned long>::const_iterator iter = selectedLines.begin(); iter != selectedLines.end(); ++iter)
@@ -405,14 +410,18 @@ void PlayListTableau::onDragEvent(wxListEvent &WXUNUSED(event))
     {
         delete transfile;
         return;
-    }
+    }*/
 
-    MusicPlayListDnDBufferData UploadData(transfile);   // Créer un objet de manipulation de données
+    dragAndDrop::PlaylistTransitiveData data;
+    data.add(std::make_shared<music::Music>(*MusicManagerSwitcher::getSearch().getMusic()));
 
-    wxDropSource source(UploadData, this);
+    if (data.getItems().size() == 0)
+        return;
 
-    source.DoDragDrop(wxDrag_DefaultMove); // Effectuer l'opération de D&D
-    delete transfile;
+    dragAndDrop::DataObject container(&data);
+    wxDropSource source(this, wxDROP_ICON(dnd_copy), wxDROP_ICON(dnd_move), wxDROP_ICON(dnd_none));
+    source.SetData(container);
+    source.DoDragDrop(true);
 }
 
 /** @brief Event. Display a menu.

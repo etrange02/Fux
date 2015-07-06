@@ -159,6 +159,8 @@ void ExplorerPanel::onItemActivatedInListCtrl(wxCommandEvent& WXUNUSED(event))
 void ExplorerPanel::onDragBeginInListCtrl(wxCommandEvent& WXUNUSED(event))
 {
 ///TODO: Dragging events
+    //wxLogMessage("Dragging detected.");
+    void* items = m_explorerManager->getDraggedElements();
 }
 
 bool ExplorerPanel::isHiddenFilesChecked() const

@@ -1000,6 +1000,7 @@ void PageGestionPeriph::Glisser(wxCommandEvent &WXUNUSED(event))
     }
 
     MusicPlayListDnDBufferData UploadData(transfile);//Conversion tableau dans buffer
+    wxDropSource s()
     wxDropSource source(UploadData, this);//met le buffer en déplacement
     source.DoDragDrop(wxDrag_DefaultMove);//Déplace !
 

@@ -5,9 +5,9 @@
 #include <wx/dnd.h>
 #include <wx/listctrl.h>
 #include <wx/dataobj.h>
-//#include "../../music/Musique.h"
-#include "../../music/MusicManager.h"
-#include "../../gui/explorer/GestionPeriphMoitiePage.h"
+//#include "music/Musique.h"
+#include "music/MusicManager.h"
+#include "GUI/explorer/GestionPeriphMoitiePage.h"
 #include "MusicPlayListDnDBufferData.h"
 
 class PageGestionPeriph;

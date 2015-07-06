@@ -47,6 +47,7 @@ IMPORTANT, A FAIRE !!!
 					<Add directory="include/music" />
 					<Add directory="include/tools/dnd" />
 					<Add directory="include/tools/dnd/targets" />
+					<Add directory="include/tools/dnd/dataObjects" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -74,6 +75,7 @@ IMPORTANT, A FAIRE !!!
 					<Add directory="include/music" />
 					<Add directory="include/tools/dnd" />
 					<Add directory="include/tools/dnd/targets" />
+					<Add directory="include/tools/dnd/dataObjects" />
 				</Compiler>
 			</Target>
 			<Environment>
@@ -82,8 +84,8 @@ IMPORTANT, A FAIRE !!!
 				<Variable name="FMODEX" value='&quot;C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Windows\api&quot;' />
 				<Variable name="RD" value="" />
 				<Variable name="SQLITE3" value="${WXSQLITE3}\sqlite3" />
-				<Variable name="TAGLIB" value="C:\Workspace\Libraries\taglib\taglib-1.9.1\out\taglib" />
-				<Variable name="WXSQLITE3" value="C:\Workspace\Libraries\wxSQLite3\wxsqlite3-3.1.1\wxsqlite3-3.1.1" />
+				<Variable name="TAGLIB" value="${DIR_LIB}\taglib\taglib-1.9.1\out\taglib" />
+				<Variable name="WXSQLITE3" value="${DIR_LIB}\wxSQLite3\wxsqlite3-3.1.1\wxsqlite3-3.1.1" />
 				<Variable name="WX_CFG" value="msw$(AURD)" />
 				<Variable name="WX_DIR" value="$(DIR_LIB)\wx" />
 				<Variable name="WX_GL_VER" value="GL" />
@@ -261,14 +263,27 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/tools/dir_traverser/TraverserCopieFichier.h" />
 		<Unit filename="include/tools/dir_traverser/TraverserDeplaceFichier.h" />
 		<Unit filename="include/tools/dir_traverser/TraverserSupprimeDossier.h" />
-		<Unit filename="include/tools/dnd/ContainerFileTransitiveData.h" />
-		<Unit filename="include/tools/dnd/DirTransitiveData.h" />
 		<Unit filename="include/tools/dnd/DnDCible.h" />
 		<Unit filename="include/tools/dnd/DnDListeFichier.h" />
 		<Unit filename="include/tools/dnd/MusicPlayListDnDBufferData.h" />
-		<Unit filename="include/tools/dnd/PlaylistTransitiveData.h" />
-		<Unit filename="include/tools/dnd/TransitiveData.h" />
-		<Unit filename="include/tools/dnd/targets/TrasitiveDataTarget.h" />
+		<Unit filename="include/tools/dnd/dataObjects/ContainerFileTransitiveData.h" />
+		<Unit filename="include/tools/dnd/dataObjects/ContainerFileTransitiveData.h.save" />
+		<Unit filename="include/tools/dnd/dataObjects/DataObject.h" />
+		<Unit filename="include/tools/dnd/dataObjects/DirTransitiveData.h" />
+		<Unit filename="include/tools/dnd/dataObjects/DirTransitiveData.h.save" />
+		<Unit filename="include/tools/dnd/dataObjects/PlaylistTransitiveData.h" />
+		<Unit filename="include/tools/dnd/dataObjects/PlaylistTransitiveData.h.save" />
+		<Unit filename="include/tools/dnd/dataObjects/TTransitiveData.h" />
+		<Unit filename="include/tools/dnd/dataObjects/TransitiveData.h" />
+		<Unit filename="include/tools/dnd/dataObjects/TransitiveData.h.save" />
+		<Unit filename="include/tools/dnd/sources/ContainerFileTransitiveData.h.save" />
+		<Unit filename="include/tools/dnd/sources/DirTransitiveData.h.save" />
+		<Unit filename="include/tools/dnd/sources/PlaylistTransitiveData.h.save" />
+		<Unit filename="include/tools/dnd/sources/TransitiveData.h.save" />
+		<Unit filename="include/tools/dnd/targets/ContainerFileTransitiveDataTarget.h" />
+		<Unit filename="include/tools/dnd/targets/DirTransitiveDataTarget.h" />
+		<Unit filename="include/tools/dnd/targets/PlaylistTransitiveDataTarget.h" />
+		<Unit filename="include/tools/dnd/targets/TransitiveDataTarget.h" />
 		<Unit filename="include/tools/stl/ThreadSafeQueue.h" />
 		<Unit filename="include/tools/thread/FileDeletionThread.h" />
 		<Unit filename="include/tools/thread/FileDuplicatingThread.h" />
@@ -397,14 +412,27 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/tools/dir_traverser/TraverserCopieFichier.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserDeplaceFichier.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserSupprimeDossier.cpp" />
-		<Unit filename="src/tools/dnd/ContainerFileTransitiveData.cpp" />
-		<Unit filename="src/tools/dnd/DirTransitiveData.cpp" />
 		<Unit filename="src/tools/dnd/DnDCible.cpp" />
 		<Unit filename="src/tools/dnd/DnDListeFichier.cpp" />
 		<Unit filename="src/tools/dnd/MusicPlayListDnDBufferData.cpp" />
-		<Unit filename="src/tools/dnd/PlaylistTransitiveData.cpp" />
-		<Unit filename="src/tools/dnd/TransitiveData.cpp" />
-		<Unit filename="src/tools/dnd/targets/TrasitiveDataTarget.cpp" />
+		<Unit filename="src/tools/dnd/dataObjects/ContainerFileTransitiveData.cpp" />
+		<Unit filename="src/tools/dnd/dataObjects/ContainerFileTransitiveData.cpp.save" />
+		<Unit filename="src/tools/dnd/dataObjects/DataObject.cpp" />
+		<Unit filename="src/tools/dnd/dataObjects/DirTransitiveData.cpp" />
+		<Unit filename="src/tools/dnd/dataObjects/DirTransitiveData.cpp.save" />
+		<Unit filename="src/tools/dnd/dataObjects/PlaylistTransitiveData.cpp" />
+		<Unit filename="src/tools/dnd/dataObjects/PlaylistTransitiveData.cpp.save" />
+		<Unit filename="src/tools/dnd/dataObjects/TTransitiveData.cpp" />
+		<Unit filename="src/tools/dnd/dataObjects/TransitiveData.cpp" />
+		<Unit filename="src/tools/dnd/dataObjects/TransitiveData.cpp.save" />
+		<Unit filename="src/tools/dnd/sources/ContainerFileTransitiveData.cpp.save" />
+		<Unit filename="src/tools/dnd/sources/DirTransitiveData.cpp.save" />
+		<Unit filename="src/tools/dnd/sources/PlaylistTransitiveData.cpp.save" />
+		<Unit filename="src/tools/dnd/sources/TransitiveData.cpp.save" />
+		<Unit filename="src/tools/dnd/targets/ContainerFileTransitiveDataTarget.cpp" />
+		<Unit filename="src/tools/dnd/targets/DirTransitiveDataTarget.cpp" />
+		<Unit filename="src/tools/dnd/targets/PlaylistTransitiveDataTarget.cpp" />
+		<Unit filename="src/tools/dnd/targets/TransitiveDataTarget.cpp" />
 		<Unit filename="src/tools/thread/FileDeletionThread.cpp" />
 		<Unit filename="src/tools/thread/FileDuplicatingThread.cpp" />
 		<Unit filename="src/tools/thread/FileRenamingThread.cpp" />

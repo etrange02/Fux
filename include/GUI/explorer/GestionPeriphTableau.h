@@ -1,14 +1,14 @@
 #ifndef GESTIONPERIPHTABLEAU_H_INCLUDED
 #define GESTIONPERIPHTABLEAU_H_INCLUDED
 
-#include "../../Define.h"
+#include "Define.h"
 #include <wx/wx.h>
 #include <wx/dir.h>
 #include <wx/listctrl.h>
 #include <wx/filename.h>
 #include <wx/imaglist.h>
 #include "GestionPeriphCouperCopier.h"
-#include "../../tools/dnd/DnDCible.h"
+#include "tools/dnd/DnDCible.h"
 
 extern const wxEventType wxEVT_LISTE_PERIPH_CLAVIER;
 extern const wxEventType wxEVT_LISTE_PERIPH_SOURIS;
