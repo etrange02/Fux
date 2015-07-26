@@ -7,6 +7,7 @@
  * License:
  **************************************************************/
 #include "tools/dnd/dataObjects/ContainerFileTransitiveData.h"
+#include <wx/textfile.h>
 
 using namespace dragAndDrop;
 
@@ -59,22 +60,12 @@ const wxString ContainerFileTransitiveData::getName() const
     return m_file;
 }
 
-bool ContainerFileTransitiveData::isSameKind() const
-{
-    return false;
-}
-
 void ContainerFileTransitiveData::doCopy()
 {
 
 }
 
 void ContainerFileTransitiveData::doCut()
-{
-
-}
-
-void ContainerFileTransitiveData::doPaste()
 {
 
 }
@@ -88,5 +79,46 @@ void ContainerFileTransitiveData::doPaste()
 void ContainerFileTransitiveData::setFilename(const wxString& filename)
 {
     m_file = filename;
+}
+
+wxArrayString ContainerFileTransitiveData::getFilenames() const
+{
+    const std::vector<unsigned long>& items = getItems();
+    wxArrayString data;
+
+    wxTextFile file(m_file);
+    if (!file.Exists() || !file.Open())
+        return data;
+
+    for (std::vector<unsigned long>::const_iterator iter = items.begin(); iter != items.end(); ++iter)
+    {
+        data.Add(file.GetLine(*iter));
+    }
+    file.Close();
+
+    return data;
+}
+
+const std::vector<unsigned long>& ContainerFileTransitiveData::deleteFromSource()
+{
+    const std::vector<unsigned long>& items = getItems();
+
+    wxTextFile file(m_file);
+    if (!file.Exists() || !file.Open())
+        return items;
+
+    for (std::vector<unsigned long>::const_reverse_iterator iter = items.rbegin(); iter != items.rend(); ++iter)
+    {
+        file.RemoveLine(*iter);
+    }
+    file.Write();
+    file.Close();
+
+    return items;
+}
+
+bool ContainerFileTransitiveData::isContainerFileKind() const
+{
+    return true;
 }
 

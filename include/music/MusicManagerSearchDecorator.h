@@ -23,6 +23,7 @@ namespace music
             virtual bool playMusicAt(long position);
             virtual void updateMusicContent(const size_t position, Music* music);
             virtual int  getDeletedLine(DeletedLines& deletedLines);
+            virtual void convertPositionsToTransitiveData(const std::vector<unsigned long>& positions, dragAndDrop::PlaylistTransitiveData& transitiveData);
     };
 }
 

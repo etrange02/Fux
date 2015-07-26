@@ -11,7 +11,7 @@
 using namespace ::music;
 
 AbstractMusicManagerDecorator::AbstractMusicManagerDecorator(MusicManager& musicManager) :
-    m_musiqManager(musicManager)
+    m_musicManager(musicManager)
 {
     //ctor
 }
@@ -23,12 +23,12 @@ AbstractMusicManagerDecorator::~AbstractMusicManagerDecorator()
 
 MusicManager& AbstractMusicManagerDecorator::getDelegate() const
 {
-    return m_musiqManager;
+    return m_musicManager;
 }
 
 MusicManager& AbstractMusicManagerDecorator::getDelegate()
 {
-    return m_musiqManager;
+    return m_musicManager;
 }
 
 

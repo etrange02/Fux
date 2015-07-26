@@ -51,11 +51,6 @@ const wxString DirTransitiveData::getName() const
     return getItems().at(0);
 }
 
-bool DirTransitiveData::isSameKind() const
-{
-    return false;
-}
-
 void DirTransitiveData::doCopy()
 {
 
@@ -66,9 +61,21 @@ void DirTransitiveData::doCut()
 
 }
 
-void DirTransitiveData::doPaste()
+wxArrayString DirTransitiveData::getFilenames() const
 {
+    const std::vector<wxString>& items = getItems();
+    wxArrayString data;
 
+    for (std::vector<wxString>::const_iterator iter = items.begin(); iter != items.end(); ++iter)
+    {
+        data.Add(*iter);
+    }
+
+    return data;
 }
 
+bool DirTransitiveData::isDirKind() const
+{
+    return true;
+}
 

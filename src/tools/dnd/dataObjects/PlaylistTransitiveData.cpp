@@ -51,11 +51,6 @@ const wxString PlaylistTransitiveData::getName() const
     return getItems().at(0)->GetFileName();
 }
 
-bool PlaylistTransitiveData::isSameKind() const
-{
-    return false;
-}
-
 void PlaylistTransitiveData::doCopy()
 {
 
@@ -66,8 +61,21 @@ void PlaylistTransitiveData::doCut()
 
 }
 
-void PlaylistTransitiveData::doPaste()
+wxArrayString PlaylistTransitiveData::getFilenames() const
 {
+    const std::vector<std::shared_ptr<music::Music>>& items = getItems();
+    wxArrayString data;
 
+    for (std::vector<std::shared_ptr<music::Music>>::const_iterator iter = items.begin(); iter != items.end(); ++iter)
+    {
+        data.Add( (*iter)->GetFileName() );
+    }
+
+    return data;
+}
+
+bool PlaylistTransitiveData::isPlaylistKind() const
+{
+    return true;
 }
 

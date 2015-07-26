@@ -5,6 +5,9 @@
 #include "explorer/ExplorerPanel.h"
 #include <vector>
 
+namespace dragAndDrop {
+    class TransitiveData;
+}
 
 /**
  * Explorer name space.
@@ -53,6 +56,7 @@ namespace explorer
             virtual void playItems() = 0;
             virtual void rename() = 0;
             virtual void createShortcut() = 0;
+            virtual dragAndDrop::TransitiveData* getDraggedElements() = 0;
 
             wxArrayString getSelectedItems();
             wxArrayString getSelectedItemsPosition();

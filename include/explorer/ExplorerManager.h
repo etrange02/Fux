@@ -5,10 +5,13 @@
 #include "ExplorerManagerData.h"
 #include "ExplorerPanel.h"
 
-namespace explorer
-{
+namespace explorer {
     class DriveManagerState;
     class ExplorerDriveManagers;
+}
+
+namespace dragAndDrop {
+    class TransitiveData;
 }
 
 /**
@@ -32,7 +35,7 @@ namespace explorer
             void makeParentDir();
             void openElement();
 
-            void* getDraggedElements();
+            dragAndDrop::TransitiveData* getDraggedElements();
 
             gui::explorer::ExplorerPanel& getExplorerPanel() const;
 

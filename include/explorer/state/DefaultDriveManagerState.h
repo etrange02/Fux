@@ -11,8 +11,8 @@ namespace explorer
     class DefaultDriveManagerState : public DriveManagerState
     {
         public:
-            /** Default constructor */
-            DefaultDriveManagerState(ExplorerManagerData& data);
+            /** Constructor */
+            DefaultDriveManagerState(ExplorerManagerData& data, const bool initDragAndDrop);
             /** Default destructor */
             virtual ~DefaultDriveManagerState();
 
@@ -41,6 +41,7 @@ namespace explorer
             virtual void playItems();
             virtual void rename();
             virtual void createShortcut();
+            virtual dragAndDrop::TransitiveData* getDraggedElements();
 
         protected:
         private:

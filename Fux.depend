@@ -2153,7 +2153,7 @@
 	"wx/list.h"
 	"wx/versioninfo.h"
 
-1434735612 c:\workspace\projects\fux\include\music\musicmanager.h
+1436560552 c:\workspace\projects\fux\include\music\musicmanager.h
 	<wx/wx.h>
 	"MusicPlayer.h"
 	"MusicList.h"
@@ -2165,7 +2165,7 @@
 
 1429308404 c:\workspace\projects\fux\include\music\duration.h
 
-1434226368 c:\workspace\projects\fux\include\music\musiclist.h
+1437906057 c:\workspace\projects\fux\include\music\musiclist.h
 	<wx/wx.h>
 	<vector>
 	<memory>
@@ -2595,7 +2595,7 @@
 	"ExplorerManager.h"
 	"DriveManagersPanel.h"
 
-1435751751 c:\workspace\projects\fux\include\explorer\explorermanager.h
+1437868254 c:\workspace\projects\fux\include\explorer\explorermanager.h
 	"Define.h"
 	"ExplorerManagerData.h"
 	"ExplorerPanel.h"
@@ -2607,7 +2607,7 @@
 	"Define.h"
 	"gui/explorer/ExplorerPanel.h"
 
-1431695130 c:\workspace\projects\fux\include\gui\explorer\explorerpanel.h
+1437870097 c:\workspace\projects\fux\include\gui\explorer\explorerpanel.h
 	"Define.h"
 	<vector>
 	<wx/wx.h>
@@ -2642,7 +2642,7 @@
 	"wx/icon.h"
 	"wx/iconbndl.h"
 
-1434956402 c:\workspace\projects\fux\include\explorer\state\drivemanagerstate.h
+1437868291 c:\workspace\projects\fux\include\explorer\state\drivemanagerstate.h
 	"wx/wx.h"
 	"explorer/ExplorerPanel.h"
 	<vector>
@@ -2651,7 +2651,7 @@
 	"explorer/ExplorerDriveManagersData.h"
 	<algorithm>
 
-1425632246 source:c:\workspace\projects\fux\src\explorer\explorerfactory.cpp
+1437902821 source:c:\workspace\projects\fux\src\explorer\explorerfactory.cpp
 	"ExplorerFactory.h"
 	"DriveManagerState.h"
 	"DefaultDriveManagerState.h"
@@ -2660,21 +2660,21 @@
 	"PlaylistDriveManagerState.h"
 	"explorer/ExplorerManagerData.h"
 
-1428907770 c:\workspace\projects\fux\include\explorer\explorerfactory.h
+1437902809 c:\workspace\projects\fux\include\explorer\explorerfactory.h
 
-1434956402 c:\workspace\projects\fux\include\explorer\state\defaultdrivemanagerstate.h
+1437902795 c:\workspace\projects\fux\include\explorer\state\defaultdrivemanagerstate.h
 	"DriveManagerState.h"
 
-1434956402 c:\workspace\projects\fux\include\explorer\state\dirdrivemanagerstate.h
+1437868337 c:\workspace\projects\fux\include\explorer\state\dirdrivemanagerstate.h
 	"DriveManagerState.h"
 
-1434956402 c:\workspace\projects\fux\include\explorer\state\filedrivemanagerstate.h
+1437868337 c:\workspace\projects\fux\include\explorer\state\filedrivemanagerstate.h
 	"DriveManagerState.h"
 
-1434956402 c:\workspace\projects\fux\include\explorer\state\playlistdrivemanagerstate.h
+1437868337 c:\workspace\projects\fux\include\explorer\state\playlistdrivemanagerstate.h
 	"DriveManagerState.h"
 
-1435751866 source:c:\workspace\projects\fux\src\explorer\explorermanager.cpp
+1437902759 source:c:\workspace\projects\fux\src\explorer\explorermanager.cpp
 	"explorer/ExplorerManager.h"
 	"explorer/ExplorerFactory.h"
 	"explorer/ExplorerDriveManagers.h"
@@ -2692,85 +2692,12 @@
 1429373757 source:c:\workspace\projects\fux\src\explorer\menuelementdata.cpp
 	"MenuElementData.h"
 
-1434956402 source:c:\workspace\projects\fux\src\explorer\state\defaultdrivemanagerstate.cpp
+1437902839 source:c:\workspace\projects\fux\src\explorer\state\defaultdrivemanagerstate.cpp
 	"DefaultDriveManagerState.h"
 	"explorer/ExplorerManagerData.h"
 
-1435747386 source:c:\workspace\projects\fux\src\explorer\state\dirdrivemanagerstate.cpp
-	"explorer/state/DirDriveManagerState.h"
-	<wx/dir.h>
-	"Parametre.h"
-	"explorer/ExplorerFactory.h"
-	"explorer/ExplorerManagerData.h"
-	"music/MusicManagerSwitcher.h"
-	"tools/thread/ThreadManager.h"
-	"tools/thread/ThreadFactory.h"
-
-1429308404 c:\workspace\projects\fux\include\music\musicmanagerswitcher.h
-	"IMusicManager.h"
-	"MusicManagerDefaultDecorator.h"
-	"MusicManagerSearchDecorator.h"
-	"MusicManager.h"
-
-1434750332 c:\workspace\projects\fux\include\music\imusicmanager.h
-	<vector>
-	<memory>
-	"Music.h"
-	"MusicPlayer.h"
-
-1434750445 c:\workspace\projects\fux\include\music\musicmanagerdefaultdecorator.h
-	"AbstractMusicManagerDecorator.h"
-	"MusicManager.h"
-
-1434383884 c:\workspace\projects\fux\include\music\abstractmusicmanagerdecorator.h
-	<vector>
-	"IMusicManager.h"
-	"MusicManager.h"
-
-1434750445 c:\workspace\projects\fux\include\music\musicmanagersearchdecorator.h
-	"AbstractMusicManagerDecorator.h"
-	"MusicManager.h"
-
-1428010261 c:\workspace\projects\fux\include\tools\thread\threadmanager.h
-	<vector>
-	"IThreadManager.h"
-	"ThreadSafeQueue.h"
-
-1428010261 c:\workspace\projects\fux\include\tools\thread\ithreadmanager.h
-	"ThreadProcess.h"
-
-1432362870 c:\workspace\projects\fux\include\tools\thread\threadprocess.h
-	<wx/wx.h>
-	<wx/thread.h>
-	"IThreadManager.h"
-	"IRunnable.h"
-
-1432362814 c:\workspace\projects\fux\include\tools\thread\irunnable.h
-
-1419443194 c:\workspace\projects\fux\include\tools\stl\threadsafequeue.h
-	<queue>
-	<wx/wx.h>
-	<wx/thread.h>
-
-1428010261 c:\workspace\projects\fux\include\tools\thread\threadfactory.h
-	<wx/wx.h>
-
 1431704119 source:c:\workspace\projects\fux\src\explorer\state\drivemanagerstate.cpp
 	"explorer/state/DriveManagerState.h"
-	"explorer/ExplorerManagerData.h"
-
-1435747386 source:c:\workspace\projects\fux\src\explorer\state\filedrivemanagerstate.cpp
-	"explorer/state/FileDriveManagerState.h"
-	"MusicManagerSwitcher.h"
-	<wx/textfile.h>
-	"explorer/ExplorerManagerData.h"
-	"explorer/ExplorerFactory.h"
-
-1435747384 source:c:\workspace\projects\fux\src\explorer\state\playlistdrivemanagerstate.cpp
-	"explorer/state/PlaylistDriveManagerState.h"
-	<vector>
-	"MusicManagerSwitcher.h"
-	"Music.h"
 	"explorer/ExplorerManagerData.h"
 
 1431866673 source:c:\workspace\projects\fux\src\gui\dialogs\dialogenregistrem3u.cpp
@@ -2955,6 +2882,8 @@
 	"IRunnable.h"
 	"MusicFileReader.h"
 
+1432362814 c:\workspace\projects\fux\include\tools\thread\irunnable.h
+
 1431591264 c:\workspace\projects\fux\include\music\musicfilewriterthread.h
 	<wx/wx.h>
 	<wx/event.h>
@@ -2986,13 +2915,6 @@
 1432362165 source:c:\workspace\projects\fux\src\gui\explorer\explorerlistctrl.cpp
 	"ExplorerListCtrl.h"
 
-1435751904 source:c:\workspace\projects\fux\src\gui\explorer\explorerpanel.cpp
-	"ExplorerPanel.h"
-	"DriveManagersPanel.h"
-	"explorer/ExplorerManager.h"
-	"explorer/state/DriveManagerState.h"
-	<algorithm>
-
 1432365647 source:c:\workspace\projects\fux\src\gui\graph\musiquegraph.cpp
 	"gui/graph/MusiqueGraph.h"
 	"music/MusicManagerSwitcher.h"
@@ -3002,6 +2924,31 @@
 	<GL/gl.h>
 	<GL/glu.h>
 	<wx/dir.h>
+
+1429308404 c:\workspace\projects\fux\include\music\musicmanagerswitcher.h
+	"IMusicManager.h"
+	"MusicManagerDefaultDecorator.h"
+	"MusicManagerSearchDecorator.h"
+	"MusicManager.h"
+
+1436560503 c:\workspace\projects\fux\include\music\imusicmanager.h
+	<vector>
+	<memory>
+	"Music.h"
+	"MusicPlayer.h"
+
+1436560552 c:\workspace\projects\fux\include\music\musicmanagerdefaultdecorator.h
+	"AbstractMusicManagerDecorator.h"
+	"MusicManager.h"
+
+1437903453 c:\workspace\projects\fux\include\music\abstractmusicmanagerdecorator.h
+	<vector>
+	"IMusicManager.h"
+	"MusicManager.h"
+
+1436560552 c:\workspace\projects\fux\include\music\musicmanagersearchdecorator.h
+	"AbstractMusicManagerDecorator.h"
+	"MusicManager.h"
 
 1416437235 c:\workspace\projects\fux\include\gui\tools\imagetext.h
 	"wx/wx.h"
@@ -3014,6 +2961,65 @@
 	"tools/FichierLog.h"
 	"music/Factory.h"
 	<music/Music.h>
+
+1437919640 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
+	"Define.h"
+	<wx/stdpaths.h>
+	<wx/dir.h>
+	<wx/tarstrm.h>
+	<wx/progdlg.h>
+	<wx/dnd.h>
+	<wx/mstream.h>
+	<wx/renderer.h>
+	<algorithm>
+	"gui/musiclist/PlayList.h"
+	"MusicManagerSwitcher.h"
+	"music/MusicManager.h"
+	"music/DeletedLines.h"
+	"widgets/SliderSon.h"
+	"tools/FichierLog.h"
+	"tools/dnd/targets/PlaylistTransitiveDataTarget.h"
+	"tools/dnd/dataObjects/PlaylistTransitiveData.h"
+	"tools/dnd/dataObjects/ContainerFileTransitiveData.h"
+	"tools/dnd/dataObjects/DataObject.h"
+	"db/BDDRequete.h"
+	"db/BDDThread.h"
+	"predicates/findSharedMusicContainer.h"
+
+1434227474 c:\workspace\projects\fux\include\music\deletedlines.h
+
+1437780506 c:\workspace\projects\fux\include\tools\dnd\targets\playlisttransitivedatatarget.h
+	"tools/dnd/targets/TransitiveDataTarget.h"
+
+1437780460 c:\workspace\projects\fux\include\tools\dnd\targets\transitivedatatarget.h
+	<wx/wx.h>
+	<wx/dnd.h>
+	<wx/listctrl.h>
+	"tools/dnd/dataObjects/TransitiveData.h"
+
+1437869308 c:\workspace\projects\fux\include\tools\dnd\dataobjects\transitivedata.h
+	<wx/wx.h>
+
+1437780651 c:\workspace\projects\fux\include\tools\dnd\dataobjects\playlisttransitivedata.h
+	"tools/dnd/dataObjects/TTransitiveData.h"
+	<memory>
+	"music/Music.h"
+
+1437869340 c:\workspace\projects\fux\include\tools\dnd\dataobjects\ttransitivedata.h
+	<vector>
+	"tools/dnd/dataObjects/TransitiveData.h"
+
+1437869028 c:\workspace\projects\fux\include\tools\dnd\dataobjects\containerfiletransitivedata.h
+	<wx/wx.h>
+	"tools/dnd/dataObjects/TTransitiveData.h"
+
+1436192286 c:\workspace\projects\fux\include\tools\dnd\dataobjects\dataobject.h
+	<wx/wx.h>
+	<wx/dnd.h>
+	"tools/dnd/dataObjects/TransitiveData.h"
+
+1433801335 c:\workspace\projects\fux\include\predicates\findsharedmusiccontainer.h
+	<memory>
 
 1423817175 source:c:\workspace\projects\fux\src\gui\settings\preferencecouleur.cpp
 	"../../../include/gui/settings/PreferenceCouleur.h"
@@ -3036,7 +3042,7 @@
 1420204780 source:c:\workspace\projects\fux\src\gui\widgets\boutonfenetredetachable.cpp
 	"../../../include/gui/widgets/BoutonFenetreDetachable.h"
 
-1434811005 source:c:\workspace\projects\fux\src\gui\widgets\fenetre.cpp
+1437903782 source:c:\workspace\projects\fux\src\gui\widgets\fenetre.cpp
 	"wx/wxprec.h"
 	"Fenetre.h"
 	"MusicManagerSwitcher.h"
@@ -3055,13 +3061,11 @@
 1420204780 source:c:\workspace\projects\fux\src\gui\widgets\sliderson.cpp
 	"../../../include/gui/widgets/SliderSon.h"
 
-1429373788 source:c:\workspace\projects\fux\src\music\abstractmusicmanagerdecorator.cpp
+1437903480 source:c:\workspace\projects\fux\src\music\abstractmusicmanagerdecorator.cpp
 	"AbstractMusicManagerDecorator.h"
 
 1434227521 source:c:\workspace\projects\fux\src\music\deletedlines.cpp
 	"DeletedLines.h"
-
-1434227474 c:\workspace\projects\fux\include\music\deletedlines.h
 
 1429309007 source:c:\workspace\projects\fux\src\music\duration.cpp
 	"music/Duration.h"
@@ -3091,17 +3095,33 @@
 1429309158 source:c:\workspace\projects\fux\src\music\musicfilewriterthread.cpp
 	"MusicFileWriterThread.h"
 
-1434405747 source:c:\workspace\projects\fux\src\music\musiclist.cpp
+1437919098 source:c:\workspace\projects\fux\src\music\musiclist.cpp
 	"music/MusicList.h"
 	"tools/thread/ThreadManager.h"
 	"music/Factory.h"
 	"settings/Parametre.h"
 	"predicates/findSharedMusicContainer.h"
 
-1433801335 c:\workspace\projects\fux\include\predicates\findsharedmusiccontainer.h
-	<memory>
+1428010261 c:\workspace\projects\fux\include\tools\thread\threadmanager.h
+	<vector>
+	"IThreadManager.h"
+	"ThreadSafeQueue.h"
 
-1434756107 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
+1428010261 c:\workspace\projects\fux\include\tools\thread\ithreadmanager.h
+	"ThreadProcess.h"
+
+1432362870 c:\workspace\projects\fux\include\tools\thread\threadprocess.h
+	<wx/wx.h>
+	<wx/thread.h>
+	"IThreadManager.h"
+	"IRunnable.h"
+
+1419443194 c:\workspace\projects\fux\include\tools\stl\threadsafequeue.h
+	<queue>
+	<wx/wx.h>
+	<wx/thread.h>
+
+1437910454 source:c:\workspace\projects\fux\src\music\musicmanager.cpp
 	<music/MusicManager.h>
 	<ctime>
 	<algorithm>
@@ -3111,16 +3131,17 @@
 	<predicates/findSharedMusicContainer.h>
 	<music/Factory.h>
 	<music/DeletedLines.h>
+	<tools/dnd/dataObjects/PlaylistTransitiveData.h>
 
 1432565596 c:\workspace\projects\fux\include\predicates\findposition.h
 	"music/IMusic.h"
 	<memory>
 
-1434750425 source:c:\workspace\projects\fux\src\music\musicmanagerdefaultdecorator.cpp
+1436560553 source:c:\workspace\projects\fux\src\music\musicmanagerdefaultdecorator.cpp
 	<MusicManagerDefaultDecorator.h>
 	<music/DeletedLines.h>
 
-1434750627 source:c:\workspace\projects\fux\src\music\musicmanagersearchdecorator.cpp
+1436560552 source:c:\workspace\projects\fux\src\music\musicmanagersearchdecorator.cpp
 	<MusicManagerSearchDecorator.h>
 	<music/DeletedLines.h>
 
@@ -3244,47 +3265,70 @@
 	<wx/textfile.h>
 	"../../tools/ThreadGestion.h"
 
-1436193050 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\containerfiletransitivedata.cpp
+1437869053 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\containerfiletransitivedata.cpp
 	"tools/dnd/dataObjects/ContainerFileTransitiveData.h"
-
-1436193050 c:\workspace\projects\fux\include\tools\dnd\dataobjects\containerfiletransitivedata.h
-	<wx/wx.h>
-	"tools/dnd/dataObjects/TTransitiveData.h"
-
-1436193962 c:\workspace\projects\fux\include\tools\dnd\dataobjects\ttransitivedata.h
-	<vector>
-	"tools/dnd/dataObjects/TransitiveData.h"
-
-1436193986 c:\workspace\projects\fux\include\tools\dnd\dataobjects\transitivedata.h
-	<wx/wx.h>
+	<wx/textfile.h>
 
 1436192630 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\dataobject.cpp
 	"tools/dnd/dataObjects/DataObject.h"
 
-1436192286 c:\workspace\projects\fux\include\tools\dnd\dataobjects\dataobject.h
-	<wx/wx.h>
-	<wx/dnd.h>
-	"tools/dnd/dataObjects/TransitiveData.h"
-
-1436193050 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\dirtransitivedata.cpp
+1437780774 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\dirtransitivedata.cpp
 	"tools/dnd/dataObjects/DirTransitiveData.h"
 
-1436193050 c:\workspace\projects\fux\include\tools\dnd\dataobjects\dirtransitivedata.h
+1437780671 c:\workspace\projects\fux\include\tools\dnd\dataobjects\dirtransitivedata.h
 	<wx/wx.h>
 	"tools/dnd/dataObjects/TTransitiveData.h"
+
+1437780700 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\playlisttransitivedata.cpp
+	"tools/dnd/dataObjects/PlaylistTransitiveData.h"
+
+1436558328 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\transitivedata.cpp
+	"tools/dnd/dataObjects/TransitiveData.h"
 
 1435960921 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\ttransitivedata.cpp
 	"tools/dnd/dataObjects/TTransitiveData.h"
 
-1428846354 source:c:\workspace\projects\fux\src\tools\dnd\dndlistefichier.cpp
-	"../../../include/tools/dnd/DnDListeFichier.h"
+1436726458 source:c:\workspace\projects\fux\src\tools\dnd\dndcible.cpp
+	"tools/dnd/DnDCible.h"
+	"MusicManagerSwitcher.h"
 
-1428846359 c:\workspace\projects\fux\include\tools\dnd\dndlistefichier.h
+1435942034 c:\workspace\projects\fux\include\tools\dnd\dndcible.h
 	<wx/wx.h>
 	<wx/dnd.h>
+	<wx/listctrl.h>
+	<wx/dataobj.h>
+	"music/MusicManager.h"
+	"GUI/explorer/GestionPeriphMoitiePage.h"
+	"MusicPlayListDnDBufferData.h"
 
-1435158694 source:c:\workspace\projects\fux\src\tools\dnd\musicplaylistdndbufferdata.cpp
-	"tools/dnd/MusicPlayListDnDBufferData.h"
+1416437235 c:\workspace\projects\fux\include\gui\explorer\gestionperiphmoitiepage.h
+	"../../Define.h"
+	<wx/wx.h>
+	<wx/dir.h>
+	<wx/filename.h>
+	"GestionPeriphTableau.h"
+	"../../tools/ThreadGestion.h"
+	"../dialogs/DialogEnregistreM3U.h"
+	"GestionPeriphCouperCopier.h"
+	"../../tools/OS_Win.h"
+
+1436029341 c:\workspace\projects\fux\include\gui\explorer\gestionperiphtableau.h
+	"Define.h"
+	<wx/wx.h>
+	<wx/dir.h>
+	<wx/listctrl.h>
+	<wx/filename.h>
+	<wx/imaglist.h>
+	"GestionPeriphCouperCopier.h"
+	"tools/dnd/DnDCible.h"
+
+1416437235 c:\workspace\projects\fux\include\gui\explorer\gestionperiphcoupercopier.h
+	"../../Define.h"
+	<wx/wx.h>
+	<wx/dir.h>
+	<wx/filename.h>
+	"../../music/MusicManager.h"
+	"../../tools/ThreadGestion.h"
 
 1416437235 c:\workspace\projects\fux\include\tools\dnd\musicplaylistdndbufferdata.h
 	<wx/wx.h>
@@ -3292,27 +3336,35 @@
 	<wx/dataobj.h>
 	"DnDListeFichier.h"
 
-1436192908 source:c:\workspace\projects\fux\src\tools\dnd\targets\containerfiletransitivedatatarget.cpp
-	"tools/dnd/targets/ContainerFileTransitiveDataTarget.h"
-
-1435749954 c:\workspace\projects\fux\include\tools\dnd\targets\containerfiletransitivedatatarget.h
-	"tools/dnd/targets/TransitiveDataTarget.h"
-
-1436029602 c:\workspace\projects\fux\include\tools\dnd\targets\transitivedatatarget.h
+1428846359 c:\workspace\projects\fux\include\tools\dnd\dndlistefichier.h
 	<wx/wx.h>
 	<wx/dnd.h>
 
-1436192908 source:c:\workspace\projects\fux\src\tools\dnd\targets\dirtransitivedatatarget.cpp
+1428846354 source:c:\workspace\projects\fux\src\tools\dnd\dndlistefichier.cpp
+	"../../../include/tools/dnd/DnDListeFichier.h"
+
+1435158694 source:c:\workspace\projects\fux\src\tools\dnd\musicplaylistdndbufferdata.cpp
+	"tools/dnd/MusicPlayListDnDBufferData.h"
+
+1437780482 source:c:\workspace\projects\fux\src\tools\dnd\targets\containerfiletransitivedatatarget.cpp
+	"tools/dnd/targets/ContainerFileTransitiveDataTarget.h"
+
+1437780484 c:\workspace\projects\fux\include\tools\dnd\targets\containerfiletransitivedatatarget.h
+	"tools/dnd/targets/TransitiveDataTarget.h"
+
+1437780490 source:c:\workspace\projects\fux\src\tools\dnd\targets\dirtransitivedatatarget.cpp
 	"tools/dnd/targets/DirTransitiveDataTarget.h"
 
-1435749954 c:\workspace\projects\fux\include\tools\dnd\targets\dirtransitivedatatarget.h
+1437780492 c:\workspace\projects\fux\include\tools\dnd\targets\dirtransitivedatatarget.h
 	"tools/dnd/targets/TransitiveDataTarget.h"
 
-1436192908 source:c:\workspace\projects\fux\src\tools\dnd\targets\playlisttransitivedatatarget.cpp
+1437909873 source:c:\workspace\projects\fux\src\tools\dnd\targets\playlisttransitivedatatarget.cpp
 	"tools/dnd/targets/PlaylistTransitiveDataTarget.h"
+	"music/MusicManagerSwitcher.h"
 
-1435749952 c:\workspace\projects\fux\include\tools\dnd\targets\playlisttransitivedatatarget.h
+1437903062 source:c:\workspace\projects\fux\src\tools\dnd\targets\transitivedatatarget.cpp
 	"tools/dnd/targets/TransitiveDataTarget.h"
+	"tools/dnd/dataObjects/DataObject.h"
 
 1424812603 source:c:\workspace\projects\fux\src\tools\elementthreadfichier.cpp
 	"../../include/tools/ElementThreadFichier.h"
@@ -3364,6 +3416,9 @@
 	"tools/thread/ThreadProcess.h"
 	"tools/thread/IThreadManager.h"
 
+1428010261 c:\workspace\projects\fux\include\tools\thread\threadfactory.h
+	<wx/wx.h>
+
 1432362780 source:c:\workspace\projects\fux\src\tools\thread\threadmanager.cpp
 	"tools/thread/ThreadManager.h"
 	<algorithm>
@@ -3387,85 +3442,42 @@
 	"Tools.h"
 	"Define.h"
 
-1436193050 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\playlisttransitivedata.cpp
-	"tools/dnd/dataObjects/PlaylistTransitiveData.h"
-
-1436193050 c:\workspace\projects\fux\include\tools\dnd\dataobjects\playlisttransitivedata.h
-	"tools/dnd/dataObjects/TTransitiveData.h"
-	<memory>
-	"music/Music.h"
-
-1436196276 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
-	"Define.h"
-	<wx/stdpaths.h>
+1437902770 source:c:\workspace\projects\fux\src\explorer\state\dirdrivemanagerstate.cpp
+	"explorer/state/DirDriveManagerState.h"
 	<wx/dir.h>
-	<wx/tarstrm.h>
-	<wx/progdlg.h>
-	<wx/dnd.h>
-	<wx/mstream.h>
-	<wx/renderer.h>
-	<algorithm>
-	"gui/musiclist/PlayList.h"
+	"Parametre.h"
+	"explorer/ExplorerFactory.h"
+	"explorer/ExplorerManagerData.h"
+	"music/MusicManagerSwitcher.h"
+	"tools/thread/ThreadManager.h"
+	"tools/thread/ThreadFactory.h"
+	"tools/dnd/dataObjects/DirTransitiveData.h"
+	"tools/dnd/targets/DirTransitiveDataTarget.h"
+
+1437869139 source:c:\workspace\projects\fux\src\explorer\state\filedrivemanagerstate.cpp
+	"explorer/state/FileDriveManagerState.h"
 	"MusicManagerSwitcher.h"
-	"music/MusicManager.h"
-	"music/DeletedLines.h"
-	"widgets/SliderSon.h"
-	"tools/FichierLog.h"
-	"tools/dnd/targets/PlaylistTransitiveDataTarget.h"
-	"tools/dnd/dataObjects/PlaylistTransitiveData.h"
+	<wx/textfile.h>
+	"explorer/ExplorerManagerData.h"
+	"explorer/ExplorerFactory.h"
 	"tools/dnd/dataObjects/ContainerFileTransitiveData.h"
-	"tools/dnd/dataObjects/DataObject.h"
-	"db/BDDRequete.h"
-	"db/BDDThread.h"
-	"predicates/findSharedMusicContainer.h"
+	"tools/dnd/targets/ContainerFileTransitiveDataTarget.h"
 
-1436194060 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\transitivedata.cpp
-	"tools/dnd/dataObjects/TransitiveData.h"
-
-1436029639 source:c:\workspace\projects\fux\src\tools\dnd\dndcible.cpp
-	"tools/dnd/DnDCible.h"
+1437869195 source:c:\workspace\projects\fux\src\explorer\state\playlistdrivemanagerstate.cpp
+	"explorer/state/PlaylistDriveManagerState.h"
+	<vector>
 	"MusicManagerSwitcher.h"
+	"Music.h"
+	"explorer/ExplorerManagerData.h"
+	"tools/dnd/dataObjects/PlaylistTransitiveData.h"
+	"tools/dnd/targets/PlaylistTransitiveDataTarget.h"
 
-1435942034 c:\workspace\projects\fux\include\tools\dnd\dndcible.h
-	<wx/wx.h>
-	<wx/dnd.h>
-	<wx/listctrl.h>
-	<wx/dataobj.h>
-	"music/MusicManager.h"
-	"GUI/explorer/GestionPeriphMoitiePage.h"
-	"MusicPlayListDnDBufferData.h"
-
-1416437235 c:\workspace\projects\fux\include\gui\explorer\gestionperiphmoitiepage.h
-	"../../Define.h"
-	<wx/wx.h>
-	<wx/dir.h>
-	<wx/filename.h>
-	"GestionPeriphTableau.h"
-	"../../tools/ThreadGestion.h"
-	"../dialogs/DialogEnregistreM3U.h"
-	"GestionPeriphCouperCopier.h"
-	"../../tools/OS_Win.h"
-
-1436029341 c:\workspace\projects\fux\include\gui\explorer\gestionperiphtableau.h
-	"Define.h"
-	<wx/wx.h>
-	<wx/dir.h>
-	<wx/listctrl.h>
-	<wx/filename.h>
-	<wx/imaglist.h>
-	"GestionPeriphCouperCopier.h"
-	"tools/dnd/DnDCible.h"
-
-1416437235 c:\workspace\projects\fux\include\gui\explorer\gestionperiphcoupercopier.h
-	"../../Define.h"
-	<wx/wx.h>
-	<wx/dir.h>
-	<wx/filename.h>
-	"../../music/MusicManager.h"
-	"../../tools/ThreadGestion.h"
-
-1436194133 source:c:\workspace\projects\fux\src\tools\dnd\targets\transitivedatatarget.cpp
-	"tools/dnd/targets/TransitiveDataTarget.h"
-	"tools/dnd/dataObjects/DataObject.h"
+1437870325 source:c:\workspace\projects\fux\src\gui\explorer\explorerpanel.cpp
+	"ExplorerPanel.h"
+	"DriveManagersPanel.h"
+	"explorer/ExplorerManager.h"
+	"explorer/state/DriveManagerState.h"
+	<algorithm>
 	"tools/dnd/dataObjects/TransitiveData.h"
+	"tools/dnd/dataObjects/DataObject.h"
 

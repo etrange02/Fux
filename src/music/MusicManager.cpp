@@ -15,6 +15,7 @@
 #include <predicates/findSharedMusicContainer.h>
 #include <music/Factory.h>
 #include <music/DeletedLines.h>
+#include <tools/dnd/dataObjects/PlaylistTransitiveData.h>
 
 #define useMethod(object, method) ((object).*(method))
 
@@ -389,7 +390,7 @@ void MusicManager::moveIntTitlesAt(const wxArrayString& titles, size_t position)
  * @return void
  * @deprecated
  */
-void MusicManager::moveIntTitlesAtInSearch(const wxArrayString& titles, unsigned long position)
+void MusicManager::moveIntTitlesAtInSearch(const wxArrayString& WXUNUSED(titles), unsigned long WXUNUSED(position))
 {
 
 }
@@ -403,9 +404,14 @@ void MusicManager::moveIntTitlesAtInSearch(const wxArrayString& titles, unsigned
  */
 void MusicManager::placeStringTitlesAt(const wxArrayString& titles, size_t position)
 {
+    bool startPlaying = empty();
     m_musicList->insertLines(titles, position);
+    if (startPlaying)
+        playMusicAt(0);
     if (position <= m_musicPosition)
         m_musicPosition += position;
+    //m_musicList->sendMusicListUpdatedEvent();
+    launchSearching();
 }
 
 /** @brief Not implemented
@@ -416,7 +422,7 @@ void MusicManager::placeStringTitlesAt(const wxArrayString& titles, size_t posit
  * @return void
  * @deprecated
  */
-void MusicManager::placeStringTitlesAtInSearch(const wxArrayString& titles, size_t position)
+void MusicManager::placeStringTitlesAtInSearch(const wxArrayString& WXUNUSED(titles), size_t WXUNUSED(position))
 {
 
 }
@@ -954,5 +960,21 @@ void MusicManager::sendMusicManagerLineDeleted(const long position, const long p
     //DeletedLines deletedLines(position, positionInSearch);
     evt.SetClientData(deletedLines);
     getParent()->GetEventHandler()->AddPendingEvent(evt);
+}
+
+/** @brief Fills the transitiveData with shared Musics found at positions.
+ *
+ * @param positions std::vector<unsigned long>&
+ * @param transitiveData dragAndDrop::PlaylistTransitiveData&
+ * @return void
+ *
+ */
+void MusicManager::convertPositionsToTransitiveData(const std::vector<unsigned long>& positions, dragAndDrop::PlaylistTransitiveData& transitiveData)
+{
+    MusicCollection& musics = getAllMusics();
+    for (std::vector<unsigned long>::const_iterator iter = positions.begin(); iter != positions.end(); ++iter)
+    {
+        transitiveData.add(musics.at(*iter));
+    }
 }
 

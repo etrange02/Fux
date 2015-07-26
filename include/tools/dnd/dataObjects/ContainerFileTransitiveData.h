@@ -6,7 +6,7 @@
 
 namespace dragAndDrop
 {
-    class ContainerFileTransitiveData : public TTransitiveData<int>
+    class ContainerFileTransitiveData : public TTransitiveData<unsigned long>
     {
         public:
             /** Default constructor */
@@ -22,14 +22,17 @@ namespace dragAndDrop
              *  \return A reference to this
              */
             ContainerFileTransitiveData& operator=(const ContainerFileTransitiveData& other);
-            virtual const wxString getName() const;
 
-            virtual bool isSameKind() const;
+            virtual const wxString getName() const;
+            virtual wxArrayString getFilenames() const;
+            virtual const std::vector<unsigned long>& deleteFromSource();
+
             virtual void doCopy();
             virtual void doCut();
-            virtual void doPaste();
 
             void setFilename(const wxString& filename);
+            virtual bool isContainerFileKind() const;
+
         protected:
         private:
             wxString m_file;

@@ -15,7 +15,7 @@
 using namespace ::explorer;
 
 ExplorerManager::ExplorerManager(gui::explorer::ExplorerPanel& explorerPanel, ExplorerDriveManagers& explorerDriveManagers) :
-    m_data(*(ExplorerFactory::createDefaultDriveManagerState(m_data)), explorerPanel, explorerDriveManagers)
+    m_data(*(ExplorerFactory::createDefaultDriveManagerState(m_data, false)), explorerPanel, explorerDriveManagers)
 {
     m_data.getExplorerPanel().setExplorerManager(this);
 }
@@ -54,7 +54,7 @@ void ExplorerManager::setFileState(const wxString& path)
 void ExplorerManager::setDefaultState()
 {
     m_data.setPath("");
-    m_data.setState(*(explorer::ExplorerFactory::createDefaultDriveManagerState(m_data)));
+    m_data.setState(*(explorer::ExplorerFactory::createDefaultDriveManagerState(m_data, true)));
     m_data.getState().fillExplorerList();
     m_data.getExplorerDriveManagers().updateStreamButtonStates(m_data.getExplorerPanel());
     m_data.getExplorerPanel().getExplorerListCtrl().SetFocus();
@@ -97,9 +97,8 @@ DriveManagerState& ExplorerManager::getState() const
     return m_data.getState();
 }
 
-void* ExplorerManager::getDraggedElements()
+dragAndDrop::TransitiveData* ExplorerManager::getDraggedElements()
 {
-    //TODO: Call the DriveManagerState to have the selected items compiled in a good form.
-    return NULL;
+    return getState().getDraggedElements();
 }
 

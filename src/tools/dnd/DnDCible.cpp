@@ -103,3 +103,4 @@ long DnDCible::GetPositionCoord(int y)
     }
     return pos;
 }
+

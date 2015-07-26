@@ -26,9 +26,9 @@ ExplorerFactory::~ExplorerFactory()
     //dtor
 }
 
-DriveManagerState* ExplorerFactory::createDefaultDriveManagerState(ExplorerManagerData& data)
+DriveManagerState* ExplorerFactory::createDefaultDriveManagerState(ExplorerManagerData& data, const bool initDragAndDrop)
 {
-    return new DefaultDriveManagerState(data);
+    return new DefaultDriveManagerState(data, initDragAndDrop);
 }
 
 DriveManagerState* ExplorerFactory::createDirDriveManagerState(ExplorerManagerData& data)

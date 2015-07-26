@@ -11,6 +11,8 @@
 #include "MusicManagerSwitcher.h"
 #include "Music.h"
 #include "explorer/ExplorerManagerData.h"
+#include "tools/dnd/dataObjects/PlaylistTransitiveData.h"
+#include "tools/dnd/targets/PlaylistTransitiveDataTarget.h"
 
 using namespace explorer;
 using namespace ::music;
@@ -18,7 +20,8 @@ using namespace ::music;
 PlaylistDriveManagerState::PlaylistDriveManagerState(ExplorerManagerData& data) :
     DriveManagerState(data)
 {
-    //ctor
+    gui::explorer::ExplorerListCtrl& listCtrl = data.getExplorerPanel().getExplorerListCtrl();
+    listCtrl.SetDropTarget(new dragAndDrop::PlaylistTransitiveDataTarget(listCtrl));
 }
 
 PlaylistDriveManagerState::~PlaylistDriveManagerState()
@@ -168,6 +171,15 @@ void PlaylistDriveManagerState::rename()
 void PlaylistDriveManagerState::createShortcut()
 {
     // Nothing to do.
+}
+
+dragAndDrop::TransitiveData* PlaylistDriveManagerState::getDraggedElements()
+{
+    dragAndDrop::PlaylistTransitiveData* transitiveData = new dragAndDrop::PlaylistTransitiveData;
+    std::vector<unsigned long> selectedItemsPosition = m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines();
+    MusicManagerSwitcher::getSearch().convertPositionsToTransitiveData(selectedItemsPosition, *transitiveData);
+
+    return transitiveData;
 }
 
 

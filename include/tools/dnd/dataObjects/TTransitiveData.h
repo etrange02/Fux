@@ -11,8 +11,7 @@ namespace dragAndDrop
     {
         public:
             /** Default constructor */
-            TTransitiveData() :
-                m_isCopy(false)
+            TTransitiveData()
             {
             }
 
@@ -39,7 +38,6 @@ namespace dragAndDrop
                     return *this;
 
                 m_items     = rhs.m_items;
-                m_isCopy    = rhs.m_isCopy;
 
                 return *this;
             }
@@ -64,25 +62,26 @@ namespace dragAndDrop
                 m_items.push_back(item);
             }
 
+            void add(const std::vector<T>& items)
+            {
+                m_items.insert(m_items.end(), items.begin(), items.end());
+            }
+
             virtual const wxString getName() const = 0;
+            virtual wxArrayString getFilenames() const = 0;
 
-        protected:
-            void setCopy(const bool copy)
-            {
-                m_isCopy = copy;
-            }
-            bool isCopy() const
-            {
-                return m_isCopy;
-            }
-
-            virtual bool isSameKind() const = 0;
             virtual void doCopy() = 0;
             virtual void doCut() = 0;
 
+            virtual bool isEmpty() const
+            {
+                return m_items.empty();
+            }
+
+        protected:
+
         private:
             std::vector<T> m_items;
-            bool m_isCopy;
     };
 }
 

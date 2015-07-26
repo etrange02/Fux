@@ -167,6 +167,22 @@ void MusicList::addFileLine(const wxString& path)
     tools::thread::ThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(sp, parent));
 }
 
+/** @brief Adds a music file in the list at position.
+ * Code duplicated to be sure to not have impacts.
+ * @param path const wxString&
+ * @param position const long
+ * @return void
+ *
+ */
+void MusicList::addFileLine(const wxString& path, const long position)
+{
+    Music* music = Factory::createMusic(path);
+    std::shared_ptr<Music> sp(music);
+    m_musicList->insert(m_musicList->begin() + position, sp);
+    wxWindow *parent = isSendEventWhenAdding() ? m_parent : NULL;
+    tools::thread::ThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(sp, parent));
+}
+
 /** @brief Parse the directory
  * Parse the directory
  * @param path the directory path
@@ -351,20 +367,14 @@ void MusicList::insertLines(const wxArrayString& filenameArray, long position)
     else if (insertionLine > (long) m_musicList->size()+1)
         insertionLine = m_musicList->size() + 1;
 
-    MusicCollection *tmpArray = new MusicCollection();
-
     for (wxArrayString::const_iterator iter = filenameArray.begin(); iter != filenameArray.end(); ++iter)
     {
         if (Parametre::Get()->islisable(iter->AfterLast('.').Lower()))
         {
-            addFileLine(*iter);
+            addFileLine(*iter, insertionLine);
+            ++insertionLine;
         }
     }
-
-    MusicIterator musicIterator = m_musicList->begin() + insertionLine;
-    m_musicList->insert(musicIterator, tmpArray->begin(), tmpArray->end());
-
-    delete tmpArray;
 }
 
 /** @brief Modifies the parent window

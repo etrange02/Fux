@@ -17,7 +17,7 @@ namespace explorer
     class ExplorerFactory
     {
         public:
-            static DriveManagerState* createDefaultDriveManagerState (ExplorerManagerData& data);
+            static DriveManagerState* createDefaultDriveManagerState (ExplorerManagerData& data, const bool initDragAndDrop);
             static DriveManagerState* createDirDriveManagerState     (ExplorerManagerData& data);
             static DriveManagerState* createFileDriveManagerState    (ExplorerManagerData& data);
             static DriveManagerState* createPlaylistDriveManagerState(ExplorerManagerData& data);

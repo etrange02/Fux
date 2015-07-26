@@ -35,6 +35,7 @@ namespace music
             void clear();
             void addLines(const wxArrayString& pathArray);
             virtual void addUnknownKindLine(const wxString& path);
+            virtual void addFileLine(const wxString& path, const long position);
             virtual void addFileLine(const wxString& path);
             virtual void addDirLine(const wxString& path);
             void importFileContent(const wxString& filename);

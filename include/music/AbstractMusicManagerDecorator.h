@@ -23,6 +23,7 @@ namespace music
     //        /**/virtual void deleteTitleAt(size_t position) = 0;
     //        /**/virtual bool playMusicAt(long position) = 0;
     //        /**/virtual int  getDeletedLine(DeletedLines& deletedLines) = 0;
+    //        /**/virtual void convertPositionsToTransitiveData(std::vector<int>& positions, dragAndDrop::PlaylistTransitiveData& transitiveData) = 0;
 
             virtual bool isRepete();
             virtual bool isRandom();
@@ -65,7 +66,7 @@ namespace music
             MusicManager& getDelegate() const;
 
         private:
-            MusicManager& m_musiqManager;
+            MusicManager& m_musicManager;
     };
 }
 

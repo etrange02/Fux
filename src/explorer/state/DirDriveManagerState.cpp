@@ -14,13 +14,16 @@
 #include "music/MusicManagerSwitcher.h"
 #include "tools/thread/ThreadManager.h"
 #include "tools/thread/ThreadFactory.h"
+#include "tools/dnd/dataObjects/DirTransitiveData.h"
+#include "tools/dnd/targets/DirTransitiveDataTarget.h"
 
 using namespace explorer;
 
 DirDriveManagerState::DirDriveManagerState(ExplorerManagerData& data) :
     DriveManagerState(data)
 {
-    //ctor
+    gui::explorer::ExplorerListCtrl& listCtrl = data.getExplorerPanel().getExplorerListCtrl();
+    listCtrl.SetDropTarget(new dragAndDrop::DirTransitiveDataTarget(listCtrl));
 }
 
 DirDriveManagerState::~DirDriveManagerState()
@@ -99,7 +102,7 @@ DriveManagerState& DirDriveManagerState::getPreviousState()
     const wxString path = m_data.getPath().BeforeLast(wxFileName::GetPathSeparator());
     if (wxDirExists(path))
         return *this;
-    return *(explorer::ExplorerFactory::createDefaultDriveManagerState(m_data));
+    return *(explorer::ExplorerFactory::createDefaultDriveManagerState(m_data, true));
 }
 
 void DirDriveManagerState::openElement()
@@ -215,6 +218,16 @@ void DirDriveManagerState::rename()
 void DirDriveManagerState::createShortcut()
 {
     wxLogMessage("Must be implemented.");
+}
+
+dragAndDrop::TransitiveData* DirDriveManagerState::getDraggedElements()
+{
+    dragAndDrop::DirTransitiveData* transitiveData = new dragAndDrop::DirTransitiveData;
+    wxArrayString selectedLines = getSelectedItems();
+    for (wxArrayString::iterator it = selectedLines.begin(); it != selectedLines.end(); ++it)
+        transitiveData->add(*it);
+
+    return transitiveData;
 }
 
 

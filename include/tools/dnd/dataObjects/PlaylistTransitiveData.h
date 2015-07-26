@@ -25,11 +25,11 @@ namespace dragAndDrop
             PlaylistTransitiveData& operator=(const PlaylistTransitiveData& other);
 
             virtual const wxString getName() const;
+            virtual wxArrayString getFilenames() const;
 
-            virtual bool isSameKind() const;
             virtual void doCopy();
             virtual void doCut();
-            virtual void doPaste();
+            virtual bool isPlaylistKind() const;
 
         protected:
         private:

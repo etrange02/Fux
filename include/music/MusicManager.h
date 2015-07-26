@@ -10,6 +10,9 @@ extern const wxEventType wxEVT_FUX_MUSICMANAGER_NO_FILE;
 extern const wxEventType wxEVT_FUX_MUSICMANAGER_SEARCH_DONE;
 extern const wxEventType wxEVT_FUX_MUSICMANAGER_LINE_DELETED;
 
+namespace dragAndDrop {
+    class PlaylistTransitiveData;
+}
 
 namespace music
 {
@@ -29,19 +32,20 @@ namespace music
             MusicCollection& getSearchedMusics  ();
             size_t getCurrentMusicPosition      ();
             long getCurrentMusicPositionInSearch();
-            bool playMusicAt                (long position);
-            bool playMusicAtInSearch        (long position);
-            void moveIntTitlesAt            (const wxArrayString& titles, size_t position);
-            void moveIntTitlesAtInSearch    (const wxArrayString& titles, unsigned long position);
-            void placeStringTitlesAt        (const wxArrayString& titles, size_t position);
-            void placeStringTitlesAtInSearch(const wxArrayString& titles, size_t position);
-            void deleteTitleAt              (const size_t position);
-            void deleteTitleAt              (const std::vector<unsigned long>& positions);
-            void deleteTitleAtInSearch      (const size_t position);
-            void deleteTitleAtInSearch      (const std::vector<unsigned long>& positions);
-            void updateMusicContent         (const size_t position, Music* musicData);
-            void updateMusicContentInSearch (const size_t position, Music* musicData);
-            void deleteTitles               (wxArrayString& titles, bool update = false);
+            bool playMusicAt                     (long position);
+            bool playMusicAtInSearch             (long position);
+            void moveIntTitlesAt                 (const wxArrayString& titles, size_t position);
+            void moveIntTitlesAtInSearch         (const wxArrayString& titles, unsigned long position);
+            void placeStringTitlesAt             (const wxArrayString& titles, size_t position);
+            void placeStringTitlesAtInSearch     (const wxArrayString& titles, size_t position);
+            void deleteTitleAt                   (const size_t position);
+            void deleteTitleAt                   (const std::vector<unsigned long>& positions);
+            void deleteTitleAtInSearch           (const size_t position);
+            void deleteTitleAtInSearch           (const std::vector<unsigned long>& positions);
+            void updateMusicContent              (const size_t position, Music* musicData);
+            void updateMusicContentInSearch      (const size_t position, Music* musicData);
+            void deleteTitles                    (wxArrayString& titles, bool update = false);
+            void convertPositionsToTransitiveData(const std::vector<unsigned long>& positions, dragAndDrop::PlaylistTransitiveData& transitiveData);
 
             bool isRepete();
             bool isRandom();

@@ -11,6 +11,8 @@
 #include <wx/textfile.h>
 #include "explorer/ExplorerManagerData.h"
 #include "explorer/ExplorerFactory.h"
+#include "tools/dnd/dataObjects/ContainerFileTransitiveData.h"
+#include "tools/dnd/targets/ContainerFileTransitiveDataTarget.h"
 
 using namespace explorer;
 using namespace ::music;
@@ -18,7 +20,8 @@ using namespace ::music;
 FileDriveManagerState::FileDriveManagerState(ExplorerManagerData& data) :
     DriveManagerState(data)
 {
-    //ctor
+    gui::explorer::ExplorerListCtrl& listCtrl = data.getExplorerPanel().getExplorerListCtrl();
+    listCtrl.SetDropTarget(new dragAndDrop::ContainerFileTransitiveDataTarget(listCtrl));
 }
 
 FileDriveManagerState::~FileDriveManagerState()
@@ -214,4 +217,15 @@ void FileDriveManagerState::createShortcut()
 {
     wxLogMessage("Must be implemented.");
 }
+
+dragAndDrop::TransitiveData* FileDriveManagerState::getDraggedElements()
+{
+    dragAndDrop::ContainerFileTransitiveData* transitiveData = new dragAndDrop::ContainerFileTransitiveData;
+    std::vector<unsigned long> positions = m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines();
+    transitiveData->add(positions);
+
+    return transitiveData;
+}
+
+
 

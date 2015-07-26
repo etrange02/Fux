@@ -58,6 +58,8 @@ namespace gui
                 void setTexts(const wxString& name, const wxString& description);
                 void setTexts();
 
+                bool hasLinkedExplorerListCtrl() const;
+
 
             protected:
                 void create();

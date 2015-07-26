@@ -12,7 +12,8 @@ using namespace dragAndDrop;
 
 /** @brief Constructor.
  */
-TransitiveData::TransitiveData()
+TransitiveData::TransitiveData() :
+    m_isCopy(false)
 {
 }
 
@@ -28,11 +29,28 @@ void TransitiveData::displayName() const
     wxLogMessage(getName());
 }
 
-void TransitiveData::doPaste()
+void TransitiveData::setCopy(const bool copy)
 {
-    if (isSameKind())
-        doCut();
-    else
-        doCopy();
+    m_isCopy = copy;
+}
+
+bool TransitiveData::isCopy() const
+{
+    return m_isCopy;
+}
+
+bool TransitiveData::isContainerFileKind() const
+{
+    return false;
+}
+
+bool TransitiveData::isPlaylistKind() const
+{
+    return false;
+}
+
+bool TransitiveData::isDirKind() const
+{
+    return false;
 }
 

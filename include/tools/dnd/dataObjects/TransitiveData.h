@@ -14,15 +14,22 @@ namespace dragAndDrop
             virtual ~TransitiveData();
 
             void displayName() const;
+            void setCopy(const bool copy);
+            bool isCopy() const;
 
-            void doPaste();
-            virtual bool isSameKind() const = 0;
             virtual void doCopy() = 0;
             virtual void doCut() = 0;
             virtual const wxString getName() const = 0;
 
+            virtual wxArrayString getFilenames() const = 0;
+            virtual bool isContainerFileKind() const;
+            virtual bool isPlaylistKind() const;
+            virtual bool isDirKind() const;
+            virtual bool isEmpty() const = 0;
+
         protected:
         private:
+            bool m_isCopy;
     };
 }
 

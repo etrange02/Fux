@@ -11,10 +11,11 @@
 
 using namespace explorer;
 
-DefaultDriveManagerState::DefaultDriveManagerState(ExplorerManagerData& data) :
+DefaultDriveManagerState::DefaultDriveManagerState(ExplorerManagerData& data, const bool initDragAndDrop) :
     DriveManagerState(data)
 {
-    //ctor
+    if (initDragAndDrop)
+        data.getExplorerPanel().getExplorerListCtrl().SetDropTarget(NULL);
 }
 
 DefaultDriveManagerState::~DefaultDriveManagerState()
@@ -127,5 +128,10 @@ void DefaultDriveManagerState::rename()
 
 void DefaultDriveManagerState::createShortcut()
 {
+}
+
+dragAndDrop::TransitiveData* DefaultDriveManagerState::getDraggedElements()
+{
+    return NULL;
 }
 

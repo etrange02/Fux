@@ -41,6 +41,7 @@ namespace explorer
             virtual void playItems();
             virtual void rename();
             virtual void createShortcut();
+            virtual dragAndDrop::TransitiveData* getDraggedElements();
 
         protected:
         private:

@@ -67,4 +67,9 @@ int MusicManagerDefaultDecorator::getDeletedLine(DeletedLines& deletedLines)
     return deletedLines.getPosition();
 }
 
+void MusicManagerDefaultDecorator::convertPositionsToTransitiveData(const std::vector<unsigned long>& positions, dragAndDrop::PlaylistTransitiveData& transitiveData)
+{
+    getDelegate().convertPositionsToTransitiveData(positions, transitiveData);
+}
+
 

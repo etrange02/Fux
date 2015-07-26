@@ -77,7 +77,7 @@ PlayListTableau::PlayListTableau(wxWindow *parent) : wxListCtrl(parent, ID_PAGE_
     SetMinSize(wxSize(10, 10));
 
     //SetDropTarget(new DnDCible(this));
-    SetDropTarget(new dragAndDrop::PlaylistTransitiveDataTarget());
+    SetDropTarget(new dragAndDrop::PlaylistTransitiveDataTarget(*this));
     //DragAcceptFiles(true);
 
     m_menu = new wxMenu;
@@ -184,10 +184,42 @@ void PlayListTableau::addLine(IMusic& music, const int position)
  */
 void PlayListTableau::addLineThread(IMusic& music, const int position)
 {
-    while (GetItemCount() < position+1)
+    if (GetItemCount() < position+1) // end adding
     {
-        InsertItem(GetItemCount(), wxEmptyString);
+        while (GetItemCount() < position+1)
+        {
+            InsertItem(GetItemCount(), wxEmptyString);
+        }
     }
+    else if (!GetItemText(position).IsEmpty()) // insertion case
+    {
+        music::MusicCollection& musicCollection = MusicManagerSwitcher::getSearch().getMusics();
+        const int nextElementPositionInCollection = position + 1;
+        music::Music& nextMusic = *(musicCollection.at(nextElementPositionInCollection));
+
+        const wxString& nextMusicName = nextMusic.GetName();
+        int nextElementPositionInList = position;
+        wxString nextItemText = GetItemText(nextElementPositionInList, 0);
+        while (-1 != nextElementPositionInList && nextItemText != nextMusicName)
+        {
+            --nextElementPositionInList;
+            if (nextElementPositionInList > 0)
+                nextItemText = GetItemText(nextElementPositionInList);
+        }
+
+        // The delta test is useful in case of many loading of the same title.
+        // It is not possible to determine each occurrence so I limit the algorithm effect.
+        const int delta = position - nextElementPositionInList;
+        if (-1 == nextElementPositionInList || delta > wxThread::GetCPUCount())
+            nextElementPositionInList = position;
+
+        while (nextElementPositionInList < nextElementPositionInCollection)
+        {
+            InsertItem(nextElementPositionInList, wxEmptyString);
+            ++nextElementPositionInList;
+        }
+    }
+
     modifyLine(music, position);
 }
 
@@ -400,22 +432,10 @@ void PlayListTableau::onDragEvent(wxListEvent &WXUNUSED(event))
     if (MusicManagerSwitcher::getSearch().hasEfficientSearchedWord())
         return;
 
-    /*DnDListeFichier* transfile = new DnDListeFichier();
-
-    const std::vector<unsigned long> selectedLines = getSelectedLines();
-    for (std::vector<unsigned long>::const_iterator iter = selectedLines.begin(); iter != selectedLines.end(); ++iter)
-        transfile->AddFile(wxString::Format(_("%d"), *iter));
-
-    if (transfile->GetCount() == 0)  // Si aucun fichier détruire l'instance et sortir
-    {
-        delete transfile;
-        return;
-    }*/
-
     dragAndDrop::PlaylistTransitiveData data;
-    data.add(std::make_shared<music::Music>(*MusicManagerSwitcher::getSearch().getMusic()));
+    MusicManagerSwitcher::getSearch().convertPositionsToTransitiveData(getSelectedLines(), data);
 
-    if (data.getItems().size() == 0)
+    if (data.isEmpty())
         return;
 
     dragAndDrop::DataObject container(&data);

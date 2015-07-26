@@ -6,8 +6,10 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "../../../include/tools/dnd/DnDCible.h"
+#include "tools/dnd/DnDCible.h"
 #include "MusicManagerSwitcher.h"
+
+using namespace ::music;
 
 /**
  * @class DnDCible
@@ -51,8 +53,7 @@ wxDragResult DnDCible::OnData(wxCoord WXUNUSED(x), wxCoord y, wxDragResult WXUNU
     if (!GetData())
         return wxDragNone;
 
-    DnDListeFichier* TransFile;
-    TransFile = ((MusicPlayListDnDBufferData *)GetDataObject())->GetTransFile();
+    DnDListeFichier* TransFile = ((MusicPlayListDnDBufferData *)GetDataObject())->GetTransFile();
 
     if (m_pageGestion == NULL)
     {
@@ -102,3 +103,4 @@ long DnDCible::GetPositionCoord(int y)
     }
     return pos;
 }
+

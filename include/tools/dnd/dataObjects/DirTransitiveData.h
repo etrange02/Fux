@@ -22,12 +22,14 @@ namespace dragAndDrop
              *  \return A reference to this
              */
             DirTransitiveData& operator=(const DirTransitiveData& other);
-            virtual const wxString getName() const;
 
-            virtual bool isSameKind() const;
+            virtual const wxString getName() const;
+            virtual wxArrayString getFilenames() const;
+
             virtual void doCopy();
             virtual void doCut();
-            virtual void doPaste();
+            virtual bool isDirKind() const;
+
         protected:
         private:
     };

@@ -871,8 +871,6 @@ void FuXFenetre::openDialogToPlayMusic()
         }
         else
             MusicManagerSwitcher::get().parse(musNav, false);
-
-        musNav.Clear();
     }
 }
 

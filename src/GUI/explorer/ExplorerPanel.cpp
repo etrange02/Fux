@@ -11,6 +11,8 @@
 #include "explorer/ExplorerManager.h"
 #include "explorer/state/DriveManagerState.h"
 #include <algorithm>
+#include "tools/dnd/dataObjects/TransitiveData.h"
+#include "tools/dnd/dataObjects/DataObject.h"
 
 const wxEventType wxEVT_FUX_EXPLORERLISTCTRL_FOCUS = wxNewEventType();
 
@@ -158,9 +160,20 @@ void ExplorerPanel::onItemActivatedInListCtrl(wxCommandEvent& WXUNUSED(event))
 
 void ExplorerPanel::onDragBeginInListCtrl(wxCommandEvent& WXUNUSED(event))
 {
-///TODO: Dragging events
-    //wxLogMessage("Dragging detected.");
-    void* items = m_explorerManager->getDraggedElements();
+    dragAndDrop::TransitiveData* data = m_explorerManager->getDraggedElements();
+
+    if (data == NULL)
+        return;
+
+    if (!data->isEmpty())
+    {
+        dragAndDrop::DataObject container(data);
+        wxDropSource source(this, wxDROP_ICON(dnd_copy), wxDROP_ICON(dnd_move), wxDROP_ICON(dnd_none));
+        source.SetData(container);
+        source.DoDragDrop(true);
+    }
+
+    delete data;
 }
 
 bool ExplorerPanel::isHiddenFilesChecked() const
@@ -281,5 +294,10 @@ void ExplorerPanel::onMenuSelectAll(wxCommandEvent& WXUNUSED(event))
 void ExplorerPanel::onMenuPlay(wxCommandEvent& WXUNUSED(event))
 {
     m_explorerManager->getState().playItems();
+}
+
+bool ExplorerPanel::hasLinkedExplorerListCtrl() const
+{
+    return NULL != m_explorerList;
 }
 
