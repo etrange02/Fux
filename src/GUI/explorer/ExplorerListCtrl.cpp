@@ -7,14 +7,16 @@
  * License:
  **************************************************************/
 #include "ExplorerListCtrl.h"
+#include "ExplorerPanel.h"
 
 using namespace gui::explorer;
 
 /**
  * Constructor
  */
-ExplorerListCtrl::ExplorerListCtrl(wxWindow *parent, wxWindowID id) :
-    wxListCtrl(parent, id, wxDefaultPosition, wxDefaultSize, wxLC_REPORT |  wxLC_HRULES | wxLC_VRULES)
+ExplorerListCtrl::ExplorerListCtrl(ExplorerPanel *parent, wxWindowID id) :
+    DroppedMarkedLineListCtrl(parent, id, wxDefaultPosition, wxDefaultSize, wxLC_REPORT |  wxLC_HRULES | wxLC_VRULES),
+    m_explorerPanel(*parent)
 {
     Create();
 }
@@ -89,11 +91,6 @@ void ExplorerListCtrl::selectLine(const long line)
     EnsureVisible(line);
 }
 
-void ExplorerListCtrl::selectAll()
-{
-    SetItemState(-1, wxLIST_STATE_SELECTED, wxLIST_STATE_SELECTED);
-}
-
 std::vector<unsigned long> ExplorerListCtrl::getSelectedLines()
 {
     std::vector<unsigned long> selectedItemsPosition;
@@ -122,5 +119,10 @@ void ExplorerListCtrl::deselectLines()
 {
     while (GetSelectedItemCount() > 0)
         SetItemState(GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED), 0, wxLIST_STATE_SELECTED);
+}
+
+void ExplorerListCtrl::updateLines()
+{
+    m_explorerPanel.refreshListCtrl();
 }
 

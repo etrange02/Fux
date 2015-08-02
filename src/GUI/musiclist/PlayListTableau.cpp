@@ -38,7 +38,7 @@ using namespace ::music;
  * @brief Tableau (GUI) dans lequel sont affichés les informations des titres mis dans la liste de lecture. D'une certaine manière, c'est la liste de lecture
  */
 
-BEGIN_EVENT_TABLE(PlayListTableau, wxListCtrl)
+BEGIN_EVENT_TABLE(PlayListTableau, DroppedMarkedLineListCtrl)
     EVT_LIST_ITEM_ACTIVATED (ID_PAGE_PLAYLIST_LISTE,            PlayListTableau::onActiveLineEvent)
     EVT_LIST_BEGIN_DRAG     (ID_PAGE_PLAYLIST_LISTE,            PlayListTableau::onDragEvent)
     EVT_MENU                (ID_PAGE_PLAYLIST_MENU_LECTURE,     PlayListTableau::onMenuEventPlay)
@@ -60,7 +60,8 @@ const wxEventType wxEVT_LISTE_DETAILS = wxNewEventType();
  *
  * @param parent The parent window
  */
-PlayListTableau::PlayListTableau(wxWindow *parent) : wxListCtrl(parent, ID_PAGE_PLAYLIST_LISTE, wxDefaultPosition, wxDefaultSize, wxLC_REPORT |  wxLC_HRULES | wxLC_VRULES)
+PlayListTableau::PlayListTableau(wxWindow *parent) :
+    DroppedMarkedLineListCtrl(parent, ID_PAGE_PLAYLIST_LISTE, wxDefaultPosition, wxDefaultSize, wxLC_REPORT |  wxLC_HRULES | wxLC_VRULES)
 {
     LogFileAppend("PlayListTableau::PlayListTableau - Création");
 
@@ -191,32 +192,37 @@ void PlayListTableau::addLineThread(IMusic& music, const int position)
             InsertItem(GetItemCount(), wxEmptyString);
         }
     }
-    else if (!GetItemText(position).IsEmpty()) // insertion case
+    else if (!GetItemText(position).IsEmpty()) // insertion case or completion
     {
         music::MusicCollection& musicCollection = MusicManagerSwitcher::getSearch().getMusics();
-        const int nextElementPositionInCollection = position + 1;
-        music::Music& nextMusic = *(musicCollection.at(nextElementPositionInCollection));
+        music::Music& musicToComplete = *(musicCollection.at(position));
 
-        const wxString& nextMusicName = nextMusic.GetName();
-        int nextElementPositionInList = position;
-        wxString nextItemText = GetItemText(nextElementPositionInList, 0);
-        while (-1 != nextElementPositionInList && nextItemText != nextMusicName)
+        if (musicToComplete.GetName() != GetItemText(position)) // it is an insertion
         {
-            --nextElementPositionInList;
-            if (nextElementPositionInList > 0)
-                nextItemText = GetItemText(nextElementPositionInList);
-        }
+            const int nextElementPositionInCollection = position + 1;
+            music::Music& nextMusic = *(musicCollection.at(nextElementPositionInCollection));
 
-        // The delta test is useful in case of many loading of the same title.
-        // It is not possible to determine each occurrence so I limit the algorithm effect.
-        const int delta = position - nextElementPositionInList;
-        if (-1 == nextElementPositionInList || delta > wxThread::GetCPUCount())
-            nextElementPositionInList = position;
+            const wxString& nextMusicName = nextMusic.GetName();
+            int nextElementPositionInList = position;
+            wxString nextItemText = GetItemText(nextElementPositionInList, 0);
+            while (-1 != nextElementPositionInList && nextItemText != nextMusicName)
+            {
+                --nextElementPositionInList;
+                if (nextElementPositionInList > 0)
+                    nextItemText = GetItemText(nextElementPositionInList);
+            }
 
-        while (nextElementPositionInList < nextElementPositionInCollection)
-        {
-            InsertItem(nextElementPositionInList, wxEmptyString);
-            ++nextElementPositionInList;
+            // The delta test is useful in case of many loading of the same title.
+            // It is not possible to determine each occurrence so I limit the algorithm effect.
+            const int delta = position - nextElementPositionInList;
+            if (-1 == nextElementPositionInList || delta > wxThread::GetCPUCount())
+                nextElementPositionInList = position;
+
+            while (nextElementPositionInList < nextElementPositionInCollection)
+            {
+                InsertItem(nextElementPositionInList, wxEmptyString);
+                ++nextElementPositionInList;
+            }
         }
     }
 
@@ -258,8 +264,6 @@ void PlayListTableau::onKeyboardEvent(wxKeyEvent& event)
 {
     if (event.GetKeyCode() == WXK_DELETE)
         removeSelectedLines();
-    else if (event.GetKeyCode() == 'A' && event.ControlDown())
-        SetItemState(-1, wxLIST_STATE_SELECTED, wxLIST_STATE_SELECTED);
     else if ((event.GetKeyCode() == 'R' && event.ControlDown()) || event.GetKeyCode() == WXK_F5)
         updateLines();
     else if (event.ControlDown() && (event.GetKeyCode() == '+' || event.GetKeyCode() == WXK_ADD || event.GetKeyCode() == WXK_NUMPAD_ADD ||

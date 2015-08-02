@@ -89,9 +89,3 @@ wxArrayString DriveManagerState::getSelectedItemsPosition()
     return positions;
 }
 
-void DriveManagerState::selectAll()
-{
-    gui::explorer::ExplorerListCtrl& listCtrl = m_data.getExplorerPanel().getExplorerListCtrl();
-    listCtrl.selectAll();
-}
-

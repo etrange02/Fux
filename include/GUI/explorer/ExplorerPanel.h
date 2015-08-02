@@ -59,6 +59,7 @@ namespace gui
                 void setTexts();
 
                 bool hasLinkedExplorerListCtrl() const;
+                void refreshListCtrl();
 
 
             protected:

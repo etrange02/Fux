@@ -44,10 +44,6 @@ IMPORTANT, A FAIRE !!!
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add directory="include/music" />
-					<Add directory="include/tools/dnd" />
-					<Add directory="include/tools/dnd/targets" />
-					<Add directory="include/tools/dnd/dataObjects" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -72,10 +68,6 @@ IMPORTANT, A FAIRE !!!
 					<Add option="-Wall" />
 					<Add option="-g" />
 					<Add option="-DDEBUG" />
-					<Add directory="include/music" />
-					<Add directory="include/tools/dnd" />
-					<Add directory="include/tools/dnd/targets" />
-					<Add directory="include/tools/dnd/dataObjects" />
 				</Compiler>
 			</Target>
 			<Environment>
@@ -119,6 +111,7 @@ IMPORTANT, A FAIRE !!!
 			<Add directory="include/GUI" />
 			<Add directory="include/GUI/dialogs" />
 			<Add directory="include/GUI/explorer" />
+			<Add directory="include/GUI/tools" />
 			<Add directory="include/GUI/widgets" />
 			<Add directory="include/music" />
 			<Add directory="include/network" />
@@ -127,6 +120,9 @@ IMPORTANT, A FAIRE !!!
 			<Add directory="include/settings" />
 			<Add directory="include/tools" />
 			<Add directory="include/tools/dir_traverser" />
+			<Add directory="include/tools/dnd" />
+			<Add directory="include/tools/dnd/targets" />
+			<Add directory="include/tools/dnd/dataObjects" />
 			<Add directory="include/tools/stl" />
 			<Add directory="include/tools/thread" />
 		</Compiler>
@@ -191,6 +187,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/GUI/settings/PreferenceSon.h" />
 		<Unit filename="include/GUI/tools/ArrayFenetreDetachable.h" />
 		<Unit filename="include/GUI/tools/DropFichierImagePochetteMusique.h" />
+		<Unit filename="include/GUI/tools/DroppedMarkedLineListCtrl.h" />
 		<Unit filename="include/GUI/tools/ImageText.h" />
 		<Unit filename="include/GUI/tools/jaquetteClasses.h" />
 		<Unit filename="include/GUI/widgets/BoutonFenetreDetachable.h" />
@@ -320,6 +317,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/GUI/settings/PreferenceSon.cpp" />
 		<Unit filename="src/GUI/tools/ArrayFenetreDetachable.cpp" />
 		<Unit filename="src/GUI/tools/DropFichierImagePochetteMusique.cpp" />
+		<Unit filename="src/GUI/tools/DroppedMarkedLineListCtrl.cpp" />
 		<Unit filename="src/GUI/tools/ImageText.cpp" />
 		<Unit filename="src/GUI/widgets/BoutonFenetreDetachable.cpp" />
 		<Unit filename="src/GUI/widgets/Fenetre.cpp" />

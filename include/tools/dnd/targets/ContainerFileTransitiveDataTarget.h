@@ -3,21 +3,27 @@
 
 #include "tools/dnd/targets/TransitiveDataTarget.h"
 
+namespace explorer {
+    class FileDriveManagerState;
+}
+
 namespace dragAndDrop
 {
     class ContainerFileTransitiveDataTarget : public TransitiveDataTarget
     {
         public:
             /** Default constructor */
-            ContainerFileTransitiveDataTarget(const wxListCtrl& source);
+            ContainerFileTransitiveDataTarget(DroppedMarkedLineListCtrl& source, explorer::FileDriveManagerState& managerState);
             /** Default destructor */
             virtual ~ContainerFileTransitiveDataTarget();
 
         protected:
             virtual bool isSameKind() const;
             virtual void doCopyProcessing(const wxArrayString& data, const long position);
+            virtual void doCutProcessing(TransitiveData& transitiveData, const long position);
 
         private:
+            explorer::FileDriveManagerState& m_managerState;
     };
 }
 

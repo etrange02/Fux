@@ -9,13 +9,14 @@ namespace dragAndDrop
     {
         public:
             /** Default constructor */
-            DirTransitiveDataTarget(const wxListCtrl& source);
+            DirTransitiveDataTarget(DroppedMarkedLineListCtrl& source);
             /** Default destructor */
             virtual ~DirTransitiveDataTarget();
 
         protected:
             virtual bool isSameKind() const;
             virtual void doCopyProcessing(const wxArrayString& data, const long position);
+            virtual void doCutProcessing(TransitiveData& transitiveData, const long position);
 
         private:
     };

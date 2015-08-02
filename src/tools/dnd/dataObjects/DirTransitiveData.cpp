@@ -53,12 +53,12 @@ const wxString DirTransitiveData::getName() const
 
 void DirTransitiveData::doCopy()
 {
-
+    wxLogMessage("Must be implemented");
 }
 
 void DirTransitiveData::doCut()
 {
-
+    wxLogMessage("Must be implemented");
 }
 
 wxArrayString DirTransitiveData::getFilenames() const

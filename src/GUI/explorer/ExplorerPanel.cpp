@@ -135,12 +135,12 @@ ExplorerListCtrl& ExplorerPanel::getExplorerListCtrl()
 
 void ExplorerPanel::onFilterKnownFormatCheckBox(wxCommandEvent& WXUNUSED(event))
 {
-    m_explorerManager->refresh();
+    refreshListCtrl();
 }
 
 void ExplorerPanel::onHiddenFilesCheckBox(wxCommandEvent& WXUNUSED(event))
 {
-    m_explorerManager->refresh();
+    refreshListCtrl();
 }
 
 void ExplorerPanel::onPreviousButton(wxCommandEvent& WXUNUSED(event))
@@ -150,7 +150,7 @@ void ExplorerPanel::onPreviousButton(wxCommandEvent& WXUNUSED(event))
 
 void ExplorerPanel::onRefreshButton(wxCommandEvent& WXUNUSED(event))
 {
-    m_explorerManager->refresh();
+    refreshListCtrl();
 }
 
 void ExplorerPanel::onItemActivatedInListCtrl(wxCommandEvent& WXUNUSED(event))
@@ -288,7 +288,8 @@ void ExplorerPanel::onMenuCreateShortcut(wxCommandEvent& WXUNUSED(event))
 
 void ExplorerPanel::onMenuSelectAll(wxCommandEvent& WXUNUSED(event))
 {
-    m_explorerManager->getState().selectAll();
+    if (hasLinkedExplorerListCtrl())
+        m_explorerList->selectAll();
 }
 
 void ExplorerPanel::onMenuPlay(wxCommandEvent& WXUNUSED(event))
@@ -299,5 +300,10 @@ void ExplorerPanel::onMenuPlay(wxCommandEvent& WXUNUSED(event))
 bool ExplorerPanel::hasLinkedExplorerListCtrl() const
 {
     return NULL != m_explorerList;
+}
+
+void ExplorerPanel::refreshListCtrl()
+{
+    m_explorerManager->refresh();
 }
 

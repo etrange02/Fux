@@ -21,7 +21,7 @@ FileDriveManagerState::FileDriveManagerState(ExplorerManagerData& data) :
     DriveManagerState(data)
 {
     gui::explorer::ExplorerListCtrl& listCtrl = data.getExplorerPanel().getExplorerListCtrl();
-    listCtrl.SetDropTarget(new dragAndDrop::ContainerFileTransitiveDataTarget(listCtrl));
+    listCtrl.SetDropTarget(new dragAndDrop::ContainerFileTransitiveDataTarget(listCtrl, *this));
 }
 
 FileDriveManagerState::~FileDriveManagerState()
@@ -60,7 +60,7 @@ bool FileDriveManagerState::fillExplorerList()
     }
     file.Close();
 
-    m_data.getExplorerPanel().setTexts("Ficher m3u", m_data.getPath());
+    m_data.getExplorerPanel().setTexts("Fichier m3u", m_data.getPath());
     //SetFocus();
     //wxCommandEvent evt(wxEVT_LISTE_RENEW);
     //GetParent()->GetEventHandler()->AddPendingEvent(evt);
@@ -93,18 +93,19 @@ void FileDriveManagerState::deleteSelectedItems()
     if (!file.Exists() || !file.Open())
         return;
 
-    const int start = 1;
+    const long startPosition = 1;
     std::vector<unsigned long> selectedItemsPosition = m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines();
 
     for (std::vector<unsigned long>::reverse_iterator iter = selectedItemsPosition.rbegin(); iter != selectedItemsPosition.rend(); ++iter)
     {
-        file.RemoveLine(start + *iter);
+        file.RemoveLine(startPosition + *iter);
         m_data.getElements().erase(m_data.getElements().begin() + *iter);
     }
     m_data.getExplorerPanel().getExplorerListCtrl().removeSelectedLines();
 
     file.Write();
     file.Close();
+    fillExplorerList();
 }
 
 bool FileDriveManagerState::canCopyTo(const DriveManagerState& other) const
@@ -173,20 +174,30 @@ void FileDriveManagerState::copyElements(DriveManagerState& source)
 
 void FileDriveManagerState::moveElements(DriveManagerState& source)
 {
+    wxArrayString selectedItems = source.getSelectedItems();
+    source.deleteSelectedItems();
+
+    std::vector<unsigned long> selectedItemsPosition = m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines();
+
+    long position = (selectedItemsPosition.empty()) ? -1 : selectedItemsPosition.at(0);
+
+    insertElements(selectedItems, position);
+    fillExplorerList();
+}
+
+void FileDriveManagerState::insertElements(const wxArrayString& filenames, long position)
+{
     wxTextFile file(m_data.getPath());
     if (!file.Exists() || !file.Open())
         return;
 
-    wxArrayString selectedItems = source.getSelectedItems();
-    source.deleteSelectedItems();
+    if (-1 == position)
+        position = file.GetLineCount();
 
     const long startPosition = 1;
-    std::vector<unsigned long> selectedItemsPosition = m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines();
 
-    long position = (selectedItemsPosition.empty()) ? file.GetLineCount() : startPosition + selectedItemsPosition.at(0);
-
-    for (wxArrayString::iterator iter = selectedItems.begin(); iter != selectedItems.end(); ++iter, ++position)
-        file.InsertLine(*iter, position);
+    for (wxArrayString::const_iterator iter = filenames.begin(); iter != filenames.end(); ++iter, ++position)
+        file.InsertLine(*iter, position + startPosition);
 
     file.Write();
     file.Close();
@@ -220,9 +231,11 @@ void FileDriveManagerState::createShortcut()
 
 dragAndDrop::TransitiveData* FileDriveManagerState::getDraggedElements()
 {
-    dragAndDrop::ContainerFileTransitiveData* transitiveData = new dragAndDrop::ContainerFileTransitiveData;
+    dragAndDrop::ContainerFileTransitiveData* transitiveData = new dragAndDrop::ContainerFileTransitiveData(*this);
     std::vector<unsigned long> positions = m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines();
+
     transitiveData->add(positions);
+    transitiveData->setFilename(m_data.getPath());
 
     return transitiveData;
 }

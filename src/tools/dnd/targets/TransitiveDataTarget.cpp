@@ -1,3 +1,11 @@
+/***************************************************************
+ * Name:      TransitiveDataTarget.cpp
+ * Purpose:   Code for Fu(X) 2.0
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
+ * Created:   2015-06-26
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
+ * License:
+ **************************************************************/
 #include "tools/dnd/targets/TransitiveDataTarget.h"
 #include "tools/dnd/dataObjects/DataObject.h"
 
@@ -5,10 +13,12 @@ using namespace dragAndDrop;
 
 /** @brief Constructor.
  */
-TransitiveDataTarget::TransitiveDataTarget(const wxListCtrl& source) :
+TransitiveDataTarget::TransitiveDataTarget(DroppedMarkedLineListCtrl& source) :
     wxDropTarget(new DataObject),
     m_source(source),
-    m_data(NULL)
+    m_data(NULL),
+    m_isSignificantLine(false),
+    m_overDroppedLine(-1)
 {
 }
 
@@ -24,9 +34,45 @@ TransitiveDataTarget::~TransitiveDataTarget()
  * @return wxDragResult
  *
  */
-wxDragResult TransitiveDataTarget::OnDragOver(wxCoord WXUNUSED(x), wxCoord WXUNUSED(y), wxDragResult WXUNUSED(def))
+wxDragResult TransitiveDataTarget::OnDragOver(wxCoord WXUNUSED(x), wxCoord y, wxDragResult WXUNUSED(def))
 {
+    if (m_source.GetItemCount() == 0)
+        return wxDragCopy;
+
+    m_isSignificantLine = true;
+
+    const long position = m_source.convertCoordToPosition(y);
+    if (position != m_overDroppedLine)
+    {
+        m_overDroppedLine = position;
+        m_source.updateUI();
+    }
     return wxDragCopy;//(def == wxDragMove) ? wxDragCopy : def;
+}
+
+/** @brief Overload.
+ *
+ * @param x wxCoord
+ * @param y wxCoord
+ * @return bool
+ *
+ */
+bool TransitiveDataTarget::OnDrop(wxCoord x, wxCoord y)
+{
+    setNoSignificantDroppedLine();
+    m_source.updateUI();
+    return wxDropTarget::OnDrop(x, y);
+}
+
+/** @brief Overload.
+ *
+ * @return void
+ *
+ */
+void TransitiveDataTarget::OnLeave()
+{
+    setNoSignificantDroppedLine();
+    m_source.updateUI();
 }
 
 /** @brief Overload.
@@ -56,48 +102,32 @@ void TransitiveDataTarget::doPaste(wxCoord y)
         doCopy(y);
 }
 
-void TransitiveDataTarget::doCut(wxCoord y) // = 0
+void TransitiveDataTarget::doCut(wxCoord y)
 {
-
+    const long position = m_source.convertCoordToPosition(y);
+    doCutProcessing(*m_data, position);
 }
 
 void TransitiveDataTarget::doCopy(wxCoord y)
 {
     wxArrayString items = m_data->getFilenames();
-    const long position = convertCoordToPosition(y);
+    const long position = m_source.convertCoordToPosition(y);
     doCopyProcessing(items, position);
 }
 
-long TransitiveDataTarget::convertCoordToPosition(wxCoord y)
+void TransitiveDataTarget::setNoSignificantDroppedLine()
 {
-    long itemCount = m_source.GetItemCount();
+    m_isSignificantLine = false;
+    m_overDroppedLine = -1;
+}
 
-    if (itemCount == 0)
-        return 0;
+bool TransitiveDataTarget::isSignificantDroppedLine() const
+{
+    return m_isSignificantLine;
+}
 
-    long position = 0;
-    long min = m_source.GetTopItem();
-    bool found = false;
-    wxPoint point;
-    //position du dernier item visible
-    if (itemCount < m_source.GetCountPerPage() || itemCount == (m_source.GetCountPerPage() + min))//Le dernier item est visible
-    {
-        wxRect rect;
-        m_source.GetItemRect(itemCount-1, rect);//emplacement physique du dernier item
-        if (rect.GetY() + rect.GetHeight() < y)//le relâchement de la souris est après le dernier item
-            return itemCount;
-        position = m_source.GetItemCount();
-    }
-    else
-        position = min + m_source.GetCountPerPage();
-
-    while (itemCount > 0 && position >= min && !found)//Recherche la position par rapport au bord supérieur de la case
-    {
-        --position;
-        m_source.GetItemPosition(position, point);
-        found = (y > point.y);
-        --itemCount;
-    }
-    return position;
+long TransitiveDataTarget::getOverDroppedLine() const
+{
+    return m_overDroppedLine;
 }
 

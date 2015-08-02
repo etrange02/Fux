@@ -4,13 +4,17 @@
 #include <wx/wx.h>
 #include "tools/dnd/dataObjects/TTransitiveData.h"
 
+namespace explorer {
+    class FileDriveManagerState;
+}
+
 namespace dragAndDrop
 {
     class ContainerFileTransitiveData : public TTransitiveData<unsigned long>
     {
         public:
             /** Default constructor */
-            ContainerFileTransitiveData();
+            ContainerFileTransitiveData(explorer::FileDriveManagerState& managerState);
             /** Default destructor */
             virtual ~ContainerFileTransitiveData();
             /** Copy constructor
@@ -36,6 +40,7 @@ namespace dragAndDrop
         protected:
         private:
             wxString m_file;
+            explorer::FileDriveManagerState& m_managerState;
     };
 }
 

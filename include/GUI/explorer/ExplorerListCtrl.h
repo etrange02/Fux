@@ -3,18 +3,20 @@
 
 #include "Define.h"
 #include <wx/wx.h>
-#include <wx/listctrl.h>
 #include <wx/filename.h>
 #include <vector>
+#include "gui/tools/DroppedMarkedLineListCtrl.h"
 
 namespace gui
 {
     namespace explorer
     {
-        class ExplorerListCtrl : public wxListCtrl
+        class ExplorerPanel;
+
+        class ExplorerListCtrl : public DroppedMarkedLineListCtrl
         {
             public:
-                ExplorerListCtrl(wxWindow *parent, wxWindowID id);
+                ExplorerListCtrl(ExplorerPanel *parent, wxWindowID id);
                 virtual ~ExplorerListCtrl();
 
                 void addDir(const wxString& dir);
@@ -25,7 +27,6 @@ namespace gui
 
                 void selectLine(const wxString& text);
                 void selectLine(const long line);
-                void selectAll();
                 void deselectLines();
 
                 std::vector<unsigned long> getSelectedLines();
@@ -35,7 +36,11 @@ namespace gui
                 void Create();
                 int addItem(const wxString& name, const wxString& kind);
                 int addItem(const wxString& name, const wxString& kind, const wxColor& foreground, const wxColor& background);
+
+                virtual void updateLines();
+
             private:
+                ExplorerPanel& m_explorerPanel;
         };
     }
 }

@@ -2,19 +2,19 @@
 #define PLAYLISTTABLEAU_H_INCLUDED
 
 #include <wx/wx.h>
-#include <wx/listctrl.h>
 #include <wx/thread.h>
+#include "gui/tools/DroppedMarkedLineListCtrl.h"
 
 extern const wxEventType wxEVT_VIDER_PANNEAU;
 extern const wxEventType wxEVT_LISTE_DETAILS;
 
 
-class PlayListTableau : public wxListCtrl
+class PlayListTableau : public DroppedMarkedLineListCtrl
 {
     public:
         PlayListTableau(wxWindow *Parent);
         virtual ~PlayListTableau();
-        void updateLines();
+        virtual void updateLines();
         void removeLine(const long position);
         void removeSelectedLines();
         wxString getDuration(int);

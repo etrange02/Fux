@@ -7,14 +7,16 @@
  * License:
  **************************************************************/
 #include "tools/dnd/dataObjects/ContainerFileTransitiveData.h"
+#include "explorer/state/FileDriveManagerState.h"
 #include <wx/textfile.h>
 
 using namespace dragAndDrop;
 
 /** @brief Constructor.
  */
-ContainerFileTransitiveData::ContainerFileTransitiveData() :
-    TTransitiveData()
+ContainerFileTransitiveData::ContainerFileTransitiveData(explorer::FileDriveManagerState& managerState) :
+    TTransitiveData(),
+    m_managerState(managerState)
 {
     //ctor
 }
@@ -32,7 +34,8 @@ ContainerFileTransitiveData::~ContainerFileTransitiveData()
  *
  */
 ContainerFileTransitiveData::ContainerFileTransitiveData(const ContainerFileTransitiveData& other) :
-    TTransitiveData(other)
+    TTransitiveData(other),
+    m_managerState(other.m_managerState)
 {
     *this = other;
 }
@@ -62,12 +65,12 @@ const wxString ContainerFileTransitiveData::getName() const
 
 void ContainerFileTransitiveData::doCopy()
 {
-
+    wxLogMessage("Must be implemented");
 }
 
 void ContainerFileTransitiveData::doCut()
 {
-
+    wxLogMessage("Must be implemented");
 }
 
 /** @brief Returns the filename.
@@ -90,9 +93,10 @@ wxArrayString ContainerFileTransitiveData::getFilenames() const
     if (!file.Exists() || !file.Open())
         return data;
 
+    const long startPosition = 1;
     for (std::vector<unsigned long>::const_iterator iter = items.begin(); iter != items.end(); ++iter)
     {
-        data.Add(file.GetLine(*iter));
+        data.Add(file.GetLine(*iter + startPosition));
     }
     file.Close();
 
@@ -107,13 +111,15 @@ const std::vector<unsigned long>& ContainerFileTransitiveData::deleteFromSource(
     if (!file.Exists() || !file.Open())
         return items;
 
+    const long startPosition = 1;
     for (std::vector<unsigned long>::const_reverse_iterator iter = items.rbegin(); iter != items.rend(); ++iter)
     {
-        file.RemoveLine(*iter);
+        file.RemoveLine(*iter + startPosition);
     }
     file.Write();
     file.Close();
 
+    m_managerState.fillExplorerList();
     return items;
 }
 

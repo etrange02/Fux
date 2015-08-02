@@ -3,7 +3,7 @@
 
 #include <wx/wx.h>
 #include <wx/dnd.h>
-#include <wx/listctrl.h>
+#include "gui/tools/DroppedMarkedLineListCtrl.h"
 #include "tools/dnd/dataObjects/TransitiveData.h"
 
 namespace dragAndDrop
@@ -12,26 +12,37 @@ namespace dragAndDrop
     {
         public:
             /** Default constructor */
-            TransitiveDataTarget(const wxListCtrl& source);
+            TransitiveDataTarget(DroppedMarkedLineListCtrl& source);
             /** Default destructor */
             virtual ~TransitiveDataTarget();
             virtual wxDragResult OnDragOver(wxCoord, wxCoord, wxDragResult);
             virtual wxDragResult OnData(wxCoord, wxCoord, wxDragResult);
 
+            void setNoSignificantDroppedLine();
+            bool isSignificantDroppedLine() const;
+            long getOverDroppedLine() const;
+
+            virtual bool OnDrop(wxCoord x, wxCoord y);
+            virtual void OnLeave();
+
         protected:
             virtual bool isSameKind() const = 0;
-            virtual void doCut(wxCoord y); // = 0
+            virtual void doCut(wxCoord y);
             void doCopy(wxCoord y);
             void doPaste(wxCoord y);
 
-            long convertCoordToPosition(wxCoord y);
             virtual void doCopyProcessing(const wxArrayString& data, const long position) = 0;
+            virtual void doCutProcessing(TransitiveData& transitiveData, const long position) = 0;
 
         private:
 
         protected:
-            const wxListCtrl& m_source;
+            DroppedMarkedLineListCtrl& m_source;
             TransitiveData* m_data;
+
+        private:
+            bool m_isSignificantLine;
+            long m_overDroppedLine;
     };
 }
 
