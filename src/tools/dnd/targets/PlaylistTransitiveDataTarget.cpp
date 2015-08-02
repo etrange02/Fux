@@ -7,15 +7,16 @@
  * License:
  **************************************************************/
 #include "tools/dnd/targets/PlaylistTransitiveDataTarget.h"
-#include "music/MusicManagerSwitcher.h"
 #include "tools/dnd/dataObjects/PlaylistTransitiveData.h"
+#include "music/MusicManagerSwitcher.h"
 
 using namespace dragAndDrop;
 
 /** @brief Constructor.
  */
-PlaylistTransitiveDataTarget::PlaylistTransitiveDataTarget(DroppedMarkedLineListCtrl& source) :
-    TransitiveDataTarget(source)
+PlaylistTransitiveDataTarget::PlaylistTransitiveDataTarget(DroppedMarkedLineListCtrl& source, const bool isAssociatedToPlayListCtrl) :
+    TransitiveDataTarget(source),
+    m_isAssociatedToPlayListCtrl(isAssociatedToPlayListCtrl)
 {
 }
 
@@ -45,6 +46,12 @@ void PlaylistTransitiveDataTarget::doCutProcessing(TransitiveData& transitiveDat
     //music::MusicManagerSwitcher::get().moveIntTitlesAt(, position);
 }
 
+wxDragResult PlaylistTransitiveDataTarget::OnDragOver(wxCoord x, wxCoord y, wxDragResult def)
+{
+    if (m_isAssociatedToPlayListCtrl && music::MusicManagerSwitcher::get().hasEfficientSearchedWord())
+        return wxDragNone;
 
+    return TransitiveDataTarget::OnDragOver(x, y, def);
+}
 
 

@@ -2801,7 +2801,7 @@
 1438426971 c:\workspace\projects\fux\include\tools\dnd\targets\containerfiletransitivedatatarget.h
 	"tools/dnd/targets/TransitiveDataTarget.h"
 
-1437869195 source:c:\workspace\projects\fux\src\explorer\state\playlistdrivemanagerstate.cpp
+1438554001 source:c:\workspace\projects\fux\src\explorer\state\playlistdrivemanagerstate.cpp
 	"explorer/state/PlaylistDriveManagerState.h"
 	<vector>
 	"MusicManagerSwitcher.h"
@@ -2815,7 +2815,7 @@
 	<memory>
 	"music/Music.h"
 
-1438426971 c:\workspace\projects\fux\include\tools\dnd\targets\playlisttransitivedatatarget.h
+1438553980 c:\workspace\projects\fux\include\tools\dnd\targets\playlisttransitivedatatarget.h
 	"tools/dnd/targets/TransitiveDataTarget.h"
 
 1431866673 source:c:\workspace\projects\fux\src\gui\dialogs\dialogenregistrem3u.cpp
@@ -3032,7 +3032,7 @@
 	"ExplorerListCtrl.h"
 	"ExplorerPanel.h"
 
-1438519413 source:c:\workspace\projects\fux\src\gui\explorer\explorerpanel.cpp
+1438520925 source:c:\workspace\projects\fux\src\gui\explorer\explorerpanel.cpp
 	"ExplorerPanel.h"
 	"DriveManagersPanel.h"
 	"explorer/ExplorerManager.h"
@@ -3068,7 +3068,7 @@
 	"music/Factory.h"
 	<music/Music.h>
 
-1438518941 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
+1438553988 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
 	"Define.h"
 	<wx/stdpaths.h>
 	<wx/dir.h>
@@ -3410,10 +3410,10 @@
 	"tools/dnd/targets/DirTransitiveDataTarget.h"
 	"tools/dnd/dataObjects/DirTransitiveData.h"
 
-1438426971 source:c:\workspace\projects\fux\src\tools\dnd\targets\playlisttransitivedatatarget.cpp
+1438554646 source:c:\workspace\projects\fux\src\tools\dnd\targets\playlisttransitivedatatarget.cpp
 	"tools/dnd/targets/PlaylistTransitiveDataTarget.h"
-	"music/MusicManagerSwitcher.h"
 	"tools/dnd/dataObjects/PlaylistTransitiveData.h"
+	"music/MusicManagerSwitcher.h"
 
 1438518211 source:c:\workspace\projects\fux\src\tools\dnd\targets\transitivedatatarget.cpp
 	"tools/dnd/targets/TransitiveDataTarget.h"

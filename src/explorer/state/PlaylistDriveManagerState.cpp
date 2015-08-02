@@ -21,7 +21,7 @@ PlaylistDriveManagerState::PlaylistDriveManagerState(ExplorerManagerData& data) 
     DriveManagerState(data)
 {
     gui::explorer::ExplorerListCtrl& listCtrl = data.getExplorerPanel().getExplorerListCtrl();
-    listCtrl.SetDropTarget(new dragAndDrop::PlaylistTransitiveDataTarget(listCtrl));
+    listCtrl.SetDropTarget(new dragAndDrop::PlaylistTransitiveDataTarget(listCtrl, false));
 }
 
 PlaylistDriveManagerState::~PlaylistDriveManagerState()

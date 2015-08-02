@@ -78,7 +78,7 @@ PlayListTableau::PlayListTableau(wxWindow *parent) :
     SetMinSize(wxSize(10, 10));
 
     //SetDropTarget(new DnDCible(this));
-    SetDropTarget(new dragAndDrop::PlaylistTransitiveDataTarget(*this));
+    SetDropTarget(new dragAndDrop::PlaylistTransitiveDataTarget(*this, true));
     //DragAcceptFiles(true);
 
     m_menu = new wxMenu;
@@ -433,8 +433,6 @@ void PlayListTableau::setDefaultColor(const size_t position)
 void PlayListTableau::onDragEvent(wxListEvent &WXUNUSED(event))
 {
     wxMutexLocker locker(m_mutexListUpdating);
-    if (MusicManagerSwitcher::getSearch().hasEfficientSearchedWord())
-        return;
 
     dragAndDrop::PlaylistTransitiveData data;
     MusicManagerSwitcher::getSearch().convertPositionsToTransitiveData(getSelectedLines(), data);

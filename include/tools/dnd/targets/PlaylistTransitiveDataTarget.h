@@ -9,9 +9,10 @@ namespace dragAndDrop
     {
         public:
             /** Default constructor */
-            PlaylistTransitiveDataTarget(DroppedMarkedLineListCtrl& source);
+            PlaylistTransitiveDataTarget(DroppedMarkedLineListCtrl& source, const bool isAssociatedToPlayListCtrl);
             /** Default destructor */
             virtual ~PlaylistTransitiveDataTarget();
+            virtual wxDragResult OnDragOver(wxCoord, wxCoord, wxDragResult);
 
         protected:
             virtual bool isSameKind() const;
@@ -19,6 +20,7 @@ namespace dragAndDrop
             virtual void doCutProcessing(TransitiveData& transitiveData, const long position);
 
         private:
+            const bool m_isAssociatedToPlayListCtrl;
     };
 }
 
