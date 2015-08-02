@@ -77,7 +77,6 @@ PlayListTableau::PlayListTableau(wxWindow *parent) :
 
     SetMinSize(wxSize(10, 10));
 
-    //SetDropTarget(new DnDCible(this));
     SetDropTarget(new dragAndDrop::PlaylistTransitiveDataTarget(*this, true));
     //DragAcceptFiles(true);
 
