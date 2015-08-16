@@ -207,26 +207,31 @@ void FileDriveManagerState::insertElements(const wxArrayString& filenames, long 
 void FileDriveManagerState::createDir()
 {
     wxLogMessage("Must be implemented.");
+    ///TODO (David): FileDriveManagerState::createDir
 }
 
 void FileDriveManagerState::createContainerFile()
 {
     wxLogMessage("Must be implemented.");
+    ///TODO (David): FileDriveManagerState::createContainerFile
 }
 
 void FileDriveManagerState::playItems()
 {
     wxLogMessage("Must be implemented.");
+    ///TODO (David): FileDriveManagerState::playItems
 }
 
 void FileDriveManagerState::rename()
 {
     wxLogMessage("Must be implemented.");
+    ///TODO (David): FileDriveManagerState::rename
 }
 
 void FileDriveManagerState::createShortcut()
 {
     wxLogMessage("Must be implemented.");
+    ///TODO (David): FileDriveManagerState::createShortcut
 }
 
 dragAndDrop::TransitiveData* FileDriveManagerState::getDraggedElements()

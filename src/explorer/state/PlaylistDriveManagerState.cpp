@@ -150,11 +150,13 @@ void PlaylistDriveManagerState::moveElements(DriveManagerState& source)
 void PlaylistDriveManagerState::createDir()
 {
     wxLogMessage("Must be implemented.");
+    ///TODO (David): PlaylistDriveManagerState::createDir
 }
 
 void PlaylistDriveManagerState::createContainerFile()
 {
     wxLogMessage("Must be implemented.");
+    ///TODO (David): PlaylistDriveManagerState::createContainerFile
 }
 
 void PlaylistDriveManagerState::playItems()

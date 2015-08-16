@@ -14,6 +14,7 @@ class DroppedMarkedLineListCtrl : public wxListCtrl
 
         virtual void OnPaint(wxPaintEvent& event);
         virtual void OnKeyboardEvent(wxKeyEvent& event);
+        virtual void OnErasedBackground(wxEraseEvent& event);
 
         long convertCoordToPosition(wxCoord y);
         void updateUI();
@@ -22,6 +23,7 @@ class DroppedMarkedLineListCtrl : public wxListCtrl
 
     protected:
     private:
+        void paint(wxPaintEvent& event);
         void renderTriangle(wxDC& dc, const int x, const int y, const int width);
         void renderLine(wxDC& dc, const int x, const int y, const int width, const int height);
         DECLARE_EVENT_TABLE()

@@ -741,7 +741,7 @@ bool PreferenceCouleur::ModifierFiltre(wxString nom, Couleur fond, Couleur barre
     miInf.ToXMLNode(rootNode, _T("mi_inf"));
     bas.ToXMLNode(rootNode, _T("bas"));
     if (symetrie)
-        childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _T("symetrie"));
+        /*childNode = */new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _T("symetrie"));
 
     wxXmlDocument doc;
     doc.SetRoot(rootNode);

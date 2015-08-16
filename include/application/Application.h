@@ -12,6 +12,7 @@
 class wxFuXApp : public wxApp
 {
     public:
+        wxFuXApp();
         virtual bool OnInit();
         virtual int OnExit();
         void EnvoiStringAutreInstance();

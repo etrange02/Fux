@@ -54,11 +54,13 @@ const wxString PlaylistTransitiveData::getName() const
 void PlaylistTransitiveData::doCopy()
 {
     wxLogMessage("Must be implemented");
+    ///TODO: PlaylistTransitiveData::doCopy
 }
 
 void PlaylistTransitiveData::doCut()
 {
     wxLogMessage("Must be implemented");
+    ///TODO: PlaylistTransitiveData::doCut
 }
 
 wxArrayString PlaylistTransitiveData::getFilenames() const

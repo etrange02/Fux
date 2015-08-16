@@ -185,12 +185,14 @@ bool DirDriveManagerState::canCreateShortcut() const
 void DirDriveManagerState::copyElements(DriveManagerState& source)
 {
     wxLogMessage("Must be implemented.");
+    ///TODO: DirDriveManagerState::copyElements
     // insertion de nouveaux fichiers dans le dossier courant -> thread
 }
 
 void DirDriveManagerState::moveElements(DriveManagerState& source)
 {
     wxLogMessage("Must be implemented.");
+    ///TODO: DirDriveManagerState::moveElements
     // renommage de fichiers (changement de chemin) d'une répertoire à l'autre
     // Attention au changement de lecteur. Le move peut être plus long que prévu dans ce cas.
 }
@@ -198,26 +200,31 @@ void DirDriveManagerState::moveElements(DriveManagerState& source)
 void DirDriveManagerState::createDir()
 {
     wxLogMessage("Must be implemented.");
+    ///TODO: DirDriveManagerState::createDir
 }
 
 void DirDriveManagerState::createContainerFile()
 {
     wxLogMessage("Must be implemented.");
+    ///TODO: DirDriveManagerState::createContainerFile
 }
 
 void DirDriveManagerState::playItems()
 {
     wxLogMessage("Must be implemented.");
+    ///TODO: DirDriveManagerState::playItems
 }
 
 void DirDriveManagerState::rename()
 {
     wxLogMessage("Must be implemented.");
+    ///TODO: DirDriveManagerState::rename
 }
 
 void DirDriveManagerState::createShortcut()
 {
     wxLogMessage("Must be implemented.");
+    ///TODO: DirDriveManagerState::createShortcut
 }
 
 dragAndDrop::TransitiveData* DirDriveManagerState::getDraggedElements()

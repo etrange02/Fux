@@ -66,11 +66,13 @@ const wxString ContainerFileTransitiveData::getName() const
 void ContainerFileTransitiveData::doCopy()
 {
     wxLogMessage("Must be implemented");
+    ///TODO (David): ContainerFileTransitiveData::doCopy
 }
 
 void ContainerFileTransitiveData::doCut()
 {
     wxLogMessage("Must be implemented");
+    ///TODO (David): ContainerFileTransitiveData::doCut
 }
 
 /** @brief Returns the filename.

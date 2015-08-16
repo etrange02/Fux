@@ -9,6 +9,7 @@ class ImageText
 {
     public:
         ImageText();
+        ImageText(const ImageText& other);
         ~ImageText();
 
         GLuint* getID();
@@ -22,7 +23,9 @@ class ImageText
 
     protected:
         GLuint *m_ID;
-        int m_largeur, m_hauteur, m_largeurEcran;
+        int m_largeur;
+        int m_hauteur;
+        int m_largeurEcran;
         wxImage *m_img;
 };
 

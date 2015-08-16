@@ -342,6 +342,14 @@ void PlayListTableau::removeLine(const long position)
         if (*iter >= position)
             --(*iter);
     }
+
+    /*if (getSelectedLines().empty())
+    {
+        long lineToSelect = position;
+        if (position > GetItemCount()-1)
+            lineToSelect = GetItemCount()-1;
+        SetItemState(lineToSelect, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED);
+    }*/
 }
 
 /** @brief Update colours of each line
@@ -593,7 +601,7 @@ void PlayListTableau::removeSelectedLines()
     LogFileAppend(_T("PlayListTableau::SuppressionLigne - ") + wxString::Format(_T("%ld lignes"), selectedLines.size()));
 
     int lastSelectedLine = selectedLines.back() + 1;
-    if (GetItemCount() > lastSelectedLine)//Toujours avoir une ligne active
+    if (GetItemCount() >= lastSelectedLine)//Toujours avoir une ligne active
         SetItemState(lastSelectedLine, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED, wxLIST_STATE_FOCUSED|wxLIST_STATE_SELECTED);
     else
     {

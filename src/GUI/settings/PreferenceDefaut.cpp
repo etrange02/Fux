@@ -482,7 +482,7 @@ bool PreferenceDefaut::AutoSave()
             childNode->AddAttribute(_T("type"), _T("MP3"));
             sub->SetContent(m_boiteCheminChansonRep->GetValue());
         }
-        else if (/*m_listeM3u_mp3 */m_choix->GetSelection() == M3U && !m_listeReprise->GetCurrentSelection() != wxNOT_FOUND)
+        else if (/*m_listeM3u_mp3 */m_choix->GetSelection() == M3U && m_listeReprise->GetCurrentSelection() != wxNOT_FOUND)
         {
             childNode->AddAttribute(_T("type"), _T("M3U"));
             sub->SetContent(m_listeReprise->GetString(m_listeReprise->GetCurrentSelection()));
@@ -490,7 +490,7 @@ bool PreferenceDefaut::AutoSave()
     }
     if (m_checkBox[SOUSDOSSIER].GetValue())
     {
-        childNode = new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _T("subfile"));
+        /*childNode = */new wxXmlNode(rootNode, wxXML_ELEMENT_NODE, _T("subfile"));
         Parametre::Get()->setSousDossier(true);
     }
     else

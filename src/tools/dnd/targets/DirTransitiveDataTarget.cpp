@@ -34,11 +34,13 @@ bool DirTransitiveDataTarget::isSameKind() const
 void DirTransitiveDataTarget::doCopyProcessing(const wxArrayString& data, const long position)
 {
     wxLogMessage("Must be implemented");
+    ///TODO: DirTransitiveDataTarget::doCopyProcessing
 }
 
 void DirTransitiveDataTarget::doCutProcessing(TransitiveData& transitiveData, const long position)
 {
     wxLogMessage("Must be implemented");
+    ///TODO: DirTransitiveDataTarget::doCutProcessing
     DirTransitiveData& fileTransitiveData = static_cast<DirTransitiveData&>(transitiveData);
 }
 

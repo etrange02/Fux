@@ -87,7 +87,6 @@ class BDDRequete
         wxWindow *m_parent;
         wxString m_nomChanson, m_nomChanson2, m_nomArtiste, m_nomAlbum, m_nomUtilisateur, m_chansonAnnee, m_albumAnnee, m_genre;
         int m_idChanson, m_idChanson2, m_idArtiste, m_idAlbum, m_idUtilisateur;
-        bool m_bool1;
         int m_typeRequete;
 };
 

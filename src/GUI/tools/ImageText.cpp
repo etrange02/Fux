@@ -26,6 +26,18 @@ ImageText::ImageText() :
     m_img = new wxImage();
 }
 
+ImageText::ImageText(const ImageText& other)
+{
+    m_largeur = other.m_largeur;
+    m_hauteur = other.m_hauteur;
+    m_largeurEcran = other.m_largeurEcran;
+    m_ID = new GLuint[1];
+    m_ID[0] = other.m_ID[0];
+    glGenTextures(1, &m_ID[0]);
+    m_img = new wxImage();
+    *m_img = *other.m_img;
+}
+
 /**
  * Destructeur
  */

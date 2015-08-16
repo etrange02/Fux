@@ -13,6 +13,7 @@
 BEGIN_EVENT_TABLE(DroppedMarkedLineListCtrl, wxListCtrl)
     EVT_KEY_DOWN        (DroppedMarkedLineListCtrl::OnKeyboardEvent)
     EVT_PAINT           (DroppedMarkedLineListCtrl::OnPaint)
+    //EVT_ERASE_BACKGROUND(DroppedMarkedLineListCtrl::OnErasedBackground)
 END_EVENT_TABLE()
 
 DroppedMarkedLineListCtrl::DroppedMarkedLineListCtrl(wxWindow *parent, wxWindowID id, const wxPoint& point, const wxSize& size, const long style) :
@@ -37,6 +38,15 @@ void DroppedMarkedLineListCtrl::OnKeyboardEvent(wxKeyEvent& event)
 }
 
 void DroppedMarkedLineListCtrl::OnPaint(wxPaintEvent& event)
+{
+    //Freeze();
+    //SetDoubleBuffered(true);
+    paint(event);
+    //SetDoubleBuffered(false);
+    //Thaw();
+}
+
+void DroppedMarkedLineListCtrl::paint(wxPaintEvent& event)
 {
     wxListCtrl::OnPaint(event);
 
@@ -133,5 +143,10 @@ void DroppedMarkedLineListCtrl::updateUI()
 void DroppedMarkedLineListCtrl::selectAll()
 {
     SetItemState(-1, wxLIST_STATE_SELECTED, wxLIST_STATE_SELECTED);
+}
+
+void DroppedMarkedLineListCtrl::OnErasedBackground(wxEraseEvent& event)
+{
+
 }
 

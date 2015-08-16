@@ -68,7 +68,7 @@ void* BDDThread::Entry()
 
     while (m_continuer && !TestDestroy())
     {
-        while (m_vecteurBDDRequete.size() == 0)
+        while (m_vecteurBDDRequete.empty())
             Sleep(100);
 
         // Parcours du vecteur afin de prendre la requête la plus urgente (notamment les recherches sur les ajouts)
@@ -86,7 +86,7 @@ void* BDDThread::Entry()
         }
 
         requete = m_vecteurBDDRequete.at(i);*/
-        i++;
+        ++i;
         //    wxLogMessage("oui " + i);
 
         //wxMutexLocker lock(*s_mutexGestionGlobale);

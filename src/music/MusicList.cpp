@@ -87,7 +87,7 @@ void MusicList::parseDirectoryRecursively(const wxString& dirname)
 {
     wxDir dir(dirname);
     Search research(this);
-    dir.Traverse(research, _T("*.*"), wxDIR_DIRS|wxDIR_FILES|wxDIR_FILES);//Parametre::Get()->getFiltre()
+    dir.Traverse(research, _T("*.*"), wxDIR_DIRS|wxDIR_FILES);//Parametre::Get()->getFiltre()
 }
 
 /** @brief Parse only the directory given in parameter
@@ -283,8 +283,6 @@ long MusicList::getPositionInList(const IMusic* music)
 {
     if (NULL == music)
         return -1;
-
-    long index = 0;
 
     findSharedMusicContainer finder(*music);
     MusicIterator iter = std::find_if(getCollection().begin(), getCollection().end(), finder);

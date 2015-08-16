@@ -60,7 +60,7 @@ void GenericTreePanel::AddListener(wxPanel *panel)
 
 void GenericTreePanel::CallListeners()
 {
-    for (ArrayOfwxPanel::iterator iter = m_arrayPanel->begin(); iter != m_arrayPanel->end(); iter++)
+    for (ArrayOfwxPanel::iterator iter = m_arrayPanel->begin(); iter != m_arrayPanel->end(); ++iter)
     {
         wxCommandEvent evt(wxEVT_PREFERENCE_MAJ_LISTE, wxID_ANY);
         (*iter)->GetEventHandler()->AddPendingEvent(evt);

@@ -20,6 +20,13 @@ BEGIN_EVENT_TABLE(wxFuXApp, wxApp)
     EVT_END_SESSION(wxFuXApp::Fermer)
 END_EVENT_TABLE()
 
+wxFuXApp::wxFuXApp() :
+    wxApp(),
+    m_checker(NULL),
+    m_fenetre(NULL)
+{
+}
+
 /**
  * Surcharge. Appelé au lancement de l'application
  * @return Vrai si succès.

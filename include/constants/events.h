@@ -10,26 +10,6 @@
         const wxEventType wxMY_EVENT = wxNewEventType();
  */
 
-#define EVT_MUSIQUE_CHANGE(id, fn) \
-    DECLARE_EVENT_TABLE_ENTRY( wxEVT_MUSIQUE_CHANGE, id, wxID_ANY, \
-    (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
-    (wxObject *) NULL ),
-
-#define EVT_MUSIQUE_MAJ(id, fn) \
-    DECLARE_EVENT_TABLE_ENTRY( wxEVT_MUSIQUE_MAJ, id, wxID_ANY, \
-    (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
-    (wxObject *) NULL ),
-
-#define EVT_MUSIQUE_LECTURE(id, fn) \
-    DECLARE_EVENT_TABLE_ENTRY( wxEVT_MUSIQUE_LECTURE, id, wxID_ANY, \
-    (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
-    (wxObject *) NULL ),
-
-#define EVT_MUSIQUE_GRAPH(id, fn) \
-    DECLARE_EVENT_TABLE_ENTRY( wxEVT_MUSIQUE_GRAPH, id, wxID_ANY, \
-    (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
-    (wxObject *) NULL ),
-
 #define EVT_SERVEUR(id, fn) \
     DECLARE_EVENT_TABLE_ENTRY( wxEVT_SERVEUR, id, wxID_ANY, \
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
@@ -143,6 +123,21 @@
 
 #define EVT_FUX_EXPLORERLISTCTRL_FOCUS(fn)\
     DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_EXPLORERLISTCTRL_FOCUS, wxID_ANY, wxID_ANY,\
+    (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
+    (wxObject *) NULL ),
+
+#define EVT_FUX_DIR_FILE_COPY_DONE(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_DIR_FILE_COPY_DONE, wxID_ANY, wxID_ANY,\
+    (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
+    (wxObject *) NULL ),
+
+#define EVT_FUX_DIR_FILE_CUT_DONE(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_DIR_FILE_CUT_DONE, wxID_ANY, wxID_ANY,\
+    (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
+    (wxObject *) NULL ),
+
+#define EVT_FUX_DIR_FILE_DELETE_DONE(fn)\
+    DECLARE_EVENT_TABLE_ENTRY( wxEVT_FUX_DIR_FILE_DELETE_DONE, wxID_ANY, wxID_ANY,\
     (wxObjectEventFunction)(wxEventFunction) wxStaticCastEvent( wxCommandEventFunction, &fn ), \
     (wxObject *) NULL ),
 
