@@ -1,6 +1,0 @@
-<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
-<area shape="rect" id="node1" href="$classtools_1_1thread_1_1_i_runnable.html" title="Interface for threaded treatments Interface for threaded treatments. " alt="" coords="5,56,164,83"/>
-<area shape="rect" id="node2" href="$class_music_file_reader_thread.html" title="Delegate for thread processing. " alt="" coords="218,5,377,32"/>
-<area shape="rect" id="node3" href="$class_music_file_writer_thread.html" title="Delegate for thread process. " alt="" coords="221,56,373,83"/>
-<area shape="rect" id="node4" href="$classtools_1_1thread_1_1_file_deletion_thread.html" title="tools::thread::FileDeletion\lThread" alt="" coords="212,107,383,149"/>
-</map>
