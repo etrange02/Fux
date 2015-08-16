@@ -5,7 +5,7 @@
 		<Option title="Fu(X) 2.0" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option show_notes="1">
+		<Option show_notes="0">
 			<notes>
 				<![CDATA[Lecoconnier David
 Projet <Fu(X) 2.0>
