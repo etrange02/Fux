@@ -1,6 +1,5 @@
 # depslib dependency file v1.0
-1439499798 source:c:\workspace\projects\fux\src\application\application.cpp
-	<wx/wxprec.h>
+1439747732 source:c:\workspace\projects\fux\src\application\application.cpp
 	<wx/wx.h>
 	"application/Application.h"
 
@@ -2561,8 +2560,7 @@
 	"../Define.h"
 	"TCPConnexionEchangeInstanceLocalHost.h"
 
-1432366210 source:c:\workspace\projects\fux\src\db\bdd.cpp
-	"wx/wxprec.h"
+1439747794 source:c:\workspace\projects\fux\src\db\bdd.cpp
 	"../../include/db/BDD.h"
 
 1420204780 source:c:\workspace\projects\fux\src\db\bddrequete.cpp
