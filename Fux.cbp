@@ -35,7 +35,7 @@ IMPORTANT, A FAIRE !!!
 			</notes>
 		</Option>
 		<Build>
-			<Target title="Release">
+			<Target title="WinRelease">
 				<Option output="out/program_files/Fu(X)" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="out/program_files" />
 				<Option object_output="obj/Release/" />
@@ -49,7 +49,7 @@ IMPORTANT, A FAIRE !!!
 					<Add option="-s" />
 				</Linker>
 			</Target>
-			<Target title="Debug">
+			<Target title="WinDebug">
 				<Option output="out/program_files/Fu(X)_d" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="out/program_files" />
 				<Option object_output="obj/Debug/" />
@@ -73,13 +73,13 @@ IMPORTANT, A FAIRE !!!
 			<Environment>
 				<Variable name="AU" value="u" />
 				<Variable name="AURD" value="$(AU)$(RD)" />
-				<Variable name="FMODEX" value='&quot;C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Windows\api&quot;' />
+				<Variable name="FMODEX" value="${DIR_LIB_FMODEX}\api" />
 				<Variable name="RD" value="" />
 				<Variable name="SQLITE3" value="${WXSQLITE3}\sqlite3" />
-				<Variable name="TAGLIB" value="${DIR_LIB}\taglib\taglib-1.9.1\out\taglib" />
-				<Variable name="WXSQLITE3" value="${DIR_LIB}\wxSQLite3\wxsqlite3-3.1.1\wxsqlite3-3.1.1" />
+				<Variable name="TAGLIB" value="${DIR_LIB_TAGLIB}\taglib" />
+				<Variable name="WXSQLITE3" value="${DIR_LIB_WXSQLITE3}" />
 				<Variable name="WX_CFG" value="msw$(AURD)" />
-				<Variable name="WX_DIR" value="$(DIR_LIB)\wx" />
+				<Variable name="WX_DIR" value="$(DIR_LIB_WXWIDGETS)" />
 				<Variable name="WX_GL_VER" value="GL" />
 				<Variable name="WX_VER1" value="3" />
 				<Variable name="WX_VER2" value="0" />
@@ -119,6 +119,7 @@ IMPORTANT, A FAIRE !!!
 			<Add directory="include/ressources" />
 			<Add directory="include/settings" />
 			<Add directory="include/tools" />
+			<Add directory="include/tools/dir" />
 			<Add directory="include/tools/dir_traverser" />
 			<Add directory="include/tools/dnd" />
 			<Add directory="include/tools/dnd/targets" />
@@ -171,14 +172,10 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/GUI/dialogs/DialogEnregistreM3U.h" />
 		<Unit filename="include/GUI/dialogs/DialogTagMP3.h" />
 		<Unit filename="include/GUI/dialogs/DialogTagMP3Info.h" />
+		<Unit filename="include/GUI/dialogs/RepeatedQuestionDialog.h" />
 		<Unit filename="include/GUI/explorer/DriveManagersPanel.h" />
 		<Unit filename="include/GUI/explorer/ExplorerListCtrl.h" />
 		<Unit filename="include/GUI/explorer/ExplorerPanel.h" />
-		<Unit filename="include/GUI/explorer/GestionPeriph.h" />
-		<Unit filename="include/GUI/explorer/GestionPeriphCouperCopier.h" />
-		<Unit filename="include/GUI/explorer/GestionPeriphElementLecteurRacineFichier.h" />
-		<Unit filename="include/GUI/explorer/GestionPeriphMoitiePage.h" />
-		<Unit filename="include/GUI/explorer/GestionPeriphTableau.h" />
 		<Unit filename="include/GUI/graph/MusiqueGraph.h" />
 		<Unit filename="include/GUI/musiclist/PlayList.h" />
 		<Unit filename="include/GUI/musiclist/PlayListTableau.h" />
@@ -254,15 +251,19 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/tools/ThreadGestion.h" />
 		<Unit filename="include/tools/Timer.h" />
 		<Unit filename="include/tools/Tools.h" />
+		<Unit filename="include/tools/dir/ConflictingOperationFile.h" />
+		<Unit filename="include/tools/dir/CopyFile.h" />
+		<Unit filename="include/tools/dir/CutFile.h" />
+		<Unit filename="include/tools/dir/DeleteFile.h" />
+		<Unit filename="include/tools/dir/DirFileManager.h" />
+		<Unit filename="include/tools/dir/DirFileManagerData.h" />
+		<Unit filename="include/tools/dir/OperationFile.h" />
 		<Unit filename="include/tools/dir_traverser/ISearchTraversable.h" />
 		<Unit filename="include/tools/dir_traverser/Search.h" />
 		<Unit filename="include/tools/dir_traverser/TraverserCopieDossier.h" />
 		<Unit filename="include/tools/dir_traverser/TraverserCopieFichier.h" />
 		<Unit filename="include/tools/dir_traverser/TraverserDeplaceFichier.h" />
 		<Unit filename="include/tools/dir_traverser/TraverserSupprimeDossier.h" />
-		<Unit filename="include/tools/dnd/DnDCible.h" />
-		<Unit filename="include/tools/dnd/DnDListeFichier.h" />
-		<Unit filename="include/tools/dnd/MusicPlayListDnDBufferData.h" />
 		<Unit filename="include/tools/dnd/dataObjects/ContainerFileTransitiveData.h" />
 		<Unit filename="include/tools/dnd/dataObjects/DataObject.h" />
 		<Unit filename="include/tools/dnd/dataObjects/DirTransitiveData.h" />
@@ -286,29 +287,10 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/GUI/dialogs/DialogEnregistreM3U.cpp" />
 		<Unit filename="src/GUI/dialogs/DialogTagMP3.cpp" />
 		<Unit filename="src/GUI/dialogs/DialogTagMP3Info.cpp" />
+		<Unit filename="src/GUI/dialogs/RepeatedQuestionDialog.cpp" />
 		<Unit filename="src/GUI/explorer/DriveManagersPanel.cpp" />
 		<Unit filename="src/GUI/explorer/ExplorerListCtrl.cpp" />
 		<Unit filename="src/GUI/explorer/ExplorerPanel.cpp" />
-		<Unit filename="src/GUI/explorer/GestionPeriph.cpp">
-			<Option compile="0" />
-			<Option link="0" />
-		</Unit>
-		<Unit filename="src/GUI/explorer/GestionPeriphCouperCopier.cpp">
-			<Option compile="0" />
-			<Option link="0" />
-		</Unit>
-		<Unit filename="src/GUI/explorer/GestionPeriphElementLecteurRacineFichier.cpp">
-			<Option compile="0" />
-			<Option link="0" />
-		</Unit>
-		<Unit filename="src/GUI/explorer/GestionPeriphMoitiePage.cpp">
-			<Option compile="0" />
-			<Option link="0" />
-		</Unit>
-		<Unit filename="src/GUI/explorer/GestionPeriphTableau.cpp">
-			<Option compile="0" />
-			<Option link="0" />
-		</Unit>
 		<Unit filename="src/GUI/graph/MusiqueGraph.cpp" />
 		<Unit filename="src/GUI/musiclist/PlayList.cpp" />
 		<Unit filename="src/GUI/musiclist/PlayListTableau.cpp" />
@@ -397,14 +379,18 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/tools/ThreadGestion.cpp" />
 		<Unit filename="src/tools/Timer.cpp" />
 		<Unit filename="src/tools/Tools.cpp" />
+		<Unit filename="src/tools/dir/ConflictingOperationFile.cpp" />
+		<Unit filename="src/tools/dir/CopyFile.cpp" />
+		<Unit filename="src/tools/dir/CutFile.cpp" />
+		<Unit filename="src/tools/dir/DeleteFile.cpp" />
+		<Unit filename="src/tools/dir/DirFileManager.cpp" />
+		<Unit filename="src/tools/dir/DirFileManagerData.cpp" />
+		<Unit filename="src/tools/dir/OperationFile.cpp" />
 		<Unit filename="src/tools/dir_traverser/Search.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserCopieDossier.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserCopieFichier.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserDeplaceFichier.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserSupprimeDossier.cpp" />
-		<Unit filename="src/tools/dnd/DnDCible.cpp" />
-		<Unit filename="src/tools/dnd/DnDListeFichier.cpp" />
-		<Unit filename="src/tools/dnd/MusicPlayListDnDBufferData.cpp" />
 		<Unit filename="src/tools/dnd/dataObjects/ContainerFileTransitiveData.cpp" />
 		<Unit filename="src/tools/dnd/dataObjects/DataObject.cpp" />
 		<Unit filename="src/tools/dnd/dataObjects/DirTransitiveData.cpp" />

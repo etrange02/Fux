@@ -51,13 +51,17 @@ Une fois compilé, créer dans le répertoire de sortie/taglib un dossier Headers. 
 
 =============================================
 4. Récupérer FMODex
---> utilise la dll.
+--> utilise la dll dans api/.
 
 =============================================
 5. Modifier le fichier FuX.cbp (variables)
 
 Définir la variable globale "wx". Elle pointe sur le répertoire d'installation.
-Définir si besoin des variables d'environnement (DIR_LIB) si nécessaire pour pointer sur les bons répertoires.
+Définir les variables d'environnements DIR_LIB :
+DIR_LIB_FMODEX : Répertoire de FMODEx contenant api/
+DIR_LIB_WXWIDGETS : Répertoire de wxWidgets contenant build/ et include/
+DIR_LIB_WXSQLITE3 : Répertoire contenant les dossiers include/ et sqlite3/
+DIR_LIB_TAGLIB : Réperoire contenant les fichiers issus de la génération par CMake
 
 =============================================
 6. Compiler le tout

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1435128146 source:c:\workspace\projects\fux\src\application\application.cpp
+1439499798 source:c:\workspace\projects\fux\src\application\application.cpp
 	<wx/wxprec.h>
 	<wx/wx.h>
 	"application/Application.h"
@@ -1950,7 +1950,7 @@
 1412504350 c:\workspace\libraries\wx302gl\include\wx\msw\mdi.h
 	"wx/frame.h"
 
-1432416116 c:\workspace\projects\fux\include\application\application.h
+1439499801 c:\workspace\projects\fux\include\application\application.h
 	<wx/wx.h>
 	<wx/snglinst.h>
 	<wx/intl.h>
@@ -2104,7 +2104,7 @@
 
 1416437235 c:\workspace\projects\fux\include\constants\enums.h
 
-1434226288 c:\workspace\projects\fux\include\constants\events.h
+1439244515 c:\workspace\projects\fux\include\constants\events.h
 
 1425043094 c:\workspace\projects\fux\include\constants\ids.h
 
@@ -2387,7 +2387,7 @@
 	<wx/thread.h>
 	"gui/tools/DroppedMarkedLineListCtrl.h"
 
-1438520428 c:\workspace\projects\fux\include\gui\tools\droppedmarkedlinelistctrl.h
+1439247602 c:\workspace\projects\fux\include\gui\tools\droppedmarkedlinelistctrl.h
 	<wx/wx.h>
 	<wx/listctrl.h>
 
@@ -2531,7 +2531,7 @@
 
 1416439938 c:\workspace\libraries\wxsqlite3\wxsqlite3-3.1.1\wxsqlite3-3.1.1\include\wx\wxsqlite3def.h
 
-1416437235 c:\workspace\projects\fux\include\db\bddrequete.h
+1439500930 c:\workspace\projects\fux\include\db\bddrequete.h
 	<wx/wx.h>
 	"../Define.h"
 
@@ -2568,7 +2568,7 @@
 1420204780 source:c:\workspace\projects\fux\src\db\bddrequete.cpp
 	"../../include/db/BDDRequete.h"
 
-1420204780 source:c:\workspace\projects\fux\src\db\bddthread.cpp
+1439501004 source:c:\workspace\projects\fux\src\db\bddthread.cpp
 	"../../include/db/BDDThread.h"
 
 1420204780 source:c:\workspace\projects\fux\src\db\bddthreadevent.cpp
@@ -2700,7 +2700,7 @@
 	"DefaultDriveManagerState.h"
 	"explorer/ExplorerManagerData.h"
 
-1437902770 source:c:\workspace\projects\fux\src\explorer\state\dirdrivemanagerstate.cpp
+1438640396 source:c:\workspace\projects\fux\src\explorer\state\dirdrivemanagerstate.cpp
 	"explorer/state/DirDriveManagerState.h"
 	<wx/dir.h>
 	"Parametre.h"
@@ -2775,7 +2775,7 @@
 1438426971 c:\workspace\projects\fux\include\tools\dnd\targets\dirtransitivedatatarget.h
 	"tools/dnd/targets/TransitiveDataTarget.h"
 
-1438517991 c:\workspace\projects\fux\include\tools\dnd\targets\transitivedatatarget.h
+1439247602 c:\workspace\projects\fux\include\tools\dnd\targets\transitivedatatarget.h
 	<wx/wx.h>
 	<wx/dnd.h>
 	"gui/tools/DroppedMarkedLineListCtrl.h"
@@ -2785,7 +2785,7 @@
 	"explorer/state/DriveManagerState.h"
 	"explorer/ExplorerManagerData.h"
 
-1438121707 source:c:\workspace\projects\fux\src\explorer\state\filedrivemanagerstate.cpp
+1438639351 source:c:\workspace\projects\fux\src\explorer\state\filedrivemanagerstate.cpp
 	"explorer/state/FileDriveManagerState.h"
 	"MusicManagerSwitcher.h"
 	<wx/textfile.h>
@@ -2801,7 +2801,7 @@
 1438426971 c:\workspace\projects\fux\include\tools\dnd\targets\containerfiletransitivedatatarget.h
 	"tools/dnd/targets/TransitiveDataTarget.h"
 
-1438554001 source:c:\workspace\projects\fux\src\explorer\state\playlistdrivemanagerstate.cpp
+1438639345 source:c:\workspace\projects\fux\src\explorer\state\playlistdrivemanagerstate.cpp
 	"explorer/state/PlaylistDriveManagerState.h"
 	<vector>
 	"MusicManagerSwitcher.h"
@@ -3056,7 +3056,7 @@
 	<GL/glu.h>
 	<wx/dir.h>
 
-1416437235 c:\workspace\projects\fux\include\gui\tools\imagetext.h
+1439500707 c:\workspace\projects\fux\include\gui\tools\imagetext.h
 	"wx/wx.h"
 	"wx/image.h"
 	<GL/gl.h>
@@ -3068,7 +3068,7 @@
 	"music/Factory.h"
 	<music/Music.h>
 
-1438555066 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
+1439248235 source:c:\workspace\projects\fux\src\gui\musiclist\playlisttableau.cpp
 	"Define.h"
 	<wx/stdpaths.h>
 	<wx/dir.h>
@@ -3097,10 +3097,10 @@
 1433801335 c:\workspace\projects\fux\include\predicates\findsharedmusiccontainer.h
 	<memory>
 
-1423817175 source:c:\workspace\projects\fux\src\gui\settings\preferencecouleur.cpp
+1439500115 source:c:\workspace\projects\fux\src\gui\settings\preferencecouleur.cpp
 	"../../../include/gui/settings/PreferenceCouleur.h"
 
-1420395627 source:c:\workspace\projects\fux\src\gui\settings\preferencedefaut.cpp
+1439596273 source:c:\workspace\projects\fux\src\gui\settings\preferencedefaut.cpp
 	"../../../include/gui/settings/PreferenceDefaut.h"
 
 1420242009 source:c:\workspace\projects\fux\src\gui\settings\preferenceson.cpp
@@ -3112,7 +3112,7 @@
 1420204780 source:c:\workspace\projects\fux\src\gui\tools\dropfichierimagepochettemusique.cpp
 	"../../../include/gui/tools/DropFichierImagePochetteMusique.h"
 
-1424812076 source:c:\workspace\projects\fux\src\gui\tools\imagetext.cpp
+1439500776 source:c:\workspace\projects\fux\src\gui\tools\imagetext.cpp
 	"../../../include/gui/tools/ImageText.h"
 
 1420204780 source:c:\workspace\projects\fux\src\gui\widgets\boutonfenetredetachable.cpp
@@ -3128,7 +3128,7 @@
 1420396627 source:c:\workspace\projects\fux\src\gui\widgets\fenetredetachable.cpp
 	"../../../include/gui/widgets/FenetreDetachable.h"
 
-1420204780 source:c:\workspace\projects\fux\src\gui\widgets\generictreepanel.cpp
+1439500161 source:c:\workspace\projects\fux\src\gui\widgets\generictreepanel.cpp
 	"../../../include/gui/widgets/GenericTreePanel.h"
 
 1422037806 source:c:\workspace\projects\fux\src\gui\widgets\imagepochettemusique.cpp
@@ -3171,7 +3171,7 @@
 1429309158 source:c:\workspace\projects\fux\src\music\musicfilewriterthread.cpp
 	"MusicFileWriterThread.h"
 
-1437921492 source:c:\workspace\projects\fux\src\music\musiclist.cpp
+1439500287 source:c:\workspace\projects\fux\src\music\musiclist.cpp
 	"music/MusicList.h"
 	"tools/thread/ThreadManager.h"
 	"music/Factory.h"
@@ -3322,7 +3322,7 @@
 	<wx/textfile.h>
 	"../../tools/ThreadGestion.h"
 
-1438121807 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\containerfiletransitivedata.cpp
+1438639365 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\containerfiletransitivedata.cpp
 	"tools/dnd/dataObjects/ContainerFileTransitiveData.h"
 	"explorer/state/FileDriveManagerState.h"
 	<wx/textfile.h>
@@ -3330,10 +3330,10 @@
 1436192630 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\dataobject.cpp
 	"tools/dnd/dataObjects/DataObject.h"
 
-1437922950 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\dirtransitivedata.cpp
+1438640395 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\dirtransitivedata.cpp
 	"tools/dnd/dataObjects/DirTransitiveData.h"
 
-1437922950 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\playlisttransitivedata.cpp
+1438640395 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\playlisttransitivedata.cpp
 	"tools/dnd/dataObjects/PlaylistTransitiveData.h"
 
 1436558328 source:c:\workspace\projects\fux\src\tools\dnd\dataobjects\transitivedata.cpp
@@ -3406,16 +3406,16 @@
 	"tools/dnd/dataObjects/ContainerFileTransitiveData.h"
 	<algorithm>
 
-1438426971 source:c:\workspace\projects\fux\src\tools\dnd\targets\dirtransitivedatatarget.cpp
+1438640393 source:c:\workspace\projects\fux\src\tools\dnd\targets\dirtransitivedatatarget.cpp
 	"tools/dnd/targets/DirTransitiveDataTarget.h"
 	"tools/dnd/dataObjects/DirTransitiveData.h"
 
-1438554646 source:c:\workspace\projects\fux\src\tools\dnd\targets\playlisttransitivedatatarget.cpp
+1438639372 source:c:\workspace\projects\fux\src\tools\dnd\targets\playlisttransitivedatatarget.cpp
 	"tools/dnd/targets/PlaylistTransitiveDataTarget.h"
 	"tools/dnd/dataObjects/PlaylistTransitiveData.h"
 	"music/MusicManagerSwitcher.h"
 
-1438518211 source:c:\workspace\projects\fux\src\tools\dnd\targets\transitivedatatarget.cpp
+1439247602 source:c:\workspace\projects\fux\src\tools\dnd\targets\transitivedatatarget.cpp
 	"tools/dnd/targets/TransitiveDataTarget.h"
 	"tools/dnd/dataObjects/DataObject.h"
 
@@ -3492,8 +3492,91 @@
 	"Tools.h"
 	"Define.h"
 
-1438520699 source:c:\workspace\projects\fux\src\gui\tools\droppedmarkedlinelistctrl.cpp
+1439247602 source:c:\workspace\projects\fux\src\gui\tools\droppedmarkedlinelistctrl.cpp
 	"DroppedMarkedLineListCtrl.h"
 	<wx/dcbuffer.h>
 	"tools/dnd/targets/TransitiveDataTarget.h"
+
+1439245760 source:c:\workspace\projects\fux\src\tools\dir\copyfile.cpp
+	"CopyFile.h"
+
+1439244696 c:\workspace\projects\fux\include\tools\dir\copyfile.h
+	"ConflictingOperationFile.h"
+
+1439243924 c:\workspace\projects\fux\include\tools\dir\operationfile.h
+	<wx/wx.h>
+
+1439245760 source:c:\workspace\projects\fux\src\tools\dir\cutfile.cpp
+	"CutFile.h"
+
+1439244696 c:\workspace\projects\fux\include\tools\dir\cutfile.h
+	"ConflictingOperationFile.h"
+
+1439245351 source:c:\workspace\projects\fux\src\tools\dir\deletefile.cpp
+	"DeleteFile.h"
+	"DirFileManagerData.h"
+	<wx/filename.h>
+
+1439244696 c:\workspace\projects\fux\include\tools\dir\deletefile.h
+	"OperationFile.h"
+
+1439141753 source:c:\workspace\projects\fux\src\tools\dir\dirfilemanager.cpp
+	"DirFileManager.h"
+	"CopyFile.h"
+	"CutFile.h"
+	"DeleteFile.h"
+
+1439141702 c:\workspace\projects\fux\include\tools\dir\dirfilemanager.h
+	<wx/wx.h>
+	<list>
+	"DirFileManagerData.h"
+
+1438963955 c:\workspace\projects\fux\include\tools\dir\dirfilemanagerdata.h
+
+1439064224 source:c:\workspace\projects\fux\src\tools\dir\dirfilemanagerdata.cpp
+	"DirFileManagerData.h"
+
+1439140500 c:\workspace\projects\fux\include\tools\dir\conflictingoperationfile.h
+	"OperationFile.h"
+
+1439245948 source:c:\workspace\projects\fux\src\tools\dir\conflictingoperationfile.cpp
+	"ConflictingOperationFile.h"
+	"DirFileManagerData.h"
+
+1439245905 source:c:\workspace\projects\fux\src\tools\dir\operationfile.cpp
+	"OperationFile.h"
+	"DirFileManagerData.h"
+	"GUI\dialogs\RepeatedQuestionDialog.h"
+
+1439158395 source:c:\workspace\projects\fux\src\gui\dialogs\repeatedquestiondialog.cpp
+	"RepeatedQuestionDialog.h"
+	"wx/sizer.h"
+
+1439157959 c:\workspace\projects\fux\include\gui\dialogs\repeatedquestiondialog.h
+	<wx/wx.h>
+
+1438798242 c:\workspace\libraries\fmodexapi\api\inc\fmod.hpp
+	"fmod.h"
+
+1438798252 c:\workspace\libraries\fmodexapi\api\inc\fmod.h
+	"fmod_codec.h"
+	"fmod_dsp.h"
+	"fmod_memoryinfo.h"
+
+1438798252 c:\workspace\libraries\fmodexapi\api\inc\fmod_codec.h
+
+1438798252 c:\workspace\libraries\fmodexapi\api\inc\fmod_dsp.h
+
+1438798252 c:\workspace\libraries\fmodexapi\api\inc\fmod_memoryinfo.h
+
+1416439938 c:\workspace\libraries\\wxsqlite3\wxsqlite3-3.1.1\wxsqlite3-3.1.1\include\wx\wxsqlite3.h
+	<wx/arrstr.h>
+	<wx/datetime.h>
+	<wx/buffer.h>
+	<wx/hashmap.h>
+	<wx/regex.h>
+	<wx/string.h>
+	"wx/wxsqlite3def.h"
+
+1416439938 c:\workspace\libraries\\wxsqlite3\wxsqlite3-3.1.1\wxsqlite3-3.1.1\include\wx\wxsqlite3def.h
 
