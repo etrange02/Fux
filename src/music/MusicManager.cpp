@@ -495,7 +495,11 @@ void MusicManager::deleteTitleAt(size_t position)
  */
 void MusicManager::deleteTitleAt(const std::vector<unsigned long>& positions)
 {
-    deleteTitles(positions, &MusicManager::deleteTitleAt);
+    if (!changeToAnAvailableTitle(positions, m_musicPosition))
+        return;
+
+    for (std::vector<unsigned long>::const_reverse_iterator iter = positions.rbegin(); iter != positions.rend(); ++iter)
+        deleteTitleAt(*iter);
 }
 
 /** @brief Delete titles identified by their position in search mode
@@ -506,22 +510,11 @@ void MusicManager::deleteTitleAt(const std::vector<unsigned long>& positions)
  */
 void MusicManager::deleteTitleAtInSearch(const std::vector<unsigned long>& positions)
 {
-    deleteTitles(positions, &MusicManager::deleteTitleAtInSearch);
-}
-
-/** @brief Delete titles identified by their position in a mode
- *
- * @param size_t const
- * @return void MusicManager::deleteTitles(const std::vector<unsigned long>& positions, void
- *
- */
-void MusicManager::deleteTitles(const std::vector<unsigned long>& positions, void (MusicManager::*func)(const size_t))
-{
-    if (!changeToAnAvailableTitle(positions))
+    if (!changeToAnAvailableTitle(positions, getCurrentMusicPositionInSearch()))
         return;
 
     for (std::vector<unsigned long>::const_reverse_iterator iter = positions.rbegin(); iter != positions.rend(); ++iter)
-        useMethod(*this, func)(*iter);
+        deleteTitleAtInSearch(*iter);
 }
 
 /** @brief Play a title which is not identified in positions. If all is selected, stop music
@@ -530,7 +523,7 @@ void MusicManager::deleteTitles(const std::vector<unsigned long>& positions, voi
  * @return indicates that all identifiers are not in positions
  *
  */
-bool MusicManager::changeToAnAvailableTitle(const std::vector<unsigned long>& positions)
+bool MusicManager::changeToAnAvailableTitle(const std::vector<unsigned long>& positions, const long musicPlayingPosition)
 {
     if (positions.size() == size())
     {
@@ -538,7 +531,10 @@ bool MusicManager::changeToAnAvailableTitle(const std::vector<unsigned long>& po
         return false;
     }
 
-    std::vector<unsigned long>::const_iterator currentPosition = std::find(positions.begin(), positions.end(), m_musicPosition);
+    if (musicPlayingPosition < 0)
+        return true;
+
+    std::vector<unsigned long>::const_iterator currentPosition = std::find(positions.begin(), positions.end(), musicPlayingPosition);
     if (positions.end() != currentPosition)
     {
         unsigned long position = *currentPosition;

@@ -2152,7 +2152,7 @@
 	"wx/list.h"
 	"wx/versioninfo.h"
 
-1436560552 c:\workspace\projects\fux\include\music\musicmanager.h
+1439927059 c:\workspace\projects\fux\include\music\musicmanager.h
 	<wx/wx.h>
 	"MusicPlayer.h"
 	"MusicList.h"

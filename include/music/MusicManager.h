@@ -95,8 +95,7 @@ namespace music
             long deleteTitleInSearch(const Music& music);
             long deleteTitleInSearch(const size_t position);
             void deleteAllTitles();
-            void deleteTitles(const std::vector<unsigned long>& positions, void (MusicManager::*func)(const size_t));
-            bool changeToAnAvailableTitle(const std::vector<unsigned long>& positions);
+            bool changeToAnAvailableTitle(const std::vector<unsigned long>& positions, const long musicPlayingPosition);
 
             unsigned long findNextAvailablePosition(const std::vector<unsigned long>& positions, const std::vector<unsigned long>::const_iterator& beginIter, const unsigned long start);
 
