@@ -53,28 +53,6 @@ ContainerFileTransitiveData& ContainerFileTransitiveData::operator=(const Contai
     return *this;
 }
 
-/** @brief Gets the filename
- *
- * @return const wxString&
- *
- */
-const wxString ContainerFileTransitiveData::getName() const
-{
-    return m_file;
-}
-
-void ContainerFileTransitiveData::doCopy()
-{
-    wxLogMessage("Must be implemented");
-    ///TODO (David): ContainerFileTransitiveData::doCopy
-}
-
-void ContainerFileTransitiveData::doCut()
-{
-    wxLogMessage("Must be implemented");
-    ///TODO (David): ContainerFileTransitiveData::doCut
-}
-
 /** @brief Returns the filename.
  *
  * @param filename const wxString&

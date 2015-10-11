@@ -14,7 +14,8 @@ using namespace explorer;
 bool deleteAll(::explorer::ExplorerManager* item) {delete item; return true;}
 
 ExplorerDriveManagersData::ExplorerDriveManagersData() :
-    m_driveManagersPanel(NULL)
+    m_driveManagersPanel(NULL),
+    m_dirFileManager(NULL)
 {
     m_explorerManagers = new std::vector<ExplorerManager*>();
 }
@@ -38,5 +39,15 @@ void ExplorerDriveManagersData::setDriveManagersPanel(gui::explorer::DriveManage
 std::vector<::explorer::ExplorerManager*>& ExplorerDriveManagersData::getExplorerManagers() const
 {
     return *m_explorerManagers;
+}
+
+tools::dir::DirFileManager* ExplorerDriveManagersData::getDirFileManager()
+{
+    return m_dirFileManager;
+}
+
+void ExplorerDriveManagersData::setDirFileManager(tools::dir::DirFileManager* dirFileManager)
+{
+    m_dirFileManager = dirFileManager;
 }
 

@@ -67,11 +67,7 @@ namespace dragAndDrop
                 m_items.insert(m_items.end(), items.begin(), items.end());
             }
 
-            virtual const wxString getName() const = 0;
             virtual wxArrayString getFilenames() const = 0;
-
-            virtual void doCopy() = 0;
-            virtual void doCut() = 0;
 
             virtual bool isEmpty() const
             {

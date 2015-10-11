@@ -10,21 +10,56 @@
 #include "CopyFile.h"
 #include "CutFile.h"
 #include "DeleteFile.h"
+#include "tools/thread/ThreadProcess.h"
+#include "DirFileUserInterface.h"
 
 using namespace tools::dir;
 
 /** @brief Constructor.
  */
-DirFileManager::DirFileManager()
+DirFileManager::DirFileManager(DirFileUserInterface& userInterface) :
+    m_interface(userInterface),
+    m_thread(this),
+    m_range(-1),
+    m_maxRange(0)
 {
-    //ctor
 }
 
 /** @brief Destructor.
  */
 DirFileManager::~DirFileManager()
 {
-    //dtor
+    kill();
+}
+
+/** @brief Thread starting
+ *
+ * @return void
+ *
+ */
+void DirFileManager::start()
+{
+    #ifndef DEBUG
+    m_thread.Create();
+    m_thread.Run();
+    #endif
+}
+
+/** @brief Thread destruction.
+ *
+ * @return void
+ *
+ */
+void DirFileManager::kill()
+{
+    if (!m_thread.IsAlive())
+        return;
+
+    #ifndef DEBUG
+    wxMutexLocker locker(m_mutex);
+    m_thread.semaphorePost();
+    m_thread.Delete();
+    #endif
 }
 
 /** @brief Appends an operationFile
@@ -37,7 +72,12 @@ void DirFileManager::addOperationFile(OperationFile* operation)
 {
     if (NULL == operation)
         return;
-    m_operations.push_back(operation);
+    #if DEBUG
+    operation->process();
+    #else // DEBUG
+    m_operations.push(operation);
+    processOperation();
+    #endif // DEBUG
 }
 
 /** @brief Gets data relative to Copy operation.
@@ -106,6 +146,38 @@ void DirFileManager::createDeleteOperation(const wxString& source)
 {
     OperationFile* operation = new DeleteFile(getDeleteData(), source);
     addOperationFile(operation);
+}
+
+void DirFileManager::processOperation()
+{
+    ++m_maxRange;
+    m_interface.setRange(m_maxRange);
+    runThread();
+}
+
+void DirFileManager::runThread()
+{
+    wxMutexLocker locker(m_mutex);
+    m_thread.semaphorePost();
+}
+
+void DirFileManager::currentWorkFinished(tools::thread::ThreadProcess& threadProcess)
+{
+    wxMutexLocker locker(m_mutex);
+    if (m_operations.empty())
+    {
+        ++m_range;
+        m_interface.close();
+        m_maxRange = 0;
+        m_range = -1;
+        return;
+    }
+    ++m_range;
+    OperationFile* op = m_operations.pop_front();
+    if (op)
+        m_interface.update(m_range, op->operationName());
+    threadProcess.setWork(op);
+    threadProcess.semaphorePost();
 }
 
 

@@ -16,6 +16,8 @@
 #include "MusicManagerSwitcher.h"
 #include "ExplorerDriveManagers.h"
 #include "music/MusicFileReaderThread.h"
+#include "Mediator.h"
+#include "tools/dir/DirFileDialog.h"
 
 using namespace ::music;
 
@@ -62,6 +64,9 @@ BEGIN_EVENT_TABLE(FuXFenetre, wxFrame)
     EVT_FUX_MUSICMANAGER_SEARCH_DONE    (FuXFenetre::onEventUpdatePlaylistSearchDone)
     EVT_FUX_MUSICMANAGER_LINE_DELETED   (FuXFenetre::onDeleteLine)
     EVT_FUX_MUSICFILE_READER_THREAD     (FuXFenetre::onUpdateLine)
+    EVT_TOOLS_DIR_FILE_CLOSE            (FuXFenetre::onDirFileDialogClose)
+    EVT_TOOLS_DIR_FILE_RANGE            (FuXFenetre::onDirFileDialogRange)
+    EVT_TOOLS_DIR_FILE_UPDATE           (FuXFenetre::onDirFileDialogUpdate)
 
     EVT_SERVEUR(wxID_ANY, FuXFenetre::EvtServeurAjout)
 
@@ -78,9 +83,14 @@ static wxMutex *s_mutexProtectionDemarrage = new wxMutex;
  * @param argc Entier indiquant la taille du tableau
  * @param argv Tableau de caractères
  */
-FuXFenetre::FuXFenetre(int argc, wxChar **argv) : wxFrame(NULL, wxID_ANY, _T("Fu(X) 2.0"))
+FuXFenetre::FuXFenetre(Mediator& mediator, int argc, wxChar **argv) :
+    wxFrame(NULL, wxID_ANY, _T("Fu(X) 2.0")),
+    m_mediator(mediator)
 {
     wxMutexLocker lock(*s_mutexProtectionDemarrage);
+    m_mediator.getDirFileDialogEvent().setDialog(this);
+    m_mediator.getExplorerDriveManagers().setDirFileManager(&m_mediator.getDirFileManager());
+    m_mediator.getDirFileManager().start();
     m_FenetreActuel = PRINCIPAL;
     m_nouvelleFenetre = PRINCIPAL;
     sizerPrincipalH = new wxBoxSizer(wxHORIZONTAL);
@@ -140,6 +150,8 @@ FuXFenetre::FuXFenetre(int argc, wxChar **argv) : wxFrame(NULL, wxID_ANY, _T("Fu
  */
 FuXFenetre::~FuXFenetre()
 {
+    m_mediator.getDirFileManager().kill();
+
     LogFileAppend("FuXFenetre::~FuXFenetre - début");
     m_fenetresDetachables->Vider();
     delete m_fenetresDetachables;
@@ -155,6 +167,7 @@ FuXFenetre::~FuXFenetre()
     delete m_pageCouleur;
     delete m_pageDefaut;
     delete m_pageSon;
+
 //    LogFileAppend(_T("FuXFenetre::~FuXFenetre - fin"));
 }
 
@@ -227,7 +240,7 @@ void FuXFenetre::panelAssociation()
     LogFileAppend(_T("FuXFenetre::CreerPages() - Playlist"));
     ////////////////////////////////////////////////////////////////////
     m_sizerRightExplorer = new wxBoxSizer(wxVERTICAL);
-    m_driveManagersPanel = new gui::explorer::DriveManagersPanel(this, ::explorer::ExplorerDriveManagers::get());
+    m_driveManagersPanel = new gui::explorer::DriveManagersPanel(this, m_mediator.getExplorerDriveManagers());
 
     m_sizerRightExplorer->Add(m_driveManagersPanel, 1, wxALL | wxEXPAND, 0);
     m_sizerRightExplorer->Show(m_driveManagersPanel);
@@ -608,11 +621,11 @@ void FuXFenetre::EventMusicStop(wxCommandEvent &WXUNUSED(event))
 }
 
 /**
- * Passe au titre suivant
+ * Palys the next title or a random title.
  */
 void FuXFenetre::EventMusicNext(wxCommandEvent &WXUNUSED(event))
 {
-    LogFileAppend(_T("FuXFenetre::suivant"));
+    LogFileAppend(_T("FuXFenetre::EventMusicNext"));
 
     MusicManagerSwitcher::get().playNextOrRandomMusic();
     SwitchWindow();
@@ -692,7 +705,7 @@ void FuXFenetre::EventMusicChanged(wxCommandEvent &WXUNUSED(event))
  */
 void FuXFenetre::EventUpdatePlayLists(wxCommandEvent &WXUNUSED(event))
 {
-//    m_playList->GetPlayListTableau()->MAJ();
+    m_playList->GetPlayListTableau()->updateLines();
 //    GestPeriph::Get()->MAJPlaylist();
 }
 
@@ -1130,4 +1143,20 @@ void FuXFenetre::onEventUpdatePlaylistSearchDone(wxCommandEvent &WXUNUSED(event)
 {
     m_playList->GetPlayListTableau()->updateLines();
 }
+
+void FuXFenetre::onDirFileDialogClose(wxCommandEvent& event)
+{
+    m_mediator.getDirFileDialog().close();
+}
+
+void FuXFenetre::onDirFileDialogRange(wxCommandEvent& event)
+{
+    m_mediator.getDirFileDialog().setRange(event.GetInt());
+}
+
+void FuXFenetre::onDirFileDialogUpdate(wxCommandEvent& event)
+{
+    m_mediator.getDirFileDialog().update(event.GetInt(), event.GetString());
+}
+
 

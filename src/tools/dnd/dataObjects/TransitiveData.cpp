@@ -23,12 +23,6 @@ TransitiveData::~TransitiveData()
 {
 }
 
-void TransitiveData::displayName() const
-{
-    wxString name = getName();
-    wxLogMessage(getName());
-}
-
 void TransitiveData::setCopy(const bool copy)
 {
     m_isCopy = copy;

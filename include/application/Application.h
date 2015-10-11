@@ -4,15 +4,14 @@
 #include <wx/wx.h>
 #include <wx/snglinst.h>
 #include <wx/intl.h>
-#include "gui/widgets/Fenetre.h"
-#include "tools/FichierLog.h"
-#include "network/TCPClient.h"
-#include "network/TCPConnexionEchangeInstanceLocalHost.h"
+#include "application/Mediator.h"
 
-class wxFuXApp : public wxApp
+class FuXFenetre;
+
+class FuxApplication : public wxApp
 {
     public:
-        wxFuXApp();
+        FuxApplication();
         virtual bool OnInit();
         virtual int OnExit();
         void EnvoiStringAutreInstance();
@@ -22,11 +21,12 @@ class wxFuXApp : public wxApp
     private:
         wxSingleInstanceChecker *m_checker;
         wxLocale m_local;
-        FuXFenetre *m_fenetre;
+        FuXFenetre *m_window;
+        Mediator m_mediator;
 
     DECLARE_EVENT_TABLE()
 };
 
-DECLARE_APP(wxFuXApp);
+DECLARE_APP(FuxApplication);
 
 #endif // APPLICATION_H_INCLUDED

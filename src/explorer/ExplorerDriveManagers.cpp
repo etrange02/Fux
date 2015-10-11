@@ -16,13 +16,6 @@
 
 using namespace explorer;
 
-ExplorerDriveManagers ExplorerDriveManagers::s_explorerDriveManagersInstance = ExplorerDriveManagers();
-
-ExplorerDriveManagers& ExplorerDriveManagers::get()
-{
-    return s_explorerDriveManagersInstance;
-}
-
 ExplorerDriveManagers::ExplorerDriveManagers()
 {
 }
@@ -179,5 +172,13 @@ ExplorerManager& ExplorerDriveManagers::getOppositeExplorerManager(explorer::Exp
     return *m_data.getExplorerManagers().at(isFirst ? 1 : 0);
 }
 
+tools::dir::DirFileManager* ExplorerDriveManagers::getDirFileManager()
+{
+    return m_data.getDirFileManager();
+}
 
+void ExplorerDriveManagers::setDirFileManager(tools::dir::DirFileManager* dirFileManager)
+{
+    m_data.setDirFileManager(dirFileManager);
+}
 

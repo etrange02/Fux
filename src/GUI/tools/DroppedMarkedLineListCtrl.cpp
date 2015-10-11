@@ -117,7 +117,7 @@ long DroppedMarkedLineListCtrl::convertCoordToPosition(wxCoord y)
     {
         wxRect rect;
         GetItemRect(itemCount-1, rect);//emplacement physique du dernier item
-        if (rect.GetY() + rect.GetHeight() < y)//le relâchement de la souris est après le dernier item
+        if (rect.GetY() + rect.GetHeight() < y)//le relachement de la souris est après le dernier item
             return itemCount;
         position = GetItemCount();
     }

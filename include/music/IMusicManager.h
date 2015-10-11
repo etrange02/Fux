@@ -26,6 +26,7 @@ namespace music
             /**/virtual MusicCollection& getMusics() = 0;
             /**/virtual size_t getCurrentMusicPosition() = 0;
             /**/virtual void moveIntTitlesAt(const wxArrayString& titles, size_t position) = 0;
+            /**/virtual void moveTitlesAt(const MusicCollection& titles, size_t position) = 0;
             /**/virtual void placeStringTitlesAt(const wxArrayString& titles, size_t position) = 0;
             /**/virtual void deleteTitleAt(size_t position) = 0;
             /**/virtual void deleteTitleAt(const std::vector<unsigned long>& positions) = 0;

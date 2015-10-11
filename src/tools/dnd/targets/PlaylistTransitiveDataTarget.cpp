@@ -40,11 +40,8 @@ void PlaylistTransitiveDataTarget::doCopyProcessing(const wxArrayString& data, c
 
 void PlaylistTransitiveDataTarget::doCutProcessing(TransitiveData& transitiveData, const long position)
 {
-    wxLogMessage("Must be implemented");
-    ///TODO (David): PlaylistTransitiveDataTarget::doCutProcessing
     PlaylistTransitiveData& fileTransitiveData = static_cast<PlaylistTransitiveData&>(transitiveData);
-    //fileTransitiveData.
-    //music::MusicManagerSwitcher::get().moveIntTitlesAt(, position);
+    music::MusicManagerSwitcher::get().moveTitlesAt(fileTransitiveData.getItems(), position);
 }
 
 wxDragResult PlaylistTransitiveDataTarget::OnDragOver(wxCoord x, wxCoord y, wxDragResult def)

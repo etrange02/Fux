@@ -10,7 +10,7 @@
 
 using namespace tools::thread;
 
-/** @brief Contsructor
+/** @brief Constructor
  *
  * @param threadManager manager to signal current work is done
  *
@@ -92,7 +92,9 @@ wxThread::ExitCode ThreadProcess::Entry()
                 wxLogMessage("erreur");
             }
         }
-        m_threadManager->currentWorkFinished(*this);
+
+        if (m_threadManager)
+            m_threadManager->currentWorkFinished(*this);
         semaphoreWait();
     }
     return (wxThread::ExitCode) 0;

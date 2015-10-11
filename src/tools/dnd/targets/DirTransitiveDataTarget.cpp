@@ -8,13 +8,17 @@
  **************************************************************/
 #include "tools/dnd/targets/DirTransitiveDataTarget.h"
 #include "tools/dnd/dataObjects/DirTransitiveData.h"
+#include <wx/filename.h>
+#include "tools/dir/DirFileManager.h"
 
 using namespace dragAndDrop;
 
 /** @brief Constructor.
  */
-DirTransitiveDataTarget::DirTransitiveDataTarget(DroppedMarkedLineListCtrl& source) :
-    TransitiveDataTarget(source)
+DirTransitiveDataTarget::DirTransitiveDataTarget(DroppedMarkedLineListCtrl& source, const wxString& directory, tools::dir::DirFileManager* dirFileManager) :
+    TransitiveDataTarget(source),
+    m_directory(directory),
+    m_dirFileManager(dirFileManager)
 {
 }
 
@@ -22,6 +26,11 @@ DirTransitiveDataTarget::DirTransitiveDataTarget(DroppedMarkedLineListCtrl& sour
  */
 DirTransitiveDataTarget::~DirTransitiveDataTarget()
 {
+}
+
+void DirTransitiveDataTarget::setDirectory(const wxString& directory)
+{
+    m_directory = directory;
 }
 
 bool DirTransitiveDataTarget::isSameKind() const
@@ -33,15 +42,44 @@ bool DirTransitiveDataTarget::isSameKind() const
 
 void DirTransitiveDataTarget::doCopyProcessing(const wxArrayString& data, const long position)
 {
-    wxLogMessage("Must be implemented");
-    ///TODO: DirTransitiveDataTarget::doCopyProcessing
+    if (NULL == m_dirFileManager)
+        return;
+    wxString destinationPath = m_directory;
+    if (position >= 0 && position < m_source.GetItemCount())
+    {
+        wxFileName filename(m_directory, m_source.GetItemText(position));
+        if (filename.Exists())
+            destinationPath = filename.GetFullPath();
+    }
+
+    for (wxArrayString::const_iterator iter = data.begin(); iter != data.end(); ++iter)
+    {
+        const wxString& source = *iter;
+        wxString destination = destinationPath + wxFileName::GetPathSeparator() + wxFileName::FileName(source).GetFullName();
+        m_dirFileManager->createCopyOperation(source, destination);
+    }
 }
 
 void DirTransitiveDataTarget::doCutProcessing(TransitiveData& transitiveData, const long position)
 {
-    wxLogMessage("Must be implemented");
-    ///TODO: DirTransitiveDataTarget::doCutProcessing
+    if (NULL == m_dirFileManager)
+        return;
+    wxString destinationPath = m_directory;
+    if (position >= 0 && position < m_source.GetItemCount())
+    {
+        wxFileName filename(m_directory, m_source.GetItemText(position));
+        if (filename.Exists())
+            destinationPath = filename.GetFullPath();
+    }
+
     DirTransitiveData& fileTransitiveData = static_cast<DirTransitiveData&>(transitiveData);
+    wxArrayString filenames = fileTransitiveData.getFilenames();
+    for (wxArrayString::iterator iter = filenames.begin(); iter != filenames.end(); ++iter)
+    {
+        wxString& source = *iter;
+        wxString destination = destinationPath + wxFileName::GetPathSeparator() + wxFileName::FileName(source).GetFullName();
+        m_dirFileManager->createCutOperation(source, destination);
+    }
 }
 
 

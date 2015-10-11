@@ -12,7 +12,7 @@
 
 /** @brief Music Factory
  *
- * @class fux::music::Factory
+ * @class music::Factory
  */
 
 namespace music

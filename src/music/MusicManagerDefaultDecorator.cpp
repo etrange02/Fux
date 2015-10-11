@@ -37,6 +37,11 @@ void MusicManagerDefaultDecorator::moveIntTitlesAt(const wxArrayString& titles, 
     getDelegate().moveIntTitlesAt(titles, position);
 }
 
+void MusicManagerDefaultDecorator::moveTitlesAt(const MusicCollection& titles, size_t position)
+{
+    getDelegate().moveTitlesAt(titles, position);
+}
+
 void MusicManagerDefaultDecorator::placeStringTitlesAt(const wxArrayString& titles, size_t position)
 {
     getDelegate().placeStringTitlesAt(titles, position);

@@ -36,6 +36,8 @@ namespace music
             bool playMusicAtInSearch             (long position);
             void moveIntTitlesAt                 (const wxArrayString& titles, size_t position);
             void moveIntTitlesAtInSearch         (const wxArrayString& titles, unsigned long position);
+            void moveTitlesAt                    (const MusicCollection& musics, size_t position);
+            void moveTitlesAtInSearch            (const MusicCollection& musics, unsigned long position);
             void placeStringTitlesAt             (const wxArrayString& titles, size_t position);
             void placeStringTitlesAtInSearch     (const wxArrayString& titles, size_t position);
             void deleteTitleAt                   (const size_t position);

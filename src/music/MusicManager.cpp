@@ -381,18 +381,66 @@ void MusicManager::moveIntTitlesAt(const wxArrayString& titles, size_t position)
     m_musicList->sendMusicListUpdatedEvent();
 }
 
+/** @brief Reorganizes the music list by moving some titles at a different place
+ * Reorganizes the music list by moving some titles at a different place
+ * @param titles a list of music name
+ * @param position the position to place titles
+ * @return void
+ *
+ */
+void MusicManager::moveTitlesAt(const MusicCollection& musics, size_t position)
+{
+    MusicCollection& collection = m_musicList->getCollection();
+    MusicCollection reorderedCollection;
+
+    size_t i = 0;
+    MusicIterator iter = collection.begin();
+    for (; iter != collection.end() && i < position; ++iter, ++i)
+    {
+        if (musics.end() == std::find(musics.begin(), musics.end(), *iter))
+            reorderedCollection.push_back(*iter);
+    }
+
+    reorderedCollection.insert(reorderedCollection.end(), musics.begin(), musics.end());
+
+    for (; iter != collection.end(); ++iter)
+    {
+        if (musics.end() == std::find(musics.begin(), musics.end(), *iter))
+            reorderedCollection.push_back(*iter);
+    }
+
+    collection.swap(reorderedCollection);
+
+    // Update position of the current playing title
+    MusicIterator it = std::find_if(m_musicList->getCollection().begin(), m_musicList->getCollection().end(), findPosition(getMusic()));
+
+    size_t index = std::distance(m_musicList->getCollection().begin(), it);
+    if (index < m_musicList->getCollection().size())
+        m_musicPosition = index;
+
+    m_musicList->sendMusicListUpdatedEvent();
+}
+
 /** @brief Not implemented
  *
  * @param titles wxArrayString*
  * @param position long
- * @param update
- * @param autoDelete
  * @return void
  * @deprecated
  */
 void MusicManager::moveIntTitlesAtInSearch(const wxArrayString& WXUNUSED(titles), unsigned long WXUNUSED(position))
 {
+}
 
+/** @brief Not implemented
+ *
+ * @param musics const MusicCollection&
+ * @param position unsigned long
+ * @return void
+ * @deprecated
+ */
+void MusicManager::moveTitlesAtInSearch(const MusicCollection& musics, unsigned long position)
+{
 }
 
 /** @brief Inserts titles at a specific position

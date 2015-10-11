@@ -32,10 +32,12 @@ namespace gui
     }
 }
 
+class Mediator;
+
 class FuXFenetre: public wxFrame
 {
     public:
-        FuXFenetre(int argc = 0, wxChar** argv = NULL);
+        FuXFenetre(Mediator& mediator, int argc = 0, wxChar** argv = NULL);
         virtual ~FuXFenetre();
 
 
@@ -96,6 +98,9 @@ class FuXFenetre: public wxFrame
 
         void onUpdateLine(wxCommandEvent& event);
         void onDeleteLine(wxCommandEvent& event);
+        void onDirFileDialogClose (wxCommandEvent& event);
+        void onDirFileDialogRange (wxCommandEvent& event);
+        void onDirFileDialogUpdate(wxCommandEvent& event);
 
     private :
 
@@ -126,6 +131,7 @@ class FuXFenetre: public wxFrame
         wxBitmapButton* m_boutonImageLP;
         wxBitmap* m_imageBouton;
 
+    private:
         gui::music::MusiqueGraph *m_musiqueGraph;
         TimerGraph m_TimerGraph;
         PreferenceSon *m_pageSon;
@@ -141,6 +147,7 @@ class FuXFenetre: public wxFrame
         int m_FenetreActuel;
         int m_nouvelleFenetre;
         gui::explorer::DriveManagersPanel* m_driveManagersPanel;
+        Mediator& m_mediator;
 
         DECLARE_EVENT_TABLE()
 };

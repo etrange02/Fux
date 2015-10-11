@@ -404,6 +404,7 @@ void MusicList::sendMusicListUpdatedEvent()
     if (NULL == getParent())
         return;
     wxCommandEvent evt(wxEVT_FUX_MUSICLIST_LIST_UPDATE, wxID_ANY);
+    ///TODO: Precise event kind : delete, adding, exchanging...
     getParent()->GetEventHandler()->AddPendingEvent(evt);
 }
 

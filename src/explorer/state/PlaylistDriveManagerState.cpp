@@ -179,7 +179,7 @@ dragAndDrop::TransitiveData* PlaylistDriveManagerState::getDraggedElements()
 {
     dragAndDrop::PlaylistTransitiveData* transitiveData = new dragAndDrop::PlaylistTransitiveData;
     std::vector<unsigned long> selectedItemsPosition = m_data.getExplorerPanel().getExplorerListCtrl().getSelectedLines();
-    MusicManagerSwitcher::getSearch().convertPositionsToTransitiveData(selectedItemsPosition, *transitiveData);
+    MusicManagerSwitcher::get().convertPositionsToTransitiveData(selectedItemsPosition, *transitiveData);
 
     return transitiveData;
 }

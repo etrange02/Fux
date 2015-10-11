@@ -17,6 +17,7 @@ namespace tools
         class IThreadManager
         {
             public:
+                virtual ~IThreadManager() {};
                 virtual void currentWorkFinished(ThreadProcess& threadProcess) = 0;
         };
     }

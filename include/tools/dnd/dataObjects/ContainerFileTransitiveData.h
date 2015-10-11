@@ -27,12 +27,8 @@ namespace dragAndDrop
              */
             ContainerFileTransitiveData& operator=(const ContainerFileTransitiveData& other);
 
-            virtual const wxString getName() const;
             virtual wxArrayString getFilenames() const;
             virtual const std::vector<unsigned long>& deleteFromSource();
-
-            virtual void doCopy();
-            virtual void doCut();
 
             void setFilename(const wxString& filename);
             virtual bool isContainerFileKind() const;

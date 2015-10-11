@@ -13,7 +13,7 @@ using namespace dragAndDrop;
 /** @brief Constructor.
  */
 PlaylistTransitiveData::PlaylistTransitiveData() :
-    TTransitiveData()
+    TTransitiveData<std::shared_ptr<music::Music>>()
 {
 }
 
@@ -44,23 +44,6 @@ PlaylistTransitiveData& PlaylistTransitiveData::operator=(const PlaylistTransiti
     if (this == &rhs) return *this; // handle self assignment
     //assignment operator
     return *this;
-}
-
-const wxString PlaylistTransitiveData::getName() const
-{
-    return getItems().at(0)->GetFileName();
-}
-
-void PlaylistTransitiveData::doCopy()
-{
-    wxLogMessage("Must be implemented");
-    ///TODO: PlaylistTransitiveData::doCopy
-}
-
-void PlaylistTransitiveData::doCut()
-{
-    wxLogMessage("Must be implemented");
-    ///TODO: PlaylistTransitiveData::doCut
 }
 
 wxArrayString PlaylistTransitiveData::getFilenames() const

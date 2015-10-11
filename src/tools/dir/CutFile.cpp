@@ -34,7 +34,7 @@ CutFile::~CutFile()
  */
 wxString CutFile::operationName() const
 {
-    return _("Déplacement de ") + getSource() + " vers " + getDestination();
+    return _("Déplacement de ") + getSourceFilename();// + _("\nvers ") + getDestination();
 }
 
 /** @brief Overload.

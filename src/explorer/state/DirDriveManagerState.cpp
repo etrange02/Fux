@@ -11,11 +11,13 @@
 #include "Parametre.h"
 #include "explorer/ExplorerFactory.h"
 #include "explorer/ExplorerManagerData.h"
+#include "explorer/ExplorerDriveManagers.h"
 #include "music/MusicManagerSwitcher.h"
 #include "tools/thread/ThreadManager.h"
 #include "tools/thread/ThreadFactory.h"
 #include "tools/dnd/dataObjects/DirTransitiveData.h"
 #include "tools/dnd/targets/DirTransitiveDataTarget.h"
+#include "tools/dir/DirFileManager.h"
 
 using namespace explorer;
 
@@ -23,12 +25,15 @@ DirDriveManagerState::DirDriveManagerState(ExplorerManagerData& data) :
     DriveManagerState(data)
 {
     gui::explorer::ExplorerListCtrl& listCtrl = data.getExplorerPanel().getExplorerListCtrl();
-    listCtrl.SetDropTarget(new dragAndDrop::DirTransitiveDataTarget(listCtrl));
+    m_transitiveDataTarget = new dragAndDrop::DirTransitiveDataTarget(listCtrl, data.getPath(), data.getExplorerDriveManagers().getDirFileManager());
+    listCtrl.SetDropTarget(m_transitiveDataTarget);
 }
 
 DirDriveManagerState::~DirDriveManagerState()
 {
     //dtor
+    // Deletion done by GUI
+    //delete m_transitiveDataTarget;
 }
 
 bool DirDriveManagerState::isDirectory() const
@@ -120,14 +125,15 @@ void DirDriveManagerState::openElement()
     }
     else if (Parametre::get().isContainerFile(path))
     {
-        explorer::DriveManagerState& newState = *(explorer::ExplorerFactory::createFileDriveManagerState(m_data));
         m_data.setPath(path);
+        explorer::DriveManagerState& newState = *(explorer::ExplorerFactory::createFileDriveManagerState(m_data));
         newState.fillExplorerList();
         m_data.setState(newState);
     }
     else
     {
         m_data.setPath(path);
+        m_transitiveDataTarget->setDirectory(path);
         fillExplorerList();
     }
 }
@@ -184,46 +190,63 @@ bool DirDriveManagerState::canCreateShortcut() const
 
 void DirDriveManagerState::copyElements(DriveManagerState& source)
 {
-    wxLogMessage("Must be implemented.");
-    ///TODO: DirDriveManagerState::copyElements
-    // insertion de nouveaux fichiers dans le dossier courant -> thread
+    wxArrayString filenames = source.getSelectedItems();
+    wxString destinationPath = m_data.getPath();
+    tools::dir::DirFileManager* dirFileManager = m_data.getExplorerDriveManagers().getDirFileManager();
+
+    if (NULL == dirFileManager)
+        return;
+    for (wxArrayString::iterator iter = filenames.begin(); iter != filenames.end(); ++iter)
+    {
+        wxString& source = *iter;
+        wxString destination = destinationPath + wxFileName::GetPathSeparator() + wxFileName::FileName(source).GetFullName();
+        dirFileManager->createCopyOperation(source, destination);
+    }
 }
 
 void DirDriveManagerState::moveElements(DriveManagerState& source)
 {
-    wxLogMessage("Must be implemented.");
-    ///TODO: DirDriveManagerState::moveElements
-    // renommage de fichiers (changement de chemin) d'une répertoire à l'autre
-    // Attention au changement de lecteur. Le move peut être plus long que prévu dans ce cas.
+    wxArrayString filenames = source.getSelectedItems();
+    wxString destinationPath = m_data.getPath();
+    tools::dir::DirFileManager* dirFileManager = m_data.getExplorerDriveManagers().getDirFileManager();
+
+    if (NULL == dirFileManager)
+        return;
+    for (wxArrayString::iterator iter = filenames.begin(); iter != filenames.end(); ++iter)
+    {
+        wxString& source = *iter;
+        wxString destination = destinationPath + wxFileName::GetPathSeparator() + wxFileName::FileName(source).GetFullName();
+        dirFileManager->createCutOperation(source, destination);
+    }
 }
 
 void DirDriveManagerState::createDir()
 {
-    wxLogMessage("Must be implemented.");
+    wxLogMessage("createDir - Must be implemented.");
     ///TODO: DirDriveManagerState::createDir
 }
 
 void DirDriveManagerState::createContainerFile()
 {
-    wxLogMessage("Must be implemented.");
+    wxLogMessage("createContainerFile - Must be implemented.");
     ///TODO: DirDriveManagerState::createContainerFile
 }
 
 void DirDriveManagerState::playItems()
 {
-    wxLogMessage("Must be implemented.");
+    wxLogMessage("playItems - Must be implemented.");
     ///TODO: DirDriveManagerState::playItems
 }
 
 void DirDriveManagerState::rename()
 {
-    wxLogMessage("Must be implemented.");
+    wxLogMessage("rename - Must be implemented.");
     ///TODO: DirDriveManagerState::rename
 }
 
 void DirDriveManagerState::createShortcut()
 {
-    wxLogMessage("Must be implemented.");
+    wxLogMessage("createShortcut - Must be implemented.");
     ///TODO: DirDriveManagerState::createShortcut
 }
 

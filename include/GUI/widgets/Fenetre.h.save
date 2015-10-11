@@ -31,11 +31,18 @@ namespace gui
         class MusiqueGraph;
     }
 }
+namespace tools {
+    namespace dir {
+        class DirFileDialog;
+    }
+}
+
+class Mediator;
 
 class FuXFenetre: public wxFrame
 {
     public:
-        FuXFenetre(int argc = 0, wxChar** argv = NULL);
+        FuXFenetre(Mediator& mediator, int argc = 0, wxChar** argv = NULL);
         virtual ~FuXFenetre();
 
 
@@ -95,6 +102,10 @@ class FuXFenetre: public wxFrame
         void deleteCurrentPlayingTitle();
 
         void onUpdateLine(wxCommandEvent& event);
+        void onDeleteLine(wxCommandEvent& event);
+        void onDirFileDialogClose (wxCommandEvent& event);
+        void onDirFileDialogRange (wxCommandEvent& event);
+        void onDirFileDialogUpdate(wxCommandEvent& event);
 
     private :
 
@@ -122,9 +133,10 @@ class FuXFenetre: public wxFrame
         wxMenu* menuAide;
         wxMenu* menuControle;
         wxNotebook* m_notebookPreference;
-        wxBitmapButton *m_boutonImageLP;
-        wxBitmap *m_imageBouton;
+        wxBitmapButton* m_boutonImageLP;
+        wxBitmap* m_imageBouton;
 
+    private:
         gui::music::MusiqueGraph *m_musiqueGraph;
         TimerGraph m_TimerGraph;
         PreferenceSon *m_pageSon;
@@ -137,8 +149,11 @@ class FuXFenetre: public wxFrame
 
         TCPServeur *m_serveur;
 
-        int m_FenetreActuel, m_nouvelleFenetre;
+        int m_FenetreActuel;
+        int m_nouvelleFenetre;
         gui::explorer::DriveManagersPanel* m_driveManagersPanel;
+        Mediator& m_mediator;
+        tools::dir::DirFileDialog* m_dirFileDialog;
 
         DECLARE_EVENT_TABLE()
 };

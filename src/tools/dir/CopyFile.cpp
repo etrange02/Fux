@@ -32,7 +32,7 @@ CopyFile::~CopyFile()
  */
 wxString CopyFile::operationName() const
 {
-    return _("Copie de ") + getSource() + " vers " + getDestination();
+    return _("Copie de ") + getSource() + _("\nvers ") + getDestination();
 }
 
 /** @brief Overload. Copies a file.

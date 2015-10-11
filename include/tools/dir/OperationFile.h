@@ -2,6 +2,7 @@
 #define OPERATIONFILE_H
 
 #include <wx/wx.h>
+#include "IRunnable.h"
 
 namespace tools
 {
@@ -9,7 +10,7 @@ namespace tools
     {
         class DirFileManagerData;
 
-        class OperationFile
+        class OperationFile : public tools::thread::IRunnable
         {
             public:
                 /** Default constructor */
@@ -17,15 +18,18 @@ namespace tools
                 /** Default destructor */
                 virtual ~OperationFile();
 
+                /** Overload */
+                virtual void process();
+
                 const wxString& getSource() const;
 
                 virtual wxString operationName() const;
-                virtual void doWork();
 
             protected:
                 virtual void doOperation() = 0;
                 virtual void sendEvent()   = 0;
                 bool askForRecursiveOperation(DirFileManagerData& data, const wxString& message);
+                wxString getSourceFilename() const;
 
             private:
                 wxString m_source;

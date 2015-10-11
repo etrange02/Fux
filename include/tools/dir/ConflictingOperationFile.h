@@ -17,7 +17,7 @@ namespace tools
                 /** Default destructor */
                 virtual ~ConflictingOperationFile();
 
-                virtual void doWork();
+                virtual void process();
 
             protected:
                 DirFileManagerData& getData();

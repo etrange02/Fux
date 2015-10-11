@@ -5,6 +5,12 @@
 #include "ExplorerManager.h"
 #include "DriveManagersPanel.h"
 
+namespace tools {
+    namespace dir {
+        class DirFileManager;
+    }
+}
+
 /**
  * Explorer name space.
  */
@@ -23,10 +29,14 @@ namespace explorer
             gui::explorer::DriveManagersPanel* getDriveManagersPanel();
             void setDriveManagersPanel(gui::explorer::DriveManagersPanel* driverManagerPanel);
 
+            tools::dir::DirFileManager* getDirFileManager();
+            void setDirFileManager(tools::dir::DirFileManager* dirFileManager);
+
         protected:
         private:
             std::vector<ExplorerManager*> *m_explorerManagers;
             gui::explorer::DriveManagersPanel *m_driveManagersPanel;
+            tools::dir::DirFileManager* m_dirFileManager;
     };
 }
 

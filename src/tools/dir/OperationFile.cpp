@@ -9,12 +9,14 @@
 #include "OperationFile.h"
 #include "DirFileManagerData.h"
 #include "GUI\dialogs\RepeatedQuestionDialog.h"
+#include <wx/filename.h>
 
 using namespace tools::dir;
 
 /** @brief Constructor.
  */
 OperationFile::OperationFile(const wxString& source) :
+    tools::thread::IRunnable(),
     m_source(source)
 {
     //ctor
@@ -52,7 +54,7 @@ wxString OperationFile::operationName() const
  * @return void
  *
  */
-void OperationFile::doWork()
+void OperationFile::process()
 {
     doOperation();
     sendEvent();
@@ -82,6 +84,11 @@ bool OperationFile::askForRecursiveOperation(DirFileManagerData& data, const wxS
         return false;
 
     return true;
+}
+
+wxString OperationFile::getSourceFilename() const
+{
+    return getSource().AfterLast(wxFileName::GetPathSeparator());
 }
 
 

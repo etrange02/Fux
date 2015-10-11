@@ -88,7 +88,6 @@ wxDragResult TransitiveDataTarget::OnData(wxCoord WXUNUSED(x), wxCoord y, wxDrag
 
     DataObject* dataObject = (DataObject*) GetDataObject();
     m_data = dataObject->getData();
-    m_data->displayName();
     doPaste(y);
 
     return wxDragCopy;

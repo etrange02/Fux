@@ -159,9 +159,9 @@ void MusiqueGraph::OnPaint(wxPaintEvent&)
                     //Dc.GradientFillLinear(wxRect(i + retard, m_sizer_h-19-spec, 1, spec), m_miSup, CouleurExtrem(spec, m_sizer_h), wxNORTH);
                 }
 
-                if (m_intervalle != 0 && retard < m_bandeRestante && i+retard >= m_intervalle*(retard +1))
+                if (m_intervalle > 0 && retard < m_bandeRestante && i+retard >= m_intervalle*(retard +1))
                 {
-                    retard++;
+                    ++retard;
                     if (spec != 0)
                     {
                         if (spec == 1 || spec == 2 || spec == 3);

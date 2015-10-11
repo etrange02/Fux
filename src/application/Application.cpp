@@ -10,20 +10,25 @@
 #include <wx/wx.h>
 
 #include "application/Application.h"
+#include "tools/dir/DirFileManager.h"
+#include "network/TCPClient.h"
+#include "network/TCPConnexionEchangeInstanceLocalHost.h"
+#include "gui/widgets/Fenetre.h"
+#include "tools/FichierLog.h"
 
 /**
- * @class wxFuXApp
- * @brief Classe application du programme, "contient la fonction main"
+ * @class FuxApplication
+ * @brief Application entry point.
  */
 
-BEGIN_EVENT_TABLE(wxFuXApp, wxApp)
-    EVT_END_SESSION(wxFuXApp::Fermer)
+BEGIN_EVENT_TABLE(FuxApplication, wxApp)
+    EVT_END_SESSION(FuxApplication::Fermer)
 END_EVENT_TABLE()
 
-wxFuXApp::wxFuXApp() :
+FuxApplication::FuxApplication() :
     wxApp(),
     m_checker(NULL),
-    m_fenetre(NULL)
+    m_window(NULL)
 {
 }
 
@@ -31,32 +36,32 @@ wxFuXApp::wxFuXApp() :
  * Surcharge. Appelé au lancement de l'application
  * @return Vrai si succès.
  */
-bool wxFuXApp::OnInit()
+bool FuxApplication::OnInit()
 {
     // Gestion de la langue
     //TraductionInternationale();
     m_checker = NULL;
 
     #ifndef DEBUG
-    m_checker = new wxSingleInstanceChecker(_T("Fu(X)") + wxGetUserId());
+    /*m_checker = new wxSingleInstanceChecker(_T("Fu(X)") + wxGetUserId());
     if (m_checker->IsAnotherRunning())
     {
         if (argc >= 2)
             EnvoiStringAutreInstance();
         else
-            wxLogError(_("Fu(X) est déjà ouvert, procédure d'ouverture annulée"));//"Another program instance is already running, aborting."));
+            wxLogError("Fu(X) est déjà ouvert, procédure d'ouverture annulée");//"Another program instance is already running, aborting."));
 
         delete m_checker; // OnExit() won't be called if we return false
         m_checker = NULL;
 
         return false;
     }
-    else
+    else*/
     #endif
     {
         LogFileAppend(_("Démarrage de l'application, paramètre : ") + wxString(argc >= 2 ? argv[1] : _("NULL")));
-        m_fenetre = new FuXFenetre(argc, argv);
-        m_fenetre->Show(true);
+        m_window = new FuXFenetre(m_mediator, argc, argv);
+        m_window->Show(true);
 
         return true;
     }
@@ -66,7 +71,7 @@ bool wxFuXApp::OnInit()
  * Surcharge. Appelé à la fermeture de l'application
  * @return 0 si aucun problème
  */
-int wxFuXApp::OnExit()
+int FuxApplication::OnExit()
 {
     delete m_checker;
     //Parametre::Get()->~Parametre();
@@ -80,7 +85,7 @@ int wxFuXApp::OnExit()
 /**
  * Envoi à une autre instance du programme les chaînes données en argument
  */
-void wxFuXApp::EnvoiStringAutreInstance()
+void FuxApplication::EnvoiStringAutreInstance()
 {
     TCPClient *client = new TCPClient();
     TCPConnexionEchangeInstanceLocalHost *connexion = (TCPConnexionEchangeInstanceLocalHost*) client->MakeConnection(IPC_HOST, IPC_SERVICE, IPC_TOPIC);
@@ -113,7 +118,7 @@ void wxFuXApp::EnvoiStringAutreInstance()
 /**
  * Traduction automatique de l'application dans une langue étrangère
  */
-void wxFuXApp::TraductionInternationale()
+void FuxApplication::TraductionInternationale()
 {
     // Ajout des préfixes possibles de chemins d'accès aux catalogues
     wxLocale::AddCatalogLookupPathPrefix(wxT("."));
@@ -133,9 +138,9 @@ void wxFuXApp::TraductionInternationale()
 /**
  * Appelé en cas de fermeture de session, arrêt du programme avant de se faire tuer !
  */
-void wxFuXApp::Fermer(wxCloseEvent &WXUNUSED(event))
+void FuxApplication::Fermer(wxCloseEvent &WXUNUSED(event))
 {
-    m_fenetre->Close(true);
+    m_window->Close(true);
 }
 
-IMPLEMENT_APP(wxFuXApp);
+IMPLEMENT_APP(FuxApplication);

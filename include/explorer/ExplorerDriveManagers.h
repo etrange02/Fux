@@ -16,7 +16,10 @@ namespace explorer
     class ExplorerDriveManagers
     {
         public:
-            static ExplorerDriveManagers& get();
+            /** Default constructor */
+            ExplorerDriveManagers();
+            /** Default destructor */
+            virtual ~ExplorerDriveManagers();
 
             gui::explorer::DriveManagersPanel *getDriveManagersPanel();
             void setDriveManagersPanel(gui::explorer::DriveManagersPanel* driveManagersPanel);
@@ -37,19 +40,17 @@ namespace explorer
 
             void updateStreamButtonStates(gui::explorer::ExplorerPanel& explorerPanel);
 
+            tools::dir::DirFileManager* getDirFileManager();
+            void setDirFileManager(tools::dir::DirFileManager* dirFileManager);
+
         protected:
             ExplorerManager& getControllerOf(gui::explorer::ExplorerPanel& explorerPanel);
             ExplorerManager& getOppositeExplorerManager(gui::explorer::ExplorerPanel& explorerPanel);
             ExplorerManager& getOppositeExplorerManager(explorer::ExplorerManager& explorerManager);
 
         private:
-            /** Default constructor */
-            ExplorerDriveManagers();
-            /** Default destructor */
-            virtual ~ExplorerDriveManagers();
 
         private:
-            static ExplorerDriveManagers s_explorerDriveManagersInstance;
             ExplorerDriveManagersData m_data;
     };
 }

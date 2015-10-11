@@ -3,6 +3,10 @@
 
 #include "DriveManagerState.h"
 
+namespace dragAndDrop {
+    class DirTransitiveDataTarget;
+}
+
 /**
  * Explorer name space.
  */
@@ -46,6 +50,7 @@ namespace explorer
         protected:
 
         private:
+            dragAndDrop::DirTransitiveDataTarget* m_transitiveDataTarget;
     };
 }
 

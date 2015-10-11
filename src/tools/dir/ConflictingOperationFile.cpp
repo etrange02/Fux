@@ -48,7 +48,12 @@ DirFileManagerData& ConflictingOperationFile::getData()
     return m_data;
 }
 
-void ConflictingOperationFile::doWork()
+/** @brief
+ *
+ * @return void
+ *
+ */
+void ConflictingOperationFile::process()
 {
     if (getSource() == getDestination())
         return;

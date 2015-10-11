@@ -46,23 +46,6 @@ DirTransitiveData& DirTransitiveData::operator=(const DirTransitiveData& rhs)
     return *this;
 }
 
-const wxString DirTransitiveData::getName() const
-{
-    return getItems().at(0);
-}
-
-void DirTransitiveData::doCopy()
-{
-    wxLogMessage("Must be implemented");
-    ///TODO: DirTransitiveData::doCopy
-}
-
-void DirTransitiveData::doCut()
-{
-    wxLogMessage("Must be implemented");
-    ///TODO: DirTransitiveData::doCut
-}
-
 wxArrayString DirTransitiveData::getFilenames() const
 {
     const std::vector<wxString>& items = getItems();
