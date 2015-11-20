@@ -6,7 +6,7 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "DirFileManagerData.h"
+#include "tools/dir/DirFileManagerData.h"
 
 using namespace tools::dir;
 

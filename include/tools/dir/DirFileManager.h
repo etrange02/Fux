@@ -13,12 +13,13 @@ namespace tools
     {
         class OperationFile;
         class DirFileUserInterface;
+        class DirFileCommunicationFactory;
 
         class DirFileManager : public tools::thread::IThreadManager
         {
             public:
                 /** Default constructor */
-                DirFileManager(DirFileUserInterface& userInterface);
+                DirFileManager(DirFileCommunicationFactory& factory);
                 /** Default destructor */
                 virtual ~DirFileManager();
 
@@ -43,7 +44,8 @@ namespace tools
                 DirFileManagerData m_copyData;
                 DirFileManagerData m_cutData;
                 DirFileManagerData m_deleteData;
-                DirFileUserInterface& m_interface;
+                DirFileCommunicationFactory& m_factory;
+                DirFileUserInterface* m_interface;
                 tools::thread::ThreadProcess m_thread;
                 int m_range;
                 int m_maxRange;

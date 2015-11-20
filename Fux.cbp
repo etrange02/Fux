@@ -69,7 +69,19 @@ IMPORTANT, A FAIRE !!!
 					<Add option="-Wextra" />
 					<Add option="-Wall" />
 					<Add option="-g" />
-					<Add option="-DDEBUG 1" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+			</Target>
+			<Target title="WinReleaseDBG">
+				<Option platforms="Windows;" />
+				<Option output="out/program_files/Fu(X)" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="out/program_files" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
 				</Compiler>
 			</Target>
 			<Environment>
@@ -122,6 +134,9 @@ IMPORTANT, A FAIRE !!!
 			<Add directory="include/settings" />
 			<Add directory="include/tools" />
 			<Add directory="include/tools/dir" />
+			<Add directory="include/tools/dir/interface" />
+			<Add directory="include/tools/dir/factory" />
+			<Add directory="include/tools/dir/operations" />
 			<Add directory="include/tools/dir_traverser" />
 			<Add directory="include/tools/dnd" />
 			<Add directory="include/tools/dnd/targets" />
@@ -174,7 +189,6 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/GUI/dialogs/DialogEnregistreM3U.h" />
 		<Unit filename="include/GUI/dialogs/DialogTagMP3.h" />
 		<Unit filename="include/GUI/dialogs/DialogTagMP3Info.h" />
-		<Unit filename="include/GUI/dialogs/RepeatedQuestionDialog.h" />
 		<Unit filename="include/GUI/explorer/DriveManagersPanel.h" />
 		<Unit filename="include/GUI/explorer/ExplorerListCtrl.h" />
 		<Unit filename="include/GUI/explorer/ExplorerPanel.h" />
@@ -254,17 +268,33 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/tools/ThreadGestion.h" />
 		<Unit filename="include/tools/Timer.h" />
 		<Unit filename="include/tools/Tools.h" />
-		<Unit filename="include/tools/dir/ConflictingOperationFile.h" />
-		<Unit filename="include/tools/dir/CopyFile.h" />
-		<Unit filename="include/tools/dir/CutFile.h" />
-		<Unit filename="include/tools/dir/DeleteFile.h" />
-		<Unit filename="include/tools/dir/DirFileDialog.h" />
-		<Unit filename="include/tools/dir/DirFileDialogEvent.h" />
+		<Unit filename="include/tools/dir/AskForRecursiveOperationData.h" />
 		<Unit filename="include/tools/dir/DirFileManager.h" />
 		<Unit filename="include/tools/dir/DirFileManagerData.h" />
-		<Unit filename="include/tools/dir/DirFileUserInterface.h" />
-		<Unit filename="include/tools/dir/Events.h" />
-		<Unit filename="include/tools/dir/OperationFile.h" />
+		<Unit filename="include/tools/dir/factory/DialogDirFileDialogFactory.h.save" />
+		<Unit filename="include/tools/dir/factory/DirFileCommunicationFactory.h" />
+		<Unit filename="include/tools/dir/factory/DirFileCommunicationFactory.h.save" />
+		<Unit filename="include/tools/dir/factory/DirFileDialogFactory.h" />
+		<Unit filename="include/tools/dir/interface/DirFileDialog.h" />
+		<Unit filename="include/tools/dir/interface/DirFileDialog.h.save" />
+		<Unit filename="include/tools/dir/interface/DirFileDialogEvent.h" />
+		<Unit filename="include/tools/dir/interface/DirFileDialogEvent.h.save" />
+		<Unit filename="include/tools/dir/interface/DirFileUserInterface.h" />
+		<Unit filename="include/tools/dir/interface/DirFileUserInterface.h.save" />
+		<Unit filename="include/tools/dir/interface/Events.h" />
+		<Unit filename="include/tools/dir/interface/Events.h.save" />
+		<Unit filename="include/tools/dir/interface/RepeatedQuestionDialogEvent.h" />
+		<Unit filename="include/tools/dir/interface/RepeatedQuestionInterface.h" />
+		<Unit filename="include/tools/dir/operations/ConflictingOperationFile.h" />
+		<Unit filename="include/tools/dir/operations/ConflictingOperationFile.h.save" />
+		<Unit filename="include/tools/dir/operations/CopyFile.h" />
+		<Unit filename="include/tools/dir/operations/CopyFile.h.save" />
+		<Unit filename="include/tools/dir/operations/CutFile.h" />
+		<Unit filename="include/tools/dir/operations/CutFile.h.save" />
+		<Unit filename="include/tools/dir/operations/DeleteFile.h" />
+		<Unit filename="include/tools/dir/operations/DeleteFile.h.save" />
+		<Unit filename="include/tools/dir/operations/OperationFile.h" />
+		<Unit filename="include/tools/dir/operations/OperationFile.h.save" />
 		<Unit filename="include/tools/dir_traverser/ISearchTraversable.h" />
 		<Unit filename="include/tools/dir_traverser/Search.h" />
 		<Unit filename="include/tools/dir_traverser/TraverserCopieDossier.h" />
@@ -289,10 +319,13 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/tools/thread/ThreadManager.h" />
 		<Unit filename="include/tools/thread/ThreadProcess.h" />
 		<Unit filename="include/version.h" />
+		<Unit filename="ressoures/Ressource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="ressoures/wxsmith/tools/dir/interface/DirFileDialog.wxs" />
 		<Unit filename="src/GUI/dialogs/DialogEnregistreM3U.cpp" />
 		<Unit filename="src/GUI/dialogs/DialogTagMP3.cpp" />
 		<Unit filename="src/GUI/dialogs/DialogTagMP3Info.cpp" />
-		<Unit filename="src/GUI/dialogs/RepeatedQuestionDialog.cpp" />
 		<Unit filename="src/GUI/explorer/DriveManagersPanel.cpp" />
 		<Unit filename="src/GUI/explorer/ExplorerListCtrl.cpp" />
 		<Unit filename="src/GUI/explorer/ExplorerPanel.cpp" />
@@ -356,9 +389,6 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/predicates/findPathMenuElement.cpp" />
 		<Unit filename="src/predicates/findPosition.cpp" />
 		<Unit filename="src/predicates/findSharedMusicContainer.cpp" />
-		<Unit filename="src/ressources/Ressource.rc">
-			<Option compilerVar="WINDRES" />
-		</Unit>
 		<Unit filename="src/ressources/lect.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -385,15 +415,27 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/tools/ThreadGestion.cpp" />
 		<Unit filename="src/tools/Timer.cpp" />
 		<Unit filename="src/tools/Tools.cpp" />
-		<Unit filename="src/tools/dir/ConflictingOperationFile.cpp" />
-		<Unit filename="src/tools/dir/CopyFile.cpp" />
-		<Unit filename="src/tools/dir/CutFile.cpp" />
-		<Unit filename="src/tools/dir/DeleteFile.cpp" />
-		<Unit filename="src/tools/dir/DirFileDialog.cpp" />
-		<Unit filename="src/tools/dir/DirFileDialogEvent.cpp" />
+		<Unit filename="src/tools/dir/AskForRecursiveOperationData.cpp" />
 		<Unit filename="src/tools/dir/DirFileManager.cpp" />
 		<Unit filename="src/tools/dir/DirFileManagerData.cpp" />
-		<Unit filename="src/tools/dir/OperationFile.cpp" />
+		<Unit filename="src/tools/dir/factory/DialogDirFileDialogFactory.cpp.save" />
+		<Unit filename="src/tools/dir/factory/DirFileDialogFactory.cpp" />
+		<Unit filename="src/tools/dir/factory/DirFileDialogFactory.cpp.save" />
+		<Unit filename="src/tools/dir/interface/DirFileDialog.cpp" />
+		<Unit filename="src/tools/dir/interface/DirFileDialog.cpp.save" />
+		<Unit filename="src/tools/dir/interface/DirFileDialogEvent.cpp" />
+		<Unit filename="src/tools/dir/interface/DirFileDialogEvent.cpp.save" />
+		<Unit filename="src/tools/dir/interface/RepeatedQuestionDialogEvent.cpp" />
+		<Unit filename="src/tools/dir/operations/ConflictingOperationFile.cpp" />
+		<Unit filename="src/tools/dir/operations/ConflictingOperationFile.cpp.save" />
+		<Unit filename="src/tools/dir/operations/CopyFile.cpp" />
+		<Unit filename="src/tools/dir/operations/CopyFile.cpp.save" />
+		<Unit filename="src/tools/dir/operations/CutFile.cpp" />
+		<Unit filename="src/tools/dir/operations/CutFile.cpp.save" />
+		<Unit filename="src/tools/dir/operations/DeleteFile.cpp" />
+		<Unit filename="src/tools/dir/operations/DeleteFile.cpp.save" />
+		<Unit filename="src/tools/dir/operations/OperationFile.cpp" />
+		<Unit filename="src/tools/dir/operations/OperationFile.cpp.save" />
 		<Unit filename="src/tools/dir_traverser/Search.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserCopieDossier.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserCopieFichier.cpp" />

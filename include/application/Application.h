@@ -22,7 +22,7 @@ class FuxApplication : public wxApp
         wxSingleInstanceChecker *m_checker;
         wxLocale m_local;
         FuXFenetre *m_window;
-        Mediator m_mediator;
+        //Mediator m_mediator;
 
     DECLARE_EVENT_TABLE()
 };

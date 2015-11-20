@@ -6,23 +6,26 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "DirFileManager.h"
-#include "CopyFile.h"
-#include "CutFile.h"
-#include "DeleteFile.h"
+#include "tools/dir/DirFileManager.h"
+#include "tools/dir/operations/CopyFile.h"
+#include "tools/dir/operations/CutFile.h"
+#include "tools/dir/operations/DeleteFile.h"
 #include "tools/thread/ThreadProcess.h"
-#include "DirFileUserInterface.h"
+#include "tools/dir/interface/DirFileUserInterface.h"
+#include "tools/dir/factory/DirFileCommunicationFactory.h"
 
 using namespace tools::dir;
 
 /** @brief Constructor.
  */
-DirFileManager::DirFileManager(DirFileUserInterface& userInterface) :
-    m_interface(userInterface),
+DirFileManager::DirFileManager(DirFileCommunicationFactory& factory) :
+    m_factory(factory),
+    m_interface(NULL),
     m_thread(this),
-    m_range(-1),
+    m_range(0),
     m_maxRange(0)
 {
+    m_interface = factory.createDirFileUser();
 }
 
 /** @brief Destructor.
@@ -30,6 +33,8 @@ DirFileManager::DirFileManager(DirFileUserInterface& userInterface) :
 DirFileManager::~DirFileManager()
 {
     kill();
+    delete m_interface;
+    delete &m_factory;
 }
 
 /** @brief Thread starting
@@ -151,14 +156,15 @@ void DirFileManager::createDeleteOperation(const wxString& source)
 void DirFileManager::processOperation()
 {
     ++m_maxRange;
-    m_interface.setRange(m_maxRange);
+    m_interface->setRange(m_maxRange);
     runThread();
 }
 
 void DirFileManager::runThread()
 {
     wxMutexLocker locker(m_mutex);
-    m_thread.semaphorePost();
+    if (/*m_operations.size() <= 1 && */m_maxRange <= 1)
+        m_thread.semaphorePost();
 }
 
 void DirFileManager::currentWorkFinished(tools::thread::ThreadProcess& threadProcess)
@@ -166,16 +172,19 @@ void DirFileManager::currentWorkFinished(tools::thread::ThreadProcess& threadPro
     wxMutexLocker locker(m_mutex);
     if (m_operations.empty())
     {
-        ++m_range;
-        m_interface.close();
+        m_interface->close();
         m_maxRange = 0;
-        m_range = -1;
+        m_range = 0;
         return;
     }
-    ++m_range;
     OperationFile* op = m_operations.pop_front();
     if (op)
-        m_interface.update(m_range, op->operationName());
+    {
+        m_interface->update(m_range, op->operationName());
+        ++m_range;
+        op->setThread(&threadProcess);
+        op->setFactory(&m_factory);
+    }
     threadProcess.setWork(op);
     threadProcess.semaphorePost();
 }

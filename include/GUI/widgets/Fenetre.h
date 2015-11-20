@@ -22,6 +22,8 @@
 #include "tools/ArrayFenetreDetachable.h"
 #include "BoutonFenetreDetachable.h"
 
+#include "application/Mediator.h"
+
 namespace gui
 {
     namespace explorer {
@@ -37,7 +39,7 @@ class Mediator;
 class FuXFenetre: public wxFrame
 {
     public:
-        FuXFenetre(Mediator& mediator, int argc = 0, wxChar** argv = NULL);
+        FuXFenetre(/*Mediator& mediator, */int argc = 0, wxChar** argv = NULL);
         virtual ~FuXFenetre();
 
 
@@ -101,6 +103,7 @@ class FuXFenetre: public wxFrame
         void onDirFileDialogClose (wxCommandEvent& event);
         void onDirFileDialogRange (wxCommandEvent& event);
         void onDirFileDialogUpdate(wxCommandEvent& event);
+        void onDirFileRecurseQuestion(wxCommandEvent& event);
 
     private :
 
@@ -147,7 +150,7 @@ class FuXFenetre: public wxFrame
         int m_FenetreActuel;
         int m_nouvelleFenetre;
         gui::explorer::DriveManagersPanel* m_driveManagersPanel;
-        Mediator& m_mediator;
+        Mediator m_mediator;
 
         DECLARE_EVENT_TABLE()
 };

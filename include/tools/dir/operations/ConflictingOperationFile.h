@@ -1,7 +1,7 @@
 #ifndef CONFLICTINGOPERATIONFILE_H
 #define CONFLICTINGOPERATIONFILE_H
 
-#include "OperationFile.h"
+#include "tools/dir/operations/OperationFile.h"
 
 namespace tools
 {

@@ -6,8 +6,8 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "ConflictingOperationFile.h"
-#include "DirFileManagerData.h"
+#include "tools/dir/operations/ConflictingOperationFile.h"
+#include "tools/dir/DirFileManagerData.h"
 
 using namespace tools::dir;
 

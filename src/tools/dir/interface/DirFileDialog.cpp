@@ -1,0 +1,136 @@
+/***************************************************************
+ * Name:      DirFileDialog.cpp
+ * Purpose:   Code for Fu(X) 2.0
+ * Author:    David Lecoconnier (david.lecoconnier@free.fr)
+ * Created:   2015-11-01
+ * Copyright: David Lecoconnier (http://www.getfux.fr)
+ * License:
+ **************************************************************/
+#include "DirFileDialog.h"
+#include "tools/dir/AskForRecursiveOperationData.h"
+
+//(*InternalHeaders(DirFileDialog)
+#include <wx/intl.h>
+#include <wx/string.h>
+//*)
+
+using namespace tools::dir;
+
+//(*IdInit(DirFileDialog)
+const long DirFileDialog::ID_STATICTEXT1 = wxNewId();
+const long DirFileDialog::ID_GAUGE1 = wxNewId();
+const long DirFileDialog::ID_STATICTEXT2 = wxNewId();
+const long DirFileDialog::ID_CHECKBOX1 = wxNewId();
+const long DirFileDialog::ID_BUTTON1 = wxNewId();
+const long DirFileDialog::ID_BUTTON2 = wxNewId();
+//*)
+
+BEGIN_EVENT_TABLE(DirFileDialog,wxDialog)
+	//(*EventTable(DirFileDialog)
+	//*)
+END_EVENT_TABLE()
+
+DirFileDialog::DirFileDialog(wxWindow* parent) :
+    DirFileUserInterface(),
+    RepeatedQuestionInterface(),
+    m_data(NULL)
+{
+	//(*Initialize(DirFileDialog)
+	wxBoxSizer* BoxSizer1;
+	wxBoxSizer* BoxSizer3;
+
+	Create(parent, wxID_ANY, _("Opération en cours"), wxDefaultPosition, wxDefaultSize, wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxCLOSE_BOX|wxDIALOG_NO_PARENT|wxMAXIMIZE_BOX|wxMINIMIZE_BOX|wxFRAME_SHAPED, _T("wxID_ANY"));
+	SetClientSize(wxSize(600,220));
+	BoxSizer1 = new wxBoxSizer(wxVERTICAL);
+	m_stateText = new wxStaticText(this, ID_STATICTEXT1, _("Label"), wxDefaultPosition, wxSize(508,44), wxALIGN_LEFT, _T("ID_STATICTEXT1"));
+	BoxSizer1->Add(m_stateText, 1, wxALL|wxEXPAND, 5);
+	m_gauge = new wxGauge(this, ID_GAUGE1, 100, wxDefaultPosition, wxSize(508,32), 0, wxDefaultValidator, _T("ID_GAUGE1"));
+	BoxSizer1->Add(m_gauge, 0, wxBOTTOM|wxLEFT|wxRIGHT|wxEXPAND, 5);
+	m_questionSizer = new wxBoxSizer(wxVERTICAL);
+	m_questionText = new wxStaticText(this, ID_STATICTEXT2, _("Le fichier cible existe déjà. Souhaitez-vous le remplacer ?"), wxDefaultPosition, wxDefaultSize, wxALIGN_LEFT, _T("ID_STATICTEXT2"));
+	m_questionSizer->Add(m_questionText, 1, wxALL|wxEXPAND, 5);
+	m_recurseCheckBox = new wxCheckBox(this, ID_CHECKBOX1, _("Appliquer ce choix à tous les cas"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOX1"));
+	m_recurseCheckBox->SetValue(false);
+	m_questionSizer->Add(m_recurseCheckBox, 0, wxBOTTOM|wxLEFT|wxRIGHT|wxEXPAND, 5);
+	BoxSizer3 = new wxBoxSizer(wxHORIZONTAL);
+	m_yesButton = new wxButton(this, ID_BUTTON1, _("Oui"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
+	BoxSizer3->Add(m_yesButton, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+	m_noButton = new wxButton(this, ID_BUTTON2, _("Non"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
+	BoxSizer3->Add(m_noButton, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+	m_questionSizer->Add(BoxSizer3, 0, wxBOTTOM|wxLEFT|wxRIGHT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+	BoxSizer1->Add(m_questionSizer, 0, wxBOTTOM|wxLEFT|wxRIGHT|wxEXPAND, 5);
+	SetSizer(BoxSizer1);
+	SetSizer(BoxSizer1);
+	Layout();
+
+	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&DirFileDialog::onClickYesButton);
+	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&DirFileDialog::onClickNoButton);
+	//*)
+
+	m_questionSizer->Show(false);
+}
+
+DirFileDialog::~DirFileDialog()
+{
+	//(*Destroy(DirFileDialog)
+	//*)
+}
+
+void DirFileDialog::onClickYesButton(wxCommandEvent& event)
+{
+    respondToRecurse(true);
+}
+
+void DirFileDialog::onClickNoButton(wxCommandEvent& event)
+{
+    respondToRecurse(false);
+}
+
+void DirFileDialog::respondToRecurse(bool overwrite)
+{
+    if (NULL == m_data)
+        return;
+
+    AskForRecursiveOperationData* tmpData = m_data;
+    m_data = NULL;
+    tmpData->setOverWrite(overwrite);
+    tmpData->setRecursive(m_recurseCheckBox->IsChecked());
+
+	m_questionSizer->Show(false);
+	Fit();
+    tmpData->postThread();
+}
+
+void DirFileDialog::close()
+{
+    Hide();
+}
+
+void DirFileDialog::setRange(int range)
+{
+    m_gauge->SetRange(range);
+    if (!IsShown())
+        Show();
+}
+
+void DirFileDialog::update(int value)
+{
+    update(value, "");
+}
+
+void DirFileDialog::update(int value, const wxString& message)
+{
+    m_gauge->SetValue(value);
+    m_stateText->SetLabel(message);
+    //if (!IsShown())
+      //  Show();
+}
+
+void DirFileDialog::askQuestion(AskForRecursiveOperationData& data)
+{
+	m_questionSizer->Show(true);
+    m_questionText->SetLabel(data.getMessage());
+	Fit();
+	m_data = &data;
+}
+

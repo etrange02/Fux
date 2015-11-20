@@ -60,7 +60,7 @@ bool FuxApplication::OnInit()
     #endif
     {
         LogFileAppend(_("Démarrage de l'application, paramètre : ") + wxString(argc >= 2 ? argv[1] : _("NULL")));
-        m_window = new FuXFenetre(m_mediator, argc, argv);
+        m_window = new FuXFenetre(/*m_mediator, */argc, argv);
         m_window->Show(true);
 
         return true;

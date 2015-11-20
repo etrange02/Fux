@@ -1,7 +1,7 @@
 #ifndef DELETEFILE_H
 #define DELETEFILE_H
 
-#include "OperationFile.h"
+#include "tools/dir/operations/OperationFile.h"
 
 extern const wxEventType wxEVT_FUX_DIR_FILE_DELETE_DONE;
 

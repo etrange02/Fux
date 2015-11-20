@@ -17,7 +17,12 @@
 #include "ExplorerDriveManagers.h"
 #include "music/MusicFileReaderThread.h"
 #include "Mediator.h"
-#include "tools/dir/DirFileDialog.h"
+#include "DeletedLines.h"
+#include "tools/dir/interface/DirFileDialog.h"
+#include "tools/dir/interface/DirFileDialogEvent.h"
+#include "tools/dir/interface/RepeatedQuestionDialogEvent.h"
+#include "tools/dir/AskForRecursiveOperationData.h"
+#include "tools/dir/factory/DirFileDialogFactory.h"
 
 using namespace ::music;
 
@@ -67,6 +72,7 @@ BEGIN_EVENT_TABLE(FuXFenetre, wxFrame)
     EVT_TOOLS_DIR_FILE_CLOSE            (FuXFenetre::onDirFileDialogClose)
     EVT_TOOLS_DIR_FILE_RANGE            (FuXFenetre::onDirFileDialogRange)
     EVT_TOOLS_DIR_FILE_UPDATE           (FuXFenetre::onDirFileDialogUpdate)
+    EVT_TOOLS_DIR_FILE_ASK_REC_QUESTION (FuXFenetre::onDirFileRecurseQuestion)
 
     EVT_SERVEUR(wxID_ANY, FuXFenetre::EvtServeurAjout)
 
@@ -83,16 +89,20 @@ static wxMutex *s_mutexProtectionDemarrage = new wxMutex;
  * @param argc Entier indiquant la taille du tableau
  * @param argv Tableau de caractères
  */
-FuXFenetre::FuXFenetre(Mediator& mediator, int argc, wxChar **argv) :
+FuXFenetre::FuXFenetre(/*Mediator& mediator, */int argc, wxChar **argv) :
     wxFrame(NULL, wxID_ANY, _T("Fu(X) 2.0")),
-    m_mediator(mediator)
+    m_FenetreActuel(PRINCIPAL),
+    m_nouvelleFenetre(PRINCIPAL)//,
+    //m_mediator(mediator)
 {
     wxMutexLocker lock(*s_mutexProtectionDemarrage);
-    m_mediator.getDirFileDialogEvent().setDialog(this);
+
+    tools::dir::DirFileDialogFactory* factory = new tools::dir::DirFileDialogFactory(*this);
+    tools::dir::DirFileManager* manager = new tools::dir::DirFileManager(*factory);
+    m_mediator.setDirFileManager(manager);
+
     m_mediator.getExplorerDriveManagers().setDirFileManager(&m_mediator.getDirFileManager());
     m_mediator.getDirFileManager().start();
-    m_FenetreActuel = PRINCIPAL;
-    m_nouvelleFenetre = PRINCIPAL;
     sizerPrincipalH = new wxBoxSizer(wxHORIZONTAL);
     sizerGaucheV = new wxBoxSizer(wxVERTICAL);
     sizerPrincipalH->Add(sizerGaucheV, 0, wxALL | wxEXPAND, 0);
@@ -150,7 +160,8 @@ FuXFenetre::FuXFenetre(Mediator& mediator, int argc, wxChar **argv) :
  */
 FuXFenetre::~FuXFenetre()
 {
-    m_mediator.getDirFileManager().kill();
+    //m_mediator.getDirFileManager().kill();
+    m_mediator.setDirFileManager(NULL);
 
     LogFileAppend("FuXFenetre::~FuXFenetre - début");
     m_fenetresDetachables->Vider();
@@ -1135,7 +1146,8 @@ void FuXFenetre::onUpdateLine(wxCommandEvent& event)
 void FuXFenetre::onDeleteLine(wxCommandEvent& event)
 {
     m_playList->GetPlayListTableau()->onDeleteLine(event);
-    delete event.GetClientData();
+    DeletedLines* deletedLines = static_cast<DeletedLines*>(event.GetClientData());
+    delete deletedLines;
     event.SetClientData(NULL);
 }
 
@@ -1147,16 +1159,29 @@ void FuXFenetre::onEventUpdatePlaylistSearchDone(wxCommandEvent &WXUNUSED(event)
 void FuXFenetre::onDirFileDialogClose(wxCommandEvent& event)
 {
     m_mediator.getDirFileDialog().close();
+    event.StopPropagation();
 }
 
 void FuXFenetre::onDirFileDialogRange(wxCommandEvent& event)
 {
     m_mediator.getDirFileDialog().setRange(event.GetInt());
+    event.StopPropagation();
 }
 
 void FuXFenetre::onDirFileDialogUpdate(wxCommandEvent& event)
 {
     m_mediator.getDirFileDialog().update(event.GetInt(), event.GetString());
+    event.StopPropagation();
 }
 
+void FuXFenetre::onDirFileRecurseQuestion(wxCommandEvent& event)
+{
+    //wxLogMessage(wxString::Format("%p :", event.GetClientData()));
+    tools::dir::AskForRecursiveOperationData* data = static_cast<tools::dir::AskForRecursiveOperationData*>(event.GetClientData());
+
+    if (NULL == data)
+        return;
+
+    m_mediator.getDirFileDialog().askQuestion(*data);
+}
 

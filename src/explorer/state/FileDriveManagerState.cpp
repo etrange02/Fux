@@ -208,30 +208,50 @@ void FileDriveManagerState::createDir()
 {
     wxLogMessage("Must be implemented.");
     ///TODO (David): FileDriveManagerState::createDir
+    /*
+    - Sélectionner le répertoire où créer le dossier
+    - Pré-remplir le nom du dossier avec le nom du m3u
+    - Copier les titres sélectionnés dans le répertoire nouvellement créé
+    --> prendre en compte les lignes sélectionnées dans la colonne de gauche
+    */
 }
 
 void FileDriveManagerState::createContainerFile()
 {
     wxLogMessage("Must be implemented.");
     ///TODO (David): FileDriveManagerState::createContainerFile
+    /*
+    - Demander le nom du fichier m3u
+    - Création dans le répertoire habituel
+    - Le remplir avec les lignes sélectionnées dans la colonne de gauche.
+    */
 }
 
 void FileDriveManagerState::playItems()
 {
     wxLogMessage("Must be implemented.");
     ///TODO (David): FileDriveManagerState::playItems
+    /*
+    Ajouter ou lire ? les éléments sélectionnés
+    */
 }
 
 void FileDriveManagerState::rename()
 {
     wxLogMessage("Must be implemented.");
     ///TODO (David): FileDriveManagerState::rename
+    /*
+    Renommer le premier élément sélectionné
+    */
 }
 
 void FileDriveManagerState::createShortcut()
 {
     wxLogMessage("Must be implemented.");
     ///TODO (David): FileDriveManagerState::createShortcut
+    /*
+    Créer un raccourci. cf DirDriveManager::createShortcut()
+    */
 }
 
 dragAndDrop::TransitiveData* FileDriveManagerState::getDraggedElements()

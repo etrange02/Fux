@@ -1,21 +1,21 @@
-#ifndef COPYFILE_H
-#define COPYFILE_H
+#ifndef CUTFILE_H
+#define CUTFILE_H
 
-#include "ConflictingOperationFile.h"
+#include "tools/dir/operations/ConflictingOperationFile.h"
 
-extern const wxEventType wxEVT_FUX_DIR_FILE_COPY_DONE;
+extern const wxEventType wxEVT_FUX_DIR_FILE_CUT_DONE;
 
 namespace tools
 {
     namespace dir
     {
-        class CopyFile : public ConflictingOperationFile
+        class CutFile : public ConflictingOperationFile
         {
             public:
                 /** Default constructor */
-                CopyFile(DirFileManagerData& data, const wxString& source, const wxString& destination);
+                CutFile(DirFileManagerData& data, const wxString& source, const wxString& destination);
                 /** Default destructor */
-                virtual ~CopyFile();
+                virtual ~CutFile();
 
                 virtual wxString operationName() const;
 
@@ -28,4 +28,4 @@ namespace tools
     }
 }
 
-#endif // COPYFILE_H
+#endif // CUTFILE_H

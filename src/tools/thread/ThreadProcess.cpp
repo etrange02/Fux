@@ -87,9 +87,9 @@ wxThread::ExitCode ThreadProcess::Entry()
                 delete m_work;
                 m_work = NULL;
             }
-            catch(...)
+            catch (std::exception& e)
             {
-                wxLogMessage("erreur");
+                wxLogMessage(e.what());
             }
         }
 

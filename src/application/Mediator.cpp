@@ -9,24 +9,26 @@
 #include "Mediator.h"
 
 Mediator::Mediator() :
-    m_dirFileManager(m_dirFileDialogEvent)
+    m_dirFileManager(NULL),
+    m_dirFileDialog(NULL)
 {
     //ctor
 }
 
 Mediator::~Mediator()
 {
-    //dtor
+    delete m_dirFileManager;
+}
+
+void Mediator::setDirFileManager(tools::dir::DirFileManager* manager)
+{
+    delete m_dirFileManager;
+    m_dirFileManager = manager;
 }
 
 tools::dir::DirFileManager& Mediator::getDirFileManager()
 {
-    return m_dirFileManager;
-}
-
-tools::dir::DirFileDialogEvent& Mediator::getDirFileDialogEvent()
-{
-    return m_dirFileDialogEvent;
+    return *m_dirFileManager;
 }
 
 tools::dir::DirFileDialog& Mediator::getDirFileDialog()

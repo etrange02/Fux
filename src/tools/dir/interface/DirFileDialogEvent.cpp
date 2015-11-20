@@ -6,7 +6,7 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "DirFileDialogEvent.h"
+#include "tools/dir/interface/DirFileDialogEvent.h"
 #include <wx/time.h>
 
 #define TOOLS_DIR_FILE_DELTA_UPDATE 500
@@ -17,13 +17,7 @@ const wxEventType wxEVT_TOOLS_DIR_FILE_CLOSE  = wxNewEventType();
 const wxEventType wxEVT_TOOLS_DIR_FILE_RANGE  = wxNewEventType();
 const wxEventType wxEVT_TOOLS_DIR_FILE_UPDATE = wxNewEventType();
 
-DirFileDialogEvent::DirFileDialogEvent() :
-    DirFileUserInterface(),
-    m_dialog(NULL)
-{
-}
-
-DirFileDialogEvent::DirFileDialogEvent(wxWindow* dialog) :
+DirFileDialogEvent::DirFileDialogEvent(wxWindow& dialog) :
     DirFileUserInterface(),
     m_dialog(dialog)
 {
@@ -33,30 +27,17 @@ DirFileDialogEvent::~DirFileDialogEvent()
 {
 }
 
-void DirFileDialogEvent::setDialog(wxWindow* dialog)
-{
-    if (NULL == dialog)
-        return;
-    m_dialog = dialog;
-}
-
 void DirFileDialogEvent::close()
 {
-    if (NULL == m_dialog)
-        return;
-
     wxCommandEvent evt(wxEVT_TOOLS_DIR_FILE_CLOSE);
-    wxQueueEvent(m_dialog, evt.Clone());
+    wxQueueEvent(&m_dialog, evt.Clone());
 }
 
 void DirFileDialogEvent::setRange(int range)
 {
-    if (NULL == m_dialog)
-        return;
-
     wxCommandEvent evt(wxEVT_TOOLS_DIR_FILE_RANGE);
     evt.SetInt(range);
-    wxQueueEvent(m_dialog, evt.Clone());
+    wxQueueEvent(&m_dialog, evt.Clone());
 }
 
 void DirFileDialogEvent::update(int value)
@@ -66,9 +47,6 @@ void DirFileDialogEvent::update(int value)
 
 void DirFileDialogEvent::update(int value, const wxString& message)
 {
-    if (NULL == m_dialog)
-        return;
-
     wxLongLong now = wxGetUTCTimeMillis();
     if (now > m_lastUpdate + TOOLS_DIR_FILE_DELTA_UPDATE)
     {
@@ -76,7 +54,7 @@ void DirFileDialogEvent::update(int value, const wxString& message)
         wxCommandEvent evt(wxEVT_TOOLS_DIR_FILE_UPDATE);
         evt.SetInt(value);
         evt.SetString(message);
-        wxQueueEvent(m_dialog, evt.Clone());
+        wxQueueEvent(&m_dialog, evt.Clone());
     }
 }
 

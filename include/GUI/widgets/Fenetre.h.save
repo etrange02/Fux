@@ -31,11 +31,6 @@ namespace gui
         class MusiqueGraph;
     }
 }
-namespace tools {
-    namespace dir {
-        class DirFileDialog;
-    }
-}
 
 class Mediator;
 
@@ -106,6 +101,7 @@ class FuXFenetre: public wxFrame
         void onDirFileDialogClose (wxCommandEvent& event);
         void onDirFileDialogRange (wxCommandEvent& event);
         void onDirFileDialogUpdate(wxCommandEvent& event);
+        void onDir
 
     private :
 
@@ -153,7 +149,6 @@ class FuXFenetre: public wxFrame
         int m_nouvelleFenetre;
         gui::explorer::DriveManagersPanel* m_driveManagersPanel;
         Mediator& m_mediator;
-        tools::dir::DirFileDialog* m_dirFileDialog;
 
         DECLARE_EVENT_TABLE()
 };

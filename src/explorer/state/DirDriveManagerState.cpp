@@ -222,32 +222,69 @@ void DirDriveManagerState::moveElements(DriveManagerState& source)
 
 void DirDriveManagerState::createDir()
 {
-    wxLogMessage("createDir - Must be implemented.");
-    ///TODO: DirDriveManagerState::createDir
+    wxTextEntryDialog dialog(&m_data.getExplorerPanel(), _("Nom du nouveau dossier"), _("Création de dossier"));
+
+    if (dialog.ShowModal() == wxID_OK)
+    {
+        wxString dirname = m_data.getPath();
+        dirname << wxFileName::GetPathSeparator() << dialog.GetValue();
+
+        if (wxDirExists(dirname))
+        {
+            wxLogWarning(_("Dossier déjà existant, opération annulée"));
+            return;
+        }
+        if (!wxMkdir(dirname))
+            wxLogError(_("Création impossible"));
+        else
+        {
+            gui::explorer::ExplorerPanel& panel = m_data.getExplorerPanel();
+            panel.refreshListCtrl();
+            panel.getExplorerListCtrl().selectLine(dialog.GetValue());
+        }
+    }
 }
 
 void DirDriveManagerState::createContainerFile()
 {
     wxLogMessage("createContainerFile - Must be implemented.");
-    ///TODO: DirDriveManagerState::createContainerFile
+    ///TODO (David): DirDriveManagerState::createContainerFile
+    /*
+    - Demander le nom du fichier m3u, pré-remplir avec le nom du répertoire courant
+    - Créer le fichier m3u dans le répertoire habituel
+    - Demander de le charger dans l'autre écran
+    - Importer automatiquement les lignes sélectionnées dans la colonne de gauche. titres et sous-répertoires
+    */
 }
 
 void DirDriveManagerState::playItems()
 {
     wxLogMessage("playItems - Must be implemented.");
-    ///TODO: DirDriveManagerState::playItems
+    ///TODO (David): DirDriveManagerState::playItems
+    /*
+    - Charger les titres sélectionnés.
+    */
 }
 
 void DirDriveManagerState::rename()
 {
     wxLogMessage("rename - Must be implemented.");
-    ///TODO: DirDriveManagerState::rename
+    ///TODO (David): DirDriveManagerState::rename
+    /*
+    - Renommer le premier de la liste
+    - Modifier le texte de la ligne sélectionné
+    - Si fichier musical, passer par le thread de renommage et transmettre l'info au MusicManager
+    - Mettre à jour les m3u sous contrôle
+    */
 }
 
 void DirDriveManagerState::createShortcut()
 {
     wxLogMessage("createShortcut - Must be implemented.");
-    ///TODO: DirDriveManagerState::createShortcut
+    ///TODO (David): DirDriveManagerState::createShortcut
+    /*
+    - Créer un raccourci. Rennomer la class en tools...
+    */
 }
 
 dragAndDrop::TransitiveData* DirDriveManagerState::getDraggedElements()

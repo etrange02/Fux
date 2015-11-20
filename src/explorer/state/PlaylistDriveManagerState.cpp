@@ -151,12 +151,25 @@ void PlaylistDriveManagerState::createDir()
 {
     wxLogMessage("Must be implemented.");
     ///TODO (David): PlaylistDriveManagerState::createDir
+    /*
+    cf FileDriveManagerState::createDir
+    - Sélectionner le répertoire où créer le dossier
+    - (Pré-remplir le nom du dossier avec le nom du m3u)
+    - Copier les titres sélectionnés dans le répertoire nouvellement créé
+    --> prendre en compte les lignes sélectionnées dans la colonne de gauche
+    */
 }
 
 void PlaylistDriveManagerState::createContainerFile()
 {
     wxLogMessage("Must be implemented.");
     ///TODO (David): PlaylistDriveManagerState::createContainerFile
+    /*
+    cf FileDriveManagerState::createContainerFile
+    - Demander le nom du fichier m3u
+    - Création dans le répertoire habituel
+    - Le remplir avec les lignes sélectionnées dans la colonne de gauche.
+    */
 }
 
 void PlaylistDriveManagerState::playItems()

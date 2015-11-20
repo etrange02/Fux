@@ -6,8 +6,8 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "DeleteFile.h"
-#include "DirFileManagerData.h"
+#include "tools/dir/operations/DeleteFile.h"
+#include "tools/dir/DirFileManagerData.h"
 #include <wx/filename.h>
 
 using namespace tools::dir;

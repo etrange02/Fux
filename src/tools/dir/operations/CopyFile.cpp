@@ -6,7 +6,7 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "CopyFile.h"
+#include "tools/dir/operations/CopyFile.h"
 
 using namespace tools::dir;
 

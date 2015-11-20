@@ -2,13 +2,20 @@
 #define OPERATIONFILE_H
 
 #include <wx/wx.h>
-#include "IRunnable.h"
+#include "tools/thread/IRunnable.h"
+
+namespace tools {
+    namespace thread {
+        class ThreadProcess;
+    }
+}
 
 namespace tools
 {
     namespace dir
     {
         class DirFileManagerData;
+        class DirFileCommunicationFactory;
 
         class OperationFile : public tools::thread::IRunnable
         {
@@ -25,6 +32,9 @@ namespace tools
 
                 virtual wxString operationName() const;
 
+                void setThread(tools::thread::ThreadProcess* thread);
+                void setFactory(DirFileCommunicationFactory* factory);
+
             protected:
                 virtual void doOperation() = 0;
                 virtual void sendEvent()   = 0;
@@ -33,6 +43,8 @@ namespace tools
 
             private:
                 wxString m_source;
+                tools::thread::ThreadProcess* m_thread;
+                DirFileCommunicationFactory* m_factory;
         };
     }
 }

@@ -6,7 +6,7 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "CutFile.h"
+#include "tools/dir/operations/CutFile.h"
 
 using namespace tools::dir;
 
