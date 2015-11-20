@@ -30,6 +30,11 @@ BEGIN_EVENT_TABLE(DirFileDialog,wxDialog)
 	//*)
 END_EVENT_TABLE()
 
+/** @brief Constructor
+ *
+ * @param parent wxWindow*
+ *
+ */
 DirFileDialog::DirFileDialog(wxWindow* parent) :
     DirFileUserInterface(),
     RepeatedQuestionInterface(),
@@ -70,22 +75,42 @@ DirFileDialog::DirFileDialog(wxWindow* parent) :
 	m_questionSizer->Show(false);
 }
 
+/** @brief Destructor
+ */
 DirFileDialog::~DirFileDialog()
 {
 	//(*Destroy(DirFileDialog)
 	//*)
 }
 
+/** @brief Event - Yes clicked to overwrite file.
+ *
+ * @param event wxCommandEvent&
+ * @return void
+ *
+ */
 void DirFileDialog::onClickYesButton(wxCommandEvent& event)
 {
     respondToRecurse(true);
 }
 
+/** @brief Event - No clicked, no overwrite.
+ *
+ * @param event wxCommandEvent&
+ * @return void
+ *
+ */
 void DirFileDialog::onClickNoButton(wxCommandEvent& event)
 {
     respondToRecurse(false);
 }
 
+/** @brief Fills shared data with operation file thread and unlock it.
+ *
+ * @param overwrite if true, file is overwritten.
+ * @return void
+ *
+ */
 void DirFileDialog::respondToRecurse(bool overwrite)
 {
     if (NULL == m_data)
@@ -101,11 +126,22 @@ void DirFileDialog::respondToRecurse(bool overwrite)
     tmpData->postThread();
 }
 
+/** @brief Hide the dialog.
+ *
+ * @return void
+ *
+ */
 void DirFileDialog::close()
 {
     Hide();
 }
 
+/** @brief Modifies the max range of the progress bar. Show the dialog if hidden.
+ *
+ * @param range int
+ * @return void
+ *
+ */
 void DirFileDialog::setRange(int range)
 {
     m_gauge->SetRange(range);
@@ -113,11 +149,24 @@ void DirFileDialog::setRange(int range)
         Show();
 }
 
+/** @brief Modifies the current range of the progress bar.
+ *
+ * @param value int
+ * @return void
+ *
+ */
 void DirFileDialog::update(int value)
 {
     update(value, "");
 }
 
+/** @brief Modifies the current range of the progress bar and text of the operation in progress.
+ *
+ * @param value int
+ * @param message Current operation name
+ * @return void
+ *
+ */
 void DirFileDialog::update(int value, const wxString& message)
 {
     m_gauge->SetValue(value);
@@ -126,6 +175,12 @@ void DirFileDialog::update(int value, const wxString& message)
       //  Show();
 }
 
+/** @brief Shows a specific part of the dialog for operations conflicts
+ *
+ * @param data AskForRecursiveOperationData&
+ * @return void
+ *
+ */
 void DirFileDialog::askQuestion(AskForRecursiveOperationData& data)
 {
 	m_questionSizer->Show(true);

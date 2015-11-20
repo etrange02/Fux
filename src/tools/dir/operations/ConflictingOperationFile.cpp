@@ -48,7 +48,7 @@ DirFileManagerData& ConflictingOperationFile::getData()
     return m_data;
 }
 
-/** @brief
+/** @brief Makes the operation if possible.
  *
  * @return void
  *
@@ -61,7 +61,7 @@ void ConflictingOperationFile::process()
     bool canProcessOperation = true;
     if (wxFileExists(getDestination()))
     {
-        wxString message = _("Le fichier cible ") + getDestination() + _(" existe déjà. Voulez-vous le remplacer ?");
+        wxString message = _("Le fichier cible ") + getDestination() + _(" existe déjà.\nVoulez-vous le remplacer ?");
         canProcessOperation = askForRecursiveOperation(getData(), message);
     }
 
