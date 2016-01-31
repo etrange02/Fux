@@ -1,0 +1,21 @@
+source.kind sk
+target.kind tk
+
+if !copy && sk == tk
+--> move
+else
+--> copy
+
+move operation is a set of special cases.
+
+list -> list	//
+m3u  -> m3u	// move - done 
+dir  -> dir	// 
+
+copy operation is the simplest operation. Add filenames to the target at specific line
+list -> dir	// filename - done
+dir  -> list	// filename - done
+m3u  -> list	// filename - done
+list -> m3u	// filename - done
+m3u  -> dir	// filename - done
+dir  -> m3u	// filename - done

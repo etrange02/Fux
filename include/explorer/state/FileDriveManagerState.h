@@ -37,8 +37,6 @@ namespace explorer
             virtual void moveElements(DriveManagerState& source);
             virtual void insertElements(const wxArrayString& filenames, long position);
             virtual void copyElements(DriveManagerState& source);
-            virtual void createDir();
-            virtual void createContainerFile();
             virtual void playItems();
             virtual void rename();
             virtual void createShortcut();

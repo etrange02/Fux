@@ -110,11 +110,11 @@ void DefaultDriveManagerState::moveElements(DriveManagerState& source)
 
 }
 
-void DefaultDriveManagerState::createDir()
+void DefaultDriveManagerState::createDir(ExplorerManager& explorerManager)
 {
 }
 
-void DefaultDriveManagerState::createContainerFile()
+void DefaultDriveManagerState::createContainerFile(ExplorerManager& explorerManager)
 {
 }
 

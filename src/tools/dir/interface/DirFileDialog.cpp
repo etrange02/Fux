@@ -10,8 +10,13 @@
 #include "tools/dir/AskForRecursiveOperationData.h"
 
 //(*InternalHeaders(DirFileDialog)
+#include <wx/sizer.h>
+#include <wx/stattext.h>
+#include <wx/checkbox.h>
 #include <wx/intl.h>
+#include <wx/button.h>
 #include <wx/string.h>
+#include <wx/gauge.h>
 //*)
 
 using namespace tools::dir;
@@ -45,16 +50,16 @@ DirFileDialog::DirFileDialog(wxWindow* parent) :
 	wxBoxSizer* BoxSizer3;
 
 	Create(parent, wxID_ANY, _("Opération en cours"), wxDefaultPosition, wxDefaultSize, wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxCLOSE_BOX|wxDIALOG_NO_PARENT|wxMAXIMIZE_BOX|wxMINIMIZE_BOX|wxFRAME_SHAPED, _T("wxID_ANY"));
-	SetClientSize(wxSize(600,220));
+	SetClientSize(wxSize(586,327));
 	BoxSizer1 = new wxBoxSizer(wxVERTICAL);
 	m_stateText = new wxStaticText(this, ID_STATICTEXT1, _("Label"), wxDefaultPosition, wxSize(508,44), wxALIGN_LEFT, _T("ID_STATICTEXT1"));
 	BoxSizer1->Add(m_stateText, 1, wxALL|wxEXPAND, 5);
 	m_gauge = new wxGauge(this, ID_GAUGE1, 100, wxDefaultPosition, wxSize(508,32), 0, wxDefaultValidator, _T("ID_GAUGE1"));
 	BoxSizer1->Add(m_gauge, 0, wxBOTTOM|wxLEFT|wxRIGHT|wxEXPAND, 5);
 	m_questionSizer = new wxBoxSizer(wxVERTICAL);
-	m_questionText = new wxStaticText(this, ID_STATICTEXT2, _("Le fichier cible existe déjà. Souhaitez-vous le remplacer ?"), wxDefaultPosition, wxDefaultSize, wxALIGN_LEFT, _T("ID_STATICTEXT2"));
+	m_questionText = new wxStaticText(this, ID_STATICTEXT2, _("Label"), wxDefaultPosition, wxDefaultSize, wxALIGN_LEFT, _T("ID_STATICTEXT2"));
 	m_questionSizer->Add(m_questionText, 1, wxALL|wxEXPAND, 5);
-	m_recurseCheckBox = new wxCheckBox(this, ID_CHECKBOX1, _("Appliquer ce choix à tous les cas"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOX1"));
+	m_recurseCheckBox = new wxCheckBox(this, ID_CHECKBOX1, _("Ne plus poser cette question"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOX1"));
 	m_recurseCheckBox->SetValue(false);
 	m_questionSizer->Add(m_recurseCheckBox, 0, wxBOTTOM|wxLEFT|wxRIGHT|wxEXPAND, 5);
 	BoxSizer3 = new wxBoxSizer(wxHORIZONTAL);

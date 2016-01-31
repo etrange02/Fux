@@ -50,8 +50,8 @@ namespace explorer
             virtual void deleteSelectedItems() = 0;
             virtual void moveElements(DriveManagerState& source) = 0;
             virtual void copyElements(DriveManagerState& source) = 0;
-            virtual void createDir() = 0;
-            virtual void createContainerFile() = 0;
+            virtual void createContainerFile(ExplorerManager& explorerManager);
+            virtual void createDir(ExplorerManager& explorerManager);
             virtual void playItems() = 0;
             virtual void rename() = 0;
             virtual void createShortcut() = 0;

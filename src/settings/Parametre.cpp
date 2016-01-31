@@ -255,7 +255,7 @@ bool Parametre::isID3V2(const wxString &path)
 }
 
 /**
- * Indique si Fu(X) peut lire et gérer l'extension. La chaîne envoyée doit être en minuscule et ne pas contenir de '.'
+ * Indique si Fu(X) peut lire et gérer l'extension.
  * @param path l'extension qui doit être testé.
  * @return vrai si la lecture est possible
  */
@@ -268,7 +268,7 @@ bool Parametre::islisable(const wxString &path)
         if (m_extension.Item(i).IsSameAs(extension, false))
             return true;
         else
-            i++;
+            ++i;
     }
     return false;
 }
@@ -338,7 +338,7 @@ void Parametre::creerRepertoireParametre()
  * Créé la structure des fichiers de Fu(X) si celle-ce est inexistante à l'adresse donnée.
  * @param chemin le répertoire où la structure doit être créée.
  */
-void Parametre::creerRepertoireParametre(wxString chemin)
+void Parametre::creerRepertoireParametre(const wxString& chemin)
 {
     wxString repertoire;
 

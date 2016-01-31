@@ -153,6 +153,11 @@ void DirFileManager::createDeleteOperation(const wxString& source)
     addOperationFile(operation);
 }
 
+/** @brief Launches thread and sends events.
+ *
+ * @return void
+ *
+ */
 void DirFileManager::processOperation()
 {
     ++m_maxRange;
@@ -160,6 +165,11 @@ void DirFileManager::processOperation()
     runThread();
 }
 
+/** @brief Runs/Unlocks the thread if possible.
+ *
+ * @return void
+ *
+ */
 void DirFileManager::runThread()
 {
     wxMutexLocker locker(m_mutex);
@@ -167,6 +177,12 @@ void DirFileManager::runThread()
         m_thread.semaphorePost();
 }
 
+/** @brief Overloads. Called by thread to get another task.
+ *
+ * @param threadProcess tools::thread::ThreadProcess&
+ * @return void
+ *
+ */
 void DirFileManager::currentWorkFinished(tools::thread::ThreadProcess& threadProcess)
 {
     wxMutexLocker locker(m_mutex);

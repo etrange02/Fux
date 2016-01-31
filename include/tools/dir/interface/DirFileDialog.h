@@ -2,12 +2,12 @@
 #define DIRFILEDIALOG_H
 
 //(*Headers(DirFileDialog)
-#include <wx/sizer.h>
-#include <wx/stattext.h>
-#include <wx/checkbox.h>
-#include <wx/button.h>
 #include <wx/dialog.h>
-#include <wx/gauge.h>
+class wxGauge;
+class wxCheckBox;
+class wxStaticText;
+class wxBoxSizer;
+class wxButton;
 //*)
 #include "tools/dir/interface/DirFileUserInterface.h"
 #include "tools/dir/interface/RepeatedQuestionInterface.h"

@@ -103,7 +103,7 @@ void MusicList::parseDirectoryWithoutRecurs(const wxString& dirname)
 
     while (cont)
     {
-        if (Parametre::Get()->islisable(temp.AfterLast('.').Lower()))
+        if (Parametre::get().islisable(temp))
             addFileLine(dirname + wxFileName::GetPathSeparator() + temp);
         cont = dir.GetNext(&temp);
     }
@@ -140,11 +140,11 @@ void MusicList::addUnknownKindLine(const wxString& path)
 {
     if (wxFileExists(path))
     {
-        if (Parametre::Get()->isContainerFile(path.AfterLast('.')))
+        if (Parametre::Get()->isContainerFile(path))
         {
             importFileContent(path);
         }
-        else if (Parametre::Get()->islisable(path.AfterLast('.')))
+        else if (Parametre::Get()->islisable(path))
         {
             addFileLine(path);
         }
@@ -367,7 +367,7 @@ void MusicList::insertLines(const wxArrayString& filenameArray, long position)
 
     for (wxArrayString::const_iterator iter = filenameArray.begin(); iter != filenameArray.end(); ++iter)
     {
-        if (Parametre::Get()->islisable(iter->AfterLast('.').Lower()))
+        if (Parametre::Get()->islisable(*iter))
         {
             addFileLine(*iter, insertionLine);
             ++insertionLine;

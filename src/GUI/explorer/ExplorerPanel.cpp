@@ -248,12 +248,12 @@ void ExplorerPanel::enableMenuElements()
 
 void ExplorerPanel::onMenuCreateDir(wxCommandEvent& WXUNUSED(event))
 {
-    m_explorerManager->getState().createDir();
+    m_explorerManager->getState().createDir(*m_explorerManager);
 }
 
 void ExplorerPanel::onMenuCreateContainerFile(wxCommandEvent& WXUNUSED(event))
 {
-    m_explorerManager->getState().createContainerFile();
+    m_explorerManager->getState().createContainerFile(*m_explorerManager);
 }
 
 void ExplorerPanel::onMenuCut(wxCommandEvent& WXUNUSED(event))

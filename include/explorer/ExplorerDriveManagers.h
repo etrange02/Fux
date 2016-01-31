@@ -43,10 +43,11 @@ namespace explorer
             tools::dir::DirFileManager* getDirFileManager();
             void setDirFileManager(tools::dir::DirFileManager* dirFileManager);
 
+            ExplorerManager& getOppositeExplorerManager(explorer::ExplorerManager& explorerManager);
+
         protected:
             ExplorerManager& getControllerOf(gui::explorer::ExplorerPanel& explorerPanel);
             ExplorerManager& getOppositeExplorerManager(gui::explorer::ExplorerPanel& explorerPanel);
-            ExplorerManager& getOppositeExplorerManager(explorer::ExplorerManager& explorerManager);
 
         private:
 

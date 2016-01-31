@@ -192,6 +192,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/GUI/explorer/DriveManagersPanel.h" />
 		<Unit filename="include/GUI/explorer/ExplorerListCtrl.h" />
 		<Unit filename="include/GUI/explorer/ExplorerPanel.h" />
+		<Unit filename="include/GUI/explorer/state/DirCreationDialog.h" />
 		<Unit filename="include/GUI/graph/MusiqueGraph.h" />
 		<Unit filename="include/GUI/musiclist/PlayList.h" />
 		<Unit filename="include/GUI/musiclist/PlayListTableau.h" />
@@ -271,30 +272,19 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/tools/dir/AskForRecursiveOperationData.h" />
 		<Unit filename="include/tools/dir/DirFileManager.h" />
 		<Unit filename="include/tools/dir/DirFileManagerData.h" />
-		<Unit filename="include/tools/dir/factory/DialogDirFileDialogFactory.h.save" />
 		<Unit filename="include/tools/dir/factory/DirFileCommunicationFactory.h" />
-		<Unit filename="include/tools/dir/factory/DirFileCommunicationFactory.h.save" />
 		<Unit filename="include/tools/dir/factory/DirFileDialogFactory.h" />
 		<Unit filename="include/tools/dir/interface/DirFileDialog.h" />
-		<Unit filename="include/tools/dir/interface/DirFileDialog.h.save" />
 		<Unit filename="include/tools/dir/interface/DirFileDialogEvent.h" />
-		<Unit filename="include/tools/dir/interface/DirFileDialogEvent.h.save" />
 		<Unit filename="include/tools/dir/interface/DirFileUserInterface.h" />
-		<Unit filename="include/tools/dir/interface/DirFileUserInterface.h.save" />
 		<Unit filename="include/tools/dir/interface/Events.h" />
-		<Unit filename="include/tools/dir/interface/Events.h.save" />
 		<Unit filename="include/tools/dir/interface/RepeatedQuestionDialogEvent.h" />
 		<Unit filename="include/tools/dir/interface/RepeatedQuestionInterface.h" />
 		<Unit filename="include/tools/dir/operations/ConflictingOperationFile.h" />
-		<Unit filename="include/tools/dir/operations/ConflictingOperationFile.h.save" />
 		<Unit filename="include/tools/dir/operations/CopyFile.h" />
-		<Unit filename="include/tools/dir/operations/CopyFile.h.save" />
 		<Unit filename="include/tools/dir/operations/CutFile.h" />
-		<Unit filename="include/tools/dir/operations/CutFile.h.save" />
 		<Unit filename="include/tools/dir/operations/DeleteFile.h" />
-		<Unit filename="include/tools/dir/operations/DeleteFile.h.save" />
 		<Unit filename="include/tools/dir/operations/OperationFile.h" />
-		<Unit filename="include/tools/dir/operations/OperationFile.h.save" />
 		<Unit filename="include/tools/dir_traverser/ISearchTraversable.h" />
 		<Unit filename="include/tools/dir_traverser/Search.h" />
 		<Unit filename="include/tools/dir_traverser/TraverserCopieDossier.h" />
@@ -322,13 +312,13 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="ressoures/Ressource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
-		<Unit filename="ressoures/wxsmith/tools/dir/interface/DirFileDialog.wxs" />
 		<Unit filename="src/GUI/dialogs/DialogEnregistreM3U.cpp" />
 		<Unit filename="src/GUI/dialogs/DialogTagMP3.cpp" />
 		<Unit filename="src/GUI/dialogs/DialogTagMP3Info.cpp" />
 		<Unit filename="src/GUI/explorer/DriveManagersPanel.cpp" />
 		<Unit filename="src/GUI/explorer/ExplorerListCtrl.cpp" />
 		<Unit filename="src/GUI/explorer/ExplorerPanel.cpp" />
+		<Unit filename="src/GUI/explorer/state/DirCreationDialog.cpp" />
 		<Unit filename="src/GUI/graph/MusiqueGraph.cpp" />
 		<Unit filename="src/GUI/musiclist/PlayList.cpp" />
 		<Unit filename="src/GUI/musiclist/PlayListTableau.cpp" />
@@ -418,24 +408,15 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/tools/dir/AskForRecursiveOperationData.cpp" />
 		<Unit filename="src/tools/dir/DirFileManager.cpp" />
 		<Unit filename="src/tools/dir/DirFileManagerData.cpp" />
-		<Unit filename="src/tools/dir/factory/DialogDirFileDialogFactory.cpp.save" />
 		<Unit filename="src/tools/dir/factory/DirFileDialogFactory.cpp" />
-		<Unit filename="src/tools/dir/factory/DirFileDialogFactory.cpp.save" />
 		<Unit filename="src/tools/dir/interface/DirFileDialog.cpp" />
-		<Unit filename="src/tools/dir/interface/DirFileDialog.cpp.save" />
 		<Unit filename="src/tools/dir/interface/DirFileDialogEvent.cpp" />
-		<Unit filename="src/tools/dir/interface/DirFileDialogEvent.cpp.save" />
 		<Unit filename="src/tools/dir/interface/RepeatedQuestionDialogEvent.cpp" />
 		<Unit filename="src/tools/dir/operations/ConflictingOperationFile.cpp" />
-		<Unit filename="src/tools/dir/operations/ConflictingOperationFile.cpp.save" />
 		<Unit filename="src/tools/dir/operations/CopyFile.cpp" />
-		<Unit filename="src/tools/dir/operations/CopyFile.cpp.save" />
 		<Unit filename="src/tools/dir/operations/CutFile.cpp" />
-		<Unit filename="src/tools/dir/operations/CutFile.cpp.save" />
 		<Unit filename="src/tools/dir/operations/DeleteFile.cpp" />
-		<Unit filename="src/tools/dir/operations/DeleteFile.cpp.save" />
 		<Unit filename="src/tools/dir/operations/OperationFile.cpp" />
-		<Unit filename="src/tools/dir/operations/OperationFile.cpp.save" />
 		<Unit filename="src/tools/dir_traverser/Search.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserCopieDossier.cpp" />
 		<Unit filename="src/tools/dir_traverser/TraverserCopieFichier.cpp" />
@@ -455,6 +436,8 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/tools/thread/ThreadFactory.cpp" />
 		<Unit filename="src/tools/thread/ThreadManager.cpp" />
 		<Unit filename="src/tools/thread/ThreadProcess.cpp" />
+		<Unit filename="wxsmith/DirCreationDialog.wxs" />
+		<Unit filename="wxsmith/DirFileDialog.wxs" />
 		<Extensions>
 			<code_completion />
 			<envvars set="david" />
@@ -474,6 +457,13 @@ IMPORTANT, A FAIRE !!!
 				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
 				<Code header_guard="VERSION_H" namespace="AutoVersion" prefix="" />
 			</AutoVersioning>
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="src\application\Application.cpp" main="-- None --" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxDialog wxs="wxsmith/DirCreationDialog.wxs" src="src\GUI\explorer\state\DirCreationDialog.cpp" hdr="include\GUI\explorer\state\DirCreationDialog.h" fwddecl="1" i18n="1" name="DirCreationDialog" language="CPP" />
+					<wxDialog wxs="wxsmith/DirFileDialog.wxs" src="src\tools\dir\interface\DirFileDialog.cpp" hdr="include\tools\dir\interface\DirFileDialog.h" fwddecl="1" i18n="1" name="DirFileDialog" language="CPP" />
+				</resources>
+			</wxsmith>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

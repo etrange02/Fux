@@ -198,9 +198,9 @@ void DirDriveManagerState::copyElements(DriveManagerState& source)
         return;
     for (wxArrayString::iterator iter = filenames.begin(); iter != filenames.end(); ++iter)
     {
-        wxString& source = *iter;
-        wxString destination = destinationPath + wxFileName::GetPathSeparator() + wxFileName::FileName(source).GetFullName();
-        dirFileManager->createCopyOperation(source, destination);
+        wxString& sourceName = *iter;
+        wxString destination = destinationPath + wxFileName::GetPathSeparator() + wxFileName::FileName(sourceName).GetFullName();
+        dirFileManager->createCopyOperation(sourceName, destination);
     }
 }
 
@@ -214,13 +214,13 @@ void DirDriveManagerState::moveElements(DriveManagerState& source)
         return;
     for (wxArrayString::iterator iter = filenames.begin(); iter != filenames.end(); ++iter)
     {
-        wxString& source = *iter;
-        wxString destination = destinationPath + wxFileName::GetPathSeparator() + wxFileName::FileName(source).GetFullName();
-        dirFileManager->createCutOperation(source, destination);
+        wxString& sourceName = *iter;
+        wxString destination = destinationPath + wxFileName::GetPathSeparator() + wxFileName::FileName(sourceName).GetFullName();
+        dirFileManager->createCutOperation(sourceName, destination);
     }
 }
 
-void DirDriveManagerState::createDir()
+void DirDriveManagerState::createDir(ExplorerManager& explorerManager)
 {
     wxTextEntryDialog dialog(&m_data.getExplorerPanel(), _("Nom du nouveau dossier"), _("Création de dossier"));
 
@@ -243,18 +243,6 @@ void DirDriveManagerState::createDir()
             panel.getExplorerListCtrl().selectLine(dialog.GetValue());
         }
     }
-}
-
-void DirDriveManagerState::createContainerFile()
-{
-    wxLogMessage("createContainerFile - Must be implemented.");
-    ///TODO (David): DirDriveManagerState::createContainerFile
-    /*
-    - Demander le nom du fichier m3u, pré-remplir avec le nom du répertoire courant
-    - Créer le fichier m3u dans le répertoire habituel
-    - Demander de le charger dans l'autre écran
-    - Importer automatiquement les lignes sélectionnées dans la colonne de gauche. titres et sous-répertoires
-    */
 }
 
 void DirDriveManagerState::playItems()

@@ -93,11 +93,11 @@ void FuxApplication::EnvoiStringAutreInstance()
 
     if (connexion)
     {
-        for (int i = 1; i<argc; i++)
+        for (int i = 1; i<argc; ++i)
         {
             chaine = argv[i];
             chaine.Normalize(wxPATH_NORM_SHORTCUT);
-            if (Parametre::Get()->islisable(chaine.GetFullPath().AfterLast('.').Lower()) || chaine.GetFullPath().AfterLast('.').Lower().IsSameAs(_T("m3u")))
+            if (Parametre::get().islisable(chaine.GetFullPath()) || Parametre::get().isContainerFile(chaine.GetFullPath()))
             {
                 if (!connexion->Execute(chaine.GetFullPath()))
                 {

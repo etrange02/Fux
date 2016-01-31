@@ -1,6 +1,3 @@
-// *** ADDED BY HEADER FIXUP ***
-#include <string>
-// *** END ***
 /***************************************************************
  * Name:      OS_Win.cpp
  * Purpose:   Code for Fu(X) 2.0

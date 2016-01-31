@@ -122,7 +122,7 @@ FuXFenetre::FuXFenetre(/*Mediator& mediator, */int argc, wxChar **argv) :
     {
         wxFileName fichierMem(argv[1]);
         fichierMem.Normalize(wxPATH_NORM_SHORTCUT);
-        if (fichierMem.GetExt().Lower() == _T("m3u"))
+        if (Parametre::get().isContainerFile(fichierMem.GetExt()))
         {
             wxTextFile test(fichierMem.GetFullPath()); test.Open();
             if (test.IsOpened())
@@ -136,7 +136,7 @@ FuXFenetre::FuXFenetre(/*Mediator& mediator, */int argc, wxChar **argv) :
                 test.Close();
             }
         }
-        else if (Parametre::Get()->islisable(fichierMem.GetExt().Lower()))
+        else if (Parametre::Get()->islisable(fichierMem.GetExt()))
         {
             MusicManagerSwitcher::get().playMusicThenParse(fichierMem.GetFullPath());
         }
@@ -1143,6 +1143,12 @@ void FuXFenetre::onUpdateLine(wxCommandEvent& event)
     m_playList->GetPlayListTableau()->onUpdateLine(event);
 }
 
+/** @brief Event - Deletes a line in the playlist GUI.
+ *
+ * @param event wxCommandEvent&
+ * @return void
+ *
+ */
 void FuXFenetre::onDeleteLine(wxCommandEvent& event)
 {
     m_playList->GetPlayListTableau()->onDeleteLine(event);
@@ -1151,29 +1157,59 @@ void FuXFenetre::onDeleteLine(wxCommandEvent& event)
     event.SetClientData(NULL);
 }
 
+/** @brief Event - A search has been made and computed. Refresh lists.
+ *
+ * @param WXUNUSED(event wxCommandEvent&
+ * @return void
+ *
+ */
 void FuXFenetre::onEventUpdatePlaylistSearchDone(wxCommandEvent &WXUNUSED(event))
 {
     m_playList->GetPlayListTableau()->updateLines();
 }
 
+/** @brief Event - Close the dialog of copy/cut/delete operation.
+ *
+ * @param event wxCommandEvent&
+ * @return void
+ *
+ */
 void FuXFenetre::onDirFileDialogClose(wxCommandEvent& event)
 {
     m_mediator.getDirFileDialog().close();
     event.StopPropagation();
 }
 
+/** @brief Event - Modifies the max range of the gauge of the copy/cut dialog.
+ *
+ * @param event wxCommandEvent&
+ * @return void
+ *
+ */
 void FuXFenetre::onDirFileDialogRange(wxCommandEvent& event)
 {
     m_mediator.getDirFileDialog().setRange(event.GetInt());
     event.StopPropagation();
 }
 
+/** @brief Event - Modifies the range of the gauge of the copy/cut dialog and update the message.
+ *
+ * @param event wxCommandEvent&
+ * @return void
+ *
+ */
 void FuXFenetre::onDirFileDialogUpdate(wxCommandEvent& event)
 {
     m_mediator.getDirFileDialog().update(event.GetInt(), event.GetString());
     event.StopPropagation();
 }
 
+/** @brief Event - In case of conflict while a copy/cut operation, show a message in the dialog.
+ *
+ * @param event wxCommandEvent&
+ * @return void
+ *
+ */
 void FuXFenetre::onDirFileRecurseQuestion(wxCommandEvent& event)
 {
     //wxLogMessage(wxString::Format("%p :", event.GetClientData()));

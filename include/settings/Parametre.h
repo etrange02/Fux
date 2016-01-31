@@ -1,17 +1,17 @@
 #ifndef PARAMETRE_H
 #define PARAMETRE_H
 
-#include "../Define.h"
-#include "../gui/graph/MusiqueGraph.h"
-//#include "../music/Musique.h"
-#include "../music/MusicManager.h"
-#include "../gui/widgets/SliderSon.h"
+#include "Define.h"
 #include <wx/wx.h>
 #include <wx/stdpaths.h>
 #include <wx/textfile.h>
 #include <wx/filename.h>
 #include <wx/xml/xml.h>
-#include "Couleur.h"
+#include "gui/graph/MusiqueGraph.h"
+//#include "music/Musique.h"
+#include "music/MusicManager.h"
+#include "gui/widgets/SliderSon.h"
+#include "settings/Couleur.h"
 
 class Parametre
 {
@@ -45,7 +45,7 @@ class Parametre
         bool isID3V2(const wxString& path);
         bool islisable(const wxString& path);
         void creerRepertoireParametre();
-        void creerRepertoireParametre(wxString);
+        void creerRepertoireParametre(const wxString& path);
 
         bool isContainerFile(const wxString& extension);
 

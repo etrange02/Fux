@@ -65,10 +65,9 @@ void ThreadManager::initialize()
 {
     int CPUCount = std::max(wxThread::GetCPUCount()-1, 1);
 
-    ThreadProcess *tp = NULL;
     for (int i = 0; i < CPUCount ; ++i)
     {
-        tp = ThreadFactory::createThreadProcess(this);
+        ThreadProcess *tp = ThreadFactory::createThreadProcess(this);
         m_workers.push_back(tp);
         tp->Create();
         tp->Run();

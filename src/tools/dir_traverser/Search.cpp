@@ -25,7 +25,7 @@ Search::Search(ISearchTraversable *searchTraversable): m_searchTraversable(searc
  */
 wxDirTraverseResult Search::OnFile(const wxString &filename)
 {
-    if (Parametre::Get()->islisable(filename.AfterLast('.')))
+    if (Parametre::Get()->islisable(filename))
         m_searchTraversable->addFileLine(filename);
     return wxDIR_CONTINUE;
 }
