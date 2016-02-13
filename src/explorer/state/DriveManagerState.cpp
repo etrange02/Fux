@@ -95,7 +95,7 @@ wxArrayString DriveManagerState::getSelectedItemsPosition()
 
 void DriveManagerState::createContainerFile(ExplorerManager& explorerManager)
 {
-    wxTextEntryDialog dialog(&m_data.getExplorerPanel(), _("Saisissez le nom du fichier m3u :"), wxGetTextFromUserPromptStr, m_data.getPath().AfterLast('\\'));
+    wxTextEntryDialog dialog(&m_data.getExplorerPanel(), _("Saisissez le nom du fichier m3u :"), wxGetTextFromUserPromptStr, m_data.getPath().AfterLast(wxFileName::GetPathSeparator()));
 
     if (dialog.ShowModal() != wxID_OK)
         return;

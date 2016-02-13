@@ -2825,7 +2825,7 @@
 	"gui/tools/DroppedMarkedLineListCtrl.h"
 	"tools/dnd/dataObjects/TransitiveData.h"
 
-1454268814 source:c:\workspace\projects\fux\src\explorer\state\drivemanagerstate.cpp
+1455365848 source:c:\workspace\projects\fux\src\explorer\state\drivemanagerstate.cpp
 	"explorer/state/DriveManagerState.h"
 	"explorer/ExplorerManagerData.h"
 	"explorer/ExplorerDriveManagers.h"
@@ -3591,11 +3591,11 @@
 
 1447692929 source:c:\workspace\projects\fux\ressoures\ressource.rc
 
-1454277876 source:c:\workspace\projects\fux\src\gui\explorer\state\dircreationdialog.cpp
+1455365942 source:c:\workspace\projects\fux\src\gui\explorer\state\dircreationdialog.cpp
 	"GUI/explorer/state/DirCreationDialog.h"
-	<wx/valtext.h>
 	<wx/dirdlg.h>
 	<wx/filename.h>
+	"tools/validator/FileValidator.h"
 	<wx/sizer.h>
 	<wx/stattext.h>
 	<wx/textctrl.h>
@@ -3606,4 +3606,10 @@
 
 1454277900 c:\workspace\projects\fux\include\gui\explorer\state\dircreationdialog.h
 	<wx/dialog.h>
+
+1455365912 c:\workspace\projects\fux\include\tools\validator\filevalidator.h
+	<wx/valtext.h>
+
+1455365919 source:c:\workspace\projects\fux\src\tools\validator\filevalidator.cpp
+	"FileValidator.h"
 

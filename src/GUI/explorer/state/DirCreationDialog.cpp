@@ -7,9 +7,9 @@
  * License:
  **************************************************************/
 #include "GUI/explorer/state/DirCreationDialog.h"
-#include <wx/valtext.h>
 #include <wx/dirdlg.h>
 #include <wx/filename.h>
+#include "tools/validator/FileValidator.h"
 
 //(*InternalHeaders(DirCreationDialog)
 #include <wx/sizer.h>
@@ -57,7 +57,7 @@ DirCreationDialog::DirCreationDialog(wxWindow* parent,wxWindowID id,const wxPoin
 	m_dirSelectionButton = new wxButton(this, ID_DIR_CREATION_DIALOG_OPEN_BUTTON, _("..."), wxDefaultPosition, wxDefaultSize, wxBU_EXACTFIT, wxDefaultValidator, _T("ID_DIR_CREATION_DIALOG_OPEN_BUTTON"));
 	BoxSizer2->Add(m_dirSelectionButton, 0, wxLEFT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	BoxSizer1->Add(BoxSizer2, 0, wxALL|wxEXPAND, 5);
-	m_dirNameCtrl = new wxTextCtrl(this, ID_DIR_CREATION_DIALOG_DIR_NAME, wxEmptyString, wxDefaultPosition, wxSize(273,20), 0, wxTextValidator(wxFILTER_ALPHANUMERIC, &m_dirName), _T("ID_DIR_CREATION_DIALOG_DIR_NAME"));
+	m_dirNameCtrl = new wxTextCtrl(this, ID_DIR_CREATION_DIALOG_DIR_NAME, wxEmptyString, wxDefaultPosition, wxSize(273,20), 0, tools::validator::FileValidator(&m_dirName), _T("ID_DIR_CREATION_DIALOG_DIR_NAME"));
 	m_dirNameCtrl->SetToolTip(_("Nom du nouveau répertoire"));
 	BoxSizer1->Add(m_dirNameCtrl, 0, wxBOTTOM|wxLEFT|wxRIGHT|wxEXPAND, 5);
 	BoxSizer4 = new wxBoxSizer(wxVERTICAL);

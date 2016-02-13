@@ -34,7 +34,7 @@
 			<object class="sizeritem">
 				<object class="wxTextCtrl" name="ID_DIR_CREATION_DIALOG_DIR_NAME" variable="m_dirNameCtrl" member="yes">
 					<size>273,20</size>
-					<validator>wxTextValidator(wxFILTER__ALPHANUMERIC, &amp;m__dirName)</validator>
+					<validator>tools::validator::FileValidator(&amp;m__dirName)</validator>
 					<tooltip>Nom du nouveau répertoire</tooltip>
 				</object>
 				<flag>wxBOTTOM|wxLEFT|wxRIGHT|wxEXPAND</flag>
