@@ -16,8 +16,7 @@ FileValidator::FileValidator(wxString* valPtr) :
     #ifdef __WXMSW__
     SetCharExcludes(_T("\\/:*?\"<>|")); // Windows
     #else
-    ///TODO: Find file forgotten characters
-    SetCharExcludes(_T("\/:*?\"<>|")); // Linux/Mac ?
+    SetCharExcludes(_T("/")); // Linux/Mac ?
     #endif
 }
 

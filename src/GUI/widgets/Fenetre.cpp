@@ -102,7 +102,7 @@ FuXFenetre::FuXFenetre(/*Mediator& mediator, */int argc, wxChar **argv) :
     m_mediator.setDirFileManager(manager);
 
     m_mediator.getExplorerDriveManagers().setDirFileManager(&m_mediator.getDirFileManager());
-    m_mediator.getDirFileManager().start();
+    //m_mediator.getDirFileManager().start();
     sizerPrincipalH = new wxBoxSizer(wxHORIZONTAL);
     sizerGaucheV = new wxBoxSizer(wxVERTICAL);
     sizerPrincipalH->Add(sizerGaucheV, 0, wxALL | wxEXPAND, 0);

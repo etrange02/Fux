@@ -13,7 +13,7 @@
 #include "explorer/ExplorerManagerData.h"
 #include "explorer/ExplorerDriveManagers.h"
 #include "music/MusicManagerSwitcher.h"
-#include "tools/thread/ThreadManager.h"
+#include "application/StandardThreadManager.h"
 #include "tools/thread/ThreadFactory.h"
 #include "tools/dnd/dataObjects/DirTransitiveData.h"
 #include "tools/dnd/targets/DirTransitiveDataTarget.h"
@@ -140,7 +140,7 @@ void DirDriveManagerState::openElement()
 
 void DirDriveManagerState::deleteSelectedItems()
 {
-    tools::thread::ThreadManager::get().addRunnable(tools::thread::ThreadFactory::createFileDeletionThread(getSelectedItems()));
+    thread::StandardThreadManager::get().addRunnable(tools::thread::ThreadFactory::createFileDeletionThread(getSelectedItems()));
 }
 
 bool DirDriveManagerState::canCopyTo(const DriveManagerState& other) const

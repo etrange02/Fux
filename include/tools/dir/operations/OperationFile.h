@@ -2,7 +2,7 @@
 #define OPERATIONFILE_H
 
 #include <wx/wx.h>
-#include "tools/thread/IRunnable.h"
+#include "tools/thread/Runnable.h"
 
 namespace tools {
     namespace thread {
@@ -17,7 +17,7 @@ namespace tools
         class DirFileManagerData;
         class DirFileCommunicationFactory;
 
-        class OperationFile : public tools::thread::IRunnable
+        class OperationFile : public tools::thread::Runnable
         {
             public:
                 /** Default constructor */

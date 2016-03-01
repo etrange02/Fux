@@ -14,14 +14,14 @@ namespace tools
     {
         class ThreadProcess;
         class IThreadManager;
-        class IRunnable;
+        class Runnable;
 
         class ThreadFactory
         {
             public:
                 /** Creates a ThreadProcess */
                 static ThreadProcess* createThreadProcess(IThreadManager* threadManager);
-                static IRunnable* createFileDeletionThread(const wxArrayString& files);
+                static Runnable* createFileDeletionThread(const wxArrayString& files);
         };
     }
 }

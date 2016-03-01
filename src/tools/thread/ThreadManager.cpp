@@ -13,174 +13,66 @@
 
 using namespace tools::thread;
 
-static ThreadManager* s_threadManager = NULL;
-
-/** @brief
- *
- * @param obj ThreadProcess*
- * @return bool
- *
- */
-bool DeleteAll(ThreadProcess *obj)
-{
-    obj->Delete();
-    obj->semaphorePost();
-    obj->Wait();
-    delete obj;
-    return true;
-};
-
 /** @brief Constructor
  */
-ThreadManager::ThreadManager() : IThreadManager()
+ThreadManager::ThreadManager() : AbstractThreadManager()
 {
-    initialize();
+    start();
 }
 
 /** @brief Destructor
  */
 ThreadManager::~ThreadManager()
 {
-    clear();
+    kill();
 }
 
-/** @brief Singleton
+/** @brief Returns a number of thread to create.
  *
- * @return ThreadManager&
+ * @return unsigned int
  *
  */
-ThreadManager& ThreadManager::get()
+unsigned int ThreadManager::getThreadCount()
 {
-    if (s_threadManager == NULL)
-        s_threadManager = new ThreadManager;
-    return *s_threadManager;
+    return std::max(wxThread::GetCPUCount()-1, 1);
 }
 
-/** @brief Initializes thread workers
- * The number of workers depends on the number of cores present on the system
+/** @brief
+ *
+ * @param Runnable&
  * @return void
  *
  */
-void ThreadManager::initialize()
+void ThreadManager::doBeforeAddingWork(Runnable&)
 {
-    int CPUCount = std::max(wxThread::GetCPUCount()-1, 1);
-
-    for (int i = 0; i < CPUCount ; ++i)
-    {
-        ThreadProcess *tp = ThreadFactory::createThreadProcess(this);
-        m_workers.push_back(tp);
-        tp->Create();
-        tp->Run();
-    }
 }
 
-/** @brief Deletes the instance
+/** @brief
  *
+ * @param Runnable&
  * @return void
  *
  */
-void ThreadManager::deleteInstance()
+void ThreadManager::doAfterAddingWork(Runnable&)
 {
-    delete s_threadManager;
-    s_threadManager = NULL;
 }
 
-/** @brief Clears work queue and workers
+/** @brief
  *
+ * @param Runnable&
  * @return void
  *
  */
-void ThreadManager::clear()
+void ThreadManager::doBeforeProcessingWork(Runnable&, tools::thread::ThreadProcess&)
 {
-    clearWorks();
-    clearWorkers();
 }
 
-/** @brief Stops workers (threads)
+/** @brief
  *
  * @return void
  *
  */
-void ThreadManager::clearWorkers()
+void ThreadManager::doOnNoWork()
 {
-    std::remove_if(m_workers.begin(), m_workers.end(), DeleteAll);
-}
-
-/** @brief Empties the work queue
- *
- * @return void
- *
- */
-void ThreadManager::clearWorks()
-{
-    wxMutexLocker locker(m_mutex);
-    while (!m_works.empty())
-        delete m_works.pop_front();
-}
-
-/** @brief Insert a work in the queue and awake a worker if one is sleeping
- *
- * @param runnable a work
- * @return void
- *
- */
-void ThreadManager::addRunnable(IRunnable* runnable)
-{
-    #if DEBUG
-    runnable->process();
-    delete runnable;
-    #else // DEBUG
-    m_works.push(runnable);
-
-    activateAWorker();
-    #endif // DEBUG
-}
-
-/** @brief Called by workers when work is done.
- * If there is work in the queue, the thread take the first one (the oldest) ans process it. Otherwise it sleeps.
- * @param threadProcess the finisher worker
- * @return void
- *
- */
-void ThreadManager::currentWorkFinished(ThreadProcess& threadProcess)
-{
-    wxMutexLocker locker(m_mutex);
-    if (m_works.empty())
-    {
-        return;
-    }
-
-    threadProcess.setWork(m_works.pop_front());
-    threadProcess.semaphorePost();
-}
-
-/** @brief Awakes a worker if one is sleeping
- *
- * @return void
- *
- */
-void ThreadManager::activateAWorker()
-{
-    wxMutexLocker locker(m_mutex);
-    ThreadProcess* tp = getAvailableWorker();
-    if (NULL != tp)
-    {
-        tp->semaphorePost();
-    }
-}
-
-/** @brief Gets a sleeping worker
- * A worker is sleeping when it does not have work object
- * @return ThreadProcess*
- *
- */
-ThreadProcess* ThreadManager::getAvailableWorker()
-{
-    for (std::vector<ThreadProcess*>::iterator iter = m_workers.begin(); iter != m_workers.end(); ++iter)
-    {
-        if (!(*iter)->hasWork())
-            return *iter;
-    }
-    return NULL;
 }
 

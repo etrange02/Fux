@@ -3,13 +3,13 @@
 
 #include <wx/wx.h>
 #include <wx/event.h>
-#include "IRunnable.h"
+#include "Runnable.h"
 
 namespace tools
 {
     namespace thread
     {
-        class FileDeletionThread : public tools::thread::IRunnable
+        class FileDeletionThread : public tools::thread::Runnable
         {
             public:
                 /** Default constructor */

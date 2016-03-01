@@ -10,7 +10,7 @@
 #include <ctime>
 #include <algorithm>
 #include <wx/dir.h>
-#include <tools/thread/ThreadManager.h>
+#include <application/StandardThreadManager.h>
 #include <predicates/findPosition.h>
 #include <predicates/findSharedMusicContainer.h>
 #include <music/Factory.h>
@@ -335,7 +335,7 @@ void MusicManager::moveIntTitlesAt(const wxArrayString& titles, size_t position)
     wxArrayString::const_iterator positionIterator = titles.begin();
     long pos = 0;
     (*positionIterator).ToLong(&pos);
-    size_t i = 0;
+    size_t i = 0; // size_t
 
     for (MusicIterator iter = oldMusics->begin(); iter != oldMusics->end(); ++iter)
     {
@@ -439,7 +439,7 @@ void MusicManager::moveIntTitlesAtInSearch(const wxArrayString& WXUNUSED(titles)
  * @return void
  * @deprecated
  */
-void MusicManager::moveTitlesAtInSearch(const MusicCollection& musics, unsigned long position)
+void MusicManager::moveTitlesAtInSearch(const MusicCollection&, unsigned long)
 {
 }
 
@@ -961,7 +961,7 @@ void MusicManager::updateMusicContent(const size_t position, Music* musicData, M
     if (musicToModify.get() == getMusic()) // on modifie le titre courant
         updateCurrentMusic(musicData);
     else // on modifie un autre titre
-        tools::thread::ThreadManager::get().addRunnable(Factory::createMusicFileWriterThread(musicData, musicToModify, getParent()));
+        thread::StandardThreadManager::get().addRunnable(Factory::createMusicFileWriterThread(musicData, musicToModify, getParent()));
 }
 
 /** @brief Updates the content of the current music file played.

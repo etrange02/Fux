@@ -3,9 +3,14 @@
 
 #include <wx/wx.h>
 #include "DirFileManagerData.h"
-#include "tools/thread/IThreadManager.h"
-#include "tools/thread/ThreadProcess.h"
-#include "ThreadSafeQueue.h"
+#include "tools/thread/AbstractThreadManager.h"
+
+namespace tools {
+    namespace thread {
+        class Runnable;
+        class ThreadProcess;
+    }
+}
 
 namespace tools
 {
@@ -15,7 +20,7 @@ namespace tools
         class DirFileUserInterface;
         class DirFileCommunicationFactory;
 
-        class DirFileManager : public tools::thread::IThreadManager
+        class DirFileManager : public tools::thread::AbstractThreadManager
         {
             public:
                 /** Default constructor */
@@ -26,30 +31,29 @@ namespace tools
                 void createCopyOperation  (const wxString& source, const wxString& destination);
                 void createCutOperation   (const wxString& source, const wxString& destination);
                 void createDeleteOperation(const wxString& source);
-                void kill();
-                void start();
 
-                virtual void currentWorkFinished(tools::thread::ThreadProcess& threadProcess);
+            protected:
+                virtual unsigned int getThreadCount();
+                virtual void doBeforeAddingWork(tools::thread::Runnable& work);
+                virtual void doAfterAddingWork(tools::thread::Runnable& work);
+                virtual void doBeforeProcessingWork(tools::thread::Runnable& work, tools::thread::ThreadProcess& threadProcess);
+                virtual void doOnNoWork();
+                /** Awakes a worker if one is sleeping */
+                virtual void activateAWorker();
 
             private:
-                void addOperationFile(OperationFile* operation);
                 DirFileManagerData& getCopyData();
                 DirFileManagerData& getCutData();
                 DirFileManagerData& getDeleteData();
-                void processOperation();
-                void runThread();
 
             private:
-                std::ThreadSafeQueue<OperationFile*> m_operations;
                 DirFileManagerData m_copyData;
                 DirFileManagerData m_cutData;
                 DirFileManagerData m_deleteData;
                 DirFileCommunicationFactory& m_factory;
                 DirFileUserInterface* m_interface;
-                tools::thread::ThreadProcess m_thread;
                 int m_range;
                 int m_maxRange;
-                wxMutex m_mutex;
         };
     }
 }

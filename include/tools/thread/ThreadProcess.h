@@ -4,7 +4,7 @@
 #include <wx/wx.h>
 #include <wx/thread.h>
 #include "IThreadManager.h"
-#include "IRunnable.h"
+#include "Runnable.h"
 
 /** @brief Thread worker
  * Thread worker. The thread safety is based on semaphore (count)
@@ -26,7 +26,7 @@
                 virtual ~ThreadProcess();
 
                 /** Sets a work (or task) */
-                void setWork(IRunnable* work);
+                void setWork(Runnable* work);
                 /** Tests the presence of a work */
                 bool hasWork() const;
                 /** Thread safety. Make the thread waiting if necessary */
@@ -41,7 +41,7 @@
             private:
                 wxSemaphore m_semaphore;
                 IThreadManager* m_threadManager;
-                IRunnable* m_work;
+                Runnable* m_work;
         };
     }
 }

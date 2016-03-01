@@ -46,6 +46,10 @@ IMPORTANT, A FAIRE !!!
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="include/tools/validator" />
+					<Add directory="include/application" />
+					<Add directory="include/tools/std" />
+					<Add directory="include/tools/thread" />
+					<Add directory="include/toold/thread" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -72,6 +76,10 @@ IMPORTANT, A FAIRE !!!
 					<Add option="-g" />
 					<Add option="-DDEBUG" />
 					<Add directory="include/tools/validator" />
+					<Add directory="include/application" />
+					<Add directory="include/tools/std" />
+					<Add directory="include/tools/thread" />
+					<Add directory="include/toold/thread" />
 				</Compiler>
 			</Target>
 			<Target title="WinReleaseDBG">
@@ -85,6 +93,10 @@ IMPORTANT, A FAIRE !!!
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include/tools/validator" />
+					<Add directory="include/application" />
+					<Add directory="include/tools/std" />
+					<Add directory="include/tools/thread" />
+					<Add directory="include/toold/thread" />
 				</Compiler>
 			</Target>
 			<Environment>
@@ -216,6 +228,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/GUI/widgets/SliderSon.h" />
 		<Unit filename="include/application/Application.h" />
 		<Unit filename="include/application/Mediator.h" />
+		<Unit filename="include/application/StandardThreadManager.h" />
 		<Unit filename="include/constants/enums.h" />
 		<Unit filename="include/constants/events.h" />
 		<Unit filename="include/constants/ids.h" />
@@ -305,10 +318,13 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/tools/dnd/targets/DirTransitiveDataTarget.h" />
 		<Unit filename="include/tools/dnd/targets/PlaylistTransitiveDataTarget.h" />
 		<Unit filename="include/tools/dnd/targets/TransitiveDataTarget.h" />
+		<Unit filename="include/tools/stl/ThreadSafePriorityQueue.h" />
 		<Unit filename="include/tools/stl/ThreadSafeQueue.h" />
+		<Unit filename="include/tools/thread/AbstractThreadManager.h" />
 		<Unit filename="include/tools/thread/FileDeletionThread.h" />
 		<Unit filename="include/tools/thread/IRunnable.h" />
 		<Unit filename="include/tools/thread/IThreadManager.h" />
+		<Unit filename="include/tools/thread/Runnable.h" />
 		<Unit filename="include/tools/thread/ThreadFactory.h" />
 		<Unit filename="include/tools/thread/ThreadManager.h" />
 		<Unit filename="include/tools/thread/ThreadProcess.h" />
@@ -342,6 +358,7 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/GUI/widgets/SliderSon.cpp" />
 		<Unit filename="src/application/Application.cpp" />
 		<Unit filename="src/application/Mediator.cpp" />
+		<Unit filename="src/application/StandardThreadManager.cpp" />
 		<Unit filename="src/db/BDD.cpp" />
 		<Unit filename="src/db/BDDRequete.cpp" />
 		<Unit filename="src/db/BDDThread.cpp" />
@@ -437,7 +454,9 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/tools/dnd/targets/DirTransitiveDataTarget.cpp" />
 		<Unit filename="src/tools/dnd/targets/PlaylistTransitiveDataTarget.cpp" />
 		<Unit filename="src/tools/dnd/targets/TransitiveDataTarget.cpp" />
+		<Unit filename="src/tools/thread/AbstractThreadManager.cpp" />
 		<Unit filename="src/tools/thread/FileDeletionThread.cpp" />
+		<Unit filename="src/tools/thread/Runnable.cpp" />
 		<Unit filename="src/tools/thread/ThreadFactory.cpp" />
 		<Unit filename="src/tools/thread/ThreadManager.cpp" />
 		<Unit filename="src/tools/thread/ThreadProcess.cpp" />

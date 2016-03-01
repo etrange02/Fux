@@ -35,7 +35,7 @@ ThreadProcess::~ThreadProcess()
  * @return void
  *
  */
-void ThreadProcess::setWork(IRunnable* work)
+void ThreadProcess::setWork(Runnable* work)
 {
     m_work = work;
 }

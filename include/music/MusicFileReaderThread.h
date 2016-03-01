@@ -3,7 +3,7 @@
 
 #include <wx/wx.h>
 #include <wx/event.h>
-#include "IRunnable.h"
+#include "Runnable.h"
 #include "MusicFileReader.h"
 
 extern const wxEventType wxEVT_FUX_MUSICFILE_READER_THREAD;
@@ -12,7 +12,7 @@ namespace music
 {
     /** @brief Delegate for thread processing
      */
-    class MusicFileReaderThread : public tools::thread::IRunnable
+    class MusicFileReaderThread : public tools::thread::Runnable
     {
         public:
             /** Default constructor */

@@ -19,13 +19,14 @@ using namespace tools::dir;
 /** @brief Constructor.
  */
 DirFileManager::DirFileManager(DirFileCommunicationFactory& factory) :
+    AbstractThreadManager(),
     m_factory(factory),
     m_interface(NULL),
-    m_thread(this),
     m_range(0),
     m_maxRange(0)
 {
     m_interface = factory.createDirFileUser();
+    start();
 }
 
 /** @brief Destructor.
@@ -35,54 +36,6 @@ DirFileManager::~DirFileManager()
     kill();
     delete m_interface;
     delete &m_factory;
-}
-
-/** @brief Thread starting
- *
- * @return void
- *
- */
-void DirFileManager::start()
-{
-    #ifndef DEBUG
-    m_thread.Create();
-    m_thread.Run();
-    #endif
-}
-
-/** @brief Thread destruction.
- *
- * @return void
- *
- */
-void DirFileManager::kill()
-{
-    if (!m_thread.IsAlive())
-        return;
-
-    #ifndef DEBUG
-    wxMutexLocker locker(m_mutex);
-    m_thread.semaphorePost();
-    m_thread.Delete();
-    #endif
-}
-
-/** @brief Appends an operationFile
- *
- * @param operation OperationFile*
- * @return void
- *
- */
-void DirFileManager::addOperationFile(OperationFile* operation)
-{
-    if (NULL == operation)
-        return;
-    #if DEBUG
-    operation->process();
-    #else // DEBUG
-    m_operations.push(operation);
-    processOperation();
-    #endif // DEBUG
 }
 
 /** @brief Gets data relative to Copy operation.
@@ -125,7 +78,7 @@ DirFileManagerData& DirFileManager::getDeleteData()
 void DirFileManager::createCopyOperation(const wxString& source, const wxString& destination)
 {
     OperationFile* operation = new CopyFile(getCopyData(), source, destination);
-    addOperationFile(operation);
+    addRunnable(operation);
 }
 
 /** @brief Appends a cut operation. It is similar to a file renaming.
@@ -138,7 +91,7 @@ void DirFileManager::createCopyOperation(const wxString& source, const wxString&
 void DirFileManager::createCutOperation(const wxString& source, const wxString& destination)
 {
     OperationFile* operation = new CutFile(getCutData(), source, destination);
-    addOperationFile(operation);
+    addRunnable(operation);
 }
 
 /** @brief Appends a delete operation.
@@ -150,19 +103,7 @@ void DirFileManager::createCutOperation(const wxString& source, const wxString& 
 void DirFileManager::createDeleteOperation(const wxString& source)
 {
     OperationFile* operation = new DeleteFile(getDeleteData(), source);
-    addOperationFile(operation);
-}
-
-/** @brief Launches thread and sends events.
- *
- * @return void
- *
- */
-void DirFileManager::processOperation()
-{
-    ++m_maxRange;
-    m_interface->setRange(m_maxRange);
-    runThread();
+    addRunnable(operation);
 }
 
 /** @brief Runs/Unlocks the thread if possible.
@@ -170,39 +111,78 @@ void DirFileManager::processOperation()
  * @return void
  *
  */
-void DirFileManager::runThread()
+void DirFileManager::activateAWorker()
 {
-    wxMutexLocker locker(m_mutex);
+    wxMutexLocker locker(getMutex());
     if (/*m_operations.size() <= 1 && */m_maxRange <= 1)
-        m_thread.semaphorePost();
+    {
+        tools::thread::ThreadProcess* tp = getAvailableWorker();
+        if (NULL != tp)
+        {
+            tp->semaphorePost();
+        }
+    }
 }
 
-/** @brief Overloads. Called by thread to get another task.
+/** @brief
  *
+ * @return unsigned int
+ *
+ */
+unsigned int DirFileManager::getThreadCount()
+{
+    return 1;
+}
+
+/** @brief
+ *
+ * @param tools::thread::Runnable&
+ * @return void
+ *
+ */
+void DirFileManager::doBeforeAddingWork(tools::thread::Runnable&)
+{
+
+}
+
+/** @brief
+ *
+ * @param tools::thread::Runnable&
+ * @return void
+ *
+ */
+void DirFileManager::doAfterAddingWork(tools::thread::Runnable&)
+{
+    ++m_maxRange;
+    m_interface->setRange(m_maxRange);
+}
+
+/** @brief
+ *
+ * @param work tools::thread::Runnable&
  * @param threadProcess tools::thread::ThreadProcess&
  * @return void
  *
  */
-void DirFileManager::currentWorkFinished(tools::thread::ThreadProcess& threadProcess)
+void DirFileManager::doBeforeProcessingWork(tools::thread::Runnable& work, tools::thread::ThreadProcess& threadProcess)
 {
-    wxMutexLocker locker(m_mutex);
-    if (m_operations.empty())
-    {
-        m_interface->close();
-        m_maxRange = 0;
-        m_range = 0;
-        return;
-    }
-    OperationFile* op = m_operations.pop_front();
-    if (op)
-    {
-        m_interface->update(m_range, op->operationName());
-        ++m_range;
-        op->setThread(&threadProcess);
-        op->setFactory(&m_factory);
-    }
-    threadProcess.setWork(op);
-    threadProcess.semaphorePost();
+    OperationFile& op = static_cast<OperationFile&>(work);
+
+    m_interface->update(m_range, op.operationName());
+    ++m_range;
+    op.setThread(&threadProcess);
+    op.setFactory(&m_factory);
 }
 
+/** @brief
+ *
+ * @return void
+ *
+ */
+void DirFileManager::doOnNoWork()
+{
+    m_interface->close();
+    m_maxRange = 0;
+    m_range = 0;
+}
 

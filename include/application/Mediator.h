@@ -21,8 +21,8 @@ class Mediator
 
     protected:
     private:
-        tools::dir::DirFileDialog m_dirFileDialog;
         tools::dir::DirFileManager* m_dirFileManager;
+        tools::dir::DirFileDialog m_dirFileDialog;
         explorer::ExplorerDriveManagers m_explorerDriveManagers;
 };
 

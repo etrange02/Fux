@@ -1,9 +1,7 @@
 #ifndef THREADMANAGER_H
 #define THREADMANAGER_H
 
-#include <vector>
-#include "IThreadManager.h"
-#include "ThreadSafeQueue.h"
+#include "AbstractThreadManager.h"
 
 
 /** @brief Manages thread on different cores
@@ -11,52 +9,26 @@
  * @class tools::thread::ThreadManager
  */
 
-
 namespace tools
 {
     namespace thread
     {
         class ThreadProcess;
 
-        class ThreadManager : public tools::thread::IThreadManager
+        class ThreadManager : public tools::thread::AbstractThreadManager
         {
             public:
-                /** Singleton */
-                static ThreadManager& get();
-
-                /** Insert a work in the queue and awake a worker if one is sleeping */
-                void addRunnable(IRunnable* runnable);
-
-                /** Called by workers when work is done */
-                virtual void currentWorkFinished(ThreadProcess& threadProcess);
-
-                /** Deletes the instance */
-                void deleteInstance();
-
-            protected:
-            private:
                 /** Default constructor */
                 ThreadManager();
                 /** Default destructor */
                 virtual ~ThreadManager();
 
-                /** Initializes thread workers */
-                void initialize();
-                /** Clears work queue and workers */
-                void clear();
-                /** Stops workers (threads) */
-                void clearWorkers();
-                /** Empties the work queue */
-                void clearWorks();
-                /** Awakes a worker if one is sleeping */
-                void activateAWorker();
-                /** Gets a sleeping worker */
-                ThreadProcess* getAvailableWorker();
-
-            private:
-                std::ThreadSafeQueue<IRunnable*> m_works; //!< Member variable "m_works"
-                std::vector<ThreadProcess*> m_workers;
-                wxMutex m_mutex;
+            protected:
+                virtual unsigned int getThreadCount();
+                virtual void doBeforeAddingWork(Runnable& work);
+                virtual void doAfterAddingWork(Runnable& work);
+                virtual void doBeforeProcessingWork(Runnable& work, tools::thread::ThreadProcess& threadProcess);
+                virtual void doOnNoWork();
         };
     }
 }

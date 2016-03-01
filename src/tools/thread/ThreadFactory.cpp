@@ -24,7 +24,7 @@ ThreadProcess* ThreadFactory::createThreadProcess(IThreadManager* threadManager)
     return new ThreadProcess(threadManager);
 }
 
-IRunnable* ThreadFactory::createFileDeletionThread(const wxArrayString& files)
+Runnable* ThreadFactory::createFileDeletionThread(const wxArrayString& files)
 {
     return new FileDeletionThread(files);
 }

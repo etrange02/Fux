@@ -19,7 +19,7 @@ using namespace tools::dir;
 /** @brief Constructor.
  */
 OperationFile::OperationFile(const wxString& source) :
-    tools::thread::IRunnable(),
+    tools::thread::Runnable(),
     m_source(source),
     m_thread(NULL),
     m_factory(NULL)

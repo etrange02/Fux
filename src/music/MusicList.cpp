@@ -7,7 +7,7 @@
  * License:
  **************************************************************/
 #include "music/MusicList.h"
-#include "tools/thread/ThreadManager.h"
+#include "application/StandardThreadManager.h"
 #include "music/Factory.h"
 #include "settings/Parametre.h"
 #include "predicates/findSharedMusicContainer.h"
@@ -164,7 +164,7 @@ void MusicList::addFileLine(const wxString& path)
     std::shared_ptr<Music> sp(music);
     m_musicList->push_back(sp);
     wxWindow *parent = isSendEventWhenAdding() ? m_parent : NULL;
-    tools::thread::ThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(sp, parent));
+    thread::StandardThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(sp, parent));
 }
 
 /** @brief Adds a music file in the list at position.
@@ -180,7 +180,7 @@ void MusicList::addFileLine(const wxString& path, const long position)
     std::shared_ptr<Music> sp(music);
     m_musicList->insert(m_musicList->begin() + position, sp);
     wxWindow *parent = isSendEventWhenAdding() ? m_parent : NULL;
-    tools::thread::ThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(sp, parent));
+    thread::StandardThreadManager::get().addRunnable(Factory::createMusicFileReaderThread(sp, parent));
 }
 
 /** @brief Parse the directory
