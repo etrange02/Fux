@@ -1972,17 +1972,17 @@
 	"tools/dir/interface/DirFileDialog.h"
 	"explorer/ExplorerDriveManagers.h"
 
-1456864585 c:\workspace\projects\fux\include\tools\dir\dirfilemanager.h
+1457370958 c:\workspace\projects\fux\include\tools\dir\dirfilemanager.h
 	<wx/wx.h>
 	"DirFileManagerData.h"
-	"tools/thread/AbstractThreadManager.h"
+	"tools/thread/manager/SingleThreadManager.h"
 
-1438960355 c:\workspace\projects\fux\include\tools\dir\dirfilemanagerdata.h
+1456954092 c:\workspace\projects\fux\include\tools\dir\dirfilemanagerdata.h
 
 1456789216 c:\workspace\projects\fux\include\tools\thread\threadmanager.h
 	"AbstractThreadManager.h"
 
-1456875856 c:\workspace\projects\fux\include\tools\thread\ithreadmanager.h
+1456954093 c:\workspace\projects\fux\include\tools\thread\ithreadmanager.h
 	"ThreadProcess.h"
 
 1456439837 c:\workspace\projects\fux\include\tools\thread\threadprocess.h
@@ -1991,10 +1991,10 @@
 	"IThreadManager.h"
 	"Runnable.h"
 
-1456440138 c:\workspace\projects\fux\include\tools\thread\runnable.h
+1456954093 c:\workspace\projects\fux\include\tools\thread\runnable.h
 	"IRunnable.h"
 
-1432359214 c:\workspace\projects\fux\include\tools\thread\irunnable.h
+1456954093 c:\workspace\projects\fux\include\tools\thread\irunnable.h
 
 1456525338 c:\workspace\projects\fux\include\tools\stl\threadsafepriorityqueue.h
 	<queue>
@@ -2138,12 +2138,12 @@
 	"tools/dir_traverser/ISearchTraversable.h"
 	"tools/dir_traverser/Search.h"
 
-1429304804 c:\workspace\projects\fux\include\music\music.h
+1456957121 c:\workspace\projects\fux\include\music\music.h
 	<wx/wx.h>
 	<wx/image.h>
 	"IMusic.h"
 
-1432559664 c:\workspace\projects\fux\include\music\imusic.h
+1456957087 c:\workspace\projects\fux\include\music\imusic.h
 	<wx/wx.h>
 	<wx/image.h>
 
@@ -2166,15 +2166,15 @@
 	<wx/wx.h>
 	<wx/thread.h>
 
-1452368662 c:\workspace\projects\fux\include\tools\dir\interface\dirfiledialog.h
+1456954092 c:\workspace\projects\fux\include\tools\dir\interface\dirfiledialog.h
 	<wx/dialog.h>
 	"tools/dir/interface/DirFileUserInterface.h"
 	"tools/dir/interface/RepeatedQuestionInterface.h"
 
-1443897868 c:\workspace\projects\fux\include\tools\dir\interface\dirfileuserinterface.h
+1456954092 c:\workspace\projects\fux\include\tools\dir\interface\dirfileuserinterface.h
 	<wx/wx.h>
 
-1445810279 c:\workspace\projects\fux\include\tools\dir\interface\repeatedquestioninterface.h
+1456954093 c:\workspace\projects\fux\include\tools\dir\interface\repeatedquestioninterface.h
 
 1451227704 c:\workspace\projects\fux\include\explorer\explorerdrivemanagers.h
 	<vector>
@@ -2198,7 +2198,7 @@
 	"Define.h"
 	"gui/explorer/ExplorerPanel.h"
 
-1428904143 c:\workspace\projects\fux\include\explorer\drivemanagerlistelement.h
+1456954092 c:\workspace\projects\fux\include\explorer\drivemanagerlistelement.h
 	<wx/wx.h>
 
 1438517115 c:\workspace\projects\fux\include\gui\explorer\explorerpanel.h
@@ -2685,11 +2685,11 @@
 1447748271 source:c:\workspace\projects\fux\src\application\mediator.cpp
 	"Mediator.h"
 
-1456431002 source:c:\workspace\projects\fux\src\application\standardthreadmanager.cpp
+1457340204 source:c:\workspace\projects\fux\src\application\standardthreadmanager.cpp
 	"StandardThreadManager.h"
 
-1456431030 c:\workspace\projects\fux\include\application\standardthreadmanager.h
-	"tools/thread/ThreadManager.h"
+1457340192 c:\workspace\projects\fux\include\application\standardthreadmanager.h
+	"tools/thread/manager/MultiThreadManager.h"
 
 1439748046 source:c:\workspace\projects\fux\src\db\bdd.cpp
 	"wx/wxprec.h"
@@ -2817,7 +2817,7 @@
 	"AbstractMusicManagerDecorator.h"
 	"MusicManager.h"
 
-1456439837 c:\workspace\projects\fux\include\tools\thread\threadfactory.h
+1456954093 c:\workspace\projects\fux\include\tools\thread\threadfactory.h
 	<wx/wx.h>
 
 1444595069 c:\workspace\projects\fux\include\tools\dnd\dataobjects\dirtransitivedata.h
@@ -3086,7 +3086,7 @@
 	"predicates/findMenuElementById.h"
 	"Parametre.h"
 
-1428860294 c:\workspace\projects\fux\include\tools\tools.h
+1456954092 c:\workspace\projects\fux\include\tools\tools.h
 	"wx/wx.h"
 
 1428959579 c:\workspace\projects\fux\include\predicates\findpathmenuelement.h
@@ -3125,7 +3125,7 @@
 	<wx/button.h>
 	<wx/string.h>
 
-1455365912 c:\workspace\projects\fux\include\tools\validator\filevalidator.h
+1456953103 c:\workspace\projects\fux\include\tools\validator\filevalidator.h
 	<wx/valtext.h>
 
 1442353320 source:c:\workspace\projects\fux\src\gui\graph\musiquegraph.cpp
@@ -3219,26 +3219,26 @@
 	"tools/dir/AskForRecursiveOperationData.h"
 	"tools/dir/factory/DirFileDialogFactory.h"
 
-1445595297 c:\workspace\projects\fux\include\tools\dir\interface\dirfiledialogevent.h
+1456954092 c:\workspace\projects\fux\include\tools\dir\interface\dirfiledialogevent.h
 	<wx/wx.h>
 	"tools/dir/interface/DirFileUserInterface.h"
 	"tools/dir/interface/Events.h"
 
 1445809189 c:\workspace\projects\fux\include\tools\dir\interface\events.h
 
-1445811483 c:\workspace\projects\fux\include\tools\dir\interface\repeatedquestiondialogevent.h
+1456954092 c:\workspace\projects\fux\include\tools\dir\interface\repeatedquestiondialogevent.h
 	<wx/wx.h>
 	"tools/dir/interface/RepeatedQuestionInterface.h"
 	"tools/dir/interface/Events.h"
 
-1445934120 c:\workspace\projects\fux\include\tools\dir\askforrecursiveoperationdata.h
+1456954092 c:\workspace\projects\fux\include\tools\dir\askforrecursiveoperationdata.h
 	<wx/wx.h>
 
-1445621910 c:\workspace\projects\fux\include\tools\dir\factory\dirfiledialogfactory.h
+1456954092 c:\workspace\projects\fux\include\tools\dir\factory\dirfiledialogfactory.h
 	<wx/wx.h>
 	"tools/dir/factory/DirFileCommunicationFactory.h"
 
-1445847311 c:\workspace\projects\fux\include\tools\dir\factory\dirfilecommunicationfactory.h
+1456954092 c:\workspace\projects\fux\include\tools\dir\factory\dirfilecommunicationfactory.h
 
 1420393027 source:c:\workspace\projects\fux\src\gui\widgets\fenetredetachable.cpp
 	"../../../include/gui/widgets/FenetreDetachable.h"
@@ -3264,13 +3264,13 @@
 1432845618 source:c:\workspace\projects\fux\src\music\factory.cpp
 	"music/Factory.h"
 
-1432559664 source:c:\workspace\projects\fux\src\music\imusic.cpp
+1456957074 source:c:\workspace\projects\fux\src\music\imusic.cpp
 	"music/IMusic.h"
 
 1429305461 source:c:\workspace\projects\fux\src\music\imusicmanager.cpp
 	"IMusicManager.h"
 
-1429305486 source:c:\workspace\projects\fux\src\music\music.cpp
+1456957112 source:c:\workspace\projects\fux\src\music\music.cpp
 	"music/Music.h"
 
 1433974421 source:c:\workspace\projects\fux\src\music\musicfilereader.cpp
@@ -3378,7 +3378,7 @@
 	"tools/dir/AskForRecursiveOperationData.h"
 	"tools/thread/ThreadProcess.h"
 
-1456876095 source:c:\workspace\projects\fux\src\tools\dir\dirfilemanager.cpp
+1457370958 source:c:\workspace\projects\fux\src\tools\dir\dirfilemanager.cpp
 	"tools/dir/DirFileManager.h"
 	"tools/dir/operations/CopyFile.h"
 	"tools/dir/operations/CutFile.h"
@@ -3387,20 +3387,20 @@
 	"tools/dir/interface/DirFileUserInterface.h"
 	"tools/dir/factory/DirFileCommunicationFactory.h"
 
-1445507592 c:\workspace\projects\fux\include\tools\dir\operations\copyfile.h
+1456954093 c:\workspace\projects\fux\include\tools\dir\operations\copyfile.h
 	"tools/dir/operations/ConflictingOperationFile.h"
 
-1445507592 c:\workspace\projects\fux\include\tools\dir\operations\conflictingoperationfile.h
+1456954092 c:\workspace\projects\fux\include\tools\dir\operations\conflictingoperationfile.h
 	"tools/dir/operations/OperationFile.h"
 
-1456439837 c:\workspace\projects\fux\include\tools\dir\operations\operationfile.h
+1456954093 c:\workspace\projects\fux\include\tools\dir\operations\operationfile.h
 	<wx/wx.h>
 	"tools/thread/Runnable.h"
 
-1445507592 c:\workspace\projects\fux\include\tools\dir\operations\cutfile.h
+1456954093 c:\workspace\projects\fux\include\tools\dir\operations\cutfile.h
 	"tools/dir/operations/ConflictingOperationFile.h"
 
-1445507592 c:\workspace\projects\fux\include\tools\dir\operations\deletefile.h
+1456954093 c:\workspace\projects\fux\include\tools\dir\operations\deletefile.h
 	"tools/dir/operations/OperationFile.h"
 
 1445507653 source:c:\workspace\projects\fux\src\tools\dir\dirfilemanagerdata.cpp
@@ -3578,7 +3578,7 @@
 	<wx/filename.h>
 	<algorithm>
 
-1456439837 c:\workspace\projects\fux\include\tools\thread\filedeletionthread.h
+1456954093 c:\workspace\projects\fux\include\tools\thread\filedeletionthread.h
 	<wx/wx.h>
 	<wx/event.h>
 	"Runnable.h"
@@ -3624,14 +3624,42 @@
 	"ThreadSafePriorityQueue.h"
 	"ThreadSafeQueue.h"
 
-1456876430 c:\workspace\projects\fux\include\tools\thread\abstractthreadmanager.h
+1456937064 c:\workspace\projects\fux\include\tools\thread\abstractthreadmanager.h
 	<vector>
 	"IThreadManager.h"
 	"ThreadSafePriorityQueue.h"
 	"ThreadSafeQueue.h"
+	"RunnableComparator.h"
 
 1456875922 source:c:\workspace\projects\fux\src\tools\thread\abstractthreadmanager.cpp
 	"AbstractThreadManager.h"
+	<algorithm>
+	"tools/thread/ThreadFactory.h"
+	"tools/thread/ThreadProcess.h"
+
+1456954069 c:\workspace\projects\fux\include\tools\thread\runnablecomparator.h
+
+1456954093 c:\workspace\projects\fux\include\tools\thread\manager\abstractthreadmanager.h
+	<vector>
+	"IThreadManager.h"
+	"ThreadSafePriorityQueue.h"
+	"ThreadSafeQueue.h"
+	"RunnableComparator.h"
+
+1457340638 c:\workspace\projects\fux\include\tools\thread\manager\multithreadmanager.h
+	"AbstractThreadManager.h"
+
+1457340715 c:\workspace\projects\fux\include\tools\thread\manager\singlethreadmanager.h
+	"AbstractThreadManager.h"
+
+1457340349 source:c:\workspace\projects\fux\src\tools\thread\manager\abstractthreadmanager.cpp
+	"tools/thread/manager/AbstractThreadManager.h"
+	<algorithm>
+	"tools/thread/ThreadFactory.h"
+	"tools/thread/ThreadProcess.h"
+
+1457340130 source:c:\workspace\projects\fux\src\tools\thread\manager\multithreadmanager.cpp
+	"tools/thread/manager/MultiThreadManager.h"
 	<algorithm>
 	"tools/thread/ThreadFactory.h"
 	"tools/thread/ThreadProcess.h"
