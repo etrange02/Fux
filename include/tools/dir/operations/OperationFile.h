@@ -10,6 +10,9 @@ namespace tools {
     }
 }
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
     namespace dir

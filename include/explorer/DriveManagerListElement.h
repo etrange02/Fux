@@ -4,7 +4,7 @@
 #include <wx/wx.h>
 
 /**
- * Explorer name space.
+ * Explorer namespace.
  */
 namespace explorer
 {

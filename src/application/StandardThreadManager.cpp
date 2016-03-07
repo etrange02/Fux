@@ -12,7 +12,7 @@ using namespace thread;
 
 static StandardThreadManager* s_threadManager = NULL;
 
-StandardThreadManager::StandardThreadManager() : ThreadManager()
+StandardThreadManager::StandardThreadManager() : MultiThreadManager()
 {
     //ctor
 }

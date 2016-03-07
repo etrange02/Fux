@@ -1,7 +1,7 @@
 #ifndef STANDARDTHREADMANAGER_H
 #define STANDARDTHREADMANAGER_H
 
-#include "tools/thread/ThreadManager.h"
+#include "tools/thread/manager/MultiThreadManager.h"
 
 /** @brief Default thread manager. Uses available cores
  * Manages thread on different cores. Producer-Consumer model
@@ -10,7 +10,7 @@
 
 namespace thread
 {
-    class StandardThreadManager : public tools::thread::ThreadManager
+    class StandardThreadManager : public tools::thread::MultiThreadManager
     {
         public:
             /** Singleton */

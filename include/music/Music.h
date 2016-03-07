@@ -8,6 +8,10 @@
 
 namespace music
 {
+    /**
+     * @class Music
+     * @brief Handles music properties (file and sound)
+     */
     class Music : public IMusic
     {
         public:

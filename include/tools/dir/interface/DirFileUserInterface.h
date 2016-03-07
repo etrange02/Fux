@@ -4,6 +4,9 @@
 #include <wx/wx.h>
 
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
     namespace dir

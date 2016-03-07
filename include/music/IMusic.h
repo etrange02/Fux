@@ -6,6 +6,10 @@
 
 namespace music
 {
+    /**
+     * @class IMusic
+     * @brief Interface of a Music with some implemented methods.
+     */
     class IMusic
     {
         public:

@@ -3,6 +3,9 @@
 
 #include "tools/dir/operations/OperationFile.h"
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
     namespace dir

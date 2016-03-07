@@ -3,10 +3,18 @@
 
 #include <wx/valtext.h>
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
+    /**
+     * Name space of validator tools
+     */
     namespace validator
     {
+        /** @brief Validate a file name.
+         */
         class FileValidator : public wxTextValidator
         {
             public:

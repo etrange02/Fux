@@ -3,6 +3,9 @@
 
 #include "wx/wx.h"
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
     bool containsInvalidCharacter(const wxString& str);

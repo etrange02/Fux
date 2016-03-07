@@ -12,6 +12,9 @@ class wxButton;
 #include "tools/dir/interface/DirFileUserInterface.h"
 #include "tools/dir/interface/RepeatedQuestionInterface.h"
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
     namespace dir

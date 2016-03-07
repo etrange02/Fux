@@ -10,6 +10,9 @@ extern const wxEventType wxEVT_TOOLS_DIR_FILE_CLOSE;
 extern const wxEventType wxEVT_TOOLS_DIR_FILE_RANGE;
 extern const wxEventType wxEVT_TOOLS_DIR_FILE_UPDATE;
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
     namespace dir

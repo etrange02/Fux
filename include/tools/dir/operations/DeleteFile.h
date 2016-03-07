@@ -5,6 +5,9 @@
 
 extern const wxEventType wxEVT_FUX_DIR_FILE_DELETE_DONE;
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
     namespace dir

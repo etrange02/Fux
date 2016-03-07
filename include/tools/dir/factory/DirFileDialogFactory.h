@@ -4,6 +4,9 @@
 #include <wx/wx.h>
 #include "tools/dir/factory/DirFileCommunicationFactory.h"
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
     namespace dir

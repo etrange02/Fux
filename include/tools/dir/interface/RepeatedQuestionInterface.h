@@ -2,6 +2,9 @@
 #define REPEATEDQUESTIONINTERFACE_H
 
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
     namespace dir

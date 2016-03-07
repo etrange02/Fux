@@ -11,11 +11,6 @@
 using namespace ::music;
 
 /**
- * @class Music
- * @brief Handles music properties (file and sound)
- */
-
-/**
  * Default constructor
  */
 Music::Music() : Music("")

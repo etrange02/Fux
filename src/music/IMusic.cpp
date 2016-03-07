@@ -10,11 +10,6 @@
 
  using namespace ::music;
 
- /**
- * @class IMusic
- * @brief Interface of a Music with some implemented methods.
- */
-
 /** @brief Destructor
  */
 IMusic::~IMusic()

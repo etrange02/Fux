@@ -7,6 +7,9 @@
 
 extern const wxEventType wxEVT_TOOLS_DIR_FILE_ASK_REC_QUESTION;
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
     namespace dir
