@@ -8,12 +8,20 @@
  * @class tools::thread::IThreadManager
  */
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
+    /**
+     * Name space of multi-threading tools
+     */
     namespace thread
     {
         class ThreadProcess;
 
+        /** @brief Interface of a thread system
+         */
         class IThreadManager
         {
             public:

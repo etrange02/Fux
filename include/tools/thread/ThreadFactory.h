@@ -8,14 +8,22 @@
  * @class tools::thread::Factory
  */
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
+    /**
+     * Name space of multi-threading tools
+     */
     namespace thread
     {
         class ThreadProcess;
         class IThreadManager;
         class Runnable;
 
+        /** @brief Factory
+         */
         class ThreadFactory
         {
             public:

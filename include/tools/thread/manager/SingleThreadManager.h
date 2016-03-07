@@ -1,27 +1,35 @@
-#ifndef THREADMANAGER_H
-#define THREADMANAGER_H
+#ifndef SINGLETHREADMANAGER_H
+#define SINGLETHREADMANAGER_H
 
 #include "AbstractThreadManager.h"
 
 
-/** @brief Manages thread on different cores
- * Manages thread on different cores. Producer-Consumer model
- * @class tools::thread::ThreadManager
+/** @brief Manages one thread
+ * Manages one thread Producer-Consumer model
+ * @class tools::thread::SingleThreadManager
  */
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
+    /**
+     * Name space of multi-threading tools
+     */
     namespace thread
     {
         class ThreadProcess;
 
-        class ThreadManager : public tools::thread::AbstractThreadManager
+        /** @brief Thread system 1 thread.
+         */
+        class SingleThreadManager : public tools::thread::AbstractThreadManager
         {
             public:
                 /** Default constructor */
-                ThreadManager();
+                SingleThreadManager();
                 /** Default destructor */
-                virtual ~ThreadManager();
+                virtual ~SingleThreadManager();
 
             protected:
                 virtual unsigned int getThreadCount();
@@ -33,4 +41,4 @@ namespace tools
     }
 }
 
-#endif // THREADMANAGER_H
+#endif // SINGLETHREADMANAGER_H

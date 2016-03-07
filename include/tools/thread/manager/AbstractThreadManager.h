@@ -5,6 +5,7 @@
 #include "IThreadManager.h"
 #include "ThreadSafePriorityQueue.h"
 #include "ThreadSafeQueue.h"
+#include "RunnableComparator.h"
 
 
 /** @brief Manages thread on different cores
@@ -12,24 +13,20 @@
  * @class tools::thread::ThreadManager
  */
 
-
-class Comp
-{
-public:
-    bool operator()(tools::thread::Runnable* left, tools::thread::Runnable* right)
-    {
-        if (NULL == left || NULL == right)
-            wxLogMessage("pointeur nul");
-        return left->getPriority() <= right->getPriority();
-    }
-};
-
+/**
+ * Name space of tools
+ */
 namespace tools
 {
+    /**
+     * Name space of multi-threading tools
+     */
     namespace thread
     {
         class ThreadProcess;
 
+        /** @brief Abstract implementation of a thread system management
+         */
         class AbstractThreadManager : public tools::thread::IThreadManager
         {
             public:
@@ -71,7 +68,7 @@ namespace tools
                 ThreadProcess* getAvailableWorker();
 
             private:
-                std::ThreadSafePriorityQueue<Runnable*, std::vector<Runnable*>, Comp> m_works; //!< Member variable "m_works"
+                std::ThreadSafePriorityQueue<Runnable*, std::vector<Runnable*>, RunnableComparator> m_works; //!< Member variable "m_works"
                 //std::ThreadSafeQueue<Runnable*> m_works; //!< Member variable "m_works"
                 std::vector<ThreadProcess*> m_workers;
                 wxMutex m_mutex;

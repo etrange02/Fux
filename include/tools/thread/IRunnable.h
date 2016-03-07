@@ -6,10 +6,18 @@
  * @class tools::thread::IRunnable
  */
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
+    /**
+     * Name space of multi-threading tools
+     */
     namespace thread
     {
+        /** @brief Interface of a thread-able task.
+         */
         class IRunnable
         {
             public:

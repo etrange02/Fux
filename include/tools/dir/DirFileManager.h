@@ -3,7 +3,7 @@
 
 #include <wx/wx.h>
 #include "DirFileManagerData.h"
-#include "tools/thread/AbstractThreadManager.h"
+#include "tools/thread/manager/SingleThreadManager.h"
 
 namespace tools {
     namespace thread {
@@ -12,6 +12,9 @@ namespace tools {
     }
 }
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
     namespace dir
@@ -20,7 +23,7 @@ namespace tools
         class DirFileUserInterface;
         class DirFileCommunicationFactory;
 
-        class DirFileManager : public tools::thread::AbstractThreadManager
+        class DirFileManager : public tools::thread::SingleThreadManager
         {
             public:
                 /** Default constructor */
@@ -33,7 +36,6 @@ namespace tools
                 void createDeleteOperation(const wxString& source);
 
             protected:
-                virtual unsigned int getThreadCount();
                 virtual void doBeforeAddingWork(tools::thread::Runnable& work);
                 virtual void doAfterAddingWork(tools::thread::Runnable& work);
                 virtual void doBeforeProcessingWork(tools::thread::Runnable& work, tools::thread::ThreadProcess& threadProcess);

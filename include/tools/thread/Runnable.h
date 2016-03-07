@@ -3,10 +3,18 @@
 
 #include "IRunnable.h"
 
+/**
+ * Name space of tools
+ */
 namespace tools
 {
+    /**
+     * Name space of multi-threading tools
+     */
     namespace thread
     {
+        /** @brief Container of a task.
+         */
         class Runnable : public IRunnable
         {
             public:

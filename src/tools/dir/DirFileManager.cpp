@@ -19,7 +19,7 @@ using namespace tools::dir;
 /** @brief Constructor.
  */
 DirFileManager::DirFileManager(DirFileCommunicationFactory& factory) :
-    AbstractThreadManager(),
+    SingleThreadManager(),
     m_factory(factory),
     m_interface(NULL),
     m_range(0),
@@ -122,16 +122,6 @@ void DirFileManager::activateAWorker()
             tp->semaphorePost();
         }
     }
-}
-
-/** @brief
- *
- * @return unsigned int
- *
- */
-unsigned int DirFileManager::getThreadCount()
-{
-    return 1;
 }
 
 /** @brief

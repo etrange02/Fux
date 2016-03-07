@@ -1,12 +1,12 @@
 /***************************************************************
- * Name:      ThreadManager.cpp
+ * Name:      MultiThreadManager.cpp
  * Purpose:   Code for Fu(X) 2.0
  * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2014-12-27
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "tools/thread/ThreadManager.h"
+#include "tools/thread/manager/MultiThreadManager.h"
 #include <algorithm>
 #include "tools/thread/ThreadFactory.h"
 #include "tools/thread/ThreadProcess.h"
@@ -15,14 +15,14 @@ using namespace tools::thread;
 
 /** @brief Constructor
  */
-ThreadManager::ThreadManager() : AbstractThreadManager()
+MultiThreadManager::MultiThreadManager() : AbstractThreadManager()
 {
     start();
 }
 
 /** @brief Destructor
  */
-ThreadManager::~ThreadManager()
+MultiThreadManager::~MultiThreadManager()
 {
     kill();
 }
@@ -32,7 +32,7 @@ ThreadManager::~ThreadManager()
  * @return unsigned int
  *
  */
-unsigned int ThreadManager::getThreadCount()
+unsigned int MultiThreadManager::getThreadCount()
 {
     return std::max(wxThread::GetCPUCount()-1, 1);
 }
@@ -43,7 +43,7 @@ unsigned int ThreadManager::getThreadCount()
  * @return void
  *
  */
-void ThreadManager::doBeforeAddingWork(Runnable&)
+void MultiThreadManager::doBeforeAddingWork(Runnable&)
 {
 }
 
@@ -53,7 +53,7 @@ void ThreadManager::doBeforeAddingWork(Runnable&)
  * @return void
  *
  */
-void ThreadManager::doAfterAddingWork(Runnable&)
+void MultiThreadManager::doAfterAddingWork(Runnable&)
 {
 }
 
@@ -63,7 +63,7 @@ void ThreadManager::doAfterAddingWork(Runnable&)
  * @return void
  *
  */
-void ThreadManager::doBeforeProcessingWork(Runnable&, tools::thread::ThreadProcess&)
+void MultiThreadManager::doBeforeProcessingWork(Runnable&, tools::thread::ThreadProcess&)
 {
 }
 
@@ -72,7 +72,7 @@ void ThreadManager::doBeforeProcessingWork(Runnable&, tools::thread::ThreadProce
  * @return void
  *
  */
-void ThreadManager::doOnNoWork()
+void MultiThreadManager::doOnNoWork()
 {
 }
 

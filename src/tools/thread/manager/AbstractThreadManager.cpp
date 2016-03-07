@@ -6,7 +6,7 @@
  * Copyright: David Lecoconnier (http://www.getfux.fr)
  * License:
  **************************************************************/
-#include "AbstractThreadManager.h"
+#include "tools/thread/manager/AbstractThreadManager.h"
 #include <algorithm>
 #include "tools/thread/ThreadFactory.h"
 #include "tools/thread/ThreadProcess.h"
