@@ -6,3 +6,6 @@ CppCheckResults.xml
 Fux_build_log.html
 oldFiles/*
 lib_finder.script
+setup/*.exe
+setup/build
+doc/html/
