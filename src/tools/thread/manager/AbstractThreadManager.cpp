@@ -110,16 +110,7 @@ void AbstractThreadManager::addRunnable(Runnable* runnable, int priority)
         return;
 
     runnable->setPriority(priority);
-    doBeforeAddingWork(*runnable);
-    #if DEBUG
-    runnable->process();
-    delete runnable;
-    #else // DEBUG
-    m_works.push(runnable);
-
-    activateAWorker();
-    #endif // DEBUG
-    doAfterAddingWork(*runnable);
+    addRunnable(runnable, 50);
 }
 
 /** @brief Insert a work in the queue and awake a worker if one is sleeping. Priority of 50.
@@ -130,7 +121,19 @@ void AbstractThreadManager::addRunnable(Runnable* runnable, int priority)
  */
 void AbstractThreadManager::addRunnable(Runnable* runnable)
 {
-    addRunnable(runnable, 50);
+    if (NULL == runnable)
+        return;
+
+    doBeforeAddingWork(*runnable);
+    #if DEBUG
+    runnable->process();
+    delete runnable;
+    #else // DEBUG
+    m_works.push(runnable);
+
+    activateAWorker();
+    #endif // DEBUG
+    doAfterAddingWork(*runnable);
 }
 
 /** @brief Called by workers when work is done.

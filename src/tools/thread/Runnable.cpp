@@ -13,7 +13,7 @@ using namespace tools::thread;
 /** @brief Default constructor. Priority of 50.
  */
 Runnable::Runnable() : IRunnable(),
-    m_priority(0)
+    m_priority(50)
 {
     //ctor
 }

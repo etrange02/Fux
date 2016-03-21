@@ -16,13 +16,11 @@
    Il permet d'éditer les TAGs des titres, ajouter une pochette d'album.</p>
  *
  * <p>La base de données qui permettra d'avoir une audiothèque est en cours de construction.
-   Les extensions reconnues sont le mp3, wav et ogg.<br />
-   Fu(X) intégrera une fonctionnalité de réveil (comme dans la première version).</p>
+   Les extensions reconnues sont le mp3, wav et ogg.</p>
  * <h2> A faire</h2>
  * <p><ul>
- * <li>Revoir l'architecture des classes... en cours :)</li>
+ * <li>Revoir l'architecture des classes... en cours</li>
  * <li>Mettre en place la BDD... en cours</li>
- * <li>Mettre en place le réveil</li>
  * <li>Compilation sous Linux</li>
  * <li>...</li>
  * <li>Garder quelques surprises !</li>
@@ -31,6 +29,7 @@
  * <p><ul>
  * <li>Refondre le gestionnaire de musique</li>
  * <li>Passer à la version 3 de wxWidgets</li>
+ * <li>Mettre en place le threading des opérations de copie de fichier et de chargement des TAGs</li>
  * <li>Et plein d'autres choses</li>
  * </ul></p>
  *

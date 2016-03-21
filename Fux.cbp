@@ -50,6 +50,9 @@ IMPORTANT, A FAIRE !!!
 					<Add directory="include/tools/std" />
 					<Add directory="include/tools/thread" />
 					<Add directory="include/toold/thread" />
+					<Add directory="include/tools/database" />
+					<Add directory="include/database" />
+					<Add directory="include/tools/database/requests" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -80,6 +83,9 @@ IMPORTANT, A FAIRE !!!
 					<Add directory="include/tools/std" />
 					<Add directory="include/tools/thread" />
 					<Add directory="include/toold/thread" />
+					<Add directory="include/tools/database" />
+					<Add directory="include/database" />
+					<Add directory="include/tools/database/requests" />
 				</Compiler>
 			</Target>
 			<Target title="WinReleaseDBG">
@@ -97,6 +103,9 @@ IMPORTANT, A FAIRE !!!
 					<Add directory="include/tools/std" />
 					<Add directory="include/tools/thread" />
 					<Add directory="include/toold/thread" />
+					<Add directory="include/tools/database" />
+					<Add directory="include/database" />
+					<Add directory="include/tools/database/requests" />
 				</Compiler>
 			</Target>
 			<Environment>
@@ -134,6 +143,7 @@ IMPORTANT, A FAIRE !!!
 			<Add directory="${TAGLIB}/Headers" />
 			<Add directory="include" />
 			<Add directory="include/application" />
+			<Add directory="include/database" />
 			<Add directory="include/db" />
 			<Add directory="include/explorer" />
 			<Add directory="include/explorer/state" />
@@ -148,6 +158,8 @@ IMPORTANT, A FAIRE !!!
 			<Add directory="include/ressources" />
 			<Add directory="include/settings" />
 			<Add directory="include/tools" />
+			<Add directory="include/tools/database" />
+			<Add directory="include/tools/database/requests" />
 			<Add directory="include/tools/dir" />
 			<Add directory="include/tools/dir/interface" />
 			<Add directory="include/tools/dir/factory" />
@@ -233,6 +245,9 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/constants/events.h" />
 		<Unit filename="include/constants/ids.h" />
 		<Unit filename="include/constants/strings.h" />
+		<Unit filename="include/database/DataBaseFactory.h" />
+		<Unit filename="include/database/DataBaseOpeningRequest_01.h" />
+		<Unit filename="include/database/DataBase_MetaData.h" />
 		<Unit filename="include/db/BDD.h" />
 		<Unit filename="include/db/BDDRequete.h" />
 		<Unit filename="include/db/BDDThread.h" />
@@ -284,6 +299,13 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/tools/OS_Win.h" />
 		<Unit filename="include/tools/Timer.h" />
 		<Unit filename="include/tools/Tools.h" />
+		<Unit filename="include/tools/database/DBThreadEvent.h" />
+		<Unit filename="include/tools/database/DataBaseManager.h" />
+		<Unit filename="include/tools/database/DataBaseMetaData.h" />
+		<Unit filename="include/tools/database/DataBaseRequest.h" />
+		<Unit filename="include/tools/database/DataBaseResponse.h" />
+		<Unit filename="include/tools/database/requests/DataBaseClosingRequest.h" />
+		<Unit filename="include/tools/database/requests/DataBaseOpeningRequest.h" />
 		<Unit filename="include/tools/dir/AskForRecursiveOperationData.h" />
 		<Unit filename="include/tools/dir/DirFileManager.h" />
 		<Unit filename="include/tools/dir/DirFileManagerData.h" />
@@ -355,6 +377,8 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/application/Application.cpp" />
 		<Unit filename="src/application/Mediator.cpp" />
 		<Unit filename="src/application/StandardThreadManager.cpp" />
+		<Unit filename="src/database/DataBaseFactory.cpp" />
+		<Unit filename="src/database/DataBaseOpeningRequest_01.cpp" />
 		<Unit filename="src/db/BDD.cpp" />
 		<Unit filename="src/db/BDDRequete.cpp" />
 		<Unit filename="src/db/BDDThread.cpp" />
@@ -421,6 +445,12 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/tools/OS_Win.cpp" />
 		<Unit filename="src/tools/Timer.cpp" />
 		<Unit filename="src/tools/Tools.cpp" />
+		<Unit filename="src/tools/database/DBThreadEvent.cpp" />
+		<Unit filename="src/tools/database/DataBaseManager.cpp" />
+		<Unit filename="src/tools/database/DataBaseRequest.cpp" />
+		<Unit filename="src/tools/database/DataBaseResponse.cpp" />
+		<Unit filename="src/tools/database/requests/DataBaseClosingRequest.cpp" />
+		<Unit filename="src/tools/database/requests/DataBaseOpeningRequest.cpp" />
 		<Unit filename="src/tools/dir/AskForRecursiveOperationData.cpp" />
 		<Unit filename="src/tools/dir/DirFileManager.cpp" />
 		<Unit filename="src/tools/dir/DirFileManagerData.cpp" />
