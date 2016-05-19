@@ -46,33 +46,34 @@ void DataBaseOpeningRequest::initializeStatements()
 tools::database::DataBaseResponse* DataBaseOpeningRequest::execute(tools::database::DataBaseManager& dataBaseManager)
 {
     bool fileExists = wxFileExists(m_filename);
-    wxSQLite3Database& database = dataBaseManager.getDatabase();
-    database.Open(m_filename); // Creates the file if necessary.
+    wxSQLite3Database* db = (new wxSQLite3Database);
+    dataBaseManager.setDatabase(db);
+    db->Open(m_filename); // Creates the file if necessary.
 
     int version = -1;
-    if (database.TableExists(TABLE_DATA))
+    if (db->TableExists(TABLE_DATA))
     {
-        wxSQLite3ResultSet result = database.ExecuteQuery("SELECT " COLUMN_DATA_VALUE " FROM " TABLE_DATA " WHERE " COLUMN_DATA_KEY "='" DataBaseVersion "';");
+        wxSQLite3ResultSet result = db->ExecuteQuery("SELECT " COLUMN_DATA_VALUE " FROM " TABLE_DATA " WHERE " COLUMN_DATA_KEY "='" DataBaseVersion "';");
         version = result.GetInt(0, -1);
     }
     else
     {
         if (fileExists)
         {
-            database.Close();
+            db->Close();
             wxRemoveFile(m_filename);
-            database.Open(m_filename);
+            db->Open(m_filename);
         }
     }
 
-    int newVersion = updateTables(database, version);
+    int newVersion = updateTables(*db, version);
     if (newVersion > version)
     {
         wxString request;
         request << "UPDATE " TABLE_DATA " SET " COLUMN_DATA_VALUE "='";
         request << newVersion;
         request << "' WHERE " COLUMN_DATA_KEY "='" DataBaseVersion "'";
-        database.ExecuteUpdate(request);
+        db->ExecuteUpdate(request);
     }
 
     return NULL;

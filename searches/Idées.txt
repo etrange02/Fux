@@ -48,7 +48,7 @@ Corps de l'application
 
 Partie Principale :
     //- Optimiser le graph (OpenGl)
-        -> réduire la taille de la police si le texte dépasse la largeur de l'écran
+        -> réduire la taille de la police si le texte dépasse la largeur de l'écran ou faire un défilé du texte
     //- Raccourcis clavier : volume (+/-)
     //- Raccourcis souris : volume, suivant/précédent (molette et clique de la molette)
     //- Affichage du temps
@@ -129,7 +129,7 @@ Partie Recherche/exploration sur les chansons (idée d'audiothèque @/|\:*<>"?) :
 Partie WebRadio :
     - liste de radio présélectionné
     - accès rapide au site
-    - chanson en cours de lecture
+    - chanson en cours de diffusion
 
 Menu Gauche :
     //- Liste des boutons raccourci : stop, précédent, lecture/pause, suivant, aléatoire

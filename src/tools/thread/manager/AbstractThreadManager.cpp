@@ -37,6 +37,7 @@ void AbstractThreadManager::start()
     if (m_isInitialized)
         return;
 
+    #ifndef DEBUG
     unsigned int threadCount = getThreadCount();
 
     for (unsigned int i = 0; i < threadCount ; ++i)
@@ -46,6 +47,7 @@ void AbstractThreadManager::start()
         tp->Create();
         tp->Run();
     }
+    #endif // DEBUG
     m_isInitialized = true;
 }
 

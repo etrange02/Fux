@@ -12,4 +12,4 @@ XRC - placement des éléments dans le xml et non dans le code.
 
 Suppression d'un titre lorsque celui-ci est en attente de lecture sur le disque (tag non lus pour le moment). Une solution serait le std::auto_ptr<>().
 Le problème vient de la recherche à la volée qui insère tout ce qu'elle trouve et non uniquement les titres chargés.
-Sinon ajouté un booléen pour l'auto-destruction. Pas très pratique à gérer.
+Sinon ajouter un booléen pour l'auto-destruction. Pas très pratique à gérer.

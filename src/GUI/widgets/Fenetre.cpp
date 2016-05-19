@@ -738,9 +738,9 @@ void FuXFenetre::MenuAbout(wxCommandEvent &WXUNUSED(event))
     message.Append("\n\n");
     message.Append("Auteur : David Lecoconnier (david.lecoconnier@free.fr)");
     message.Append("\n\n");
-    message.Append("Interface réalisée avec wxWidgets 3.0.2");
+    message.Append("Interface réalisée avec wxWidgets 3.1.0");
     message.Append("\n\n\n");
-    message.Append("Copyright © 2009-2015 David Lecoconnier, tous droits réservés");
+    message.Append("Copyright © 2009-2016 David Lecoconnier, tous droits réservés");
     message.Append("\n\n");
     message.Append("FMOD Sound System, copyright © Firelight Technologies Pty, Ltd., 1994-2007");
     message.Append("\n");

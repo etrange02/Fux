@@ -49,7 +49,6 @@ IMPORTANT, A FAIRE !!!
 					<Add directory="include/application" />
 					<Add directory="include/tools/std" />
 					<Add directory="include/tools/thread" />
-					<Add directory="include/toold/thread" />
 					<Add directory="include/tools/database" />
 					<Add directory="include/database" />
 					<Add directory="include/tools/database/requests" />
@@ -82,7 +81,6 @@ IMPORTANT, A FAIRE !!!
 					<Add directory="include/application" />
 					<Add directory="include/tools/std" />
 					<Add directory="include/tools/thread" />
-					<Add directory="include/toold/thread" />
 					<Add directory="include/tools/database" />
 					<Add directory="include/database" />
 					<Add directory="include/tools/database/requests" />
@@ -102,7 +100,6 @@ IMPORTANT, A FAIRE !!!
 					<Add directory="include/application" />
 					<Add directory="include/tools/std" />
 					<Add directory="include/tools/thread" />
-					<Add directory="include/toold/thread" />
 					<Add directory="include/tools/database" />
 					<Add directory="include/database" />
 					<Add directory="include/tools/database/requests" />
@@ -120,8 +117,8 @@ IMPORTANT, A FAIRE !!!
 				<Variable name="WX_DIR" value="$(DIR_LIB_WXWIDGETS)" />
 				<Variable name="WX_GL_VER" value="GL" />
 				<Variable name="WX_VER1" value="3" />
-				<Variable name="WX_VER2" value="0" />
-				<Variable name="WX_VER3" value="2" />
+				<Variable name="WX_VER2" value="1" />
+				<Variable name="WX_VER3" value="0" />
 				<Variable name="__WX_VERSION__" value="${WX_VER1}.${WX_VER2}.${WX_VER3}" />
 			</Environment>
 		</Build>
@@ -176,7 +173,7 @@ IMPORTANT, A FAIRE !!!
 			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/include" />
 		</ResourceCompiler>
 		<Linker>
-			<Add library="libwxcode_msw$(WX_VER1)$(WX_VER2)$(AURD)_wxsqlite3.a" />
+			<Add library="${WXSQLITE3}/lib/gcc_lib/libwxcode_msw$(WX_VER1)$(WX_VER2)$(AURD)_wxsqlite3.a" />
 			<Add library="${SQLITE3}/lib/sqlite3.a" />
 			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_gl.a" />
 			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_core.a" />
@@ -208,6 +205,8 @@ IMPORTANT, A FAIRE !!!
 			<Add library="libglu32.a" />
 			<Add library="${FMODEX}/lib/libfmodex.a" />
 			<Add library="${TAGLIB}/libtag.dll.a" />
+			<Add library="${DIR_MINDW}/libshlwapi.a" />
+			<Add library="${DIR_MINDW}/libversion.a" />
 			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/lib/gcc_lib" />
 			<Add directory="${SQLITE3}/lib" />
 			<Add directory="${WXSQLITE3}/lib/gcc_lib" />

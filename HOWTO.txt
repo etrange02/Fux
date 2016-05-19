@@ -42,7 +42,7 @@ Compiler avec makefile.gcc
 3. Récupérer TagLib
 
 Zlib est à compiler en static. (Configuration dans CMake).
-TagLib nécessaite au préalable zlib pour être compilé.
+TagLib nécessite au préalable zlib pour être compilé.
 Pour utiliser la version statique, il faut préciser le chemin du fichier zlib.a.
 Utiliser CMake pour configurer le projet, unicode, static (et dyn car ne marche pas toujours).
 --> utilise la dll, test à faire sans !

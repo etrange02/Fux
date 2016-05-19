@@ -57,7 +57,7 @@ void DialogTagMP3::initialize()
     m_notebook->AddPage(m_comment, _("Commentaires"));
     sizerH->Add(m_notebook, 1, wxEXPAND|wxLEFT, 5);
 
-    sizerV->Add(CreateSeparatedButtonSizer(wxOK|wxCANCEL), 0, wxALL|wxALIGN_RIGHT|wxEXPAND, 5);
+    sizerV->Add(CreateSeparatedButtonSizer(wxOK|wxCANCEL), 0, wxALL|wxEXPAND, 5);
     sizerV->SetSizeHints(this);
 }
 

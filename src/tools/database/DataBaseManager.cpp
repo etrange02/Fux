@@ -150,7 +150,7 @@ void DataBaseManager::destroyStatements()
  * @return void
  *
  */
-void DataBaseManager::doAfterAddingWork(tools::thread::Runnable& work)
+void DataBaseManager::doBeforeAddingWork(tools::thread::Runnable& work)
 {
     DataBaseRequest& request = static_cast<DataBaseRequest&>(work);
 

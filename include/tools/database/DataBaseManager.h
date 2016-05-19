@@ -43,7 +43,7 @@ namespace tools
                 wxSQLite3Statement& getStatement(int id);
                 void addStatement(int id, wxSQLite3Statement& statement);
                 void destroyStatements();
-                virtual void doAfterAddingWork(tools::thread::Runnable& work);
+                virtual void doBeforeAddingWork(tools::thread::Runnable& work);
 
             private:
                 std::map<int, wxSQLite3Statement> m_statements;

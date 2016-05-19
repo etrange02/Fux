@@ -21,7 +21,7 @@
 #define TABLE_ARTIST "artist"
 #define COLUMN_ARTIST_ID "id"
 #define COLUMN_ARTIST_GID "gid"
-#define COLUMN_ARTIST_NAME "gid"
+#define COLUMN_ARTIST_NAME "name"
 #define COLUMN_ARTIST_SORT_NAME "sort_name"
 #define COLUMN_ARTIST_TYPE "type"
 #define COLUMN_ARTIST_GENDER "gender"

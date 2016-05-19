@@ -155,7 +155,7 @@ void PreferenceCouleur::Creer()
 
     //// Graph ////
     m_sizerGraph = new wxBoxSizer(wxHORIZONTAL);
-    m_sizer2Preferences->Add(m_sizerGraph, 0, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL, 0);
+    m_sizer2Preferences->Add(m_sizerGraph, 0, wxALL|wxEXPAND, 0);
 
         //// Partie supérieure du graphe ////
         m_sizerGraphHaut = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Partie supérieure du graph"));

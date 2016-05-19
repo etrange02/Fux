@@ -51,7 +51,7 @@ void PreferenceSon::Creer()
     m_sizerNewSet = new wxStaticBoxSizer(wxVERTICAL, this, _("Nouveau"));
     m_sizerCurrentSet = new wxStaticBoxSizer(wxVERTICAL, this, _("Valeurs actuelles"));
     m_sizer2Preferences->Add(m_sizerNewSet, 0, wxALL|wxEXPAND, 5);
-    m_sizer2Preferences->Add(m_sizerCurrentSet, 0, wxALL | wxEXPAND | wxALIGN_RIGHT, 5);
+    m_sizer2Preferences->Add(m_sizerCurrentSet, 0, wxALL | wxEXPAND, 5);
 
     m_gridSizerNew = new wxFlexGridSizer(3, 2, 5, 5);//Suite des cases contenant des valeurs modifiables
     m_gridSizerCurr = new wxFlexGridSizer(2, 2, 5, 5);
