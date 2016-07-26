@@ -27,8 +27,6 @@
 #include "tools/dnd/dataObjects/PlaylistTransitiveData.h"
 #include "tools/dnd/dataObjects/ContainerFileTransitiveData.h"
 #include "tools/dnd/dataObjects/DataObject.h"
-#include "db/BDDRequete.h"
-#include "db/BDDThread.h"
 #include "predicates/findSharedMusicContainer.h"
 
 using namespace ::music;

@@ -48,6 +48,7 @@ class Parametre
         void creerRepertoireParametre(const wxString& path);
 
         bool isContainerFile(const wxString& extension);
+        wxString getDataBasePath();
 
     protected:
         Parametre();

@@ -41,3 +41,8 @@ explorer::ExplorerDriveManagers& Mediator::getExplorerDriveManagers()
     return m_explorerDriveManagers;
 }
 
+tools::database::DataBaseManager& Mediator::getDatabase()
+{
+    return m_database;
+}
+

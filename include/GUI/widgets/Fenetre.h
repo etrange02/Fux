@@ -18,7 +18,6 @@
 #include "network/TCPServeur.h"
 #include "SliderSon.h"
 #include "tools/FichierLog.h"
-#include "db/BDDThread.h"
 #include "tools/ArrayFenetreDetachable.h"
 #include "BoutonFenetreDetachable.h"
 

@@ -10,6 +10,8 @@
 #include "MusicManagerSwitcher.h"
 #include "tools/FichierLog.h"
 
+#define DataBaseName "fux.db"
+
 using namespace ::music;
 
 /**
@@ -338,7 +340,7 @@ void Parametre::creerRepertoireParametre()
  * Créé la structure des fichiers de Fu(X) si celle-ce est inexistante à l'adresse donnée.
  * @param chemin le répertoire où la structure doit être créée.
  */
-void Parametre::creerRepertoireParametre(wxString chemin)
+void Parametre::creerRepertoireParametre(const wxString& chemin)
 {
     wxString repertoire;
 
@@ -415,5 +417,10 @@ wxString Parametre::getRepertoireExecutableLib(wxString element)
 bool Parametre::isContainerFile(const wxString& path)
 {
     return path.AfterLast('.').IsSameAs(_T("m3u"), false);
+}
+
+wxString Parametre::getDataBasePath() const
+{
+    return getRepertoireParametre(_T(DataBaseName));
 }
 

@@ -339,7 +339,7 @@ void MusicManager::moveIntTitlesAt(const wxArrayString& titles, size_t position)
 
     for (MusicIterator iter = oldMusics->begin(); iter != oldMusics->end(); ++iter)
     {
-        if (i == pos)
+        if (i == (unsigned long) pos)
         {
             selectedMusics->push_back(*iter);
             ++positionIterator;

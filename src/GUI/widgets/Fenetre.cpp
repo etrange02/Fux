@@ -8,10 +8,6 @@
  **************************************************************/
 #include "wx/wxprec.h"
 
-#ifdef __BORLANDC__
-    #pragma hdrstop
-#endif
-
 #include "Fenetre.h"
 #include "MusicManagerSwitcher.h"
 #include "ExplorerDriveManagers.h"
@@ -23,6 +19,7 @@
 #include "tools/dir/interface/RepeatedQuestionDialogEvent.h"
 #include "tools/dir/AskForRecursiveOperationData.h"
 #include "tools/dir/factory/DirFileDialogFactory.h"
+#include "DataBaseFactory.h"
 
 using namespace ::music;
 
@@ -100,6 +97,7 @@ FuXFenetre::FuXFenetre(/*Mediator& mediator, */int argc, wxChar **argv) :
     tools::dir::DirFileDialogFactory* factory = new tools::dir::DirFileDialogFactory(*this);
     tools::dir::DirFileManager* manager = new tools::dir::DirFileManager(*factory);
     m_mediator.setDirFileManager(manager);
+    m_mediator.getDatabase().addDataBaseResquest(DataBaseFactory::createOpeningRequest(Parametre::get().getDataBasePath()));
 
     m_mediator.getExplorerDriveManagers().setDirFileManager(&m_mediator.getDirFileManager());
     //m_mediator.getDirFileManager().start();
@@ -162,12 +160,12 @@ FuXFenetre::~FuXFenetre()
 {
     //m_mediator.getDirFileManager().kill();
     m_mediator.setDirFileManager(NULL);
+    m_mediator.getDatabase().addDataBaseResquest(DataBaseFactory::createClosingRequest());
 
     LogFileAppend("FuXFenetre::~FuXFenetre - début");
     m_fenetresDetachables->Vider();
     delete m_fenetresDetachables;
     delete m_serveur;
-    BDDThread::Get()->Stop();
     m_TimerGraph.Stop();
     delete[] m_imageBouton;
 //    Musique::Get()->Delete();
@@ -196,7 +194,6 @@ void FuXFenetre::panelCreation()
     MusicManagerSwitcher::get().setParent(this);
     m_musiqueGraph = new gui::music::MusiqueGraph(this, args);
     m_playList = new PlayList;
-    BDDThread::Get();
 
     LogFileAppend(_T("Fin de FuXFenetre::Initialisation"));
 }

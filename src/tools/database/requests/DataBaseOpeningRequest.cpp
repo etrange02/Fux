@@ -46,7 +46,7 @@ void DataBaseOpeningRequest::initializeStatements()
 tools::database::DataBaseResponse* DataBaseOpeningRequest::execute(tools::database::DataBaseManager& dataBaseManager)
 {
     bool fileExists = wxFileExists(m_filename);
-    wxSQLite3Database* db = (new wxSQLite3Database);
+    wxSQLite3Database* db = new wxSQLite3Database;
     dataBaseManager.setDatabase(db);
     db->Open(m_filename); // Creates the file if necessary.
 

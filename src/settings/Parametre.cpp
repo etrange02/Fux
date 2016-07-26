@@ -10,6 +10,8 @@
 #include "MusicManagerSwitcher.h"
 #include "tools/FichierLog.h"
 
+#define DataBaseName "fux.db"
+
 using namespace ::music;
 
 /**
@@ -415,5 +417,10 @@ wxString Parametre::getRepertoireExecutableLib(wxString element)
 bool Parametre::isContainerFile(const wxString& path)
 {
     return path.AfterLast('.').IsSameAs(_T("m3u"), false);
+}
+
+wxString Parametre::getDataBasePath()
+{
+    return getRepertoireParametre(_T(DataBaseName));
 }
 
