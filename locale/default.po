@@ -11,7 +11,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ../src\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.6.9\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
 
 #: src/Application.cpp:41
 msgid "Fu(X) est déjà ouvert, procédure d'ouverture annulée"

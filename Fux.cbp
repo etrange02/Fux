@@ -45,16 +45,10 @@ IMPORTANT, A FAIRE !!!
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add directory="include/tools/validator" />
-					<Add directory="include/application" />
-					<Add directory="include/tools/std" />
-					<Add directory="include/tools/thread" />
-					<Add directory="include/tools/database" />
-					<Add directory="include/database" />
-					<Add directory="include/tools/database/requests" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="$(#wxtools.LIB)/libwxtools.a" />
 				</Linker>
 			</Target>
 			<Target title="WinDebug">
@@ -67,16 +61,13 @@ IMPORTANT, A FAIRE !!!
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-Wextra" />
+					<Add option="-Og" />
 					<Add option="-g" />
 					<Add option="-DDEBUG" />
-					<Add directory="include/tools/validator" />
-					<Add directory="include/application" />
-					<Add directory="include/tools/std" />
-					<Add directory="include/tools/thread" />
-					<Add directory="include/tools/database" />
-					<Add directory="include/database" />
-					<Add directory="include/tools/database/requests" />
 				</Compiler>
+				<Linker>
+					<Add library="$(#wxtools.LIB)/libwxtoolsd.a" />
+				</Linker>
 			</Target>
 			<Target title="WinReleaseDBG">
 				<Option platforms="Windows;" />
@@ -87,15 +78,12 @@ IMPORTANT, A FAIRE !!!
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
+					<Add option="-Og" />
 					<Add option="-g" />
-					<Add directory="include/tools/validator" />
-					<Add directory="include/application" />
-					<Add directory="include/tools/std" />
-					<Add directory="include/tools/thread" />
-					<Add directory="include/tools/database" />
-					<Add directory="include/database" />
-					<Add directory="include/tools/database/requests" />
 				</Compiler>
+				<Linker>
+					<Add library="$(#wxtools.LIB)/libwxtoolsd.a" />
+				</Linker>
 			</Target>
 			<Environment>
 				<Variable name="AU" value="u" />
@@ -130,6 +118,7 @@ IMPORTANT, A FAIRE !!!
 			<Add directory="${WXSQLITE3}/include" />
 			<Add directory="${FMODEX}/inc" />
 			<Add directory="${TAGLIB}/Headers" />
+			<Add directory="$(#wxtools.INCLUDE)" />
 			<Add directory="include" />
 			<Add directory="include/application" />
 			<Add directory="include/database" />
@@ -147,19 +136,10 @@ IMPORTANT, A FAIRE !!!
 			<Add directory="include/ressources" />
 			<Add directory="include/settings" />
 			<Add directory="include/tools" />
-			<Add directory="include/tools/database" />
-			<Add directory="include/tools/database/requests" />
-			<Add directory="include/tools/dir" />
-			<Add directory="include/tools/dir/interface" />
-			<Add directory="include/tools/dir/factory" />
-			<Add directory="include/tools/dir/operations" />
 			<Add directory="include/tools/dir_traverser" />
 			<Add directory="include/tools/dnd" />
 			<Add directory="include/tools/dnd/targets" />
 			<Add directory="include/tools/dnd/dataObjects" />
-			<Add directory="include/tools/validator" />
-			<Add directory="include/tools/stl" />
-			<Add directory="include/tools/thread" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/include" />
@@ -202,6 +182,7 @@ IMPORTANT, A FAIRE !!!
 			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/lib/gcc_lib" />
 			<Add directory="${SQLITE3}/lib" />
 			<Add directory="${WXSQLITE3}/lib/gcc_lib" />
+			<Add directory="$(#wxtools.LIB)" />
 		</Linker>
 		<Unit filename="include/Classes.h" />
 		<Unit filename="include/Define.h" />
@@ -287,32 +268,8 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/settings/Couleur.h" />
 		<Unit filename="include/settings/Parametre.h" />
 		<Unit filename="include/tools/FichierLog.h" />
-		<Unit filename="include/tools/OS_Win.h" />
 		<Unit filename="include/tools/Timer.h" />
 		<Unit filename="include/tools/Tools.h" />
-		<Unit filename="include/tools/database/DBThreadEvent.h" />
-		<Unit filename="include/tools/database/DataBaseManager.h" />
-		<Unit filename="include/tools/database/DataBaseMetaData.h" />
-		<Unit filename="include/tools/database/DataBaseRequest.h" />
-		<Unit filename="include/tools/database/DataBaseResponse.h" />
-		<Unit filename="include/tools/database/requests/DataBaseClosingRequest.h" />
-		<Unit filename="include/tools/database/requests/DataBaseOpeningRequest.h" />
-		<Unit filename="include/tools/dir/AskForRecursiveOperationData.h" />
-		<Unit filename="include/tools/dir/DirFileManager.h" />
-		<Unit filename="include/tools/dir/DirFileManagerData.h" />
-		<Unit filename="include/tools/dir/factory/DirFileCommunicationFactory.h" />
-		<Unit filename="include/tools/dir/factory/DirFileDialogFactory.h" />
-		<Unit filename="include/tools/dir/interface/DirFileDialog.h" />
-		<Unit filename="include/tools/dir/interface/DirFileDialogEvent.h" />
-		<Unit filename="include/tools/dir/interface/DirFileUserInterface.h" />
-		<Unit filename="include/tools/dir/interface/Events.h" />
-		<Unit filename="include/tools/dir/interface/RepeatedQuestionDialogEvent.h" />
-		<Unit filename="include/tools/dir/interface/RepeatedQuestionInterface.h" />
-		<Unit filename="include/tools/dir/operations/ConflictingOperationFile.h" />
-		<Unit filename="include/tools/dir/operations/CopyFile.h" />
-		<Unit filename="include/tools/dir/operations/CutFile.h" />
-		<Unit filename="include/tools/dir/operations/DeleteFile.h" />
-		<Unit filename="include/tools/dir/operations/OperationFile.h" />
 		<Unit filename="include/tools/dir_traverser/ISearchTraversable.h" />
 		<Unit filename="include/tools/dir_traverser/Search.h" />
 		<Unit filename="include/tools/dnd/dataObjects/ContainerFileTransitiveData.h" />
@@ -325,19 +282,6 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="include/tools/dnd/targets/DirTransitiveDataTarget.h" />
 		<Unit filename="include/tools/dnd/targets/PlaylistTransitiveDataTarget.h" />
 		<Unit filename="include/tools/dnd/targets/TransitiveDataTarget.h" />
-		<Unit filename="include/tools/stl/ThreadSafePriorityQueue.h" />
-		<Unit filename="include/tools/stl/ThreadSafeQueue.h" />
-		<Unit filename="include/tools/thread/FileDeletionThread.h" />
-		<Unit filename="include/tools/thread/IRunnable.h" />
-		<Unit filename="include/tools/thread/IThreadManager.h" />
-		<Unit filename="include/tools/thread/Runnable.h" />
-		<Unit filename="include/tools/thread/RunnableComparator.h" />
-		<Unit filename="include/tools/thread/ThreadFactory.h" />
-		<Unit filename="include/tools/thread/ThreadProcess.h" />
-		<Unit filename="include/tools/thread/manager/AbstractThreadManager.h" />
-		<Unit filename="include/tools/thread/manager/MultiThreadManager.h" />
-		<Unit filename="include/tools/thread/manager/SingleThreadManager.h" />
-		<Unit filename="include/tools/validator/FileValidator.h" />
 		<Unit filename="include/version.h" />
 		<Unit filename="ressoures/Ressource.rc">
 			<Option compilerVar="WINDRES" />
@@ -433,27 +377,8 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/settings/Couleur.cpp" />
 		<Unit filename="src/settings/Parametre.cpp" />
 		<Unit filename="src/tools/FichierLog.cpp" />
-		<Unit filename="src/tools/OS_Win.cpp" />
 		<Unit filename="src/tools/Timer.cpp" />
 		<Unit filename="src/tools/Tools.cpp" />
-		<Unit filename="src/tools/database/DBThreadEvent.cpp" />
-		<Unit filename="src/tools/database/DataBaseManager.cpp" />
-		<Unit filename="src/tools/database/DataBaseRequest.cpp" />
-		<Unit filename="src/tools/database/DataBaseResponse.cpp" />
-		<Unit filename="src/tools/database/requests/DataBaseClosingRequest.cpp" />
-		<Unit filename="src/tools/database/requests/DataBaseOpeningRequest.cpp" />
-		<Unit filename="src/tools/dir/AskForRecursiveOperationData.cpp" />
-		<Unit filename="src/tools/dir/DirFileManager.cpp" />
-		<Unit filename="src/tools/dir/DirFileManagerData.cpp" />
-		<Unit filename="src/tools/dir/factory/DirFileDialogFactory.cpp" />
-		<Unit filename="src/tools/dir/interface/DirFileDialog.cpp" />
-		<Unit filename="src/tools/dir/interface/DirFileDialogEvent.cpp" />
-		<Unit filename="src/tools/dir/interface/RepeatedQuestionDialogEvent.cpp" />
-		<Unit filename="src/tools/dir/operations/ConflictingOperationFile.cpp" />
-		<Unit filename="src/tools/dir/operations/CopyFile.cpp" />
-		<Unit filename="src/tools/dir/operations/CutFile.cpp" />
-		<Unit filename="src/tools/dir/operations/DeleteFile.cpp" />
-		<Unit filename="src/tools/dir/operations/OperationFile.cpp" />
 		<Unit filename="src/tools/dir_traverser/Search.cpp" />
 		<Unit filename="src/tools/dnd/dataObjects/ContainerFileTransitiveData.cpp" />
 		<Unit filename="src/tools/dnd/dataObjects/DataObject.cpp" />
@@ -465,14 +390,6 @@ IMPORTANT, A FAIRE !!!
 		<Unit filename="src/tools/dnd/targets/DirTransitiveDataTarget.cpp" />
 		<Unit filename="src/tools/dnd/targets/PlaylistTransitiveDataTarget.cpp" />
 		<Unit filename="src/tools/dnd/targets/TransitiveDataTarget.cpp" />
-		<Unit filename="src/tools/thread/FileDeletionThread.cpp" />
-		<Unit filename="src/tools/thread/Runnable.cpp" />
-		<Unit filename="src/tools/thread/ThreadFactory.cpp" />
-		<Unit filename="src/tools/thread/ThreadProcess.cpp" />
-		<Unit filename="src/tools/thread/manager/AbstractThreadManager.cpp" />
-		<Unit filename="src/tools/thread/manager/MultiThreadManager.cpp" />
-		<Unit filename="src/tools/thread/manager/SingleThreadManager.cpp" />
-		<Unit filename="src/tools/validator/FileValidator.cpp" />
 		<Unit filename="wxsmith/DirCreationDialog.wxs" />
 		<Unit filename="wxsmith/DirFileDialog.wxs" />
 		<Extensions>

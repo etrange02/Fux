@@ -1,6 +1,7 @@
 obj
 *.save
 *.old
+*.layout
 out/program_files/Fu(X)_d.exe
 CppCheckResults.xml
 Fux_build_log.html

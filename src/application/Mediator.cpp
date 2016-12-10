@@ -1,5 +1,5 @@
 /***************************************************************
- * Name:      DirFileManager.cpp
+ * Name:      Mediator.cpp
  * Purpose:   Code for Fu(X) 2.0
  * Author:    David Lecoconnier (david.lecoconnier@free.fr)
  * Created:   2015-08-07

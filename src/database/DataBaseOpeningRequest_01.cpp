@@ -155,12 +155,12 @@ int DataBaseOpeningRequest_01::updateTables(wxSQLite3Database& database, int cur
                                 COLUMN_PHYSICAL_RECORDING_RENAMED_DATE " DATETIME);");
 
     // Database management
-    int lines = database.ExecuteScalar("SELECT COUNT(*) FROM " TABLE_DATA " WHERE " COLUMN_DATA_KEY " = '" COLUMN_DATA_KEY_LOCALHOST_ID "';");
+    int lines = database.ExecuteScalar("SELECT COUNT(*) FROM " TABLE_META_DATA " WHERE " COLUMN_DATA_KEY " = '" COLUMN_DATA_KEY_LOCALHOST_ID "';");
     if (lines == 0)
     {
         wxString str1 = wxGetFullHostName();
         wxString str2 = wxGetHostName();
-        database.ExecuteUpdate("INSERT INTO " TABLE_DATA " VALUES ('" COLUMN_DATA_KEY_LOCALHOST_ID "','1')");
+        database.ExecuteUpdate("INSERT INTO " TABLE_META_DATA " VALUES ('" COLUMN_DATA_KEY_LOCALHOST_ID "','1')");
         database.ExecuteUpdate("INSERT INTO " TABLE_COMPUTER "(" COLUMN_COMPUTER_NAME ", " COLUMN_COMPUTER_LAST_KNOWN_IP_ADDRESS ", " COLUMN_COMPUTER_LAST_UPDATE ") VALUES ('', 'localhost', datetime('now'))");
     }
 

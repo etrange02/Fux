@@ -55,6 +55,7 @@ class DirCreationDialog: public wxDialog
 
 		//(*Handlers(DirCreationDialog)
 		void onClickDirSelectionButton(wxCommandEvent& event);
+		void OnsameExplorerSelect(wxCommandEvent& event);
 		//*)
 
     private:
