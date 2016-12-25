@@ -14,8 +14,8 @@ using namespace ::explorer;
 
 ExplorerManagerData::ExplorerManagerData(DriveManagerState& state, gui::explorer::ExplorerPanel& explorer, ExplorerDriveManagers& explorerDriveManagers) :
     m_explorerPanel(explorer),
-    m_menu(NULL),
     m_explorerDriveManagers(explorerDriveManagers),
+    m_menu(NULL),
     m_state(&state)
 {
 }

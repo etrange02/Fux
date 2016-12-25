@@ -8,17 +8,16 @@
  **************************************************************/
 #include "Tools.h"
 #include "Define.h"
+#include <tools/system/System.h>
 
 /** @brief Indicates if the string contains reserved characters.
- * The invalid characters is based on Windows file system. It is on this
- * I found more constraints.
  * @param str string to test
  * @return bool
  *
  */
 bool tools::containsInvalidCharacter(const wxString& str)
 {
-    return str.Contains("/\\:*?\"<>|");
+    return str.Contains(system::System::getUnauthorizedCharacterFile());
 }
 
 /** @brief Returns a string according to the Id

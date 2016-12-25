@@ -3,7 +3,7 @@
 
 #include <wx/wx.h>
 #include <wx/event.h>
-#include "thread/Runnable.h"
+#include <tools/thread/Runnable.h>
 #include "MusicFileWriter.h"
 
 extern const wxEventType wxEVT_FUX_MUSICFILE_WRITER_THREAD;

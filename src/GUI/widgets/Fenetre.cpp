@@ -20,6 +20,7 @@
 #include "tools/dir/AskForRecursiveOperationData.h"
 #include "tools/dir/factory/DirFileDialogFactory.h"
 #include "DataBaseFactory.h"
+#include "version.h"
 
 using namespace ::music;
 
@@ -730,14 +731,16 @@ void FuXFenetre::EventSavePlayList(wxCommandEvent &event)
  */
 void FuXFenetre::MenuAbout(wxCommandEvent &WXUNUSED(event))
 {
-    wxString message("Nom : Fu(X) 2.0\tVersion : a5\tDate : ");
+    wxString message("Nom : Fu(X) 2.0\tCompilation : ");
     message.Append(__DATE__);
     message.Append("\n\n");
     message.Append("Auteur : David Lecoconnier (david.lecoconnier@free.fr)");
     message.Append("\n\n");
     message.Append("Interface réalisée avec wxWidgets 3.1.0");
     message.Append("\n\n\n");
-    message.Append("Copyright © 2009-2016 David Lecoconnier, tous droits réservés");
+    message.Append("Copyright © 2009-");
+    message.Append(AutoVersion::YEAR);
+    message.Append(" David Lecoconnier, tous droits réservés");
     message.Append("\n\n");
     message.Append("FMOD Sound System, copyright © Firelight Technologies Pty, Ltd., 1994-2007");
     message.Append("\n");

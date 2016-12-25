@@ -60,7 +60,7 @@ IMPORTANT, A FAIRE !!!
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
-					<Add option="-Wextra" />
+					<Add option="-Wall" />
 					<Add option="-Og" />
 					<Add option="-g" />
 					<Add option="-DDEBUG" />

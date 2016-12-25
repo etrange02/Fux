@@ -3,7 +3,7 @@
 
 #include <wx/wx.h>
 #include <wx/event.h>
-#include "Runnable.h"
+#include <tools/thread/Runnable.h>
 #include "MusicFileReader.h"
 
 extern const wxEventType wxEVT_FUX_MUSICFILE_READER_THREAD;

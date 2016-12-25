@@ -11,6 +11,7 @@
 #include "tools/FichierLog.h"
 #include "music/Factory.h"
 #include <music/Music.h>
+#include <tools/system/System.h>
 
 using namespace ::music;
 
@@ -169,7 +170,7 @@ void PlayList::EnregistrerM3U(wxCommandEvent &WXUNUSED(event))
             {
                 if (!fen->GetCheminRaccourci().IsEmpty() && !wxFileExists(fen->GetCheminRaccourci()))
                 {
-                    if (!CreationRaccourci(fen->GetCheminRaccourci(), fen->GetChemin()))
+                    if (!tools::system::System::createShortcut(fen->GetCheminRaccourci(), fen->GetChemin()))
                     {
                         wxLogMessage(_("Echec de la création du raccourci."));
                     }
