@@ -111,13 +111,13 @@ IMPORTANT, A FAIRE !!!
 			<Add option="-D__GNUWIN32__" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DwxUSE_UNICODE" />
-			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/include" />
-			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/include/contrib/include" />
-			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/lib/gcc_lib/mswu" />
-			<Add directory="${SQLITE3}/include" />
-			<Add directory="${WXSQLITE3}/include" />
-			<Add directory="${FMODEX}/inc" />
-			<Add directory="${TAGLIB}/Headers" />
+			<Add directory="$(#wx.INCLUDE)" />
+			<Add directory="$(#wx.INCLUDE)/contrib/include" />
+			<Add directory="$(#wx.LIB)" />
+			<Add directory="$(#sqlite3.INCLUDE)" />
+			<Add directory="$(#wxsqlite3.INCLUDE)" />
+			<Add directory="$(#fmod.INCLUDE)" />
+			<Add directory="$(#taglib.INCLUDE)" />
 			<Add directory="$(#wxtools.INCLUDE)" />
 			<Add directory="include" />
 			<Add directory="include/application" />
@@ -142,11 +142,11 @@ IMPORTANT, A FAIRE !!!
 			<Add directory="include/tools/dnd/dataObjects" />
 		</Compiler>
 		<ResourceCompiler>
-			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/include" />
+			<Add directory="$(#wx.INCLUDE)" />
 		</ResourceCompiler>
 		<Linker>
-			<Add library="${WXSQLITE3}/lib/gcc_lib/libwxcode_msw$(WX_VER1)$(WX_VER2)$(AURD)_wxsqlite3.a" />
-			<Add library="${SQLITE3}/lib/sqlite3.a" />
+			<Add library="$(#wxsqlite3.LIB)/libwxcode_msw$(WX_VER1)$(WX_VER2)$(AURD)_wxsqlite3.a" />
+			<Add library="$(#sqlite3.LIB)/sqlite3.a" />
 			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_gl.a" />
 			<Add library="libwxmsw$(WX_VER1)$(WX_VER2)$(AURD)_core.a" />
 			<Add library="libwxbase$(WX_VER1)$(WX_VER2)$(AURD)_net.a" />
@@ -175,13 +175,13 @@ IMPORTANT, A FAIRE !!!
 			<Add library="libwsock32.a" />
 			<Add library="libopengl32.a" />
 			<Add library="libglu32.a" />
-			<Add library="${FMODEX}/lib/libfmodex.a" />
-			<Add library="${TAGLIB}/libtag.dll.a" />
-			<Add library="${DIR_MINGW}/libshlwapi.a" />
-			<Add library="${DIR_MINGW}/libversion.a" />
-			<Add directory="$(WX_DIR)$(WX_VER1)$(WX_VER2)$(WX_VER3)$(WX_GL_VER)/lib/gcc_lib" />
-			<Add directory="${SQLITE3}/lib" />
-			<Add directory="${WXSQLITE3}/lib/gcc_lib" />
+			<Add library="$(#fmod.LIB)/libfmodex.a" />
+			<Add library="$(#taglib.LIB)/libtag.dll.a" />
+			<Add library="$(#mingw.LIB)/libshlwapi.a" />
+			<Add library="$(#mingw.LIB)/libversion.a" />
+			<Add directory="$(#wx.LIB)" />
+			<Add directory="$(#sqlite3.LIB)" />
+			<Add directory="$(#wxsqlite3.LIB)" />
 			<Add directory="$(#wxtools.LIB)" />
 		</Linker>
 		<Unit filename="include/Classes.h" />
